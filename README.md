@@ -1,0 +1,178 @@
+# Database-repo for ryohi_sub_cal
+
+gRPCベースのデータベースリポジトリサービス
+
+## 概要
+
+ryohi_sub_calデータベースの3つのテーブル（dtako_uriage_keihi、etc_meisai、dtako_ferry_rows）に対するCRUD操作を提供するgRPCサービス。
+
+## 技術スタック
+
+- **言語**: Go 1.21+
+- **フレームワーク**:
+  - gRPC v1.75+
+  - GORM v1.25.5
+  - Protocol Buffers
+- **データベース**: MySQL/MariaDB
+- **設定管理**: godotenv
+
+## プロジェクト構造
+
+```
+db_service/
+├── src/
+│   ├── proto/       # Protocol Buffers定義とコンパイル済みファイル
+│   ├── models/      # GORMモデル定義
+│   ├── repository/  # データアクセス層
+│   ├── service/     # gRPCサービス実装
+│   └── config/      # 設定管理
+├── tests/
+│   ├── contract/    # 契約テスト
+│   └── integration/ # 統合テスト
+├── cmd/
+│   └── server/      # サーバーエントリポイント
+└── Makefile         # ビルドコマンド
+```
+
+## セットアップ
+
+### 1. 前提条件
+
+- Go 1.21以上
+- Protocol Buffers Compiler (protoc)
+- MySQL/MariaDB
+
+### 2. 依存関係のインストール
+
+```bash
+go mod download
+```
+
+### 3. 環境変数の設定
+
+`.env`ファイルを作成して以下を設定：
+
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=your_username
+DB_PASSWORD=your_password  # ハードコード禁止
+DB_NAME=db1
+GRPC_PORT=50051
+```
+
+### 4. Protocol Buffersのコンパイル
+
+```bash
+make proto
+# または
+protoc --go_out=. --go_opt=paths=source_relative \
+       --go-grpc_out=. --go-grpc_opt=paths=source_relative \
+       src/proto/ryohi.proto
+```
+
+## 実行方法
+
+### サーバー起動
+
+```bash
+# ビルドして実行
+make build && ./bin/server
+
+# または直接実行
+go run cmd/server/main.go
+
+# またはMakefile経由
+make run
+```
+
+### テスト実行
+
+```bash
+# 全テスト
+make test
+
+# カバレッジ付き
+make test-coverage
+
+# 統合テストのみ
+make test-integration
+```
+
+## API仕様
+
+### DTakoUriageKeihiService
+
+経費精算データ管理（複合主キー: srch_id, datetime, keihi_c）
+
+- `Create`: 新規作成
+- `Get`: 取得
+- `Update`: 更新
+- `Delete`: 削除
+- `List`: 一覧取得
+
+### ETCMeisaiService
+
+ETC明細データ管理（主キー: id AUTO_INCREMENT）
+
+- `Create`: 新規作成
+- `Get`: 取得
+- `Update`: 更新
+- `Delete`: 削除
+- `List`: 一覧取得
+
+### DTakoFerryRowsService
+
+フェリー運行データ管理（主キー: id AUTO_INCREMENT）
+
+- `Create`: 新規作成
+- `Get`: 取得
+- `Update`: 更新
+- `Delete`: 削除
+- `List`: 一覧取得
+
+## 動作確認
+
+### grpcurlを使用
+
+```bash
+# サービス一覧
+grpcurl -plaintext localhost:50051 list
+
+# データ取得例
+grpcurl -plaintext -d '{"limit": 10, "offset": 0}' \
+  localhost:50051 ryohi.DTakoUriageKeihiService/List
+```
+
+## セキュリティ
+
+- **環境変数必須**: データベース認証情報は環境変数から取得
+- **ハードコード禁止**: シークレット情報のハードコードは絶対禁止
+- **.gitignore**: `.env`ファイルはバージョン管理対象外
+
+## トラブルシューティング
+
+### データベース接続エラー
+
+1. `.env`ファイルの設定を確認
+2. MySQLサービスが起動しているか確認
+3. ユーザー権限を確認
+
+### protocエラー
+
+```bash
+# Chocolateyでインストール
+choco install protoc
+
+# Go用プラグインインストール
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+```
+
+## ライセンス
+
+(ライセンス情報を記載)
+
+## 作成者
+
+yhonda-ohishi

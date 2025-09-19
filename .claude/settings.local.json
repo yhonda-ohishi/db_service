@@ -2,7 +2,17 @@
   "permissions": {
     "allow": [
       "Bash(py --version)",
-      "Bash(C:\\Users\\mtama\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\specify.exe init db_service --ai claude --here)"
+      "Bash(C:\\Users\\mtama\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\specify.exe init db_service --ai claude --here)",
+      "WebFetch(domain:github.com)",
+      "Read(//c/go/ryohi_sub_cal/mysqldata/**)",
+      "Bash(go get:*)",
+      "Bash(go install:*)",
+      "Bash(protoc:*)",
+      "Bash(where protoc)",
+      "Bash(./server.exe)",
+      "Bash(go run:*)",
+      "Bash(where protoc-gen-go-grpc)",
+      "Bash(go build:*)"
     ],
     "deny": [],
     "ask": []
