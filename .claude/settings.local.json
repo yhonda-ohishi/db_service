@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(py --version)",
+      "Bash(C:\\Users\\mtama\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\specify.exe init db_service --ai claude --here)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
