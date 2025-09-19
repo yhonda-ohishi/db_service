@@ -56,7 +56,7 @@ func LoadConfig() (*Config, error) {
 	config.MaxOpenConns = getEnvAsInt("DB_MAX_OPEN_CONNS", 25)
 	config.MaxIdleConns = getEnvAsInt("DB_MAX_IDLE_CONNS", 5)
 	config.ConnMaxLifetime = getEnvAsInt("DB_CONN_MAX_LIFETIME", 3600) // 秒単位
-	config.ConnMaxIdleTime = getEnvAsInt("DB_CONN_MAX_IDLE_TIME", 300)  // 秒単位
+	config.ConnMaxIdleTime = getEnvAsInt("DB_CONN_MAX_IDLE_TIME", 300) // 秒単位
 
 	return config, nil
 }

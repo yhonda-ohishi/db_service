@@ -27,13 +27,13 @@ func TestDTakoUriageKeihiService_Update(t *testing.T) {
 	// テストデータの作成（事前準備）
 	setupData := &proto.CreateDTakoUriageKeihiRequest{
 		DtakoUriageKeihi: &proto.DTakoUriageKeihi{
-			SrchId:       "UPDATE_TEST001",
-			Datetime:     "2025-09-19T13:00:00Z",
-			KeihiC:       2,
-			Price:        4000.0,
-			Km:           100.0,
-			DtakoRowId:   "DTAKO004",
-			DtakoRowIdR:  "DTAKO004R",
+			SrchId:      "UPDATE_TEST001",
+			Datetime:    "2025-09-19T13:00:00Z",
+			KeihiC:      2,
+			Price:       4000.0,
+			Km:          float64Ptr(100.0),
+			DtakoRowId:  "DTAKO004",
+			DtakoRowIdR: "DTAKO004R",
 		},
 	}
 	_, _ = client.Create(ctx, setupData)
@@ -49,14 +49,14 @@ func TestDTakoUriageKeihiService_Update(t *testing.T) {
 			name: "Valid update",
 			request: &proto.UpdateDTakoUriageKeihiRequest{
 				DtakoUriageKeihi: &proto.DTakoUriageKeihi{
-					SrchId:       "UPDATE_TEST001",
-					Datetime:     "2025-09-19T13:00:00Z",
-					KeihiC:       2,
-					Price:        4500.0, // 更新
-					Km:           110.0,  // 更新
-					DtakoRowId:   "DTAKO004",
-					DtakoRowIdR:  "DTAKO004R",
-					Manual:       &[]bool{true}[0], // 手動フラグ設定
+					SrchId:      "UPDATE_TEST001",
+					Datetime:    "2025-09-19T13:00:00Z",
+					KeihiC:      2,
+					Price:       4500.0,            // 更新
+					Km:          float64Ptr(110.0), // 更新
+					DtakoRowId:  "DTAKO004",
+					DtakoRowIdR: "DTAKO004R",
+					Manual:      &[]bool{true}[0], // 手動フラグ設定
 				},
 			},
 			wantErr: false,
@@ -65,12 +65,12 @@ func TestDTakoUriageKeihiService_Update(t *testing.T) {
 			name: "Update non-existent record",
 			request: &proto.UpdateDTakoUriageKeihiRequest{
 				DtakoUriageKeihi: &proto.DTakoUriageKeihi{
-					SrchId:       "NONEXISTENT",
-					Datetime:     "2025-09-19T14:00:00Z",
-					KeihiC:       999,
-					Price:        5000.0,
-					DtakoRowId:   "DTAKO999",
-					DtakoRowIdR:  "DTAKO999R",
+					SrchId:      "NONEXISTENT",
+					Datetime:    "2025-09-19T14:00:00Z",
+					KeihiC:      999,
+					Price:       5000.0,
+					DtakoRowId:  "DTAKO999",
+					DtakoRowIdR: "DTAKO999R",
 				},
 			},
 			wantErr:      true,
@@ -93,7 +93,7 @@ func TestDTakoUriageKeihiService_Update(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			response, err := client.Update(ctx, tc.request)
+			_, err := client.Update(ctx, tc.request)
 			if (err != nil) != tc.wantErr {
 				t.Errorf("Update() error = %v, wantErr %v", err, tc.wantErr)
 				return

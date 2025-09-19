@@ -27,13 +27,13 @@ func TestDTakoUriageKeihiService_Get(t *testing.T) {
 	// テストデータの作成（事前準備）
 	setupData := &proto.CreateDTakoUriageKeihiRequest{
 		DtakoUriageKeihi: &proto.DTakoUriageKeihi{
-			SrchId:       "GET_TEST001",
-			Datetime:     "2025-09-19T12:00:00Z",
-			KeihiC:       1,
-			Price:        3000.0,
-			Km:           75.0,
-			DtakoRowId:   "DTAKO003",
-			DtakoRowIdR:  "DTAKO003R",
+			SrchId:      "GET_TEST001",
+			Datetime:    "2025-09-19T12:00:00Z",
+			KeihiC:      1,
+			Price:       3000.0,
+			Km:          float64Ptr(75.0),
+			DtakoRowId:  "DTAKO003",
+			DtakoRowIdR: "DTAKO003R",
 		},
 	}
 	_, _ = client.Create(ctx, setupData)

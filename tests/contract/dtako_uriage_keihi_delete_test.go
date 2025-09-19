@@ -27,13 +27,13 @@ func TestDTakoUriageKeihiService_Delete(t *testing.T) {
 	// テストデータの作成（事前準備）
 	setupData := &proto.CreateDTakoUriageKeihiRequest{
 		DtakoUriageKeihi: &proto.DTakoUriageKeihi{
-			SrchId:       "DELETE_TEST001",
-			Datetime:     "2025-09-19T15:00:00Z",
-			KeihiC:       3,
-			Price:        6000.0,
-			Km:           120.0,
-			DtakoRowId:   "DTAKO005",
-			DtakoRowIdR:  "DTAKO005R",
+			SrchId:      "DELETE_TEST001",
+			Datetime:    "2025-09-19T15:00:00Z",
+			KeihiC:      3,
+			Price:       6000.0,
+			Km:          float64Ptr(120.0),
+			DtakoRowId:  "DTAKO005",
+			DtakoRowIdR: "DTAKO005R",
 		},
 	}
 	_, _ = client.Create(ctx, setupData)

@@ -23,9 +23,9 @@ type DTakoFerryRows struct {
 	SharyoName string `gorm:"column:車輌名;size:20;not null" json:"sharyo_name"`
 
 	// 乗務員情報
-	JomuinCD1         int32  `gorm:"column:乗務員CD1;not null" json:"jomuin_cd1"`
-	JomuinName1       string `gorm:"column:乗務員名１;size:20;not null" json:"jomuin_name1"`
-	TaishoJomuinKbn   int32  `gorm:"column:対象乗務員区分;not null" json:"taisho_jomuin_kbn"`
+	JomuinCD1       int32  `gorm:"column:乗務員CD1;not null" json:"jomuin_cd1"`
+	JomuinName1     string `gorm:"column:乗務員名１;size:20;not null" json:"jomuin_name1"`
+	TaishoJomuinKbn int32  `gorm:"column:対象乗務員区分;not null" json:"taisho_jomuin_kbn"`
 
 	// 運行時間
 	KaishiDatetime time.Time `gorm:"column:開始日時;not null" json:"kaishi_datetime"`
@@ -47,8 +47,8 @@ type DTakoFerryRows struct {
 	SeisanKbnName string `gorm:"column:精算区分名;size:20;not null" json:"seisan_kbn_name"`
 
 	// 料金情報
-	HyojunRyokin   int32 `gorm:"column:標準料金;not null" json:"hyojun_ryokin"`
-	KeiyakuRyokin  int32 `gorm:"column:契約料金;not null" json:"keiyaku_ryokin"`
+	HyojunRyokin  int32 `gorm:"column:標準料金;not null" json:"hyojun_ryokin"`
+	KeiyakuRyokin int32 `gorm:"column:契約料金;not null" json:"keiyaku_ryokin"`
 
 	// 車種・距離情報
 	KosoShashuKbn     int32  `gorm:"column:航送車種区分;not null" json:"koso_shashu_kbn"`

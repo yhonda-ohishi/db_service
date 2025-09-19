@@ -24,10 +24,10 @@ type ETCMeisai struct {
 	Price    int32  `gorm:"column:price;not null" json:"price"`
 
 	// 車両情報
-	Shashu    int32  `gorm:"column:shashu;not null" json:"shashu"`
-	CarIDNum  *int32 `gorm:"column:car_id_num" json:"car_id_num,omitempty"`
-	EtcNum    string `gorm:"column:etc_num;size:20;not null" json:"etc_num"`
-	Detail    *string `gorm:"column:detail;size:40" json:"detail,omitempty"`
+	Shashu   int32   `gorm:"column:shashu;not null" json:"shashu"`
+	CarIDNum *int32  `gorm:"column:car_id_num" json:"car_id_num,omitempty"`
+	EtcNum   string  `gorm:"column:etc_num;size:20;not null" json:"etc_num"`
+	Detail   *string `gorm:"column:detail;size:40" json:"detail,omitempty"`
 
 	// 関連情報
 	DtakoRowID *string `gorm:"column:dtako_row_id;size:24" json:"dtako_row_id,omitempty"`

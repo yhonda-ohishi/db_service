@@ -12,7 +12,8 @@
       "Bash(./server.exe)",
       "Bash(go run:*)",
       "Bash(where protoc-gen-go-grpc)",
-      "Bash(go build:*)"
+      "Bash(go build:*)",
+      "Bash(go test:*)"
     ],
     "deny": [],
     "ask": []

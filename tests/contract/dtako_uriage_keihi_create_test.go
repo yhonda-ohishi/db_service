@@ -24,21 +24,21 @@ func TestDTakoUriageKeihiService_Create(t *testing.T) {
 
 	// テストデータの作成
 	testCases := []struct {
-		name     string
-		request  *proto.CreateDTakoUriageKeihiRequest
-		wantErr  bool
+		name    string
+		request *proto.CreateDTakoUriageKeihiRequest
+		wantErr bool
 	}{
 		{
 			name: "Valid creation",
 			request: &proto.CreateDTakoUriageKeihiRequest{
 				DtakoUriageKeihi: &proto.DTakoUriageKeihi{
-					SrchId:       "TEST001",
-					Datetime:     "2025-09-19T10:00:00Z",
-					KeihiC:       1,
-					Price:        1000.0,
-					Km:           50.5,
-					DtakoRowId:   "DTAKO001",
-					DtakoRowIdR:  "DTAKO001R",
+					SrchId:      "TEST001",
+					Datetime:    "2025-09-19T10:00:00Z",
+					KeihiC:      1,
+					Price:       1000.0,
+					Km:          float64Ptr(50.5),
+					DtakoRowId:  "DTAKO001",
+					DtakoRowIdR: "DTAKO001R",
 				},
 			},
 			wantErr: false,
@@ -47,12 +47,12 @@ func TestDTakoUriageKeihiService_Create(t *testing.T) {
 			name: "Duplicate primary key",
 			request: &proto.CreateDTakoUriageKeihiRequest{
 				DtakoUriageKeihi: &proto.DTakoUriageKeihi{
-					SrchId:       "TEST001",
-					Datetime:     "2025-09-19T10:00:00Z",
-					KeihiC:       1,
-					Price:        2000.0,
-					DtakoRowId:   "DTAKO002",
-					DtakoRowIdR:  "DTAKO002R",
+					SrchId:      "TEST001",
+					Datetime:    "2025-09-19T10:00:00Z",
+					KeihiC:      1,
+					Price:       2000.0,
+					DtakoRowId:  "DTAKO002",
+					DtakoRowIdR: "DTAKO002R",
 				},
 			},
 			wantErr: true,

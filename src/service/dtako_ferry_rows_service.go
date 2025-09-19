@@ -7,7 +7,6 @@ import (
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	
 )
 
 // DTakoFerryRowsService gRPCサービス実装
