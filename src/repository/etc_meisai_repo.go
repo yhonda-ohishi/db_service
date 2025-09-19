@@ -15,17 +15,17 @@ type ETCMeisaiRepository interface {
 	Update(data *models.ETCMeisai) error
 	DeleteByID(id int64) error
 	List(params *ETCMeisaiListParams) ([]*models.ETCMeisai, int64, error)
-	ListByDtakoRowID(dtakoRowID string) ([]*models.ETCMeisai, error)
+	ListByHash(hash string) ([]*models.ETCMeisai, error)
 	ListByDateRange(start, end time.Time) ([]*models.ETCMeisai, error)
 }
 
 // ETCMeisaiListParams リスト取得用パラメータ
 type ETCMeisaiListParams struct {
-	DtakoRowID *string
-	StartDate  *time.Time
-	EndDate    *time.Time
-	Limit      int
-	Offset     int
+	Hash      *string
+	StartDate *time.Time
+	EndDate   *time.Time
+	Limit     int
+	Offset    int
 }
 
 // etcMeisaiRepo リポジトリ実装
@@ -117,8 +117,8 @@ func (r *etcMeisaiRepo) List(params *ETCMeisaiListParams) ([]*models.ETCMeisai, 
 	query := r.db.Model(&models.ETCMeisai{})
 
 	// 条件の適用
-	if params.DtakoRowID != nil && *params.DtakoRowID != "" {
-		query = query.Where("dtako_row_id = ?", *params.DtakoRowID)
+	if params.Hash != nil && *params.Hash != "" {
+		query = query.Where("hash = ?", *params.Hash)
 	}
 	if params.StartDate != nil {
 		query = query.Where("date_to >= ?", *params.StartDate)
@@ -148,14 +148,14 @@ func (r *etcMeisaiRepo) List(params *ETCMeisaiListParams) ([]*models.ETCMeisai, 
 	return data, totalCount, nil
 }
 
-// ListByDtakoRowID dtako_row_idでリスト取得
-func (r *etcMeisaiRepo) ListByDtakoRowID(dtakoRowID string) ([]*models.ETCMeisai, error) {
+// ListByHash hashでリスト取得
+func (r *etcMeisaiRepo) ListByHash(hash string) ([]*models.ETCMeisai, error) {
 	var data []*models.ETCMeisai
 
-	if err := r.db.Where("dtako_row_id = ?", dtakoRowID).
+	if err := r.db.Where("hash = ?", hash).
 		Order("date_to DESC").
 		Find(&data).Error; err != nil {
-		return nil, fmt.Errorf("failed to list by dtako_row_id: %w", err)
+		return nil, fmt.Errorf("failed to list by hash: %w", err)
 	}
 
 	return data, nil

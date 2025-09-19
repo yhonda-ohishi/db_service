@@ -25,6 +25,10 @@ var (
 	ErrInvalidDescount   = errors.New("descount must be non-negative")
 	ErrInvalidShashu     = errors.New("shashu must be positive")
 	ErrInvalidEtcNum     = errors.New("etc_num cannot be empty")
+	ErrInvalidHash       = errors.New("hash cannot be empty")
+	ErrInvalidCreatedBy  = errors.New("created_by cannot be empty")
+	ErrInvalidCreatedAt  = errors.New("created_at cannot be zero")
+	ErrInvalidUpdatedAt  = errors.New("updated_at cannot be zero")
 
 	// DTakoFerryRows関連
 	ErrInvalidUnkoNo        = errors.New("unko_no cannot be empty")

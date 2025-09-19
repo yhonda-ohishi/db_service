@@ -46,6 +46,22 @@ service DTakoFerryRowsService {
   rpc List(ListDTakoFerryRowsRequest) returns (ListDTakoFerryRowsResponse);
 }
 
+// ETCMeisaiMappingサービス - ETC明細とDTakoRowsのマッピング管理
+service ETCMeisaiMappingService {
+  // マッピング作成
+  rpc Create(CreateETCMeisaiMappingRequest) returns (ETCMeisaiMappingResponse);
+  // マッピング取得
+  rpc Get(GetETCMeisaiMappingRequest) returns (ETCMeisaiMappingResponse);
+  // マッピング更新
+  rpc Update(UpdateETCMeisaiMappingRequest) returns (ETCMeisaiMappingResponse);
+  // マッピング削除
+  rpc Delete(DeleteETCMeisaiMappingRequest) returns (Empty);
+  // マッピング一覧取得
+  rpc List(ListETCMeisaiMappingRequest) returns (ListETCMeisaiMappingResponse);
+  // ハッシュからDTakoRowIDを取得
+  rpc GetDTakoRowIDByHash(GetDTakoRowIDByHashRequest) returns (GetDTakoRowIDByHashResponse);
+}
+
 // 経費精算データ
 message DTakoUriageKeihi {
   string srch_id = 1;
@@ -80,7 +96,7 @@ message ETCMeisai {
   optional int32 car_id_num = 11;
   string etc_num = 12;
   optional string detail = 13;
-  optional string dtako_row_id = 14;
+  string hash = 14;
 }
 
 // フェリー運行データ
@@ -173,7 +189,7 @@ message DeleteETCMeisaiRequest {
 }
 
 message ListETCMeisaiRequest {
-  optional string dtako_row_id = 1;
+  optional string hash = 1;
   optional string start_date = 2;
   optional string end_date = 3;
   int32 limit = 4;
@@ -221,6 +237,58 @@ message DTakoFerryRowsResponse {
 message ListDTakoFerryRowsResponse {
   repeated DTakoFerryRows items = 1;
   int32 total_count = 2;
+}
+
+// ETC明細マッピングデータ
+message ETCMeisaiMapping {
+  int64 id = 1;
+  string etc_meisai_hash = 2;
+  string dtako_row_id = 3;
+  string created_at = 4;
+  string updated_at = 5;
+  string created_by = 6;
+  optional string notes = 7;
+}
+
+// ETCMeisaiMapping用リクエスト/レスポンス
+message CreateETCMeisaiMappingRequest {
+  ETCMeisaiMapping etc_meisai_mapping = 1;
+}
+
+message GetETCMeisaiMappingRequest {
+  int64 id = 1;
+}
+
+message UpdateETCMeisaiMappingRequest {
+  ETCMeisaiMapping etc_meisai_mapping = 1;
+}
+
+message DeleteETCMeisaiMappingRequest {
+  int64 id = 1;
+}
+
+message ListETCMeisaiMappingRequest {
+  optional string etc_meisai_hash = 1;
+  optional string dtako_row_id = 2;
+  int32 limit = 3;
+  int32 offset = 4;
+}
+
+message ETCMeisaiMappingResponse {
+  ETCMeisaiMapping etc_meisai_mapping = 1;
+}
+
+message ListETCMeisaiMappingResponse {
+  repeated ETCMeisaiMapping items = 1;
+  int32 total_count = 2;
+}
+
+message GetDTakoRowIDByHashRequest {
+  string etc_meisai_hash = 1;
+}
+
+message GetDTakoRowIDByHashResponse {
+  repeated string dtako_row_ids = 1;
 }
 
 // 共通メッセージ

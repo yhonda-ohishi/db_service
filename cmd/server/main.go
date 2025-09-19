@@ -62,13 +62,13 @@ func main() {
 	etcMeisaiRepo := repository.NewETCMeisaiRepository(db)
 	dtakoFerryRowsRepo := repository.NewDTakoFerryRowsRepository(db)
 
-	// 本番DBリポジトリの初期化
-	var dtakoRowsRepo repository.DTakoRowsRepository
-	var etcNumRepo repository.ETCNumRepository
-	if prodDB != nil {
-		dtakoRowsRepo = repository.NewDTakoRowsRepository(prodDB)
-		etcNumRepo = repository.NewETCNumRepository(prodDB)
-	}
+	// 本番DBリポジトリの初期化（現在無効化）
+	// var dtakoRowsRepo repository.DTakoRowsRepository
+	// var etcNumRepo repository.ETCNumRepository
+	// if prodDB != nil {
+	//     dtakoRowsRepo = repository.NewDTakoRowsRepository(prodDB)
+	//     etcNumRepo = repository.NewETCNumRepository(prodDB)
+	// }
 
 	// gRPCサーバーの作成
 	grpcServer := grpc.NewServer()
@@ -83,13 +83,15 @@ func main() {
 	dtakoFerryRowsService := service.NewDTakoFerryRowsService(dtakoFerryRowsRepo)
 	proto.RegisterDTakoFerryRowsServiceServer(grpcServer, dtakoFerryRowsService)
 
-	// 本番DBサービスの登録
-	if prodDB != nil {
-		dtakoRowsService := service.NewDTakoRowsService(dtakoRowsRepo)
-		proto.RegisterDTakoRowsServiceServer(grpcServer, dtakoRowsService)
+	// ETC明細マッピングサービスの登録
+	etcMeisaiMappingRepo := repository.NewETCMeisaiMappingRepository(db)
+	etcMeisaiMappingService := service.NewETCMeisaiMappingService(etcMeisaiMappingRepo)
+	proto.RegisterETCMeisaiMappingServiceServer(grpcServer, etcMeisaiMappingService)
 
-		etcNumService := service.NewETCNumService(etcNumRepo)
-		proto.RegisterETCNumServiceServer(grpcServer, etcNumService)
+	// 本番DBサービスの登録（現在無効化）
+	if prodDB != nil {
+		// Note: 本番DBサービスは現在無効化されています（プロトコルバッファー定義が必要）
+		log.Println("本番DBサービスは現在無効化されています")
 	}
 
 	// リフレクションの登録（開発環境用）

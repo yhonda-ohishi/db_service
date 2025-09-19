@@ -40,36 +40,7 @@ func main() {
 	}
 
 	fmt.Println("\n=== 本番DBサービステスト ===")
-
-	// DTakoRowsサービステスト（本番DB）
-	rowsClient := proto.NewDTakoRowsServiceClient(conn)
-	rowsListResp, err := rowsClient.List(ctx, &proto.ListDTakoRowsRequest{
-		Limit:  3,
-		Offset: 0,
-	})
-	if err != nil {
-		log.Printf("DTakoRows List エラー: %v", err)
-	} else {
-		fmt.Printf("DTakoRows総数: %d件\n", rowsListResp.TotalCount)
-		for i, item := range rowsListResp.Items {
-			fmt.Printf("  %d. ID:%s, 運行NO:%s, 車輌CD:%d\n", i+1, item.Id, item.OperationNo, item.CarCode)
-		}
-	}
-
-	// ETCNumサービステスト（本番DB）
-	etcNumClient := proto.NewETCNumServiceClient(conn)
-	etcNumListResp, err := etcNumClient.List(ctx, &proto.ListETCNumRequest{
-		Limit:  3,
-		Offset: 0,
-	})
-	if err != nil {
-		log.Printf("ETCNum List エラー: %v", err)
-	} else {
-		fmt.Printf("ETCNum総数: %d件\n", etcNumListResp.TotalCount)
-		for i, item := range etcNumListResp.Items {
-			fmt.Printf("  %d. ETCカード:%s, 車輌ID:%s\n", i+1, item.EtcCardNum, item.CarId)
-		}
-	}
+	fmt.Println("本番DBサービスは現在無効化されています（プロトコルバッファー定義が必要）")
 
 	fmt.Println("\n=== 全サービステスト完了 ===")
 }

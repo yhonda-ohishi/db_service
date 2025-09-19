@@ -1,6 +1,8 @@
 package models
 
 import (
+	"crypto/sha256"
+	"fmt"
 	"time"
 )
 
@@ -29,8 +31,8 @@ type ETCMeisai struct {
 	EtcNum   string  `gorm:"column:etc_num;size:20;not null" json:"etc_num"`
 	Detail   *string `gorm:"column:detail;size:40" json:"detail,omitempty"`
 
-	// 関連情報
-	DtakoRowID *string `gorm:"column:dtako_row_id;size:24" json:"dtako_row_id,omitempty"`
+	// ハッシュ値（データ整合性確認用）
+	Hash string `gorm:"column:hash;size:64;not null" json:"hash"`
 }
 
 // TableName テーブル名を指定
@@ -67,6 +69,9 @@ func (e *ETCMeisai) Validate() error {
 	if e.EtcNum == "" {
 		return ErrInvalidEtcNum
 	}
+	if e.Hash == "" {
+		return ErrInvalidHash
+	}
 	return nil
 }
 
@@ -86,7 +91,53 @@ func (e *ETCMeisai) GetFinalPrice() int32 {
 	return e.Price
 }
 
-// HasDtakoRowID 運行NOの有無を確認
-func (e *ETCMeisai) HasDtakoRowID() bool {
-	return e.DtakoRowID != nil && *e.DtakoRowID != ""
+// GenerateHash データからハッシュ値を生成（主キー以外の全フィールド）
+func (e *ETCMeisai) GenerateHash() string {
+	// 主キー以外の全フィールドを組み合わせてハッシュを生成
+	dateFrStr := ""
+	if e.DateFr != nil {
+		dateFrStr = e.DateFr.Format("2006-01-02 15:04:05")
+	}
+
+	priceBfStr := ""
+	if e.PriceBf != nil {
+		priceBfStr = fmt.Sprintf("%d", *e.PriceBf)
+	}
+
+	descountStr := ""
+	if e.Descount != nil {
+		descountStr = fmt.Sprintf("%d", *e.Descount)
+	}
+
+	carIDNumStr := ""
+	if e.CarIDNum != nil {
+		carIDNumStr = fmt.Sprintf("%d", *e.CarIDNum)
+	}
+
+	detailStr := ""
+	if e.Detail != nil {
+		detailStr = *e.Detail
+	}
+
+	data := fmt.Sprintf("%s|%s|%s|%s|%s|%s|%s|%d|%d|%s|%s|%s",
+		dateFrStr,
+		e.DateTo.Format("2006-01-02 15:04:05"),
+		e.DateToDate.Format("2006-01-02"),
+		e.IcFr,
+		e.IcTo,
+		priceBfStr,
+		descountStr,
+		e.Price,
+		e.Shashu,
+		carIDNumStr,
+		e.EtcNum,
+		detailStr)
+
+	hash := sha256.Sum256([]byte(data))
+	return fmt.Sprintf("%x", hash)
+}
+
+// SetHash ハッシュ値を設定
+func (e *ETCMeisai) SetHash() {
+	e.Hash = e.GenerateHash()
 }

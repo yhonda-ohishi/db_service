@@ -61,8 +61,11 @@ func (s *ETCMeisaiService) Create(ctx context.Context, req *proto.CreateETCMeisa
 	if req.EtcMeisai.Detail != nil {
 		model.Detail = req.EtcMeisai.Detail
 	}
-	if req.EtcMeisai.DtakoRowId != nil {
-		model.DtakoRowID = req.EtcMeisai.DtakoRowId
+	// ハッシュが指定されていない場合は自動生成
+	if req.EtcMeisai.Hash == "" {
+		model.SetHash()
+	} else {
+		model.Hash = req.EtcMeisai.Hash
 	}
 
 	// リポジトリで作成
@@ -141,8 +144,8 @@ func (s *ETCMeisaiService) List(ctx context.Context, req *proto.ListETCMeisaiReq
 	}
 
 	// オプションパラメータ
-	if req.DtakoRowId != nil {
-		params.DtakoRowID = req.DtakoRowId
+	if req.Hash != nil {
+		params.Hash = req.Hash
 	}
 	if req.StartDate != nil && *req.StartDate != "" {
 		t, _ := time.Parse(time.RFC3339, *req.StartDate)
@@ -201,9 +204,7 @@ func etcProtoToModel(p *proto.ETCMeisai) *models.ETCMeisai {
 	if p.Detail != nil {
 		m.Detail = p.Detail
 	}
-	if p.DtakoRowId != nil {
-		m.DtakoRowID = p.DtakoRowId
-	}
+	m.Hash = p.Hash
 
 	return m
 }
@@ -237,9 +238,7 @@ func etcModelToProto(m *models.ETCMeisai) *proto.ETCMeisai {
 	if m.Detail != nil {
 		p.Detail = m.Detail
 	}
-	if m.DtakoRowID != nil {
-		p.DtakoRowId = m.DtakoRowID
-	}
+	p.Hash = m.Hash
 
 	return p
 }

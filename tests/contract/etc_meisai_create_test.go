@@ -39,6 +39,7 @@ func TestETCMeisaiService_Create(t *testing.T) {
 					Price:      1500,
 					Shashu:     1,
 					EtcNum:     "1234567890123456",
+					Hash:       "test_hash_123",
 				},
 			},
 			wantErr: false,
@@ -65,6 +66,7 @@ func TestETCMeisaiService_Create(t *testing.T) {
 					Price:      -100, // 無効な料金
 					Shashu:     1,
 					EtcNum:     "1234567890123456",
+					Hash:       "test_hash_invalid",
 				},
 			},
 			wantErr: true,
