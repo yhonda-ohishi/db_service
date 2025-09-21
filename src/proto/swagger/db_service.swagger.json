@@ -1,0 +1,1489 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ryohi.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "DTakoUriageKeihiService"
+    },
+    {
+      "name": "ETCMeisaiService"
+    },
+    {
+      "name": "DTakoFerryRowsService"
+    },
+    {
+      "name": "ETCMeisaiMappingService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/db/dtako-ferry-rows": {
+      "get": {
+        "summary": "フェリー運行データ一覧取得",
+        "operationId": "DTakoFerryRowsService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListDTakoFerryRowsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "unkoNo",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "DTakoFerryRowsService"
+        ]
+      },
+      "post": {
+        "summary": "フェリー運行データ作成",
+        "operationId": "DTakoFerryRowsService_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiDTakoFerryRowsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "dtakoFerryRows",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ryohiDTakoFerryRows"
+            }
+          }
+        ],
+        "tags": [
+          "DTakoFerryRowsService"
+        ]
+      }
+    },
+    "/api/v1/db/dtako-ferry-rows/{dtakoFerryRows.id}": {
+      "put": {
+        "summary": "フェリー運行データ更新",
+        "operationId": "DTakoFerryRowsService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiDTakoFerryRowsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "dtakoFerryRows.id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dtakoFerryRows",
+            "description": "フェリー運行データ",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "unkoNo": {
+                  "type": "string",
+                  "title": "運行NO"
+                },
+                "unkoDate": {
+                  "type": "string",
+                  "title": "運行日"
+                },
+                "yomitoriDate": {
+                  "type": "string",
+                  "title": "読取日"
+                },
+                "jigyoshoCd": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "事業所CD"
+                },
+                "jigyoshoName": {
+                  "type": "string",
+                  "title": "事業所名"
+                },
+                "sharyoCd": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "車輌CD"
+                },
+                "sharyoName": {
+                  "type": "string",
+                  "title": "車輌名"
+                },
+                "jomuinCd1": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "乗務員CD1"
+                },
+                "jomuinName1": {
+                  "type": "string",
+                  "title": "乗務員名１"
+                },
+                "taishoJomuinKbn": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "対象乗務員区分"
+                },
+                "kaishiDatetime": {
+                  "type": "string",
+                  "title": "開始日時"
+                },
+                "shuryoDatetime": {
+                  "type": "string",
+                  "title": "終了日時"
+                },
+                "ferryCompanyCd": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "フェリー会社CD"
+                },
+                "ferryCompanyName": {
+                  "type": "string",
+                  "title": "フェリー会社名"
+                },
+                "noribaCd": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "乗場CD"
+                },
+                "noribaName": {
+                  "type": "string",
+                  "title": "乗場名"
+                },
+                "bin": {
+                  "type": "string",
+                  "title": "便"
+                },
+                "oribaCd": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "降場CD"
+                },
+                "oribaName": {
+                  "type": "string",
+                  "title": "降場名"
+                },
+                "seisanKbn": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "精算区分"
+                },
+                "seisanKbnName": {
+                  "type": "string",
+                  "title": "精算区分名"
+                },
+                "hyojunRyokin": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "標準料金"
+                },
+                "keiyakuRyokin": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "契約料金"
+                },
+                "kosoShashuKbn": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "航送車種区分"
+                },
+                "kosoShashuKbnName": {
+                  "type": "string",
+                  "title": "航送車種区分名"
+                },
+                "minashiKyori": {
+                  "type": "integer",
+                  "format": "int32",
+                  "title": "見なし距離"
+                },
+                "ferrySrch": {
+                  "type": "string",
+                  "title": "ferry_srch"
+                }
+              },
+              "title": "フェリー運行データ"
+            }
+          }
+        ],
+        "tags": [
+          "DTakoFerryRowsService"
+        ]
+      }
+    },
+    "/api/v1/db/dtako-ferry-rows/{id}": {
+      "get": {
+        "summary": "フェリー運行データ取得",
+        "operationId": "DTakoFerryRowsService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiDTakoFerryRowsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "DTakoFerryRowsService"
+        ]
+      },
+      "delete": {
+        "summary": "フェリー運行データ削除",
+        "operationId": "DTakoFerryRowsService_Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "DTakoFerryRowsService"
+        ]
+      }
+    },
+    "/api/v1/db/dtako-uriage-keihi": {
+      "get": {
+        "summary": "経費精算データ一覧取得",
+        "operationId": "DTakoUriageKeihiService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListDTakoUriageKeihiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "dtakoRowId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "DTakoUriageKeihiService"
+        ]
+      },
+      "post": {
+        "summary": "経費精算データ作成",
+        "operationId": "DTakoUriageKeihiService_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiDTakoUriageKeihiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "dtakoUriageKeihi",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ryohiDTakoUriageKeihi"
+            }
+          }
+        ],
+        "tags": [
+          "DTakoUriageKeihiService"
+        ]
+      }
+    },
+    "/api/v1/db/dtako-uriage-keihi/{dtakoUriageKeihi.srchId}": {
+      "put": {
+        "summary": "経費精算データ更新",
+        "operationId": "DTakoUriageKeihiService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiDTakoUriageKeihiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "dtakoUriageKeihi.srchId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "dtakoUriageKeihi",
+            "description": "経費精算データ",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "datetime": {
+                  "type": "string",
+                  "title": "RFC3339形式"
+                },
+                "keihiC": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "price": {
+                  "type": "number",
+                  "format": "double"
+                },
+                "km": {
+                  "type": "number",
+                  "format": "double"
+                },
+                "dtakoRowId": {
+                  "type": "string"
+                },
+                "dtakoRowIdR": {
+                  "type": "string"
+                },
+                "startSrchId": {
+                  "type": "string"
+                },
+                "startSrchTime": {
+                  "type": "string"
+                },
+                "startSrchPlace": {
+                  "type": "string"
+                },
+                "startSrchTokui": {
+                  "type": "string"
+                },
+                "endSrchId": {
+                  "type": "string"
+                },
+                "endSrchTime": {
+                  "type": "string"
+                },
+                "endSrchPlace": {
+                  "type": "string"
+                },
+                "manual": {
+                  "type": "boolean"
+                }
+              },
+              "title": "経費精算データ"
+            }
+          }
+        ],
+        "tags": [
+          "DTakoUriageKeihiService"
+        ]
+      }
+    },
+    "/api/v1/db/dtako-uriage-keihi/{srchId}": {
+      "get": {
+        "summary": "経費精算データ取得",
+        "operationId": "DTakoUriageKeihiService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiDTakoUriageKeihiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "srchId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "datetime",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "keihiC",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "DTakoUriageKeihiService"
+        ]
+      },
+      "delete": {
+        "summary": "経費精算データ削除",
+        "operationId": "DTakoUriageKeihiService_Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "srchId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "datetime",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "keihiC",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "DTakoUriageKeihiService"
+        ]
+      }
+    },
+    "/api/v1/db/etc-meisai": {
+      "get": {
+        "summary": "ETC明細データ一覧取得",
+        "operationId": "ETCMeisaiService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListETCMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "hash",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "ETCMeisaiService"
+        ]
+      },
+      "post": {
+        "summary": "ETC明細データ作成",
+        "operationId": "ETCMeisaiService_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiETCMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "etcMeisai",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ryohiETCMeisai"
+            }
+          }
+        ],
+        "tags": [
+          "ETCMeisaiService"
+        ]
+      }
+    },
+    "/api/v1/db/etc-meisai-mapping": {
+      "get": {
+        "summary": "マッピング一覧取得",
+        "operationId": "ETCMeisaiMappingService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListETCMeisaiMappingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "etcMeisaiHash",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dtakoRowId",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "ETCMeisaiMappingService"
+        ]
+      },
+      "post": {
+        "summary": "マッピング作成",
+        "operationId": "ETCMeisaiMappingService_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiETCMeisaiMappingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "etcMeisaiMapping",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ryohiETCMeisaiMapping"
+            }
+          }
+        ],
+        "tags": [
+          "ETCMeisaiMappingService"
+        ]
+      }
+    },
+    "/api/v1/db/etc-meisai-mapping/by-hash/{etcMeisaiHash}": {
+      "get": {
+        "summary": "ハッシュからDTakoRowIDを取得",
+        "operationId": "ETCMeisaiMappingService_GetDTakoRowIDByHash",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiGetDTakoRowIDByHashResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "etcMeisaiHash",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ETCMeisaiMappingService"
+        ]
+      }
+    },
+    "/api/v1/db/etc-meisai-mapping/{etcMeisaiMapping.id}": {
+      "put": {
+        "summary": "マッピング更新",
+        "operationId": "ETCMeisaiMappingService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiETCMeisaiMappingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "etcMeisaiMapping.id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "etcMeisaiMapping",
+            "description": "ETC明細マッピングデータ",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "etcMeisaiHash": {
+                  "type": "string"
+                },
+                "dtakoRowId": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "createdBy": {
+                  "type": "string"
+                },
+                "notes": {
+                  "type": "string"
+                }
+              },
+              "title": "ETC明細マッピングデータ"
+            }
+          }
+        ],
+        "tags": [
+          "ETCMeisaiMappingService"
+        ]
+      }
+    },
+    "/api/v1/db/etc-meisai-mapping/{id}": {
+      "get": {
+        "summary": "マッピング取得",
+        "operationId": "ETCMeisaiMappingService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiETCMeisaiMappingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ETCMeisaiMappingService"
+        ]
+      },
+      "delete": {
+        "summary": "マッピング削除",
+        "operationId": "ETCMeisaiMappingService_Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ETCMeisaiMappingService"
+        ]
+      }
+    },
+    "/api/v1/db/etc-meisai/{etcMeisai.id}": {
+      "put": {
+        "summary": "ETC明細データ更新",
+        "operationId": "ETCMeisaiService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiETCMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "etcMeisai.id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "etcMeisai",
+            "description": "ETC明細データ",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dateFr": {
+                  "type": "string"
+                },
+                "dateTo": {
+                  "type": "string"
+                },
+                "dateToDate": {
+                  "type": "string"
+                },
+                "icFr": {
+                  "type": "string"
+                },
+                "icTo": {
+                  "type": "string"
+                },
+                "priceBf": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "descount": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "price": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "shashu": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "carIdNum": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "etcNum": {
+                  "type": "string"
+                },
+                "detail": {
+                  "type": "string"
+                },
+                "hash": {
+                  "type": "string"
+                }
+              },
+              "title": "ETC明細データ"
+            }
+          }
+        ],
+        "tags": [
+          "ETCMeisaiService"
+        ]
+      }
+    },
+    "/api/v1/db/etc-meisai/{id}": {
+      "get": {
+        "summary": "ETC明細データ取得",
+        "operationId": "ETCMeisaiService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiETCMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ETCMeisaiService"
+        ]
+      },
+      "delete": {
+        "summary": "ETC明細データ削除",
+        "operationId": "ETCMeisaiService_Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiEmpty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "ETCMeisaiService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "ryohiDTakoFerryRows": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "unkoNo": {
+          "type": "string",
+          "title": "運行NO"
+        },
+        "unkoDate": {
+          "type": "string",
+          "title": "運行日"
+        },
+        "yomitoriDate": {
+          "type": "string",
+          "title": "読取日"
+        },
+        "jigyoshoCd": {
+          "type": "integer",
+          "format": "int32",
+          "title": "事業所CD"
+        },
+        "jigyoshoName": {
+          "type": "string",
+          "title": "事業所名"
+        },
+        "sharyoCd": {
+          "type": "integer",
+          "format": "int32",
+          "title": "車輌CD"
+        },
+        "sharyoName": {
+          "type": "string",
+          "title": "車輌名"
+        },
+        "jomuinCd1": {
+          "type": "integer",
+          "format": "int32",
+          "title": "乗務員CD1"
+        },
+        "jomuinName1": {
+          "type": "string",
+          "title": "乗務員名１"
+        },
+        "taishoJomuinKbn": {
+          "type": "integer",
+          "format": "int32",
+          "title": "対象乗務員区分"
+        },
+        "kaishiDatetime": {
+          "type": "string",
+          "title": "開始日時"
+        },
+        "shuryoDatetime": {
+          "type": "string",
+          "title": "終了日時"
+        },
+        "ferryCompanyCd": {
+          "type": "integer",
+          "format": "int32",
+          "title": "フェリー会社CD"
+        },
+        "ferryCompanyName": {
+          "type": "string",
+          "title": "フェリー会社名"
+        },
+        "noribaCd": {
+          "type": "integer",
+          "format": "int32",
+          "title": "乗場CD"
+        },
+        "noribaName": {
+          "type": "string",
+          "title": "乗場名"
+        },
+        "bin": {
+          "type": "string",
+          "title": "便"
+        },
+        "oribaCd": {
+          "type": "integer",
+          "format": "int32",
+          "title": "降場CD"
+        },
+        "oribaName": {
+          "type": "string",
+          "title": "降場名"
+        },
+        "seisanKbn": {
+          "type": "integer",
+          "format": "int32",
+          "title": "精算区分"
+        },
+        "seisanKbnName": {
+          "type": "string",
+          "title": "精算区分名"
+        },
+        "hyojunRyokin": {
+          "type": "integer",
+          "format": "int32",
+          "title": "標準料金"
+        },
+        "keiyakuRyokin": {
+          "type": "integer",
+          "format": "int32",
+          "title": "契約料金"
+        },
+        "kosoShashuKbn": {
+          "type": "integer",
+          "format": "int32",
+          "title": "航送車種区分"
+        },
+        "kosoShashuKbnName": {
+          "type": "string",
+          "title": "航送車種区分名"
+        },
+        "minashiKyori": {
+          "type": "integer",
+          "format": "int32",
+          "title": "見なし距離"
+        },
+        "ferrySrch": {
+          "type": "string",
+          "title": "ferry_srch"
+        }
+      },
+      "title": "フェリー運行データ"
+    },
+    "ryohiDTakoFerryRowsResponse": {
+      "type": "object",
+      "properties": {
+        "dtakoFerryRows": {
+          "$ref": "#/definitions/ryohiDTakoFerryRows"
+        }
+      }
+    },
+    "ryohiDTakoUriageKeihi": {
+      "type": "object",
+      "properties": {
+        "srchId": {
+          "type": "string"
+        },
+        "datetime": {
+          "type": "string",
+          "title": "RFC3339形式"
+        },
+        "keihiC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "price": {
+          "type": "number",
+          "format": "double"
+        },
+        "km": {
+          "type": "number",
+          "format": "double"
+        },
+        "dtakoRowId": {
+          "type": "string"
+        },
+        "dtakoRowIdR": {
+          "type": "string"
+        },
+        "startSrchId": {
+          "type": "string"
+        },
+        "startSrchTime": {
+          "type": "string"
+        },
+        "startSrchPlace": {
+          "type": "string"
+        },
+        "startSrchTokui": {
+          "type": "string"
+        },
+        "endSrchId": {
+          "type": "string"
+        },
+        "endSrchTime": {
+          "type": "string"
+        },
+        "endSrchPlace": {
+          "type": "string"
+        },
+        "manual": {
+          "type": "boolean"
+        }
+      },
+      "title": "経費精算データ"
+    },
+    "ryohiDTakoUriageKeihiResponse": {
+      "type": "object",
+      "properties": {
+        "dtakoUriageKeihi": {
+          "$ref": "#/definitions/ryohiDTakoUriageKeihi"
+        }
+      }
+    },
+    "ryohiETCMeisai": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "dateFr": {
+          "type": "string"
+        },
+        "dateTo": {
+          "type": "string"
+        },
+        "dateToDate": {
+          "type": "string"
+        },
+        "icFr": {
+          "type": "string"
+        },
+        "icTo": {
+          "type": "string"
+        },
+        "priceBf": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "descount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "shashu": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "carIdNum": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "etcNum": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "hash": {
+          "type": "string"
+        }
+      },
+      "title": "ETC明細データ"
+    },
+    "ryohiETCMeisaiMapping": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "etcMeisaiHash": {
+          "type": "string"
+        },
+        "dtakoRowId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "title": "ETC明細マッピングデータ"
+    },
+    "ryohiETCMeisaiMappingResponse": {
+      "type": "object",
+      "properties": {
+        "etcMeisaiMapping": {
+          "$ref": "#/definitions/ryohiETCMeisaiMapping"
+        }
+      }
+    },
+    "ryohiETCMeisaiResponse": {
+      "type": "object",
+      "properties": {
+        "etcMeisai": {
+          "$ref": "#/definitions/ryohiETCMeisai"
+        }
+      }
+    },
+    "ryohiEmpty": {
+      "type": "object",
+      "title": "共通メッセージ"
+    },
+    "ryohiGetDTakoRowIDByHashResponse": {
+      "type": "object",
+      "properties": {
+        "dtakoRowIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ryohiListDTakoFerryRowsResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ryohiDTakoFerryRows"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ryohiListDTakoUriageKeihiResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ryohiDTakoUriageKeihi"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ryohiListETCMeisaiMappingResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ryohiETCMeisaiMapping"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ryohiListETCMeisaiResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ryohiETCMeisai"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}
