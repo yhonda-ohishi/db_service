@@ -48,9 +48,7 @@ func (e *ETCMeisai) Validate() error {
 	if e.DateToDate.IsZero() {
 		return ErrInvalidDateToDate
 	}
-	if e.IcFr == "" {
-		return ErrInvalidIcFr
-	}
+	// IcFrは空文字列を許可（実データの22.3%が空文字列）
 	if e.IcTo == "" {
 		return ErrInvalidIcTo
 	}
