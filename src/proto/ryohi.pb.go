@@ -184,10 +184,10 @@ type ETCMeisai struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	DateFr        *string                `protobuf:"bytes,2,opt,name=date_fr,json=dateFr,proto3,oneof" json:"date_fr,omitempty"`
-	DateTo        string                 `protobuf:"bytes,3,opt,name=date_to,json=dateTo,proto3" json:"date_to,omitempty"`
-	DateToDate    string                 `protobuf:"bytes,4,opt,name=date_to_date,json=dateToDate,proto3" json:"date_to_date,omitempty"`
-	IcFr          string                 `protobuf:"bytes,5,opt,name=ic_fr,json=icFr,proto3" json:"ic_fr,omitempty"`
-	IcTo          string                 `protobuf:"bytes,6,opt,name=ic_to,json=icTo,proto3" json:"ic_to,omitempty"`
+	DateTo        string                 `protobuf:"bytes,3,opt,name=date_to,json=dateTo,proto3" json:"date_to,omitempty"`               // RFC3339形式推奨 (例: 2025-10-18T00:00:00Z)
+	DateToDate    string                 `protobuf:"bytes,4,opt,name=date_to_date,json=dateToDate,proto3" json:"date_to_date,omitempty"` // YYYY-MM-DD形式 (例: 2025-10-18)
+	IcFr          *string                `protobuf:"bytes,5,opt,name=ic_fr,json=icFr,proto3,oneof" json:"ic_fr,omitempty"`               // 入口IC不明の場合は省略可（実データの22.3%が空）
+	IcTo          string                 `protobuf:"bytes,6,opt,name=ic_to,json=icTo,proto3" json:"ic_to,omitempty"`                     // 出口IC（必須）
 	PriceBf       *int32                 `protobuf:"varint,7,opt,name=price_bf,json=priceBf,proto3,oneof" json:"price_bf,omitempty"`
 	Descount      *int32                 `protobuf:"varint,8,opt,name=descount,proto3,oneof" json:"descount,omitempty"`
 	Price         int32                  `protobuf:"varint,9,opt,name=price,proto3" json:"price,omitempty"`
@@ -259,8 +259,8 @@ func (x *ETCMeisai) GetDateToDate() string {
 }
 
 func (x *ETCMeisai) GetIcFr() string {
-	if x != nil {
-		return x.IcFr
+	if x != nil && x.IcFr != nil {
+		return *x.IcFr
 	}
 	return ""
 }
@@ -2258,27 +2258,28 @@ const file_ryohi_proto_rawDesc = "" +
 	"\f_end_srch_idB\x10\n" +
 	"\x0e_end_srch_timeB\x11\n" +
 	"\x0f_end_srch_placeB\t\n" +
-	"\a_manual\"\xba\x03\n" +
+	"\a_manual\"\xc9\x03\n" +
 	"\tETCMeisai\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x1c\n" +
 	"\adate_fr\x18\x02 \x01(\tH\x00R\x06dateFr\x88\x01\x01\x12\x17\n" +
 	"\adate_to\x18\x03 \x01(\tR\x06dateTo\x12 \n" +
 	"\fdate_to_date\x18\x04 \x01(\tR\n" +
-	"dateToDate\x12\x13\n" +
-	"\x05ic_fr\x18\x05 \x01(\tR\x04icFr\x12\x13\n" +
+	"dateToDate\x12\x18\n" +
+	"\x05ic_fr\x18\x05 \x01(\tH\x01R\x04icFr\x88\x01\x01\x12\x13\n" +
 	"\x05ic_to\x18\x06 \x01(\tR\x04icTo\x12\x1e\n" +
-	"\bprice_bf\x18\a \x01(\x05H\x01R\apriceBf\x88\x01\x01\x12\x1f\n" +
-	"\bdescount\x18\b \x01(\x05H\x02R\bdescount\x88\x01\x01\x12\x14\n" +
+	"\bprice_bf\x18\a \x01(\x05H\x02R\apriceBf\x88\x01\x01\x12\x1f\n" +
+	"\bdescount\x18\b \x01(\x05H\x03R\bdescount\x88\x01\x01\x12\x14\n" +
 	"\x05price\x18\t \x01(\x05R\x05price\x12\x16\n" +
 	"\x06shashu\x18\n" +
 	" \x01(\x05R\x06shashu\x12!\n" +
 	"\n" +
-	"car_id_num\x18\v \x01(\x05H\x03R\bcarIdNum\x88\x01\x01\x12\x17\n" +
+	"car_id_num\x18\v \x01(\x05H\x04R\bcarIdNum\x88\x01\x01\x12\x17\n" +
 	"\aetc_num\x18\f \x01(\tR\x06etcNum\x12\x1b\n" +
-	"\x06detail\x18\r \x01(\tH\x04R\x06detail\x88\x01\x01\x12\x12\n" +
+	"\x06detail\x18\r \x01(\tH\x05R\x06detail\x88\x01\x01\x12\x12\n" +
 	"\x04hash\x18\x0e \x01(\tR\x04hashB\n" +
 	"\n" +
-	"\b_date_frB\v\n" +
+	"\b_date_frB\b\n" +
+	"\x06_ic_frB\v\n" +
 	"\t_price_bfB\v\n" +
 	"\t_descountB\r\n" +
 	"\v_car_id_numB\t\n" +

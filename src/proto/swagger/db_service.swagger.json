@@ -965,16 +965,20 @@
                   "type": "string"
                 },
                 "dateTo": {
-                  "type": "string"
+                  "type": "string",
+                  "title": "RFC3339形式推奨 (例: 2025-10-18T00:00:00Z)"
                 },
                 "dateToDate": {
-                  "type": "string"
+                  "type": "string",
+                  "title": "YYYY-MM-DD形式 (例: 2025-10-18)"
                 },
                 "icFr": {
-                  "type": "string"
+                  "type": "string",
+                  "title": "入口IC不明の場合は省略可（実データの22.3%が空）"
                 },
                 "icTo": {
-                  "type": "string"
+                  "type": "string",
+                  "title": "出口IC（必須）"
                 },
                 "priceBf": {
                   "type": "integer",
@@ -1319,16 +1323,20 @@
           "type": "string"
         },
         "dateTo": {
-          "type": "string"
+          "type": "string",
+          "title": "RFC3339形式推奨 (例: 2025-10-18T00:00:00Z)"
         },
         "dateToDate": {
-          "type": "string"
+          "type": "string",
+          "title": "YYYY-MM-DD形式 (例: 2025-10-18)"
         },
         "icFr": {
-          "type": "string"
+          "type": "string",
+          "title": "入口IC不明の場合は省略可（実データの22.3%が空）"
         },
         "icTo": {
-          "type": "string"
+          "type": "string",
+          "title": "出口IC（必須）"
         },
         "priceBf": {
           "type": "integer",

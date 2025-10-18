@@ -179,10 +179,10 @@ message DTakoUriageKeihi {
 message ETCMeisai {
   int64 id = 1;
   optional string date_fr = 2;
-  string date_to = 3;
-  string date_to_date = 4;
-  string ic_fr = 5;
-  string ic_to = 6;
+  string date_to = 3;  // RFC3339形式推奨 (例: 2025-10-18T00:00:00Z)
+  string date_to_date = 4;  // YYYY-MM-DD形式 (例: 2025-10-18)
+  optional string ic_fr = 5;  // 入口IC不明の場合は省略可（実データの22.3%が空）
+  string ic_to = 6;  // 出口IC（必須）
   optional int32 price_bf = 7;
   optional int32 descount = 8;
   int32 price = 9;
