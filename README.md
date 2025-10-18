@@ -99,6 +99,50 @@ make test-coverage
 make test-integration
 ```
 
+## 他のプロジェクトからdb_serviceを利用する
+
+### インストール
+
+```bash
+go get github.com/yhonda-ohishi/db_service
+```
+
+### 同一プロセスで統合（推奨）
+
+db_serviceを他のgRPCサーバーと同じプロセス・ポートで統合できます:
+
+```go
+import (
+    "google.golang.org/grpc"
+    "github.com/yhonda-ohishi/db_service/src/registry"
+)
+
+func main() {
+    // 既存のgRPCサーバーを作成
+    grpcServer := grpc.NewServer()
+
+    // 自分のサービスを登録
+    pb.RegisterYourServiceServer(grpcServer, yourService)
+
+    // db_serviceのサービスを自動登録（1行で完了！）
+    registry.Register(grpcServer)
+
+    // サーバーを起動
+    listener, _ := net.Listen("tcp", ":50051")
+    grpcServer.Serve(listener)
+}
+```
+
+### 新しいサービスの追加時の自動対応
+
+db_serviceに新しいサービスが追加された場合:
+
+1. `src/registry/registry.go`の`ServiceRegistry`構造体に新しいサービスを追加
+2. `NewServiceRegistry()`で新しいリポジトリとサービスを初期化
+3. `RegisterAll()`で新しいサービスを登録
+
+これにより、他のプロジェクト（desktop-server等）では**コード変更不要**で新しいサービスが利用可能になります。
+
 ## API仕様
 
 ### DTakoUriageKeihiService
