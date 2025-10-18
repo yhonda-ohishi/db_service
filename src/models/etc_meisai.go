@@ -52,15 +52,7 @@ func (e *ETCMeisai) Validate() error {
 	if e.IcTo == "" {
 		return ErrInvalidIcTo
 	}
-	if e.Price < 0 {
-		return ErrInvalidPrice
-	}
-	if e.PriceBf != nil && *e.PriceBf < 0 {
-		return ErrInvalidPriceBf
-	}
-	if e.Descount != nil && *e.Descount < 0 {
-		return ErrInvalidDescount
-	}
+	// Price, PriceBf, Descountは負の値を許可（返金・調整で発生する可能性）
 	if e.Shashu <= 0 {
 		return ErrInvalidShashu
 	}
