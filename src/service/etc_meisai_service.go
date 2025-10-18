@@ -37,7 +37,7 @@ func (s *ETCMeisaiService) Create(ctx context.Context, req *proto.CreateETCMeisa
 	model := &models.ETCMeisai{
 		DateTo:     dateTo,
 		DateToDate: dateToDate,
-		IcFr:       req.EtcMeisai.IcFr,
+		IcFr:       derefString(req.EtcMeisai.IcFr),
 		IcTo:       req.EtcMeisai.IcTo,
 		Price:      req.EtcMeisai.Price,
 		Shashu:     req.EtcMeisai.Shashu,
@@ -172,6 +172,22 @@ func (s *ETCMeisaiService) List(ctx context.Context, req *proto.ListETCMeisaiReq
 	}, nil
 }
 
+// derefString *stringをstringに変換（nilの場合は空文字列）
+func derefString(s *string) string {
+	if s == nil {
+		return ""
+	}
+	return *s
+}
+
+// stringPtr stringを*stringに変換（空文字列の場合はnil）
+func stringPtr(s string) *string {
+	if s == "" {
+		return nil
+	}
+	return &s
+}
+
 // etcProtoToModel ProtoからModelへの変換
 func etcProtoToModel(p *proto.ETCMeisai) *models.ETCMeisai {
 	dateTo, _ := time.Parse(time.RFC3339, p.DateTo)
@@ -181,7 +197,7 @@ func etcProtoToModel(p *proto.ETCMeisai) *models.ETCMeisai {
 		ID:         p.Id,
 		DateTo:     dateTo,
 		DateToDate: dateToDate,
-		IcFr:       p.IcFr,
+		IcFr:       derefString(p.IcFr),
 		IcTo:       p.IcTo,
 		Price:      p.Price,
 		Shashu:     p.Shashu,
@@ -215,7 +231,7 @@ func etcModelToProto(m *models.ETCMeisai) *proto.ETCMeisai {
 		Id:         m.ID,
 		DateTo:     m.DateTo.Format(time.RFC3339),
 		DateToDate: m.DateToDate.Format("2006-01-02"),
-		IcFr:       m.IcFr,
+		IcFr:       stringPtr(m.IcFr),
 		IcTo:       m.IcTo,
 		Price:      m.Price,
 		Shashu:     m.Shashu,
