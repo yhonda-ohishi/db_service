@@ -44,7 +44,13 @@ func (s *DTakoRowsService) List(ctx context.Context, req *proto.ListDTakoRowsReq
 		limit = 100
 	}
 
-	rows, totalCount, err := s.repo.GetAll(limit, offset)
+	// order_byパラメータを取得（nilの場合は空文字列）
+	orderBy := ""
+	if req.OrderBy != nil {
+		orderBy = *req.OrderBy
+	}
+
+	rows, totalCount, err := s.repo.GetAll(limit, offset, orderBy)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "failed to list rows: %v", err)
 	}

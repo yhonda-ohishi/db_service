@@ -14,7 +14,7 @@ type DTakoFerryRowsProdRepository interface {
 
 // DTakoRowsRepository インターフェース
 type DTakoRowsRepository interface {
-	GetAll(limit, offset int) ([]*models.DTakoRows, int64, error)
+	GetAll(limit, offset int, orderBy string) ([]*models.DTakoRows, int64, error)
 	GetByID(id string) (*models.DTakoRows, error)
 	GetByOperationNo(operationNo string) ([]*models.DTakoRows, error)
 }
@@ -87,7 +87,7 @@ func NewDTakoRowsRepository(prodDB *config.ProdDatabase) DTakoRowsRepository {
 }
 
 // GetAll 全運行データを取得
-func (r *DTakoRowsRepositoryImpl) GetAll(limit, offset int) ([]*models.DTakoRows, int64, error) {
+func (r *DTakoRowsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*models.DTakoRows, int64, error) {
 	var rows []*models.DTakoRows
 	var totalCount int64
 
@@ -96,8 +96,13 @@ func (r *DTakoRowsRepositoryImpl) GetAll(limit, offset int) ([]*models.DTakoRows
 		return nil, 0, err
 	}
 
+	// デフォルトのorder byを設定
+	if orderBy == "" {
+		orderBy = "読取日 DESC"
+	}
+
 	// データ取得
-	if err := r.prodDB.DB.Limit(limit).Offset(offset).Order("読取日 DESC").Find(&rows).Error; err != nil {
+	if err := r.prodDB.DB.Limit(limit).Offset(offset).Order(orderBy).Find(&rows).Error; err != nil {
 		return nil, 0, err
 	}
 

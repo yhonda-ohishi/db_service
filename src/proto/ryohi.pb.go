@@ -3316,6 +3316,7 @@ type ListDTakoEventsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	OrderBy       *string                `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3,oneof" json:"order_by,omitempty"` // 例: "開始日時 DESC", "id ASC"
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3362,6 +3363,13 @@ func (x *ListDTakoEventsRequest) GetOffset() int32 {
 		return x.Offset
 	}
 	return 0
+}
+
+func (x *ListDTakoEventsRequest) GetOrderBy() string {
+	if x != nil && x.OrderBy != nil {
+		return *x.OrderBy
+	}
+	return ""
 }
 
 type DTakoEventsResponse struct {
@@ -3553,6 +3561,7 @@ type ListDTakoRowsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	OrderBy       *string                `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3,oneof" json:"order_by,omitempty"` // 例: "読取日 DESC", "id ASC"
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3599,6 +3608,13 @@ func (x *ListDTakoRowsRequest) GetOffset() int32 {
 		return x.Offset
 	}
 	return 0
+}
+
+func (x *ListDTakoRowsRequest) GetOrderBy() string {
+	if x != nil && x.OrderBy != nil {
+		return *x.OrderBy
+	}
+	return ""
 }
 
 type DTakoRowsResponse struct {
@@ -4781,10 +4797,12 @@ const file_ryohi_proto_rawDesc = "" +
 	"\x15GetDTakoEventsRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\"G\n" +
 	"\"GetDTakoEventsByOperationNoRequest\x12!\n" +
-	"\foperation_no\x18\x01 \x01(\tR\voperationNo\"F\n" +
+	"\foperation_no\x18\x01 \x01(\tR\voperationNo\"s\n" +
 	"\x16ListDTakoEventsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
-	"\x06offset\x18\x02 \x01(\x05R\x06offset\"L\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
+	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
+	"\t_order_by\"L\n" +
 	"\x13DTakoEventsResponse\x125\n" +
 	"\fdtako_events\x18\x01 \x01(\v2\x12.ryohi.DTakoEventsR\vdtakoEvents\"d\n" +
 	"\x17ListDTakoEventsResponse\x12(\n" +
@@ -4794,10 +4812,12 @@ const file_ryohi_proto_rawDesc = "" +
 	"\x13GetDTakoRowsRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"E\n" +
 	" GetDTakoRowsByOperationNoRequest\x12!\n" +
-	"\foperation_no\x18\x01 \x01(\tR\voperationNo\"D\n" +
+	"\foperation_no\x18\x01 \x01(\tR\voperationNo\"q\n" +
 	"\x14ListDTakoRowsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
-	"\x06offset\x18\x02 \x01(\x05R\x06offset\"D\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
+	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
+	"\t_order_by\"D\n" +
 	"\x11DTakoRowsResponse\x12/\n" +
 	"\n" +
 	"dtako_rows\x18\x01 \x01(\v2\x10.ryohi.DTakoRowsR\tdtakoRows\"`\n" +
@@ -5118,6 +5138,8 @@ func file_ryohi_proto_init() {
 	file_ryohi_proto_msgTypes[35].OneofWrappers = []any{}
 	file_ryohi_proto_msgTypes[36].OneofWrappers = []any{}
 	file_ryohi_proto_msgTypes[37].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[45].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[50].OneofWrappers = []any{}
 	file_ryohi_proto_msgTypes[57].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

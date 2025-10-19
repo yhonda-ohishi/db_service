@@ -627,6 +627,7 @@ message GetDTakoEventsByOperationNoRequest {
 message ListDTakoEventsRequest {
   int32 limit = 1;
   int32 offset = 2;
+  optional string order_by = 3;  // 例: "開始日時 DESC", "id ASC"
 }
 
 message DTakoEventsResponse {
@@ -650,6 +651,7 @@ message GetDTakoRowsByOperationNoRequest {
 message ListDTakoRowsRequest {
   int32 limit = 1;
   int32 offset = 2;
+  optional string order_by = 3;  // 例: "読取日 DESC", "id ASC"
 }
 
 message DTakoRowsResponse {

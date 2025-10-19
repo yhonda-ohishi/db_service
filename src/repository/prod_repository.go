@@ -26,7 +26,7 @@ type DTakoCarsRepository interface {
 
 // DTakoEventsRepository インターフェース
 type DTakoEventsRepository interface {
-	GetAll(limit, offset int) ([]*models.DTakoEvents, int64, error)
+	GetAll(limit, offset int, orderBy string) ([]*models.DTakoEvents, int64, error)
 	GetByID(id int64) (*models.DTakoEvents, error)
 	GetByOperationNo(operationNo string) ([]*models.DTakoEvents, error)
 }
@@ -92,7 +92,7 @@ func NewDTakoEventsRepository(prodDB *config.ProdDatabase) DTakoEventsRepository
 }
 
 // GetAll 全イベント情報を取得
-func (r *DTakoEventsRepositoryImpl) GetAll(limit, offset int) ([]*models.DTakoEvents, int64, error) {
+func (r *DTakoEventsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*models.DTakoEvents, int64, error) {
 	var events []*models.DTakoEvents
 	var totalCount int64
 
@@ -101,8 +101,13 @@ func (r *DTakoEventsRepositoryImpl) GetAll(limit, offset int) ([]*models.DTakoEv
 		return nil, 0, err
 	}
 
+	// デフォルトのorder byを設定
+	if orderBy == "" {
+		orderBy = "開始日時 DESC"
+	}
+
 	// データ取得
-	if err := r.prodDB.DB.Limit(limit).Offset(offset).Order("開始日時 DESC").Find(&events).Error; err != nil {
+	if err := r.prodDB.DB.Limit(limit).Offset(offset).Order(orderBy).Find(&events).Error; err != nil {
 		return nil, 0, err
 	}
 
