@@ -385,5 +385,278 @@ message GetDTakoRowIDByHashResponse {
   repeated string dtako_row_ids = 1;
 }
 
+// DTakoCarsサービス - 車輌マスタ管理（本番DB、読み取り専用）
+service DTakoCarsService {
+  // 車輌情報取得
+  rpc Get(GetDTakoCarsRequest) returns (DTakoCarsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-cars/{id}"
+    };
+  }
+  // 車輌情報一覧取得
+  rpc List(ListDTakoCarsRequest) returns (ListDTakoCarsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-cars"
+    };
+  }
+  // 車輌CDで車輌情報取得
+  rpc GetByCarCode(GetDTakoCarsByCarCodeRequest) returns (DTakoCarsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-cars/by-car-code/{car_code}"
+    };
+  }
+}
+
+// DTakoEventsサービス - イベント情報管理（本番DB、読み取り専用）
+service DTakoEventsService {
+  // イベント情報取得
+  rpc Get(GetDTakoEventsRequest) returns (DTakoEventsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-events/{id}"
+    };
+  }
+  // イベント情報一覧取得
+  rpc List(ListDTakoEventsRequest) returns (ListDTakoEventsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-events"
+    };
+  }
+  // 運行NOでイベント情報取得
+  rpc GetByOperationNo(GetDTakoEventsByOperationNoRequest) returns (ListDTakoEventsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-events/by-operation-no/{operation_no}"
+    };
+  }
+}
+
+// DTakoRowsサービス - 運行データ管理（本番DB、読み取り専用）
+service DTakoRowsService {
+  // 運行データ取得
+  rpc Get(GetDTakoRowsRequest) returns (DTakoRowsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-rows/{id}"
+    };
+  }
+  // 運行データ一覧取得
+  rpc List(ListDTakoRowsRequest) returns (ListDTakoRowsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-rows"
+    };
+  }
+  // 運行NOで運行データ取得
+  rpc GetByOperationNo(GetDTakoRowsByOperationNoRequest) returns (ListDTakoRowsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-rows/by-operation-no/{operation_no}"
+    };
+  }
+}
+
+// ETCNumサービス - ETCカード番号マスタ管理（本番DB、読み取り専用）
+service ETCNumService {
+  // ETCカード番号一覧取得
+  rpc List(ListETCNumRequest) returns (ListETCNumResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/etc-num"
+    };
+  }
+  // ETCカード番号で取得
+  rpc GetByETCCardNum(GetETCNumByETCCardNumRequest) returns (ListETCNumResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/etc-num/by-etc-card-num/{etc_card_num}"
+    };
+  }
+  // 車輌IDで取得
+  rpc GetByCarID(GetETCNumByCarIDRequest) returns (ListETCNumResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/etc-num/by-car-id/{car_id}"
+    };
+  }
+}
+
+// 車輌マスタデータ（本番DB）
+message DTakoCars {
+  int32 id = 1;
+  string car_code = 2;
+  string car_cc = 3;
+  string car_name = 4;
+  int32 belong_office_code = 5;
+  int32 highway_car_type = 6;
+  int32 ferry_car_type = 7;
+  int32 evaluation_class_code = 8;
+  int32 idling_type = 9;
+  int32 max_load_weight_kg = 10;
+  int32 car_class1 = 11;
+  int32 car_class2 = 12;
+  int32 car_class3 = 13;
+  int32 car_class4 = 14;
+  int32 car_class5 = 15;
+  int32 operation_type = 16;
+}
+
+// イベント情報データ（本番DB）
+message DTakoEvents {
+  int64 id = 1;
+  string operation_no = 2;
+  string read_date = 3;  // RFC3339形式
+  int32 car_code = 4;
+  string car_cc = 5;
+  int32 target_driver_type = 6;
+  int32 driver_code1 = 7;
+  int32 target_driver_code = 8;
+  string start_datetime = 9;  // RFC3339形式
+  string end_datetime = 10;  // RFC3339形式
+  optional int32 event_code = 11;
+  string event_name = 12;
+  double start_mileage = 13;
+  double end_mileage = 14;
+  int32 section_time = 15;
+  double section_distance = 16;
+  optional int32 start_city_code = 17;
+  string start_city_name = 18;
+  optional int32 end_city_code = 19;
+  string end_city_name = 20;
+  optional int32 start_place_code = 21;
+  string start_place_name = 22;
+  optional int32 end_place_code = 23;
+  string end_place_name = 24;
+  optional int32 start_gps_valid = 25;
+  optional int64 start_gps_latitude = 26;
+  optional int64 start_gps_longitude = 27;
+  optional int32 end_gps_valid = 28;
+  optional int64 end_gps_latitude = 29;
+  optional int64 end_gps_longitude = 30;
+}
+
+// 運行データ（本番DB）
+message DTakoRows {
+  string id = 1;
+  string operation_no = 2;
+  string read_date = 3;  // RFC3339形式
+  string operation_date = 4;  // RFC3339形式
+  int32 car_code = 5;
+  string car_cc = 6;
+  optional int32 driver_code1 = 7;
+  int32 target_driver_type = 8;
+  int32 target_driver_code = 9;
+  string start_work_datetime = 10;  // RFC3339形式
+  string end_work_datetime = 11;  // RFC3339形式
+  string departure_datetime = 12;  // RFC3339形式
+  string return_datetime = 13;  // RFC3339形式
+  double departure_meter = 14;
+  double return_meter = 15;
+  double total_distance = 16;
+  optional double loaded_distance = 17;
+  optional string destination_city_name = 18;
+  optional string destination_place_name = 19;
+  int32 general_road_drive_time = 20;
+  int32 highway_drive_time = 21;
+  int32 bypass_drive_time = 22;
+  int32 loaded_drive_time = 23;
+  int32 empty_drive_time = 24;
+  int32 work1_time = 25;
+  int32 work2_time = 26;
+  int32 work3_time = 27;
+  int32 work4_time = 28;
+  double status1_distance = 29;
+  int32 status1_time = 30;
+}
+
+// ETCカード番号データ（本番DB）
+message ETCNum {
+  string etc_card_num = 1;
+  string car_id = 2;
+  optional string start_date_time = 3;  // RFC3339形式
+  optional string due_date_time = 4;  // RFC3339形式
+  optional bool to_change = 5;
+}
+
+// DTakoCars用リクエスト/レスポンス
+message GetDTakoCarsRequest {
+  int32 id = 1;
+}
+
+message GetDTakoCarsByCarCodeRequest {
+  string car_code = 1;
+}
+
+message ListDTakoCarsRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message DTakoCarsResponse {
+  DTakoCars dtako_cars = 1;
+}
+
+message ListDTakoCarsResponse {
+  repeated DTakoCars items = 1;
+  int32 total_count = 2;
+}
+
+// DTakoEvents用リクエスト/レスポンス
+message GetDTakoEventsRequest {
+  int64 id = 1;
+}
+
+message GetDTakoEventsByOperationNoRequest {
+  string operation_no = 1;
+}
+
+message ListDTakoEventsRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message DTakoEventsResponse {
+  DTakoEvents dtako_events = 1;
+}
+
+message ListDTakoEventsResponse {
+  repeated DTakoEvents items = 1;
+  int32 total_count = 2;
+}
+
+// DTakoRows用リクエスト/レスポンス
+message GetDTakoRowsRequest {
+  string id = 1;
+}
+
+message GetDTakoRowsByOperationNoRequest {
+  string operation_no = 1;
+}
+
+message ListDTakoRowsRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message DTakoRowsResponse {
+  DTakoRows dtako_rows = 1;
+}
+
+message ListDTakoRowsResponse {
+  repeated DTakoRows items = 1;
+  int32 total_count = 2;
+}
+
+// ETCNum用リクエスト/レスポンス
+message GetETCNumByETCCardNumRequest {
+  string etc_card_num = 1;
+}
+
+message GetETCNumByCarIDRequest {
+  string car_id = 1;
+}
+
+message ListETCNumRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message ListETCNumResponse {
+  repeated ETCNum items = 1;
+  int32 total_count = 2;
+}
+
 // 共通メッセージ
 message Empty {}

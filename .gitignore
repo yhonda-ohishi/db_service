@@ -27,4 +27,4 @@ vendor/
 # Note: *.pb.go files are committed because other projects depend on them
 # Only ignore pb.go files outside of src/proto directory if needed
 # *.pb.go
-# *_grpc.pb.go
+# *_grpc.pb.gogithub.com/

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "ryohi.proto",
+    "title": "src/proto/ryohi.proto",
     "version": "version not set"
   },
   "tags": [
@@ -16,18 +16,6 @@
     },
     {
       "name": "ETCMeisaiMappingService"
-    },
-    {
-      "name": "DTakoCarsService"
-    },
-    {
-      "name": "DTakoEventsService"
-    },
-    {
-      "name": "DTakoRowsService"
-    },
-    {
-      "name": "ETCNumService"
     }
   ],
   "consumes": [
@@ -37,210 +25,6 @@
     "application/json"
   ],
   "paths": {
-    "/api/v1/db/dtako-cars": {
-      "get": {
-        "summary": "車輌情報一覧取得",
-        "operationId": "DTakoCarsService_List",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiListDTakoCarsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "DTakoCarsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-cars/by-car-code/{carCode}": {
-      "get": {
-        "summary": "車輌CDで車輌情報取得",
-        "operationId": "DTakoCarsService_GetByCarCode",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiDTakoCarsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "carCode",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "DTakoCarsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-cars/{id}": {
-      "get": {
-        "summary": "車輌情報取得",
-        "operationId": "DTakoCarsService_Get",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiDTakoCarsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "DTakoCarsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-events": {
-      "get": {
-        "summary": "イベント情報一覧取得",
-        "operationId": "DTakoEventsService_List",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiListDTakoEventsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "DTakoEventsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-events/by-operation-no/{operationNo}": {
-      "get": {
-        "summary": "運行NOでイベント情報取得",
-        "operationId": "DTakoEventsService_GetByOperationNo",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiListDTakoEventsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "operationNo",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "DTakoEventsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-events/{id}": {
-      "get": {
-        "summary": "イベント情報取得",
-        "operationId": "DTakoEventsService_Get",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiDTakoEventsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "format": "int64"
-          }
-        ],
-        "tags": [
-          "DTakoEventsService"
-        ]
-      }
-    },
     "/api/v1/db/dtako-ferry-rows": {
       "get": {
         "summary": "フェリー運行データ一覧取得",
@@ -552,107 +336,6 @@
         ],
         "tags": [
           "DTakoFerryRowsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-rows": {
-      "get": {
-        "summary": "運行データ一覧取得",
-        "operationId": "DTakoRowsService_List",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiListDTakoRowsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "DTakoRowsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-rows/by-operation-no/{operationNo}": {
-      "get": {
-        "summary": "運行NOで運行データ取得",
-        "operationId": "DTakoRowsService_GetByOperationNo",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiListDTakoRowsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "operationNo",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "DTakoRowsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-rows/{id}": {
-      "get": {
-        "summary": "運行データ取得",
-        "operationId": "DTakoRowsService_Get",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiDTakoRowsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "DTakoRowsService"
         ]
       }
     },
@@ -1282,20 +965,16 @@
                   "type": "string"
                 },
                 "dateTo": {
-                  "type": "string",
-                  "title": "RFC3339形式推奨 (例: 2025-10-18T00:00:00Z)"
+                  "type": "string"
                 },
                 "dateToDate": {
-                  "type": "string",
-                  "title": "YYYY-MM-DD形式 (例: 2025-10-18)"
+                  "type": "string"
                 },
                 "icFr": {
-                  "type": "string",
-                  "title": "入口IC不明の場合は省略可（実データの22.3%が空）"
+                  "type": "string"
                 },
                 "icTo": {
-                  "type": "string",
-                  "title": "出口IC（必須）"
+                  "type": "string"
                 },
                 "priceBf": {
                   "type": "integer",
@@ -1397,107 +1076,6 @@
           "ETCMeisaiService"
         ]
       }
-    },
-    "/api/v1/db/etc-num": {
-      "get": {
-        "summary": "ETCカード番号一覧取得",
-        "operationId": "ETCNumService_List",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiListETCNumResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "ETCNumService"
-        ]
-      }
-    },
-    "/api/v1/db/etc-num/by-car-id/{carId}": {
-      "get": {
-        "summary": "車輌IDで取得",
-        "operationId": "ETCNumService_GetByCarID",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiListETCNumResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "carId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "ETCNumService"
-        ]
-      }
-    },
-    "/api/v1/db/etc-num/by-etc-card-num/{etcCardNum}": {
-      "get": {
-        "summary": "ETCカード番号で取得",
-        "operationId": "ETCNumService_GetByETCCardNum",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/ryohiListETCNumResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "etcCardNum",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "ETCNumService"
-        ]
-      }
     }
   },
   "definitions": {
@@ -1526,208 +1104,6 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
-        }
-      }
-    },
-    "ryohiDTakoCars": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "carCode": {
-          "type": "string"
-        },
-        "carCc": {
-          "type": "string"
-        },
-        "carName": {
-          "type": "string"
-        },
-        "belongOfficeCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "highwayCarType": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "ferryCarType": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "evaluationClassCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "idlingType": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "maxLoadWeightKg": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "carClass1": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "carClass2": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "carClass3": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "carClass4": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "carClass5": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "operationType": {
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "title": "車輌マスタデータ（本番DB）"
-    },
-    "ryohiDTakoCarsResponse": {
-      "type": "object",
-      "properties": {
-        "dtakoCars": {
-          "$ref": "#/definitions/ryohiDTakoCars"
-        }
-      }
-    },
-    "ryohiDTakoEvents": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "format": "int64"
-        },
-        "operationNo": {
-          "type": "string"
-        },
-        "readDate": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "carCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "carCc": {
-          "type": "string"
-        },
-        "targetDriverType": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "driverCode1": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "targetDriverCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "startDatetime": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "endDatetime": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "eventCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "eventName": {
-          "type": "string"
-        },
-        "startMileage": {
-          "type": "number",
-          "format": "double"
-        },
-        "endMileage": {
-          "type": "number",
-          "format": "double"
-        },
-        "sectionTime": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "sectionDistance": {
-          "type": "number",
-          "format": "double"
-        },
-        "startCityCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "startCityName": {
-          "type": "string"
-        },
-        "endCityCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "endCityName": {
-          "type": "string"
-        },
-        "startPlaceCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "startPlaceName": {
-          "type": "string"
-        },
-        "endPlaceCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "endPlaceName": {
-          "type": "string"
-        },
-        "startGpsValid": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "startGpsLatitude": {
-          "type": "string",
-          "format": "int64"
-        },
-        "startGpsLongitude": {
-          "type": "string",
-          "format": "int64"
-        },
-        "endGpsValid": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "endGpsLatitude": {
-          "type": "string",
-          "format": "int64"
-        },
-        "endGpsLongitude": {
-          "type": "string",
-          "format": "int64"
-        }
-      },
-      "title": "イベント情報データ（本番DB）"
-    },
-    "ryohiDTakoEventsResponse": {
-      "type": "object",
-      "properties": {
-        "dtakoEvents": {
-          "$ref": "#/definitions/ryohiDTakoEvents"
         }
       }
     },
@@ -1869,135 +1245,6 @@
         }
       }
     },
-    "ryohiDTakoRows": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "operationNo": {
-          "type": "string"
-        },
-        "readDate": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "operationDate": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "carCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "carCc": {
-          "type": "string"
-        },
-        "driverCode1": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "targetDriverType": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "targetDriverCode": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "startWorkDatetime": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "endWorkDatetime": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "departureDatetime": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "returnDatetime": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "departureMeter": {
-          "type": "number",
-          "format": "double"
-        },
-        "returnMeter": {
-          "type": "number",
-          "format": "double"
-        },
-        "totalDistance": {
-          "type": "number",
-          "format": "double"
-        },
-        "loadedDistance": {
-          "type": "number",
-          "format": "double"
-        },
-        "destinationCityName": {
-          "type": "string"
-        },
-        "destinationPlaceName": {
-          "type": "string"
-        },
-        "generalRoadDriveTime": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "highwayDriveTime": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "bypassDriveTime": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "loadedDriveTime": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "emptyDriveTime": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "work1Time": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "work2Time": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "work3Time": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "work4Time": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "status1Distance": {
-          "type": "number",
-          "format": "double"
-        },
-        "status1Time": {
-          "type": "integer",
-          "format": "int32"
-        }
-      },
-      "title": "運行データ（本番DB）"
-    },
-    "ryohiDTakoRowsResponse": {
-      "type": "object",
-      "properties": {
-        "dtakoRows": {
-          "$ref": "#/definitions/ryohiDTakoRows"
-        }
-      }
-    },
     "ryohiDTakoUriageKeihi": {
       "type": "object",
       "properties": {
@@ -2072,20 +1319,16 @@
           "type": "string"
         },
         "dateTo": {
-          "type": "string",
-          "title": "RFC3339形式推奨 (例: 2025-10-18T00:00:00Z)"
+          "type": "string"
         },
         "dateToDate": {
-          "type": "string",
-          "title": "YYYY-MM-DD形式 (例: 2025-10-18)"
+          "type": "string"
         },
         "icFr": {
-          "type": "string",
-          "title": "入口IC不明の場合は省略可（実データの22.3%が空）"
+          "type": "string"
         },
         "icTo": {
-          "type": "string",
-          "title": "出口IC（必須）"
+          "type": "string"
         },
         "priceBf": {
           "type": "integer",
@@ -2163,29 +1406,6 @@
         }
       }
     },
-    "ryohiETCNum": {
-      "type": "object",
-      "properties": {
-        "etcCardNum": {
-          "type": "string"
-        },
-        "carId": {
-          "type": "string"
-        },
-        "startDateTime": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "dueDateTime": {
-          "type": "string",
-          "title": "RFC3339形式"
-        },
-        "toChange": {
-          "type": "boolean"
-        }
-      },
-      "title": "ETCカード番号データ（本番DB）"
-    },
     "ryohiEmpty": {
       "type": "object",
       "title": "共通メッセージ"
@@ -2201,38 +1421,6 @@
         }
       }
     },
-    "ryohiListDTakoCarsResponse": {
-      "type": "object",
-      "properties": {
-        "items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/ryohiDTakoCars"
-          }
-        },
-        "totalCount": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "ryohiListDTakoEventsResponse": {
-      "type": "object",
-      "properties": {
-        "items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/ryohiDTakoEvents"
-          }
-        },
-        "totalCount": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
     "ryohiListDTakoFerryRowsResponse": {
       "type": "object",
       "properties": {
@@ -2241,22 +1429,6 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/ryohiDTakoFerryRows"
-          }
-        },
-        "totalCount": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "ryohiListDTakoRowsResponse": {
-      "type": "object",
-      "properties": {
-        "items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/ryohiDTakoRows"
           }
         },
         "totalCount": {
@@ -2305,22 +1477,6 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/ryohiETCMeisai"
-          }
-        },
-        "totalCount": {
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "ryohiListETCNumResponse": {
-      "type": "object",
-      "properties": {
-        "items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/ryohiETCNum"
           }
         },
         "totalCount": {

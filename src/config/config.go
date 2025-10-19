@@ -30,7 +30,10 @@ type Config struct {
 // LoadConfig 環境変数から設定を読み込み
 func LoadConfig() (*Config, error) {
 	// .envファイルの読み込み（存在する場合）
+	// server_repoからも読めるように複数のパスを試す
 	_ = godotenv.Load()
+	_ = godotenv.Load("../.env")
+	_ = godotenv.Load("../db_service/.env")
 
 	config := &Config{}
 

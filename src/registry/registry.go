@@ -13,10 +13,17 @@ import (
 
 // ServiceRegistry holds all db_service gRPC service implementations
 type ServiceRegistry struct {
+	// ローカルDB用サービス
 	ETCMeisaiService        dbproto.ETCMeisaiServiceServer
 	DTakoUriageKeihiService dbproto.DTakoUriageKeihiServiceServer
 	DTakoFerryRowsService   dbproto.DTakoFerryRowsServiceServer
 	ETCMeisaiMappingService dbproto.ETCMeisaiMappingServiceServer
+
+	// 本番DB用サービス（読み取り専用）
+	DTakoCarsService   dbproto.DTakoCarsServiceServer
+	DTakoEventsService dbproto.DTakoEventsServiceServer
+	DTakoRowsService   dbproto.DTakoRowsServiceServer
+	ETCNumService      dbproto.ETCNumServiceServer
 }
 
 // NewServiceRegistry creates a new service registry with all db_service services initialized
@@ -42,17 +49,49 @@ func NewServiceRegistry() *ServiceRegistry {
 		return nil
 	}
 
-	// Initialize repositories
+	// Initialize local DB repositories
 	dtakoUriageKeihiRepo := repository.NewDTakoUriageKeihiRepository(db)
 	etcMeisaiRepo := repository.NewETCMeisaiRepository(db)
 	dtakoFerryRowsRepo := repository.NewDTakoFerryRowsRepository(db)
 	etcMeisaiMappingRepo := repository.NewETCMeisaiMappingRepository(db)
 
+	// Initialize production DB connection (optional)
+	prodDB, err := config.NewProdDatabase()
+	var dtakoCarsService dbproto.DTakoCarsServiceServer
+	var dtakoEventsService dbproto.DTakoEventsServiceServer
+	var dtakoRowsService dbproto.DTakoRowsServiceServer
+	var etcNumService dbproto.ETCNumServiceServer
+
+	if err == nil && prodDB != nil {
+		// Initialize production DB repositories
+		dtakoCarsRepo := repository.NewDTakoCarsRepository(prodDB)
+		dtakoEventsRepo := repository.NewDTakoEventsRepository(prodDB)
+		dtakoRowsRepo := repository.NewDTakoRowsRepository(prodDB)
+		etcNumRepo := repository.NewETCNumRepository(prodDB)
+
+		// Initialize production DB services
+		dtakoCarsService = service.NewDTakoCarsService(dtakoCarsRepo)
+		dtakoEventsService = service.NewDTakoEventsService(dtakoEventsRepo)
+		dtakoRowsService = service.NewDTakoRowsService(dtakoRowsRepo)
+		etcNumService = service.NewETCNumService(etcNumRepo)
+
+		log.Println("Production DB services initialized successfully")
+	} else {
+		log.Printf("Warning: Production DB not available: %v", err)
+	}
+
 	return &ServiceRegistry{
+		// Local DB services
 		ETCMeisaiService:        service.NewETCMeisaiService(etcMeisaiRepo),
 		DTakoUriageKeihiService: service.NewDTakoUriageKeihiService(dtakoUriageKeihiRepo),
 		DTakoFerryRowsService:   service.NewDTakoFerryRowsService(dtakoFerryRowsRepo),
 		ETCMeisaiMappingService: service.NewETCMeisaiMappingService(etcMeisaiMappingRepo),
+
+		// Production DB services (may be nil if prod DB not available)
+		DTakoCarsService:   dtakoCarsService,
+		DTakoEventsService: dtakoEventsService,
+		DTakoRowsService:   dtakoRowsService,
+		ETCNumService:      etcNumService,
 	}
 }
 
@@ -75,6 +114,24 @@ func (r *ServiceRegistry) RegisterAll(server *grpc.Server) {
 	if r.ETCMeisaiMappingService != nil {
 		dbproto.RegisterETCMeisaiMappingServiceServer(server, r.ETCMeisaiMappingService)
 		log.Println("Registered: ETCMeisaiMappingService")
+	}
+
+	// Production DB services
+	if r.DTakoCarsService != nil {
+		dbproto.RegisterDTakoCarsServiceServer(server, r.DTakoCarsService)
+		log.Println("Registered: DTakoCarsService (Production DB)")
+	}
+	if r.DTakoEventsService != nil {
+		dbproto.RegisterDTakoEventsServiceServer(server, r.DTakoEventsService)
+		log.Println("Registered: DTakoEventsService (Production DB)")
+	}
+	if r.DTakoRowsService != nil {
+		dbproto.RegisterDTakoRowsServiceServer(server, r.DTakoRowsService)
+		log.Println("Registered: DTakoRowsService (Production DB)")
+	}
+	if r.ETCNumService != nil {
+		dbproto.RegisterETCNumServiceServer(server, r.ETCNumService)
+		log.Println("Registered: ETCNumService (Production DB)")
 	}
 
 	fmt.Println("db_service: All services registered successfully")

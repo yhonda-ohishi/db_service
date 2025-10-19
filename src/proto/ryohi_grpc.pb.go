@@ -1121,3 +1121,747 @@ var ETCMeisaiMappingService_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "ryohi.proto",
 }
+
+const (
+	DTakoCarsService_Get_FullMethodName          = "/ryohi.DTakoCarsService/Get"
+	DTakoCarsService_List_FullMethodName         = "/ryohi.DTakoCarsService/List"
+	DTakoCarsService_GetByCarCode_FullMethodName = "/ryohi.DTakoCarsService/GetByCarCode"
+)
+
+// DTakoCarsServiceClient is the client API for DTakoCarsService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// DTakoCarsサービス - 車輌マスタ管理（本番DB、読み取り専用）
+type DTakoCarsServiceClient interface {
+	// 車輌情報取得
+	Get(ctx context.Context, in *GetDTakoCarsRequest, opts ...grpc.CallOption) (*DTakoCarsResponse, error)
+	// 車輌情報一覧取得
+	List(ctx context.Context, in *ListDTakoCarsRequest, opts ...grpc.CallOption) (*ListDTakoCarsResponse, error)
+	// 車輌CDで車輌情報取得
+	GetByCarCode(ctx context.Context, in *GetDTakoCarsByCarCodeRequest, opts ...grpc.CallOption) (*DTakoCarsResponse, error)
+}
+
+type dTakoCarsServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewDTakoCarsServiceClient(cc grpc.ClientConnInterface) DTakoCarsServiceClient {
+	return &dTakoCarsServiceClient{cc}
+}
+
+func (c *dTakoCarsServiceClient) Get(ctx context.Context, in *GetDTakoCarsRequest, opts ...grpc.CallOption) (*DTakoCarsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DTakoCarsResponse)
+	err := c.cc.Invoke(ctx, DTakoCarsService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dTakoCarsServiceClient) List(ctx context.Context, in *ListDTakoCarsRequest, opts ...grpc.CallOption) (*ListDTakoCarsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDTakoCarsResponse)
+	err := c.cc.Invoke(ctx, DTakoCarsService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dTakoCarsServiceClient) GetByCarCode(ctx context.Context, in *GetDTakoCarsByCarCodeRequest, opts ...grpc.CallOption) (*DTakoCarsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DTakoCarsResponse)
+	err := c.cc.Invoke(ctx, DTakoCarsService_GetByCarCode_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// DTakoCarsServiceServer is the server API for DTakoCarsService service.
+// All implementations should embed UnimplementedDTakoCarsServiceServer
+// for forward compatibility.
+//
+// DTakoCarsサービス - 車輌マスタ管理（本番DB、読み取り専用）
+type DTakoCarsServiceServer interface {
+	// 車輌情報取得
+	Get(context.Context, *GetDTakoCarsRequest) (*DTakoCarsResponse, error)
+	// 車輌情報一覧取得
+	List(context.Context, *ListDTakoCarsRequest) (*ListDTakoCarsResponse, error)
+	// 車輌CDで車輌情報取得
+	GetByCarCode(context.Context, *GetDTakoCarsByCarCodeRequest) (*DTakoCarsResponse, error)
+}
+
+// UnimplementedDTakoCarsServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedDTakoCarsServiceServer struct{}
+
+func (UnimplementedDTakoCarsServiceServer) Get(context.Context, *GetDTakoCarsRequest) (*DTakoCarsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedDTakoCarsServiceServer) List(context.Context, *ListDTakoCarsRequest) (*ListDTakoCarsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedDTakoCarsServiceServer) GetByCarCode(context.Context, *GetDTakoCarsByCarCodeRequest) (*DTakoCarsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByCarCode not implemented")
+}
+func (UnimplementedDTakoCarsServiceServer) testEmbeddedByValue() {}
+
+// UnsafeDTakoCarsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to DTakoCarsServiceServer will
+// result in compilation errors.
+type UnsafeDTakoCarsServiceServer interface {
+	mustEmbedUnimplementedDTakoCarsServiceServer()
+}
+
+func RegisterDTakoCarsServiceServer(s grpc.ServiceRegistrar, srv DTakoCarsServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDTakoCarsServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&DTakoCarsService_ServiceDesc, srv)
+}
+
+func _DTakoCarsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDTakoCarsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoCarsServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoCarsService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoCarsServiceServer).Get(ctx, req.(*GetDTakoCarsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DTakoCarsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDTakoCarsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoCarsServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoCarsService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoCarsServiceServer).List(ctx, req.(*ListDTakoCarsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DTakoCarsService_GetByCarCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDTakoCarsByCarCodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoCarsServiceServer).GetByCarCode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoCarsService_GetByCarCode_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoCarsServiceServer).GetByCarCode(ctx, req.(*GetDTakoCarsByCarCodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// DTakoCarsService_ServiceDesc is the grpc.ServiceDesc for DTakoCarsService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var DTakoCarsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.DTakoCarsService",
+	HandlerType: (*DTakoCarsServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _DTakoCarsService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _DTakoCarsService_List_Handler,
+		},
+		{
+			MethodName: "GetByCarCode",
+			Handler:    _DTakoCarsService_GetByCarCode_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}
+
+const (
+	DTakoEventsService_Get_FullMethodName              = "/ryohi.DTakoEventsService/Get"
+	DTakoEventsService_List_FullMethodName             = "/ryohi.DTakoEventsService/List"
+	DTakoEventsService_GetByOperationNo_FullMethodName = "/ryohi.DTakoEventsService/GetByOperationNo"
+)
+
+// DTakoEventsServiceClient is the client API for DTakoEventsService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// DTakoEventsサービス - イベント情報管理（本番DB、読み取り専用）
+type DTakoEventsServiceClient interface {
+	// イベント情報取得
+	Get(ctx context.Context, in *GetDTakoEventsRequest, opts ...grpc.CallOption) (*DTakoEventsResponse, error)
+	// イベント情報一覧取得
+	List(ctx context.Context, in *ListDTakoEventsRequest, opts ...grpc.CallOption) (*ListDTakoEventsResponse, error)
+	// 運行NOでイベント情報取得
+	GetByOperationNo(ctx context.Context, in *GetDTakoEventsByOperationNoRequest, opts ...grpc.CallOption) (*ListDTakoEventsResponse, error)
+}
+
+type dTakoEventsServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewDTakoEventsServiceClient(cc grpc.ClientConnInterface) DTakoEventsServiceClient {
+	return &dTakoEventsServiceClient{cc}
+}
+
+func (c *dTakoEventsServiceClient) Get(ctx context.Context, in *GetDTakoEventsRequest, opts ...grpc.CallOption) (*DTakoEventsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DTakoEventsResponse)
+	err := c.cc.Invoke(ctx, DTakoEventsService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dTakoEventsServiceClient) List(ctx context.Context, in *ListDTakoEventsRequest, opts ...grpc.CallOption) (*ListDTakoEventsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDTakoEventsResponse)
+	err := c.cc.Invoke(ctx, DTakoEventsService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dTakoEventsServiceClient) GetByOperationNo(ctx context.Context, in *GetDTakoEventsByOperationNoRequest, opts ...grpc.CallOption) (*ListDTakoEventsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDTakoEventsResponse)
+	err := c.cc.Invoke(ctx, DTakoEventsService_GetByOperationNo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// DTakoEventsServiceServer is the server API for DTakoEventsService service.
+// All implementations should embed UnimplementedDTakoEventsServiceServer
+// for forward compatibility.
+//
+// DTakoEventsサービス - イベント情報管理（本番DB、読み取り専用）
+type DTakoEventsServiceServer interface {
+	// イベント情報取得
+	Get(context.Context, *GetDTakoEventsRequest) (*DTakoEventsResponse, error)
+	// イベント情報一覧取得
+	List(context.Context, *ListDTakoEventsRequest) (*ListDTakoEventsResponse, error)
+	// 運行NOでイベント情報取得
+	GetByOperationNo(context.Context, *GetDTakoEventsByOperationNoRequest) (*ListDTakoEventsResponse, error)
+}
+
+// UnimplementedDTakoEventsServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedDTakoEventsServiceServer struct{}
+
+func (UnimplementedDTakoEventsServiceServer) Get(context.Context, *GetDTakoEventsRequest) (*DTakoEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedDTakoEventsServiceServer) List(context.Context, *ListDTakoEventsRequest) (*ListDTakoEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedDTakoEventsServiceServer) GetByOperationNo(context.Context, *GetDTakoEventsByOperationNoRequest) (*ListDTakoEventsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByOperationNo not implemented")
+}
+func (UnimplementedDTakoEventsServiceServer) testEmbeddedByValue() {}
+
+// UnsafeDTakoEventsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to DTakoEventsServiceServer will
+// result in compilation errors.
+type UnsafeDTakoEventsServiceServer interface {
+	mustEmbedUnimplementedDTakoEventsServiceServer()
+}
+
+func RegisterDTakoEventsServiceServer(s grpc.ServiceRegistrar, srv DTakoEventsServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDTakoEventsServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&DTakoEventsService_ServiceDesc, srv)
+}
+
+func _DTakoEventsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDTakoEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoEventsServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoEventsService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoEventsServiceServer).Get(ctx, req.(*GetDTakoEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DTakoEventsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDTakoEventsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoEventsServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoEventsService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoEventsServiceServer).List(ctx, req.(*ListDTakoEventsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DTakoEventsService_GetByOperationNo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDTakoEventsByOperationNoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoEventsServiceServer).GetByOperationNo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoEventsService_GetByOperationNo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoEventsServiceServer).GetByOperationNo(ctx, req.(*GetDTakoEventsByOperationNoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// DTakoEventsService_ServiceDesc is the grpc.ServiceDesc for DTakoEventsService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var DTakoEventsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.DTakoEventsService",
+	HandlerType: (*DTakoEventsServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _DTakoEventsService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _DTakoEventsService_List_Handler,
+		},
+		{
+			MethodName: "GetByOperationNo",
+			Handler:    _DTakoEventsService_GetByOperationNo_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}
+
+const (
+	DTakoRowsService_Get_FullMethodName              = "/ryohi.DTakoRowsService/Get"
+	DTakoRowsService_List_FullMethodName             = "/ryohi.DTakoRowsService/List"
+	DTakoRowsService_GetByOperationNo_FullMethodName = "/ryohi.DTakoRowsService/GetByOperationNo"
+)
+
+// DTakoRowsServiceClient is the client API for DTakoRowsService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// DTakoRowsサービス - 運行データ管理（本番DB、読み取り専用）
+type DTakoRowsServiceClient interface {
+	// 運行データ取得
+	Get(ctx context.Context, in *GetDTakoRowsRequest, opts ...grpc.CallOption) (*DTakoRowsResponse, error)
+	// 運行データ一覧取得
+	List(ctx context.Context, in *ListDTakoRowsRequest, opts ...grpc.CallOption) (*ListDTakoRowsResponse, error)
+	// 運行NOで運行データ取得
+	GetByOperationNo(ctx context.Context, in *GetDTakoRowsByOperationNoRequest, opts ...grpc.CallOption) (*ListDTakoRowsResponse, error)
+}
+
+type dTakoRowsServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewDTakoRowsServiceClient(cc grpc.ClientConnInterface) DTakoRowsServiceClient {
+	return &dTakoRowsServiceClient{cc}
+}
+
+func (c *dTakoRowsServiceClient) Get(ctx context.Context, in *GetDTakoRowsRequest, opts ...grpc.CallOption) (*DTakoRowsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DTakoRowsResponse)
+	err := c.cc.Invoke(ctx, DTakoRowsService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dTakoRowsServiceClient) List(ctx context.Context, in *ListDTakoRowsRequest, opts ...grpc.CallOption) (*ListDTakoRowsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDTakoRowsResponse)
+	err := c.cc.Invoke(ctx, DTakoRowsService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dTakoRowsServiceClient) GetByOperationNo(ctx context.Context, in *GetDTakoRowsByOperationNoRequest, opts ...grpc.CallOption) (*ListDTakoRowsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDTakoRowsResponse)
+	err := c.cc.Invoke(ctx, DTakoRowsService_GetByOperationNo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// DTakoRowsServiceServer is the server API for DTakoRowsService service.
+// All implementations should embed UnimplementedDTakoRowsServiceServer
+// for forward compatibility.
+//
+// DTakoRowsサービス - 運行データ管理（本番DB、読み取り専用）
+type DTakoRowsServiceServer interface {
+	// 運行データ取得
+	Get(context.Context, *GetDTakoRowsRequest) (*DTakoRowsResponse, error)
+	// 運行データ一覧取得
+	List(context.Context, *ListDTakoRowsRequest) (*ListDTakoRowsResponse, error)
+	// 運行NOで運行データ取得
+	GetByOperationNo(context.Context, *GetDTakoRowsByOperationNoRequest) (*ListDTakoRowsResponse, error)
+}
+
+// UnimplementedDTakoRowsServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedDTakoRowsServiceServer struct{}
+
+func (UnimplementedDTakoRowsServiceServer) Get(context.Context, *GetDTakoRowsRequest) (*DTakoRowsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedDTakoRowsServiceServer) List(context.Context, *ListDTakoRowsRequest) (*ListDTakoRowsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedDTakoRowsServiceServer) GetByOperationNo(context.Context, *GetDTakoRowsByOperationNoRequest) (*ListDTakoRowsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByOperationNo not implemented")
+}
+func (UnimplementedDTakoRowsServiceServer) testEmbeddedByValue() {}
+
+// UnsafeDTakoRowsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to DTakoRowsServiceServer will
+// result in compilation errors.
+type UnsafeDTakoRowsServiceServer interface {
+	mustEmbedUnimplementedDTakoRowsServiceServer()
+}
+
+func RegisterDTakoRowsServiceServer(s grpc.ServiceRegistrar, srv DTakoRowsServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDTakoRowsServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&DTakoRowsService_ServiceDesc, srv)
+}
+
+func _DTakoRowsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDTakoRowsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoRowsServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoRowsService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoRowsServiceServer).Get(ctx, req.(*GetDTakoRowsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DTakoRowsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDTakoRowsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoRowsServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoRowsService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoRowsServiceServer).List(ctx, req.(*ListDTakoRowsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DTakoRowsService_GetByOperationNo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDTakoRowsByOperationNoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoRowsServiceServer).GetByOperationNo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoRowsService_GetByOperationNo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoRowsServiceServer).GetByOperationNo(ctx, req.(*GetDTakoRowsByOperationNoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// DTakoRowsService_ServiceDesc is the grpc.ServiceDesc for DTakoRowsService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var DTakoRowsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.DTakoRowsService",
+	HandlerType: (*DTakoRowsServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _DTakoRowsService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _DTakoRowsService_List_Handler,
+		},
+		{
+			MethodName: "GetByOperationNo",
+			Handler:    _DTakoRowsService_GetByOperationNo_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}
+
+const (
+	ETCNumService_List_FullMethodName            = "/ryohi.ETCNumService/List"
+	ETCNumService_GetByETCCardNum_FullMethodName = "/ryohi.ETCNumService/GetByETCCardNum"
+	ETCNumService_GetByCarID_FullMethodName      = "/ryohi.ETCNumService/GetByCarID"
+)
+
+// ETCNumServiceClient is the client API for ETCNumService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// ETCNumサービス - ETCカード番号マスタ管理（本番DB、読み取り専用）
+type ETCNumServiceClient interface {
+	// ETCカード番号一覧取得
+	List(ctx context.Context, in *ListETCNumRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error)
+	// ETCカード番号で取得
+	GetByETCCardNum(ctx context.Context, in *GetETCNumByETCCardNumRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error)
+	// 車輌IDで取得
+	GetByCarID(ctx context.Context, in *GetETCNumByCarIDRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error)
+}
+
+type eTCNumServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewETCNumServiceClient(cc grpc.ClientConnInterface) ETCNumServiceClient {
+	return &eTCNumServiceClient{cc}
+}
+
+func (c *eTCNumServiceClient) List(ctx context.Context, in *ListETCNumRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListETCNumResponse)
+	err := c.cc.Invoke(ctx, ETCNumService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *eTCNumServiceClient) GetByETCCardNum(ctx context.Context, in *GetETCNumByETCCardNumRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListETCNumResponse)
+	err := c.cc.Invoke(ctx, ETCNumService_GetByETCCardNum_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *eTCNumServiceClient) GetByCarID(ctx context.Context, in *GetETCNumByCarIDRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListETCNumResponse)
+	err := c.cc.Invoke(ctx, ETCNumService_GetByCarID_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// ETCNumServiceServer is the server API for ETCNumService service.
+// All implementations should embed UnimplementedETCNumServiceServer
+// for forward compatibility.
+//
+// ETCNumサービス - ETCカード番号マスタ管理（本番DB、読み取り専用）
+type ETCNumServiceServer interface {
+	// ETCカード番号一覧取得
+	List(context.Context, *ListETCNumRequest) (*ListETCNumResponse, error)
+	// ETCカード番号で取得
+	GetByETCCardNum(context.Context, *GetETCNumByETCCardNumRequest) (*ListETCNumResponse, error)
+	// 車輌IDで取得
+	GetByCarID(context.Context, *GetETCNumByCarIDRequest) (*ListETCNumResponse, error)
+}
+
+// UnimplementedETCNumServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedETCNumServiceServer struct{}
+
+func (UnimplementedETCNumServiceServer) List(context.Context, *ListETCNumRequest) (*ListETCNumResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedETCNumServiceServer) GetByETCCardNum(context.Context, *GetETCNumByETCCardNumRequest) (*ListETCNumResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByETCCardNum not implemented")
+}
+func (UnimplementedETCNumServiceServer) GetByCarID(context.Context, *GetETCNumByCarIDRequest) (*ListETCNumResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByCarID not implemented")
+}
+func (UnimplementedETCNumServiceServer) testEmbeddedByValue() {}
+
+// UnsafeETCNumServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ETCNumServiceServer will
+// result in compilation errors.
+type UnsafeETCNumServiceServer interface {
+	mustEmbedUnimplementedETCNumServiceServer()
+}
+
+func RegisterETCNumServiceServer(s grpc.ServiceRegistrar, srv ETCNumServiceServer) {
+	// If the following call pancis, it indicates UnimplementedETCNumServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&ETCNumService_ServiceDesc, srv)
+}
+
+func _ETCNumService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListETCNumRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ETCNumServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ETCNumService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ETCNumServiceServer).List(ctx, req.(*ListETCNumRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ETCNumService_GetByETCCardNum_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetETCNumByETCCardNumRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ETCNumServiceServer).GetByETCCardNum(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ETCNumService_GetByETCCardNum_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ETCNumServiceServer).GetByETCCardNum(ctx, req.(*GetETCNumByETCCardNumRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ETCNumService_GetByCarID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetETCNumByCarIDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ETCNumServiceServer).GetByCarID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ETCNumService_GetByCarID_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ETCNumServiceServer).GetByCarID(ctx, req.(*GetETCNumByCarIDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// ETCNumService_ServiceDesc is the grpc.ServiceDesc for ETCNumService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var ETCNumService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.ETCNumService",
+	HandlerType: (*ETCNumServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "List",
+			Handler:    _ETCNumService_List_Handler,
+		},
+		{
+			MethodName: "GetByETCCardNum",
+			Handler:    _ETCNumService_GetByETCCardNum_Handler,
+		},
+		{
+			MethodName: "GetByCarID",
+			Handler:    _ETCNumService_GetByCarID_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}

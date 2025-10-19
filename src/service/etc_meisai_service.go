@@ -138,8 +138,13 @@ func (s *ETCMeisaiService) Delete(ctx context.Context, req *proto.DeleteETCMeisa
 
 // List ETC明細データ一覧取得
 func (s *ETCMeisaiService) List(ctx context.Context, req *proto.ListETCMeisaiRequest) (*proto.ListETCMeisaiResponse, error) {
+	limit := int(req.Limit)
+	if limit == 0 {
+		limit = 100 // デフォルト値
+	}
+
 	params := &repository.ETCMeisaiListParams{
-		Limit:  int(req.Limit),
+		Limit:  limit,
 		Offset: int(req.Offset),
 	}
 
