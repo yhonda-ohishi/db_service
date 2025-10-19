@@ -4404,6 +4404,826 @@ func (x *ListDTakoFerryRowsProdResponse) GetTotalCount() int32 {
 	return 0
 }
 
+// Cars メッセージ
+type Cars struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id4             int32                  `protobuf:"varint,2,opt,name=id4,proto3" json:"id4,omitempty"`
+	Name            *string                `protobuf:"bytes,3,opt,name=name,proto3,oneof" json:"name,omitempty"`
+	NameR           *string                `protobuf:"bytes,4,opt,name=name_r,json=nameR,proto3,oneof" json:"name_r,omitempty"`
+	Shashu          *string                `protobuf:"bytes,5,opt,name=shashu,proto3,oneof" json:"shashu,omitempty"`
+	Sekisai         *float64               `protobuf:"fixed64,6,opt,name=sekisai,proto3,oneof" json:"sekisai,omitempty"`
+	Youseki         *float64               `protobuf:"fixed64,7,opt,name=youseki,proto3,oneof" json:"youseki,omitempty"`
+	RegDate         *string                `protobuf:"bytes,8,opt,name=reg_date,json=regDate,proto3,oneof" json:"reg_date,omitempty"`                           // RFC3339形式
+	NextInspectDate *string                `protobuf:"bytes,9,opt,name=next_inspect_date,json=nextInspectDate,proto3,oneof" json:"next_inspect_date,omitempty"` // RFC3339形式
+	ParchDate       *string                `protobuf:"bytes,10,opt,name=parch_date,json=parchDate,proto3,oneof" json:"parch_date,omitempty"`                    // RFC3339形式
+	ScrapDate       *string                `protobuf:"bytes,11,opt,name=scrap_date,json=scrapDate,proto3,oneof" json:"scrap_date,omitempty"`                    // RFC3339形式
+	BumonCodeId     *string                `protobuf:"bytes,12,opt,name=bumon_code_id,json=bumonCodeId,proto3,oneof" json:"bumon_code_id,omitempty"`
+	DriverId        *int32                 `protobuf:"varint,13,opt,name=driver_id,json=driverId,proto3,oneof" json:"driver_id,omitempty"`
+	Etc             *int32                 `protobuf:"varint,14,opt,name=etc,proto3,oneof" json:"etc,omitempty"`
+	Dai1            int32                  `protobuf:"varint,15,opt,name=dai1,proto3" json:"dai1,omitempty"`
+	Chu1            int32                  `protobuf:"varint,16,opt,name=chu1,proto3" json:"chu1,omitempty"`
+	Sho1            int32                  `protobuf:"varint,17,opt,name=sho1,proto3" json:"sho1,omitempty"`
+	Dai2            int32                  `protobuf:"varint,18,opt,name=dai2,proto3" json:"dai2,omitempty"`
+	Chu2            int32                  `protobuf:"varint,19,opt,name=chu2,proto3" json:"chu2,omitempty"`
+	Sho2            int32                  `protobuf:"varint,20,opt,name=sho2,proto3" json:"sho2,omitempty"`
+	Daichusho1      *string                `protobuf:"bytes,21,opt,name=daichusho1,proto3,oneof" json:"daichusho1,omitempty"`
+	Daichusho2      *string                `protobuf:"bytes,22,opt,name=daichusho2,proto3,oneof" json:"daichusho2,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *Cars) Reset() {
+	*x = Cars{}
+	mi := &file_ryohi_proto_msgTypes[63]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Cars) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Cars) ProtoMessage() {}
+
+func (x *Cars) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[63]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Cars.ProtoReflect.Descriptor instead.
+func (*Cars) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{63}
+}
+
+func (x *Cars) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *Cars) GetId4() int32 {
+	if x != nil {
+		return x.Id4
+	}
+	return 0
+}
+
+func (x *Cars) GetName() string {
+	if x != nil && x.Name != nil {
+		return *x.Name
+	}
+	return ""
+}
+
+func (x *Cars) GetNameR() string {
+	if x != nil && x.NameR != nil {
+		return *x.NameR
+	}
+	return ""
+}
+
+func (x *Cars) GetShashu() string {
+	if x != nil && x.Shashu != nil {
+		return *x.Shashu
+	}
+	return ""
+}
+
+func (x *Cars) GetSekisai() float64 {
+	if x != nil && x.Sekisai != nil {
+		return *x.Sekisai
+	}
+	return 0
+}
+
+func (x *Cars) GetYouseki() float64 {
+	if x != nil && x.Youseki != nil {
+		return *x.Youseki
+	}
+	return 0
+}
+
+func (x *Cars) GetRegDate() string {
+	if x != nil && x.RegDate != nil {
+		return *x.RegDate
+	}
+	return ""
+}
+
+func (x *Cars) GetNextInspectDate() string {
+	if x != nil && x.NextInspectDate != nil {
+		return *x.NextInspectDate
+	}
+	return ""
+}
+
+func (x *Cars) GetParchDate() string {
+	if x != nil && x.ParchDate != nil {
+		return *x.ParchDate
+	}
+	return ""
+}
+
+func (x *Cars) GetScrapDate() string {
+	if x != nil && x.ScrapDate != nil {
+		return *x.ScrapDate
+	}
+	return ""
+}
+
+func (x *Cars) GetBumonCodeId() string {
+	if x != nil && x.BumonCodeId != nil {
+		return *x.BumonCodeId
+	}
+	return ""
+}
+
+func (x *Cars) GetDriverId() int32 {
+	if x != nil && x.DriverId != nil {
+		return *x.DriverId
+	}
+	return 0
+}
+
+func (x *Cars) GetEtc() int32 {
+	if x != nil && x.Etc != nil {
+		return *x.Etc
+	}
+	return 0
+}
+
+func (x *Cars) GetDai1() int32 {
+	if x != nil {
+		return x.Dai1
+	}
+	return 0
+}
+
+func (x *Cars) GetChu1() int32 {
+	if x != nil {
+		return x.Chu1
+	}
+	return 0
+}
+
+func (x *Cars) GetSho1() int32 {
+	if x != nil {
+		return x.Sho1
+	}
+	return 0
+}
+
+func (x *Cars) GetDai2() int32 {
+	if x != nil {
+		return x.Dai2
+	}
+	return 0
+}
+
+func (x *Cars) GetChu2() int32 {
+	if x != nil {
+		return x.Chu2
+	}
+	return 0
+}
+
+func (x *Cars) GetSho2() int32 {
+	if x != nil {
+		return x.Sho2
+	}
+	return 0
+}
+
+func (x *Cars) GetDaichusho1() string {
+	if x != nil && x.Daichusho1 != nil {
+		return *x.Daichusho1
+	}
+	return ""
+}
+
+func (x *Cars) GetDaichusho2() string {
+	if x != nil && x.Daichusho2 != nil {
+		return *x.Daichusho2
+	}
+	return ""
+}
+
+// Drivers メッセージ
+type Drivers struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          *string                `protobuf:"bytes,2,opt,name=name,proto3,oneof" json:"name,omitempty"`
+	ShainR        *string                `protobuf:"bytes,3,opt,name=shain_r,json=shainR,proto3,oneof" json:"shain_r,omitempty"`
+	Bumon         string                 `protobuf:"bytes,4,opt,name=bumon,proto3" json:"bumon,omitempty"`
+	JoinDate      *string                `protobuf:"bytes,5,opt,name=join_date,json=joinDate,proto3,oneof" json:"join_date,omitempty"`       // RFC3339形式
+	RetireDate    *string                `protobuf:"bytes,6,opt,name=retire_date,json=retireDate,proto3,oneof" json:"retire_date,omitempty"` // RFC3339形式
+	Bunrui1       *string                `protobuf:"bytes,7,opt,name=bunrui1,proto3,oneof" json:"bunrui1,omitempty"`
+	Bunrui2       *string                `protobuf:"bytes,8,opt,name=bunrui2,proto3,oneof" json:"bunrui2,omitempty"`
+	Kubun         *int32                 `protobuf:"varint,9,opt,name=kubun,proto3,oneof" json:"kubun,omitempty"`
+	KinmuTaikei   int32                  `protobuf:"varint,10,opt,name=kinmu_taikei,json=kinmuTaikei,proto3" json:"kinmu_taikei,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Drivers) Reset() {
+	*x = Drivers{}
+	mi := &file_ryohi_proto_msgTypes[64]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Drivers) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Drivers) ProtoMessage() {}
+
+func (x *Drivers) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[64]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Drivers.ProtoReflect.Descriptor instead.
+func (*Drivers) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *Drivers) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *Drivers) GetName() string {
+	if x != nil && x.Name != nil {
+		return *x.Name
+	}
+	return ""
+}
+
+func (x *Drivers) GetShainR() string {
+	if x != nil && x.ShainR != nil {
+		return *x.ShainR
+	}
+	return ""
+}
+
+func (x *Drivers) GetBumon() string {
+	if x != nil {
+		return x.Bumon
+	}
+	return ""
+}
+
+func (x *Drivers) GetJoinDate() string {
+	if x != nil && x.JoinDate != nil {
+		return *x.JoinDate
+	}
+	return ""
+}
+
+func (x *Drivers) GetRetireDate() string {
+	if x != nil && x.RetireDate != nil {
+		return *x.RetireDate
+	}
+	return ""
+}
+
+func (x *Drivers) GetBunrui1() string {
+	if x != nil && x.Bunrui1 != nil {
+		return *x.Bunrui1
+	}
+	return ""
+}
+
+func (x *Drivers) GetBunrui2() string {
+	if x != nil && x.Bunrui2 != nil {
+		return *x.Bunrui2
+	}
+	return ""
+}
+
+func (x *Drivers) GetKubun() int32 {
+	if x != nil && x.Kubun != nil {
+		return *x.Kubun
+	}
+	return 0
+}
+
+func (x *Drivers) GetKinmuTaikei() int32 {
+	if x != nil {
+		return x.KinmuTaikei
+	}
+	return 0
+}
+
+// Cars用リクエスト/レスポンス
+type GetCarsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCarsRequest) Reset() {
+	*x = GetCarsRequest{}
+	mi := &file_ryohi_proto_msgTypes[65]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCarsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCarsRequest) ProtoMessage() {}
+
+func (x *GetCarsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[65]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCarsRequest.ProtoReflect.Descriptor instead.
+func (*GetCarsRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{65}
+}
+
+func (x *GetCarsRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+type GetCarsByBumonCodeIDRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	BumonCodeId   string                 `protobuf:"bytes,1,opt,name=bumon_code_id,json=bumonCodeId,proto3" json:"bumon_code_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCarsByBumonCodeIDRequest) Reset() {
+	*x = GetCarsByBumonCodeIDRequest{}
+	mi := &file_ryohi_proto_msgTypes[66]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCarsByBumonCodeIDRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCarsByBumonCodeIDRequest) ProtoMessage() {}
+
+func (x *GetCarsByBumonCodeIDRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[66]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCarsByBumonCodeIDRequest.ProtoReflect.Descriptor instead.
+func (*GetCarsByBumonCodeIDRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *GetCarsByBumonCodeIDRequest) GetBumonCodeId() string {
+	if x != nil {
+		return x.BumonCodeId
+	}
+	return ""
+}
+
+type ListCarsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	OrderBy       *string                `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3,oneof" json:"order_by,omitempty"` // 例: "id ASC", "name DESC"
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListCarsRequest) Reset() {
+	*x = ListCarsRequest{}
+	mi := &file_ryohi_proto_msgTypes[67]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListCarsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCarsRequest) ProtoMessage() {}
+
+func (x *ListCarsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[67]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCarsRequest.ProtoReflect.Descriptor instead.
+func (*ListCarsRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *ListCarsRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListCarsRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListCarsRequest) GetOrderBy() string {
+	if x != nil && x.OrderBy != nil {
+		return *x.OrderBy
+	}
+	return ""
+}
+
+type CarsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Cars          *Cars                  `protobuf:"bytes,1,opt,name=cars,proto3" json:"cars,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *CarsResponse) Reset() {
+	*x = CarsResponse{}
+	mi := &file_ryohi_proto_msgTypes[68]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *CarsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CarsResponse) ProtoMessage() {}
+
+func (x *CarsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[68]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CarsResponse.ProtoReflect.Descriptor instead.
+func (*CarsResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *CarsResponse) GetCars() *Cars {
+	if x != nil {
+		return x.Cars
+	}
+	return nil
+}
+
+type ListCarsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*Cars                `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListCarsResponse) Reset() {
+	*x = ListCarsResponse{}
+	mi := &file_ryohi_proto_msgTypes[69]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListCarsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListCarsResponse) ProtoMessage() {}
+
+func (x *ListCarsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[69]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListCarsResponse.ProtoReflect.Descriptor instead.
+func (*ListCarsResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *ListCarsResponse) GetItems() []*Cars {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *ListCarsResponse) GetTotalCount() int32 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
+// Drivers用リクエスト/レスポンス
+type GetDriversRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDriversRequest) Reset() {
+	*x = GetDriversRequest{}
+	mi := &file_ryohi_proto_msgTypes[70]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDriversRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDriversRequest) ProtoMessage() {}
+
+func (x *GetDriversRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[70]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDriversRequest.ProtoReflect.Descriptor instead.
+func (*GetDriversRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *GetDriversRequest) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type GetDriversByBumonRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Bumon         string                 `protobuf:"bytes,1,opt,name=bumon,proto3" json:"bumon,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDriversByBumonRequest) Reset() {
+	*x = GetDriversByBumonRequest{}
+	mi := &file_ryohi_proto_msgTypes[71]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDriversByBumonRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDriversByBumonRequest) ProtoMessage() {}
+
+func (x *GetDriversByBumonRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[71]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDriversByBumonRequest.ProtoReflect.Descriptor instead.
+func (*GetDriversByBumonRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *GetDriversByBumonRequest) GetBumon() string {
+	if x != nil {
+		return x.Bumon
+	}
+	return ""
+}
+
+type ListDriversRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	OrderBy       *string                `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3,oneof" json:"order_by,omitempty"` // 例: "id ASC", "name DESC"
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDriversRequest) Reset() {
+	*x = ListDriversRequest{}
+	mi := &file_ryohi_proto_msgTypes[72]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDriversRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDriversRequest) ProtoMessage() {}
+
+func (x *ListDriversRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[72]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDriversRequest.ProtoReflect.Descriptor instead.
+func (*ListDriversRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *ListDriversRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListDriversRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListDriversRequest) GetOrderBy() string {
+	if x != nil && x.OrderBy != nil {
+		return *x.OrderBy
+	}
+	return ""
+}
+
+type DriversResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Drivers       *Drivers               `protobuf:"bytes,1,opt,name=drivers,proto3" json:"drivers,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DriversResponse) Reset() {
+	*x = DriversResponse{}
+	mi := &file_ryohi_proto_msgTypes[73]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DriversResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DriversResponse) ProtoMessage() {}
+
+func (x *DriversResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[73]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DriversResponse.ProtoReflect.Descriptor instead.
+func (*DriversResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *DriversResponse) GetDrivers() *Drivers {
+	if x != nil {
+		return x.Drivers
+	}
+	return nil
+}
+
+type ListDriversResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*Drivers             `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDriversResponse) Reset() {
+	*x = ListDriversResponse{}
+	mi := &file_ryohi_proto_msgTypes[74]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDriversResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDriversResponse) ProtoMessage() {}
+
+func (x *ListDriversResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[74]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDriversResponse.ProtoReflect.Descriptor instead.
+func (*ListDriversResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *ListDriversResponse) GetItems() []*Drivers {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *ListDriversResponse) GetTotalCount() int32 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
 // 共通メッセージ
 type Empty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -4413,7 +5233,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_ryohi_proto_msgTypes[63]
+	mi := &file_ryohi_proto_msgTypes[75]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -4425,7 +5245,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_ryohi_proto_msgTypes[63]
+	mi := &file_ryohi_proto_msgTypes[75]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -4438,7 +5258,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_ryohi_proto_rawDescGZIP(), []int{63}
+	return file_ryohi_proto_rawDescGZIP(), []int{75}
 }
 
 var File_ryohi_proto protoreflect.FileDescriptor
@@ -4887,6 +5707,108 @@ const file_ryohi_proto_rawDesc = "" +
 	"\x1eListDTakoFerryRowsProdResponse\x12/\n" +
 	"\x05items\x18\x01 \x03(\v2\x19.ryohi.DTakoFerryRowsProdR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
+	"totalCount\"\xb3\x06\n" +
+	"\x04Cars\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x10\n" +
+	"\x03id4\x18\x02 \x01(\x05R\x03id4\x12\x17\n" +
+	"\x04name\x18\x03 \x01(\tH\x00R\x04name\x88\x01\x01\x12\x1a\n" +
+	"\x06name_r\x18\x04 \x01(\tH\x01R\x05nameR\x88\x01\x01\x12\x1b\n" +
+	"\x06shashu\x18\x05 \x01(\tH\x02R\x06shashu\x88\x01\x01\x12\x1d\n" +
+	"\asekisai\x18\x06 \x01(\x01H\x03R\asekisai\x88\x01\x01\x12\x1d\n" +
+	"\ayouseki\x18\a \x01(\x01H\x04R\ayouseki\x88\x01\x01\x12\x1e\n" +
+	"\breg_date\x18\b \x01(\tH\x05R\aregDate\x88\x01\x01\x12/\n" +
+	"\x11next_inspect_date\x18\t \x01(\tH\x06R\x0fnextInspectDate\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"parch_date\x18\n" +
+	" \x01(\tH\aR\tparchDate\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"scrap_date\x18\v \x01(\tH\bR\tscrapDate\x88\x01\x01\x12'\n" +
+	"\rbumon_code_id\x18\f \x01(\tH\tR\vbumonCodeId\x88\x01\x01\x12 \n" +
+	"\tdriver_id\x18\r \x01(\x05H\n" +
+	"R\bdriverId\x88\x01\x01\x12\x15\n" +
+	"\x03etc\x18\x0e \x01(\x05H\vR\x03etc\x88\x01\x01\x12\x12\n" +
+	"\x04dai1\x18\x0f \x01(\x05R\x04dai1\x12\x12\n" +
+	"\x04chu1\x18\x10 \x01(\x05R\x04chu1\x12\x12\n" +
+	"\x04sho1\x18\x11 \x01(\x05R\x04sho1\x12\x12\n" +
+	"\x04dai2\x18\x12 \x01(\x05R\x04dai2\x12\x12\n" +
+	"\x04chu2\x18\x13 \x01(\x05R\x04chu2\x12\x12\n" +
+	"\x04sho2\x18\x14 \x01(\x05R\x04sho2\x12#\n" +
+	"\n" +
+	"daichusho1\x18\x15 \x01(\tH\fR\n" +
+	"daichusho1\x88\x01\x01\x12#\n" +
+	"\n" +
+	"daichusho2\x18\x16 \x01(\tH\rR\n" +
+	"daichusho2\x88\x01\x01B\a\n" +
+	"\x05_nameB\t\n" +
+	"\a_name_rB\t\n" +
+	"\a_shashuB\n" +
+	"\n" +
+	"\b_sekisaiB\n" +
+	"\n" +
+	"\b_yousekiB\v\n" +
+	"\t_reg_dateB\x14\n" +
+	"\x12_next_inspect_dateB\r\n" +
+	"\v_parch_dateB\r\n" +
+	"\v_scrap_dateB\x10\n" +
+	"\x0e_bumon_code_idB\f\n" +
+	"\n" +
+	"_driver_idB\x06\n" +
+	"\x04_etcB\r\n" +
+	"\v_daichusho1B\r\n" +
+	"\v_daichusho2\"\xff\x02\n" +
+	"\aDrivers\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x17\n" +
+	"\x04name\x18\x02 \x01(\tH\x00R\x04name\x88\x01\x01\x12\x1c\n" +
+	"\ashain_r\x18\x03 \x01(\tH\x01R\x06shainR\x88\x01\x01\x12\x14\n" +
+	"\x05bumon\x18\x04 \x01(\tR\x05bumon\x12 \n" +
+	"\tjoin_date\x18\x05 \x01(\tH\x02R\bjoinDate\x88\x01\x01\x12$\n" +
+	"\vretire_date\x18\x06 \x01(\tH\x03R\n" +
+	"retireDate\x88\x01\x01\x12\x1d\n" +
+	"\abunrui1\x18\a \x01(\tH\x04R\abunrui1\x88\x01\x01\x12\x1d\n" +
+	"\abunrui2\x18\b \x01(\tH\x05R\abunrui2\x88\x01\x01\x12\x19\n" +
+	"\x05kubun\x18\t \x01(\x05H\x06R\x05kubun\x88\x01\x01\x12!\n" +
+	"\fkinmu_taikei\x18\n" +
+	" \x01(\x05R\vkinmuTaikeiB\a\n" +
+	"\x05_nameB\n" +
+	"\n" +
+	"\b_shain_rB\f\n" +
+	"\n" +
+	"_join_dateB\x0e\n" +
+	"\f_retire_dateB\n" +
+	"\n" +
+	"\b_bunrui1B\n" +
+	"\n" +
+	"\b_bunrui2B\b\n" +
+	"\x06_kubun\" \n" +
+	"\x0eGetCarsRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"A\n" +
+	"\x1bGetCarsByBumonCodeIDRequest\x12\"\n" +
+	"\rbumon_code_id\x18\x01 \x01(\tR\vbumonCodeId\"l\n" +
+	"\x0fListCarsRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
+	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
+	"\t_order_by\"/\n" +
+	"\fCarsResponse\x12\x1f\n" +
+	"\x04cars\x18\x01 \x01(\v2\v.ryohi.CarsR\x04cars\"V\n" +
+	"\x10ListCarsResponse\x12!\n" +
+	"\x05items\x18\x01 \x03(\v2\v.ryohi.CarsR\x05items\x12\x1f\n" +
+	"\vtotal_count\x18\x02 \x01(\x05R\n" +
+	"totalCount\"#\n" +
+	"\x11GetDriversRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\"0\n" +
+	"\x18GetDriversByBumonRequest\x12\x14\n" +
+	"\x05bumon\x18\x01 \x01(\tR\x05bumon\"o\n" +
+	"\x12ListDriversRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
+	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
+	"\t_order_by\";\n" +
+	"\x0fDriversResponse\x12(\n" +
+	"\adrivers\x18\x01 \x01(\v2\x0e.ryohi.DriversR\adrivers\"\\\n" +
+	"\x13ListDriversResponse\x12$\n" +
+	"\x05items\x18\x01 \x03(\v2\x0e.ryohi.DriversR\x05items\x12\x1f\n" +
+	"\vtotal_count\x18\x02 \x01(\x05R\n" +
 	"totalCount\"\a\n" +
 	"\x05Empty2\xb3\x05\n" +
 	"\x17DTakoUriageKeihiService\x12\x8a\x01\n" +
@@ -4936,7 +5858,16 @@ const file_ryohi_proto_rawDesc = "" +
 	"\x19DTakoFerryRowsProdService\x12|\n" +
 	"\x03Get\x12#.ryohi.GetDTakoFerryRowsProdRequest\x1a!.ryohi.DTakoFerryRowsProdResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/dtako-ferry-rows-prod/{id}\x12}\n" +
 	"\x04List\x12$.ryohi.ListDTakoFerryRowsProdRequest\x1a%.ryohi.ListDTakoFerryRowsProdResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/dtako-ferry-rows-prod\x12\xa0\x01\n" +
-	"\vGetByUnkoNo\x12+.ryohi.GetDTakoFerryRowsProdByUnkoNoRequest\x1a%.ryohi.ListDTakoFerryRowsProdResponse\"=\x82\xd3\xe4\x93\x027\x125/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}B/Z-github.com/yhonda-ohishi/db_service/src/protob\x06proto3"
+	"\vGetByUnkoNo\x12+.ryohi.GetDTakoFerryRowsProdByUnkoNoRequest\x1a%.ryohi.ListDTakoFerryRowsProdResponse\"=\x82\xd3\xe4\x93\x027\x125/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}2\xb0\x02\n" +
+	"\vCarsService\x12O\n" +
+	"\x03Get\x12\x15.ryohi.GetCarsRequest\x1a\x13.ryohi.CarsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/v1/db/cars/{id}\x12P\n" +
+	"\x04List\x12\x16.ryohi.ListCarsRequest\x1a\x17.ryohi.ListCarsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/api/v1/db/cars\x12~\n" +
+	"\x10GetByBumonCodeID\x12\".ryohi.GetCarsByBumonCodeIDRequest\x1a\x17.ryohi.ListCarsResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/cars/bumon/{bumon_code_id}2\xba\x02\n" +
+	"\x0eDriversService\x12X\n" +
+	"\x03Get\x12\x18.ryohi.GetDriversRequest\x1a\x16.ryohi.DriversResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/drivers/{id}\x12Y\n" +
+	"\x04List\x12\x19.ryohi.ListDriversRequest\x1a\x1a.ryohi.ListDriversResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1/db/drivers\x12s\n" +
+	"\n" +
+	"GetByBumon\x12\x1f.ryohi.GetDriversByBumonRequest\x1a\x1a.ryohi.ListDriversResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/drivers/bumon/{bumon}B/Z-github.com/yhonda-ohishi/db_service/src/protob\x06proto3"
 
 var (
 	file_ryohi_proto_rawDescOnce sync.Once
@@ -4950,7 +5881,7 @@ func file_ryohi_proto_rawDescGZIP() []byte {
 	return file_ryohi_proto_rawDescData
 }
 
-var file_ryohi_proto_msgTypes = make([]protoimpl.MessageInfo, 64)
+var file_ryohi_proto_msgTypes = make([]protoimpl.MessageInfo, 76)
 var file_ryohi_proto_goTypes = []any{
 	(*DTakoUriageKeihi)(nil),                     // 0: ryohi.DTakoUriageKeihi
 	(*ETCMeisai)(nil),                            // 1: ryohi.ETCMeisai
@@ -5015,7 +5946,19 @@ var file_ryohi_proto_goTypes = []any{
 	(*ListDTakoFerryRowsProdRequest)(nil),        // 60: ryohi.ListDTakoFerryRowsProdRequest
 	(*DTakoFerryRowsProdResponse)(nil),           // 61: ryohi.DTakoFerryRowsProdResponse
 	(*ListDTakoFerryRowsProdResponse)(nil),       // 62: ryohi.ListDTakoFerryRowsProdResponse
-	(*Empty)(nil),                                // 63: ryohi.Empty
+	(*Cars)(nil),                                 // 63: ryohi.Cars
+	(*Drivers)(nil),                              // 64: ryohi.Drivers
+	(*GetCarsRequest)(nil),                       // 65: ryohi.GetCarsRequest
+	(*GetCarsByBumonCodeIDRequest)(nil),          // 66: ryohi.GetCarsByBumonCodeIDRequest
+	(*ListCarsRequest)(nil),                      // 67: ryohi.ListCarsRequest
+	(*CarsResponse)(nil),                         // 68: ryohi.CarsResponse
+	(*ListCarsResponse)(nil),                     // 69: ryohi.ListCarsResponse
+	(*GetDriversRequest)(nil),                    // 70: ryohi.GetDriversRequest
+	(*GetDriversByBumonRequest)(nil),             // 71: ryohi.GetDriversByBumonRequest
+	(*ListDriversRequest)(nil),                   // 72: ryohi.ListDriversRequest
+	(*DriversResponse)(nil),                      // 73: ryohi.DriversResponse
+	(*ListDriversResponse)(nil),                  // 74: ryohi.ListDriversResponse
+	(*Empty)(nil),                                // 75: ryohi.Empty
 }
 var file_ryohi_proto_depIdxs = []int32{
 	0,  // 0: ryohi.CreateDTakoUriageKeihiRequest.dtako_uriage_keihi:type_name -> ryohi.DTakoUriageKeihi
@@ -5043,83 +5986,99 @@ var file_ryohi_proto_depIdxs = []int32{
 	37, // 22: ryohi.ListETCNumResponse.items:type_name -> ryohi.ETCNum
 	57, // 23: ryohi.DTakoFerryRowsProdResponse.dtako_ferry_rows:type_name -> ryohi.DTakoFerryRowsProd
 	57, // 24: ryohi.ListDTakoFerryRowsProdResponse.items:type_name -> ryohi.DTakoFerryRowsProd
-	3,  // 25: ryohi.DTakoUriageKeihiService.Create:input_type -> ryohi.CreateDTakoUriageKeihiRequest
-	4,  // 26: ryohi.DTakoUriageKeihiService.Get:input_type -> ryohi.GetDTakoUriageKeihiRequest
-	5,  // 27: ryohi.DTakoUriageKeihiService.Update:input_type -> ryohi.UpdateDTakoUriageKeihiRequest
-	6,  // 28: ryohi.DTakoUriageKeihiService.Delete:input_type -> ryohi.DeleteDTakoUriageKeihiRequest
-	7,  // 29: ryohi.DTakoUriageKeihiService.List:input_type -> ryohi.ListDTakoUriageKeihiRequest
-	10, // 30: ryohi.ETCMeisaiService.Create:input_type -> ryohi.CreateETCMeisaiRequest
-	11, // 31: ryohi.ETCMeisaiService.Get:input_type -> ryohi.GetETCMeisaiRequest
-	12, // 32: ryohi.ETCMeisaiService.Update:input_type -> ryohi.UpdateETCMeisaiRequest
-	13, // 33: ryohi.ETCMeisaiService.Delete:input_type -> ryohi.DeleteETCMeisaiRequest
-	14, // 34: ryohi.ETCMeisaiService.List:input_type -> ryohi.ListETCMeisaiRequest
-	17, // 35: ryohi.DTakoFerryRowsService.Create:input_type -> ryohi.CreateDTakoFerryRowsRequest
-	18, // 36: ryohi.DTakoFerryRowsService.Get:input_type -> ryohi.GetDTakoFerryRowsRequest
-	19, // 37: ryohi.DTakoFerryRowsService.Update:input_type -> ryohi.UpdateDTakoFerryRowsRequest
-	20, // 38: ryohi.DTakoFerryRowsService.Delete:input_type -> ryohi.DeleteDTakoFerryRowsRequest
-	21, // 39: ryohi.DTakoFerryRowsService.List:input_type -> ryohi.ListDTakoFerryRowsRequest
-	25, // 40: ryohi.ETCMeisaiMappingService.Create:input_type -> ryohi.CreateETCMeisaiMappingRequest
-	26, // 41: ryohi.ETCMeisaiMappingService.Get:input_type -> ryohi.GetETCMeisaiMappingRequest
-	27, // 42: ryohi.ETCMeisaiMappingService.Update:input_type -> ryohi.UpdateETCMeisaiMappingRequest
-	28, // 43: ryohi.ETCMeisaiMappingService.Delete:input_type -> ryohi.DeleteETCMeisaiMappingRequest
-	29, // 44: ryohi.ETCMeisaiMappingService.List:input_type -> ryohi.ListETCMeisaiMappingRequest
-	32, // 45: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> ryohi.GetDTakoRowIDByHashRequest
-	38, // 46: ryohi.DTakoCarsService.Get:input_type -> ryohi.GetDTakoCarsRequest
-	40, // 47: ryohi.DTakoCarsService.List:input_type -> ryohi.ListDTakoCarsRequest
-	39, // 48: ryohi.DTakoCarsService.GetByCarCode:input_type -> ryohi.GetDTakoCarsByCarCodeRequest
-	43, // 49: ryohi.DTakoEventsService.Get:input_type -> ryohi.GetDTakoEventsRequest
-	45, // 50: ryohi.DTakoEventsService.List:input_type -> ryohi.ListDTakoEventsRequest
-	44, // 51: ryohi.DTakoEventsService.GetByOperationNo:input_type -> ryohi.GetDTakoEventsByOperationNoRequest
-	48, // 52: ryohi.DTakoRowsService.Get:input_type -> ryohi.GetDTakoRowsRequest
-	50, // 53: ryohi.DTakoRowsService.List:input_type -> ryohi.ListDTakoRowsRequest
-	49, // 54: ryohi.DTakoRowsService.GetByOperationNo:input_type -> ryohi.GetDTakoRowsByOperationNoRequest
-	55, // 55: ryohi.ETCNumService.List:input_type -> ryohi.ListETCNumRequest
-	53, // 56: ryohi.ETCNumService.GetByETCCardNum:input_type -> ryohi.GetETCNumByETCCardNumRequest
-	54, // 57: ryohi.ETCNumService.GetByCarID:input_type -> ryohi.GetETCNumByCarIDRequest
-	58, // 58: ryohi.DTakoFerryRowsProdService.Get:input_type -> ryohi.GetDTakoFerryRowsProdRequest
-	60, // 59: ryohi.DTakoFerryRowsProdService.List:input_type -> ryohi.ListDTakoFerryRowsProdRequest
-	59, // 60: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:input_type -> ryohi.GetDTakoFerryRowsProdByUnkoNoRequest
-	8,  // 61: ryohi.DTakoUriageKeihiService.Create:output_type -> ryohi.DTakoUriageKeihiResponse
-	8,  // 62: ryohi.DTakoUriageKeihiService.Get:output_type -> ryohi.DTakoUriageKeihiResponse
-	8,  // 63: ryohi.DTakoUriageKeihiService.Update:output_type -> ryohi.DTakoUriageKeihiResponse
-	63, // 64: ryohi.DTakoUriageKeihiService.Delete:output_type -> ryohi.Empty
-	9,  // 65: ryohi.DTakoUriageKeihiService.List:output_type -> ryohi.ListDTakoUriageKeihiResponse
-	15, // 66: ryohi.ETCMeisaiService.Create:output_type -> ryohi.ETCMeisaiResponse
-	15, // 67: ryohi.ETCMeisaiService.Get:output_type -> ryohi.ETCMeisaiResponse
-	15, // 68: ryohi.ETCMeisaiService.Update:output_type -> ryohi.ETCMeisaiResponse
-	63, // 69: ryohi.ETCMeisaiService.Delete:output_type -> ryohi.Empty
-	16, // 70: ryohi.ETCMeisaiService.List:output_type -> ryohi.ListETCMeisaiResponse
-	22, // 71: ryohi.DTakoFerryRowsService.Create:output_type -> ryohi.DTakoFerryRowsResponse
-	22, // 72: ryohi.DTakoFerryRowsService.Get:output_type -> ryohi.DTakoFerryRowsResponse
-	22, // 73: ryohi.DTakoFerryRowsService.Update:output_type -> ryohi.DTakoFerryRowsResponse
-	63, // 74: ryohi.DTakoFerryRowsService.Delete:output_type -> ryohi.Empty
-	23, // 75: ryohi.DTakoFerryRowsService.List:output_type -> ryohi.ListDTakoFerryRowsResponse
-	30, // 76: ryohi.ETCMeisaiMappingService.Create:output_type -> ryohi.ETCMeisaiMappingResponse
-	30, // 77: ryohi.ETCMeisaiMappingService.Get:output_type -> ryohi.ETCMeisaiMappingResponse
-	30, // 78: ryohi.ETCMeisaiMappingService.Update:output_type -> ryohi.ETCMeisaiMappingResponse
-	63, // 79: ryohi.ETCMeisaiMappingService.Delete:output_type -> ryohi.Empty
-	31, // 80: ryohi.ETCMeisaiMappingService.List:output_type -> ryohi.ListETCMeisaiMappingResponse
-	33, // 81: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> ryohi.GetDTakoRowIDByHashResponse
-	41, // 82: ryohi.DTakoCarsService.Get:output_type -> ryohi.DTakoCarsResponse
-	42, // 83: ryohi.DTakoCarsService.List:output_type -> ryohi.ListDTakoCarsResponse
-	41, // 84: ryohi.DTakoCarsService.GetByCarCode:output_type -> ryohi.DTakoCarsResponse
-	46, // 85: ryohi.DTakoEventsService.Get:output_type -> ryohi.DTakoEventsResponse
-	47, // 86: ryohi.DTakoEventsService.List:output_type -> ryohi.ListDTakoEventsResponse
-	47, // 87: ryohi.DTakoEventsService.GetByOperationNo:output_type -> ryohi.ListDTakoEventsResponse
-	51, // 88: ryohi.DTakoRowsService.Get:output_type -> ryohi.DTakoRowsResponse
-	52, // 89: ryohi.DTakoRowsService.List:output_type -> ryohi.ListDTakoRowsResponse
-	52, // 90: ryohi.DTakoRowsService.GetByOperationNo:output_type -> ryohi.ListDTakoRowsResponse
-	56, // 91: ryohi.ETCNumService.List:output_type -> ryohi.ListETCNumResponse
-	56, // 92: ryohi.ETCNumService.GetByETCCardNum:output_type -> ryohi.ListETCNumResponse
-	56, // 93: ryohi.ETCNumService.GetByCarID:output_type -> ryohi.ListETCNumResponse
-	61, // 94: ryohi.DTakoFerryRowsProdService.Get:output_type -> ryohi.DTakoFerryRowsProdResponse
-	62, // 95: ryohi.DTakoFerryRowsProdService.List:output_type -> ryohi.ListDTakoFerryRowsProdResponse
-	62, // 96: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:output_type -> ryohi.ListDTakoFerryRowsProdResponse
-	61, // [61:97] is the sub-list for method output_type
-	25, // [25:61] is the sub-list for method input_type
-	25, // [25:25] is the sub-list for extension type_name
-	25, // [25:25] is the sub-list for extension extendee
-	0,  // [0:25] is the sub-list for field type_name
+	63, // 25: ryohi.CarsResponse.cars:type_name -> ryohi.Cars
+	63, // 26: ryohi.ListCarsResponse.items:type_name -> ryohi.Cars
+	64, // 27: ryohi.DriversResponse.drivers:type_name -> ryohi.Drivers
+	64, // 28: ryohi.ListDriversResponse.items:type_name -> ryohi.Drivers
+	3,  // 29: ryohi.DTakoUriageKeihiService.Create:input_type -> ryohi.CreateDTakoUriageKeihiRequest
+	4,  // 30: ryohi.DTakoUriageKeihiService.Get:input_type -> ryohi.GetDTakoUriageKeihiRequest
+	5,  // 31: ryohi.DTakoUriageKeihiService.Update:input_type -> ryohi.UpdateDTakoUriageKeihiRequest
+	6,  // 32: ryohi.DTakoUriageKeihiService.Delete:input_type -> ryohi.DeleteDTakoUriageKeihiRequest
+	7,  // 33: ryohi.DTakoUriageKeihiService.List:input_type -> ryohi.ListDTakoUriageKeihiRequest
+	10, // 34: ryohi.ETCMeisaiService.Create:input_type -> ryohi.CreateETCMeisaiRequest
+	11, // 35: ryohi.ETCMeisaiService.Get:input_type -> ryohi.GetETCMeisaiRequest
+	12, // 36: ryohi.ETCMeisaiService.Update:input_type -> ryohi.UpdateETCMeisaiRequest
+	13, // 37: ryohi.ETCMeisaiService.Delete:input_type -> ryohi.DeleteETCMeisaiRequest
+	14, // 38: ryohi.ETCMeisaiService.List:input_type -> ryohi.ListETCMeisaiRequest
+	17, // 39: ryohi.DTakoFerryRowsService.Create:input_type -> ryohi.CreateDTakoFerryRowsRequest
+	18, // 40: ryohi.DTakoFerryRowsService.Get:input_type -> ryohi.GetDTakoFerryRowsRequest
+	19, // 41: ryohi.DTakoFerryRowsService.Update:input_type -> ryohi.UpdateDTakoFerryRowsRequest
+	20, // 42: ryohi.DTakoFerryRowsService.Delete:input_type -> ryohi.DeleteDTakoFerryRowsRequest
+	21, // 43: ryohi.DTakoFerryRowsService.List:input_type -> ryohi.ListDTakoFerryRowsRequest
+	25, // 44: ryohi.ETCMeisaiMappingService.Create:input_type -> ryohi.CreateETCMeisaiMappingRequest
+	26, // 45: ryohi.ETCMeisaiMappingService.Get:input_type -> ryohi.GetETCMeisaiMappingRequest
+	27, // 46: ryohi.ETCMeisaiMappingService.Update:input_type -> ryohi.UpdateETCMeisaiMappingRequest
+	28, // 47: ryohi.ETCMeisaiMappingService.Delete:input_type -> ryohi.DeleteETCMeisaiMappingRequest
+	29, // 48: ryohi.ETCMeisaiMappingService.List:input_type -> ryohi.ListETCMeisaiMappingRequest
+	32, // 49: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> ryohi.GetDTakoRowIDByHashRequest
+	38, // 50: ryohi.DTakoCarsService.Get:input_type -> ryohi.GetDTakoCarsRequest
+	40, // 51: ryohi.DTakoCarsService.List:input_type -> ryohi.ListDTakoCarsRequest
+	39, // 52: ryohi.DTakoCarsService.GetByCarCode:input_type -> ryohi.GetDTakoCarsByCarCodeRequest
+	43, // 53: ryohi.DTakoEventsService.Get:input_type -> ryohi.GetDTakoEventsRequest
+	45, // 54: ryohi.DTakoEventsService.List:input_type -> ryohi.ListDTakoEventsRequest
+	44, // 55: ryohi.DTakoEventsService.GetByOperationNo:input_type -> ryohi.GetDTakoEventsByOperationNoRequest
+	48, // 56: ryohi.DTakoRowsService.Get:input_type -> ryohi.GetDTakoRowsRequest
+	50, // 57: ryohi.DTakoRowsService.List:input_type -> ryohi.ListDTakoRowsRequest
+	49, // 58: ryohi.DTakoRowsService.GetByOperationNo:input_type -> ryohi.GetDTakoRowsByOperationNoRequest
+	55, // 59: ryohi.ETCNumService.List:input_type -> ryohi.ListETCNumRequest
+	53, // 60: ryohi.ETCNumService.GetByETCCardNum:input_type -> ryohi.GetETCNumByETCCardNumRequest
+	54, // 61: ryohi.ETCNumService.GetByCarID:input_type -> ryohi.GetETCNumByCarIDRequest
+	58, // 62: ryohi.DTakoFerryRowsProdService.Get:input_type -> ryohi.GetDTakoFerryRowsProdRequest
+	60, // 63: ryohi.DTakoFerryRowsProdService.List:input_type -> ryohi.ListDTakoFerryRowsProdRequest
+	59, // 64: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:input_type -> ryohi.GetDTakoFerryRowsProdByUnkoNoRequest
+	65, // 65: ryohi.CarsService.Get:input_type -> ryohi.GetCarsRequest
+	67, // 66: ryohi.CarsService.List:input_type -> ryohi.ListCarsRequest
+	66, // 67: ryohi.CarsService.GetByBumonCodeID:input_type -> ryohi.GetCarsByBumonCodeIDRequest
+	70, // 68: ryohi.DriversService.Get:input_type -> ryohi.GetDriversRequest
+	72, // 69: ryohi.DriversService.List:input_type -> ryohi.ListDriversRequest
+	71, // 70: ryohi.DriversService.GetByBumon:input_type -> ryohi.GetDriversByBumonRequest
+	8,  // 71: ryohi.DTakoUriageKeihiService.Create:output_type -> ryohi.DTakoUriageKeihiResponse
+	8,  // 72: ryohi.DTakoUriageKeihiService.Get:output_type -> ryohi.DTakoUriageKeihiResponse
+	8,  // 73: ryohi.DTakoUriageKeihiService.Update:output_type -> ryohi.DTakoUriageKeihiResponse
+	75, // 74: ryohi.DTakoUriageKeihiService.Delete:output_type -> ryohi.Empty
+	9,  // 75: ryohi.DTakoUriageKeihiService.List:output_type -> ryohi.ListDTakoUriageKeihiResponse
+	15, // 76: ryohi.ETCMeisaiService.Create:output_type -> ryohi.ETCMeisaiResponse
+	15, // 77: ryohi.ETCMeisaiService.Get:output_type -> ryohi.ETCMeisaiResponse
+	15, // 78: ryohi.ETCMeisaiService.Update:output_type -> ryohi.ETCMeisaiResponse
+	75, // 79: ryohi.ETCMeisaiService.Delete:output_type -> ryohi.Empty
+	16, // 80: ryohi.ETCMeisaiService.List:output_type -> ryohi.ListETCMeisaiResponse
+	22, // 81: ryohi.DTakoFerryRowsService.Create:output_type -> ryohi.DTakoFerryRowsResponse
+	22, // 82: ryohi.DTakoFerryRowsService.Get:output_type -> ryohi.DTakoFerryRowsResponse
+	22, // 83: ryohi.DTakoFerryRowsService.Update:output_type -> ryohi.DTakoFerryRowsResponse
+	75, // 84: ryohi.DTakoFerryRowsService.Delete:output_type -> ryohi.Empty
+	23, // 85: ryohi.DTakoFerryRowsService.List:output_type -> ryohi.ListDTakoFerryRowsResponse
+	30, // 86: ryohi.ETCMeisaiMappingService.Create:output_type -> ryohi.ETCMeisaiMappingResponse
+	30, // 87: ryohi.ETCMeisaiMappingService.Get:output_type -> ryohi.ETCMeisaiMappingResponse
+	30, // 88: ryohi.ETCMeisaiMappingService.Update:output_type -> ryohi.ETCMeisaiMappingResponse
+	75, // 89: ryohi.ETCMeisaiMappingService.Delete:output_type -> ryohi.Empty
+	31, // 90: ryohi.ETCMeisaiMappingService.List:output_type -> ryohi.ListETCMeisaiMappingResponse
+	33, // 91: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> ryohi.GetDTakoRowIDByHashResponse
+	41, // 92: ryohi.DTakoCarsService.Get:output_type -> ryohi.DTakoCarsResponse
+	42, // 93: ryohi.DTakoCarsService.List:output_type -> ryohi.ListDTakoCarsResponse
+	41, // 94: ryohi.DTakoCarsService.GetByCarCode:output_type -> ryohi.DTakoCarsResponse
+	46, // 95: ryohi.DTakoEventsService.Get:output_type -> ryohi.DTakoEventsResponse
+	47, // 96: ryohi.DTakoEventsService.List:output_type -> ryohi.ListDTakoEventsResponse
+	47, // 97: ryohi.DTakoEventsService.GetByOperationNo:output_type -> ryohi.ListDTakoEventsResponse
+	51, // 98: ryohi.DTakoRowsService.Get:output_type -> ryohi.DTakoRowsResponse
+	52, // 99: ryohi.DTakoRowsService.List:output_type -> ryohi.ListDTakoRowsResponse
+	52, // 100: ryohi.DTakoRowsService.GetByOperationNo:output_type -> ryohi.ListDTakoRowsResponse
+	56, // 101: ryohi.ETCNumService.List:output_type -> ryohi.ListETCNumResponse
+	56, // 102: ryohi.ETCNumService.GetByETCCardNum:output_type -> ryohi.ListETCNumResponse
+	56, // 103: ryohi.ETCNumService.GetByCarID:output_type -> ryohi.ListETCNumResponse
+	61, // 104: ryohi.DTakoFerryRowsProdService.Get:output_type -> ryohi.DTakoFerryRowsProdResponse
+	62, // 105: ryohi.DTakoFerryRowsProdService.List:output_type -> ryohi.ListDTakoFerryRowsProdResponse
+	62, // 106: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:output_type -> ryohi.ListDTakoFerryRowsProdResponse
+	68, // 107: ryohi.CarsService.Get:output_type -> ryohi.CarsResponse
+	69, // 108: ryohi.CarsService.List:output_type -> ryohi.ListCarsResponse
+	69, // 109: ryohi.CarsService.GetByBumonCodeID:output_type -> ryohi.ListCarsResponse
+	73, // 110: ryohi.DriversService.Get:output_type -> ryohi.DriversResponse
+	74, // 111: ryohi.DriversService.List:output_type -> ryohi.ListDriversResponse
+	74, // 112: ryohi.DriversService.GetByBumon:output_type -> ryohi.ListDriversResponse
+	71, // [71:113] is the sub-list for method output_type
+	29, // [29:71] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_ryohi_proto_init() }
@@ -5141,15 +6100,19 @@ func file_ryohi_proto_init() {
 	file_ryohi_proto_msgTypes[45].OneofWrappers = []any{}
 	file_ryohi_proto_msgTypes[50].OneofWrappers = []any{}
 	file_ryohi_proto_msgTypes[57].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[63].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[64].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[67].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[72].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ryohi_proto_rawDesc), len(file_ryohi_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   64,
+			NumMessages:   76,
 			NumExtensions: 0,
-			NumServices:   9,
+			NumServices:   11,
 		},
 		GoTypes:           file_ryohi_proto_goTypes,
 		DependencyIndexes: file_ryohi_proto_depIdxs,

@@ -2051,3 +2051,375 @@ var DTakoFerryRowsProdService_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "ryohi.proto",
 }
+
+const (
+	CarsService_Get_FullMethodName              = "/ryohi.CarsService/Get"
+	CarsService_List_FullMethodName             = "/ryohi.CarsService/List"
+	CarsService_GetByBumonCodeID_FullMethodName = "/ryohi.CarsService/GetByBumonCodeID"
+)
+
+// CarsServiceClient is the client API for CarsService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// CarsService - 車両マスタ管理（本番DB、読み取り専用）
+type CarsServiceClient interface {
+	// 車両情報取得
+	Get(ctx context.Context, in *GetCarsRequest, opts ...grpc.CallOption) (*CarsResponse, error)
+	// 車両情報一覧取得
+	List(ctx context.Context, in *ListCarsRequest, opts ...grpc.CallOption) (*ListCarsResponse, error)
+	// 部門コードで車両情報取得
+	GetByBumonCodeID(ctx context.Context, in *GetCarsByBumonCodeIDRequest, opts ...grpc.CallOption) (*ListCarsResponse, error)
+}
+
+type carsServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewCarsServiceClient(cc grpc.ClientConnInterface) CarsServiceClient {
+	return &carsServiceClient{cc}
+}
+
+func (c *carsServiceClient) Get(ctx context.Context, in *GetCarsRequest, opts ...grpc.CallOption) (*CarsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CarsResponse)
+	err := c.cc.Invoke(ctx, CarsService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *carsServiceClient) List(ctx context.Context, in *ListCarsRequest, opts ...grpc.CallOption) (*ListCarsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListCarsResponse)
+	err := c.cc.Invoke(ctx, CarsService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *carsServiceClient) GetByBumonCodeID(ctx context.Context, in *GetCarsByBumonCodeIDRequest, opts ...grpc.CallOption) (*ListCarsResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListCarsResponse)
+	err := c.cc.Invoke(ctx, CarsService_GetByBumonCodeID_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// CarsServiceServer is the server API for CarsService service.
+// All implementations should embed UnimplementedCarsServiceServer
+// for forward compatibility.
+//
+// CarsService - 車両マスタ管理（本番DB、読み取り専用）
+type CarsServiceServer interface {
+	// 車両情報取得
+	Get(context.Context, *GetCarsRequest) (*CarsResponse, error)
+	// 車両情報一覧取得
+	List(context.Context, *ListCarsRequest) (*ListCarsResponse, error)
+	// 部門コードで車両情報取得
+	GetByBumonCodeID(context.Context, *GetCarsByBumonCodeIDRequest) (*ListCarsResponse, error)
+}
+
+// UnimplementedCarsServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedCarsServiceServer struct{}
+
+func (UnimplementedCarsServiceServer) Get(context.Context, *GetCarsRequest) (*CarsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedCarsServiceServer) List(context.Context, *ListCarsRequest) (*ListCarsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedCarsServiceServer) GetByBumonCodeID(context.Context, *GetCarsByBumonCodeIDRequest) (*ListCarsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByBumonCodeID not implemented")
+}
+func (UnimplementedCarsServiceServer) testEmbeddedByValue() {}
+
+// UnsafeCarsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to CarsServiceServer will
+// result in compilation errors.
+type UnsafeCarsServiceServer interface {
+	mustEmbedUnimplementedCarsServiceServer()
+}
+
+func RegisterCarsServiceServer(s grpc.ServiceRegistrar, srv CarsServiceServer) {
+	// If the following call pancis, it indicates UnimplementedCarsServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&CarsService_ServiceDesc, srv)
+}
+
+func _CarsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCarsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CarsServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: CarsService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CarsServiceServer).Get(ctx, req.(*GetCarsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CarsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListCarsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CarsServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: CarsService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CarsServiceServer).List(ctx, req.(*ListCarsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CarsService_GetByBumonCodeID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCarsByBumonCodeIDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CarsServiceServer).GetByBumonCodeID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: CarsService_GetByBumonCodeID_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CarsServiceServer).GetByBumonCodeID(ctx, req.(*GetCarsByBumonCodeIDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// CarsService_ServiceDesc is the grpc.ServiceDesc for CarsService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var CarsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.CarsService",
+	HandlerType: (*CarsServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _CarsService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _CarsService_List_Handler,
+		},
+		{
+			MethodName: "GetByBumonCodeID",
+			Handler:    _CarsService_GetByBumonCodeID_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}
+
+const (
+	DriversService_Get_FullMethodName        = "/ryohi.DriversService/Get"
+	DriversService_List_FullMethodName       = "/ryohi.DriversService/List"
+	DriversService_GetByBumon_FullMethodName = "/ryohi.DriversService/GetByBumon"
+)
+
+// DriversServiceClient is the client API for DriversService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// DriversService - ドライバーマスタ管理（本番DB、読み取り専用）
+type DriversServiceClient interface {
+	// ドライバー情報取得
+	Get(ctx context.Context, in *GetDriversRequest, opts ...grpc.CallOption) (*DriversResponse, error)
+	// ドライバー情報一覧取得
+	List(ctx context.Context, in *ListDriversRequest, opts ...grpc.CallOption) (*ListDriversResponse, error)
+	// 部門コードでドライバー情報取得
+	GetByBumon(ctx context.Context, in *GetDriversByBumonRequest, opts ...grpc.CallOption) (*ListDriversResponse, error)
+}
+
+type driversServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewDriversServiceClient(cc grpc.ClientConnInterface) DriversServiceClient {
+	return &driversServiceClient{cc}
+}
+
+func (c *driversServiceClient) Get(ctx context.Context, in *GetDriversRequest, opts ...grpc.CallOption) (*DriversResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DriversResponse)
+	err := c.cc.Invoke(ctx, DriversService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *driversServiceClient) List(ctx context.Context, in *ListDriversRequest, opts ...grpc.CallOption) (*ListDriversResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDriversResponse)
+	err := c.cc.Invoke(ctx, DriversService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *driversServiceClient) GetByBumon(ctx context.Context, in *GetDriversByBumonRequest, opts ...grpc.CallOption) (*ListDriversResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDriversResponse)
+	err := c.cc.Invoke(ctx, DriversService_GetByBumon_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// DriversServiceServer is the server API for DriversService service.
+// All implementations should embed UnimplementedDriversServiceServer
+// for forward compatibility.
+//
+// DriversService - ドライバーマスタ管理（本番DB、読み取り専用）
+type DriversServiceServer interface {
+	// ドライバー情報取得
+	Get(context.Context, *GetDriversRequest) (*DriversResponse, error)
+	// ドライバー情報一覧取得
+	List(context.Context, *ListDriversRequest) (*ListDriversResponse, error)
+	// 部門コードでドライバー情報取得
+	GetByBumon(context.Context, *GetDriversByBumonRequest) (*ListDriversResponse, error)
+}
+
+// UnimplementedDriversServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedDriversServiceServer struct{}
+
+func (UnimplementedDriversServiceServer) Get(context.Context, *GetDriversRequest) (*DriversResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedDriversServiceServer) List(context.Context, *ListDriversRequest) (*ListDriversResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedDriversServiceServer) GetByBumon(context.Context, *GetDriversByBumonRequest) (*ListDriversResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByBumon not implemented")
+}
+func (UnimplementedDriversServiceServer) testEmbeddedByValue() {}
+
+// UnsafeDriversServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to DriversServiceServer will
+// result in compilation errors.
+type UnsafeDriversServiceServer interface {
+	mustEmbedUnimplementedDriversServiceServer()
+}
+
+func RegisterDriversServiceServer(s grpc.ServiceRegistrar, srv DriversServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDriversServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&DriversService_ServiceDesc, srv)
+}
+
+func _DriversService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDriversRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DriversServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DriversService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DriversServiceServer).Get(ctx, req.(*GetDriversRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DriversService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDriversRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DriversServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DriversService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DriversServiceServer).List(ctx, req.(*ListDriversRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DriversService_GetByBumon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDriversByBumonRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DriversServiceServer).GetByBumon(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DriversService_GetByBumon_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DriversServiceServer).GetByBumon(ctx, req.(*GetDriversByBumonRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// DriversService_ServiceDesc is the grpc.ServiceDesc for DriversService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var DriversService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.DriversService",
+	HandlerType: (*DriversServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _DriversService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _DriversService_List_Handler,
+		},
+		{
+			MethodName: "GetByBumon",
+			Handler:    _DriversService_GetByBumon_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}

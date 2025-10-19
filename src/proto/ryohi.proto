@@ -737,5 +737,137 @@ message ListDTakoFerryRowsProdResponse {
   int32 total_count = 2;
 }
 
+// CarsService - 車両マスタ管理（本番DB、読み取り専用）
+service CarsService {
+  // 車両情報取得
+  rpc Get(GetCarsRequest) returns (CarsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/cars/{id}"
+    };
+  }
+  // 車両情報一覧取得
+  rpc List(ListCarsRequest) returns (ListCarsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/cars"
+    };
+  }
+  // 部門コードで車両情報取得
+  rpc GetByBumonCodeID(GetCarsByBumonCodeIDRequest) returns (ListCarsResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/cars/bumon/{bumon_code_id}"
+    };
+  }
+}
+
+// DriversService - ドライバーマスタ管理（本番DB、読み取り専用）
+service DriversService {
+  // ドライバー情報取得
+  rpc Get(GetDriversRequest) returns (DriversResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/drivers/{id}"
+    };
+  }
+  // ドライバー情報一覧取得
+  rpc List(ListDriversRequest) returns (ListDriversResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/drivers"
+    };
+  }
+  // 部門コードでドライバー情報取得
+  rpc GetByBumon(GetDriversByBumonRequest) returns (ListDriversResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/drivers/bumon/{bumon}"
+    };
+  }
+}
+
+// Cars メッセージ
+message Cars {
+  string id = 1;
+  int32 id4 = 2;
+  optional string name = 3;
+  optional string name_r = 4;
+  optional string shashu = 5;
+  optional double sekisai = 6;
+  optional double youseki = 7;
+  optional string reg_date = 8;  // RFC3339形式
+  optional string next_inspect_date = 9;  // RFC3339形式
+  optional string parch_date = 10;  // RFC3339形式
+  optional string scrap_date = 11;  // RFC3339形式
+  optional string bumon_code_id = 12;
+  optional int32 driver_id = 13;
+  optional int32 etc = 14;
+  int32 dai1 = 15;
+  int32 chu1 = 16;
+  int32 sho1 = 17;
+  int32 dai2 = 18;
+  int32 chu2 = 19;
+  int32 sho2 = 20;
+  optional string daichusho1 = 21;
+  optional string daichusho2 = 22;
+}
+
+// Drivers メッセージ
+message Drivers {
+  int32 id = 1;
+  optional string name = 2;
+  optional string shain_r = 3;
+  string bumon = 4;
+  optional string join_date = 5;  // RFC3339形式
+  optional string retire_date = 6;  // RFC3339形式
+  optional string bunrui1 = 7;
+  optional string bunrui2 = 8;
+  optional int32 kubun = 9;
+  int32 kinmu_taikei = 10;
+}
+
+// Cars用リクエスト/レスポンス
+message GetCarsRequest {
+  string id = 1;
+}
+
+message GetCarsByBumonCodeIDRequest {
+  string bumon_code_id = 1;
+}
+
+message ListCarsRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+  optional string order_by = 3;  // 例: "id ASC", "name DESC"
+}
+
+message CarsResponse {
+  Cars cars = 1;
+}
+
+message ListCarsResponse {
+  repeated Cars items = 1;
+  int32 total_count = 2;
+}
+
+// Drivers用リクエスト/レスポンス
+message GetDriversRequest {
+  int32 id = 1;
+}
+
+message GetDriversByBumonRequest {
+  string bumon = 1;
+}
+
+message ListDriversRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+  optional string order_by = 3;  // 例: "id ASC", "name DESC"
+}
+
+message DriversResponse {
+  Drivers drivers = 1;
+}
+
+message ListDriversResponse {
+  repeated Drivers items = 1;
+  int32 total_count = 2;
+}
+
 // 共通メッセージ
 message Empty {}

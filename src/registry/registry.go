@@ -25,6 +25,8 @@ type ServiceRegistry struct {
 	DTakoRowsService         dbproto.DTakoRowsServiceServer
 	ETCNumService            dbproto.ETCNumServiceServer
 	DTakoFerryRowsProdService dbproto.DTakoFerryRowsProdServiceServer
+	CarsService              dbproto.CarsServiceServer
+	DriversService           dbproto.DriversServiceServer
 }
 
 // NewServiceRegistry creates a new service registry with all db_service services initialized
@@ -63,6 +65,8 @@ func NewServiceRegistry() *ServiceRegistry {
 	var dtakoRowsService dbproto.DTakoRowsServiceServer
 	var etcNumService dbproto.ETCNumServiceServer
 	var dtakoFerryRowsProdService dbproto.DTakoFerryRowsProdServiceServer
+	var carsService dbproto.CarsServiceServer
+	var driversService dbproto.DriversServiceServer
 
 	if err == nil && prodDB != nil {
 		// Initialize production DB repositories
@@ -71,6 +75,8 @@ func NewServiceRegistry() *ServiceRegistry {
 		dtakoRowsRepo := repository.NewDTakoRowsRepository(prodDB)
 		etcNumRepo := repository.NewETCNumRepository(prodDB)
 		dtakoFerryRowsProdRepo := repository.NewDTakoFerryRowsProdRepository(prodDB)
+		carsRepo := repository.NewCarsRepository(prodDB)
+		driversRepo := repository.NewDriversRepository(prodDB)
 
 		// Initialize production DB services
 		dtakoCarsService = service.NewDTakoCarsService(dtakoCarsRepo)
@@ -78,6 +84,8 @@ func NewServiceRegistry() *ServiceRegistry {
 		dtakoRowsService = service.NewDTakoRowsService(dtakoRowsRepo)
 		etcNumService = service.NewETCNumService(etcNumRepo)
 		dtakoFerryRowsProdService = service.NewDTakoFerryRowsProdService(dtakoFerryRowsProdRepo)
+		carsService = service.NewCarsService(carsRepo)
+		driversService = service.NewDriversService(driversRepo)
 
 		log.Println("Production DB services initialized successfully")
 	} else {
@@ -97,6 +105,8 @@ func NewServiceRegistry() *ServiceRegistry {
 		DTakoRowsService:         dtakoRowsService,
 		ETCNumService:            etcNumService,
 		DTakoFerryRowsProdService: dtakoFerryRowsProdService,
+		CarsService:              carsService,
+		DriversService:           driversService,
 	}
 }
 
@@ -141,6 +151,14 @@ func (r *ServiceRegistry) RegisterAll(server *grpc.Server) {
 	if r.DTakoFerryRowsProdService != nil {
 		dbproto.RegisterDTakoFerryRowsProdServiceServer(server, r.DTakoFerryRowsProdService)
 		log.Println("Registered: DTakoFerryRowsProdService (Production DB)")
+	}
+	if r.CarsService != nil {
+		dbproto.RegisterCarsServiceServer(server, r.CarsService)
+		log.Println("Registered: CarsService (Production DB)")
+	}
+	if r.DriversService != nil {
+		dbproto.RegisterDriversServiceServer(server, r.DriversService)
+		log.Println("Registered: DriversService (Production DB)")
 	}
 
 	fmt.Println("db_service: All services registered successfully")

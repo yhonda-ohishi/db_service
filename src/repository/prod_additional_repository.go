@@ -174,3 +174,123 @@ func (r *ETCNumRepositoryImpl) GetByCarID(carID string) ([]*models.ETCNum, error
 	}
 	return etcNums, nil
 }
+
+// CarsRepository インターフェース
+type CarsRepository interface {
+	GetAll(limit, offset int, orderBy string) ([]*models.Cars, int64, error)
+	GetByID(id string) (*models.Cars, error)
+	GetByBumonCodeID(bumonCodeID string) ([]*models.Cars, error)
+}
+
+// DriversRepository インターフェース
+type DriversRepository interface {
+	GetAll(limit, offset int, orderBy string) ([]*models.Drivers, int64, error)
+	GetByID(id int) (*models.Drivers, error)
+	GetByBumon(bumon string) ([]*models.Drivers, error)
+}
+
+// CarsRepositoryImpl 実装
+type CarsRepositoryImpl struct {
+	*ProdRepository
+}
+
+// NewCarsRepository Carsリポジトリのコンストラクタ
+func NewCarsRepository(prodDB *config.ProdDatabase) CarsRepository {
+	return &CarsRepositoryImpl{
+		ProdRepository: NewProdRepository(prodDB),
+	}
+}
+
+// GetAll 全車両情報を取得
+func (r *CarsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*models.Cars, int64, error) {
+	var cars []*models.Cars
+	var totalCount int64
+
+	// 総数取得
+	if err := r.prodDB.DB.Model(&models.Cars{}).Count(&totalCount).Error; err != nil {
+		return nil, 0, err
+	}
+
+	// デフォルトのorder byを設定
+	if orderBy == "" {
+		orderBy = "id ASC"
+	}
+
+	// データ取得
+	if err := r.prodDB.DB.Limit(limit).Offset(offset).Order(orderBy).Find(&cars).Error; err != nil {
+		return nil, 0, err
+	}
+
+	return cars, totalCount, nil
+}
+
+// GetByID IDで車両情報を取得
+func (r *CarsRepositoryImpl) GetByID(id string) (*models.Cars, error) {
+	var car models.Cars
+	if err := r.prodDB.DB.Where("id = ?", id).First(&car).Error; err != nil {
+		return nil, err
+	}
+	return &car, nil
+}
+
+// GetByBumonCodeID 部門コードで車両情報を取得
+func (r *CarsRepositoryImpl) GetByBumonCodeID(bumonCodeID string) ([]*models.Cars, error) {
+	var cars []*models.Cars
+	if err := r.prodDB.DB.Where("bumon_code_id = ?", bumonCodeID).Order("id ASC").Find(&cars).Error; err != nil {
+		return nil, err
+	}
+	return cars, nil
+}
+
+// DriversRepositoryImpl 実装
+type DriversRepositoryImpl struct {
+	*ProdRepository
+}
+
+// NewDriversRepository Driversリポジトリのコンストラクタ
+func NewDriversRepository(prodDB *config.ProdDatabase) DriversRepository {
+	return &DriversRepositoryImpl{
+		ProdRepository: NewProdRepository(prodDB),
+	}
+}
+
+// GetAll 全ドライバー情報を取得
+func (r *DriversRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*models.Drivers, int64, error) {
+	var drivers []*models.Drivers
+	var totalCount int64
+
+	// 総数取得
+	if err := r.prodDB.DB.Model(&models.Drivers{}).Count(&totalCount).Error; err != nil {
+		return nil, 0, err
+	}
+
+	// デフォルトのorder byを設定
+	if orderBy == "" {
+		orderBy = "id ASC"
+	}
+
+	// データ取得
+	if err := r.prodDB.DB.Limit(limit).Offset(offset).Order(orderBy).Find(&drivers).Error; err != nil {
+		return nil, 0, err
+	}
+
+	return drivers, totalCount, nil
+}
+
+// GetByID IDでドライバー情報を取得
+func (r *DriversRepositoryImpl) GetByID(id int) (*models.Drivers, error) {
+	var driver models.Drivers
+	if err := r.prodDB.DB.Where("id = ?", id).First(&driver).Error; err != nil {
+		return nil, err
+	}
+	return &driver, nil
+}
+
+// GetByBumon 部門コードでドライバー情報を取得
+func (r *DriversRepositoryImpl) GetByBumon(bumon string) ([]*models.Drivers, error) {
+	var drivers []*models.Drivers
+	if err := r.prodDB.DB.Where("bumon = ?", bumon).Order("id ASC").Find(&drivers).Error; err != nil {
+		return nil, err
+	}
+	return drivers, nil
+}
