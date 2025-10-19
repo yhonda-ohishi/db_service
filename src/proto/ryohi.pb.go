@@ -3890,6 +3890,504 @@ func (x *ListETCNumResponse) GetTotalCount() int32 {
 	return 0
 }
 
+// DTakoFerryRowsProd（本番DB）データ
+type DTakoFerryRowsProd struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	Id                int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	UnkoNo            string                 `protobuf:"bytes,2,opt,name=unko_no,json=unkoNo,proto3" json:"unko_no,omitempty"`
+	UnkoDate          string                 `protobuf:"bytes,3,opt,name=unko_date,json=unkoDate,proto3" json:"unko_date,omitempty"`             // YYYY-MM-DD形式
+	YomitoriDate      string                 `protobuf:"bytes,4,opt,name=yomitori_date,json=yomitoriDate,proto3" json:"yomitori_date,omitempty"` // YYYY-MM-DD形式
+	JigyoshoCd        int32                  `protobuf:"varint,5,opt,name=jigyosho_cd,json=jigyoshoCd,proto3" json:"jigyosho_cd,omitempty"`
+	JigyoshoName      string                 `protobuf:"bytes,6,opt,name=jigyosho_name,json=jigyoshoName,proto3" json:"jigyosho_name,omitempty"`
+	SharyoCd          int32                  `protobuf:"varint,7,opt,name=sharyo_cd,json=sharyoCd,proto3" json:"sharyo_cd,omitempty"`
+	SharyoName        string                 `protobuf:"bytes,8,opt,name=sharyo_name,json=sharyoName,proto3" json:"sharyo_name,omitempty"`
+	JomuinCd1         int32                  `protobuf:"varint,9,opt,name=jomuin_cd1,json=jomuinCd1,proto3" json:"jomuin_cd1,omitempty"`
+	JomuinName1       string                 `protobuf:"bytes,10,opt,name=jomuin_name1,json=jomuinName1,proto3" json:"jomuin_name1,omitempty"`
+	TaishoJomuinKbn   int32                  `protobuf:"varint,11,opt,name=taisho_jomuin_kbn,json=taishoJomuinKbn,proto3" json:"taisho_jomuin_kbn,omitempty"`
+	KaishiDatetime    string                 `protobuf:"bytes,12,opt,name=kaishi_datetime,json=kaishiDatetime,proto3" json:"kaishi_datetime,omitempty"` // RFC3339形式
+	ShuryoDatetime    string                 `protobuf:"bytes,13,opt,name=shuryo_datetime,json=shuryoDatetime,proto3" json:"shuryo_datetime,omitempty"` // RFC3339形式
+	FerryCompanyCd    int32                  `protobuf:"varint,14,opt,name=ferry_company_cd,json=ferryCompanyCd,proto3" json:"ferry_company_cd,omitempty"`
+	FerryCompanyName  string                 `protobuf:"bytes,15,opt,name=ferry_company_name,json=ferryCompanyName,proto3" json:"ferry_company_name,omitempty"`
+	NoribaCd          int32                  `protobuf:"varint,16,opt,name=noriba_cd,json=noribaCd,proto3" json:"noriba_cd,omitempty"`
+	NoribaName        string                 `protobuf:"bytes,17,opt,name=noriba_name,json=noribaName,proto3" json:"noriba_name,omitempty"`
+	Bin               string                 `protobuf:"bytes,18,opt,name=bin,proto3" json:"bin,omitempty"`
+	OribaCd           int32                  `protobuf:"varint,19,opt,name=oriba_cd,json=oribaCd,proto3" json:"oriba_cd,omitempty"`
+	OribaName         string                 `protobuf:"bytes,20,opt,name=oriba_name,json=oribaName,proto3" json:"oriba_name,omitempty"`
+	SeisanKbn         int32                  `protobuf:"varint,21,opt,name=seisan_kbn,json=seisanKbn,proto3" json:"seisan_kbn,omitempty"`
+	SeisanKbnName     string                 `protobuf:"bytes,22,opt,name=seisan_kbn_name,json=seisanKbnName,proto3" json:"seisan_kbn_name,omitempty"`
+	HyojunRyokin      int32                  `protobuf:"varint,23,opt,name=hyojun_ryokin,json=hyojunRyokin,proto3" json:"hyojun_ryokin,omitempty"`
+	KeiyakuRyokin     int32                  `protobuf:"varint,24,opt,name=keiyaku_ryokin,json=keiyakuRyokin,proto3" json:"keiyaku_ryokin,omitempty"`
+	KosoShashuKbn     int32                  `protobuf:"varint,25,opt,name=koso_shashu_kbn,json=kosoShashuKbn,proto3" json:"koso_shashu_kbn,omitempty"`
+	KosoShashuKbnName string                 `protobuf:"bytes,26,opt,name=koso_shashu_kbn_name,json=kosoShashuKbnName,proto3" json:"koso_shashu_kbn_name,omitempty"`
+	MinashiKyori      int32                  `protobuf:"varint,27,opt,name=minashi_kyori,json=minashiKyori,proto3" json:"minashi_kyori,omitempty"`
+	FerrySrch         *string                `protobuf:"bytes,28,opt,name=ferry_srch,json=ferrySrch,proto3,oneof" json:"ferry_srch,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *DTakoFerryRowsProd) Reset() {
+	*x = DTakoFerryRowsProd{}
+	mi := &file_ryohi_proto_msgTypes[57]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DTakoFerryRowsProd) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DTakoFerryRowsProd) ProtoMessage() {}
+
+func (x *DTakoFerryRowsProd) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[57]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DTakoFerryRowsProd.ProtoReflect.Descriptor instead.
+func (*DTakoFerryRowsProd) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *DTakoFerryRowsProd) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetUnkoNo() string {
+	if x != nil {
+		return x.UnkoNo
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetUnkoDate() string {
+	if x != nil {
+		return x.UnkoDate
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetYomitoriDate() string {
+	if x != nil {
+		return x.YomitoriDate
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetJigyoshoCd() int32 {
+	if x != nil {
+		return x.JigyoshoCd
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetJigyoshoName() string {
+	if x != nil {
+		return x.JigyoshoName
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetSharyoCd() int32 {
+	if x != nil {
+		return x.SharyoCd
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetSharyoName() string {
+	if x != nil {
+		return x.SharyoName
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetJomuinCd1() int32 {
+	if x != nil {
+		return x.JomuinCd1
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetJomuinName1() string {
+	if x != nil {
+		return x.JomuinName1
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetTaishoJomuinKbn() int32 {
+	if x != nil {
+		return x.TaishoJomuinKbn
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetKaishiDatetime() string {
+	if x != nil {
+		return x.KaishiDatetime
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetShuryoDatetime() string {
+	if x != nil {
+		return x.ShuryoDatetime
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetFerryCompanyCd() int32 {
+	if x != nil {
+		return x.FerryCompanyCd
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetFerryCompanyName() string {
+	if x != nil {
+		return x.FerryCompanyName
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetNoribaCd() int32 {
+	if x != nil {
+		return x.NoribaCd
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetNoribaName() string {
+	if x != nil {
+		return x.NoribaName
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetBin() string {
+	if x != nil {
+		return x.Bin
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetOribaCd() int32 {
+	if x != nil {
+		return x.OribaCd
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetOribaName() string {
+	if x != nil {
+		return x.OribaName
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetSeisanKbn() int32 {
+	if x != nil {
+		return x.SeisanKbn
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetSeisanKbnName() string {
+	if x != nil {
+		return x.SeisanKbnName
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetHyojunRyokin() int32 {
+	if x != nil {
+		return x.HyojunRyokin
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetKeiyakuRyokin() int32 {
+	if x != nil {
+		return x.KeiyakuRyokin
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetKosoShashuKbn() int32 {
+	if x != nil {
+		return x.KosoShashuKbn
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetKosoShashuKbnName() string {
+	if x != nil {
+		return x.KosoShashuKbnName
+	}
+	return ""
+}
+
+func (x *DTakoFerryRowsProd) GetMinashiKyori() int32 {
+	if x != nil {
+		return x.MinashiKyori
+	}
+	return 0
+}
+
+func (x *DTakoFerryRowsProd) GetFerrySrch() string {
+	if x != nil && x.FerrySrch != nil {
+		return *x.FerrySrch
+	}
+	return ""
+}
+
+// DTakoFerryRowsProd用リクエスト/レスポンス
+type GetDTakoFerryRowsProdRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDTakoFerryRowsProdRequest) Reset() {
+	*x = GetDTakoFerryRowsProdRequest{}
+	mi := &file_ryohi_proto_msgTypes[58]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDTakoFerryRowsProdRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDTakoFerryRowsProdRequest) ProtoMessage() {}
+
+func (x *GetDTakoFerryRowsProdRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[58]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDTakoFerryRowsProdRequest.ProtoReflect.Descriptor instead.
+func (*GetDTakoFerryRowsProdRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *GetDTakoFerryRowsProdRequest) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type GetDTakoFerryRowsProdByUnkoNoRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UnkoNo        string                 `protobuf:"bytes,1,opt,name=unko_no,json=unkoNo,proto3" json:"unko_no,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetDTakoFerryRowsProdByUnkoNoRequest) Reset() {
+	*x = GetDTakoFerryRowsProdByUnkoNoRequest{}
+	mi := &file_ryohi_proto_msgTypes[59]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetDTakoFerryRowsProdByUnkoNoRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetDTakoFerryRowsProdByUnkoNoRequest) ProtoMessage() {}
+
+func (x *GetDTakoFerryRowsProdByUnkoNoRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[59]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetDTakoFerryRowsProdByUnkoNoRequest.ProtoReflect.Descriptor instead.
+func (*GetDTakoFerryRowsProdByUnkoNoRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{59}
+}
+
+func (x *GetDTakoFerryRowsProdByUnkoNoRequest) GetUnkoNo() string {
+	if x != nil {
+		return x.UnkoNo
+	}
+	return ""
+}
+
+type ListDTakoFerryRowsProdRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDTakoFerryRowsProdRequest) Reset() {
+	*x = ListDTakoFerryRowsProdRequest{}
+	mi := &file_ryohi_proto_msgTypes[60]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDTakoFerryRowsProdRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDTakoFerryRowsProdRequest) ProtoMessage() {}
+
+func (x *ListDTakoFerryRowsProdRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[60]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDTakoFerryRowsProdRequest.ProtoReflect.Descriptor instead.
+func (*ListDTakoFerryRowsProdRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *ListDTakoFerryRowsProdRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListDTakoFerryRowsProdRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type DTakoFerryRowsProdResponse struct {
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	DtakoFerryRows *DTakoFerryRowsProd    `protobuf:"bytes,1,opt,name=dtako_ferry_rows,json=dtakoFerryRows,proto3" json:"dtako_ferry_rows,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
+}
+
+func (x *DTakoFerryRowsProdResponse) Reset() {
+	*x = DTakoFerryRowsProdResponse{}
+	mi := &file_ryohi_proto_msgTypes[61]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DTakoFerryRowsProdResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DTakoFerryRowsProdResponse) ProtoMessage() {}
+
+func (x *DTakoFerryRowsProdResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[61]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DTakoFerryRowsProdResponse.ProtoReflect.Descriptor instead.
+func (*DTakoFerryRowsProdResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *DTakoFerryRowsProdResponse) GetDtakoFerryRows() *DTakoFerryRowsProd {
+	if x != nil {
+		return x.DtakoFerryRows
+	}
+	return nil
+}
+
+type ListDTakoFerryRowsProdResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*DTakoFerryRowsProd  `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListDTakoFerryRowsProdResponse) Reset() {
+	*x = ListDTakoFerryRowsProdResponse{}
+	mi := &file_ryohi_proto_msgTypes[62]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListDTakoFerryRowsProdResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListDTakoFerryRowsProdResponse) ProtoMessage() {}
+
+func (x *ListDTakoFerryRowsProdResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[62]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListDTakoFerryRowsProdResponse.ProtoReflect.Descriptor instead.
+func (*ListDTakoFerryRowsProdResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{62}
+}
+
+func (x *ListDTakoFerryRowsProdResponse) GetItems() []*DTakoFerryRowsProd {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *ListDTakoFerryRowsProdResponse) GetTotalCount() int32 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
 // 共通メッセージ
 type Empty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -3899,7 +4397,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_ryohi_proto_msgTypes[57]
+	mi := &file_ryohi_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3911,7 +4409,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_ryohi_proto_msgTypes[57]
+	mi := &file_ryohi_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3924,7 +4422,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_ryohi_proto_rawDescGZIP(), []int{57}
+	return file_ryohi_proto_rawDescGZIP(), []int{63}
 }
 
 var File_ryohi_proto protoreflect.FileDescriptor
@@ -4318,6 +4816,57 @@ const file_ryohi_proto_rawDesc = "" +
 	"\x12ListETCNumResponse\x12#\n" +
 	"\x05items\x18\x01 \x03(\v2\r.ryohi.ETCNumR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
+	"totalCount\"\xe9\a\n" +
+	"\x12DTakoFerryRowsProd\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x17\n" +
+	"\aunko_no\x18\x02 \x01(\tR\x06unkoNo\x12\x1b\n" +
+	"\tunko_date\x18\x03 \x01(\tR\bunkoDate\x12#\n" +
+	"\ryomitori_date\x18\x04 \x01(\tR\fyomitoriDate\x12\x1f\n" +
+	"\vjigyosho_cd\x18\x05 \x01(\x05R\n" +
+	"jigyoshoCd\x12#\n" +
+	"\rjigyosho_name\x18\x06 \x01(\tR\fjigyoshoName\x12\x1b\n" +
+	"\tsharyo_cd\x18\a \x01(\x05R\bsharyoCd\x12\x1f\n" +
+	"\vsharyo_name\x18\b \x01(\tR\n" +
+	"sharyoName\x12\x1d\n" +
+	"\n" +
+	"jomuin_cd1\x18\t \x01(\x05R\tjomuinCd1\x12!\n" +
+	"\fjomuin_name1\x18\n" +
+	" \x01(\tR\vjomuinName1\x12*\n" +
+	"\x11taisho_jomuin_kbn\x18\v \x01(\x05R\x0ftaishoJomuinKbn\x12'\n" +
+	"\x0fkaishi_datetime\x18\f \x01(\tR\x0ekaishiDatetime\x12'\n" +
+	"\x0fshuryo_datetime\x18\r \x01(\tR\x0eshuryoDatetime\x12(\n" +
+	"\x10ferry_company_cd\x18\x0e \x01(\x05R\x0eferryCompanyCd\x12,\n" +
+	"\x12ferry_company_name\x18\x0f \x01(\tR\x10ferryCompanyName\x12\x1b\n" +
+	"\tnoriba_cd\x18\x10 \x01(\x05R\bnoribaCd\x12\x1f\n" +
+	"\vnoriba_name\x18\x11 \x01(\tR\n" +
+	"noribaName\x12\x10\n" +
+	"\x03bin\x18\x12 \x01(\tR\x03bin\x12\x19\n" +
+	"\boriba_cd\x18\x13 \x01(\x05R\aoribaCd\x12\x1d\n" +
+	"\n" +
+	"oriba_name\x18\x14 \x01(\tR\toribaName\x12\x1d\n" +
+	"\n" +
+	"seisan_kbn\x18\x15 \x01(\x05R\tseisanKbn\x12&\n" +
+	"\x0fseisan_kbn_name\x18\x16 \x01(\tR\rseisanKbnName\x12#\n" +
+	"\rhyojun_ryokin\x18\x17 \x01(\x05R\fhyojunRyokin\x12%\n" +
+	"\x0ekeiyaku_ryokin\x18\x18 \x01(\x05R\rkeiyakuRyokin\x12&\n" +
+	"\x0fkoso_shashu_kbn\x18\x19 \x01(\x05R\rkosoShashuKbn\x12/\n" +
+	"\x14koso_shashu_kbn_name\x18\x1a \x01(\tR\x11kosoShashuKbnName\x12#\n" +
+	"\rminashi_kyori\x18\x1b \x01(\x05R\fminashiKyori\x12\"\n" +
+	"\n" +
+	"ferry_srch\x18\x1c \x01(\tH\x00R\tferrySrch\x88\x01\x01B\r\n" +
+	"\v_ferry_srch\".\n" +
+	"\x1cGetDTakoFerryRowsProdRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\"?\n" +
+	"$GetDTakoFerryRowsProdByUnkoNoRequest\x12\x17\n" +
+	"\aunko_no\x18\x01 \x01(\tR\x06unkoNo\"M\n" +
+	"\x1dListDTakoFerryRowsProdRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\"a\n" +
+	"\x1aDTakoFerryRowsProdResponse\x12C\n" +
+	"\x10dtako_ferry_rows\x18\x01 \x01(\v2\x19.ryohi.DTakoFerryRowsProdR\x0edtakoFerryRows\"r\n" +
+	"\x1eListDTakoFerryRowsProdResponse\x12/\n" +
+	"\x05items\x18\x01 \x03(\v2\x19.ryohi.DTakoFerryRowsProdR\x05items\x12\x1f\n" +
+	"\vtotal_count\x18\x02 \x01(\x05R\n" +
 	"totalCount\"\a\n" +
 	"\x05Empty2\xb3\x05\n" +
 	"\x17DTakoUriageKeihiService\x12\x8a\x01\n" +
@@ -4363,7 +4912,11 @@ const file_ryohi_proto_rawDesc = "" +
 	"\x04List\x12\x18.ryohi.ListETCNumRequest\x1a\x19.ryohi.ListETCNumResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1/db/etc-num\x12\x8c\x01\n" +
 	"\x0fGetByETCCardNum\x12#.ryohi.GetETCNumByETCCardNumRequest\x1a\x19.ryohi.ListETCNumResponse\"9\x82\xd3\xe4\x93\x023\x121/api/v1/db/etc-num/by-etc-card-num/{etc_card_num}\x12v\n" +
 	"\n" +
-	"GetByCarID\x12\x1e.ryohi.GetETCNumByCarIDRequest\x1a\x19.ryohi.ListETCNumResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/etc-num/by-car-id/{car_id}B/Z-github.com/yhonda-ohishi/db_service/src/protob\x06proto3"
+	"GetByCarID\x12\x1e.ryohi.GetETCNumByCarIDRequest\x1a\x19.ryohi.ListETCNumResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/etc-num/by-car-id/{car_id}2\xbb\x03\n" +
+	"\x19DTakoFerryRowsProdService\x12|\n" +
+	"\x03Get\x12#.ryohi.GetDTakoFerryRowsProdRequest\x1a!.ryohi.DTakoFerryRowsProdResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/dtako-ferry-rows-prod/{id}\x12}\n" +
+	"\x04List\x12$.ryohi.ListDTakoFerryRowsProdRequest\x1a%.ryohi.ListDTakoFerryRowsProdResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/dtako-ferry-rows-prod\x12\xa0\x01\n" +
+	"\vGetByUnkoNo\x12+.ryohi.GetDTakoFerryRowsProdByUnkoNoRequest\x1a%.ryohi.ListDTakoFerryRowsProdResponse\"=\x82\xd3\xe4\x93\x027\x125/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}B/Z-github.com/yhonda-ohishi/db_service/src/protob\x06proto3"
 
 var (
 	file_ryohi_proto_rawDescOnce sync.Once
@@ -4377,66 +4930,72 @@ func file_ryohi_proto_rawDescGZIP() []byte {
 	return file_ryohi_proto_rawDescData
 }
 
-var file_ryohi_proto_msgTypes = make([]protoimpl.MessageInfo, 58)
+var file_ryohi_proto_msgTypes = make([]protoimpl.MessageInfo, 64)
 var file_ryohi_proto_goTypes = []any{
-	(*DTakoUriageKeihi)(nil),                   // 0: ryohi.DTakoUriageKeihi
-	(*ETCMeisai)(nil),                          // 1: ryohi.ETCMeisai
-	(*DTakoFerryRows)(nil),                     // 2: ryohi.DTakoFerryRows
-	(*CreateDTakoUriageKeihiRequest)(nil),      // 3: ryohi.CreateDTakoUriageKeihiRequest
-	(*GetDTakoUriageKeihiRequest)(nil),         // 4: ryohi.GetDTakoUriageKeihiRequest
-	(*UpdateDTakoUriageKeihiRequest)(nil),      // 5: ryohi.UpdateDTakoUriageKeihiRequest
-	(*DeleteDTakoUriageKeihiRequest)(nil),      // 6: ryohi.DeleteDTakoUriageKeihiRequest
-	(*ListDTakoUriageKeihiRequest)(nil),        // 7: ryohi.ListDTakoUriageKeihiRequest
-	(*DTakoUriageKeihiResponse)(nil),           // 8: ryohi.DTakoUriageKeihiResponse
-	(*ListDTakoUriageKeihiResponse)(nil),       // 9: ryohi.ListDTakoUriageKeihiResponse
-	(*CreateETCMeisaiRequest)(nil),             // 10: ryohi.CreateETCMeisaiRequest
-	(*GetETCMeisaiRequest)(nil),                // 11: ryohi.GetETCMeisaiRequest
-	(*UpdateETCMeisaiRequest)(nil),             // 12: ryohi.UpdateETCMeisaiRequest
-	(*DeleteETCMeisaiRequest)(nil),             // 13: ryohi.DeleteETCMeisaiRequest
-	(*ListETCMeisaiRequest)(nil),               // 14: ryohi.ListETCMeisaiRequest
-	(*ETCMeisaiResponse)(nil),                  // 15: ryohi.ETCMeisaiResponse
-	(*ListETCMeisaiResponse)(nil),              // 16: ryohi.ListETCMeisaiResponse
-	(*CreateDTakoFerryRowsRequest)(nil),        // 17: ryohi.CreateDTakoFerryRowsRequest
-	(*GetDTakoFerryRowsRequest)(nil),           // 18: ryohi.GetDTakoFerryRowsRequest
-	(*UpdateDTakoFerryRowsRequest)(nil),        // 19: ryohi.UpdateDTakoFerryRowsRequest
-	(*DeleteDTakoFerryRowsRequest)(nil),        // 20: ryohi.DeleteDTakoFerryRowsRequest
-	(*ListDTakoFerryRowsRequest)(nil),          // 21: ryohi.ListDTakoFerryRowsRequest
-	(*DTakoFerryRowsResponse)(nil),             // 22: ryohi.DTakoFerryRowsResponse
-	(*ListDTakoFerryRowsResponse)(nil),         // 23: ryohi.ListDTakoFerryRowsResponse
-	(*ETCMeisaiMapping)(nil),                   // 24: ryohi.ETCMeisaiMapping
-	(*CreateETCMeisaiMappingRequest)(nil),      // 25: ryohi.CreateETCMeisaiMappingRequest
-	(*GetETCMeisaiMappingRequest)(nil),         // 26: ryohi.GetETCMeisaiMappingRequest
-	(*UpdateETCMeisaiMappingRequest)(nil),      // 27: ryohi.UpdateETCMeisaiMappingRequest
-	(*DeleteETCMeisaiMappingRequest)(nil),      // 28: ryohi.DeleteETCMeisaiMappingRequest
-	(*ListETCMeisaiMappingRequest)(nil),        // 29: ryohi.ListETCMeisaiMappingRequest
-	(*ETCMeisaiMappingResponse)(nil),           // 30: ryohi.ETCMeisaiMappingResponse
-	(*ListETCMeisaiMappingResponse)(nil),       // 31: ryohi.ListETCMeisaiMappingResponse
-	(*GetDTakoRowIDByHashRequest)(nil),         // 32: ryohi.GetDTakoRowIDByHashRequest
-	(*GetDTakoRowIDByHashResponse)(nil),        // 33: ryohi.GetDTakoRowIDByHashResponse
-	(*DTakoCars)(nil),                          // 34: ryohi.DTakoCars
-	(*DTakoEvents)(nil),                        // 35: ryohi.DTakoEvents
-	(*DTakoRows)(nil),                          // 36: ryohi.DTakoRows
-	(*ETCNum)(nil),                             // 37: ryohi.ETCNum
-	(*GetDTakoCarsRequest)(nil),                // 38: ryohi.GetDTakoCarsRequest
-	(*GetDTakoCarsByCarCodeRequest)(nil),       // 39: ryohi.GetDTakoCarsByCarCodeRequest
-	(*ListDTakoCarsRequest)(nil),               // 40: ryohi.ListDTakoCarsRequest
-	(*DTakoCarsResponse)(nil),                  // 41: ryohi.DTakoCarsResponse
-	(*ListDTakoCarsResponse)(nil),              // 42: ryohi.ListDTakoCarsResponse
-	(*GetDTakoEventsRequest)(nil),              // 43: ryohi.GetDTakoEventsRequest
-	(*GetDTakoEventsByOperationNoRequest)(nil), // 44: ryohi.GetDTakoEventsByOperationNoRequest
-	(*ListDTakoEventsRequest)(nil),             // 45: ryohi.ListDTakoEventsRequest
-	(*DTakoEventsResponse)(nil),                // 46: ryohi.DTakoEventsResponse
-	(*ListDTakoEventsResponse)(nil),            // 47: ryohi.ListDTakoEventsResponse
-	(*GetDTakoRowsRequest)(nil),                // 48: ryohi.GetDTakoRowsRequest
-	(*GetDTakoRowsByOperationNoRequest)(nil),   // 49: ryohi.GetDTakoRowsByOperationNoRequest
-	(*ListDTakoRowsRequest)(nil),               // 50: ryohi.ListDTakoRowsRequest
-	(*DTakoRowsResponse)(nil),                  // 51: ryohi.DTakoRowsResponse
-	(*ListDTakoRowsResponse)(nil),              // 52: ryohi.ListDTakoRowsResponse
-	(*GetETCNumByETCCardNumRequest)(nil),       // 53: ryohi.GetETCNumByETCCardNumRequest
-	(*GetETCNumByCarIDRequest)(nil),            // 54: ryohi.GetETCNumByCarIDRequest
-	(*ListETCNumRequest)(nil),                  // 55: ryohi.ListETCNumRequest
-	(*ListETCNumResponse)(nil),                 // 56: ryohi.ListETCNumResponse
-	(*Empty)(nil),                              // 57: ryohi.Empty
+	(*DTakoUriageKeihi)(nil),                     // 0: ryohi.DTakoUriageKeihi
+	(*ETCMeisai)(nil),                            // 1: ryohi.ETCMeisai
+	(*DTakoFerryRows)(nil),                       // 2: ryohi.DTakoFerryRows
+	(*CreateDTakoUriageKeihiRequest)(nil),        // 3: ryohi.CreateDTakoUriageKeihiRequest
+	(*GetDTakoUriageKeihiRequest)(nil),           // 4: ryohi.GetDTakoUriageKeihiRequest
+	(*UpdateDTakoUriageKeihiRequest)(nil),        // 5: ryohi.UpdateDTakoUriageKeihiRequest
+	(*DeleteDTakoUriageKeihiRequest)(nil),        // 6: ryohi.DeleteDTakoUriageKeihiRequest
+	(*ListDTakoUriageKeihiRequest)(nil),          // 7: ryohi.ListDTakoUriageKeihiRequest
+	(*DTakoUriageKeihiResponse)(nil),             // 8: ryohi.DTakoUriageKeihiResponse
+	(*ListDTakoUriageKeihiResponse)(nil),         // 9: ryohi.ListDTakoUriageKeihiResponse
+	(*CreateETCMeisaiRequest)(nil),               // 10: ryohi.CreateETCMeisaiRequest
+	(*GetETCMeisaiRequest)(nil),                  // 11: ryohi.GetETCMeisaiRequest
+	(*UpdateETCMeisaiRequest)(nil),               // 12: ryohi.UpdateETCMeisaiRequest
+	(*DeleteETCMeisaiRequest)(nil),               // 13: ryohi.DeleteETCMeisaiRequest
+	(*ListETCMeisaiRequest)(nil),                 // 14: ryohi.ListETCMeisaiRequest
+	(*ETCMeisaiResponse)(nil),                    // 15: ryohi.ETCMeisaiResponse
+	(*ListETCMeisaiResponse)(nil),                // 16: ryohi.ListETCMeisaiResponse
+	(*CreateDTakoFerryRowsRequest)(nil),          // 17: ryohi.CreateDTakoFerryRowsRequest
+	(*GetDTakoFerryRowsRequest)(nil),             // 18: ryohi.GetDTakoFerryRowsRequest
+	(*UpdateDTakoFerryRowsRequest)(nil),          // 19: ryohi.UpdateDTakoFerryRowsRequest
+	(*DeleteDTakoFerryRowsRequest)(nil),          // 20: ryohi.DeleteDTakoFerryRowsRequest
+	(*ListDTakoFerryRowsRequest)(nil),            // 21: ryohi.ListDTakoFerryRowsRequest
+	(*DTakoFerryRowsResponse)(nil),               // 22: ryohi.DTakoFerryRowsResponse
+	(*ListDTakoFerryRowsResponse)(nil),           // 23: ryohi.ListDTakoFerryRowsResponse
+	(*ETCMeisaiMapping)(nil),                     // 24: ryohi.ETCMeisaiMapping
+	(*CreateETCMeisaiMappingRequest)(nil),        // 25: ryohi.CreateETCMeisaiMappingRequest
+	(*GetETCMeisaiMappingRequest)(nil),           // 26: ryohi.GetETCMeisaiMappingRequest
+	(*UpdateETCMeisaiMappingRequest)(nil),        // 27: ryohi.UpdateETCMeisaiMappingRequest
+	(*DeleteETCMeisaiMappingRequest)(nil),        // 28: ryohi.DeleteETCMeisaiMappingRequest
+	(*ListETCMeisaiMappingRequest)(nil),          // 29: ryohi.ListETCMeisaiMappingRequest
+	(*ETCMeisaiMappingResponse)(nil),             // 30: ryohi.ETCMeisaiMappingResponse
+	(*ListETCMeisaiMappingResponse)(nil),         // 31: ryohi.ListETCMeisaiMappingResponse
+	(*GetDTakoRowIDByHashRequest)(nil),           // 32: ryohi.GetDTakoRowIDByHashRequest
+	(*GetDTakoRowIDByHashResponse)(nil),          // 33: ryohi.GetDTakoRowIDByHashResponse
+	(*DTakoCars)(nil),                            // 34: ryohi.DTakoCars
+	(*DTakoEvents)(nil),                          // 35: ryohi.DTakoEvents
+	(*DTakoRows)(nil),                            // 36: ryohi.DTakoRows
+	(*ETCNum)(nil),                               // 37: ryohi.ETCNum
+	(*GetDTakoCarsRequest)(nil),                  // 38: ryohi.GetDTakoCarsRequest
+	(*GetDTakoCarsByCarCodeRequest)(nil),         // 39: ryohi.GetDTakoCarsByCarCodeRequest
+	(*ListDTakoCarsRequest)(nil),                 // 40: ryohi.ListDTakoCarsRequest
+	(*DTakoCarsResponse)(nil),                    // 41: ryohi.DTakoCarsResponse
+	(*ListDTakoCarsResponse)(nil),                // 42: ryohi.ListDTakoCarsResponse
+	(*GetDTakoEventsRequest)(nil),                // 43: ryohi.GetDTakoEventsRequest
+	(*GetDTakoEventsByOperationNoRequest)(nil),   // 44: ryohi.GetDTakoEventsByOperationNoRequest
+	(*ListDTakoEventsRequest)(nil),               // 45: ryohi.ListDTakoEventsRequest
+	(*DTakoEventsResponse)(nil),                  // 46: ryohi.DTakoEventsResponse
+	(*ListDTakoEventsResponse)(nil),              // 47: ryohi.ListDTakoEventsResponse
+	(*GetDTakoRowsRequest)(nil),                  // 48: ryohi.GetDTakoRowsRequest
+	(*GetDTakoRowsByOperationNoRequest)(nil),     // 49: ryohi.GetDTakoRowsByOperationNoRequest
+	(*ListDTakoRowsRequest)(nil),                 // 50: ryohi.ListDTakoRowsRequest
+	(*DTakoRowsResponse)(nil),                    // 51: ryohi.DTakoRowsResponse
+	(*ListDTakoRowsResponse)(nil),                // 52: ryohi.ListDTakoRowsResponse
+	(*GetETCNumByETCCardNumRequest)(nil),         // 53: ryohi.GetETCNumByETCCardNumRequest
+	(*GetETCNumByCarIDRequest)(nil),              // 54: ryohi.GetETCNumByCarIDRequest
+	(*ListETCNumRequest)(nil),                    // 55: ryohi.ListETCNumRequest
+	(*ListETCNumResponse)(nil),                   // 56: ryohi.ListETCNumResponse
+	(*DTakoFerryRowsProd)(nil),                   // 57: ryohi.DTakoFerryRowsProd
+	(*GetDTakoFerryRowsProdRequest)(nil),         // 58: ryohi.GetDTakoFerryRowsProdRequest
+	(*GetDTakoFerryRowsProdByUnkoNoRequest)(nil), // 59: ryohi.GetDTakoFerryRowsProdByUnkoNoRequest
+	(*ListDTakoFerryRowsProdRequest)(nil),        // 60: ryohi.ListDTakoFerryRowsProdRequest
+	(*DTakoFerryRowsProdResponse)(nil),           // 61: ryohi.DTakoFerryRowsProdResponse
+	(*ListDTakoFerryRowsProdResponse)(nil),       // 62: ryohi.ListDTakoFerryRowsProdResponse
+	(*Empty)(nil),                                // 63: ryohi.Empty
 }
 var file_ryohi_proto_depIdxs = []int32{
 	0,  // 0: ryohi.CreateDTakoUriageKeihiRequest.dtako_uriage_keihi:type_name -> ryohi.DTakoUriageKeihi
@@ -4462,77 +5021,85 @@ var file_ryohi_proto_depIdxs = []int32{
 	36, // 20: ryohi.DTakoRowsResponse.dtako_rows:type_name -> ryohi.DTakoRows
 	36, // 21: ryohi.ListDTakoRowsResponse.items:type_name -> ryohi.DTakoRows
 	37, // 22: ryohi.ListETCNumResponse.items:type_name -> ryohi.ETCNum
-	3,  // 23: ryohi.DTakoUriageKeihiService.Create:input_type -> ryohi.CreateDTakoUriageKeihiRequest
-	4,  // 24: ryohi.DTakoUriageKeihiService.Get:input_type -> ryohi.GetDTakoUriageKeihiRequest
-	5,  // 25: ryohi.DTakoUriageKeihiService.Update:input_type -> ryohi.UpdateDTakoUriageKeihiRequest
-	6,  // 26: ryohi.DTakoUriageKeihiService.Delete:input_type -> ryohi.DeleteDTakoUriageKeihiRequest
-	7,  // 27: ryohi.DTakoUriageKeihiService.List:input_type -> ryohi.ListDTakoUriageKeihiRequest
-	10, // 28: ryohi.ETCMeisaiService.Create:input_type -> ryohi.CreateETCMeisaiRequest
-	11, // 29: ryohi.ETCMeisaiService.Get:input_type -> ryohi.GetETCMeisaiRequest
-	12, // 30: ryohi.ETCMeisaiService.Update:input_type -> ryohi.UpdateETCMeisaiRequest
-	13, // 31: ryohi.ETCMeisaiService.Delete:input_type -> ryohi.DeleteETCMeisaiRequest
-	14, // 32: ryohi.ETCMeisaiService.List:input_type -> ryohi.ListETCMeisaiRequest
-	17, // 33: ryohi.DTakoFerryRowsService.Create:input_type -> ryohi.CreateDTakoFerryRowsRequest
-	18, // 34: ryohi.DTakoFerryRowsService.Get:input_type -> ryohi.GetDTakoFerryRowsRequest
-	19, // 35: ryohi.DTakoFerryRowsService.Update:input_type -> ryohi.UpdateDTakoFerryRowsRequest
-	20, // 36: ryohi.DTakoFerryRowsService.Delete:input_type -> ryohi.DeleteDTakoFerryRowsRequest
-	21, // 37: ryohi.DTakoFerryRowsService.List:input_type -> ryohi.ListDTakoFerryRowsRequest
-	25, // 38: ryohi.ETCMeisaiMappingService.Create:input_type -> ryohi.CreateETCMeisaiMappingRequest
-	26, // 39: ryohi.ETCMeisaiMappingService.Get:input_type -> ryohi.GetETCMeisaiMappingRequest
-	27, // 40: ryohi.ETCMeisaiMappingService.Update:input_type -> ryohi.UpdateETCMeisaiMappingRequest
-	28, // 41: ryohi.ETCMeisaiMappingService.Delete:input_type -> ryohi.DeleteETCMeisaiMappingRequest
-	29, // 42: ryohi.ETCMeisaiMappingService.List:input_type -> ryohi.ListETCMeisaiMappingRequest
-	32, // 43: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> ryohi.GetDTakoRowIDByHashRequest
-	38, // 44: ryohi.DTakoCarsService.Get:input_type -> ryohi.GetDTakoCarsRequest
-	40, // 45: ryohi.DTakoCarsService.List:input_type -> ryohi.ListDTakoCarsRequest
-	39, // 46: ryohi.DTakoCarsService.GetByCarCode:input_type -> ryohi.GetDTakoCarsByCarCodeRequest
-	43, // 47: ryohi.DTakoEventsService.Get:input_type -> ryohi.GetDTakoEventsRequest
-	45, // 48: ryohi.DTakoEventsService.List:input_type -> ryohi.ListDTakoEventsRequest
-	44, // 49: ryohi.DTakoEventsService.GetByOperationNo:input_type -> ryohi.GetDTakoEventsByOperationNoRequest
-	48, // 50: ryohi.DTakoRowsService.Get:input_type -> ryohi.GetDTakoRowsRequest
-	50, // 51: ryohi.DTakoRowsService.List:input_type -> ryohi.ListDTakoRowsRequest
-	49, // 52: ryohi.DTakoRowsService.GetByOperationNo:input_type -> ryohi.GetDTakoRowsByOperationNoRequest
-	55, // 53: ryohi.ETCNumService.List:input_type -> ryohi.ListETCNumRequest
-	53, // 54: ryohi.ETCNumService.GetByETCCardNum:input_type -> ryohi.GetETCNumByETCCardNumRequest
-	54, // 55: ryohi.ETCNumService.GetByCarID:input_type -> ryohi.GetETCNumByCarIDRequest
-	8,  // 56: ryohi.DTakoUriageKeihiService.Create:output_type -> ryohi.DTakoUriageKeihiResponse
-	8,  // 57: ryohi.DTakoUriageKeihiService.Get:output_type -> ryohi.DTakoUriageKeihiResponse
-	8,  // 58: ryohi.DTakoUriageKeihiService.Update:output_type -> ryohi.DTakoUriageKeihiResponse
-	57, // 59: ryohi.DTakoUriageKeihiService.Delete:output_type -> ryohi.Empty
-	9,  // 60: ryohi.DTakoUriageKeihiService.List:output_type -> ryohi.ListDTakoUriageKeihiResponse
-	15, // 61: ryohi.ETCMeisaiService.Create:output_type -> ryohi.ETCMeisaiResponse
-	15, // 62: ryohi.ETCMeisaiService.Get:output_type -> ryohi.ETCMeisaiResponse
-	15, // 63: ryohi.ETCMeisaiService.Update:output_type -> ryohi.ETCMeisaiResponse
-	57, // 64: ryohi.ETCMeisaiService.Delete:output_type -> ryohi.Empty
-	16, // 65: ryohi.ETCMeisaiService.List:output_type -> ryohi.ListETCMeisaiResponse
-	22, // 66: ryohi.DTakoFerryRowsService.Create:output_type -> ryohi.DTakoFerryRowsResponse
-	22, // 67: ryohi.DTakoFerryRowsService.Get:output_type -> ryohi.DTakoFerryRowsResponse
-	22, // 68: ryohi.DTakoFerryRowsService.Update:output_type -> ryohi.DTakoFerryRowsResponse
-	57, // 69: ryohi.DTakoFerryRowsService.Delete:output_type -> ryohi.Empty
-	23, // 70: ryohi.DTakoFerryRowsService.List:output_type -> ryohi.ListDTakoFerryRowsResponse
-	30, // 71: ryohi.ETCMeisaiMappingService.Create:output_type -> ryohi.ETCMeisaiMappingResponse
-	30, // 72: ryohi.ETCMeisaiMappingService.Get:output_type -> ryohi.ETCMeisaiMappingResponse
-	30, // 73: ryohi.ETCMeisaiMappingService.Update:output_type -> ryohi.ETCMeisaiMappingResponse
-	57, // 74: ryohi.ETCMeisaiMappingService.Delete:output_type -> ryohi.Empty
-	31, // 75: ryohi.ETCMeisaiMappingService.List:output_type -> ryohi.ListETCMeisaiMappingResponse
-	33, // 76: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> ryohi.GetDTakoRowIDByHashResponse
-	41, // 77: ryohi.DTakoCarsService.Get:output_type -> ryohi.DTakoCarsResponse
-	42, // 78: ryohi.DTakoCarsService.List:output_type -> ryohi.ListDTakoCarsResponse
-	41, // 79: ryohi.DTakoCarsService.GetByCarCode:output_type -> ryohi.DTakoCarsResponse
-	46, // 80: ryohi.DTakoEventsService.Get:output_type -> ryohi.DTakoEventsResponse
-	47, // 81: ryohi.DTakoEventsService.List:output_type -> ryohi.ListDTakoEventsResponse
-	47, // 82: ryohi.DTakoEventsService.GetByOperationNo:output_type -> ryohi.ListDTakoEventsResponse
-	51, // 83: ryohi.DTakoRowsService.Get:output_type -> ryohi.DTakoRowsResponse
-	52, // 84: ryohi.DTakoRowsService.List:output_type -> ryohi.ListDTakoRowsResponse
-	52, // 85: ryohi.DTakoRowsService.GetByOperationNo:output_type -> ryohi.ListDTakoRowsResponse
-	56, // 86: ryohi.ETCNumService.List:output_type -> ryohi.ListETCNumResponse
-	56, // 87: ryohi.ETCNumService.GetByETCCardNum:output_type -> ryohi.ListETCNumResponse
-	56, // 88: ryohi.ETCNumService.GetByCarID:output_type -> ryohi.ListETCNumResponse
-	56, // [56:89] is the sub-list for method output_type
-	23, // [23:56] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	57, // 23: ryohi.DTakoFerryRowsProdResponse.dtako_ferry_rows:type_name -> ryohi.DTakoFerryRowsProd
+	57, // 24: ryohi.ListDTakoFerryRowsProdResponse.items:type_name -> ryohi.DTakoFerryRowsProd
+	3,  // 25: ryohi.DTakoUriageKeihiService.Create:input_type -> ryohi.CreateDTakoUriageKeihiRequest
+	4,  // 26: ryohi.DTakoUriageKeihiService.Get:input_type -> ryohi.GetDTakoUriageKeihiRequest
+	5,  // 27: ryohi.DTakoUriageKeihiService.Update:input_type -> ryohi.UpdateDTakoUriageKeihiRequest
+	6,  // 28: ryohi.DTakoUriageKeihiService.Delete:input_type -> ryohi.DeleteDTakoUriageKeihiRequest
+	7,  // 29: ryohi.DTakoUriageKeihiService.List:input_type -> ryohi.ListDTakoUriageKeihiRequest
+	10, // 30: ryohi.ETCMeisaiService.Create:input_type -> ryohi.CreateETCMeisaiRequest
+	11, // 31: ryohi.ETCMeisaiService.Get:input_type -> ryohi.GetETCMeisaiRequest
+	12, // 32: ryohi.ETCMeisaiService.Update:input_type -> ryohi.UpdateETCMeisaiRequest
+	13, // 33: ryohi.ETCMeisaiService.Delete:input_type -> ryohi.DeleteETCMeisaiRequest
+	14, // 34: ryohi.ETCMeisaiService.List:input_type -> ryohi.ListETCMeisaiRequest
+	17, // 35: ryohi.DTakoFerryRowsService.Create:input_type -> ryohi.CreateDTakoFerryRowsRequest
+	18, // 36: ryohi.DTakoFerryRowsService.Get:input_type -> ryohi.GetDTakoFerryRowsRequest
+	19, // 37: ryohi.DTakoFerryRowsService.Update:input_type -> ryohi.UpdateDTakoFerryRowsRequest
+	20, // 38: ryohi.DTakoFerryRowsService.Delete:input_type -> ryohi.DeleteDTakoFerryRowsRequest
+	21, // 39: ryohi.DTakoFerryRowsService.List:input_type -> ryohi.ListDTakoFerryRowsRequest
+	25, // 40: ryohi.ETCMeisaiMappingService.Create:input_type -> ryohi.CreateETCMeisaiMappingRequest
+	26, // 41: ryohi.ETCMeisaiMappingService.Get:input_type -> ryohi.GetETCMeisaiMappingRequest
+	27, // 42: ryohi.ETCMeisaiMappingService.Update:input_type -> ryohi.UpdateETCMeisaiMappingRequest
+	28, // 43: ryohi.ETCMeisaiMappingService.Delete:input_type -> ryohi.DeleteETCMeisaiMappingRequest
+	29, // 44: ryohi.ETCMeisaiMappingService.List:input_type -> ryohi.ListETCMeisaiMappingRequest
+	32, // 45: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> ryohi.GetDTakoRowIDByHashRequest
+	38, // 46: ryohi.DTakoCarsService.Get:input_type -> ryohi.GetDTakoCarsRequest
+	40, // 47: ryohi.DTakoCarsService.List:input_type -> ryohi.ListDTakoCarsRequest
+	39, // 48: ryohi.DTakoCarsService.GetByCarCode:input_type -> ryohi.GetDTakoCarsByCarCodeRequest
+	43, // 49: ryohi.DTakoEventsService.Get:input_type -> ryohi.GetDTakoEventsRequest
+	45, // 50: ryohi.DTakoEventsService.List:input_type -> ryohi.ListDTakoEventsRequest
+	44, // 51: ryohi.DTakoEventsService.GetByOperationNo:input_type -> ryohi.GetDTakoEventsByOperationNoRequest
+	48, // 52: ryohi.DTakoRowsService.Get:input_type -> ryohi.GetDTakoRowsRequest
+	50, // 53: ryohi.DTakoRowsService.List:input_type -> ryohi.ListDTakoRowsRequest
+	49, // 54: ryohi.DTakoRowsService.GetByOperationNo:input_type -> ryohi.GetDTakoRowsByOperationNoRequest
+	55, // 55: ryohi.ETCNumService.List:input_type -> ryohi.ListETCNumRequest
+	53, // 56: ryohi.ETCNumService.GetByETCCardNum:input_type -> ryohi.GetETCNumByETCCardNumRequest
+	54, // 57: ryohi.ETCNumService.GetByCarID:input_type -> ryohi.GetETCNumByCarIDRequest
+	58, // 58: ryohi.DTakoFerryRowsProdService.Get:input_type -> ryohi.GetDTakoFerryRowsProdRequest
+	60, // 59: ryohi.DTakoFerryRowsProdService.List:input_type -> ryohi.ListDTakoFerryRowsProdRequest
+	59, // 60: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:input_type -> ryohi.GetDTakoFerryRowsProdByUnkoNoRequest
+	8,  // 61: ryohi.DTakoUriageKeihiService.Create:output_type -> ryohi.DTakoUriageKeihiResponse
+	8,  // 62: ryohi.DTakoUriageKeihiService.Get:output_type -> ryohi.DTakoUriageKeihiResponse
+	8,  // 63: ryohi.DTakoUriageKeihiService.Update:output_type -> ryohi.DTakoUriageKeihiResponse
+	63, // 64: ryohi.DTakoUriageKeihiService.Delete:output_type -> ryohi.Empty
+	9,  // 65: ryohi.DTakoUriageKeihiService.List:output_type -> ryohi.ListDTakoUriageKeihiResponse
+	15, // 66: ryohi.ETCMeisaiService.Create:output_type -> ryohi.ETCMeisaiResponse
+	15, // 67: ryohi.ETCMeisaiService.Get:output_type -> ryohi.ETCMeisaiResponse
+	15, // 68: ryohi.ETCMeisaiService.Update:output_type -> ryohi.ETCMeisaiResponse
+	63, // 69: ryohi.ETCMeisaiService.Delete:output_type -> ryohi.Empty
+	16, // 70: ryohi.ETCMeisaiService.List:output_type -> ryohi.ListETCMeisaiResponse
+	22, // 71: ryohi.DTakoFerryRowsService.Create:output_type -> ryohi.DTakoFerryRowsResponse
+	22, // 72: ryohi.DTakoFerryRowsService.Get:output_type -> ryohi.DTakoFerryRowsResponse
+	22, // 73: ryohi.DTakoFerryRowsService.Update:output_type -> ryohi.DTakoFerryRowsResponse
+	63, // 74: ryohi.DTakoFerryRowsService.Delete:output_type -> ryohi.Empty
+	23, // 75: ryohi.DTakoFerryRowsService.List:output_type -> ryohi.ListDTakoFerryRowsResponse
+	30, // 76: ryohi.ETCMeisaiMappingService.Create:output_type -> ryohi.ETCMeisaiMappingResponse
+	30, // 77: ryohi.ETCMeisaiMappingService.Get:output_type -> ryohi.ETCMeisaiMappingResponse
+	30, // 78: ryohi.ETCMeisaiMappingService.Update:output_type -> ryohi.ETCMeisaiMappingResponse
+	63, // 79: ryohi.ETCMeisaiMappingService.Delete:output_type -> ryohi.Empty
+	31, // 80: ryohi.ETCMeisaiMappingService.List:output_type -> ryohi.ListETCMeisaiMappingResponse
+	33, // 81: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> ryohi.GetDTakoRowIDByHashResponse
+	41, // 82: ryohi.DTakoCarsService.Get:output_type -> ryohi.DTakoCarsResponse
+	42, // 83: ryohi.DTakoCarsService.List:output_type -> ryohi.ListDTakoCarsResponse
+	41, // 84: ryohi.DTakoCarsService.GetByCarCode:output_type -> ryohi.DTakoCarsResponse
+	46, // 85: ryohi.DTakoEventsService.Get:output_type -> ryohi.DTakoEventsResponse
+	47, // 86: ryohi.DTakoEventsService.List:output_type -> ryohi.ListDTakoEventsResponse
+	47, // 87: ryohi.DTakoEventsService.GetByOperationNo:output_type -> ryohi.ListDTakoEventsResponse
+	51, // 88: ryohi.DTakoRowsService.Get:output_type -> ryohi.DTakoRowsResponse
+	52, // 89: ryohi.DTakoRowsService.List:output_type -> ryohi.ListDTakoRowsResponse
+	52, // 90: ryohi.DTakoRowsService.GetByOperationNo:output_type -> ryohi.ListDTakoRowsResponse
+	56, // 91: ryohi.ETCNumService.List:output_type -> ryohi.ListETCNumResponse
+	56, // 92: ryohi.ETCNumService.GetByETCCardNum:output_type -> ryohi.ListETCNumResponse
+	56, // 93: ryohi.ETCNumService.GetByCarID:output_type -> ryohi.ListETCNumResponse
+	61, // 94: ryohi.DTakoFerryRowsProdService.Get:output_type -> ryohi.DTakoFerryRowsProdResponse
+	62, // 95: ryohi.DTakoFerryRowsProdService.List:output_type -> ryohi.ListDTakoFerryRowsProdResponse
+	62, // 96: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:output_type -> ryohi.ListDTakoFerryRowsProdResponse
+	61, // [61:97] is the sub-list for method output_type
+	25, // [25:61] is the sub-list for method input_type
+	25, // [25:25] is the sub-list for extension type_name
+	25, // [25:25] is the sub-list for extension extendee
+	0,  // [0:25] is the sub-list for field type_name
 }
 
 func init() { file_ryohi_proto_init() }
@@ -4551,15 +5118,16 @@ func file_ryohi_proto_init() {
 	file_ryohi_proto_msgTypes[35].OneofWrappers = []any{}
 	file_ryohi_proto_msgTypes[36].OneofWrappers = []any{}
 	file_ryohi_proto_msgTypes[37].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[57].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ryohi_proto_rawDesc), len(file_ryohi_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   58,
+			NumMessages:   64,
 			NumExtensions: 0,
-			NumServices:   8,
+			NumServices:   9,
 		},
 		GoTypes:           file_ryohi_proto_goTypes,
 		DependencyIndexes: file_ryohi_proto_depIdxs,

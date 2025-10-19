@@ -1294,6 +1294,119 @@ func local_request_ETCNumService_GetByCarID_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
+func request_DTakoFerryRowsProdService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsProdServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq GetDTakoFerryRowsProdRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	if req.Body != nil {
+		_, _ = io.Copy(io.Discard, req.Body)
+	}
+	val, ok := pathParams["id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id")
+	}
+	protoReq.Id, err = runtime.Int32(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
+	}
+	msg, err := client.Get(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_DTakoFerryRowsProdService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsProdServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq GetDTakoFerryRowsProdRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	val, ok := pathParams["id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id")
+	}
+	protoReq.Id, err = runtime.Int32(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
+	}
+	msg, err := server.Get(ctx, &protoReq)
+	return msg, metadata, err
+}
+
+var filter_DTakoFerryRowsProdService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+
+func request_DTakoFerryRowsProdService_List_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsProdServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq ListDTakoFerryRowsProdRequest
+		metadata runtime.ServerMetadata
+	)
+	if req.Body != nil {
+		_, _ = io.Copy(io.Discard, req.Body)
+	}
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoFerryRowsProdService_List_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_DTakoFerryRowsProdService_List_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsProdServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq ListDTakoFerryRowsProdRequest
+		metadata runtime.ServerMetadata
+	)
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoFerryRowsProdService_List_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+	msg, err := server.List(ctx, &protoReq)
+	return msg, metadata, err
+}
+
+func request_DTakoFerryRowsProdService_GetByUnkoNo_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsProdServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq GetDTakoFerryRowsProdByUnkoNoRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	if req.Body != nil {
+		_, _ = io.Copy(io.Discard, req.Body)
+	}
+	val, ok := pathParams["unko_no"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "unko_no")
+	}
+	protoReq.UnkoNo, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "unko_no", err)
+	}
+	msg, err := client.GetByUnkoNo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+}
+
+func local_request_DTakoFerryRowsProdService_GetByUnkoNo_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsProdServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var (
+		protoReq GetDTakoFerryRowsProdByUnkoNoRequest
+		metadata runtime.ServerMetadata
+		err      error
+	)
+	val, ok := pathParams["unko_no"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "unko_no")
+	}
+	protoReq.UnkoNo, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "unko_no", err)
+	}
+	msg, err := server.GetByUnkoNo(ctx, &protoReq)
+	return msg, metadata, err
+}
+
 // RegisterDTakoUriageKeihiServiceHandlerServer registers the http handlers for service DTakoUriageKeihiService to "mux".
 // UnaryRPC     :call DTakoUriageKeihiServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
@@ -2029,6 +2142,76 @@ func RegisterETCNumServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 		forward_ETCNumService_GetByCarID_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+
+	return nil
+}
+
+// RegisterDTakoFerryRowsProdServiceHandlerServer registers the http handlers for service DTakoFerryRowsProdService to "mux".
+// UnaryRPC     :call DTakoFerryRowsProdServiceServer directly.
+// StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDTakoFerryRowsProdServiceHandlerFromEndpoint instead.
+// GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
+func RegisterDTakoFerryRowsProdServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DTakoFerryRowsProdServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ryohi.DTakoFerryRowsProdService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/{id}"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_DTakoFerryRowsProdService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_DTakoFerryRowsProdService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ryohi.DTakoFerryRowsProdService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_DTakoFerryRowsProdService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_DTakoFerryRowsProdService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_GetByUnkoNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/ryohi.DTakoFerryRowsProdService/GetByUnkoNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
@@ -3019,4 +3202,106 @@ var (
 	forward_ETCNumService_List_0            = runtime.ForwardResponseMessage
 	forward_ETCNumService_GetByETCCardNum_0 = runtime.ForwardResponseMessage
 	forward_ETCNumService_GetByCarID_0      = runtime.ForwardResponseMessage
+)
+
+// RegisterDTakoFerryRowsProdServiceHandlerFromEndpoint is same as RegisterDTakoFerryRowsProdServiceHandler but
+// automatically dials to "endpoint" and closes the connection when "ctx" gets done.
+func RegisterDTakoFerryRowsProdServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+	conn, err := grpc.NewClient(endpoint, opts...)
+	if err != nil {
+		return err
+	}
+	defer func() {
+		if err != nil {
+			if cerr := conn.Close(); cerr != nil {
+				grpclog.Errorf("Failed to close conn to %s: %v", endpoint, cerr)
+			}
+			return
+		}
+		go func() {
+			<-ctx.Done()
+			if cerr := conn.Close(); cerr != nil {
+				grpclog.Errorf("Failed to close conn to %s: %v", endpoint, cerr)
+			}
+		}()
+	}()
+	return RegisterDTakoFerryRowsProdServiceHandler(ctx, mux, conn)
+}
+
+// RegisterDTakoFerryRowsProdServiceHandler registers the http handlers for service DTakoFerryRowsProdService to "mux".
+// The handlers forward requests to the grpc endpoint over "conn".
+func RegisterDTakoFerryRowsProdServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDTakoFerryRowsProdServiceHandlerClient(ctx, mux, NewDTakoFerryRowsProdServiceClient(conn))
+}
+
+// RegisterDTakoFerryRowsProdServiceHandlerClient registers the http handlers for service DTakoFerryRowsProdService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DTakoFerryRowsProdServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DTakoFerryRowsProdServiceClient"
+// doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
+// "DTakoFerryRowsProdServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDTakoFerryRowsProdServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DTakoFerryRowsProdServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/ryohi.DTakoFerryRowsProdService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/{id}"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_DTakoFerryRowsProdService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_DTakoFerryRowsProdService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/ryohi.DTakoFerryRowsProdService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_DTakoFerryRowsProdService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_DTakoFerryRowsProdService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_GetByUnkoNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/ryohi.DTakoFerryRowsProdService/GetByUnkoNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
+		if err != nil {
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		forward_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+	})
+	return nil
+}
+
+var (
+	pattern_DTakoFerryRowsProdService_Get_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-ferry-rows-prod", "id"}, ""))
+	pattern_DTakoFerryRowsProdService_List_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-ferry-rows-prod"}, ""))
+	pattern_DTakoFerryRowsProdService_GetByUnkoNo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "dtako-ferry-rows-prod", "by-unko-no", "unko_no"}, ""))
+)
+
+var (
+	forward_DTakoFerryRowsProdService_Get_0         = runtime.ForwardResponseMessage
+	forward_DTakoFerryRowsProdService_List_0        = runtime.ForwardResponseMessage
+	forward_DTakoFerryRowsProdService_GetByUnkoNo_0 = runtime.ForwardResponseMessage
 )

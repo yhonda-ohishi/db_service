@@ -28,6 +28,9 @@
     },
     {
       "name": "ETCNumService"
+    },
+    {
+      "name": "DTakoFerryRowsProdService"
     }
   ],
   "consumes": [
@@ -326,6 +329,108 @@
         ],
         "tags": [
           "DTakoFerryRowsService"
+        ]
+      }
+    },
+    "/api/v1/db/dtako-ferry-rows-prod": {
+      "get": {
+        "summary": "フェリー運行データ一覧取得",
+        "operationId": "DTakoFerryRowsProdService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListDTakoFerryRowsProdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "DTakoFerryRowsProdService"
+        ]
+      }
+    },
+    "/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unkoNo}": {
+      "get": {
+        "summary": "運行NOでフェリー運行データ取得",
+        "operationId": "DTakoFerryRowsProdService_GetByUnkoNo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListDTakoFerryRowsProdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "unkoNo",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "DTakoFerryRowsProdService"
+        ]
+      }
+    },
+    "/api/v1/db/dtako-ferry-rows-prod/{id}": {
+      "get": {
+        "summary": "フェリー運行データ取得",
+        "operationId": "DTakoFerryRowsProdService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiDTakoFerryRowsProdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "DTakoFerryRowsProdService"
         ]
       }
     },
@@ -1861,6 +1966,121 @@
       },
       "title": "フェリー運行データ"
     },
+    "ryohiDTakoFerryRowsProd": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "unkoNo": {
+          "type": "string"
+        },
+        "unkoDate": {
+          "type": "string",
+          "title": "YYYY-MM-DD形式"
+        },
+        "yomitoriDate": {
+          "type": "string",
+          "title": "YYYY-MM-DD形式"
+        },
+        "jigyoshoCd": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "jigyoshoName": {
+          "type": "string"
+        },
+        "sharyoCd": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sharyoName": {
+          "type": "string"
+        },
+        "jomuinCd1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "jomuinName1": {
+          "type": "string"
+        },
+        "taishoJomuinKbn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "kaishiDatetime": {
+          "type": "string",
+          "title": "RFC3339形式"
+        },
+        "shuryoDatetime": {
+          "type": "string",
+          "title": "RFC3339形式"
+        },
+        "ferryCompanyCd": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ferryCompanyName": {
+          "type": "string"
+        },
+        "noribaCd": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "noribaName": {
+          "type": "string"
+        },
+        "bin": {
+          "type": "string"
+        },
+        "oribaCd": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "oribaName": {
+          "type": "string"
+        },
+        "seisanKbn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "seisanKbnName": {
+          "type": "string"
+        },
+        "hyojunRyokin": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "keiyakuRyokin": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "kosoShashuKbn": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "kosoShashuKbnName": {
+          "type": "string"
+        },
+        "minashiKyori": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ferrySrch": {
+          "type": "string"
+        }
+      },
+      "title": "DTakoFerryRowsProd（本番DB）データ"
+    },
+    "ryohiDTakoFerryRowsProdResponse": {
+      "type": "object",
+      "properties": {
+        "dtakoFerryRows": {
+          "$ref": "#/definitions/ryohiDTakoFerryRowsProd"
+        }
+      }
+    },
     "ryohiDTakoFerryRowsResponse": {
       "type": "object",
       "properties": {
@@ -2225,6 +2445,22 @@
           "items": {
             "type": "object",
             "$ref": "#/definitions/ryohiDTakoEvents"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ryohiListDTakoFerryRowsProdResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ryohiDTakoFerryRowsProd"
           }
         },
         "totalCount": {

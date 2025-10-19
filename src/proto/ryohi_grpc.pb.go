@@ -1865,3 +1865,189 @@ var ETCNumService_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "ryohi.proto",
 }
+
+const (
+	DTakoFerryRowsProdService_Get_FullMethodName         = "/ryohi.DTakoFerryRowsProdService/Get"
+	DTakoFerryRowsProdService_List_FullMethodName        = "/ryohi.DTakoFerryRowsProdService/List"
+	DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName = "/ryohi.DTakoFerryRowsProdService/GetByUnkoNo"
+)
+
+// DTakoFerryRowsProdServiceClient is the client API for DTakoFerryRowsProdService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// DTakoFerryRowsProdサービス - フェリー運行データ管理（本番DB、読み取り専用）
+type DTakoFerryRowsProdServiceClient interface {
+	// フェリー運行データ取得
+	Get(ctx context.Context, in *GetDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*DTakoFerryRowsProdResponse, error)
+	// フェリー運行データ一覧取得
+	List(ctx context.Context, in *ListDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsProdResponse, error)
+	// 運行NOでフェリー運行データ取得
+	GetByUnkoNo(ctx context.Context, in *GetDTakoFerryRowsProdByUnkoNoRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsProdResponse, error)
+}
+
+type dTakoFerryRowsProdServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewDTakoFerryRowsProdServiceClient(cc grpc.ClientConnInterface) DTakoFerryRowsProdServiceClient {
+	return &dTakoFerryRowsProdServiceClient{cc}
+}
+
+func (c *dTakoFerryRowsProdServiceClient) Get(ctx context.Context, in *GetDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*DTakoFerryRowsProdResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DTakoFerryRowsProdResponse)
+	err := c.cc.Invoke(ctx, DTakoFerryRowsProdService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dTakoFerryRowsProdServiceClient) List(ctx context.Context, in *ListDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsProdResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDTakoFerryRowsProdResponse)
+	err := c.cc.Invoke(ctx, DTakoFerryRowsProdService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dTakoFerryRowsProdServiceClient) GetByUnkoNo(ctx context.Context, in *GetDTakoFerryRowsProdByUnkoNoRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsProdResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListDTakoFerryRowsProdResponse)
+	err := c.cc.Invoke(ctx, DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// DTakoFerryRowsProdServiceServer is the server API for DTakoFerryRowsProdService service.
+// All implementations should embed UnimplementedDTakoFerryRowsProdServiceServer
+// for forward compatibility.
+//
+// DTakoFerryRowsProdサービス - フェリー運行データ管理（本番DB、読み取り専用）
+type DTakoFerryRowsProdServiceServer interface {
+	// フェリー運行データ取得
+	Get(context.Context, *GetDTakoFerryRowsProdRequest) (*DTakoFerryRowsProdResponse, error)
+	// フェリー運行データ一覧取得
+	List(context.Context, *ListDTakoFerryRowsProdRequest) (*ListDTakoFerryRowsProdResponse, error)
+	// 運行NOでフェリー運行データ取得
+	GetByUnkoNo(context.Context, *GetDTakoFerryRowsProdByUnkoNoRequest) (*ListDTakoFerryRowsProdResponse, error)
+}
+
+// UnimplementedDTakoFerryRowsProdServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedDTakoFerryRowsProdServiceServer struct{}
+
+func (UnimplementedDTakoFerryRowsProdServiceServer) Get(context.Context, *GetDTakoFerryRowsProdRequest) (*DTakoFerryRowsProdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedDTakoFerryRowsProdServiceServer) List(context.Context, *ListDTakoFerryRowsProdRequest) (*ListDTakoFerryRowsProdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedDTakoFerryRowsProdServiceServer) GetByUnkoNo(context.Context, *GetDTakoFerryRowsProdByUnkoNoRequest) (*ListDTakoFerryRowsProdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByUnkoNo not implemented")
+}
+func (UnimplementedDTakoFerryRowsProdServiceServer) testEmbeddedByValue() {}
+
+// UnsafeDTakoFerryRowsProdServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to DTakoFerryRowsProdServiceServer will
+// result in compilation errors.
+type UnsafeDTakoFerryRowsProdServiceServer interface {
+	mustEmbedUnimplementedDTakoFerryRowsProdServiceServer()
+}
+
+func RegisterDTakoFerryRowsProdServiceServer(s grpc.ServiceRegistrar, srv DTakoFerryRowsProdServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDTakoFerryRowsProdServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&DTakoFerryRowsProdService_ServiceDesc, srv)
+}
+
+func _DTakoFerryRowsProdService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDTakoFerryRowsProdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoFerryRowsProdServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoFerryRowsProdService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoFerryRowsProdServiceServer).Get(ctx, req.(*GetDTakoFerryRowsProdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DTakoFerryRowsProdService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListDTakoFerryRowsProdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoFerryRowsProdServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoFerryRowsProdService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoFerryRowsProdServiceServer).List(ctx, req.(*ListDTakoFerryRowsProdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DTakoFerryRowsProdService_GetByUnkoNo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetDTakoFerryRowsProdByUnkoNoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DTakoFerryRowsProdServiceServer).GetByUnkoNo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DTakoFerryRowsProdServiceServer).GetByUnkoNo(ctx, req.(*GetDTakoFerryRowsProdByUnkoNoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// DTakoFerryRowsProdService_ServiceDesc is the grpc.ServiceDesc for DTakoFerryRowsProdService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var DTakoFerryRowsProdService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.DTakoFerryRowsProdService",
+	HandlerType: (*DTakoFerryRowsProdServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _DTakoFerryRowsProdService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _DTakoFerryRowsProdService_List_Handler,
+		},
+		{
+			MethodName: "GetByUnkoNo",
+			Handler:    _DTakoFerryRowsProdService_GetByUnkoNo_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}

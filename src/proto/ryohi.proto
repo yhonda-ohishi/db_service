@@ -473,6 +473,28 @@ service ETCNumService {
   }
 }
 
+// DTakoFerryRowsProdサービス - フェリー運行データ管理（本番DB、読み取り専用）
+service DTakoFerryRowsProdService {
+  // フェリー運行データ取得
+  rpc Get(GetDTakoFerryRowsProdRequest) returns (DTakoFerryRowsProdResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-ferry-rows-prod/{id}"
+    };
+  }
+  // フェリー運行データ一覧取得
+  rpc List(ListDTakoFerryRowsProdRequest) returns (ListDTakoFerryRowsProdResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-ferry-rows-prod"
+    };
+  }
+  // 運行NOでフェリー運行データ取得
+  rpc GetByUnkoNo(GetDTakoFerryRowsProdByUnkoNoRequest) returns (ListDTakoFerryRowsProdResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}"
+    };
+  }
+}
+
 // 車輌マスタデータ（本番DB）
 message DTakoCars {
   int32 id = 1;
@@ -655,6 +677,61 @@ message ListETCNumRequest {
 
 message ListETCNumResponse {
   repeated ETCNum items = 1;
+  int32 total_count = 2;
+}
+
+// DTakoFerryRowsProd（本番DB）データ
+message DTakoFerryRowsProd {
+  int32 id = 1;
+  string unko_no = 2;
+  string unko_date = 3;  // YYYY-MM-DD形式
+  string yomitori_date = 4;  // YYYY-MM-DD形式
+  int32 jigyosho_cd = 5;
+  string jigyosho_name = 6;
+  int32 sharyo_cd = 7;
+  string sharyo_name = 8;
+  int32 jomuin_cd1 = 9;
+  string jomuin_name1 = 10;
+  int32 taisho_jomuin_kbn = 11;
+  string kaishi_datetime = 12;  // RFC3339形式
+  string shuryo_datetime = 13;  // RFC3339形式
+  int32 ferry_company_cd = 14;
+  string ferry_company_name = 15;
+  int32 noriba_cd = 16;
+  string noriba_name = 17;
+  string bin = 18;
+  int32 oriba_cd = 19;
+  string oriba_name = 20;
+  int32 seisan_kbn = 21;
+  string seisan_kbn_name = 22;
+  int32 hyojun_ryokin = 23;
+  int32 keiyaku_ryokin = 24;
+  int32 koso_shashu_kbn = 25;
+  string koso_shashu_kbn_name = 26;
+  int32 minashi_kyori = 27;
+  optional string ferry_srch = 28;
+}
+
+// DTakoFerryRowsProd用リクエスト/レスポンス
+message GetDTakoFerryRowsProdRequest {
+  int32 id = 1;
+}
+
+message GetDTakoFerryRowsProdByUnkoNoRequest {
+  string unko_no = 1;
+}
+
+message ListDTakoFerryRowsProdRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+}
+
+message DTakoFerryRowsProdResponse {
+  DTakoFerryRowsProd dtako_ferry_rows = 1;
+}
+
+message ListDTakoFerryRowsProdResponse {
+  repeated DTakoFerryRowsProd items = 1;
   int32 total_count = 2;
 }
 
