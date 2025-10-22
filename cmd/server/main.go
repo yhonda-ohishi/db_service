@@ -57,6 +57,21 @@ func main() {
 		}()
 	}
 
+	// SQL Serverデータベース接続（オプション）
+	sqlServerDB, err := config.NewSQLServerDatabase()
+	if err != nil {
+		log.Printf("SQL Server database connection failed: %v (continuing without SQL Server)", err)
+		sqlServerDB = nil
+	} else {
+		log.Printf("SQL Server database connected successfully")
+		defer func() {
+			sqlDB, _ := sqlServerDB.DB.DB()
+			if sqlDB != nil {
+				sqlDB.Close()
+			}
+		}()
+	}
+
 	// リポジトリの初期化
 	dtakoUriageKeihiRepo := repository.NewDTakoUriageKeihiRepository(db)
 	etcMeisaiRepo := repository.NewETCMeisaiRepository(db)
@@ -87,6 +102,30 @@ func main() {
 	etcMeisaiMappingRepo := repository.NewETCMeisaiMappingRepository(db)
 	etcMeisaiMappingService := service.NewETCMeisaiMappingService(etcMeisaiMappingRepo)
 	proto.RegisterETCMeisaiMappingServiceServer(grpcServer, etcMeisaiMappingService)
+
+	// SQL Serverサービスの登録
+	if sqlServerDB != nil {
+		// SQL Serverリポジトリの初期化
+		untenNippoMeisaiRepo := repository.NewUntenNippoMeisaiRepository(sqlServerDB)
+		shainMasterRepo := repository.NewShainMasterRepository(sqlServerDB)
+		chiikiMasterRepo := repository.NewChiikiMasterRepository(sqlServerDB)
+		chikuMasterRepo := repository.NewChikuMasterRepository(sqlServerDB)
+
+		// SQL Serverサービスの登録
+		untenNippoMeisaiService := service.NewUntenNippoMeisaiService(untenNippoMeisaiRepo)
+		proto.RegisterUntenNippoMeisaiServiceServer(grpcServer, untenNippoMeisaiService)
+
+		shainMasterService := service.NewShainMasterService(shainMasterRepo)
+		proto.RegisterShainMasterServiceServer(grpcServer, shainMasterService)
+
+		chiikiMasterService := service.NewChiikiMasterService(chiikiMasterRepo)
+		proto.RegisterChiikiMasterServiceServer(grpcServer, chiikiMasterService)
+
+		chikuMasterService := service.NewChikuMasterService(chikuMasterRepo)
+		proto.RegisterChikuMasterServiceServer(grpcServer, chikuMasterService)
+
+		log.Println("SQL Server services registered: UntenNippoMeisai, ShainMaster, ChiikiMaster, ChikuMaster")
+	}
 
 	// 本番DBサービスの登録（現在無効化）
 	if prodDB != nil {

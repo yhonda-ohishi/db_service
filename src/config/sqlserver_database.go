@@ -33,16 +33,18 @@ func NewSQLServerDatabase() (*SQLServerDatabase, error) {
 	}
 
 	// SQL Server接続文字列の構築
-	// URL形式ではバックスラッシュが使えないため、インスタンス名はクエリパラメータで指定
+	// ADO.NET形式: server=host\instance;user id=user;password=pass;database=db
 	var dsn string
 	if instance != "" {
-		dsn = fmt.Sprintf("sqlserver://%s:%s@%s?database=%s&instance=%s",
+		// インスタンス名がある場合はADO.NET形式を使用
+		dsn = fmt.Sprintf("server=%s\\%s;user id=%s;password=%s;database=%s",
+			host,
+			instance,
 			user,
 			password,
-			host,
-			database,
-			instance)
+			database)
 	} else {
+		// インスタンス名がない場合はURL形式も可
 		dsn = fmt.Sprintf("sqlserver://%s:%s@%s?database=%s",
 			user,
 			password,
