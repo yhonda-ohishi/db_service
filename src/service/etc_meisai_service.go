@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -34,7 +34,7 @@ func (s *ETCMeisaiService) Create(ctx context.Context, req *proto.CreateETCMeisa
 	dateTo, _ := time.Parse(time.RFC3339, req.EtcMeisai.DateTo)
 	dateToDate, _ := time.Parse("2006-01-02", req.EtcMeisai.DateToDate)
 
-	model := &models.ETCMeisai{
+	model := &mysql.ETCMeisai{
 		DateTo:     dateTo,
 		DateToDate: dateToDate,
 		IcFr:       derefString(req.EtcMeisai.IcFr),
@@ -87,7 +87,7 @@ func (s *ETCMeisaiService) Get(ctx context.Context, req *proto.GetETCMeisaiReque
 
 	model, err := s.repo.GetByID(req.Id)
 	if err != nil {
-		if err == models.ErrRecordNotFound {
+		if err == mysql.ErrRecordNotFound {
 			return nil, status.Error(codes.NotFound, "record not found")
 		}
 		return nil, status.Errorf(codes.Internal, "failed to get record: %v", err)
@@ -109,7 +109,7 @@ func (s *ETCMeisaiService) Update(ctx context.Context, req *proto.UpdateETCMeisa
 
 	// リポジトリで更新
 	if err := s.repo.Update(model); err != nil {
-		if err == models.ErrRecordNotFound {
+		if err == mysql.ErrRecordNotFound {
 			return nil, status.Error(codes.NotFound, "record not found")
 		}
 		return nil, status.Errorf(codes.Internal, "failed to update record: %v", err)
@@ -127,7 +127,7 @@ func (s *ETCMeisaiService) Delete(ctx context.Context, req *proto.DeleteETCMeisa
 	}
 
 	if err := s.repo.DeleteByID(req.Id); err != nil {
-		if err == models.ErrRecordNotFound {
+		if err == mysql.ErrRecordNotFound {
 			return nil, status.Error(codes.NotFound, "record not found")
 		}
 		return nil, status.Errorf(codes.Internal, "failed to delete record: %v", err)
@@ -194,11 +194,11 @@ func stringPtr(s string) *string {
 }
 
 // etcProtoToModel ProtoからModelへの変換
-func etcProtoToModel(p *proto.ETCMeisai) *models.ETCMeisai {
+func etcProtoToModel(p *proto.ETCMeisai) *mysql.ETCMeisai {
 	dateTo, _ := time.Parse(time.RFC3339, p.DateTo)
 	dateToDate, _ := time.Parse("2006-01-02", p.DateToDate)
 
-	m := &models.ETCMeisai{
+	m := &mysql.ETCMeisai{
 		ID:         p.Id,
 		DateTo:     dateTo,
 		DateToDate: dateToDate,
@@ -231,7 +231,7 @@ func etcProtoToModel(p *proto.ETCMeisai) *models.ETCMeisai {
 }
 
 // etcModelToProto ModelからProtoへの変換
-func etcModelToProto(m *models.ETCMeisai) *proto.ETCMeisai {
+func etcModelToProto(m *mysql.ETCMeisai) *proto.ETCMeisai {
 	p := &proto.ETCMeisai{
 		Id:         m.ID,
 		DateTo:     m.DateTo.Format(time.RFC3339),

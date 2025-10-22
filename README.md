@@ -13,7 +13,9 @@ ryohi_sub_calデータベースの3つのテーブル（dtako_uriage_keihi、etc
   - gRPC v1.75+
   - GORM v1.25.5
   - Protocol Buffers
-- **データベース**: MySQL/MariaDB
+- **データベース**:
+  - MySQL/MariaDB (本番DB、読み取り専用)
+  - SQL Server (CAPE#01データベース)
 - **設定管理**: godotenv
 
 ## プロジェクト構造
@@ -25,7 +27,9 @@ db_service/
 │   ├── models/      # GORMモデル定義
 │   ├── repository/  # データアクセス層
 │   ├── service/     # gRPCサービス実装
-│   └── config/      # 設定管理
+│   ├── config/      # 設定管理
+│   └── registry/    # サービス登録
+├── sql_server_tables/ # SQL Serverテーブル定義（UTF-8）
 ├── tests/
 │   ├── contract/    # 契約テスト
 │   └── integration/ # 統合テスト

@@ -1,4 +1,4 @@
-package models
+package mysql
 
 // DTakoCars dtako_carsテーブルのモデル（本番DB）
 type DTakoCars struct {

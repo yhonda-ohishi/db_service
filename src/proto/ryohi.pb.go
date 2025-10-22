@@ -5224,6 +5224,2566 @@ func (x *ListDriversResponse) GetTotalCount() int32 {
 	return 0
 }
 
+// UntenNippoMeisai メッセージ（106カラム全て）
+type UntenNippoMeisai struct {
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	NippoK                string                 `protobuf:"bytes,1,opt,name=nippo_k,json=nippoK,proto3" json:"nippo_k,omitempty"`
+	UnkoNengappi          *string                `protobuf:"bytes,2,opt,name=unko_nengappi,json=unkoNengappi,proto3,oneof" json:"unko_nengappi,omitempty"`
+	HaishaK               string                 `protobuf:"bytes,3,opt,name=haisha_k,json=haishaK,proto3" json:"haisha_k,omitempty"`
+	SharyoC               string                 `protobuf:"bytes,4,opt,name=sharyo_c,json=sharyoC,proto3" json:"sharyo_c,omitempty"`
+	SharyoH               string                 `protobuf:"bytes,5,opt,name=sharyo_h,json=sharyoH,proto3" json:"sharyo_h,omitempty"`
+	UntenshuC             string                 `protobuf:"bytes,6,opt,name=untenshu_c,json=untenshuC,proto3" json:"untenshu_c,omitempty"`
+	YoshasakiC            string                 `protobuf:"bytes,7,opt,name=yoshasaki_c,json=yoshasakiC,proto3" json:"yoshasaki_c,omitempty"`
+	YoshasakiH            string                 `protobuf:"bytes,8,opt,name=yoshasaki_h,json=yoshasakiH,proto3" json:"yoshasaki_h,omitempty"`
+	Joshu1                string                 `protobuf:"bytes,9,opt,name=joshu1,proto3" json:"joshu1,omitempty"`
+	Joshu2                string                 `protobuf:"bytes,10,opt,name=joshu2,proto3" json:"joshu2,omitempty"`
+	NyuryokuNengappi      *string                `protobuf:"bytes,11,opt,name=nyuryoku_nengappi,json=nyuryokuNengappi,proto3,oneof" json:"nyuryoku_nengappi,omitempty"`
+	ShokaiNengappi        *string                `protobuf:"bytes,12,opt,name=shokai_nengappi,json=shokaiNengappi,proto3,oneof" json:"shokai_nengappi,omitempty"`
+	NyuryokuTantoC        string                 `protobuf:"bytes,13,opt,name=nyuryoku_tanto_c,json=nyuryokuTantoC,proto3" json:"nyuryoku_tanto_c,omitempty"`
+	JuchuNengappi         *string                `protobuf:"bytes,14,opt,name=juchu_nengappi,json=juchuNengappi,proto3,oneof" json:"juchu_nengappi,omitempty"`
+	KanriNengappi         string                 `protobuf:"bytes,15,opt,name=kanri_nengappi,json=kanriNengappi,proto3" json:"kanri_nengappi,omitempty"`
+	KanriC                int32                  `protobuf:"varint,16,opt,name=kanri_c,json=kanriC,proto3" json:"kanri_c,omitempty"`
+	TsumikomiNengappi     *string                `protobuf:"bytes,17,opt,name=tsumikomi_nengappi,json=tsumikomiNengappi,proto3,oneof" json:"tsumikomi_nengappi,omitempty"`
+	NoninNengappi         *string                `protobuf:"bytes,18,opt,name=nonin_nengappi,json=noninNengappi,proto3,oneof" json:"nonin_nengappi,omitempty"`
+	TsumoiK               *string                `protobuf:"bytes,19,opt,name=tsumoi_k,json=tsumoiK,proto3,oneof" json:"tsumoi_k,omitempty"`
+	ShashuC               string                 `protobuf:"bytes,20,opt,name=shashu_c,json=shashuC,proto3" json:"shashu_c,omitempty"`
+	JuchuBumon            string                 `protobuf:"bytes,21,opt,name=juchu_bumon,json=juchuBumon,proto3" json:"juchu_bumon,omitempty"`
+	KadoBumon             string                 `protobuf:"bytes,22,opt,name=kado_bumon,json=kadoBumon,proto3" json:"kado_bumon,omitempty"`
+	UriageK               string                 `protobuf:"bytes,23,opt,name=uriage_k,json=uriageK,proto3" json:"uriage_k,omitempty"`
+	UriageShubekiC        string                 `protobuf:"bytes,24,opt,name=uriage_shubeki_c,json=uriageShubekiC,proto3" json:"uriage_shubeki_c,omitempty"`
+	SeikyuK               string                 `protobuf:"bytes,25,opt,name=seikyu_k,json=seikyuK,proto3" json:"seikyu_k,omitempty"`
+	DenpyoNo              *string                `protobuf:"bytes,26,opt,name=denpyo_no,json=denpyoNo,proto3,oneof" json:"denpyo_no,omitempty"`
+	TokuisakiC            string                 `protobuf:"bytes,27,opt,name=tokuisaki_c,json=tokuisakiC,proto3" json:"tokuisaki_c,omitempty"`
+	TokuisakiH            string                 `protobuf:"bytes,28,opt,name=tokuisaki_h,json=tokuisakiH,proto3" json:"tokuisaki_h,omitempty"`
+	HatchiC               string                 `protobuf:"bytes,29,opt,name=hatchi_c,json=hatchiC,proto3" json:"hatchi_c,omitempty"`
+	HatchiN               *string                `protobuf:"bytes,30,opt,name=hatchi_n,json=hatchiN,proto3,oneof" json:"hatchi_n,omitempty"`
+	ChakuchiC             string                 `protobuf:"bytes,31,opt,name=chakuchi_c,json=chakuchiC,proto3" json:"chakuchi_c,omitempty"`
+	ChakuchiN             *string                `protobuf:"bytes,32,opt,name=chakuchi_n,json=chakuchiN,proto3,oneof" json:"chakuchi_n,omitempty"`
+	HinmeiC               string                 `protobuf:"bytes,33,opt,name=hinmei_c,json=hinmeiC,proto3" json:"hinmei_c,omitempty"`
+	HinmeiH               string                 `protobuf:"bytes,34,opt,name=hinmei_h,json=hinmeiH,proto3" json:"hinmei_h,omitempty"`
+	HinmeiN               *string                `protobuf:"bytes,35,opt,name=hinmei_n,json=hinmeiN,proto3,oneof" json:"hinmei_n,omitempty"`
+	SokoKm                float64                `protobuf:"fixed64,36,opt,name=soko_km,json=sokoKm,proto3" json:"soko_km,omitempty"`
+	JisshaKm              float64                `protobuf:"fixed64,37,opt,name=jissha_km,json=jisshaKm,proto3" json:"jissha_km,omitempty"`
+	SeikyuSokoKm          float64                `protobuf:"fixed64,38,opt,name=seikyu_soko_km,json=seikyuSokoKm,proto3" json:"seikyu_soko_km,omitempty"`
+	SeikyuJisshaKm        float64                `protobuf:"fixed64,39,opt,name=seikyu_jissha_km,json=seikyuJisshaKm,proto3" json:"seikyu_jissha_km,omitempty"`
+	Suryo                 float64                `protobuf:"fixed64,40,opt,name=suryo,proto3" json:"suryo,omitempty"`
+	Tani                  *string                `protobuf:"bytes,41,opt,name=tani,proto3,oneof" json:"tani,omitempty"`
+	TonSu                 float64                `protobuf:"fixed64,42,opt,name=ton_su,json=tonSu,proto3" json:"ton_su,omitempty"`
+	Tanka                 float64                `protobuf:"fixed64,43,opt,name=tanka,proto3" json:"tanka,omitempty"`
+	Kingaku               int32                  `protobuf:"varint,44,opt,name=kingaku,proto3" json:"kingaku,omitempty"`
+	Nebiki                int32                  `protobuf:"varint,45,opt,name=nebiki,proto3" json:"nebiki,omitempty"`
+	Warimashi             int32                  `protobuf:"varint,46,opt,name=warimashi,proto3" json:"warimashi,omitempty"`
+	Jippi                 int32                  `protobuf:"varint,47,opt,name=jippi,proto3" json:"jippi,omitempty"`
+	YoshaTanka            float64                `protobuf:"fixed64,48,opt,name=yosha_tanka,json=yoshaTanka,proto3" json:"yosha_tanka,omitempty"`
+	YoshaKingaku          int32                  `protobuf:"varint,49,opt,name=yosha_kingaku,json=yoshaKingaku,proto3" json:"yosha_kingaku,omitempty"`
+	YoshaNebiki           int32                  `protobuf:"varint,50,opt,name=yosha_nebiki,json=yoshaNebiki,proto3" json:"yosha_nebiki,omitempty"`
+	YoshaWarimashi        int32                  `protobuf:"varint,51,opt,name=yosha_warimashi,json=yoshaWarimashi,proto3" json:"yosha_warimashi,omitempty"`
+	YoshaJippi            int32                  `protobuf:"varint,52,opt,name=yosha_jippi,json=yoshaJippi,proto3" json:"yosha_jippi,omitempty"`
+	KakuteiK              string                 `protobuf:"bytes,53,opt,name=kakutei_k,json=kakuteiK,proto3" json:"kakutei_k,omitempty"`
+	Biko                  *string                `protobuf:"bytes,54,opt,name=biko,proto3,oneof" json:"biko,omitempty"`
+	UriageNengappi        *string                `protobuf:"bytes,55,opt,name=uriage_nengappi,json=uriageNengappi,proto3,oneof" json:"uriage_nengappi,omitempty"`
+	ShiharaiNengappi      *string                `protobuf:"bytes,56,opt,name=shiharai_nengappi,json=shiharaiNengappi,proto3,oneof" json:"shiharai_nengappi,omitempty"`
+	NyukinYoteibi         *string                `protobuf:"bytes,57,opt,name=nyukin_yoteibi,json=nyukinYoteibi,proto3,oneof" json:"nyukin_yoteibi,omitempty"`
+	ShiharaiYoteibi       *string                `protobuf:"bytes,58,opt,name=shiharai_yoteibi,json=shiharaiYoteibi,proto3,oneof" json:"shiharai_yoteibi,omitempty"`
+	Shohizei              int32                  `protobuf:"varint,59,opt,name=shohizei,proto3" json:"shohizei,omitempty"`
+	YoshaShohizei         int32                  `protobuf:"varint,60,opt,name=yosha_shohizei,json=yoshaShohizei,proto3" json:"yosha_shohizei,omitempty"`
+	Zeigaku               int32                  `protobuf:"varint,61,opt,name=zeigaku,proto3" json:"zeigaku,omitempty"`
+	WarimashiZeigaku      int32                  `protobuf:"varint,62,opt,name=warimashi_zeigaku,json=warimashiZeigaku,proto3" json:"warimashi_zeigaku,omitempty"`
+	JippiZeigaku          int32                  `protobuf:"varint,63,opt,name=jippi_zeigaku,json=jippiZeigaku,proto3" json:"jippi_zeigaku,omitempty"`
+	YoshaZeigaku          int32                  `protobuf:"varint,64,opt,name=yosha_zeigaku,json=yoshaZeigaku,proto3" json:"yosha_zeigaku,omitempty"`
+	YoshaWarimashiZeigaku int32                  `protobuf:"varint,65,opt,name=yosha_warimashi_zeigaku,json=yoshaWarimashiZeigaku,proto3" json:"yosha_warimashi_zeigaku,omitempty"`
+	YoshaJippiZeigaku     int32                  `protobuf:"varint,66,opt,name=yosha_jippi_zeigaku,json=yoshaJippiZeigaku,proto3" json:"yosha_jippi_zeigaku,omitempty"`
+	ZeinukiKingaku        int32                  `protobuf:"varint,67,opt,name=zeinuki_kingaku,json=zeinukiKingaku,proto3" json:"zeinuki_kingaku,omitempty"`
+	ZeinukiWarimashi      int32                  `protobuf:"varint,68,opt,name=zeinuki_warimashi,json=zeinukiWarimashi,proto3" json:"zeinuki_warimashi,omitempty"`
+	ZeinukiJippi          int32                  `protobuf:"varint,69,opt,name=zeinuki_jippi,json=zeinukiJippi,proto3" json:"zeinuki_jippi,omitempty"`
+	ZeinukiYoshaKingaku   int32                  `protobuf:"varint,70,opt,name=zeinuki_yosha_kingaku,json=zeinukiYoshaKingaku,proto3" json:"zeinuki_yosha_kingaku,omitempty"`
+	ZeinukiYoshaWarimashi int32                  `protobuf:"varint,71,opt,name=zeinuki_yosha_warimashi,json=zeinukiYoshaWarimashi,proto3" json:"zeinuki_yosha_warimashi,omitempty"`
+	ZeinukiYoshaJippi     int32                  `protobuf:"varint,72,opt,name=zeinuki_yosha_jippi,json=zeinukiYoshaJippi,proto3" json:"zeinuki_yosha_jippi,omitempty"`
+	ZeiK                  string                 `protobuf:"bytes,73,opt,name=zei_k,json=zeiK,proto3" json:"zei_k,omitempty"`
+	YoshaZeiK             string                 `protobuf:"bytes,74,opt,name=yosha_zei_k,json=yoshaZeiK,proto3" json:"yosha_zei_k,omitempty"`
+	Zeiritsu              float64                `protobuf:"fixed64,75,opt,name=zeiritsu,proto3" json:"zeiritsu,omitempty"`
+	YoshaZeiritsu         float64                `protobuf:"fixed64,76,opt,name=yosha_zeiritsu,json=yoshaZeiritsu,proto3" json:"yosha_zeiritsu,omitempty"`
+	UntenshuUriage        int32                  `protobuf:"varint,77,opt,name=untenshu_uriage,json=untenshuUriage,proto3" json:"untenshu_uriage,omitempty"`
+	Joshu1Uriage          int32                  `protobuf:"varint,78,opt,name=joshu1_uriage,json=joshu1Uriage,proto3" json:"joshu1_uriage,omitempty"`
+	Joshu2Uriage          int32                  `protobuf:"varint,79,opt,name=joshu2_uriage,json=joshu2Uriage,proto3" json:"joshu2_uriage,omitempty"`
+	YusoShunyuFurikae     int32                  `protobuf:"varint,80,opt,name=yuso_shunyu_furikae,json=yusoShunyuFurikae,proto3" json:"yuso_shunyu_furikae,omitempty"`
+	UriageKingakuFurikae  int32                  `protobuf:"varint,81,opt,name=uriage_kingaku_furikae,json=uriageKingakuFurikae,proto3" json:"uriage_kingaku_furikae,omitempty"`
+	KazeiUriage           int32                  `protobuf:"varint,82,opt,name=kazei_uriage,json=kazeiUriage,proto3" json:"kazei_uriage,omitempty"`
+	HikazeiUriage         int32                  `protobuf:"varint,83,opt,name=hikazei_uriage,json=hikazeiUriage,proto3" json:"hikazei_uriage,omitempty"`
+	KazeiShiharai         int32                  `protobuf:"varint,84,opt,name=kazei_shiharai,json=kazeiShiharai,proto3" json:"kazei_shiharai,omitempty"`
+	HikazeiShiharai       int32                  `protobuf:"varint,85,opt,name=hikazei_shiharai,json=hikazeiShiharai,proto3" json:"hikazei_shiharai,omitempty"`
+	HatchiikiC            string                 `protobuf:"bytes,86,opt,name=hatchiiki_c,json=hatchiikiC,proto3" json:"hatchiiki_c,omitempty"`
+	ChakuchiikiC          string                 `protobuf:"bytes,87,opt,name=chakuchiiki_c,json=chakuchiikiC,proto3" json:"chakuchiiki_c,omitempty"`
+	Rikunkyoku            *string                `protobuf:"bytes,88,opt,name=rikunkyoku,proto3,oneof" json:"rikunkyoku,omitempty"`
+	Yoseki                *float64               `protobuf:"fixed64,89,opt,name=yoseki,proto3,oneof" json:"yoseki,omitempty"`
+	JuryoKakuninTenpushoK string                 `protobuf:"bytes,90,opt,name=juryo_kakunin_tenpusho_k,json=juryoKakuninTenpushoK,proto3" json:"juryo_kakunin_tenpusho_k,omitempty"`
+	SaishuKoshin          *string                `protobuf:"bytes,91,opt,name=saishu_koshin,json=saishuKoshin,proto3,oneof" json:"saishu_koshin,omitempty"`
+	Lc                    int32                  `protobuf:"varint,92,opt,name=lc,proto3" json:"lc,omitempty"`
+	KoguchiK              *string                `protobuf:"bytes,93,opt,name=koguchi_k,json=koguchiK,proto3,oneof" json:"koguchi_k,omitempty"`
+	UnsoGaishaN           *string                `protobuf:"bytes,94,opt,name=unso_gaisha_n,json=unsoGaishaN,proto3,oneof" json:"unso_gaisha_n,omitempty"`
+	JomuinN               *string                `protobuf:"bytes,95,opt,name=jomuin_n,json=jomuinN,proto3,oneof" json:"jomuin_n,omitempty"`
+	Renrakusaki           *string                `protobuf:"bytes,96,opt,name=renrakusaki,proto3,oneof" json:"renrakusaki,omitempty"`
+	TaniJuryo             *float64               `protobuf:"fixed64,97,opt,name=tani_juryo,json=taniJuryo,proto3,oneof" json:"tani_juryo,omitempty"`
+	ShiharaiKakuteiK      string                 `protobuf:"bytes,98,opt,name=shiharai_kakutei_k,json=shiharaiKakuteiK,proto3" json:"shiharai_kakutei_k,omitempty"`
+	Biko2                 *string                `protobuf:"bytes,99,opt,name=biko2,proto3,oneof" json:"biko2,omitempty"`
+	Yobi1                 *float64               `protobuf:"fixed64,100,opt,name=yobi1,proto3,oneof" json:"yobi1,omitempty"`
+	Yobi2                 *float64               `protobuf:"fixed64,101,opt,name=yobi2,proto3,oneof" json:"yobi2,omitempty"`
+	Yobi3                 *string                `protobuf:"bytes,102,opt,name=yobi3,proto3,oneof" json:"yobi3,omitempty"`
+	Yobi4                 *string                `protobuf:"bytes,103,opt,name=yobi4,proto3,oneof" json:"yobi4,omitempty"`
+	Yobi5                 *string                `protobuf:"bytes,104,opt,name=yobi5,proto3,oneof" json:"yobi5,omitempty"`
+	Yobi6                 *string                `protobuf:"bytes,105,opt,name=yobi6,proto3,oneof" json:"yobi6,omitempty"`
+	Yobi7                 *string                `protobuf:"bytes,106,opt,name=yobi7,proto3,oneof" json:"yobi7,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
+}
+
+func (x *UntenNippoMeisai) Reset() {
+	*x = UntenNippoMeisai{}
+	mi := &file_ryohi_proto_msgTypes[75]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UntenNippoMeisai) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UntenNippoMeisai) ProtoMessage() {}
+
+func (x *UntenNippoMeisai) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[75]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UntenNippoMeisai.ProtoReflect.Descriptor instead.
+func (*UntenNippoMeisai) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *UntenNippoMeisai) GetNippoK() string {
+	if x != nil {
+		return x.NippoK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetUnkoNengappi() string {
+	if x != nil && x.UnkoNengappi != nil {
+		return *x.UnkoNengappi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetHaishaK() string {
+	if x != nil {
+		return x.HaishaK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetSharyoC() string {
+	if x != nil {
+		return x.SharyoC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetSharyoH() string {
+	if x != nil {
+		return x.SharyoH
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetUntenshuC() string {
+	if x != nil {
+		return x.UntenshuC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetYoshasakiC() string {
+	if x != nil {
+		return x.YoshasakiC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetYoshasakiH() string {
+	if x != nil {
+		return x.YoshasakiH
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetJoshu1() string {
+	if x != nil {
+		return x.Joshu1
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetJoshu2() string {
+	if x != nil {
+		return x.Joshu2
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetNyuryokuNengappi() string {
+	if x != nil && x.NyuryokuNengappi != nil {
+		return *x.NyuryokuNengappi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetShokaiNengappi() string {
+	if x != nil && x.ShokaiNengappi != nil {
+		return *x.ShokaiNengappi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetNyuryokuTantoC() string {
+	if x != nil {
+		return x.NyuryokuTantoC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetJuchuNengappi() string {
+	if x != nil && x.JuchuNengappi != nil {
+		return *x.JuchuNengappi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetKanriNengappi() string {
+	if x != nil {
+		return x.KanriNengappi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetKanriC() int32 {
+	if x != nil {
+		return x.KanriC
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetTsumikomiNengappi() string {
+	if x != nil && x.TsumikomiNengappi != nil {
+		return *x.TsumikomiNengappi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetNoninNengappi() string {
+	if x != nil && x.NoninNengappi != nil {
+		return *x.NoninNengappi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetTsumoiK() string {
+	if x != nil && x.TsumoiK != nil {
+		return *x.TsumoiK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetShashuC() string {
+	if x != nil {
+		return x.ShashuC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetJuchuBumon() string {
+	if x != nil {
+		return x.JuchuBumon
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetKadoBumon() string {
+	if x != nil {
+		return x.KadoBumon
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetUriageK() string {
+	if x != nil {
+		return x.UriageK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetUriageShubekiC() string {
+	if x != nil {
+		return x.UriageShubekiC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetSeikyuK() string {
+	if x != nil {
+		return x.SeikyuK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetDenpyoNo() string {
+	if x != nil && x.DenpyoNo != nil {
+		return *x.DenpyoNo
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetTokuisakiC() string {
+	if x != nil {
+		return x.TokuisakiC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetTokuisakiH() string {
+	if x != nil {
+		return x.TokuisakiH
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetHatchiC() string {
+	if x != nil {
+		return x.HatchiC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetHatchiN() string {
+	if x != nil && x.HatchiN != nil {
+		return *x.HatchiN
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetChakuchiC() string {
+	if x != nil {
+		return x.ChakuchiC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetChakuchiN() string {
+	if x != nil && x.ChakuchiN != nil {
+		return *x.ChakuchiN
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetHinmeiC() string {
+	if x != nil {
+		return x.HinmeiC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetHinmeiH() string {
+	if x != nil {
+		return x.HinmeiH
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetHinmeiN() string {
+	if x != nil && x.HinmeiN != nil {
+		return *x.HinmeiN
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetSokoKm() float64 {
+	if x != nil {
+		return x.SokoKm
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetJisshaKm() float64 {
+	if x != nil {
+		return x.JisshaKm
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetSeikyuSokoKm() float64 {
+	if x != nil {
+		return x.SeikyuSokoKm
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetSeikyuJisshaKm() float64 {
+	if x != nil {
+		return x.SeikyuJisshaKm
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetSuryo() float64 {
+	if x != nil {
+		return x.Suryo
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetTani() string {
+	if x != nil && x.Tani != nil {
+		return *x.Tani
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetTonSu() float64 {
+	if x != nil {
+		return x.TonSu
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetTanka() float64 {
+	if x != nil {
+		return x.Tanka
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetKingaku() int32 {
+	if x != nil {
+		return x.Kingaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetNebiki() int32 {
+	if x != nil {
+		return x.Nebiki
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetWarimashi() int32 {
+	if x != nil {
+		return x.Warimashi
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetJippi() int32 {
+	if x != nil {
+		return x.Jippi
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaTanka() float64 {
+	if x != nil {
+		return x.YoshaTanka
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaKingaku() int32 {
+	if x != nil {
+		return x.YoshaKingaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaNebiki() int32 {
+	if x != nil {
+		return x.YoshaNebiki
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaWarimashi() int32 {
+	if x != nil {
+		return x.YoshaWarimashi
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaJippi() int32 {
+	if x != nil {
+		return x.YoshaJippi
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetKakuteiK() string {
+	if x != nil {
+		return x.KakuteiK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetBiko() string {
+	if x != nil && x.Biko != nil {
+		return *x.Biko
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetUriageNengappi() string {
+	if x != nil && x.UriageNengappi != nil {
+		return *x.UriageNengappi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetShiharaiNengappi() string {
+	if x != nil && x.ShiharaiNengappi != nil {
+		return *x.ShiharaiNengappi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetNyukinYoteibi() string {
+	if x != nil && x.NyukinYoteibi != nil {
+		return *x.NyukinYoteibi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetShiharaiYoteibi() string {
+	if x != nil && x.ShiharaiYoteibi != nil {
+		return *x.ShiharaiYoteibi
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetShohizei() int32 {
+	if x != nil {
+		return x.Shohizei
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaShohizei() int32 {
+	if x != nil {
+		return x.YoshaShohizei
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetZeigaku() int32 {
+	if x != nil {
+		return x.Zeigaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetWarimashiZeigaku() int32 {
+	if x != nil {
+		return x.WarimashiZeigaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetJippiZeigaku() int32 {
+	if x != nil {
+		return x.JippiZeigaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaZeigaku() int32 {
+	if x != nil {
+		return x.YoshaZeigaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaWarimashiZeigaku() int32 {
+	if x != nil {
+		return x.YoshaWarimashiZeigaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaJippiZeigaku() int32 {
+	if x != nil {
+		return x.YoshaJippiZeigaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetZeinukiKingaku() int32 {
+	if x != nil {
+		return x.ZeinukiKingaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetZeinukiWarimashi() int32 {
+	if x != nil {
+		return x.ZeinukiWarimashi
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetZeinukiJippi() int32 {
+	if x != nil {
+		return x.ZeinukiJippi
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetZeinukiYoshaKingaku() int32 {
+	if x != nil {
+		return x.ZeinukiYoshaKingaku
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetZeinukiYoshaWarimashi() int32 {
+	if x != nil {
+		return x.ZeinukiYoshaWarimashi
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetZeinukiYoshaJippi() int32 {
+	if x != nil {
+		return x.ZeinukiYoshaJippi
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetZeiK() string {
+	if x != nil {
+		return x.ZeiK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetYoshaZeiK() string {
+	if x != nil {
+		return x.YoshaZeiK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetZeiritsu() float64 {
+	if x != nil {
+		return x.Zeiritsu
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYoshaZeiritsu() float64 {
+	if x != nil {
+		return x.YoshaZeiritsu
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetUntenshuUriage() int32 {
+	if x != nil {
+		return x.UntenshuUriage
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetJoshu1Uriage() int32 {
+	if x != nil {
+		return x.Joshu1Uriage
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetJoshu2Uriage() int32 {
+	if x != nil {
+		return x.Joshu2Uriage
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYusoShunyuFurikae() int32 {
+	if x != nil {
+		return x.YusoShunyuFurikae
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetUriageKingakuFurikae() int32 {
+	if x != nil {
+		return x.UriageKingakuFurikae
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetKazeiUriage() int32 {
+	if x != nil {
+		return x.KazeiUriage
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetHikazeiUriage() int32 {
+	if x != nil {
+		return x.HikazeiUriage
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetKazeiShiharai() int32 {
+	if x != nil {
+		return x.KazeiShiharai
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetHikazeiShiharai() int32 {
+	if x != nil {
+		return x.HikazeiShiharai
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetHatchiikiC() string {
+	if x != nil {
+		return x.HatchiikiC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetChakuchiikiC() string {
+	if x != nil {
+		return x.ChakuchiikiC
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetRikunkyoku() string {
+	if x != nil && x.Rikunkyoku != nil {
+		return *x.Rikunkyoku
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetYoseki() float64 {
+	if x != nil && x.Yoseki != nil {
+		return *x.Yoseki
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetJuryoKakuninTenpushoK() string {
+	if x != nil {
+		return x.JuryoKakuninTenpushoK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetSaishuKoshin() string {
+	if x != nil && x.SaishuKoshin != nil {
+		return *x.SaishuKoshin
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetLc() int32 {
+	if x != nil {
+		return x.Lc
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetKoguchiK() string {
+	if x != nil && x.KoguchiK != nil {
+		return *x.KoguchiK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetUnsoGaishaN() string {
+	if x != nil && x.UnsoGaishaN != nil {
+		return *x.UnsoGaishaN
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetJomuinN() string {
+	if x != nil && x.JomuinN != nil {
+		return *x.JomuinN
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetRenrakusaki() string {
+	if x != nil && x.Renrakusaki != nil {
+		return *x.Renrakusaki
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetTaniJuryo() float64 {
+	if x != nil && x.TaniJuryo != nil {
+		return *x.TaniJuryo
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetShiharaiKakuteiK() string {
+	if x != nil {
+		return x.ShiharaiKakuteiK
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetBiko2() string {
+	if x != nil && x.Biko2 != nil {
+		return *x.Biko2
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetYobi1() float64 {
+	if x != nil && x.Yobi1 != nil {
+		return *x.Yobi1
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYobi2() float64 {
+	if x != nil && x.Yobi2 != nil {
+		return *x.Yobi2
+	}
+	return 0
+}
+
+func (x *UntenNippoMeisai) GetYobi3() string {
+	if x != nil && x.Yobi3 != nil {
+		return *x.Yobi3
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetYobi4() string {
+	if x != nil && x.Yobi4 != nil {
+		return *x.Yobi4
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetYobi5() string {
+	if x != nil && x.Yobi5 != nil {
+		return *x.Yobi5
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetYobi6() string {
+	if x != nil && x.Yobi6 != nil {
+		return *x.Yobi6
+	}
+	return ""
+}
+
+func (x *UntenNippoMeisai) GetYobi7() string {
+	if x != nil && x.Yobi7 != nil {
+		return *x.Yobi7
+	}
+	return ""
+}
+
+// ShainMaster メッセージ（43カラム全て）
+type ShainMaster struct {
+	state             protoimpl.MessageState `protogen:"open.v1"`
+	ShainC            string                 `protobuf:"bytes,1,opt,name=shain_c,json=shainC,proto3" json:"shain_c,omitempty"`
+	ShainN            *string                `protobuf:"bytes,2,opt,name=shain_n,json=shainN,proto3,oneof" json:"shain_n,omitempty"`
+	ShainR            *string                `protobuf:"bytes,3,opt,name=shain_r,json=shainR,proto3,oneof" json:"shain_r,omitempty"`
+	ShainF            *string                `protobuf:"bytes,4,opt,name=shain_f,json=shainF,proto3,oneof" json:"shain_f,omitempty"`
+	YubinBango        *string                `protobuf:"bytes,5,opt,name=yubin_bango,json=yubinBango,proto3,oneof" json:"yubin_bango,omitempty"`
+	Jusho1            *string                `protobuf:"bytes,6,opt,name=jusho1,proto3,oneof" json:"jusho1,omitempty"`
+	Jusho2            *string                `protobuf:"bytes,7,opt,name=jusho2,proto3,oneof" json:"jusho2,omitempty"`
+	DenwaBango        *string                `protobuf:"bytes,8,opt,name=denwa_bango,json=denwaBango,proto3,oneof" json:"denwa_bango,omitempty"`
+	KeitaiBango       *string                `protobuf:"bytes,9,opt,name=keitai_bango,json=keitaiBango,proto3,oneof" json:"keitai_bango,omitempty"`
+	ShainK            string                 `protobuf:"bytes,10,opt,name=shain_k,json=shainK,proto3" json:"shain_k,omitempty"`
+	Seibetsu          string                 `protobuf:"bytes,11,opt,name=seibetsu,proto3" json:"seibetsu,omitempty"`
+	Ketsuekigata      string                 `protobuf:"bytes,12,opt,name=ketsuekigata,proto3" json:"ketsuekigata,omitempty"`
+	Seinengappi       *string                `protobuf:"bytes,13,opt,name=seinengappi,proto3,oneof" json:"seinengappi,omitempty"`
+	NyushaNengappi    *string                `protobuf:"bytes,14,opt,name=nyusha_nengappi,json=nyushaNengappi,proto3,oneof" json:"nyusha_nengappi,omitempty"`
+	TaishokuNengappi  *string                `protobuf:"bytes,15,opt,name=taishoku_nengappi,json=taishokuNengappi,proto3,oneof" json:"taishoku_nengappi,omitempty"`
+	DaiBunrui1        string                 `protobuf:"bytes,16,opt,name=dai_bunrui1,json=daiBunrui1,proto3" json:"dai_bunrui1,omitempty"`
+	ChuBunrui1        string                 `protobuf:"bytes,17,opt,name=chu_bunrui1,json=chuBunrui1,proto3" json:"chu_bunrui1,omitempty"`
+	ShoBunrui1        string                 `protobuf:"bytes,18,opt,name=sho_bunrui1,json=shoBunrui1,proto3" json:"sho_bunrui1,omitempty"`
+	DaiBunrui2        string                 `protobuf:"bytes,19,opt,name=dai_bunrui2,json=daiBunrui2,proto3" json:"dai_bunrui2,omitempty"`
+	ChuBunrui2        string                 `protobuf:"bytes,20,opt,name=chu_bunrui2,json=chuBunrui2,proto3" json:"chu_bunrui2,omitempty"`
+	ShoBunrui2        string                 `protobuf:"bytes,21,opt,name=sho_bunrui2,json=shoBunrui2,proto3" json:"sho_bunrui2,omitempty"`
+	KodanPlate        *string                `protobuf:"bytes,22,opt,name=kodan_plate,json=kodanPlate,proto3,oneof" json:"kodan_plate,omitempty"`
+	UriageMokuhyogaku int32                  `protobuf:"varint,23,opt,name=uriage_mokuhyogaku,json=uriageMokuhyogaku,proto3" json:"uriage_mokuhyogaku,omitempty"`
+	UntenMenkyoK      string                 `protobuf:"bytes,24,opt,name=unten_menkyo_k,json=untenMenkyoK,proto3" json:"unten_menkyo_k,omitempty"`
+	MenkyoshoBango    *string                `protobuf:"bytes,25,opt,name=menkyosho_bango,json=menkyoshoBango,proto3,oneof" json:"menkyosho_bango,omitempty"`
+	JikaiKoshinbi     *string                `protobuf:"bytes,26,opt,name=jikai_koshinbi,json=jikaiKoshinbi,proto3,oneof" json:"jikai_koshinbi,omitempty"`
+	JishaYoshaK       string                 `protobuf:"bytes,27,opt,name=jisha_yosha_k,json=jishaYoshaK,proto3" json:"jisha_yosha_k,omitempty"`
+	KeisanK           string                 `protobuf:"bytes,28,opt,name=keisan_k,json=keisanK,proto3" json:"keisan_k,omitempty"`
+	ShiharaiRitsu     float64                `protobuf:"fixed64,29,opt,name=shiharai_ritsu,json=shiharaiRitsu,proto3" json:"shiharai_ritsu,omitempty"`
+	HasuK             string                 `protobuf:"bytes,30,opt,name=hasu_k,json=hasuK,proto3" json:"hasu_k,omitempty"`
+	BumonC            string                 `protobuf:"bytes,31,opt,name=bumon_c,json=bumonC,proto3" json:"bumon_c,omitempty"`
+	UnchinPatternC    string                 `protobuf:"bytes,32,opt,name=unchin_pattern_c,json=unchinPatternC,proto3" json:"unchin_pattern_c,omitempty"`
+	Kiji1             *string                `protobuf:"bytes,33,opt,name=kiji1,proto3,oneof" json:"kiji1,omitempty"`
+	Kiji2             *string                `protobuf:"bytes,34,opt,name=kiji2,proto3,oneof" json:"kiji2,omitempty"`
+	Kiji3             *string                `protobuf:"bytes,35,opt,name=kiji3,proto3,oneof" json:"kiji3,omitempty"`
+	Kiji4             *string                `protobuf:"bytes,36,opt,name=kiji4,proto3,oneof" json:"kiji4,omitempty"`
+	Kiji5             *string                `protobuf:"bytes,37,opt,name=kiji5,proto3,oneof" json:"kiji5,omitempty"`
+	Yobi1             *string                `protobuf:"bytes,38,opt,name=yobi1,proto3,oneof" json:"yobi1,omitempty"`
+	Yobi2             *string                `protobuf:"bytes,39,opt,name=yobi2,proto3,oneof" json:"yobi2,omitempty"`
+	Yobi3             *string                `protobuf:"bytes,40,opt,name=yobi3,proto3,oneof" json:"yobi3,omitempty"`
+	Yobi4             *string                `protobuf:"bytes,41,opt,name=yobi4,proto3,oneof" json:"yobi4,omitempty"`
+	Yobi5             *string                `protobuf:"bytes,42,opt,name=yobi5,proto3,oneof" json:"yobi5,omitempty"`
+	KinmuTaikeiC      string                 `protobuf:"bytes,43,opt,name=kinmu_taikei_c,json=kinmuTaikeiC,proto3" json:"kinmu_taikei_c,omitempty"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *ShainMaster) Reset() {
+	*x = ShainMaster{}
+	mi := &file_ryohi_proto_msgTypes[76]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShainMaster) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShainMaster) ProtoMessage() {}
+
+func (x *ShainMaster) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[76]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShainMaster.ProtoReflect.Descriptor instead.
+func (*ShainMaster) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{76}
+}
+
+func (x *ShainMaster) GetShainC() string {
+	if x != nil {
+		return x.ShainC
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetShainN() string {
+	if x != nil && x.ShainN != nil {
+		return *x.ShainN
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetShainR() string {
+	if x != nil && x.ShainR != nil {
+		return *x.ShainR
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetShainF() string {
+	if x != nil && x.ShainF != nil {
+		return *x.ShainF
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetYubinBango() string {
+	if x != nil && x.YubinBango != nil {
+		return *x.YubinBango
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetJusho1() string {
+	if x != nil && x.Jusho1 != nil {
+		return *x.Jusho1
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetJusho2() string {
+	if x != nil && x.Jusho2 != nil {
+		return *x.Jusho2
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetDenwaBango() string {
+	if x != nil && x.DenwaBango != nil {
+		return *x.DenwaBango
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKeitaiBango() string {
+	if x != nil && x.KeitaiBango != nil {
+		return *x.KeitaiBango
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetShainK() string {
+	if x != nil {
+		return x.ShainK
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetSeibetsu() string {
+	if x != nil {
+		return x.Seibetsu
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKetsuekigata() string {
+	if x != nil {
+		return x.Ketsuekigata
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetSeinengappi() string {
+	if x != nil && x.Seinengappi != nil {
+		return *x.Seinengappi
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetNyushaNengappi() string {
+	if x != nil && x.NyushaNengappi != nil {
+		return *x.NyushaNengappi
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetTaishokuNengappi() string {
+	if x != nil && x.TaishokuNengappi != nil {
+		return *x.TaishokuNengappi
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetDaiBunrui1() string {
+	if x != nil {
+		return x.DaiBunrui1
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetChuBunrui1() string {
+	if x != nil {
+		return x.ChuBunrui1
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetShoBunrui1() string {
+	if x != nil {
+		return x.ShoBunrui1
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetDaiBunrui2() string {
+	if x != nil {
+		return x.DaiBunrui2
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetChuBunrui2() string {
+	if x != nil {
+		return x.ChuBunrui2
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetShoBunrui2() string {
+	if x != nil {
+		return x.ShoBunrui2
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKodanPlate() string {
+	if x != nil && x.KodanPlate != nil {
+		return *x.KodanPlate
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetUriageMokuhyogaku() int32 {
+	if x != nil {
+		return x.UriageMokuhyogaku
+	}
+	return 0
+}
+
+func (x *ShainMaster) GetUntenMenkyoK() string {
+	if x != nil {
+		return x.UntenMenkyoK
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetMenkyoshoBango() string {
+	if x != nil && x.MenkyoshoBango != nil {
+		return *x.MenkyoshoBango
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetJikaiKoshinbi() string {
+	if x != nil && x.JikaiKoshinbi != nil {
+		return *x.JikaiKoshinbi
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetJishaYoshaK() string {
+	if x != nil {
+		return x.JishaYoshaK
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKeisanK() string {
+	if x != nil {
+		return x.KeisanK
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetShiharaiRitsu() float64 {
+	if x != nil {
+		return x.ShiharaiRitsu
+	}
+	return 0
+}
+
+func (x *ShainMaster) GetHasuK() string {
+	if x != nil {
+		return x.HasuK
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetBumonC() string {
+	if x != nil {
+		return x.BumonC
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetUnchinPatternC() string {
+	if x != nil {
+		return x.UnchinPatternC
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKiji1() string {
+	if x != nil && x.Kiji1 != nil {
+		return *x.Kiji1
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKiji2() string {
+	if x != nil && x.Kiji2 != nil {
+		return *x.Kiji2
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKiji3() string {
+	if x != nil && x.Kiji3 != nil {
+		return *x.Kiji3
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKiji4() string {
+	if x != nil && x.Kiji4 != nil {
+		return *x.Kiji4
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKiji5() string {
+	if x != nil && x.Kiji5 != nil {
+		return *x.Kiji5
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetYobi1() string {
+	if x != nil && x.Yobi1 != nil {
+		return *x.Yobi1
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetYobi2() string {
+	if x != nil && x.Yobi2 != nil {
+		return *x.Yobi2
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetYobi3() string {
+	if x != nil && x.Yobi3 != nil {
+		return *x.Yobi3
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetYobi4() string {
+	if x != nil && x.Yobi4 != nil {
+		return *x.Yobi4
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetYobi5() string {
+	if x != nil && x.Yobi5 != nil {
+		return *x.Yobi5
+	}
+	return ""
+}
+
+func (x *ShainMaster) GetKinmuTaikeiC() string {
+	if x != nil {
+		return x.KinmuTaikeiC
+	}
+	return ""
+}
+
+// ChiikiMaster メッセージ（4カラム全て）
+type ChiikiMaster struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChiikiC       string                 `protobuf:"bytes,1,opt,name=chiiki_c,json=chiikiC,proto3" json:"chiiki_c,omitempty"`
+	ChiikiN       *string                `protobuf:"bytes,2,opt,name=chiiki_n,json=chiikiN,proto3,oneof" json:"chiiki_n,omitempty"`
+	ChiikiR       *string                `protobuf:"bytes,3,opt,name=chiiki_r,json=chiikiR,proto3,oneof" json:"chiiki_r,omitempty"`
+	ChiikiF       *string                `protobuf:"bytes,4,opt,name=chiiki_f,json=chiikiF,proto3,oneof" json:"chiiki_f,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ChiikiMaster) Reset() {
+	*x = ChiikiMaster{}
+	mi := &file_ryohi_proto_msgTypes[77]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChiikiMaster) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChiikiMaster) ProtoMessage() {}
+
+func (x *ChiikiMaster) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[77]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChiikiMaster.ProtoReflect.Descriptor instead.
+func (*ChiikiMaster) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{77}
+}
+
+func (x *ChiikiMaster) GetChiikiC() string {
+	if x != nil {
+		return x.ChiikiC
+	}
+	return ""
+}
+
+func (x *ChiikiMaster) GetChiikiN() string {
+	if x != nil && x.ChiikiN != nil {
+		return *x.ChiikiN
+	}
+	return ""
+}
+
+func (x *ChiikiMaster) GetChiikiR() string {
+	if x != nil && x.ChiikiR != nil {
+		return *x.ChiikiR
+	}
+	return ""
+}
+
+func (x *ChiikiMaster) GetChiikiF() string {
+	if x != nil && x.ChiikiF != nil {
+		return *x.ChiikiF
+	}
+	return ""
+}
+
+// ChikuMaster メッセージ（20カラム全て）
+type ChikuMaster struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChikuC        string                 `protobuf:"bytes,1,opt,name=chiku_c,json=chikuC,proto3" json:"chiku_c,omitempty"`
+	ChikuN        *string                `protobuf:"bytes,2,opt,name=chiku_n,json=chikuN,proto3,oneof" json:"chiku_n,omitempty"`
+	ChikuR        *string                `protobuf:"bytes,3,opt,name=chiku_r,json=chikuR,proto3,oneof" json:"chiku_r,omitempty"`
+	ChikuF        *string                `protobuf:"bytes,4,opt,name=chiku_f,json=chikuF,proto3,oneof" json:"chiku_f,omitempty"`
+	ChiikiC       string                 `protobuf:"bytes,5,opt,name=chiiki_c,json=chiikiC,proto3" json:"chiiki_c,omitempty"`
+	YubinBango    *string                `protobuf:"bytes,6,opt,name=yubin_bango,json=yubinBango,proto3,oneof" json:"yubin_bango,omitempty"`
+	Jusho1        *string                `protobuf:"bytes,7,opt,name=jusho1,proto3,oneof" json:"jusho1,omitempty"`
+	Jusho2        *string                `protobuf:"bytes,8,opt,name=jusho2,proto3,oneof" json:"jusho2,omitempty"`
+	DenwaBango    *string                `protobuf:"bytes,9,opt,name=denwa_bango,json=denwaBango,proto3,oneof" json:"denwa_bango,omitempty"`
+	FaxBango      *string                `protobuf:"bytes,10,opt,name=fax_bango,json=faxBango,proto3,oneof" json:"fax_bango,omitempty"`
+	Tantosha      *string                `protobuf:"bytes,11,opt,name=tantosha,proto3,oneof" json:"tantosha,omitempty"`
+	Yobi1         *string                `protobuf:"bytes,12,opt,name=yobi1,proto3,oneof" json:"yobi1,omitempty"`
+	Yobi2         *string                `protobuf:"bytes,13,opt,name=yobi2,proto3,oneof" json:"yobi2,omitempty"`
+	Yobi3         *string                `protobuf:"bytes,14,opt,name=yobi3,proto3,oneof" json:"yobi3,omitempty"`
+	Yobi4         *string                `protobuf:"bytes,15,opt,name=yobi4,proto3,oneof" json:"yobi4,omitempty"`
+	Yobi5         *string                `protobuf:"bytes,16,opt,name=yobi5,proto3,oneof" json:"yobi5,omitempty"`
+	DgrTokuisakiC string                 `protobuf:"bytes,17,opt,name=dgr_tokuisaki_c,json=dgrTokuisakiC,proto3" json:"dgr_tokuisaki_c,omitempty"`
+	DgrTokuisakiH string                 `protobuf:"bytes,18,opt,name=dgr_tokuisaki_h,json=dgrTokuisakiH,proto3" json:"dgr_tokuisaki_h,omitempty"`
+	DgrHinmeiC    string                 `protobuf:"bytes,19,opt,name=dgr_hinmei_c,json=dgrHinmeiC,proto3" json:"dgr_hinmei_c,omitempty"`
+	DgrHinmeiH    string                 `protobuf:"bytes,20,opt,name=dgr_hinmei_h,json=dgrHinmeiH,proto3" json:"dgr_hinmei_h,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ChikuMaster) Reset() {
+	*x = ChikuMaster{}
+	mi := &file_ryohi_proto_msgTypes[78]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChikuMaster) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChikuMaster) ProtoMessage() {}
+
+func (x *ChikuMaster) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[78]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChikuMaster.ProtoReflect.Descriptor instead.
+func (*ChikuMaster) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{78}
+}
+
+func (x *ChikuMaster) GetChikuC() string {
+	if x != nil {
+		return x.ChikuC
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetChikuN() string {
+	if x != nil && x.ChikuN != nil {
+		return *x.ChikuN
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetChikuR() string {
+	if x != nil && x.ChikuR != nil {
+		return *x.ChikuR
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetChikuF() string {
+	if x != nil && x.ChikuF != nil {
+		return *x.ChikuF
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetChiikiC() string {
+	if x != nil {
+		return x.ChiikiC
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetYubinBango() string {
+	if x != nil && x.YubinBango != nil {
+		return *x.YubinBango
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetJusho1() string {
+	if x != nil && x.Jusho1 != nil {
+		return *x.Jusho1
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetJusho2() string {
+	if x != nil && x.Jusho2 != nil {
+		return *x.Jusho2
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetDenwaBango() string {
+	if x != nil && x.DenwaBango != nil {
+		return *x.DenwaBango
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetFaxBango() string {
+	if x != nil && x.FaxBango != nil {
+		return *x.FaxBango
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetTantosha() string {
+	if x != nil && x.Tantosha != nil {
+		return *x.Tantosha
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetYobi1() string {
+	if x != nil && x.Yobi1 != nil {
+		return *x.Yobi1
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetYobi2() string {
+	if x != nil && x.Yobi2 != nil {
+		return *x.Yobi2
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetYobi3() string {
+	if x != nil && x.Yobi3 != nil {
+		return *x.Yobi3
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetYobi4() string {
+	if x != nil && x.Yobi4 != nil {
+		return *x.Yobi4
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetYobi5() string {
+	if x != nil && x.Yobi5 != nil {
+		return *x.Yobi5
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetDgrTokuisakiC() string {
+	if x != nil {
+		return x.DgrTokuisakiC
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetDgrTokuisakiH() string {
+	if x != nil {
+		return x.DgrTokuisakiH
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetDgrHinmeiC() string {
+	if x != nil {
+		return x.DgrHinmeiC
+	}
+	return ""
+}
+
+func (x *ChikuMaster) GetDgrHinmeiH() string {
+	if x != nil {
+		return x.DgrHinmeiH
+	}
+	return ""
+}
+
+// UntenNippoMeisai用リクエスト/レスポンス
+type GetUntenNippoMeisaiRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	NippoK        string                 `protobuf:"bytes,1,opt,name=nippo_k,json=nippoK,proto3" json:"nippo_k,omitempty"`
+	HaishaK       string                 `protobuf:"bytes,2,opt,name=haisha_k,json=haishaK,proto3" json:"haisha_k,omitempty"`
+	SharyoC       string                 `protobuf:"bytes,3,opt,name=sharyo_c,json=sharyoC,proto3" json:"sharyo_c,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUntenNippoMeisaiRequest) Reset() {
+	*x = GetUntenNippoMeisaiRequest{}
+	mi := &file_ryohi_proto_msgTypes[79]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUntenNippoMeisaiRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUntenNippoMeisaiRequest) ProtoMessage() {}
+
+func (x *GetUntenNippoMeisaiRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[79]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUntenNippoMeisaiRequest.ProtoReflect.Descriptor instead.
+func (*GetUntenNippoMeisaiRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{79}
+}
+
+func (x *GetUntenNippoMeisaiRequest) GetNippoK() string {
+	if x != nil {
+		return x.NippoK
+	}
+	return ""
+}
+
+func (x *GetUntenNippoMeisaiRequest) GetHaishaK() string {
+	if x != nil {
+		return x.HaishaK
+	}
+	return ""
+}
+
+func (x *GetUntenNippoMeisaiRequest) GetSharyoC() string {
+	if x != nil {
+		return x.SharyoC
+	}
+	return ""
+}
+
+type GetUntenNippoMeisaiBySharyoCRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SharyoC       string                 `protobuf:"bytes,1,opt,name=sharyo_c,json=sharyoC,proto3" json:"sharyo_c,omitempty"`
+	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUntenNippoMeisaiBySharyoCRequest) Reset() {
+	*x = GetUntenNippoMeisaiBySharyoCRequest{}
+	mi := &file_ryohi_proto_msgTypes[80]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUntenNippoMeisaiBySharyoCRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUntenNippoMeisaiBySharyoCRequest) ProtoMessage() {}
+
+func (x *GetUntenNippoMeisaiBySharyoCRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[80]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUntenNippoMeisaiBySharyoCRequest.ProtoReflect.Descriptor instead.
+func (*GetUntenNippoMeisaiBySharyoCRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{80}
+}
+
+func (x *GetUntenNippoMeisaiBySharyoCRequest) GetSharyoC() string {
+	if x != nil {
+		return x.SharyoC
+	}
+	return ""
+}
+
+func (x *GetUntenNippoMeisaiBySharyoCRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type GetUntenNippoMeisaiByDateRangeRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	StartDate     string                 `protobuf:"bytes,1,opt,name=start_date,json=startDate,proto3" json:"start_date,omitempty"`
+	EndDate       string                 `protobuf:"bytes,2,opt,name=end_date,json=endDate,proto3" json:"end_date,omitempty"`
+	Limit         int32                  `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,4,opt,name=offset,proto3" json:"offset,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUntenNippoMeisaiByDateRangeRequest) Reset() {
+	*x = GetUntenNippoMeisaiByDateRangeRequest{}
+	mi := &file_ryohi_proto_msgTypes[81]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUntenNippoMeisaiByDateRangeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUntenNippoMeisaiByDateRangeRequest) ProtoMessage() {}
+
+func (x *GetUntenNippoMeisaiByDateRangeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[81]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUntenNippoMeisaiByDateRangeRequest.ProtoReflect.Descriptor instead.
+func (*GetUntenNippoMeisaiByDateRangeRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{81}
+}
+
+func (x *GetUntenNippoMeisaiByDateRangeRequest) GetStartDate() string {
+	if x != nil {
+		return x.StartDate
+	}
+	return ""
+}
+
+func (x *GetUntenNippoMeisaiByDateRangeRequest) GetEndDate() string {
+	if x != nil {
+		return x.EndDate
+	}
+	return ""
+}
+
+func (x *GetUntenNippoMeisaiByDateRangeRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *GetUntenNippoMeisaiByDateRangeRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type ListUntenNippoMeisaiRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	OrderBy       *string                `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3,oneof" json:"order_by,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListUntenNippoMeisaiRequest) Reset() {
+	*x = ListUntenNippoMeisaiRequest{}
+	mi := &file_ryohi_proto_msgTypes[82]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListUntenNippoMeisaiRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListUntenNippoMeisaiRequest) ProtoMessage() {}
+
+func (x *ListUntenNippoMeisaiRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[82]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListUntenNippoMeisaiRequest.ProtoReflect.Descriptor instead.
+func (*ListUntenNippoMeisaiRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{82}
+}
+
+func (x *ListUntenNippoMeisaiRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListUntenNippoMeisaiRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListUntenNippoMeisaiRequest) GetOrderBy() string {
+	if x != nil && x.OrderBy != nil {
+		return *x.OrderBy
+	}
+	return ""
+}
+
+type UntenNippoMeisaiResponse struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	UntenNippoMeisai *UntenNippoMeisai      `protobuf:"bytes,1,opt,name=unten_nippo_meisai,json=untenNippoMeisai,proto3" json:"unten_nippo_meisai,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *UntenNippoMeisaiResponse) Reset() {
+	*x = UntenNippoMeisaiResponse{}
+	mi := &file_ryohi_proto_msgTypes[83]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UntenNippoMeisaiResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UntenNippoMeisaiResponse) ProtoMessage() {}
+
+func (x *UntenNippoMeisaiResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[83]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UntenNippoMeisaiResponse.ProtoReflect.Descriptor instead.
+func (*UntenNippoMeisaiResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{83}
+}
+
+func (x *UntenNippoMeisaiResponse) GetUntenNippoMeisai() *UntenNippoMeisai {
+	if x != nil {
+		return x.UntenNippoMeisai
+	}
+	return nil
+}
+
+type ListUntenNippoMeisaiResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*UntenNippoMeisai    `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListUntenNippoMeisaiResponse) Reset() {
+	*x = ListUntenNippoMeisaiResponse{}
+	mi := &file_ryohi_proto_msgTypes[84]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListUntenNippoMeisaiResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListUntenNippoMeisaiResponse) ProtoMessage() {}
+
+func (x *ListUntenNippoMeisaiResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[84]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListUntenNippoMeisaiResponse.ProtoReflect.Descriptor instead.
+func (*ListUntenNippoMeisaiResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{84}
+}
+
+func (x *ListUntenNippoMeisaiResponse) GetItems() []*UntenNippoMeisai {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *ListUntenNippoMeisaiResponse) GetTotalCount() int32 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
+// ShainMaster用リクエスト/レスポンス
+type GetShainMasterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ShainC        string                 `protobuf:"bytes,1,opt,name=shain_c,json=shainC,proto3" json:"shain_c,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetShainMasterRequest) Reset() {
+	*x = GetShainMasterRequest{}
+	mi := &file_ryohi_proto_msgTypes[85]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetShainMasterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetShainMasterRequest) ProtoMessage() {}
+
+func (x *GetShainMasterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[85]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetShainMasterRequest.ProtoReflect.Descriptor instead.
+func (*GetShainMasterRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{85}
+}
+
+func (x *GetShainMasterRequest) GetShainC() string {
+	if x != nil {
+		return x.ShainC
+	}
+	return ""
+}
+
+type GetShainMasterByBumonCRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	BumonC        string                 `protobuf:"bytes,1,opt,name=bumon_c,json=bumonC,proto3" json:"bumon_c,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetShainMasterByBumonCRequest) Reset() {
+	*x = GetShainMasterByBumonCRequest{}
+	mi := &file_ryohi_proto_msgTypes[86]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetShainMasterByBumonCRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetShainMasterByBumonCRequest) ProtoMessage() {}
+
+func (x *GetShainMasterByBumonCRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[86]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetShainMasterByBumonCRequest.ProtoReflect.Descriptor instead.
+func (*GetShainMasterByBumonCRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{86}
+}
+
+func (x *GetShainMasterByBumonCRequest) GetBumonC() string {
+	if x != nil {
+		return x.BumonC
+	}
+	return ""
+}
+
+type ListShainMasterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	OrderBy       *string                `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3,oneof" json:"order_by,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListShainMasterRequest) Reset() {
+	*x = ListShainMasterRequest{}
+	mi := &file_ryohi_proto_msgTypes[87]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListShainMasterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListShainMasterRequest) ProtoMessage() {}
+
+func (x *ListShainMasterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[87]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListShainMasterRequest.ProtoReflect.Descriptor instead.
+func (*ListShainMasterRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{87}
+}
+
+func (x *ListShainMasterRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListShainMasterRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListShainMasterRequest) GetOrderBy() string {
+	if x != nil && x.OrderBy != nil {
+		return *x.OrderBy
+	}
+	return ""
+}
+
+type ShainMasterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ShainMaster   *ShainMaster           `protobuf:"bytes,1,opt,name=shain_master,json=shainMaster,proto3" json:"shain_master,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ShainMasterResponse) Reset() {
+	*x = ShainMasterResponse{}
+	mi := &file_ryohi_proto_msgTypes[88]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ShainMasterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ShainMasterResponse) ProtoMessage() {}
+
+func (x *ShainMasterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[88]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ShainMasterResponse.ProtoReflect.Descriptor instead.
+func (*ShainMasterResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{88}
+}
+
+func (x *ShainMasterResponse) GetShainMaster() *ShainMaster {
+	if x != nil {
+		return x.ShainMaster
+	}
+	return nil
+}
+
+type ListShainMasterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ShainMaster         `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListShainMasterResponse) Reset() {
+	*x = ListShainMasterResponse{}
+	mi := &file_ryohi_proto_msgTypes[89]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListShainMasterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListShainMasterResponse) ProtoMessage() {}
+
+func (x *ListShainMasterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[89]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListShainMasterResponse.ProtoReflect.Descriptor instead.
+func (*ListShainMasterResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{89}
+}
+
+func (x *ListShainMasterResponse) GetItems() []*ShainMaster {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *ListShainMasterResponse) GetTotalCount() int32 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
+// ChiikiMaster用リクエスト/レスポンス
+type GetChiikiMasterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChiikiC       string                 `protobuf:"bytes,1,opt,name=chiiki_c,json=chiikiC,proto3" json:"chiiki_c,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetChiikiMasterRequest) Reset() {
+	*x = GetChiikiMasterRequest{}
+	mi := &file_ryohi_proto_msgTypes[90]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetChiikiMasterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetChiikiMasterRequest) ProtoMessage() {}
+
+func (x *GetChiikiMasterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[90]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetChiikiMasterRequest.ProtoReflect.Descriptor instead.
+func (*GetChiikiMasterRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{90}
+}
+
+func (x *GetChiikiMasterRequest) GetChiikiC() string {
+	if x != nil {
+		return x.ChiikiC
+	}
+	return ""
+}
+
+type ListChiikiMasterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	OrderBy       *string                `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3,oneof" json:"order_by,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListChiikiMasterRequest) Reset() {
+	*x = ListChiikiMasterRequest{}
+	mi := &file_ryohi_proto_msgTypes[91]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListChiikiMasterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListChiikiMasterRequest) ProtoMessage() {}
+
+func (x *ListChiikiMasterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[91]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListChiikiMasterRequest.ProtoReflect.Descriptor instead.
+func (*ListChiikiMasterRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{91}
+}
+
+func (x *ListChiikiMasterRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListChiikiMasterRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListChiikiMasterRequest) GetOrderBy() string {
+	if x != nil && x.OrderBy != nil {
+		return *x.OrderBy
+	}
+	return ""
+}
+
+type ChiikiMasterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChiikiMaster  *ChiikiMaster          `protobuf:"bytes,1,opt,name=chiiki_master,json=chiikiMaster,proto3" json:"chiiki_master,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ChiikiMasterResponse) Reset() {
+	*x = ChiikiMasterResponse{}
+	mi := &file_ryohi_proto_msgTypes[92]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChiikiMasterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChiikiMasterResponse) ProtoMessage() {}
+
+func (x *ChiikiMasterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[92]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChiikiMasterResponse.ProtoReflect.Descriptor instead.
+func (*ChiikiMasterResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{92}
+}
+
+func (x *ChiikiMasterResponse) GetChiikiMaster() *ChiikiMaster {
+	if x != nil {
+		return x.ChiikiMaster
+	}
+	return nil
+}
+
+type ListChiikiMasterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ChiikiMaster        `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListChiikiMasterResponse) Reset() {
+	*x = ListChiikiMasterResponse{}
+	mi := &file_ryohi_proto_msgTypes[93]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListChiikiMasterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListChiikiMasterResponse) ProtoMessage() {}
+
+func (x *ListChiikiMasterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[93]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListChiikiMasterResponse.ProtoReflect.Descriptor instead.
+func (*ListChiikiMasterResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{93}
+}
+
+func (x *ListChiikiMasterResponse) GetItems() []*ChiikiMaster {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *ListChiikiMasterResponse) GetTotalCount() int32 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
+// ChikuMaster用リクエスト/レスポンス
+type GetChikuMasterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChikuC        string                 `protobuf:"bytes,1,opt,name=chiku_c,json=chikuC,proto3" json:"chiku_c,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetChikuMasterRequest) Reset() {
+	*x = GetChikuMasterRequest{}
+	mi := &file_ryohi_proto_msgTypes[94]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetChikuMasterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetChikuMasterRequest) ProtoMessage() {}
+
+func (x *GetChikuMasterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[94]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetChikuMasterRequest.ProtoReflect.Descriptor instead.
+func (*GetChikuMasterRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{94}
+}
+
+func (x *GetChikuMasterRequest) GetChikuC() string {
+	if x != nil {
+		return x.ChikuC
+	}
+	return ""
+}
+
+type GetChikuMasterByChiikiCRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChiikiC       string                 `protobuf:"bytes,1,opt,name=chiiki_c,json=chiikiC,proto3" json:"chiiki_c,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetChikuMasterByChiikiCRequest) Reset() {
+	*x = GetChikuMasterByChiikiCRequest{}
+	mi := &file_ryohi_proto_msgTypes[95]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetChikuMasterByChiikiCRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetChikuMasterByChiikiCRequest) ProtoMessage() {}
+
+func (x *GetChikuMasterByChiikiCRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[95]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetChikuMasterByChiikiCRequest.ProtoReflect.Descriptor instead.
+func (*GetChikuMasterByChiikiCRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{95}
+}
+
+func (x *GetChikuMasterByChiikiCRequest) GetChiikiC() string {
+	if x != nil {
+		return x.ChiikiC
+	}
+	return ""
+}
+
+type ListChikuMasterRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	OrderBy       *string                `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3,oneof" json:"order_by,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListChikuMasterRequest) Reset() {
+	*x = ListChikuMasterRequest{}
+	mi := &file_ryohi_proto_msgTypes[96]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListChikuMasterRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListChikuMasterRequest) ProtoMessage() {}
+
+func (x *ListChikuMasterRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[96]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListChikuMasterRequest.ProtoReflect.Descriptor instead.
+func (*ListChikuMasterRequest) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{96}
+}
+
+func (x *ListChikuMasterRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+func (x *ListChikuMasterRequest) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *ListChikuMasterRequest) GetOrderBy() string {
+	if x != nil && x.OrderBy != nil {
+		return *x.OrderBy
+	}
+	return ""
+}
+
+type ChikuMasterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ChikuMaster   *ChikuMaster           `protobuf:"bytes,1,opt,name=chiku_master,json=chikuMaster,proto3" json:"chiku_master,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ChikuMasterResponse) Reset() {
+	*x = ChikuMasterResponse{}
+	mi := &file_ryohi_proto_msgTypes[97]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChikuMasterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChikuMasterResponse) ProtoMessage() {}
+
+func (x *ChikuMasterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[97]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChikuMasterResponse.ProtoReflect.Descriptor instead.
+func (*ChikuMasterResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{97}
+}
+
+func (x *ChikuMasterResponse) GetChikuMaster() *ChikuMaster {
+	if x != nil {
+		return x.ChikuMaster
+	}
+	return nil
+}
+
+type ListChikuMasterResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Items         []*ChikuMaster         `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListChikuMasterResponse) Reset() {
+	*x = ListChikuMasterResponse{}
+	mi := &file_ryohi_proto_msgTypes[98]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListChikuMasterResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListChikuMasterResponse) ProtoMessage() {}
+
+func (x *ListChikuMasterResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ryohi_proto_msgTypes[98]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListChikuMasterResponse.ProtoReflect.Descriptor instead.
+func (*ListChikuMasterResponse) Descriptor() ([]byte, []int) {
+	return file_ryohi_proto_rawDescGZIP(), []int{98}
+}
+
+func (x *ListChikuMasterResponse) GetItems() []*ChikuMaster {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *ListChikuMasterResponse) GetTotalCount() int32 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
 // 共通メッセージ
 type Empty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -5233,7 +7793,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_ryohi_proto_msgTypes[75]
+	mi := &file_ryohi_proto_msgTypes[99]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -5245,7 +7805,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_ryohi_proto_msgTypes[75]
+	mi := &file_ryohi_proto_msgTypes[99]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -5258,7 +7818,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_ryohi_proto_rawDescGZIP(), []int{75}
+	return file_ryohi_proto_rawDescGZIP(), []int{99}
 }
 
 var File_ryohi_proto protoreflect.FileDescriptor
@@ -5809,6 +8369,367 @@ const file_ryohi_proto_rawDesc = "" +
 	"\x13ListDriversResponse\x12$\n" +
 	"\x05items\x18\x01 \x03(\v2\x0e.ryohi.DriversR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
+	"totalCount\"\xed \n" +
+	"\x10UntenNippoMeisai\x12\x17\n" +
+	"\anippo_k\x18\x01 \x01(\tR\x06nippoK\x12(\n" +
+	"\runko_nengappi\x18\x02 \x01(\tH\x00R\funkoNengappi\x88\x01\x01\x12\x19\n" +
+	"\bhaisha_k\x18\x03 \x01(\tR\ahaishaK\x12\x19\n" +
+	"\bsharyo_c\x18\x04 \x01(\tR\asharyoC\x12\x19\n" +
+	"\bsharyo_h\x18\x05 \x01(\tR\asharyoH\x12\x1d\n" +
+	"\n" +
+	"untenshu_c\x18\x06 \x01(\tR\tuntenshuC\x12\x1f\n" +
+	"\vyoshasaki_c\x18\a \x01(\tR\n" +
+	"yoshasakiC\x12\x1f\n" +
+	"\vyoshasaki_h\x18\b \x01(\tR\n" +
+	"yoshasakiH\x12\x16\n" +
+	"\x06joshu1\x18\t \x01(\tR\x06joshu1\x12\x16\n" +
+	"\x06joshu2\x18\n" +
+	" \x01(\tR\x06joshu2\x120\n" +
+	"\x11nyuryoku_nengappi\x18\v \x01(\tH\x01R\x10nyuryokuNengappi\x88\x01\x01\x12,\n" +
+	"\x0fshokai_nengappi\x18\f \x01(\tH\x02R\x0eshokaiNengappi\x88\x01\x01\x12(\n" +
+	"\x10nyuryoku_tanto_c\x18\r \x01(\tR\x0enyuryokuTantoC\x12*\n" +
+	"\x0ejuchu_nengappi\x18\x0e \x01(\tH\x03R\rjuchuNengappi\x88\x01\x01\x12%\n" +
+	"\x0ekanri_nengappi\x18\x0f \x01(\tR\rkanriNengappi\x12\x17\n" +
+	"\akanri_c\x18\x10 \x01(\x05R\x06kanriC\x122\n" +
+	"\x12tsumikomi_nengappi\x18\x11 \x01(\tH\x04R\x11tsumikomiNengappi\x88\x01\x01\x12*\n" +
+	"\x0enonin_nengappi\x18\x12 \x01(\tH\x05R\rnoninNengappi\x88\x01\x01\x12\x1e\n" +
+	"\btsumoi_k\x18\x13 \x01(\tH\x06R\atsumoiK\x88\x01\x01\x12\x19\n" +
+	"\bshashu_c\x18\x14 \x01(\tR\ashashuC\x12\x1f\n" +
+	"\vjuchu_bumon\x18\x15 \x01(\tR\n" +
+	"juchuBumon\x12\x1d\n" +
+	"\n" +
+	"kado_bumon\x18\x16 \x01(\tR\tkadoBumon\x12\x19\n" +
+	"\buriage_k\x18\x17 \x01(\tR\auriageK\x12(\n" +
+	"\x10uriage_shubeki_c\x18\x18 \x01(\tR\x0euriageShubekiC\x12\x19\n" +
+	"\bseikyu_k\x18\x19 \x01(\tR\aseikyuK\x12 \n" +
+	"\tdenpyo_no\x18\x1a \x01(\tH\aR\bdenpyoNo\x88\x01\x01\x12\x1f\n" +
+	"\vtokuisaki_c\x18\x1b \x01(\tR\n" +
+	"tokuisakiC\x12\x1f\n" +
+	"\vtokuisaki_h\x18\x1c \x01(\tR\n" +
+	"tokuisakiH\x12\x19\n" +
+	"\bhatchi_c\x18\x1d \x01(\tR\ahatchiC\x12\x1e\n" +
+	"\bhatchi_n\x18\x1e \x01(\tH\bR\ahatchiN\x88\x01\x01\x12\x1d\n" +
+	"\n" +
+	"chakuchi_c\x18\x1f \x01(\tR\tchakuchiC\x12\"\n" +
+	"\n" +
+	"chakuchi_n\x18  \x01(\tH\tR\tchakuchiN\x88\x01\x01\x12\x19\n" +
+	"\bhinmei_c\x18! \x01(\tR\ahinmeiC\x12\x19\n" +
+	"\bhinmei_h\x18\" \x01(\tR\ahinmeiH\x12\x1e\n" +
+	"\bhinmei_n\x18# \x01(\tH\n" +
+	"R\ahinmeiN\x88\x01\x01\x12\x17\n" +
+	"\asoko_km\x18$ \x01(\x01R\x06sokoKm\x12\x1b\n" +
+	"\tjissha_km\x18% \x01(\x01R\bjisshaKm\x12$\n" +
+	"\x0eseikyu_soko_km\x18& \x01(\x01R\fseikyuSokoKm\x12(\n" +
+	"\x10seikyu_jissha_km\x18' \x01(\x01R\x0eseikyuJisshaKm\x12\x14\n" +
+	"\x05suryo\x18( \x01(\x01R\x05suryo\x12\x17\n" +
+	"\x04tani\x18) \x01(\tH\vR\x04tani\x88\x01\x01\x12\x15\n" +
+	"\x06ton_su\x18* \x01(\x01R\x05tonSu\x12\x14\n" +
+	"\x05tanka\x18+ \x01(\x01R\x05tanka\x12\x18\n" +
+	"\akingaku\x18, \x01(\x05R\akingaku\x12\x16\n" +
+	"\x06nebiki\x18- \x01(\x05R\x06nebiki\x12\x1c\n" +
+	"\twarimashi\x18. \x01(\x05R\twarimashi\x12\x14\n" +
+	"\x05jippi\x18/ \x01(\x05R\x05jippi\x12\x1f\n" +
+	"\vyosha_tanka\x180 \x01(\x01R\n" +
+	"yoshaTanka\x12#\n" +
+	"\ryosha_kingaku\x181 \x01(\x05R\fyoshaKingaku\x12!\n" +
+	"\fyosha_nebiki\x182 \x01(\x05R\vyoshaNebiki\x12'\n" +
+	"\x0fyosha_warimashi\x183 \x01(\x05R\x0eyoshaWarimashi\x12\x1f\n" +
+	"\vyosha_jippi\x184 \x01(\x05R\n" +
+	"yoshaJippi\x12\x1b\n" +
+	"\tkakutei_k\x185 \x01(\tR\bkakuteiK\x12\x17\n" +
+	"\x04biko\x186 \x01(\tH\fR\x04biko\x88\x01\x01\x12,\n" +
+	"\x0furiage_nengappi\x187 \x01(\tH\rR\x0euriageNengappi\x88\x01\x01\x120\n" +
+	"\x11shiharai_nengappi\x188 \x01(\tH\x0eR\x10shiharaiNengappi\x88\x01\x01\x12*\n" +
+	"\x0enyukin_yoteibi\x189 \x01(\tH\x0fR\rnyukinYoteibi\x88\x01\x01\x12.\n" +
+	"\x10shiharai_yoteibi\x18: \x01(\tH\x10R\x0fshiharaiYoteibi\x88\x01\x01\x12\x1a\n" +
+	"\bshohizei\x18; \x01(\x05R\bshohizei\x12%\n" +
+	"\x0eyosha_shohizei\x18< \x01(\x05R\ryoshaShohizei\x12\x18\n" +
+	"\azeigaku\x18= \x01(\x05R\azeigaku\x12+\n" +
+	"\x11warimashi_zeigaku\x18> \x01(\x05R\x10warimashiZeigaku\x12#\n" +
+	"\rjippi_zeigaku\x18? \x01(\x05R\fjippiZeigaku\x12#\n" +
+	"\ryosha_zeigaku\x18@ \x01(\x05R\fyoshaZeigaku\x126\n" +
+	"\x17yosha_warimashi_zeigaku\x18A \x01(\x05R\x15yoshaWarimashiZeigaku\x12.\n" +
+	"\x13yosha_jippi_zeigaku\x18B \x01(\x05R\x11yoshaJippiZeigaku\x12'\n" +
+	"\x0fzeinuki_kingaku\x18C \x01(\x05R\x0ezeinukiKingaku\x12+\n" +
+	"\x11zeinuki_warimashi\x18D \x01(\x05R\x10zeinukiWarimashi\x12#\n" +
+	"\rzeinuki_jippi\x18E \x01(\x05R\fzeinukiJippi\x122\n" +
+	"\x15zeinuki_yosha_kingaku\x18F \x01(\x05R\x13zeinukiYoshaKingaku\x126\n" +
+	"\x17zeinuki_yosha_warimashi\x18G \x01(\x05R\x15zeinukiYoshaWarimashi\x12.\n" +
+	"\x13zeinuki_yosha_jippi\x18H \x01(\x05R\x11zeinukiYoshaJippi\x12\x13\n" +
+	"\x05zei_k\x18I \x01(\tR\x04zeiK\x12\x1e\n" +
+	"\vyosha_zei_k\x18J \x01(\tR\tyoshaZeiK\x12\x1a\n" +
+	"\bzeiritsu\x18K \x01(\x01R\bzeiritsu\x12%\n" +
+	"\x0eyosha_zeiritsu\x18L \x01(\x01R\ryoshaZeiritsu\x12'\n" +
+	"\x0funtenshu_uriage\x18M \x01(\x05R\x0euntenshuUriage\x12#\n" +
+	"\rjoshu1_uriage\x18N \x01(\x05R\fjoshu1Uriage\x12#\n" +
+	"\rjoshu2_uriage\x18O \x01(\x05R\fjoshu2Uriage\x12.\n" +
+	"\x13yuso_shunyu_furikae\x18P \x01(\x05R\x11yusoShunyuFurikae\x124\n" +
+	"\x16uriage_kingaku_furikae\x18Q \x01(\x05R\x14uriageKingakuFurikae\x12!\n" +
+	"\fkazei_uriage\x18R \x01(\x05R\vkazeiUriage\x12%\n" +
+	"\x0ehikazei_uriage\x18S \x01(\x05R\rhikazeiUriage\x12%\n" +
+	"\x0ekazei_shiharai\x18T \x01(\x05R\rkazeiShiharai\x12)\n" +
+	"\x10hikazei_shiharai\x18U \x01(\x05R\x0fhikazeiShiharai\x12\x1f\n" +
+	"\vhatchiiki_c\x18V \x01(\tR\n" +
+	"hatchiikiC\x12#\n" +
+	"\rchakuchiiki_c\x18W \x01(\tR\fchakuchiikiC\x12#\n" +
+	"\n" +
+	"rikunkyoku\x18X \x01(\tH\x11R\n" +
+	"rikunkyoku\x88\x01\x01\x12\x1b\n" +
+	"\x06yoseki\x18Y \x01(\x01H\x12R\x06yoseki\x88\x01\x01\x127\n" +
+	"\x18juryo_kakunin_tenpusho_k\x18Z \x01(\tR\x15juryoKakuninTenpushoK\x12(\n" +
+	"\rsaishu_koshin\x18[ \x01(\tH\x13R\fsaishuKoshin\x88\x01\x01\x12\x0e\n" +
+	"\x02lc\x18\\ \x01(\x05R\x02lc\x12 \n" +
+	"\tkoguchi_k\x18] \x01(\tH\x14R\bkoguchiK\x88\x01\x01\x12'\n" +
+	"\runso_gaisha_n\x18^ \x01(\tH\x15R\vunsoGaishaN\x88\x01\x01\x12\x1e\n" +
+	"\bjomuin_n\x18_ \x01(\tH\x16R\ajomuinN\x88\x01\x01\x12%\n" +
+	"\vrenrakusaki\x18` \x01(\tH\x17R\vrenrakusaki\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"tani_juryo\x18a \x01(\x01H\x18R\ttaniJuryo\x88\x01\x01\x12,\n" +
+	"\x12shiharai_kakutei_k\x18b \x01(\tR\x10shiharaiKakuteiK\x12\x19\n" +
+	"\x05biko2\x18c \x01(\tH\x19R\x05biko2\x88\x01\x01\x12\x19\n" +
+	"\x05yobi1\x18d \x01(\x01H\x1aR\x05yobi1\x88\x01\x01\x12\x19\n" +
+	"\x05yobi2\x18e \x01(\x01H\x1bR\x05yobi2\x88\x01\x01\x12\x19\n" +
+	"\x05yobi3\x18f \x01(\tH\x1cR\x05yobi3\x88\x01\x01\x12\x19\n" +
+	"\x05yobi4\x18g \x01(\tH\x1dR\x05yobi4\x88\x01\x01\x12\x19\n" +
+	"\x05yobi5\x18h \x01(\tH\x1eR\x05yobi5\x88\x01\x01\x12\x19\n" +
+	"\x05yobi6\x18i \x01(\tH\x1fR\x05yobi6\x88\x01\x01\x12\x19\n" +
+	"\x05yobi7\x18j \x01(\tH R\x05yobi7\x88\x01\x01B\x10\n" +
+	"\x0e_unko_nengappiB\x14\n" +
+	"\x12_nyuryoku_nengappiB\x12\n" +
+	"\x10_shokai_nengappiB\x11\n" +
+	"\x0f_juchu_nengappiB\x15\n" +
+	"\x13_tsumikomi_nengappiB\x11\n" +
+	"\x0f_nonin_nengappiB\v\n" +
+	"\t_tsumoi_kB\f\n" +
+	"\n" +
+	"_denpyo_noB\v\n" +
+	"\t_hatchi_nB\r\n" +
+	"\v_chakuchi_nB\v\n" +
+	"\t_hinmei_nB\a\n" +
+	"\x05_taniB\a\n" +
+	"\x05_bikoB\x12\n" +
+	"\x10_uriage_nengappiB\x14\n" +
+	"\x12_shiharai_nengappiB\x11\n" +
+	"\x0f_nyukin_yoteibiB\x13\n" +
+	"\x11_shiharai_yoteibiB\r\n" +
+	"\v_rikunkyokuB\t\n" +
+	"\a_yosekiB\x10\n" +
+	"\x0e_saishu_koshinB\f\n" +
+	"\n" +
+	"_koguchi_kB\x10\n" +
+	"\x0e_unso_gaisha_nB\v\n" +
+	"\t_jomuin_nB\x0e\n" +
+	"\f_renrakusakiB\r\n" +
+	"\v_tani_juryoB\b\n" +
+	"\x06_biko2B\b\n" +
+	"\x06_yobi1B\b\n" +
+	"\x06_yobi2B\b\n" +
+	"\x06_yobi3B\b\n" +
+	"\x06_yobi4B\b\n" +
+	"\x06_yobi5B\b\n" +
+	"\x06_yobi6B\b\n" +
+	"\x06_yobi7\"\xdd\r\n" +
+	"\vShainMaster\x12\x17\n" +
+	"\ashain_c\x18\x01 \x01(\tR\x06shainC\x12\x1c\n" +
+	"\ashain_n\x18\x02 \x01(\tH\x00R\x06shainN\x88\x01\x01\x12\x1c\n" +
+	"\ashain_r\x18\x03 \x01(\tH\x01R\x06shainR\x88\x01\x01\x12\x1c\n" +
+	"\ashain_f\x18\x04 \x01(\tH\x02R\x06shainF\x88\x01\x01\x12$\n" +
+	"\vyubin_bango\x18\x05 \x01(\tH\x03R\n" +
+	"yubinBango\x88\x01\x01\x12\x1b\n" +
+	"\x06jusho1\x18\x06 \x01(\tH\x04R\x06jusho1\x88\x01\x01\x12\x1b\n" +
+	"\x06jusho2\x18\a \x01(\tH\x05R\x06jusho2\x88\x01\x01\x12$\n" +
+	"\vdenwa_bango\x18\b \x01(\tH\x06R\n" +
+	"denwaBango\x88\x01\x01\x12&\n" +
+	"\fkeitai_bango\x18\t \x01(\tH\aR\vkeitaiBango\x88\x01\x01\x12\x17\n" +
+	"\ashain_k\x18\n" +
+	" \x01(\tR\x06shainK\x12\x1a\n" +
+	"\bseibetsu\x18\v \x01(\tR\bseibetsu\x12\"\n" +
+	"\fketsuekigata\x18\f \x01(\tR\fketsuekigata\x12%\n" +
+	"\vseinengappi\x18\r \x01(\tH\bR\vseinengappi\x88\x01\x01\x12,\n" +
+	"\x0fnyusha_nengappi\x18\x0e \x01(\tH\tR\x0enyushaNengappi\x88\x01\x01\x120\n" +
+	"\x11taishoku_nengappi\x18\x0f \x01(\tH\n" +
+	"R\x10taishokuNengappi\x88\x01\x01\x12\x1f\n" +
+	"\vdai_bunrui1\x18\x10 \x01(\tR\n" +
+	"daiBunrui1\x12\x1f\n" +
+	"\vchu_bunrui1\x18\x11 \x01(\tR\n" +
+	"chuBunrui1\x12\x1f\n" +
+	"\vsho_bunrui1\x18\x12 \x01(\tR\n" +
+	"shoBunrui1\x12\x1f\n" +
+	"\vdai_bunrui2\x18\x13 \x01(\tR\n" +
+	"daiBunrui2\x12\x1f\n" +
+	"\vchu_bunrui2\x18\x14 \x01(\tR\n" +
+	"chuBunrui2\x12\x1f\n" +
+	"\vsho_bunrui2\x18\x15 \x01(\tR\n" +
+	"shoBunrui2\x12$\n" +
+	"\vkodan_plate\x18\x16 \x01(\tH\vR\n" +
+	"kodanPlate\x88\x01\x01\x12-\n" +
+	"\x12uriage_mokuhyogaku\x18\x17 \x01(\x05R\x11uriageMokuhyogaku\x12$\n" +
+	"\x0eunten_menkyo_k\x18\x18 \x01(\tR\funtenMenkyoK\x12,\n" +
+	"\x0fmenkyosho_bango\x18\x19 \x01(\tH\fR\x0emenkyoshoBango\x88\x01\x01\x12*\n" +
+	"\x0ejikai_koshinbi\x18\x1a \x01(\tH\rR\rjikaiKoshinbi\x88\x01\x01\x12\"\n" +
+	"\rjisha_yosha_k\x18\x1b \x01(\tR\vjishaYoshaK\x12\x19\n" +
+	"\bkeisan_k\x18\x1c \x01(\tR\akeisanK\x12%\n" +
+	"\x0eshiharai_ritsu\x18\x1d \x01(\x01R\rshiharaiRitsu\x12\x15\n" +
+	"\x06hasu_k\x18\x1e \x01(\tR\x05hasuK\x12\x17\n" +
+	"\abumon_c\x18\x1f \x01(\tR\x06bumonC\x12(\n" +
+	"\x10unchin_pattern_c\x18  \x01(\tR\x0eunchinPatternC\x12\x19\n" +
+	"\x05kiji1\x18! \x01(\tH\x0eR\x05kiji1\x88\x01\x01\x12\x19\n" +
+	"\x05kiji2\x18\" \x01(\tH\x0fR\x05kiji2\x88\x01\x01\x12\x19\n" +
+	"\x05kiji3\x18# \x01(\tH\x10R\x05kiji3\x88\x01\x01\x12\x19\n" +
+	"\x05kiji4\x18$ \x01(\tH\x11R\x05kiji4\x88\x01\x01\x12\x19\n" +
+	"\x05kiji5\x18% \x01(\tH\x12R\x05kiji5\x88\x01\x01\x12\x19\n" +
+	"\x05yobi1\x18& \x01(\tH\x13R\x05yobi1\x88\x01\x01\x12\x19\n" +
+	"\x05yobi2\x18' \x01(\tH\x14R\x05yobi2\x88\x01\x01\x12\x19\n" +
+	"\x05yobi3\x18( \x01(\tH\x15R\x05yobi3\x88\x01\x01\x12\x19\n" +
+	"\x05yobi4\x18) \x01(\tH\x16R\x05yobi4\x88\x01\x01\x12\x19\n" +
+	"\x05yobi5\x18* \x01(\tH\x17R\x05yobi5\x88\x01\x01\x12$\n" +
+	"\x0ekinmu_taikei_c\x18+ \x01(\tR\fkinmuTaikeiCB\n" +
+	"\n" +
+	"\b_shain_nB\n" +
+	"\n" +
+	"\b_shain_rB\n" +
+	"\n" +
+	"\b_shain_fB\x0e\n" +
+	"\f_yubin_bangoB\t\n" +
+	"\a_jusho1B\t\n" +
+	"\a_jusho2B\x0e\n" +
+	"\f_denwa_bangoB\x0f\n" +
+	"\r_keitai_bangoB\x0e\n" +
+	"\f_seinengappiB\x12\n" +
+	"\x10_nyusha_nengappiB\x14\n" +
+	"\x12_taishoku_nengappiB\x0e\n" +
+	"\f_kodan_plateB\x12\n" +
+	"\x10_menkyosho_bangoB\x11\n" +
+	"\x0f_jikai_koshinbiB\b\n" +
+	"\x06_kiji1B\b\n" +
+	"\x06_kiji2B\b\n" +
+	"\x06_kiji3B\b\n" +
+	"\x06_kiji4B\b\n" +
+	"\x06_kiji5B\b\n" +
+	"\x06_yobi1B\b\n" +
+	"\x06_yobi2B\b\n" +
+	"\x06_yobi3B\b\n" +
+	"\x06_yobi4B\b\n" +
+	"\x06_yobi5\"\xb0\x01\n" +
+	"\fChiikiMaster\x12\x19\n" +
+	"\bchiiki_c\x18\x01 \x01(\tR\achiikiC\x12\x1e\n" +
+	"\bchiiki_n\x18\x02 \x01(\tH\x00R\achiikiN\x88\x01\x01\x12\x1e\n" +
+	"\bchiiki_r\x18\x03 \x01(\tH\x01R\achiikiR\x88\x01\x01\x12\x1e\n" +
+	"\bchiiki_f\x18\x04 \x01(\tH\x02R\achiikiF\x88\x01\x01B\v\n" +
+	"\t_chiiki_nB\v\n" +
+	"\t_chiiki_rB\v\n" +
+	"\t_chiiki_f\"\xa6\x06\n" +
+	"\vChikuMaster\x12\x17\n" +
+	"\achiku_c\x18\x01 \x01(\tR\x06chikuC\x12\x1c\n" +
+	"\achiku_n\x18\x02 \x01(\tH\x00R\x06chikuN\x88\x01\x01\x12\x1c\n" +
+	"\achiku_r\x18\x03 \x01(\tH\x01R\x06chikuR\x88\x01\x01\x12\x1c\n" +
+	"\achiku_f\x18\x04 \x01(\tH\x02R\x06chikuF\x88\x01\x01\x12\x19\n" +
+	"\bchiiki_c\x18\x05 \x01(\tR\achiikiC\x12$\n" +
+	"\vyubin_bango\x18\x06 \x01(\tH\x03R\n" +
+	"yubinBango\x88\x01\x01\x12\x1b\n" +
+	"\x06jusho1\x18\a \x01(\tH\x04R\x06jusho1\x88\x01\x01\x12\x1b\n" +
+	"\x06jusho2\x18\b \x01(\tH\x05R\x06jusho2\x88\x01\x01\x12$\n" +
+	"\vdenwa_bango\x18\t \x01(\tH\x06R\n" +
+	"denwaBango\x88\x01\x01\x12 \n" +
+	"\tfax_bango\x18\n" +
+	" \x01(\tH\aR\bfaxBango\x88\x01\x01\x12\x1f\n" +
+	"\btantosha\x18\v \x01(\tH\bR\btantosha\x88\x01\x01\x12\x19\n" +
+	"\x05yobi1\x18\f \x01(\tH\tR\x05yobi1\x88\x01\x01\x12\x19\n" +
+	"\x05yobi2\x18\r \x01(\tH\n" +
+	"R\x05yobi2\x88\x01\x01\x12\x19\n" +
+	"\x05yobi3\x18\x0e \x01(\tH\vR\x05yobi3\x88\x01\x01\x12\x19\n" +
+	"\x05yobi4\x18\x0f \x01(\tH\fR\x05yobi4\x88\x01\x01\x12\x19\n" +
+	"\x05yobi5\x18\x10 \x01(\tH\rR\x05yobi5\x88\x01\x01\x12&\n" +
+	"\x0fdgr_tokuisaki_c\x18\x11 \x01(\tR\rdgrTokuisakiC\x12&\n" +
+	"\x0fdgr_tokuisaki_h\x18\x12 \x01(\tR\rdgrTokuisakiH\x12 \n" +
+	"\fdgr_hinmei_c\x18\x13 \x01(\tR\n" +
+	"dgrHinmeiC\x12 \n" +
+	"\fdgr_hinmei_h\x18\x14 \x01(\tR\n" +
+	"dgrHinmeiHB\n" +
+	"\n" +
+	"\b_chiku_nB\n" +
+	"\n" +
+	"\b_chiku_rB\n" +
+	"\n" +
+	"\b_chiku_fB\x0e\n" +
+	"\f_yubin_bangoB\t\n" +
+	"\a_jusho1B\t\n" +
+	"\a_jusho2B\x0e\n" +
+	"\f_denwa_bangoB\f\n" +
+	"\n" +
+	"_fax_bangoB\v\n" +
+	"\t_tantoshaB\b\n" +
+	"\x06_yobi1B\b\n" +
+	"\x06_yobi2B\b\n" +
+	"\x06_yobi3B\b\n" +
+	"\x06_yobi4B\b\n" +
+	"\x06_yobi5\"k\n" +
+	"\x1aGetUntenNippoMeisaiRequest\x12\x17\n" +
+	"\anippo_k\x18\x01 \x01(\tR\x06nippoK\x12\x19\n" +
+	"\bhaisha_k\x18\x02 \x01(\tR\ahaishaK\x12\x19\n" +
+	"\bsharyo_c\x18\x03 \x01(\tR\asharyoC\"V\n" +
+	"#GetUntenNippoMeisaiBySharyoCRequest\x12\x19\n" +
+	"\bsharyo_c\x18\x01 \x01(\tR\asharyoC\x12\x14\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\"\x8f\x01\n" +
+	"%GetUntenNippoMeisaiByDateRangeRequest\x12\x1d\n" +
+	"\n" +
+	"start_date\x18\x01 \x01(\tR\tstartDate\x12\x19\n" +
+	"\bend_date\x18\x02 \x01(\tR\aendDate\x12\x14\n" +
+	"\x05limit\x18\x03 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x04 \x01(\x05R\x06offset\"x\n" +
+	"\x1bListUntenNippoMeisaiRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
+	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
+	"\t_order_by\"a\n" +
+	"\x18UntenNippoMeisaiResponse\x12E\n" +
+	"\x12unten_nippo_meisai\x18\x01 \x01(\v2\x17.ryohi.UntenNippoMeisaiR\x10untenNippoMeisai\"n\n" +
+	"\x1cListUntenNippoMeisaiResponse\x12-\n" +
+	"\x05items\x18\x01 \x03(\v2\x17.ryohi.UntenNippoMeisaiR\x05items\x12\x1f\n" +
+	"\vtotal_count\x18\x02 \x01(\x05R\n" +
+	"totalCount\"0\n" +
+	"\x15GetShainMasterRequest\x12\x17\n" +
+	"\ashain_c\x18\x01 \x01(\tR\x06shainC\"8\n" +
+	"\x1dGetShainMasterByBumonCRequest\x12\x17\n" +
+	"\abumon_c\x18\x01 \x01(\tR\x06bumonC\"s\n" +
+	"\x16ListShainMasterRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
+	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
+	"\t_order_by\"L\n" +
+	"\x13ShainMasterResponse\x125\n" +
+	"\fshain_master\x18\x01 \x01(\v2\x12.ryohi.ShainMasterR\vshainMaster\"d\n" +
+	"\x17ListShainMasterResponse\x12(\n" +
+	"\x05items\x18\x01 \x03(\v2\x12.ryohi.ShainMasterR\x05items\x12\x1f\n" +
+	"\vtotal_count\x18\x02 \x01(\x05R\n" +
+	"totalCount\"3\n" +
+	"\x16GetChiikiMasterRequest\x12\x19\n" +
+	"\bchiiki_c\x18\x01 \x01(\tR\achiikiC\"t\n" +
+	"\x17ListChiikiMasterRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
+	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
+	"\t_order_by\"P\n" +
+	"\x14ChiikiMasterResponse\x128\n" +
+	"\rchiiki_master\x18\x01 \x01(\v2\x13.ryohi.ChiikiMasterR\fchiikiMaster\"f\n" +
+	"\x18ListChiikiMasterResponse\x12)\n" +
+	"\x05items\x18\x01 \x03(\v2\x13.ryohi.ChiikiMasterR\x05items\x12\x1f\n" +
+	"\vtotal_count\x18\x02 \x01(\x05R\n" +
+	"totalCount\"0\n" +
+	"\x15GetChikuMasterRequest\x12\x17\n" +
+	"\achiku_c\x18\x01 \x01(\tR\x06chikuC\";\n" +
+	"\x1eGetChikuMasterByChiikiCRequest\x12\x19\n" +
+	"\bchiiki_c\x18\x01 \x01(\tR\achiikiC\"s\n" +
+	"\x16ListChikuMasterRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
+	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
+	"\t_order_by\"L\n" +
+	"\x13ChikuMasterResponse\x125\n" +
+	"\fchiku_master\x18\x01 \x01(\v2\x12.ryohi.ChikuMasterR\vchikuMaster\"d\n" +
+	"\x17ListChikuMasterResponse\x12(\n" +
+	"\x05items\x18\x01 \x03(\v2\x12.ryohi.ChikuMasterR\x05items\x12\x1f\n" +
+	"\vtotal_count\x18\x02 \x01(\x05R\n" +
 	"totalCount\"\a\n" +
 	"\x05Empty2\xb3\x05\n" +
 	"\x17DTakoUriageKeihiService\x12\x8a\x01\n" +
@@ -5867,7 +8788,23 @@ const file_ryohi_proto_rawDesc = "" +
 	"\x03Get\x12\x18.ryohi.GetDriversRequest\x1a\x16.ryohi.DriversResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/drivers/{id}\x12Y\n" +
 	"\x04List\x12\x19.ryohi.ListDriversRequest\x1a\x1a.ryohi.ListDriversResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1/db/drivers\x12s\n" +
 	"\n" +
-	"GetByBumon\x12\x1f.ryohi.GetDriversByBumonRequest\x1a\x1a.ryohi.ListDriversResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/drivers/bumon/{bumon}B/Z-github.com/yhonda-ohishi/db_service/src/protob\x06proto3"
+	"GetByBumon\x12\x1f.ryohi.GetDriversByBumonRequest\x1a\x1a.ryohi.ListDriversResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/drivers/bumon/{bumon}2\xd7\x04\n" +
+	"\x17UntenNippoMeisaiService\x12\x90\x01\n" +
+	"\x03Get\x12!.ryohi.GetUntenNippoMeisaiRequest\x1a\x1f.ryohi.UntenNippoMeisaiResponse\"E\x82\xd3\xe4\x93\x02?\x12=/api/v1/db/unten-nippo-meisai/{nippo_k}/{haisha_k}/{sharyo_c}\x12v\n" +
+	"\x04List\x12\".ryohi.ListUntenNippoMeisaiRequest\x1a#.ryohi.ListUntenNippoMeisaiResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1/db/unten-nippo-meisai\x12\x98\x01\n" +
+	"\fGetBySharyoC\x12*.ryohi.GetUntenNippoMeisaiBySharyoCRequest\x1a#.ryohi.ListUntenNippoMeisaiResponse\"7\x82\xd3\xe4\x93\x021\x12//api/v1/db/unten-nippo-meisai/sharyo/{sharyo_c}\x12\x95\x01\n" +
+	"\x0eGetByDateRange\x12,.ryohi.GetUntenNippoMeisaiByDateRangeRequest\x1a#.ryohi.ListUntenNippoMeisaiResponse\"0\x82\xd3\xe4\x93\x02*\x12(/api/v1/db/unten-nippo-meisai/date-range2\xef\x02\n" +
+	"\x12ShainMasterService\x12j\n" +
+	"\x03Get\x12\x1c.ryohi.GetShainMasterRequest\x1a\x1a.ryohi.ShainMasterResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/v1/db/shain-master/{shain_c}\x12f\n" +
+	"\x04List\x12\x1d.ryohi.ListShainMasterRequest\x1a\x1e.ryohi.ListShainMasterResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/shain-master\x12\x84\x01\n" +
+	"\vGetByBumonC\x12$.ryohi.GetShainMasterByBumonCRequest\x1a\x1e.ryohi.ListShainMasterResponse\"/\x82\xd3\xe4\x93\x02)\x12'/api/v1/db/shain-master/bumon/{bumon_c}2\xf0\x01\n" +
+	"\x13ChiikiMasterService\x12n\n" +
+	"\x03Get\x12\x1d.ryohi.GetChiikiMasterRequest\x1a\x1b.ryohi.ChiikiMasterResponse\"+\x82\xd3\xe4\x93\x02%\x12#/api/v1/db/chiiki-master/{chiiki_c}\x12i\n" +
+	"\x04List\x12\x1e.ryohi.ListChiikiMasterRequest\x1a\x1f.ryohi.ListChiikiMasterResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/v1/db/chiiki-master2\xf3\x02\n" +
+	"\x12ChikuMasterService\x12j\n" +
+	"\x03Get\x12\x1c.ryohi.GetChikuMasterRequest\x1a\x1a.ryohi.ChikuMasterResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/v1/db/chiku-master/{chiku_c}\x12f\n" +
+	"\x04List\x12\x1d.ryohi.ListChikuMasterRequest\x1a\x1e.ryohi.ListChikuMasterResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/chiku-master\x12\x88\x01\n" +
+	"\fGetByChiikiC\x12%.ryohi.GetChikuMasterByChiikiCRequest\x1a\x1e.ryohi.ListChikuMasterResponse\"1\x82\xd3\xe4\x93\x02+\x12)/api/v1/db/chiku-master/chiiki/{chiiki_c}B/Z-github.com/yhonda-ohishi/db_service/src/protob\x06proto3"
 
 var (
 	file_ryohi_proto_rawDescOnce sync.Once
@@ -5881,84 +8818,108 @@ func file_ryohi_proto_rawDescGZIP() []byte {
 	return file_ryohi_proto_rawDescData
 }
 
-var file_ryohi_proto_msgTypes = make([]protoimpl.MessageInfo, 76)
+var file_ryohi_proto_msgTypes = make([]protoimpl.MessageInfo, 100)
 var file_ryohi_proto_goTypes = []any{
-	(*DTakoUriageKeihi)(nil),                     // 0: ryohi.DTakoUriageKeihi
-	(*ETCMeisai)(nil),                            // 1: ryohi.ETCMeisai
-	(*DTakoFerryRows)(nil),                       // 2: ryohi.DTakoFerryRows
-	(*CreateDTakoUriageKeihiRequest)(nil),        // 3: ryohi.CreateDTakoUriageKeihiRequest
-	(*GetDTakoUriageKeihiRequest)(nil),           // 4: ryohi.GetDTakoUriageKeihiRequest
-	(*UpdateDTakoUriageKeihiRequest)(nil),        // 5: ryohi.UpdateDTakoUriageKeihiRequest
-	(*DeleteDTakoUriageKeihiRequest)(nil),        // 6: ryohi.DeleteDTakoUriageKeihiRequest
-	(*ListDTakoUriageKeihiRequest)(nil),          // 7: ryohi.ListDTakoUriageKeihiRequest
-	(*DTakoUriageKeihiResponse)(nil),             // 8: ryohi.DTakoUriageKeihiResponse
-	(*ListDTakoUriageKeihiResponse)(nil),         // 9: ryohi.ListDTakoUriageKeihiResponse
-	(*CreateETCMeisaiRequest)(nil),               // 10: ryohi.CreateETCMeisaiRequest
-	(*GetETCMeisaiRequest)(nil),                  // 11: ryohi.GetETCMeisaiRequest
-	(*UpdateETCMeisaiRequest)(nil),               // 12: ryohi.UpdateETCMeisaiRequest
-	(*DeleteETCMeisaiRequest)(nil),               // 13: ryohi.DeleteETCMeisaiRequest
-	(*ListETCMeisaiRequest)(nil),                 // 14: ryohi.ListETCMeisaiRequest
-	(*ETCMeisaiResponse)(nil),                    // 15: ryohi.ETCMeisaiResponse
-	(*ListETCMeisaiResponse)(nil),                // 16: ryohi.ListETCMeisaiResponse
-	(*CreateDTakoFerryRowsRequest)(nil),          // 17: ryohi.CreateDTakoFerryRowsRequest
-	(*GetDTakoFerryRowsRequest)(nil),             // 18: ryohi.GetDTakoFerryRowsRequest
-	(*UpdateDTakoFerryRowsRequest)(nil),          // 19: ryohi.UpdateDTakoFerryRowsRequest
-	(*DeleteDTakoFerryRowsRequest)(nil),          // 20: ryohi.DeleteDTakoFerryRowsRequest
-	(*ListDTakoFerryRowsRequest)(nil),            // 21: ryohi.ListDTakoFerryRowsRequest
-	(*DTakoFerryRowsResponse)(nil),               // 22: ryohi.DTakoFerryRowsResponse
-	(*ListDTakoFerryRowsResponse)(nil),           // 23: ryohi.ListDTakoFerryRowsResponse
-	(*ETCMeisaiMapping)(nil),                     // 24: ryohi.ETCMeisaiMapping
-	(*CreateETCMeisaiMappingRequest)(nil),        // 25: ryohi.CreateETCMeisaiMappingRequest
-	(*GetETCMeisaiMappingRequest)(nil),           // 26: ryohi.GetETCMeisaiMappingRequest
-	(*UpdateETCMeisaiMappingRequest)(nil),        // 27: ryohi.UpdateETCMeisaiMappingRequest
-	(*DeleteETCMeisaiMappingRequest)(nil),        // 28: ryohi.DeleteETCMeisaiMappingRequest
-	(*ListETCMeisaiMappingRequest)(nil),          // 29: ryohi.ListETCMeisaiMappingRequest
-	(*ETCMeisaiMappingResponse)(nil),             // 30: ryohi.ETCMeisaiMappingResponse
-	(*ListETCMeisaiMappingResponse)(nil),         // 31: ryohi.ListETCMeisaiMappingResponse
-	(*GetDTakoRowIDByHashRequest)(nil),           // 32: ryohi.GetDTakoRowIDByHashRequest
-	(*GetDTakoRowIDByHashResponse)(nil),          // 33: ryohi.GetDTakoRowIDByHashResponse
-	(*DTakoCars)(nil),                            // 34: ryohi.DTakoCars
-	(*DTakoEvents)(nil),                          // 35: ryohi.DTakoEvents
-	(*DTakoRows)(nil),                            // 36: ryohi.DTakoRows
-	(*ETCNum)(nil),                               // 37: ryohi.ETCNum
-	(*GetDTakoCarsRequest)(nil),                  // 38: ryohi.GetDTakoCarsRequest
-	(*GetDTakoCarsByCarCodeRequest)(nil),         // 39: ryohi.GetDTakoCarsByCarCodeRequest
-	(*ListDTakoCarsRequest)(nil),                 // 40: ryohi.ListDTakoCarsRequest
-	(*DTakoCarsResponse)(nil),                    // 41: ryohi.DTakoCarsResponse
-	(*ListDTakoCarsResponse)(nil),                // 42: ryohi.ListDTakoCarsResponse
-	(*GetDTakoEventsRequest)(nil),                // 43: ryohi.GetDTakoEventsRequest
-	(*GetDTakoEventsByOperationNoRequest)(nil),   // 44: ryohi.GetDTakoEventsByOperationNoRequest
-	(*ListDTakoEventsRequest)(nil),               // 45: ryohi.ListDTakoEventsRequest
-	(*DTakoEventsResponse)(nil),                  // 46: ryohi.DTakoEventsResponse
-	(*ListDTakoEventsResponse)(nil),              // 47: ryohi.ListDTakoEventsResponse
-	(*GetDTakoRowsRequest)(nil),                  // 48: ryohi.GetDTakoRowsRequest
-	(*GetDTakoRowsByOperationNoRequest)(nil),     // 49: ryohi.GetDTakoRowsByOperationNoRequest
-	(*ListDTakoRowsRequest)(nil),                 // 50: ryohi.ListDTakoRowsRequest
-	(*DTakoRowsResponse)(nil),                    // 51: ryohi.DTakoRowsResponse
-	(*ListDTakoRowsResponse)(nil),                // 52: ryohi.ListDTakoRowsResponse
-	(*GetETCNumByETCCardNumRequest)(nil),         // 53: ryohi.GetETCNumByETCCardNumRequest
-	(*GetETCNumByCarIDRequest)(nil),              // 54: ryohi.GetETCNumByCarIDRequest
-	(*ListETCNumRequest)(nil),                    // 55: ryohi.ListETCNumRequest
-	(*ListETCNumResponse)(nil),                   // 56: ryohi.ListETCNumResponse
-	(*DTakoFerryRowsProd)(nil),                   // 57: ryohi.DTakoFerryRowsProd
-	(*GetDTakoFerryRowsProdRequest)(nil),         // 58: ryohi.GetDTakoFerryRowsProdRequest
-	(*GetDTakoFerryRowsProdByUnkoNoRequest)(nil), // 59: ryohi.GetDTakoFerryRowsProdByUnkoNoRequest
-	(*ListDTakoFerryRowsProdRequest)(nil),        // 60: ryohi.ListDTakoFerryRowsProdRequest
-	(*DTakoFerryRowsProdResponse)(nil),           // 61: ryohi.DTakoFerryRowsProdResponse
-	(*ListDTakoFerryRowsProdResponse)(nil),       // 62: ryohi.ListDTakoFerryRowsProdResponse
-	(*Cars)(nil),                                 // 63: ryohi.Cars
-	(*Drivers)(nil),                              // 64: ryohi.Drivers
-	(*GetCarsRequest)(nil),                       // 65: ryohi.GetCarsRequest
-	(*GetCarsByBumonCodeIDRequest)(nil),          // 66: ryohi.GetCarsByBumonCodeIDRequest
-	(*ListCarsRequest)(nil),                      // 67: ryohi.ListCarsRequest
-	(*CarsResponse)(nil),                         // 68: ryohi.CarsResponse
-	(*ListCarsResponse)(nil),                     // 69: ryohi.ListCarsResponse
-	(*GetDriversRequest)(nil),                    // 70: ryohi.GetDriversRequest
-	(*GetDriversByBumonRequest)(nil),             // 71: ryohi.GetDriversByBumonRequest
-	(*ListDriversRequest)(nil),                   // 72: ryohi.ListDriversRequest
-	(*DriversResponse)(nil),                      // 73: ryohi.DriversResponse
-	(*ListDriversResponse)(nil),                  // 74: ryohi.ListDriversResponse
-	(*Empty)(nil),                                // 75: ryohi.Empty
+	(*DTakoUriageKeihi)(nil),                      // 0: ryohi.DTakoUriageKeihi
+	(*ETCMeisai)(nil),                             // 1: ryohi.ETCMeisai
+	(*DTakoFerryRows)(nil),                        // 2: ryohi.DTakoFerryRows
+	(*CreateDTakoUriageKeihiRequest)(nil),         // 3: ryohi.CreateDTakoUriageKeihiRequest
+	(*GetDTakoUriageKeihiRequest)(nil),            // 4: ryohi.GetDTakoUriageKeihiRequest
+	(*UpdateDTakoUriageKeihiRequest)(nil),         // 5: ryohi.UpdateDTakoUriageKeihiRequest
+	(*DeleteDTakoUriageKeihiRequest)(nil),         // 6: ryohi.DeleteDTakoUriageKeihiRequest
+	(*ListDTakoUriageKeihiRequest)(nil),           // 7: ryohi.ListDTakoUriageKeihiRequest
+	(*DTakoUriageKeihiResponse)(nil),              // 8: ryohi.DTakoUriageKeihiResponse
+	(*ListDTakoUriageKeihiResponse)(nil),          // 9: ryohi.ListDTakoUriageKeihiResponse
+	(*CreateETCMeisaiRequest)(nil),                // 10: ryohi.CreateETCMeisaiRequest
+	(*GetETCMeisaiRequest)(nil),                   // 11: ryohi.GetETCMeisaiRequest
+	(*UpdateETCMeisaiRequest)(nil),                // 12: ryohi.UpdateETCMeisaiRequest
+	(*DeleteETCMeisaiRequest)(nil),                // 13: ryohi.DeleteETCMeisaiRequest
+	(*ListETCMeisaiRequest)(nil),                  // 14: ryohi.ListETCMeisaiRequest
+	(*ETCMeisaiResponse)(nil),                     // 15: ryohi.ETCMeisaiResponse
+	(*ListETCMeisaiResponse)(nil),                 // 16: ryohi.ListETCMeisaiResponse
+	(*CreateDTakoFerryRowsRequest)(nil),           // 17: ryohi.CreateDTakoFerryRowsRequest
+	(*GetDTakoFerryRowsRequest)(nil),              // 18: ryohi.GetDTakoFerryRowsRequest
+	(*UpdateDTakoFerryRowsRequest)(nil),           // 19: ryohi.UpdateDTakoFerryRowsRequest
+	(*DeleteDTakoFerryRowsRequest)(nil),           // 20: ryohi.DeleteDTakoFerryRowsRequest
+	(*ListDTakoFerryRowsRequest)(nil),             // 21: ryohi.ListDTakoFerryRowsRequest
+	(*DTakoFerryRowsResponse)(nil),                // 22: ryohi.DTakoFerryRowsResponse
+	(*ListDTakoFerryRowsResponse)(nil),            // 23: ryohi.ListDTakoFerryRowsResponse
+	(*ETCMeisaiMapping)(nil),                      // 24: ryohi.ETCMeisaiMapping
+	(*CreateETCMeisaiMappingRequest)(nil),         // 25: ryohi.CreateETCMeisaiMappingRequest
+	(*GetETCMeisaiMappingRequest)(nil),            // 26: ryohi.GetETCMeisaiMappingRequest
+	(*UpdateETCMeisaiMappingRequest)(nil),         // 27: ryohi.UpdateETCMeisaiMappingRequest
+	(*DeleteETCMeisaiMappingRequest)(nil),         // 28: ryohi.DeleteETCMeisaiMappingRequest
+	(*ListETCMeisaiMappingRequest)(nil),           // 29: ryohi.ListETCMeisaiMappingRequest
+	(*ETCMeisaiMappingResponse)(nil),              // 30: ryohi.ETCMeisaiMappingResponse
+	(*ListETCMeisaiMappingResponse)(nil),          // 31: ryohi.ListETCMeisaiMappingResponse
+	(*GetDTakoRowIDByHashRequest)(nil),            // 32: ryohi.GetDTakoRowIDByHashRequest
+	(*GetDTakoRowIDByHashResponse)(nil),           // 33: ryohi.GetDTakoRowIDByHashResponse
+	(*DTakoCars)(nil),                             // 34: ryohi.DTakoCars
+	(*DTakoEvents)(nil),                           // 35: ryohi.DTakoEvents
+	(*DTakoRows)(nil),                             // 36: ryohi.DTakoRows
+	(*ETCNum)(nil),                                // 37: ryohi.ETCNum
+	(*GetDTakoCarsRequest)(nil),                   // 38: ryohi.GetDTakoCarsRequest
+	(*GetDTakoCarsByCarCodeRequest)(nil),          // 39: ryohi.GetDTakoCarsByCarCodeRequest
+	(*ListDTakoCarsRequest)(nil),                  // 40: ryohi.ListDTakoCarsRequest
+	(*DTakoCarsResponse)(nil),                     // 41: ryohi.DTakoCarsResponse
+	(*ListDTakoCarsResponse)(nil),                 // 42: ryohi.ListDTakoCarsResponse
+	(*GetDTakoEventsRequest)(nil),                 // 43: ryohi.GetDTakoEventsRequest
+	(*GetDTakoEventsByOperationNoRequest)(nil),    // 44: ryohi.GetDTakoEventsByOperationNoRequest
+	(*ListDTakoEventsRequest)(nil),                // 45: ryohi.ListDTakoEventsRequest
+	(*DTakoEventsResponse)(nil),                   // 46: ryohi.DTakoEventsResponse
+	(*ListDTakoEventsResponse)(nil),               // 47: ryohi.ListDTakoEventsResponse
+	(*GetDTakoRowsRequest)(nil),                   // 48: ryohi.GetDTakoRowsRequest
+	(*GetDTakoRowsByOperationNoRequest)(nil),      // 49: ryohi.GetDTakoRowsByOperationNoRequest
+	(*ListDTakoRowsRequest)(nil),                  // 50: ryohi.ListDTakoRowsRequest
+	(*DTakoRowsResponse)(nil),                     // 51: ryohi.DTakoRowsResponse
+	(*ListDTakoRowsResponse)(nil),                 // 52: ryohi.ListDTakoRowsResponse
+	(*GetETCNumByETCCardNumRequest)(nil),          // 53: ryohi.GetETCNumByETCCardNumRequest
+	(*GetETCNumByCarIDRequest)(nil),               // 54: ryohi.GetETCNumByCarIDRequest
+	(*ListETCNumRequest)(nil),                     // 55: ryohi.ListETCNumRequest
+	(*ListETCNumResponse)(nil),                    // 56: ryohi.ListETCNumResponse
+	(*DTakoFerryRowsProd)(nil),                    // 57: ryohi.DTakoFerryRowsProd
+	(*GetDTakoFerryRowsProdRequest)(nil),          // 58: ryohi.GetDTakoFerryRowsProdRequest
+	(*GetDTakoFerryRowsProdByUnkoNoRequest)(nil),  // 59: ryohi.GetDTakoFerryRowsProdByUnkoNoRequest
+	(*ListDTakoFerryRowsProdRequest)(nil),         // 60: ryohi.ListDTakoFerryRowsProdRequest
+	(*DTakoFerryRowsProdResponse)(nil),            // 61: ryohi.DTakoFerryRowsProdResponse
+	(*ListDTakoFerryRowsProdResponse)(nil),        // 62: ryohi.ListDTakoFerryRowsProdResponse
+	(*Cars)(nil),                                  // 63: ryohi.Cars
+	(*Drivers)(nil),                               // 64: ryohi.Drivers
+	(*GetCarsRequest)(nil),                        // 65: ryohi.GetCarsRequest
+	(*GetCarsByBumonCodeIDRequest)(nil),           // 66: ryohi.GetCarsByBumonCodeIDRequest
+	(*ListCarsRequest)(nil),                       // 67: ryohi.ListCarsRequest
+	(*CarsResponse)(nil),                          // 68: ryohi.CarsResponse
+	(*ListCarsResponse)(nil),                      // 69: ryohi.ListCarsResponse
+	(*GetDriversRequest)(nil),                     // 70: ryohi.GetDriversRequest
+	(*GetDriversByBumonRequest)(nil),              // 71: ryohi.GetDriversByBumonRequest
+	(*ListDriversRequest)(nil),                    // 72: ryohi.ListDriversRequest
+	(*DriversResponse)(nil),                       // 73: ryohi.DriversResponse
+	(*ListDriversResponse)(nil),                   // 74: ryohi.ListDriversResponse
+	(*UntenNippoMeisai)(nil),                      // 75: ryohi.UntenNippoMeisai
+	(*ShainMaster)(nil),                           // 76: ryohi.ShainMaster
+	(*ChiikiMaster)(nil),                          // 77: ryohi.ChiikiMaster
+	(*ChikuMaster)(nil),                           // 78: ryohi.ChikuMaster
+	(*GetUntenNippoMeisaiRequest)(nil),            // 79: ryohi.GetUntenNippoMeisaiRequest
+	(*GetUntenNippoMeisaiBySharyoCRequest)(nil),   // 80: ryohi.GetUntenNippoMeisaiBySharyoCRequest
+	(*GetUntenNippoMeisaiByDateRangeRequest)(nil), // 81: ryohi.GetUntenNippoMeisaiByDateRangeRequest
+	(*ListUntenNippoMeisaiRequest)(nil),           // 82: ryohi.ListUntenNippoMeisaiRequest
+	(*UntenNippoMeisaiResponse)(nil),              // 83: ryohi.UntenNippoMeisaiResponse
+	(*ListUntenNippoMeisaiResponse)(nil),          // 84: ryohi.ListUntenNippoMeisaiResponse
+	(*GetShainMasterRequest)(nil),                 // 85: ryohi.GetShainMasterRequest
+	(*GetShainMasterByBumonCRequest)(nil),         // 86: ryohi.GetShainMasterByBumonCRequest
+	(*ListShainMasterRequest)(nil),                // 87: ryohi.ListShainMasterRequest
+	(*ShainMasterResponse)(nil),                   // 88: ryohi.ShainMasterResponse
+	(*ListShainMasterResponse)(nil),               // 89: ryohi.ListShainMasterResponse
+	(*GetChiikiMasterRequest)(nil),                // 90: ryohi.GetChiikiMasterRequest
+	(*ListChiikiMasterRequest)(nil),               // 91: ryohi.ListChiikiMasterRequest
+	(*ChiikiMasterResponse)(nil),                  // 92: ryohi.ChiikiMasterResponse
+	(*ListChiikiMasterResponse)(nil),              // 93: ryohi.ListChiikiMasterResponse
+	(*GetChikuMasterRequest)(nil),                 // 94: ryohi.GetChikuMasterRequest
+	(*GetChikuMasterByChiikiCRequest)(nil),        // 95: ryohi.GetChikuMasterByChiikiCRequest
+	(*ListChikuMasterRequest)(nil),                // 96: ryohi.ListChikuMasterRequest
+	(*ChikuMasterResponse)(nil),                   // 97: ryohi.ChikuMasterResponse
+	(*ListChikuMasterResponse)(nil),               // 98: ryohi.ListChikuMasterResponse
+	(*Empty)(nil),                                 // 99: ryohi.Empty
 }
 var file_ryohi_proto_depIdxs = []int32{
 	0,  // 0: ryohi.CreateDTakoUriageKeihiRequest.dtako_uriage_keihi:type_name -> ryohi.DTakoUriageKeihi
@@ -5990,95 +8951,127 @@ var file_ryohi_proto_depIdxs = []int32{
 	63, // 26: ryohi.ListCarsResponse.items:type_name -> ryohi.Cars
 	64, // 27: ryohi.DriversResponse.drivers:type_name -> ryohi.Drivers
 	64, // 28: ryohi.ListDriversResponse.items:type_name -> ryohi.Drivers
-	3,  // 29: ryohi.DTakoUriageKeihiService.Create:input_type -> ryohi.CreateDTakoUriageKeihiRequest
-	4,  // 30: ryohi.DTakoUriageKeihiService.Get:input_type -> ryohi.GetDTakoUriageKeihiRequest
-	5,  // 31: ryohi.DTakoUriageKeihiService.Update:input_type -> ryohi.UpdateDTakoUriageKeihiRequest
-	6,  // 32: ryohi.DTakoUriageKeihiService.Delete:input_type -> ryohi.DeleteDTakoUriageKeihiRequest
-	7,  // 33: ryohi.DTakoUriageKeihiService.List:input_type -> ryohi.ListDTakoUriageKeihiRequest
-	10, // 34: ryohi.ETCMeisaiService.Create:input_type -> ryohi.CreateETCMeisaiRequest
-	11, // 35: ryohi.ETCMeisaiService.Get:input_type -> ryohi.GetETCMeisaiRequest
-	12, // 36: ryohi.ETCMeisaiService.Update:input_type -> ryohi.UpdateETCMeisaiRequest
-	13, // 37: ryohi.ETCMeisaiService.Delete:input_type -> ryohi.DeleteETCMeisaiRequest
-	14, // 38: ryohi.ETCMeisaiService.List:input_type -> ryohi.ListETCMeisaiRequest
-	17, // 39: ryohi.DTakoFerryRowsService.Create:input_type -> ryohi.CreateDTakoFerryRowsRequest
-	18, // 40: ryohi.DTakoFerryRowsService.Get:input_type -> ryohi.GetDTakoFerryRowsRequest
-	19, // 41: ryohi.DTakoFerryRowsService.Update:input_type -> ryohi.UpdateDTakoFerryRowsRequest
-	20, // 42: ryohi.DTakoFerryRowsService.Delete:input_type -> ryohi.DeleteDTakoFerryRowsRequest
-	21, // 43: ryohi.DTakoFerryRowsService.List:input_type -> ryohi.ListDTakoFerryRowsRequest
-	25, // 44: ryohi.ETCMeisaiMappingService.Create:input_type -> ryohi.CreateETCMeisaiMappingRequest
-	26, // 45: ryohi.ETCMeisaiMappingService.Get:input_type -> ryohi.GetETCMeisaiMappingRequest
-	27, // 46: ryohi.ETCMeisaiMappingService.Update:input_type -> ryohi.UpdateETCMeisaiMappingRequest
-	28, // 47: ryohi.ETCMeisaiMappingService.Delete:input_type -> ryohi.DeleteETCMeisaiMappingRequest
-	29, // 48: ryohi.ETCMeisaiMappingService.List:input_type -> ryohi.ListETCMeisaiMappingRequest
-	32, // 49: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> ryohi.GetDTakoRowIDByHashRequest
-	38, // 50: ryohi.DTakoCarsService.Get:input_type -> ryohi.GetDTakoCarsRequest
-	40, // 51: ryohi.DTakoCarsService.List:input_type -> ryohi.ListDTakoCarsRequest
-	39, // 52: ryohi.DTakoCarsService.GetByCarCode:input_type -> ryohi.GetDTakoCarsByCarCodeRequest
-	43, // 53: ryohi.DTakoEventsService.Get:input_type -> ryohi.GetDTakoEventsRequest
-	45, // 54: ryohi.DTakoEventsService.List:input_type -> ryohi.ListDTakoEventsRequest
-	44, // 55: ryohi.DTakoEventsService.GetByOperationNo:input_type -> ryohi.GetDTakoEventsByOperationNoRequest
-	48, // 56: ryohi.DTakoRowsService.Get:input_type -> ryohi.GetDTakoRowsRequest
-	50, // 57: ryohi.DTakoRowsService.List:input_type -> ryohi.ListDTakoRowsRequest
-	49, // 58: ryohi.DTakoRowsService.GetByOperationNo:input_type -> ryohi.GetDTakoRowsByOperationNoRequest
-	55, // 59: ryohi.ETCNumService.List:input_type -> ryohi.ListETCNumRequest
-	53, // 60: ryohi.ETCNumService.GetByETCCardNum:input_type -> ryohi.GetETCNumByETCCardNumRequest
-	54, // 61: ryohi.ETCNumService.GetByCarID:input_type -> ryohi.GetETCNumByCarIDRequest
-	58, // 62: ryohi.DTakoFerryRowsProdService.Get:input_type -> ryohi.GetDTakoFerryRowsProdRequest
-	60, // 63: ryohi.DTakoFerryRowsProdService.List:input_type -> ryohi.ListDTakoFerryRowsProdRequest
-	59, // 64: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:input_type -> ryohi.GetDTakoFerryRowsProdByUnkoNoRequest
-	65, // 65: ryohi.CarsService.Get:input_type -> ryohi.GetCarsRequest
-	67, // 66: ryohi.CarsService.List:input_type -> ryohi.ListCarsRequest
-	66, // 67: ryohi.CarsService.GetByBumonCodeID:input_type -> ryohi.GetCarsByBumonCodeIDRequest
-	70, // 68: ryohi.DriversService.Get:input_type -> ryohi.GetDriversRequest
-	72, // 69: ryohi.DriversService.List:input_type -> ryohi.ListDriversRequest
-	71, // 70: ryohi.DriversService.GetByBumon:input_type -> ryohi.GetDriversByBumonRequest
-	8,  // 71: ryohi.DTakoUriageKeihiService.Create:output_type -> ryohi.DTakoUriageKeihiResponse
-	8,  // 72: ryohi.DTakoUriageKeihiService.Get:output_type -> ryohi.DTakoUriageKeihiResponse
-	8,  // 73: ryohi.DTakoUriageKeihiService.Update:output_type -> ryohi.DTakoUriageKeihiResponse
-	75, // 74: ryohi.DTakoUriageKeihiService.Delete:output_type -> ryohi.Empty
-	9,  // 75: ryohi.DTakoUriageKeihiService.List:output_type -> ryohi.ListDTakoUriageKeihiResponse
-	15, // 76: ryohi.ETCMeisaiService.Create:output_type -> ryohi.ETCMeisaiResponse
-	15, // 77: ryohi.ETCMeisaiService.Get:output_type -> ryohi.ETCMeisaiResponse
-	15, // 78: ryohi.ETCMeisaiService.Update:output_type -> ryohi.ETCMeisaiResponse
-	75, // 79: ryohi.ETCMeisaiService.Delete:output_type -> ryohi.Empty
-	16, // 80: ryohi.ETCMeisaiService.List:output_type -> ryohi.ListETCMeisaiResponse
-	22, // 81: ryohi.DTakoFerryRowsService.Create:output_type -> ryohi.DTakoFerryRowsResponse
-	22, // 82: ryohi.DTakoFerryRowsService.Get:output_type -> ryohi.DTakoFerryRowsResponse
-	22, // 83: ryohi.DTakoFerryRowsService.Update:output_type -> ryohi.DTakoFerryRowsResponse
-	75, // 84: ryohi.DTakoFerryRowsService.Delete:output_type -> ryohi.Empty
-	23, // 85: ryohi.DTakoFerryRowsService.List:output_type -> ryohi.ListDTakoFerryRowsResponse
-	30, // 86: ryohi.ETCMeisaiMappingService.Create:output_type -> ryohi.ETCMeisaiMappingResponse
-	30, // 87: ryohi.ETCMeisaiMappingService.Get:output_type -> ryohi.ETCMeisaiMappingResponse
-	30, // 88: ryohi.ETCMeisaiMappingService.Update:output_type -> ryohi.ETCMeisaiMappingResponse
-	75, // 89: ryohi.ETCMeisaiMappingService.Delete:output_type -> ryohi.Empty
-	31, // 90: ryohi.ETCMeisaiMappingService.List:output_type -> ryohi.ListETCMeisaiMappingResponse
-	33, // 91: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> ryohi.GetDTakoRowIDByHashResponse
-	41, // 92: ryohi.DTakoCarsService.Get:output_type -> ryohi.DTakoCarsResponse
-	42, // 93: ryohi.DTakoCarsService.List:output_type -> ryohi.ListDTakoCarsResponse
-	41, // 94: ryohi.DTakoCarsService.GetByCarCode:output_type -> ryohi.DTakoCarsResponse
-	46, // 95: ryohi.DTakoEventsService.Get:output_type -> ryohi.DTakoEventsResponse
-	47, // 96: ryohi.DTakoEventsService.List:output_type -> ryohi.ListDTakoEventsResponse
-	47, // 97: ryohi.DTakoEventsService.GetByOperationNo:output_type -> ryohi.ListDTakoEventsResponse
-	51, // 98: ryohi.DTakoRowsService.Get:output_type -> ryohi.DTakoRowsResponse
-	52, // 99: ryohi.DTakoRowsService.List:output_type -> ryohi.ListDTakoRowsResponse
-	52, // 100: ryohi.DTakoRowsService.GetByOperationNo:output_type -> ryohi.ListDTakoRowsResponse
-	56, // 101: ryohi.ETCNumService.List:output_type -> ryohi.ListETCNumResponse
-	56, // 102: ryohi.ETCNumService.GetByETCCardNum:output_type -> ryohi.ListETCNumResponse
-	56, // 103: ryohi.ETCNumService.GetByCarID:output_type -> ryohi.ListETCNumResponse
-	61, // 104: ryohi.DTakoFerryRowsProdService.Get:output_type -> ryohi.DTakoFerryRowsProdResponse
-	62, // 105: ryohi.DTakoFerryRowsProdService.List:output_type -> ryohi.ListDTakoFerryRowsProdResponse
-	62, // 106: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:output_type -> ryohi.ListDTakoFerryRowsProdResponse
-	68, // 107: ryohi.CarsService.Get:output_type -> ryohi.CarsResponse
-	69, // 108: ryohi.CarsService.List:output_type -> ryohi.ListCarsResponse
-	69, // 109: ryohi.CarsService.GetByBumonCodeID:output_type -> ryohi.ListCarsResponse
-	73, // 110: ryohi.DriversService.Get:output_type -> ryohi.DriversResponse
-	74, // 111: ryohi.DriversService.List:output_type -> ryohi.ListDriversResponse
-	74, // 112: ryohi.DriversService.GetByBumon:output_type -> ryohi.ListDriversResponse
-	71, // [71:113] is the sub-list for method output_type
-	29, // [29:71] is the sub-list for method input_type
-	29, // [29:29] is the sub-list for extension type_name
-	29, // [29:29] is the sub-list for extension extendee
-	0,  // [0:29] is the sub-list for field type_name
+	75, // 29: ryohi.UntenNippoMeisaiResponse.unten_nippo_meisai:type_name -> ryohi.UntenNippoMeisai
+	75, // 30: ryohi.ListUntenNippoMeisaiResponse.items:type_name -> ryohi.UntenNippoMeisai
+	76, // 31: ryohi.ShainMasterResponse.shain_master:type_name -> ryohi.ShainMaster
+	76, // 32: ryohi.ListShainMasterResponse.items:type_name -> ryohi.ShainMaster
+	77, // 33: ryohi.ChiikiMasterResponse.chiiki_master:type_name -> ryohi.ChiikiMaster
+	77, // 34: ryohi.ListChiikiMasterResponse.items:type_name -> ryohi.ChiikiMaster
+	78, // 35: ryohi.ChikuMasterResponse.chiku_master:type_name -> ryohi.ChikuMaster
+	78, // 36: ryohi.ListChikuMasterResponse.items:type_name -> ryohi.ChikuMaster
+	3,  // 37: ryohi.DTakoUriageKeihiService.Create:input_type -> ryohi.CreateDTakoUriageKeihiRequest
+	4,  // 38: ryohi.DTakoUriageKeihiService.Get:input_type -> ryohi.GetDTakoUriageKeihiRequest
+	5,  // 39: ryohi.DTakoUriageKeihiService.Update:input_type -> ryohi.UpdateDTakoUriageKeihiRequest
+	6,  // 40: ryohi.DTakoUriageKeihiService.Delete:input_type -> ryohi.DeleteDTakoUriageKeihiRequest
+	7,  // 41: ryohi.DTakoUriageKeihiService.List:input_type -> ryohi.ListDTakoUriageKeihiRequest
+	10, // 42: ryohi.ETCMeisaiService.Create:input_type -> ryohi.CreateETCMeisaiRequest
+	11, // 43: ryohi.ETCMeisaiService.Get:input_type -> ryohi.GetETCMeisaiRequest
+	12, // 44: ryohi.ETCMeisaiService.Update:input_type -> ryohi.UpdateETCMeisaiRequest
+	13, // 45: ryohi.ETCMeisaiService.Delete:input_type -> ryohi.DeleteETCMeisaiRequest
+	14, // 46: ryohi.ETCMeisaiService.List:input_type -> ryohi.ListETCMeisaiRequest
+	17, // 47: ryohi.DTakoFerryRowsService.Create:input_type -> ryohi.CreateDTakoFerryRowsRequest
+	18, // 48: ryohi.DTakoFerryRowsService.Get:input_type -> ryohi.GetDTakoFerryRowsRequest
+	19, // 49: ryohi.DTakoFerryRowsService.Update:input_type -> ryohi.UpdateDTakoFerryRowsRequest
+	20, // 50: ryohi.DTakoFerryRowsService.Delete:input_type -> ryohi.DeleteDTakoFerryRowsRequest
+	21, // 51: ryohi.DTakoFerryRowsService.List:input_type -> ryohi.ListDTakoFerryRowsRequest
+	25, // 52: ryohi.ETCMeisaiMappingService.Create:input_type -> ryohi.CreateETCMeisaiMappingRequest
+	26, // 53: ryohi.ETCMeisaiMappingService.Get:input_type -> ryohi.GetETCMeisaiMappingRequest
+	27, // 54: ryohi.ETCMeisaiMappingService.Update:input_type -> ryohi.UpdateETCMeisaiMappingRequest
+	28, // 55: ryohi.ETCMeisaiMappingService.Delete:input_type -> ryohi.DeleteETCMeisaiMappingRequest
+	29, // 56: ryohi.ETCMeisaiMappingService.List:input_type -> ryohi.ListETCMeisaiMappingRequest
+	32, // 57: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> ryohi.GetDTakoRowIDByHashRequest
+	38, // 58: ryohi.DTakoCarsService.Get:input_type -> ryohi.GetDTakoCarsRequest
+	40, // 59: ryohi.DTakoCarsService.List:input_type -> ryohi.ListDTakoCarsRequest
+	39, // 60: ryohi.DTakoCarsService.GetByCarCode:input_type -> ryohi.GetDTakoCarsByCarCodeRequest
+	43, // 61: ryohi.DTakoEventsService.Get:input_type -> ryohi.GetDTakoEventsRequest
+	45, // 62: ryohi.DTakoEventsService.List:input_type -> ryohi.ListDTakoEventsRequest
+	44, // 63: ryohi.DTakoEventsService.GetByOperationNo:input_type -> ryohi.GetDTakoEventsByOperationNoRequest
+	48, // 64: ryohi.DTakoRowsService.Get:input_type -> ryohi.GetDTakoRowsRequest
+	50, // 65: ryohi.DTakoRowsService.List:input_type -> ryohi.ListDTakoRowsRequest
+	49, // 66: ryohi.DTakoRowsService.GetByOperationNo:input_type -> ryohi.GetDTakoRowsByOperationNoRequest
+	55, // 67: ryohi.ETCNumService.List:input_type -> ryohi.ListETCNumRequest
+	53, // 68: ryohi.ETCNumService.GetByETCCardNum:input_type -> ryohi.GetETCNumByETCCardNumRequest
+	54, // 69: ryohi.ETCNumService.GetByCarID:input_type -> ryohi.GetETCNumByCarIDRequest
+	58, // 70: ryohi.DTakoFerryRowsProdService.Get:input_type -> ryohi.GetDTakoFerryRowsProdRequest
+	60, // 71: ryohi.DTakoFerryRowsProdService.List:input_type -> ryohi.ListDTakoFerryRowsProdRequest
+	59, // 72: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:input_type -> ryohi.GetDTakoFerryRowsProdByUnkoNoRequest
+	65, // 73: ryohi.CarsService.Get:input_type -> ryohi.GetCarsRequest
+	67, // 74: ryohi.CarsService.List:input_type -> ryohi.ListCarsRequest
+	66, // 75: ryohi.CarsService.GetByBumonCodeID:input_type -> ryohi.GetCarsByBumonCodeIDRequest
+	70, // 76: ryohi.DriversService.Get:input_type -> ryohi.GetDriversRequest
+	72, // 77: ryohi.DriversService.List:input_type -> ryohi.ListDriversRequest
+	71, // 78: ryohi.DriversService.GetByBumon:input_type -> ryohi.GetDriversByBumonRequest
+	79, // 79: ryohi.UntenNippoMeisaiService.Get:input_type -> ryohi.GetUntenNippoMeisaiRequest
+	82, // 80: ryohi.UntenNippoMeisaiService.List:input_type -> ryohi.ListUntenNippoMeisaiRequest
+	80, // 81: ryohi.UntenNippoMeisaiService.GetBySharyoC:input_type -> ryohi.GetUntenNippoMeisaiBySharyoCRequest
+	81, // 82: ryohi.UntenNippoMeisaiService.GetByDateRange:input_type -> ryohi.GetUntenNippoMeisaiByDateRangeRequest
+	85, // 83: ryohi.ShainMasterService.Get:input_type -> ryohi.GetShainMasterRequest
+	87, // 84: ryohi.ShainMasterService.List:input_type -> ryohi.ListShainMasterRequest
+	86, // 85: ryohi.ShainMasterService.GetByBumonC:input_type -> ryohi.GetShainMasterByBumonCRequest
+	90, // 86: ryohi.ChiikiMasterService.Get:input_type -> ryohi.GetChiikiMasterRequest
+	91, // 87: ryohi.ChiikiMasterService.List:input_type -> ryohi.ListChiikiMasterRequest
+	94, // 88: ryohi.ChikuMasterService.Get:input_type -> ryohi.GetChikuMasterRequest
+	96, // 89: ryohi.ChikuMasterService.List:input_type -> ryohi.ListChikuMasterRequest
+	95, // 90: ryohi.ChikuMasterService.GetByChiikiC:input_type -> ryohi.GetChikuMasterByChiikiCRequest
+	8,  // 91: ryohi.DTakoUriageKeihiService.Create:output_type -> ryohi.DTakoUriageKeihiResponse
+	8,  // 92: ryohi.DTakoUriageKeihiService.Get:output_type -> ryohi.DTakoUriageKeihiResponse
+	8,  // 93: ryohi.DTakoUriageKeihiService.Update:output_type -> ryohi.DTakoUriageKeihiResponse
+	99, // 94: ryohi.DTakoUriageKeihiService.Delete:output_type -> ryohi.Empty
+	9,  // 95: ryohi.DTakoUriageKeihiService.List:output_type -> ryohi.ListDTakoUriageKeihiResponse
+	15, // 96: ryohi.ETCMeisaiService.Create:output_type -> ryohi.ETCMeisaiResponse
+	15, // 97: ryohi.ETCMeisaiService.Get:output_type -> ryohi.ETCMeisaiResponse
+	15, // 98: ryohi.ETCMeisaiService.Update:output_type -> ryohi.ETCMeisaiResponse
+	99, // 99: ryohi.ETCMeisaiService.Delete:output_type -> ryohi.Empty
+	16, // 100: ryohi.ETCMeisaiService.List:output_type -> ryohi.ListETCMeisaiResponse
+	22, // 101: ryohi.DTakoFerryRowsService.Create:output_type -> ryohi.DTakoFerryRowsResponse
+	22, // 102: ryohi.DTakoFerryRowsService.Get:output_type -> ryohi.DTakoFerryRowsResponse
+	22, // 103: ryohi.DTakoFerryRowsService.Update:output_type -> ryohi.DTakoFerryRowsResponse
+	99, // 104: ryohi.DTakoFerryRowsService.Delete:output_type -> ryohi.Empty
+	23, // 105: ryohi.DTakoFerryRowsService.List:output_type -> ryohi.ListDTakoFerryRowsResponse
+	30, // 106: ryohi.ETCMeisaiMappingService.Create:output_type -> ryohi.ETCMeisaiMappingResponse
+	30, // 107: ryohi.ETCMeisaiMappingService.Get:output_type -> ryohi.ETCMeisaiMappingResponse
+	30, // 108: ryohi.ETCMeisaiMappingService.Update:output_type -> ryohi.ETCMeisaiMappingResponse
+	99, // 109: ryohi.ETCMeisaiMappingService.Delete:output_type -> ryohi.Empty
+	31, // 110: ryohi.ETCMeisaiMappingService.List:output_type -> ryohi.ListETCMeisaiMappingResponse
+	33, // 111: ryohi.ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> ryohi.GetDTakoRowIDByHashResponse
+	41, // 112: ryohi.DTakoCarsService.Get:output_type -> ryohi.DTakoCarsResponse
+	42, // 113: ryohi.DTakoCarsService.List:output_type -> ryohi.ListDTakoCarsResponse
+	41, // 114: ryohi.DTakoCarsService.GetByCarCode:output_type -> ryohi.DTakoCarsResponse
+	46, // 115: ryohi.DTakoEventsService.Get:output_type -> ryohi.DTakoEventsResponse
+	47, // 116: ryohi.DTakoEventsService.List:output_type -> ryohi.ListDTakoEventsResponse
+	47, // 117: ryohi.DTakoEventsService.GetByOperationNo:output_type -> ryohi.ListDTakoEventsResponse
+	51, // 118: ryohi.DTakoRowsService.Get:output_type -> ryohi.DTakoRowsResponse
+	52, // 119: ryohi.DTakoRowsService.List:output_type -> ryohi.ListDTakoRowsResponse
+	52, // 120: ryohi.DTakoRowsService.GetByOperationNo:output_type -> ryohi.ListDTakoRowsResponse
+	56, // 121: ryohi.ETCNumService.List:output_type -> ryohi.ListETCNumResponse
+	56, // 122: ryohi.ETCNumService.GetByETCCardNum:output_type -> ryohi.ListETCNumResponse
+	56, // 123: ryohi.ETCNumService.GetByCarID:output_type -> ryohi.ListETCNumResponse
+	61, // 124: ryohi.DTakoFerryRowsProdService.Get:output_type -> ryohi.DTakoFerryRowsProdResponse
+	62, // 125: ryohi.DTakoFerryRowsProdService.List:output_type -> ryohi.ListDTakoFerryRowsProdResponse
+	62, // 126: ryohi.DTakoFerryRowsProdService.GetByUnkoNo:output_type -> ryohi.ListDTakoFerryRowsProdResponse
+	68, // 127: ryohi.CarsService.Get:output_type -> ryohi.CarsResponse
+	69, // 128: ryohi.CarsService.List:output_type -> ryohi.ListCarsResponse
+	69, // 129: ryohi.CarsService.GetByBumonCodeID:output_type -> ryohi.ListCarsResponse
+	73, // 130: ryohi.DriversService.Get:output_type -> ryohi.DriversResponse
+	74, // 131: ryohi.DriversService.List:output_type -> ryohi.ListDriversResponse
+	74, // 132: ryohi.DriversService.GetByBumon:output_type -> ryohi.ListDriversResponse
+	83, // 133: ryohi.UntenNippoMeisaiService.Get:output_type -> ryohi.UntenNippoMeisaiResponse
+	84, // 134: ryohi.UntenNippoMeisaiService.List:output_type -> ryohi.ListUntenNippoMeisaiResponse
+	84, // 135: ryohi.UntenNippoMeisaiService.GetBySharyoC:output_type -> ryohi.ListUntenNippoMeisaiResponse
+	84, // 136: ryohi.UntenNippoMeisaiService.GetByDateRange:output_type -> ryohi.ListUntenNippoMeisaiResponse
+	88, // 137: ryohi.ShainMasterService.Get:output_type -> ryohi.ShainMasterResponse
+	89, // 138: ryohi.ShainMasterService.List:output_type -> ryohi.ListShainMasterResponse
+	89, // 139: ryohi.ShainMasterService.GetByBumonC:output_type -> ryohi.ListShainMasterResponse
+	92, // 140: ryohi.ChiikiMasterService.Get:output_type -> ryohi.ChiikiMasterResponse
+	93, // 141: ryohi.ChiikiMasterService.List:output_type -> ryohi.ListChiikiMasterResponse
+	97, // 142: ryohi.ChikuMasterService.Get:output_type -> ryohi.ChikuMasterResponse
+	98, // 143: ryohi.ChikuMasterService.List:output_type -> ryohi.ListChikuMasterResponse
+	98, // 144: ryohi.ChikuMasterService.GetByChiikiC:output_type -> ryohi.ListChikuMasterResponse
+	91, // [91:145] is the sub-list for method output_type
+	37, // [37:91] is the sub-list for method input_type
+	37, // [37:37] is the sub-list for extension type_name
+	37, // [37:37] is the sub-list for extension extendee
+	0,  // [0:37] is the sub-list for field type_name
 }
 
 func init() { file_ryohi_proto_init() }
@@ -6104,15 +9097,23 @@ func file_ryohi_proto_init() {
 	file_ryohi_proto_msgTypes[64].OneofWrappers = []any{}
 	file_ryohi_proto_msgTypes[67].OneofWrappers = []any{}
 	file_ryohi_proto_msgTypes[72].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[75].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[76].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[77].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[78].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[82].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[87].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[91].OneofWrappers = []any{}
+	file_ryohi_proto_msgTypes[96].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ryohi_proto_rawDesc), len(file_ryohi_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   76,
+			NumMessages:   100,
 			NumExtensions: 0,
-			NumServices:   11,
+			NumServices:   15,
 		},
 		GoTypes:           file_ryohi_proto_goTypes,
 		DependencyIndexes: file_ryohi_proto_depIdxs,

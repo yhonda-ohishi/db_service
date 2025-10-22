@@ -6,8 +6,11 @@ ryohi_sub_cal データベースのgRPCベースリポジトリサービス
 ## 技術スタック
 - **言語**: Go 1.21
 - **フレームワーク**: gRPC v1.58.0, GORM v1.25.5
-- **データベース**: MySQL/MariaDB (db1)
+- **データベース**:
+  - MySQL/MariaDB (本番DB、読み取り専用)
+  - SQL Server (CAPE#01データベース)
 - **設定管理**: godotenv（環境変数）
+- **テーブル定義**: sql_server_tables/ フォルダ参照
 
 ## プロジェクト構造
 ```

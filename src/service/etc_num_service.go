@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -85,7 +85,7 @@ func (s *ETCNumService) GetByCarID(ctx context.Context, req *proto.GetETCNumByCa
 }
 
 // etcNumModelToProto ModelからProtoへの変換
-func etcNumModelToProto(model *models.ETCNum) *proto.ETCNum {
+func etcNumModelToProto(model *mysql.ETCNum) *proto.ETCNum {
 	protoETCNum := &proto.ETCNum{
 		EtcCardNum: model.ETCCardNum,
 		CarId:      model.CarID,

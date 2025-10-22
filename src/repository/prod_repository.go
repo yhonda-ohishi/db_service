@@ -2,7 +2,7 @@ package repository
 
 import (
 	"github.com/yhonda-ohishi/db_service/src/config"
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 )
 
 // ProdRepository 本番DB用のリポジトリ（読み取り専用）
@@ -19,16 +19,16 @@ func NewProdRepository(prodDB *config.ProdDatabase) *ProdRepository {
 
 // DTakoCarsRepository インターフェース
 type DTakoCarsRepository interface {
-	GetAll(limit, offset int) ([]*models.DTakoCars, int64, error)
-	GetByID(id int) (*models.DTakoCars, error)
-	GetByCarCode(carCode string) (*models.DTakoCars, error)
+	GetAll(limit, offset int) ([]*mysql.DTakoCars, int64, error)
+	GetByID(id int) (*mysql.DTakoCars, error)
+	GetByCarCode(carCode string) (*mysql.DTakoCars, error)
 }
 
 // DTakoEventsRepository インターフェース
 type DTakoEventsRepository interface {
-	GetAll(limit, offset int, orderBy string) ([]*models.DTakoEvents, int64, error)
-	GetByID(id int64) (*models.DTakoEvents, error)
-	GetByOperationNo(operationNo string) ([]*models.DTakoEvents, error)
+	GetAll(limit, offset int, orderBy string) ([]*mysql.DTakoEvents, int64, error)
+	GetByID(id int64) (*mysql.DTakoEvents, error)
+	GetByOperationNo(operationNo string) ([]*mysql.DTakoEvents, error)
 }
 
 // DTakoCarsRepositoryImpl 実装
@@ -44,12 +44,12 @@ func NewDTakoCarsRepository(prodDB *config.ProdDatabase) DTakoCarsRepository {
 }
 
 // GetAll 全車輌情報を取得
-func (r *DTakoCarsRepositoryImpl) GetAll(limit, offset int) ([]*models.DTakoCars, int64, error) {
-	var cars []*models.DTakoCars
+func (r *DTakoCarsRepositoryImpl) GetAll(limit, offset int) ([]*mysql.DTakoCars, int64, error) {
+	var cars []*mysql.DTakoCars
 	var totalCount int64
 
 	// 総数取得
-	if err := r.prodDB.DB.Model(&models.DTakoCars{}).Count(&totalCount).Error; err != nil {
+	if err := r.prodDB.DB.Model(&mysql.DTakoCars{}).Count(&totalCount).Error; err != nil {
 		return nil, 0, err
 	}
 
@@ -62,8 +62,8 @@ func (r *DTakoCarsRepositoryImpl) GetAll(limit, offset int) ([]*models.DTakoCars
 }
 
 // GetByID IDで車輌情報を取得
-func (r *DTakoCarsRepositoryImpl) GetByID(id int) (*models.DTakoCars, error) {
-	var car models.DTakoCars
+func (r *DTakoCarsRepositoryImpl) GetByID(id int) (*mysql.DTakoCars, error) {
+	var car mysql.DTakoCars
 	if err := r.prodDB.DB.Where("id = ?", id).First(&car).Error; err != nil {
 		return nil, err
 	}
@@ -71,8 +71,8 @@ func (r *DTakoCarsRepositoryImpl) GetByID(id int) (*models.DTakoCars, error) {
 }
 
 // GetByCarCode 車輌CDで車輌情報を取得
-func (r *DTakoCarsRepositoryImpl) GetByCarCode(carCode string) (*models.DTakoCars, error) {
-	var car models.DTakoCars
+func (r *DTakoCarsRepositoryImpl) GetByCarCode(carCode string) (*mysql.DTakoCars, error) {
+	var car mysql.DTakoCars
 	if err := r.prodDB.DB.Where("車輌CD = ?", carCode).First(&car).Error; err != nil {
 		return nil, err
 	}
@@ -92,12 +92,12 @@ func NewDTakoEventsRepository(prodDB *config.ProdDatabase) DTakoEventsRepository
 }
 
 // GetAll 全イベント情報を取得
-func (r *DTakoEventsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*models.DTakoEvents, int64, error) {
-	var events []*models.DTakoEvents
+func (r *DTakoEventsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*mysql.DTakoEvents, int64, error) {
+	var events []*mysql.DTakoEvents
 	var totalCount int64
 
 	// 総数取得
-	if err := r.prodDB.DB.Model(&models.DTakoEvents{}).Count(&totalCount).Error; err != nil {
+	if err := r.prodDB.DB.Model(&mysql.DTakoEvents{}).Count(&totalCount).Error; err != nil {
 		return nil, 0, err
 	}
 
@@ -115,8 +115,8 @@ func (r *DTakoEventsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([
 }
 
 // GetByID IDでイベント情報を取得
-func (r *DTakoEventsRepositoryImpl) GetByID(id int64) (*models.DTakoEvents, error) {
-	var event models.DTakoEvents
+func (r *DTakoEventsRepositoryImpl) GetByID(id int64) (*mysql.DTakoEvents, error) {
+	var event mysql.DTakoEvents
 	if err := r.prodDB.DB.Where("id = ?", id).First(&event).Error; err != nil {
 		return nil, err
 	}
@@ -124,8 +124,8 @@ func (r *DTakoEventsRepositoryImpl) GetByID(id int64) (*models.DTakoEvents, erro
 }
 
 // GetByOperationNo 運行NOでイベント情報を取得
-func (r *DTakoEventsRepositoryImpl) GetByOperationNo(operationNo string) ([]*models.DTakoEvents, error) {
-	var events []*models.DTakoEvents
+func (r *DTakoEventsRepositoryImpl) GetByOperationNo(operationNo string) ([]*mysql.DTakoEvents, error) {
+	var events []*mysql.DTakoEvents
 	if err := r.prodDB.DB.Where("運行NO = ?", operationNo).Order("開始日時 ASC").Find(&events).Error; err != nil {
 		return nil, err
 	}

@@ -869,5 +869,372 @@ message ListDriversResponse {
   int32 total_count = 2;
 }
 
+// UntenNippoMeisaiService - 運転日報明細管理（SQL Server、読み取り専用）
+service UntenNippoMeisaiService {
+  rpc Get(GetUntenNippoMeisaiRequest) returns (UntenNippoMeisaiResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/unten-nippo-meisai/{nippo_k}/{haisha_k}/{sharyo_c}"
+    };
+  }
+  rpc List(ListUntenNippoMeisaiRequest) returns (ListUntenNippoMeisaiResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/unten-nippo-meisai"
+    };
+  }
+  rpc GetBySharyoC(GetUntenNippoMeisaiBySharyoCRequest) returns (ListUntenNippoMeisaiResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/unten-nippo-meisai/sharyo/{sharyo_c}"
+    };
+  }
+  rpc GetByDateRange(GetUntenNippoMeisaiByDateRangeRequest) returns (ListUntenNippoMeisaiResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/unten-nippo-meisai/date-range"
+    };
+  }
+}
+
+// ShainMasterService - 社員マスタ管理（SQL Server、読み取り専用）
+service ShainMasterService {
+  rpc Get(GetShainMasterRequest) returns (ShainMasterResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/shain-master/{shain_c}"
+    };
+  }
+  rpc List(ListShainMasterRequest) returns (ListShainMasterResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/shain-master"
+    };
+  }
+  rpc GetByBumonC(GetShainMasterByBumonCRequest) returns (ListShainMasterResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/shain-master/bumon/{bumon_c}"
+    };
+  }
+}
+
+// ChiikiMasterService - 地域マスタ管理（SQL Server、読み取り専用）
+service ChiikiMasterService {
+  rpc Get(GetChiikiMasterRequest) returns (ChiikiMasterResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/chiiki-master/{chiiki_c}"
+    };
+  }
+  rpc List(ListChiikiMasterRequest) returns (ListChiikiMasterResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/chiiki-master"
+    };
+  }
+}
+
+// ChikuMasterService - 地区マスタ管理（SQL Server、読み取り専用）
+service ChikuMasterService {
+  rpc Get(GetChikuMasterRequest) returns (ChikuMasterResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/chiku-master/{chiku_c}"
+    };
+  }
+  rpc List(ListChikuMasterRequest) returns (ListChikuMasterResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/chiku-master"
+    };
+  }
+  rpc GetByChiikiC(GetChikuMasterByChiikiCRequest) returns (ListChikuMasterResponse) {
+    option (google.api.http) = {
+      get: "/api/v1/db/chiku-master/chiiki/{chiiki_c}"
+    };
+  }
+}
+
+// UntenNippoMeisai メッセージ（106カラム全て）
+message UntenNippoMeisai {
+  string nippo_k = 1;
+  optional string unko_nengappi = 2;
+  string haisha_k = 3;
+  string sharyo_c = 4;
+  string sharyo_h = 5;
+  string untenshu_c = 6;
+  string yoshasaki_c = 7;
+  string yoshasaki_h = 8;
+  string joshu1 = 9;
+  string joshu2 = 10;
+  optional string nyuryoku_nengappi = 11;
+  optional string shokai_nengappi = 12;
+  string nyuryoku_tanto_c = 13;
+  optional string juchu_nengappi = 14;
+  string kanri_nengappi = 15;
+  int32 kanri_c = 16;
+  optional string tsumikomi_nengappi = 17;
+  optional string nonin_nengappi = 18;
+  optional string tsumoi_k = 19;
+  string shashu_c = 20;
+  string juchu_bumon = 21;
+  string kado_bumon = 22;
+  string uriage_k = 23;
+  string uriage_shubeki_c = 24;
+  string seikyu_k = 25;
+  optional string denpyo_no = 26;
+  string tokuisaki_c = 27;
+  string tokuisaki_h = 28;
+  string hatchi_c = 29;
+  optional string hatchi_n = 30;
+  string chakuchi_c = 31;
+  optional string chakuchi_n = 32;
+  string hinmei_c = 33;
+  string hinmei_h = 34;
+  optional string hinmei_n = 35;
+  double soko_km = 36;
+  double jissha_km = 37;
+  double seikyu_soko_km = 38;
+  double seikyu_jissha_km = 39;
+  double suryo = 40;
+  optional string tani = 41;
+  double ton_su = 42;
+  double tanka = 43;
+  int32 kingaku = 44;
+  int32 nebiki = 45;
+  int32 warimashi = 46;
+  int32 jippi = 47;
+  double yosha_tanka = 48;
+  int32 yosha_kingaku = 49;
+  int32 yosha_nebiki = 50;
+  int32 yosha_warimashi = 51;
+  int32 yosha_jippi = 52;
+  string kakutei_k = 53;
+  optional string biko = 54;
+  optional string uriage_nengappi = 55;
+  optional string shiharai_nengappi = 56;
+  optional string nyukin_yoteibi = 57;
+  optional string shiharai_yoteibi = 58;
+  int32 shohizei = 59;
+  int32 yosha_shohizei = 60;
+  int32 zeigaku = 61;
+  int32 warimashi_zeigaku = 62;
+  int32 jippi_zeigaku = 63;
+  int32 yosha_zeigaku = 64;
+  int32 yosha_warimashi_zeigaku = 65;
+  int32 yosha_jippi_zeigaku = 66;
+  int32 zeinuki_kingaku = 67;
+  int32 zeinuki_warimashi = 68;
+  int32 zeinuki_jippi = 69;
+  int32 zeinuki_yosha_kingaku = 70;
+  int32 zeinuki_yosha_warimashi = 71;
+  int32 zeinuki_yosha_jippi = 72;
+  string zei_k = 73;
+  string yosha_zei_k = 74;
+  double zeiritsu = 75;
+  double yosha_zeiritsu = 76;
+  int32 untenshu_uriage = 77;
+  int32 joshu1_uriage = 78;
+  int32 joshu2_uriage = 79;
+  int32 yuso_shunyu_furikae = 80;
+  int32 uriage_kingaku_furikae = 81;
+  int32 kazei_uriage = 82;
+  int32 hikazei_uriage = 83;
+  int32 kazei_shiharai = 84;
+  int32 hikazei_shiharai = 85;
+  string hatchiiki_c = 86;
+  string chakuchiiki_c = 87;
+  optional string rikunkyoku = 88;
+  optional double yoseki = 89;
+  string juryo_kakunin_tenpusho_k = 90;
+  optional string saishu_koshin = 91;
+  int32 lc = 92;
+  optional string koguchi_k = 93;
+  optional string unso_gaisha_n = 94;
+  optional string jomuin_n = 95;
+  optional string renrakusaki = 96;
+  optional double tani_juryo = 97;
+  string shiharai_kakutei_k = 98;
+  optional string biko2 = 99;
+  optional double yobi1 = 100;
+  optional double yobi2 = 101;
+  optional string yobi3 = 102;
+  optional string yobi4 = 103;
+  optional string yobi5 = 104;
+  optional string yobi6 = 105;
+  optional string yobi7 = 106;
+}
+
+// ShainMaster メッセージ（43カラム全て）
+message ShainMaster {
+  string shain_c = 1;
+  optional string shain_n = 2;
+  optional string shain_r = 3;
+  optional string shain_f = 4;
+  optional string yubin_bango = 5;
+  optional string jusho1 = 6;
+  optional string jusho2 = 7;
+  optional string denwa_bango = 8;
+  optional string keitai_bango = 9;
+  string shain_k = 10;
+  string seibetsu = 11;
+  string ketsuekigata = 12;
+  optional string seinengappi = 13;
+  optional string nyusha_nengappi = 14;
+  optional string taishoku_nengappi = 15;
+  string dai_bunrui1 = 16;
+  string chu_bunrui1 = 17;
+  string sho_bunrui1 = 18;
+  string dai_bunrui2 = 19;
+  string chu_bunrui2 = 20;
+  string sho_bunrui2 = 21;
+  optional string kodan_plate = 22;
+  int32 uriage_mokuhyogaku = 23;
+  string unten_menkyo_k = 24;
+  optional string menkyosho_bango = 25;
+  optional string jikai_koshinbi = 26;
+  string jisha_yosha_k = 27;
+  string keisan_k = 28;
+  double shiharai_ritsu = 29;
+  string hasu_k = 30;
+  string bumon_c = 31;
+  string unchin_pattern_c = 32;
+  optional string kiji1 = 33;
+  optional string kiji2 = 34;
+  optional string kiji3 = 35;
+  optional string kiji4 = 36;
+  optional string kiji5 = 37;
+  optional string yobi1 = 38;
+  optional string yobi2 = 39;
+  optional string yobi3 = 40;
+  optional string yobi4 = 41;
+  optional string yobi5 = 42;
+  string kinmu_taikei_c = 43;
+}
+
+// ChiikiMaster メッセージ（4カラム全て）
+message ChiikiMaster {
+  string chiiki_c = 1;
+  optional string chiiki_n = 2;
+  optional string chiiki_r = 3;
+  optional string chiiki_f = 4;
+}
+
+// ChikuMaster メッセージ（20カラム全て）
+message ChikuMaster {
+  string chiku_c = 1;
+  optional string chiku_n = 2;
+  optional string chiku_r = 3;
+  optional string chiku_f = 4;
+  string chiiki_c = 5;
+  optional string yubin_bango = 6;
+  optional string jusho1 = 7;
+  optional string jusho2 = 8;
+  optional string denwa_bango = 9;
+  optional string fax_bango = 10;
+  optional string tantosha = 11;
+  optional string yobi1 = 12;
+  optional string yobi2 = 13;
+  optional string yobi3 = 14;
+  optional string yobi4 = 15;
+  optional string yobi5 = 16;
+  string dgr_tokuisaki_c = 17;
+  string dgr_tokuisaki_h = 18;
+  string dgr_hinmei_c = 19;
+  string dgr_hinmei_h = 20;
+}
+
+// UntenNippoMeisai用リクエスト/レスポンス
+message GetUntenNippoMeisaiRequest {
+  string nippo_k = 1;
+  string haisha_k = 2;
+  string sharyo_c = 3;
+}
+
+message GetUntenNippoMeisaiBySharyoCRequest {
+  string sharyo_c = 1;
+  int32 limit = 2;
+}
+
+message GetUntenNippoMeisaiByDateRangeRequest {
+  string start_date = 1;
+  string end_date = 2;
+  int32 limit = 3;
+  int32 offset = 4;
+}
+
+message ListUntenNippoMeisaiRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+  optional string order_by = 3;
+}
+
+message UntenNippoMeisaiResponse {
+  UntenNippoMeisai unten_nippo_meisai = 1;
+}
+
+message ListUntenNippoMeisaiResponse {
+  repeated UntenNippoMeisai items = 1;
+  int32 total_count = 2;
+}
+
+// ShainMaster用リクエスト/レスポンス
+message GetShainMasterRequest {
+  string shain_c = 1;
+}
+
+message GetShainMasterByBumonCRequest {
+  string bumon_c = 1;
+}
+
+message ListShainMasterRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+  optional string order_by = 3;
+}
+
+message ShainMasterResponse {
+  ShainMaster shain_master = 1;
+}
+
+message ListShainMasterResponse {
+  repeated ShainMaster items = 1;
+  int32 total_count = 2;
+}
+
+// ChiikiMaster用リクエスト/レスポンス
+message GetChiikiMasterRequest {
+  string chiiki_c = 1;
+}
+
+message ListChiikiMasterRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+  optional string order_by = 3;
+}
+
+message ChiikiMasterResponse {
+  ChiikiMaster chiiki_master = 1;
+}
+
+message ListChiikiMasterResponse {
+  repeated ChiikiMaster items = 1;
+  int32 total_count = 2;
+}
+
+// ChikuMaster用リクエスト/レスポンス
+message GetChikuMasterRequest {
+  string chiku_c = 1;
+}
+
+message GetChikuMasterByChiikiCRequest {
+  string chiiki_c = 1;
+}
+
+message ListChikuMasterRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+  optional string order_by = 3;
+}
+
+message ChikuMasterResponse {
+  ChikuMaster chiku_master = 1;
+}
+
+message ListChikuMasterResponse {
+  repeated ChikuMaster items = 1;
+  int32 total_count = 2;
+}
+
 // 共通メッセージ
 message Empty {}

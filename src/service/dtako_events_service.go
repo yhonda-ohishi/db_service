@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -85,7 +85,7 @@ func (s *DTakoEventsService) GetByOperationNo(ctx context.Context, req *proto.Ge
 }
 
 // dtakoEventsModelToProto ModelからProtoへの変換
-func dtakoEventsModelToProto(model *models.DTakoEvents) *proto.DTakoEvents {
+func dtakoEventsModelToProto(model *mysql.DTakoEvents) *proto.DTakoEvents {
 	protoEvent := &proto.DTakoEvents{
 		Id:              model.ID,
 		OperationNo:     model.OperationNo,

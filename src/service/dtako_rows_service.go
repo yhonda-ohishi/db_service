@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -85,7 +85,7 @@ func (s *DTakoRowsService) GetByOperationNo(ctx context.Context, req *proto.GetD
 }
 
 // dtakoRowsModelToProto ModelからProtoへの変換
-func dtakoRowsModelToProto(model *models.DTakoRows) *proto.DTakoRows {
+func dtakoRowsModelToProto(model *mysql.DTakoRows) *proto.DTakoRows {
 	protoRow := &proto.DTakoRows{
 		Id:                   model.ID,
 		OperationNo:          model.OperationNo,

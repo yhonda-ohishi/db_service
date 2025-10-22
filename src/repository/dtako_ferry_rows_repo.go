@@ -4,19 +4,19 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"gorm.io/gorm"
 )
 
 // DTakoFerryRowsRepository リポジトリインターフェース
 type DTakoFerryRowsRepository interface {
-	Create(data *models.DTakoFerryRows) error
-	GetByID(id int32) (*models.DTakoFerryRows, error)
-	Update(data *models.DTakoFerryRows) error
+	Create(data *mysql.DTakoFerryRows) error
+	GetByID(id int32) (*mysql.DTakoFerryRows, error)
+	Update(data *mysql.DTakoFerryRows) error
 	DeleteByID(id int32) error
-	List(params *DTakoFerryRowsListParams) ([]*models.DTakoFerryRows, int64, error)
-	ListByUnkoNo(unkoNo string) ([]*models.DTakoFerryRows, error)
-	ListByDateRange(start, end time.Time) ([]*models.DTakoFerryRows, error)
+	List(params *DTakoFerryRowsListParams) ([]*mysql.DTakoFerryRows, int64, error)
+	ListByUnkoNo(unkoNo string) ([]*mysql.DTakoFerryRows, error)
+	ListByDateRange(start, end time.Time) ([]*mysql.DTakoFerryRows, error)
 }
 
 // DTakoFerryRowsListParams リスト取得用パラメータ
@@ -39,7 +39,7 @@ func NewDTakoFerryRowsRepository(db *gorm.DB) DTakoFerryRowsRepository {
 }
 
 // Create データ作成
-func (r *dtakoFerryRowsRepo) Create(data *models.DTakoFerryRows) error {
+func (r *dtakoFerryRowsRepo) Create(data *mysql.DTakoFerryRows) error {
 	if err := data.Validate(); err != nil {
 		return fmt.Errorf("validation error: %w", err)
 	}
@@ -53,13 +53,13 @@ func (r *dtakoFerryRowsRepo) Create(data *models.DTakoFerryRows) error {
 }
 
 // GetByID IDでデータ取得
-func (r *dtakoFerryRowsRepo) GetByID(id int32) (*models.DTakoFerryRows, error) {
-	var data models.DTakoFerryRows
+func (r *dtakoFerryRowsRepo) GetByID(id int32) (*mysql.DTakoFerryRows, error) {
+	var data mysql.DTakoFerryRows
 
 	result := r.db.First(&data, id)
 	if result.Error != nil {
 		if result.Error == gorm.ErrRecordNotFound {
-			return nil, models.ErrRecordNotFound
+			return nil, mysql.ErrRecordNotFound
 		}
 		return nil, fmt.Errorf("failed to get record: %w", result.Error)
 	}
@@ -68,7 +68,7 @@ func (r *dtakoFerryRowsRepo) GetByID(id int32) (*models.DTakoFerryRows, error) {
 }
 
 // Update データ更新
-func (r *dtakoFerryRowsRepo) Update(data *models.DTakoFerryRows) error {
+func (r *dtakoFerryRowsRepo) Update(data *mysql.DTakoFerryRows) error {
 	if err := data.Validate(); err != nil {
 		return fmt.Errorf("validation error: %w", err)
 	}
@@ -76,8 +76,8 @@ func (r *dtakoFerryRowsRepo) Update(data *models.DTakoFerryRows) error {
 	// 既存レコードを確認
 	existing, err := r.GetByID(data.ID)
 	if err != nil {
-		if err == models.ErrRecordNotFound {
-			return models.ErrRecordNotFound
+		if err == mysql.ErrRecordNotFound {
+			return mysql.ErrRecordNotFound
 		}
 		return err
 	}
@@ -89,7 +89,7 @@ func (r *dtakoFerryRowsRepo) Update(data *models.DTakoFerryRows) error {
 	}
 
 	if result.RowsAffected == 0 {
-		return models.ErrRecordNotFound
+		return mysql.ErrRecordNotFound
 	}
 
 	return nil
@@ -97,24 +97,24 @@ func (r *dtakoFerryRowsRepo) Update(data *models.DTakoFerryRows) error {
 
 // DeleteByID IDでデータ削除
 func (r *dtakoFerryRowsRepo) DeleteByID(id int32) error {
-	result := r.db.Delete(&models.DTakoFerryRows{}, id)
+	result := r.db.Delete(&mysql.DTakoFerryRows{}, id)
 	if result.Error != nil {
 		return fmt.Errorf("failed to delete record: %w", result.Error)
 	}
 
 	if result.RowsAffected == 0 {
-		return models.ErrRecordNotFound
+		return mysql.ErrRecordNotFound
 	}
 
 	return nil
 }
 
 // List 条件付きリスト取得
-func (r *dtakoFerryRowsRepo) List(params *DTakoFerryRowsListParams) ([]*models.DTakoFerryRows, int64, error) {
-	var data []*models.DTakoFerryRows
+func (r *dtakoFerryRowsRepo) List(params *DTakoFerryRowsListParams) ([]*mysql.DTakoFerryRows, int64, error) {
+	var data []*mysql.DTakoFerryRows
 	var totalCount int64
 
-	query := r.db.Model(&models.DTakoFerryRows{})
+	query := r.db.Model(&mysql.DTakoFerryRows{})
 
 	// 条件の適用
 	if params.UnkoNo != nil && *params.UnkoNo != "" {
@@ -149,8 +149,8 @@ func (r *dtakoFerryRowsRepo) List(params *DTakoFerryRowsListParams) ([]*models.D
 }
 
 // ListByUnkoNo 運行NOでリスト取得
-func (r *dtakoFerryRowsRepo) ListByUnkoNo(unkoNo string) ([]*models.DTakoFerryRows, error) {
-	var data []*models.DTakoFerryRows
+func (r *dtakoFerryRowsRepo) ListByUnkoNo(unkoNo string) ([]*mysql.DTakoFerryRows, error) {
+	var data []*mysql.DTakoFerryRows
 
 	if err := r.db.Where("運行NO = ?", unkoNo).
 		Order("運行日 DESC").
@@ -162,8 +162,8 @@ func (r *dtakoFerryRowsRepo) ListByUnkoNo(unkoNo string) ([]*models.DTakoFerryRo
 }
 
 // ListByDateRange 日付範囲でリスト取得
-func (r *dtakoFerryRowsRepo) ListByDateRange(start, end time.Time) ([]*models.DTakoFerryRows, error) {
-	var data []*models.DTakoFerryRows
+func (r *dtakoFerryRowsRepo) ListByDateRange(start, end time.Time) ([]*mysql.DTakoFerryRows, error) {
+	var data []*mysql.DTakoFerryRows
 
 	if err := r.db.Where("運行日 BETWEEN ? AND ?", start, end).
 		Order("運行日 DESC").

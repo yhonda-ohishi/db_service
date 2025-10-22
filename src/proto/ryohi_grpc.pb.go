@@ -2423,3 +2423,723 @@ var DriversService_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "ryohi.proto",
 }
+
+const (
+	UntenNippoMeisaiService_Get_FullMethodName            = "/ryohi.UntenNippoMeisaiService/Get"
+	UntenNippoMeisaiService_List_FullMethodName           = "/ryohi.UntenNippoMeisaiService/List"
+	UntenNippoMeisaiService_GetBySharyoC_FullMethodName   = "/ryohi.UntenNippoMeisaiService/GetBySharyoC"
+	UntenNippoMeisaiService_GetByDateRange_FullMethodName = "/ryohi.UntenNippoMeisaiService/GetByDateRange"
+)
+
+// UntenNippoMeisaiServiceClient is the client API for UntenNippoMeisaiService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// UntenNippoMeisaiService - 運転日報明細管理（SQL Server、読み取り専用）
+type UntenNippoMeisaiServiceClient interface {
+	Get(ctx context.Context, in *GetUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*UntenNippoMeisaiResponse, error)
+	List(ctx context.Context, in *ListUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error)
+	GetBySharyoC(ctx context.Context, in *GetUntenNippoMeisaiBySharyoCRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error)
+	GetByDateRange(ctx context.Context, in *GetUntenNippoMeisaiByDateRangeRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error)
+}
+
+type untenNippoMeisaiServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewUntenNippoMeisaiServiceClient(cc grpc.ClientConnInterface) UntenNippoMeisaiServiceClient {
+	return &untenNippoMeisaiServiceClient{cc}
+}
+
+func (c *untenNippoMeisaiServiceClient) Get(ctx context.Context, in *GetUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*UntenNippoMeisaiResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UntenNippoMeisaiResponse)
+	err := c.cc.Invoke(ctx, UntenNippoMeisaiService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *untenNippoMeisaiServiceClient) List(ctx context.Context, in *ListUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListUntenNippoMeisaiResponse)
+	err := c.cc.Invoke(ctx, UntenNippoMeisaiService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *untenNippoMeisaiServiceClient) GetBySharyoC(ctx context.Context, in *GetUntenNippoMeisaiBySharyoCRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListUntenNippoMeisaiResponse)
+	err := c.cc.Invoke(ctx, UntenNippoMeisaiService_GetBySharyoC_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *untenNippoMeisaiServiceClient) GetByDateRange(ctx context.Context, in *GetUntenNippoMeisaiByDateRangeRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListUntenNippoMeisaiResponse)
+	err := c.cc.Invoke(ctx, UntenNippoMeisaiService_GetByDateRange_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// UntenNippoMeisaiServiceServer is the server API for UntenNippoMeisaiService service.
+// All implementations should embed UnimplementedUntenNippoMeisaiServiceServer
+// for forward compatibility.
+//
+// UntenNippoMeisaiService - 運転日報明細管理（SQL Server、読み取り専用）
+type UntenNippoMeisaiServiceServer interface {
+	Get(context.Context, *GetUntenNippoMeisaiRequest) (*UntenNippoMeisaiResponse, error)
+	List(context.Context, *ListUntenNippoMeisaiRequest) (*ListUntenNippoMeisaiResponse, error)
+	GetBySharyoC(context.Context, *GetUntenNippoMeisaiBySharyoCRequest) (*ListUntenNippoMeisaiResponse, error)
+	GetByDateRange(context.Context, *GetUntenNippoMeisaiByDateRangeRequest) (*ListUntenNippoMeisaiResponse, error)
+}
+
+// UnimplementedUntenNippoMeisaiServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedUntenNippoMeisaiServiceServer struct{}
+
+func (UnimplementedUntenNippoMeisaiServiceServer) Get(context.Context, *GetUntenNippoMeisaiRequest) (*UntenNippoMeisaiResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedUntenNippoMeisaiServiceServer) List(context.Context, *ListUntenNippoMeisaiRequest) (*ListUntenNippoMeisaiResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedUntenNippoMeisaiServiceServer) GetBySharyoC(context.Context, *GetUntenNippoMeisaiBySharyoCRequest) (*ListUntenNippoMeisaiResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBySharyoC not implemented")
+}
+func (UnimplementedUntenNippoMeisaiServiceServer) GetByDateRange(context.Context, *GetUntenNippoMeisaiByDateRangeRequest) (*ListUntenNippoMeisaiResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByDateRange not implemented")
+}
+func (UnimplementedUntenNippoMeisaiServiceServer) testEmbeddedByValue() {}
+
+// UnsafeUntenNippoMeisaiServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to UntenNippoMeisaiServiceServer will
+// result in compilation errors.
+type UnsafeUntenNippoMeisaiServiceServer interface {
+	mustEmbedUnimplementedUntenNippoMeisaiServiceServer()
+}
+
+func RegisterUntenNippoMeisaiServiceServer(s grpc.ServiceRegistrar, srv UntenNippoMeisaiServiceServer) {
+	// If the following call pancis, it indicates UnimplementedUntenNippoMeisaiServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&UntenNippoMeisaiService_ServiceDesc, srv)
+}
+
+func _UntenNippoMeisaiService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUntenNippoMeisaiRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UntenNippoMeisaiServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UntenNippoMeisaiService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UntenNippoMeisaiServiceServer).Get(ctx, req.(*GetUntenNippoMeisaiRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UntenNippoMeisaiService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListUntenNippoMeisaiRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UntenNippoMeisaiServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UntenNippoMeisaiService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UntenNippoMeisaiServiceServer).List(ctx, req.(*ListUntenNippoMeisaiRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UntenNippoMeisaiService_GetBySharyoC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUntenNippoMeisaiBySharyoCRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UntenNippoMeisaiServiceServer).GetBySharyoC(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UntenNippoMeisaiService_GetBySharyoC_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UntenNippoMeisaiServiceServer).GetBySharyoC(ctx, req.(*GetUntenNippoMeisaiBySharyoCRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UntenNippoMeisaiService_GetByDateRange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUntenNippoMeisaiByDateRangeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UntenNippoMeisaiServiceServer).GetByDateRange(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UntenNippoMeisaiService_GetByDateRange_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UntenNippoMeisaiServiceServer).GetByDateRange(ctx, req.(*GetUntenNippoMeisaiByDateRangeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// UntenNippoMeisaiService_ServiceDesc is the grpc.ServiceDesc for UntenNippoMeisaiService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var UntenNippoMeisaiService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.UntenNippoMeisaiService",
+	HandlerType: (*UntenNippoMeisaiServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _UntenNippoMeisaiService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _UntenNippoMeisaiService_List_Handler,
+		},
+		{
+			MethodName: "GetBySharyoC",
+			Handler:    _UntenNippoMeisaiService_GetBySharyoC_Handler,
+		},
+		{
+			MethodName: "GetByDateRange",
+			Handler:    _UntenNippoMeisaiService_GetByDateRange_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}
+
+const (
+	ShainMasterService_Get_FullMethodName         = "/ryohi.ShainMasterService/Get"
+	ShainMasterService_List_FullMethodName        = "/ryohi.ShainMasterService/List"
+	ShainMasterService_GetByBumonC_FullMethodName = "/ryohi.ShainMasterService/GetByBumonC"
+)
+
+// ShainMasterServiceClient is the client API for ShainMasterService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// ShainMasterService - 社員マスタ管理（SQL Server、読み取り専用）
+type ShainMasterServiceClient interface {
+	Get(ctx context.Context, in *GetShainMasterRequest, opts ...grpc.CallOption) (*ShainMasterResponse, error)
+	List(ctx context.Context, in *ListShainMasterRequest, opts ...grpc.CallOption) (*ListShainMasterResponse, error)
+	GetByBumonC(ctx context.Context, in *GetShainMasterByBumonCRequest, opts ...grpc.CallOption) (*ListShainMasterResponse, error)
+}
+
+type shainMasterServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewShainMasterServiceClient(cc grpc.ClientConnInterface) ShainMasterServiceClient {
+	return &shainMasterServiceClient{cc}
+}
+
+func (c *shainMasterServiceClient) Get(ctx context.Context, in *GetShainMasterRequest, opts ...grpc.CallOption) (*ShainMasterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ShainMasterResponse)
+	err := c.cc.Invoke(ctx, ShainMasterService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *shainMasterServiceClient) List(ctx context.Context, in *ListShainMasterRequest, opts ...grpc.CallOption) (*ListShainMasterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListShainMasterResponse)
+	err := c.cc.Invoke(ctx, ShainMasterService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *shainMasterServiceClient) GetByBumonC(ctx context.Context, in *GetShainMasterByBumonCRequest, opts ...grpc.CallOption) (*ListShainMasterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListShainMasterResponse)
+	err := c.cc.Invoke(ctx, ShainMasterService_GetByBumonC_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// ShainMasterServiceServer is the server API for ShainMasterService service.
+// All implementations should embed UnimplementedShainMasterServiceServer
+// for forward compatibility.
+//
+// ShainMasterService - 社員マスタ管理（SQL Server、読み取り専用）
+type ShainMasterServiceServer interface {
+	Get(context.Context, *GetShainMasterRequest) (*ShainMasterResponse, error)
+	List(context.Context, *ListShainMasterRequest) (*ListShainMasterResponse, error)
+	GetByBumonC(context.Context, *GetShainMasterByBumonCRequest) (*ListShainMasterResponse, error)
+}
+
+// UnimplementedShainMasterServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedShainMasterServiceServer struct{}
+
+func (UnimplementedShainMasterServiceServer) Get(context.Context, *GetShainMasterRequest) (*ShainMasterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedShainMasterServiceServer) List(context.Context, *ListShainMasterRequest) (*ListShainMasterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedShainMasterServiceServer) GetByBumonC(context.Context, *GetShainMasterByBumonCRequest) (*ListShainMasterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByBumonC not implemented")
+}
+func (UnimplementedShainMasterServiceServer) testEmbeddedByValue() {}
+
+// UnsafeShainMasterServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ShainMasterServiceServer will
+// result in compilation errors.
+type UnsafeShainMasterServiceServer interface {
+	mustEmbedUnimplementedShainMasterServiceServer()
+}
+
+func RegisterShainMasterServiceServer(s grpc.ServiceRegistrar, srv ShainMasterServiceServer) {
+	// If the following call pancis, it indicates UnimplementedShainMasterServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&ShainMasterService_ServiceDesc, srv)
+}
+
+func _ShainMasterService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetShainMasterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ShainMasterServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ShainMasterService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ShainMasterServiceServer).Get(ctx, req.(*GetShainMasterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ShainMasterService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListShainMasterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ShainMasterServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ShainMasterService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ShainMasterServiceServer).List(ctx, req.(*ListShainMasterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ShainMasterService_GetByBumonC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetShainMasterByBumonCRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ShainMasterServiceServer).GetByBumonC(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ShainMasterService_GetByBumonC_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ShainMasterServiceServer).GetByBumonC(ctx, req.(*GetShainMasterByBumonCRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// ShainMasterService_ServiceDesc is the grpc.ServiceDesc for ShainMasterService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var ShainMasterService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.ShainMasterService",
+	HandlerType: (*ShainMasterServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _ShainMasterService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _ShainMasterService_List_Handler,
+		},
+		{
+			MethodName: "GetByBumonC",
+			Handler:    _ShainMasterService_GetByBumonC_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}
+
+const (
+	ChiikiMasterService_Get_FullMethodName  = "/ryohi.ChiikiMasterService/Get"
+	ChiikiMasterService_List_FullMethodName = "/ryohi.ChiikiMasterService/List"
+)
+
+// ChiikiMasterServiceClient is the client API for ChiikiMasterService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// ChiikiMasterService - 地域マスタ管理（SQL Server、読み取り専用）
+type ChiikiMasterServiceClient interface {
+	Get(ctx context.Context, in *GetChiikiMasterRequest, opts ...grpc.CallOption) (*ChiikiMasterResponse, error)
+	List(ctx context.Context, in *ListChiikiMasterRequest, opts ...grpc.CallOption) (*ListChiikiMasterResponse, error)
+}
+
+type chiikiMasterServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewChiikiMasterServiceClient(cc grpc.ClientConnInterface) ChiikiMasterServiceClient {
+	return &chiikiMasterServiceClient{cc}
+}
+
+func (c *chiikiMasterServiceClient) Get(ctx context.Context, in *GetChiikiMasterRequest, opts ...grpc.CallOption) (*ChiikiMasterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ChiikiMasterResponse)
+	err := c.cc.Invoke(ctx, ChiikiMasterService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *chiikiMasterServiceClient) List(ctx context.Context, in *ListChiikiMasterRequest, opts ...grpc.CallOption) (*ListChiikiMasterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListChiikiMasterResponse)
+	err := c.cc.Invoke(ctx, ChiikiMasterService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// ChiikiMasterServiceServer is the server API for ChiikiMasterService service.
+// All implementations should embed UnimplementedChiikiMasterServiceServer
+// for forward compatibility.
+//
+// ChiikiMasterService - 地域マスタ管理（SQL Server、読み取り専用）
+type ChiikiMasterServiceServer interface {
+	Get(context.Context, *GetChiikiMasterRequest) (*ChiikiMasterResponse, error)
+	List(context.Context, *ListChiikiMasterRequest) (*ListChiikiMasterResponse, error)
+}
+
+// UnimplementedChiikiMasterServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedChiikiMasterServiceServer struct{}
+
+func (UnimplementedChiikiMasterServiceServer) Get(context.Context, *GetChiikiMasterRequest) (*ChiikiMasterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedChiikiMasterServiceServer) List(context.Context, *ListChiikiMasterRequest) (*ListChiikiMasterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedChiikiMasterServiceServer) testEmbeddedByValue() {}
+
+// UnsafeChiikiMasterServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ChiikiMasterServiceServer will
+// result in compilation errors.
+type UnsafeChiikiMasterServiceServer interface {
+	mustEmbedUnimplementedChiikiMasterServiceServer()
+}
+
+func RegisterChiikiMasterServiceServer(s grpc.ServiceRegistrar, srv ChiikiMasterServiceServer) {
+	// If the following call pancis, it indicates UnimplementedChiikiMasterServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&ChiikiMasterService_ServiceDesc, srv)
+}
+
+func _ChiikiMasterService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetChiikiMasterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChiikiMasterServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ChiikiMasterService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChiikiMasterServiceServer).Get(ctx, req.(*GetChiikiMasterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ChiikiMasterService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListChiikiMasterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChiikiMasterServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ChiikiMasterService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChiikiMasterServiceServer).List(ctx, req.(*ListChiikiMasterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// ChiikiMasterService_ServiceDesc is the grpc.ServiceDesc for ChiikiMasterService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var ChiikiMasterService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.ChiikiMasterService",
+	HandlerType: (*ChiikiMasterServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _ChiikiMasterService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _ChiikiMasterService_List_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}
+
+const (
+	ChikuMasterService_Get_FullMethodName          = "/ryohi.ChikuMasterService/Get"
+	ChikuMasterService_List_FullMethodName         = "/ryohi.ChikuMasterService/List"
+	ChikuMasterService_GetByChiikiC_FullMethodName = "/ryohi.ChikuMasterService/GetByChiikiC"
+)
+
+// ChikuMasterServiceClient is the client API for ChikuMasterService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// ChikuMasterService - 地区マスタ管理（SQL Server、読み取り専用）
+type ChikuMasterServiceClient interface {
+	Get(ctx context.Context, in *GetChikuMasterRequest, opts ...grpc.CallOption) (*ChikuMasterResponse, error)
+	List(ctx context.Context, in *ListChikuMasterRequest, opts ...grpc.CallOption) (*ListChikuMasterResponse, error)
+	GetByChiikiC(ctx context.Context, in *GetChikuMasterByChiikiCRequest, opts ...grpc.CallOption) (*ListChikuMasterResponse, error)
+}
+
+type chikuMasterServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewChikuMasterServiceClient(cc grpc.ClientConnInterface) ChikuMasterServiceClient {
+	return &chikuMasterServiceClient{cc}
+}
+
+func (c *chikuMasterServiceClient) Get(ctx context.Context, in *GetChikuMasterRequest, opts ...grpc.CallOption) (*ChikuMasterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ChikuMasterResponse)
+	err := c.cc.Invoke(ctx, ChikuMasterService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *chikuMasterServiceClient) List(ctx context.Context, in *ListChikuMasterRequest, opts ...grpc.CallOption) (*ListChikuMasterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListChikuMasterResponse)
+	err := c.cc.Invoke(ctx, ChikuMasterService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *chikuMasterServiceClient) GetByChiikiC(ctx context.Context, in *GetChikuMasterByChiikiCRequest, opts ...grpc.CallOption) (*ListChikuMasterResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListChikuMasterResponse)
+	err := c.cc.Invoke(ctx, ChikuMasterService_GetByChiikiC_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// ChikuMasterServiceServer is the server API for ChikuMasterService service.
+// All implementations should embed UnimplementedChikuMasterServiceServer
+// for forward compatibility.
+//
+// ChikuMasterService - 地区マスタ管理（SQL Server、読み取り専用）
+type ChikuMasterServiceServer interface {
+	Get(context.Context, *GetChikuMasterRequest) (*ChikuMasterResponse, error)
+	List(context.Context, *ListChikuMasterRequest) (*ListChikuMasterResponse, error)
+	GetByChiikiC(context.Context, *GetChikuMasterByChiikiCRequest) (*ListChikuMasterResponse, error)
+}
+
+// UnimplementedChikuMasterServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedChikuMasterServiceServer struct{}
+
+func (UnimplementedChikuMasterServiceServer) Get(context.Context, *GetChikuMasterRequest) (*ChikuMasterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedChikuMasterServiceServer) List(context.Context, *ListChikuMasterRequest) (*ListChikuMasterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedChikuMasterServiceServer) GetByChiikiC(context.Context, *GetChikuMasterByChiikiCRequest) (*ListChikuMasterResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByChiikiC not implemented")
+}
+func (UnimplementedChikuMasterServiceServer) testEmbeddedByValue() {}
+
+// UnsafeChikuMasterServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ChikuMasterServiceServer will
+// result in compilation errors.
+type UnsafeChikuMasterServiceServer interface {
+	mustEmbedUnimplementedChikuMasterServiceServer()
+}
+
+func RegisterChikuMasterServiceServer(s grpc.ServiceRegistrar, srv ChikuMasterServiceServer) {
+	// If the following call pancis, it indicates UnimplementedChikuMasterServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&ChikuMasterService_ServiceDesc, srv)
+}
+
+func _ChikuMasterService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetChikuMasterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChikuMasterServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ChikuMasterService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChikuMasterServiceServer).Get(ctx, req.(*GetChikuMasterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ChikuMasterService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListChikuMasterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChikuMasterServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ChikuMasterService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChikuMasterServiceServer).List(ctx, req.(*ListChikuMasterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ChikuMasterService_GetByChiikiC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetChikuMasterByChiikiCRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChikuMasterServiceServer).GetByChiikiC(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ChikuMasterService_GetByChiikiC_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChikuMasterServiceServer).GetByChiikiC(ctx, req.(*GetChikuMasterByChiikiCRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// ChikuMasterService_ServiceDesc is the grpc.ServiceDesc for ChikuMasterService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var ChikuMasterService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "ryohi.ChikuMasterService",
+	HandlerType: (*ChikuMasterServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _ChikuMasterService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _ChikuMasterService_List_Handler,
+		},
+		{
+			MethodName: "GetByChiikiC",
+			Handler:    _ChikuMasterService_GetByChiikiC_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "ryohi.proto",
+}

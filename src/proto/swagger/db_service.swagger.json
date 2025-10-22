@@ -37,6 +37,18 @@
     },
     {
       "name": "DriversService"
+    },
+    {
+      "name": "UntenNippoMeisaiService"
+    },
+    {
+      "name": "ShainMasterService"
+    },
+    {
+      "name": "ChiikiMasterService"
+    },
+    {
+      "name": "ChikuMasterService"
     }
   ],
   "consumes": [
@@ -151,6 +163,184 @@
         ],
         "tags": [
           "CarsService"
+        ]
+      }
+    },
+    "/api/v1/db/chiiki-master": {
+      "get": {
+        "operationId": "ChiikiMasterService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListChiikiMasterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ChiikiMasterService"
+        ]
+      }
+    },
+    "/api/v1/db/chiiki-master/{chiikiC}": {
+      "get": {
+        "operationId": "ChiikiMasterService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiChiikiMasterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "chiikiC",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ChiikiMasterService"
+        ]
+      }
+    },
+    "/api/v1/db/chiku-master": {
+      "get": {
+        "operationId": "ChikuMasterService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListChikuMasterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ChikuMasterService"
+        ]
+      }
+    },
+    "/api/v1/db/chiku-master/chiiki/{chiikiC}": {
+      "get": {
+        "operationId": "ChikuMasterService_GetByChiikiC",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListChikuMasterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "chiikiC",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ChikuMasterService"
+        ]
+      }
+    },
+    "/api/v1/db/chiku-master/{chikuC}": {
+      "get": {
+        "operationId": "ChikuMasterService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiChikuMasterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "chikuC",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ChikuMasterService"
         ]
       }
     },
@@ -1840,6 +2030,283 @@
           "ETCNumService"
         ]
       }
+    },
+    "/api/v1/db/shain-master": {
+      "get": {
+        "operationId": "ShainMasterService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListShainMasterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ShainMasterService"
+        ]
+      }
+    },
+    "/api/v1/db/shain-master/bumon/{bumonC}": {
+      "get": {
+        "operationId": "ShainMasterService_GetByBumonC",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListShainMasterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "bumonC",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ShainMasterService"
+        ]
+      }
+    },
+    "/api/v1/db/shain-master/{shainC}": {
+      "get": {
+        "operationId": "ShainMasterService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiShainMasterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "shainC",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ShainMasterService"
+        ]
+      }
+    },
+    "/api/v1/db/unten-nippo-meisai": {
+      "get": {
+        "operationId": "UntenNippoMeisaiService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListUntenNippoMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "UntenNippoMeisaiService"
+        ]
+      }
+    },
+    "/api/v1/db/unten-nippo-meisai/date-range": {
+      "get": {
+        "operationId": "UntenNippoMeisaiService_GetByDateRange",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListUntenNippoMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "UntenNippoMeisaiService"
+        ]
+      }
+    },
+    "/api/v1/db/unten-nippo-meisai/sharyo/{sharyoC}": {
+      "get": {
+        "operationId": "UntenNippoMeisaiService_GetBySharyoC",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiListUntenNippoMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "sharyoC",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "UntenNippoMeisaiService"
+        ]
+      }
+    },
+    "/api/v1/db/unten-nippo-meisai/{nippoK}/{haishaK}/{sharyoC}": {
+      "get": {
+        "operationId": "UntenNippoMeisaiService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ryohiUntenNippoMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "nippoK",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "haishaK",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "sharyoC",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "UntenNippoMeisaiService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -1963,6 +2430,106 @@
       "properties": {
         "cars": {
           "$ref": "#/definitions/ryohiCars"
+        }
+      }
+    },
+    "ryohiChiikiMaster": {
+      "type": "object",
+      "properties": {
+        "chiikiC": {
+          "type": "string"
+        },
+        "chiikiN": {
+          "type": "string"
+        },
+        "chiikiR": {
+          "type": "string"
+        },
+        "chiikiF": {
+          "type": "string"
+        }
+      },
+      "title": "ChiikiMaster メッセージ（4カラム全て）"
+    },
+    "ryohiChiikiMasterResponse": {
+      "type": "object",
+      "properties": {
+        "chiikiMaster": {
+          "$ref": "#/definitions/ryohiChiikiMaster"
+        }
+      }
+    },
+    "ryohiChikuMaster": {
+      "type": "object",
+      "properties": {
+        "chikuC": {
+          "type": "string"
+        },
+        "chikuN": {
+          "type": "string"
+        },
+        "chikuR": {
+          "type": "string"
+        },
+        "chikuF": {
+          "type": "string"
+        },
+        "chiikiC": {
+          "type": "string"
+        },
+        "yubinBango": {
+          "type": "string"
+        },
+        "jusho1": {
+          "type": "string"
+        },
+        "jusho2": {
+          "type": "string"
+        },
+        "denwaBango": {
+          "type": "string"
+        },
+        "faxBango": {
+          "type": "string"
+        },
+        "tantosha": {
+          "type": "string"
+        },
+        "yobi1": {
+          "type": "string"
+        },
+        "yobi2": {
+          "type": "string"
+        },
+        "yobi3": {
+          "type": "string"
+        },
+        "yobi4": {
+          "type": "string"
+        },
+        "yobi5": {
+          "type": "string"
+        },
+        "dgrTokuisakiC": {
+          "type": "string"
+        },
+        "dgrTokuisakiH": {
+          "type": "string"
+        },
+        "dgrHinmeiC": {
+          "type": "string"
+        },
+        "dgrHinmeiH": {
+          "type": "string"
+        }
+      },
+      "title": "ChikuMaster メッセージ（20カラム全て）"
+    },
+    "ryohiChikuMasterResponse": {
+      "type": "object",
+      "properties": {
+        "chikuMaster": {
+          "$ref": "#/definitions/ryohiChikuMaster"
         }
       }
     },
@@ -2818,6 +3385,38 @@
         }
       }
     },
+    "ryohiListChiikiMasterResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ryohiChiikiMaster"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ryohiListChikuMasterResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ryohiChikuMaster"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "ryohiListDTakoCarsResponse": {
       "type": "object",
       "properties": {
@@ -2975,6 +3574,562 @@
         "totalCount": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "ryohiListShainMasterResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ryohiShainMaster"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ryohiListUntenNippoMeisaiResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ryohiUntenNippoMeisai"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ryohiShainMaster": {
+      "type": "object",
+      "properties": {
+        "shainC": {
+          "type": "string"
+        },
+        "shainN": {
+          "type": "string"
+        },
+        "shainR": {
+          "type": "string"
+        },
+        "shainF": {
+          "type": "string"
+        },
+        "yubinBango": {
+          "type": "string"
+        },
+        "jusho1": {
+          "type": "string"
+        },
+        "jusho2": {
+          "type": "string"
+        },
+        "denwaBango": {
+          "type": "string"
+        },
+        "keitaiBango": {
+          "type": "string"
+        },
+        "shainK": {
+          "type": "string"
+        },
+        "seibetsu": {
+          "type": "string"
+        },
+        "ketsuekigata": {
+          "type": "string"
+        },
+        "seinengappi": {
+          "type": "string"
+        },
+        "nyushaNengappi": {
+          "type": "string"
+        },
+        "taishokuNengappi": {
+          "type": "string"
+        },
+        "daiBunrui1": {
+          "type": "string"
+        },
+        "chuBunrui1": {
+          "type": "string"
+        },
+        "shoBunrui1": {
+          "type": "string"
+        },
+        "daiBunrui2": {
+          "type": "string"
+        },
+        "chuBunrui2": {
+          "type": "string"
+        },
+        "shoBunrui2": {
+          "type": "string"
+        },
+        "kodanPlate": {
+          "type": "string"
+        },
+        "uriageMokuhyogaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "untenMenkyoK": {
+          "type": "string"
+        },
+        "menkyoshoBango": {
+          "type": "string"
+        },
+        "jikaiKoshinbi": {
+          "type": "string"
+        },
+        "jishaYoshaK": {
+          "type": "string"
+        },
+        "keisanK": {
+          "type": "string"
+        },
+        "shiharaiRitsu": {
+          "type": "number",
+          "format": "double"
+        },
+        "hasuK": {
+          "type": "string"
+        },
+        "bumonC": {
+          "type": "string"
+        },
+        "unchinPatternC": {
+          "type": "string"
+        },
+        "kiji1": {
+          "type": "string"
+        },
+        "kiji2": {
+          "type": "string"
+        },
+        "kiji3": {
+          "type": "string"
+        },
+        "kiji4": {
+          "type": "string"
+        },
+        "kiji5": {
+          "type": "string"
+        },
+        "yobi1": {
+          "type": "string"
+        },
+        "yobi2": {
+          "type": "string"
+        },
+        "yobi3": {
+          "type": "string"
+        },
+        "yobi4": {
+          "type": "string"
+        },
+        "yobi5": {
+          "type": "string"
+        },
+        "kinmuTaikeiC": {
+          "type": "string"
+        }
+      },
+      "title": "ShainMaster メッセージ（43カラム全て）"
+    },
+    "ryohiShainMasterResponse": {
+      "type": "object",
+      "properties": {
+        "shainMaster": {
+          "$ref": "#/definitions/ryohiShainMaster"
+        }
+      }
+    },
+    "ryohiUntenNippoMeisai": {
+      "type": "object",
+      "properties": {
+        "nippoK": {
+          "type": "string"
+        },
+        "unkoNengappi": {
+          "type": "string"
+        },
+        "haishaK": {
+          "type": "string"
+        },
+        "sharyoC": {
+          "type": "string"
+        },
+        "sharyoH": {
+          "type": "string"
+        },
+        "untenshuC": {
+          "type": "string"
+        },
+        "yoshasakiC": {
+          "type": "string"
+        },
+        "yoshasakiH": {
+          "type": "string"
+        },
+        "joshu1": {
+          "type": "string"
+        },
+        "joshu2": {
+          "type": "string"
+        },
+        "nyuryokuNengappi": {
+          "type": "string"
+        },
+        "shokaiNengappi": {
+          "type": "string"
+        },
+        "nyuryokuTantoC": {
+          "type": "string"
+        },
+        "juchuNengappi": {
+          "type": "string"
+        },
+        "kanriNengappi": {
+          "type": "string"
+        },
+        "kanriC": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "tsumikomiNengappi": {
+          "type": "string"
+        },
+        "noninNengappi": {
+          "type": "string"
+        },
+        "tsumoiK": {
+          "type": "string"
+        },
+        "shashuC": {
+          "type": "string"
+        },
+        "juchuBumon": {
+          "type": "string"
+        },
+        "kadoBumon": {
+          "type": "string"
+        },
+        "uriageK": {
+          "type": "string"
+        },
+        "uriageShubekiC": {
+          "type": "string"
+        },
+        "seikyuK": {
+          "type": "string"
+        },
+        "denpyoNo": {
+          "type": "string"
+        },
+        "tokuisakiC": {
+          "type": "string"
+        },
+        "tokuisakiH": {
+          "type": "string"
+        },
+        "hatchiC": {
+          "type": "string"
+        },
+        "hatchiN": {
+          "type": "string"
+        },
+        "chakuchiC": {
+          "type": "string"
+        },
+        "chakuchiN": {
+          "type": "string"
+        },
+        "hinmeiC": {
+          "type": "string"
+        },
+        "hinmeiH": {
+          "type": "string"
+        },
+        "hinmeiN": {
+          "type": "string"
+        },
+        "sokoKm": {
+          "type": "number",
+          "format": "double"
+        },
+        "jisshaKm": {
+          "type": "number",
+          "format": "double"
+        },
+        "seikyuSokoKm": {
+          "type": "number",
+          "format": "double"
+        },
+        "seikyuJisshaKm": {
+          "type": "number",
+          "format": "double"
+        },
+        "suryo": {
+          "type": "number",
+          "format": "double"
+        },
+        "tani": {
+          "type": "string"
+        },
+        "tonSu": {
+          "type": "number",
+          "format": "double"
+        },
+        "tanka": {
+          "type": "number",
+          "format": "double"
+        },
+        "kingaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nebiki": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "warimashi": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "jippi": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yoshaTanka": {
+          "type": "number",
+          "format": "double"
+        },
+        "yoshaKingaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yoshaNebiki": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yoshaWarimashi": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yoshaJippi": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "kakuteiK": {
+          "type": "string"
+        },
+        "biko": {
+          "type": "string"
+        },
+        "uriageNengappi": {
+          "type": "string"
+        },
+        "shiharaiNengappi": {
+          "type": "string"
+        },
+        "nyukinYoteibi": {
+          "type": "string"
+        },
+        "shiharaiYoteibi": {
+          "type": "string"
+        },
+        "shohizei": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yoshaShohizei": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "zeigaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "warimashiZeigaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "jippiZeigaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yoshaZeigaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yoshaWarimashiZeigaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yoshaJippiZeigaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "zeinukiKingaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "zeinukiWarimashi": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "zeinukiJippi": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "zeinukiYoshaKingaku": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "zeinukiYoshaWarimashi": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "zeinukiYoshaJippi": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "zeiK": {
+          "type": "string"
+        },
+        "yoshaZeiK": {
+          "type": "string"
+        },
+        "zeiritsu": {
+          "type": "number",
+          "format": "double"
+        },
+        "yoshaZeiritsu": {
+          "type": "number",
+          "format": "double"
+        },
+        "untenshuUriage": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "joshu1Uriage": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "joshu2Uriage": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yusoShunyuFurikae": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "uriageKingakuFurikae": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "kazeiUriage": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hikazeiUriage": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "kazeiShiharai": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hikazeiShiharai": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hatchiikiC": {
+          "type": "string"
+        },
+        "chakuchiikiC": {
+          "type": "string"
+        },
+        "rikunkyoku": {
+          "type": "string"
+        },
+        "yoseki": {
+          "type": "number",
+          "format": "double"
+        },
+        "juryoKakuninTenpushoK": {
+          "type": "string"
+        },
+        "saishuKoshin": {
+          "type": "string"
+        },
+        "lc": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "koguchiK": {
+          "type": "string"
+        },
+        "unsoGaishaN": {
+          "type": "string"
+        },
+        "jomuinN": {
+          "type": "string"
+        },
+        "renrakusaki": {
+          "type": "string"
+        },
+        "taniJuryo": {
+          "type": "number",
+          "format": "double"
+        },
+        "shiharaiKakuteiK": {
+          "type": "string"
+        },
+        "biko2": {
+          "type": "string"
+        },
+        "yobi1": {
+          "type": "number",
+          "format": "double"
+        },
+        "yobi2": {
+          "type": "number",
+          "format": "double"
+        },
+        "yobi3": {
+          "type": "string"
+        },
+        "yobi4": {
+          "type": "string"
+        },
+        "yobi5": {
+          "type": "string"
+        },
+        "yobi6": {
+          "type": "string"
+        },
+        "yobi7": {
+          "type": "string"
+        }
+      },
+      "title": "UntenNippoMeisai メッセージ（106カラム全て）"
+    },
+    "ryohiUntenNippoMeisaiResponse": {
+      "type": "object",
+      "properties": {
+        "untenNippoMeisai": {
+          "$ref": "#/definitions/ryohiUntenNippoMeisai"
         }
       }
     }

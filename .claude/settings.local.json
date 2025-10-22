@@ -13,7 +13,9 @@
       "Bash(go run:*)",
       "Bash(where protoc-gen-go-grpc)",
       "Bash(go build:*)",
-      "Bash(go test:*)"
+      "Bash(go test:*)",
+      "Bash(buf generate:*)",
+      "Bash(mysql -h 172.18.21.35 -u pbi -pkikuraku -D db1 -e \"SHOW TABLES LIKE ''%driv%'';\")"
     ],
     "deny": [],
     "ask": []

@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -35,7 +35,7 @@ func (s *DTakoUriageKeihiService) Create(ctx context.Context, req *proto.CreateD
 
 	// リポジトリで作成
 	if err := s.repo.Create(model); err != nil {
-		if err == models.ErrDuplicateKey {
+		if err == mysql.ErrDuplicateKey {
 			return nil, status.Error(codes.AlreadyExists, "record already exists")
 		}
 		return nil, status.Errorf(codes.Internal, "failed to create record: %v", err)
@@ -63,7 +63,7 @@ func (s *DTakoUriageKeihiService) Get(ctx context.Context, req *proto.GetDTakoUr
 	// リポジトリから取得
 	model, err := s.repo.GetByCompositeKey(req.SrchId, datetime, req.KeihiC)
 	if err != nil {
-		if err == models.ErrRecordNotFound {
+		if err == mysql.ErrRecordNotFound {
 			return nil, status.Error(codes.NotFound, "record not found")
 		}
 		return nil, status.Errorf(codes.Internal, "failed to get record: %v", err)
@@ -85,7 +85,7 @@ func (s *DTakoUriageKeihiService) Update(ctx context.Context, req *proto.UpdateD
 
 	// リポジトリで更新
 	if err := s.repo.Update(model); err != nil {
-		if err == models.ErrRecordNotFound {
+		if err == mysql.ErrRecordNotFound {
 			return nil, status.Error(codes.NotFound, "record not found")
 		}
 		return nil, status.Errorf(codes.Internal, "failed to update record: %v", err)
@@ -111,7 +111,7 @@ func (s *DTakoUriageKeihiService) Delete(ctx context.Context, req *proto.DeleteD
 
 	// リポジトリから削除
 	if err := s.repo.DeleteByCompositeKey(req.SrchId, datetime, req.KeihiC); err != nil {
-		if err == models.ErrRecordNotFound {
+		if err == mysql.ErrRecordNotFound {
 			return nil, status.Error(codes.NotFound, "record not found")
 		}
 		return nil, status.Errorf(codes.Internal, "failed to delete record: %v", err)
@@ -163,10 +163,10 @@ func (s *DTakoUriageKeihiService) List(ctx context.Context, req *proto.ListDTako
 }
 
 // protoToModel ProtoからModelへの変換
-func protoToModel(p *proto.DTakoUriageKeihi) *models.DTakoUriageKeihi {
+func protoToModel(p *proto.DTakoUriageKeihi) *mysql.DTakoUriageKeihi {
 	datetime, _ := time.Parse(time.RFC3339, p.Datetime)
 
-	m := &models.DTakoUriageKeihi{
+	m := &mysql.DTakoUriageKeihi{
 		SrchID:      p.SrchId,
 		Datetime:    datetime,
 		KeihiC:      p.KeihiC,
@@ -210,7 +210,7 @@ func protoToModel(p *proto.DTakoUriageKeihi) *models.DTakoUriageKeihi {
 }
 
 // modelToProto ModelからProtoへの変換
-func modelToProto(m *models.DTakoUriageKeihi) *proto.DTakoUriageKeihi {
+func modelToProto(m *mysql.DTakoUriageKeihi) *proto.DTakoUriageKeihi {
 	p := &proto.DTakoUriageKeihi{
 		SrchId:      m.SrchID,
 		Datetime:    m.Datetime.Format(time.RFC3339),

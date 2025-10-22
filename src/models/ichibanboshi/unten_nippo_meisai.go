@@ -1,0 +1,118 @@
+package ichibanboshi
+
+import "time"
+
+// UntenNippoMeisai 運転日報明細テーブルのモデル（SQL Server）
+type UntenNippoMeisai struct {
+	NippoK              string     `gorm:"column:日報K;primaryKey;size:1" json:"nippo_k"`
+	UnkoNengappi        *time.Time `gorm:"column:運行年月日" json:"unko_nengappi,omitempty"`
+	HaishaK             string     `gorm:"column:配車K;primaryKey;size:1" json:"haisha_k"`
+	SharyoC             string     `gorm:"column:車輌C;primaryKey;size:4" json:"sharyo_c"`
+	SharyoH             string     `gorm:"column:車輌H;size:2" json:"sharyo_h"`
+	UntenshuC           string     `gorm:"column:運転手C;size:4" json:"untenshu_c"`
+	YoshasakiC          string     `gorm:"column:傭車先C;size:6" json:"yoshasaki_c"`
+	YoshasakiH          string     `gorm:"column:傭車先H;size:3" json:"yoshasaki_h"`
+	Joshu1              string     `gorm:"column:助手1;size:4" json:"joshu1"`
+	Joshu2              string     `gorm:"column:助手2;size:4" json:"joshu2"`
+	NyuryokuNengappi    *time.Time `gorm:"column:入力年月日" json:"nyuryoku_nengappi,omitempty"`
+	ShokaiNengappi      *time.Time `gorm:"column:初回年月日" json:"shokai_nengappi,omitempty"`
+	NyuryokuTantoC      string     `gorm:"column:入力担当C;size:4" json:"nyuryoku_tanto_c"`
+	JuchuNengappi       *time.Time `gorm:"column:受注年月日" json:"juchu_nengappi,omitempty"`
+	KanriNengappi       time.Time  `gorm:"column:管理年月日" json:"kanri_nengappi"`
+	KanriC              int        `gorm:"column:管理C" json:"kanri_c"`
+	TsumikomiNengappi   *time.Time `gorm:"column:積込年月日" json:"tsumikomi_nengappi,omitempty"`
+	NoninNengappi       *time.Time `gorm:"column:納入年月日" json:"nonin_nengappi,omitempty"`
+	TsumioiK            *string    `gorm:"column:積置K;size:1" json:"tsumoi_k,omitempty"`
+	ShashuC             string     `gorm:"column:車種C;size:2" json:"shashu_c"`
+	JuchuBumon          string     `gorm:"column:受注部門;size:3" json:"juchu_bumon"`
+	KadoBumon           string     `gorm:"column:稼動部門;size:3" json:"kado_bumon"`
+	UriageK             string     `gorm:"column:売上K;size:1" json:"uriage_k"`
+	UriageShubekiC      string     `gorm:"column:売上種別C;size:2" json:"uriage_shubeki_c"`
+	SeikyuK             string     `gorm:"column:請求K;size:1" json:"seikyu_k"`
+	DenpyoNO            *string    `gorm:"column:伝票NO;size:15" json:"denpyo_no,omitempty"`
+	TokuisakiC          string     `gorm:"column:得意先C;size:6" json:"tokuisaki_c"`
+	TokuisakiH          string     `gorm:"column:得意先H;size:3" json:"tokuisaki_h"`
+	HatchiC             string     `gorm:"column:発地C;size:6" json:"hatchi_c"`
+	HatchiN             *string    `gorm:"column:発地N;size:40" json:"hatchi_n,omitempty"`
+	ChakuchiC           string     `gorm:"column:着地C;size:6" json:"chakuchi_c"`
+	ChakuchiN           *string    `gorm:"column:着地N;size:40" json:"chakuchi_n,omitempty"`
+	HinmeiC             string     `gorm:"column:品名C;size:4" json:"hinmei_c"`
+	HinmeiH             string     `gorm:"column:品名H;size:2" json:"hinmei_h"`
+	HinmeiN             *string    `gorm:"column:品名N;size:32" json:"hinmei_n,omitempty"`
+	SokoKM              float64    `gorm:"column:走行KM;type:decimal" json:"soko_km"`
+	JisshaKM            float64    `gorm:"column:実車KM;type:decimal" json:"jissha_km"`
+	SeikyuSokoKM        float64    `gorm:"column:請求走行KM;type:decimal" json:"seikyu_soko_km"`
+	SeikyuJisshaKM      float64    `gorm:"column:請求実車KM;type:decimal" json:"seikyu_jissha_km"`
+	Suryo               float64    `gorm:"column:数量;type:decimal" json:"suryo"`
+	Tani                *string    `gorm:"column:単位;size:4" json:"tani,omitempty"`
+	TonSu               float64    `gorm:"column:ﾄﾝ数;type:decimal" json:"ton_su"`
+	Tanka               float64    `gorm:"column:単価;type:decimal" json:"tanka"`
+	Kingaku             int        `gorm:"column:金額" json:"kingaku"`
+	Nebiki              int        `gorm:"column:値引" json:"nebiki"`
+	Warimashi           int        `gorm:"column:割増" json:"warimashi"`
+	Jippi               int        `gorm:"column:実費" json:"jippi"`
+	YoshaTanka          float64    `gorm:"column:傭車単価;type:decimal" json:"yosha_tanka"`
+	YoshaKingaku        int        `gorm:"column:傭車金額" json:"yosha_kingaku"`
+	YoshaNebiki         int        `gorm:"column:傭車値引" json:"yosha_nebiki"`
+	YoshaWarimashi      int        `gorm:"column:傭車割増" json:"yosha_warimashi"`
+	YoshaJippi          int        `gorm:"column:傭車実費" json:"yosha_jippi"`
+	KakuteiK            string     `gorm:"column:確定K;size:1" json:"kakutei_k"`
+	Biko                *string    `gorm:"column:備考;size:64" json:"biko,omitempty"`
+	UriageNengappi      *time.Time `gorm:"column:売上年月日" json:"uriage_nengappi,omitempty"`
+	ShiharaiNengappi    *time.Time `gorm:"column:支払年月日" json:"shiharai_nengappi,omitempty"`
+	NyukinYoteibi       *time.Time `gorm:"column:入金予定日" json:"nyukin_yoteibi,omitempty"`
+	ShiharaiYoteibi     *time.Time `gorm:"column:支払予定日" json:"shiharai_yoteibi,omitempty"`
+	Shohizei            int        `gorm:"column:消費税" json:"shohizei"`
+	YoshaShohizei       int        `gorm:"column:傭車消費税" json:"yosha_shohizei"`
+	Zeigaku             int        `gorm:"column:税額" json:"zeigaku"`
+	WarimashiZeigaku    int        `gorm:"column:割増税額" json:"warimashi_zeigaku"`
+	JippiZeigaku        int        `gorm:"column:実費税額" json:"jippi_zeigaku"`
+	YoshaZeigaku        int        `gorm:"column:傭車税額" json:"yosha_zeigaku"`
+	YoshaWarimashiZeigaku int      `gorm:"column:傭車割増税額" json:"yosha_warimashi_zeigaku"`
+	YoshaJippiZeigaku   int        `gorm:"column:傭車実費税額" json:"yosha_jippi_zeigaku"`
+	ZeinukiKingaku      int        `gorm:"column:税抜金額" json:"zeinuki_kingaku"`
+	ZeinukiWarimashi    int        `gorm:"column:税抜割増" json:"zeinuki_warimashi"`
+	ZeinukiJippi        int        `gorm:"column:税抜実費" json:"zeinuki_jippi"`
+	ZeinukiYoshaKingaku int        `gorm:"column:税抜傭車金額" json:"zeinuki_yosha_kingaku"`
+	ZeinukiYoshaWarimashi int      `gorm:"column:税抜傭車割増" json:"zeinuki_yosha_warimashi"`
+	ZeinukiYoshaJippi   int        `gorm:"column:税抜傭車実費" json:"zeinuki_yosha_jippi"`
+	ZeiK                string     `gorm:"column:税K;size:1" json:"zei_k"`
+	YoshaZeiK           string     `gorm:"column:傭車税K;size:1" json:"yosha_zei_k"`
+	Zeiritsu            float64    `gorm:"column:税率;type:decimal" json:"zeiritsu"`
+	YoshaZeiritsu       float64    `gorm:"column:傭車税率;type:decimal" json:"yosha_zeiritsu"`
+	UntenshuUriage      int        `gorm:"column:運転手売上" json:"untenshu_uriage"`
+	Joshu1Uriage        int        `gorm:"column:助手1売上" json:"joshu1_uriage"`
+	Joshu2Uriage        int        `gorm:"column:助手2売上" json:"joshu2_uriage"`
+	YusoShunyuFurikae   int        `gorm:"column:輸送収入振替" json:"yuso_shunyu_furikae"`
+	UriageKingakuFurikae int       `gorm:"column:売上金額振替" json:"uriage_kingaku_furikae"`
+	KazeiUriage         int        `gorm:"column:課税売上" json:"kazei_uriage"`
+	HikazeiUriage       int        `gorm:"column:非課税売上" json:"hikazei_uriage"`
+	KazeiShiharai       int        `gorm:"column:課税支払" json:"kazei_shiharai"`
+	HikazeiShiharai     int        `gorm:"column:非課税支払" json:"hikazei_shiharai"`
+	HatchiikiC          string     `gorm:"column:発地域C;size:6" json:"hatchiiki_c"`
+	ChakuchiikiC        string     `gorm:"column:着地域C;size:6" json:"chakuchiiki_c"`
+	Rikunkyoku          *string    `gorm:"column:陸運局;size:2" json:"rikunkyoku,omitempty"`
+	Yoseki              *float64   `gorm:"column:容積;type:decimal" json:"yoseki,omitempty"`
+	JuryoKakuninTenpushoK string   `gorm:"column:受領確認添付書K;size:1" json:"juryo_kakunin_tenpusho_k"`
+	SaishuKoshin        *time.Time `gorm:"column:最終更新" json:"saishu_koshin,omitempty"`
+	LC                  int        `gorm:"column:LC" json:"lc"`
+	KoguchiK            *string    `gorm:"column:小口K;size:1" json:"koguchi_k,omitempty"`
+	UnsoGaishaN         *string    `gorm:"column:運送会社N;size:30" json:"unso_gaisha_n,omitempty"`
+	JomuinN             *string    `gorm:"column:乗務員N;size:16" json:"jomuin_n,omitempty"`
+	Renrakusaki         *string    `gorm:"column:連絡先;size:13" json:"renrakusaki,omitempty"`
+	TaniJuryo           *float64   `gorm:"column:単位重量;type:decimal" json:"tani_juryo,omitempty"`
+	ShiharaiKakuteiK    string     `gorm:"column:支払確定K;size:1" json:"shiharai_kakutei_k"`
+	Biko2               *string    `gorm:"column:備考2;size:64" json:"biko2,omitempty"`
+	Yobi1               *float64   `gorm:"column:予備1;type:money" json:"yobi1,omitempty"`
+	Yobi2               *float64   `gorm:"column:予備2;type:money" json:"yobi2,omitempty"`
+	Yobi3               *string    `gorm:"column:予備3;size:64" json:"yobi3,omitempty"`
+	Yobi4               *string    `gorm:"column:予備4;size:64" json:"yobi4,omitempty"`
+	Yobi5               *string    `gorm:"column:予備5;size:64" json:"yobi5,omitempty"`
+	Yobi6               *string    `gorm:"column:予備6;size:64" json:"yobi6,omitempty"`
+	Yobi7               *string    `gorm:"column:予備7;size:64" json:"yobi7,omitempty"`
+}
+
+// TableName テーブル名を指定
+func (UntenNippoMeisai) TableName() string {
+	return "運転日報明細"
+}

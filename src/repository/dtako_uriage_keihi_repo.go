@@ -4,20 +4,20 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"gorm.io/gorm"
 )
 
 // DTakoUriageKeihiRepository リポジトリインターフェース
 type DTakoUriageKeihiRepository interface {
-	Create(data *models.DTakoUriageKeihi) error
-	GetByCompositeKey(srchID string, datetime time.Time, keihiC int32) (*models.DTakoUriageKeihi, error)
-	Update(data *models.DTakoUriageKeihi) error
+	Create(data *mysql.DTakoUriageKeihi) error
+	GetByCompositeKey(srchID string, datetime time.Time, keihiC int32) (*mysql.DTakoUriageKeihi, error)
+	Update(data *mysql.DTakoUriageKeihi) error
 	DeleteByCompositeKey(srchID string, datetime time.Time, keihiC int32) error
-	List(params *ListParams) ([]*models.DTakoUriageKeihi, int64, error)
-	ListBySrchID(srchID string) ([]*models.DTakoUriageKeihi, error)
-	ListByDtakoRowID(dtakoRowID string) ([]*models.DTakoUriageKeihi, error)
-	ListByDateRange(start, end time.Time) ([]*models.DTakoUriageKeihi, error)
+	List(params *ListParams) ([]*mysql.DTakoUriageKeihi, int64, error)
+	ListBySrchID(srchID string) ([]*mysql.DTakoUriageKeihi, error)
+	ListByDtakoRowID(dtakoRowID string) ([]*mysql.DTakoUriageKeihi, error)
+	ListByDateRange(start, end time.Time) ([]*mysql.DTakoUriageKeihi, error)
 }
 
 // ListParams リスト取得用パラメータ
@@ -40,7 +40,7 @@ func NewDTakoUriageKeihiRepository(db *gorm.DB) DTakoUriageKeihiRepository {
 }
 
 // Create データ作成
-func (r *dtakoUriageKeihiRepo) Create(data *models.DTakoUriageKeihi) error {
+func (r *dtakoUriageKeihiRepo) Create(data *mysql.DTakoUriageKeihi) error {
 	if err := data.Validate(); err != nil {
 		return fmt.Errorf("validation error: %w", err)
 	}
@@ -48,7 +48,7 @@ func (r *dtakoUriageKeihiRepo) Create(data *models.DTakoUriageKeihi) error {
 	result := r.db.Create(data)
 	if result.Error != nil {
 		if isDuplicateKeyError(result.Error) {
-			return models.ErrDuplicateKey
+			return mysql.ErrDuplicateKey
 		}
 		return fmt.Errorf("failed to create record: %w", result.Error)
 	}
@@ -57,15 +57,15 @@ func (r *dtakoUriageKeihiRepo) Create(data *models.DTakoUriageKeihi) error {
 }
 
 // GetByCompositeKey 複合キーでデータ取得
-func (r *dtakoUriageKeihiRepo) GetByCompositeKey(srchID string, datetime time.Time, keihiC int32) (*models.DTakoUriageKeihi, error) {
-	var data models.DTakoUriageKeihi
+func (r *dtakoUriageKeihiRepo) GetByCompositeKey(srchID string, datetime time.Time, keihiC int32) (*mysql.DTakoUriageKeihi, error) {
+	var data mysql.DTakoUriageKeihi
 
 	result := r.db.Where("srch_id = ? AND datetime = ? AND keihi_c = ?",
 		srchID, datetime, keihiC).First(&data)
 
 	if result.Error != nil {
 		if result.Error == gorm.ErrRecordNotFound {
-			return nil, models.ErrRecordNotFound
+			return nil, mysql.ErrRecordNotFound
 		}
 		return nil, fmt.Errorf("failed to get record: %w", result.Error)
 	}
@@ -74,7 +74,7 @@ func (r *dtakoUriageKeihiRepo) GetByCompositeKey(srchID string, datetime time.Ti
 }
 
 // Update データ更新
-func (r *dtakoUriageKeihiRepo) Update(data *models.DTakoUriageKeihi) error {
+func (r *dtakoUriageKeihiRepo) Update(data *mysql.DTakoUriageKeihi) error {
 	if err := data.Validate(); err != nil {
 		return fmt.Errorf("validation error: %w", err)
 	}
@@ -82,8 +82,8 @@ func (r *dtakoUriageKeihiRepo) Update(data *models.DTakoUriageKeihi) error {
 	// 複合キーで既存レコードを確認
 	existing, err := r.GetByCompositeKey(data.SrchID, data.Datetime, data.KeihiC)
 	if err != nil {
-		if err == models.ErrRecordNotFound {
-			return models.ErrRecordNotFound
+		if err == mysql.ErrRecordNotFound {
+			return mysql.ErrRecordNotFound
 		}
 		return err
 	}
@@ -95,7 +95,7 @@ func (r *dtakoUriageKeihiRepo) Update(data *models.DTakoUriageKeihi) error {
 	}
 
 	if result.RowsAffected == 0 {
-		return models.ErrRecordNotFound
+		return mysql.ErrRecordNotFound
 	}
 
 	return nil
@@ -104,25 +104,25 @@ func (r *dtakoUriageKeihiRepo) Update(data *models.DTakoUriageKeihi) error {
 // DeleteByCompositeKey 複合キーでデータ削除
 func (r *dtakoUriageKeihiRepo) DeleteByCompositeKey(srchID string, datetime time.Time, keihiC int32) error {
 	result := r.db.Where("srch_id = ? AND datetime = ? AND keihi_c = ?",
-		srchID, datetime, keihiC).Delete(&models.DTakoUriageKeihi{})
+		srchID, datetime, keihiC).Delete(&mysql.DTakoUriageKeihi{})
 
 	if result.Error != nil {
 		return fmt.Errorf("failed to delete record: %w", result.Error)
 	}
 
 	if result.RowsAffected == 0 {
-		return models.ErrRecordNotFound
+		return mysql.ErrRecordNotFound
 	}
 
 	return nil
 }
 
 // List 条件付きリスト取得
-func (r *dtakoUriageKeihiRepo) List(params *ListParams) ([]*models.DTakoUriageKeihi, int64, error) {
-	var data []*models.DTakoUriageKeihi
+func (r *dtakoUriageKeihiRepo) List(params *ListParams) ([]*mysql.DTakoUriageKeihi, int64, error) {
+	var data []*mysql.DTakoUriageKeihi
 	var totalCount int64
 
-	query := r.db.Model(&models.DTakoUriageKeihi{})
+	query := r.db.Model(&mysql.DTakoUriageKeihi{})
 
 	// 条件の適用
 	if params.DtakoRowID != nil && *params.DtakoRowID != "" {
@@ -157,8 +157,8 @@ func (r *dtakoUriageKeihiRepo) List(params *ListParams) ([]*models.DTakoUriageKe
 }
 
 // ListBySrchID srch_idでリスト取得
-func (r *dtakoUriageKeihiRepo) ListBySrchID(srchID string) ([]*models.DTakoUriageKeihi, error) {
-	var data []*models.DTakoUriageKeihi
+func (r *dtakoUriageKeihiRepo) ListBySrchID(srchID string) ([]*mysql.DTakoUriageKeihi, error) {
+	var data []*mysql.DTakoUriageKeihi
 
 	if err := r.db.Where("srch_id = ?", srchID).
 		Order("datetime DESC").
@@ -170,8 +170,8 @@ func (r *dtakoUriageKeihiRepo) ListBySrchID(srchID string) ([]*models.DTakoUriag
 }
 
 // ListByDtakoRowID dtako_row_idでリスト取得
-func (r *dtakoUriageKeihiRepo) ListByDtakoRowID(dtakoRowID string) ([]*models.DTakoUriageKeihi, error) {
-	var data []*models.DTakoUriageKeihi
+func (r *dtakoUriageKeihiRepo) ListByDtakoRowID(dtakoRowID string) ([]*mysql.DTakoUriageKeihi, error) {
+	var data []*mysql.DTakoUriageKeihi
 
 	if err := r.db.Where("dtako_row_id = ?", dtakoRowID).
 		Order("datetime DESC").
@@ -183,8 +183,8 @@ func (r *dtakoUriageKeihiRepo) ListByDtakoRowID(dtakoRowID string) ([]*models.DT
 }
 
 // ListByDateRange 日付範囲でリスト取得
-func (r *dtakoUriageKeihiRepo) ListByDateRange(start, end time.Time) ([]*models.DTakoUriageKeihi, error) {
-	var data []*models.DTakoUriageKeihi
+func (r *dtakoUriageKeihiRepo) ListByDateRange(start, end time.Time) ([]*mysql.DTakoUriageKeihi, error) {
+	var data []*mysql.DTakoUriageKeihi
 
 	if err := r.db.Where("datetime BETWEEN ? AND ?", start, end).
 		Order("datetime DESC").

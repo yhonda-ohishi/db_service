@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -85,7 +85,7 @@ func (s *CarsService) GetByBumonCodeID(ctx context.Context, req *proto.GetCarsBy
 }
 
 // carsModelToProto ModelからProtoへの変換
-func carsModelToProto(model *models.Cars) *proto.Cars {
+func carsModelToProto(model *mysql.Cars) *proto.Cars {
 	protoCar := &proto.Cars{
 		Id:   model.ID,
 		Id4:  int32(model.ID4),

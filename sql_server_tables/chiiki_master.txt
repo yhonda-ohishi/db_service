@@ -1,0 +1,8 @@
+﻿COLUMN_NAME DATA_TYPE CHARACTER_MAXIMUM_LENGTH IS_NULLABLE
+----------- --------- ------------------------ -----------
+地域C char 6 NO
+地域N varchar 32 YES
+地域R varchar 16 YES
+地域F varchar 12 YES
+
+(4 行処理されました)

@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -164,8 +164,8 @@ func (s *ETCMeisaiMappingService) GetDTakoRowIDByHash(ctx context.Context, req *
 }
 
 // etcMeisaiMappingProtoToModel プロトコルバッファーからモデルに変換
-func etcMeisaiMappingProtoToModel(p *proto.ETCMeisaiMapping) *models.ETCMeisaiMapping {
-	m := &models.ETCMeisaiMapping{
+func etcMeisaiMappingProtoToModel(p *proto.ETCMeisaiMapping) *mysql.ETCMeisaiMapping {
+	m := &mysql.ETCMeisaiMapping{
 		ID:            p.Id,
 		ETCMeisaiHash: p.EtcMeisaiHash,
 		DTakoRowID:    p.DtakoRowId,
@@ -190,7 +190,7 @@ func etcMeisaiMappingProtoToModel(p *proto.ETCMeisaiMapping) *models.ETCMeisaiMa
 }
 
 // etcMeisaiMappingModelToProto モデルからプロトコルバッファーに変換
-func etcMeisaiMappingModelToProto(m *models.ETCMeisaiMapping) *proto.ETCMeisaiMapping {
+func etcMeisaiMappingModelToProto(m *mysql.ETCMeisaiMapping) *proto.ETCMeisaiMapping {
 	p := &proto.ETCMeisaiMapping{
 		Id:            m.ID,
 		EtcMeisaiHash: m.ETCMeisaiHash,

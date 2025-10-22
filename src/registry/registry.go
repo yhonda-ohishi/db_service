@@ -27,6 +27,12 @@ type ServiceRegistry struct {
 	DTakoFerryRowsProdService dbproto.DTakoFerryRowsProdServiceServer
 	CarsService              dbproto.CarsServiceServer
 	DriversService           dbproto.DriversServiceServer
+
+	// SQL Server (ichibanboshi) 用サービス（読み取り専用）
+	UntenNippoMeisaiService dbproto.UntenNippoMeisaiServiceServer
+	ShainMasterService      dbproto.ShainMasterServiceServer
+	ChiikiMasterService     dbproto.ChiikiMasterServiceServer
+	ChikuMasterService      dbproto.ChikuMasterServiceServer
 }
 
 // NewServiceRegistry creates a new service registry with all db_service services initialized
@@ -68,6 +74,13 @@ func NewServiceRegistry() *ServiceRegistry {
 	var carsService dbproto.CarsServiceServer
 	var driversService dbproto.DriversServiceServer
 
+	// Initialize SQL Server (ichibanboshi) connection (optional)
+	sqlServerDB, sqlErr := config.NewSQLServerDatabase()
+	var untenNippoMeisaiService dbproto.UntenNippoMeisaiServiceServer
+	var shainMasterService dbproto.ShainMasterServiceServer
+	var chiikiMasterService dbproto.ChiikiMasterServiceServer
+	var chikuMasterService dbproto.ChikuMasterServiceServer
+
 	if err == nil && prodDB != nil {
 		// Initialize production DB repositories
 		dtakoCarsRepo := repository.NewDTakoCarsRepository(prodDB)
@@ -92,6 +105,24 @@ func NewServiceRegistry() *ServiceRegistry {
 		log.Printf("Warning: Production DB not available: %v", err)
 	}
 
+	if sqlErr == nil && sqlServerDB != nil {
+		// Initialize SQL Server repositories
+		untenNippoMeisaiRepo := repository.NewUntenNippoMeisaiRepository(sqlServerDB)
+		shainMasterRepo := repository.NewShainMasterRepository(sqlServerDB)
+		chiikiMasterRepo := repository.NewChiikiMasterRepository(sqlServerDB)
+		chikuMasterRepo := repository.NewChikuMasterRepository(sqlServerDB)
+
+		// Initialize SQL Server services
+		untenNippoMeisaiService = service.NewUntenNippoMeisaiService(untenNippoMeisaiRepo)
+		shainMasterService = service.NewShainMasterService(shainMasterRepo)
+		chiikiMasterService = service.NewChiikiMasterService(chiikiMasterRepo)
+		chikuMasterService = service.NewChikuMasterService(chikuMasterRepo)
+
+		log.Println("SQL Server (ichibanboshi) services initialized successfully")
+	} else {
+		log.Printf("Warning: SQL Server not available: %v", sqlErr)
+	}
+
 	return &ServiceRegistry{
 		// Local DB services
 		ETCMeisaiService:        service.NewETCMeisaiService(etcMeisaiRepo),
@@ -107,6 +138,12 @@ func NewServiceRegistry() *ServiceRegistry {
 		DTakoFerryRowsProdService: dtakoFerryRowsProdService,
 		CarsService:              carsService,
 		DriversService:           driversService,
+
+		// SQL Server services (may be nil if SQL Server not available)
+		UntenNippoMeisaiService: untenNippoMeisaiService,
+		ShainMasterService:      shainMasterService,
+		ChiikiMasterService:     chiikiMasterService,
+		ChikuMasterService:      chikuMasterService,
 	}
 }
 
@@ -159,6 +196,24 @@ func (r *ServiceRegistry) RegisterAll(server *grpc.Server) {
 	if r.DriversService != nil {
 		dbproto.RegisterDriversServiceServer(server, r.DriversService)
 		log.Println("Registered: DriversService (Production DB)")
+	}
+
+	// SQL Server services
+	if r.UntenNippoMeisaiService != nil {
+		dbproto.RegisterUntenNippoMeisaiServiceServer(server, r.UntenNippoMeisaiService)
+		log.Println("Registered: UntenNippoMeisaiService (SQL Server)")
+	}
+	if r.ShainMasterService != nil {
+		dbproto.RegisterShainMasterServiceServer(server, r.ShainMasterService)
+		log.Println("Registered: ShainMasterService (SQL Server)")
+	}
+	if r.ChiikiMasterService != nil {
+		dbproto.RegisterChiikiMasterServiceServer(server, r.ChiikiMasterService)
+		log.Println("Registered: ChiikiMasterService (SQL Server)")
+	}
+	if r.ChikuMasterService != nil {
+		dbproto.RegisterChikuMasterServiceServer(server, r.ChikuMasterService)
+		log.Println("Registered: ChikuMasterService (SQL Server)")
 	}
 
 	fmt.Println("db_service: All services registered successfully")

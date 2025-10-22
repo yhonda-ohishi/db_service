@@ -4,19 +4,19 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"gorm.io/gorm"
 )
 
 // ETCMeisaiRepository リポジトリインターフェース
 type ETCMeisaiRepository interface {
-	Create(data *models.ETCMeisai) error
-	GetByID(id int64) (*models.ETCMeisai, error)
-	Update(data *models.ETCMeisai) error
+	Create(data *mysql.ETCMeisai) error
+	GetByID(id int64) (*mysql.ETCMeisai, error)
+	Update(data *mysql.ETCMeisai) error
 	DeleteByID(id int64) error
-	List(params *ETCMeisaiListParams) ([]*models.ETCMeisai, int64, error)
-	ListByHash(hash string) ([]*models.ETCMeisai, error)
-	ListByDateRange(start, end time.Time) ([]*models.ETCMeisai, error)
+	List(params *ETCMeisaiListParams) ([]*mysql.ETCMeisai, int64, error)
+	ListByHash(hash string) ([]*mysql.ETCMeisai, error)
+	ListByDateRange(start, end time.Time) ([]*mysql.ETCMeisai, error)
 }
 
 // ETCMeisaiListParams リスト取得用パラメータ
@@ -39,7 +39,7 @@ func NewETCMeisaiRepository(db *gorm.DB) ETCMeisaiRepository {
 }
 
 // Create データ作成
-func (r *etcMeisaiRepo) Create(data *models.ETCMeisai) error {
+func (r *etcMeisaiRepo) Create(data *mysql.ETCMeisai) error {
 	if err := data.Validate(); err != nil {
 		return fmt.Errorf("validation error: %w", err)
 	}
@@ -53,13 +53,13 @@ func (r *etcMeisaiRepo) Create(data *models.ETCMeisai) error {
 }
 
 // GetByID IDでデータ取得
-func (r *etcMeisaiRepo) GetByID(id int64) (*models.ETCMeisai, error) {
-	var data models.ETCMeisai
+func (r *etcMeisaiRepo) GetByID(id int64) (*mysql.ETCMeisai, error) {
+	var data mysql.ETCMeisai
 
 	result := r.db.First(&data, id)
 	if result.Error != nil {
 		if result.Error == gorm.ErrRecordNotFound {
-			return nil, models.ErrRecordNotFound
+			return nil, mysql.ErrRecordNotFound
 		}
 		return nil, fmt.Errorf("failed to get record: %w", result.Error)
 	}
@@ -68,7 +68,7 @@ func (r *etcMeisaiRepo) GetByID(id int64) (*models.ETCMeisai, error) {
 }
 
 // Update データ更新
-func (r *etcMeisaiRepo) Update(data *models.ETCMeisai) error {
+func (r *etcMeisaiRepo) Update(data *mysql.ETCMeisai) error {
 	if err := data.Validate(); err != nil {
 		return fmt.Errorf("validation error: %w", err)
 	}
@@ -76,8 +76,8 @@ func (r *etcMeisaiRepo) Update(data *models.ETCMeisai) error {
 	// 既存レコードを確認
 	existing, err := r.GetByID(data.ID)
 	if err != nil {
-		if err == models.ErrRecordNotFound {
-			return models.ErrRecordNotFound
+		if err == mysql.ErrRecordNotFound {
+			return mysql.ErrRecordNotFound
 		}
 		return err
 	}
@@ -89,7 +89,7 @@ func (r *etcMeisaiRepo) Update(data *models.ETCMeisai) error {
 	}
 
 	if result.RowsAffected == 0 {
-		return models.ErrRecordNotFound
+		return mysql.ErrRecordNotFound
 	}
 
 	return nil
@@ -97,24 +97,24 @@ func (r *etcMeisaiRepo) Update(data *models.ETCMeisai) error {
 
 // DeleteByID IDでデータ削除
 func (r *etcMeisaiRepo) DeleteByID(id int64) error {
-	result := r.db.Delete(&models.ETCMeisai{}, id)
+	result := r.db.Delete(&mysql.ETCMeisai{}, id)
 	if result.Error != nil {
 		return fmt.Errorf("failed to delete record: %w", result.Error)
 	}
 
 	if result.RowsAffected == 0 {
-		return models.ErrRecordNotFound
+		return mysql.ErrRecordNotFound
 	}
 
 	return nil
 }
 
 // List 条件付きリスト取得
-func (r *etcMeisaiRepo) List(params *ETCMeisaiListParams) ([]*models.ETCMeisai, int64, error) {
-	var data []*models.ETCMeisai
+func (r *etcMeisaiRepo) List(params *ETCMeisaiListParams) ([]*mysql.ETCMeisai, int64, error) {
+	var data []*mysql.ETCMeisai
 	var totalCount int64
 
-	query := r.db.Model(&models.ETCMeisai{})
+	query := r.db.Model(&mysql.ETCMeisai{})
 
 	// 条件の適用
 	if params.Hash != nil && *params.Hash != "" {
@@ -149,8 +149,8 @@ func (r *etcMeisaiRepo) List(params *ETCMeisaiListParams) ([]*models.ETCMeisai, 
 }
 
 // ListByHash hashでリスト取得
-func (r *etcMeisaiRepo) ListByHash(hash string) ([]*models.ETCMeisai, error) {
-	var data []*models.ETCMeisai
+func (r *etcMeisaiRepo) ListByHash(hash string) ([]*mysql.ETCMeisai, error) {
+	var data []*mysql.ETCMeisai
 
 	if err := r.db.Where("hash = ?", hash).
 		Order("date_to DESC").
@@ -162,8 +162,8 @@ func (r *etcMeisaiRepo) ListByHash(hash string) ([]*models.ETCMeisai, error) {
 }
 
 // ListByDateRange 日付範囲でリスト取得
-func (r *etcMeisaiRepo) ListByDateRange(start, end time.Time) ([]*models.ETCMeisai, error) {
-	var data []*models.ETCMeisai
+func (r *etcMeisaiRepo) ListByDateRange(start, end time.Time) ([]*mysql.ETCMeisai, error) {
+	var data []*mysql.ETCMeisai
 
 	if err := r.db.Where("date_to BETWEEN ? AND ?", start, end).
 		Order("date_to DESC").

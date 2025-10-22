@@ -3,17 +3,17 @@ package repository
 import (
 	"fmt"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"gorm.io/gorm"
 )
 
 // ETCMeisaiMappingRepository リポジトリインターフェース
 type ETCMeisaiMappingRepository interface {
-	Create(data *models.ETCMeisaiMapping) error
-	GetByID(id int64) (*models.ETCMeisaiMapping, error)
-	Update(data *models.ETCMeisaiMapping) error
+	Create(data *mysql.ETCMeisaiMapping) error
+	GetByID(id int64) (*mysql.ETCMeisaiMapping, error)
+	Update(data *mysql.ETCMeisaiMapping) error
 	DeleteByID(id int64) error
-	List(params *ETCMeisaiMappingListParams) ([]*models.ETCMeisaiMapping, int64, error)
+	List(params *ETCMeisaiMappingListParams) ([]*mysql.ETCMeisaiMapping, int64, error)
 	GetDTakoRowIDsByHash(hash string) ([]string, error)
 }
 
@@ -36,7 +36,7 @@ func NewETCMeisaiMappingRepository(db *gorm.DB) ETCMeisaiMappingRepository {
 }
 
 // Create マッピング作成
-func (r *etcMeisaiMappingRepo) Create(data *models.ETCMeisaiMapping) error {
+func (r *etcMeisaiMappingRepo) Create(data *mysql.ETCMeisaiMapping) error {
 	if err := data.Validate(); err != nil {
 		return fmt.Errorf("validation failed: %w", err)
 	}
@@ -49,8 +49,8 @@ func (r *etcMeisaiMappingRepo) Create(data *models.ETCMeisaiMapping) error {
 }
 
 // GetByID ID指定でマッピング取得
-func (r *etcMeisaiMappingRepo) GetByID(id int64) (*models.ETCMeisaiMapping, error) {
-	var data models.ETCMeisaiMapping
+func (r *etcMeisaiMappingRepo) GetByID(id int64) (*mysql.ETCMeisaiMapping, error) {
+	var data mysql.ETCMeisaiMapping
 	if err := r.db.First(&data, id).Error; err != nil {
 		if err == gorm.ErrRecordNotFound {
 			return nil, fmt.Errorf("mapping not found: %w", err)
@@ -62,7 +62,7 @@ func (r *etcMeisaiMappingRepo) GetByID(id int64) (*models.ETCMeisaiMapping, erro
 }
 
 // Update マッピング更新
-func (r *etcMeisaiMappingRepo) Update(data *models.ETCMeisaiMapping) error {
+func (r *etcMeisaiMappingRepo) Update(data *mysql.ETCMeisaiMapping) error {
 	if err := data.Validate(); err != nil {
 		return fmt.Errorf("validation failed: %w", err)
 	}
@@ -76,7 +76,7 @@ func (r *etcMeisaiMappingRepo) Update(data *models.ETCMeisaiMapping) error {
 
 // DeleteByID ID指定でマッピング削除
 func (r *etcMeisaiMappingRepo) DeleteByID(id int64) error {
-	result := r.db.Delete(&models.ETCMeisaiMapping{}, id)
+	result := r.db.Delete(&mysql.ETCMeisaiMapping{}, id)
 	if result.Error != nil {
 		return fmt.Errorf("failed to delete mapping: %w", result.Error)
 	}
@@ -89,11 +89,11 @@ func (r *etcMeisaiMappingRepo) DeleteByID(id int64) error {
 }
 
 // List マッピング一覧取得
-func (r *etcMeisaiMappingRepo) List(params *ETCMeisaiMappingListParams) ([]*models.ETCMeisaiMapping, int64, error) {
-	var data []*models.ETCMeisaiMapping
+func (r *etcMeisaiMappingRepo) List(params *ETCMeisaiMappingListParams) ([]*mysql.ETCMeisaiMapping, int64, error) {
+	var data []*mysql.ETCMeisaiMapping
 	var totalCount int64
 
-	query := r.db.Model(&models.ETCMeisaiMapping{})
+	query := r.db.Model(&mysql.ETCMeisaiMapping{})
 
 	// 条件の適用
 	if params.ETCMeisaiHash != nil && *params.ETCMeisaiHash != "" {
@@ -121,7 +121,7 @@ func (r *etcMeisaiMappingRepo) List(params *ETCMeisaiMappingListParams) ([]*mode
 
 // GetDTakoRowIDsByHash ハッシュからDTakoRowIDのリストを取得
 func (r *etcMeisaiMappingRepo) GetDTakoRowIDsByHash(hash string) ([]string, error) {
-	var mappings []*models.ETCMeisaiMapping
+	var mappings []*mysql.ETCMeisaiMapping
 
 	if err := r.db.Where("etc_meisai_hash = ?", hash).
 		Find(&mappings).Error; err != nil {

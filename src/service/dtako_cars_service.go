@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -73,7 +73,7 @@ func (s *DTakoCarsService) GetByCarCode(ctx context.Context, req *proto.GetDTako
 }
 
 // dtakoCarsModelToProto ModelからProtoへの変換
-func dtakoCarsModelToProto(model *models.DTakoCars) *proto.DTakoCars {
+func dtakoCarsModelToProto(model *mysql.DTakoCars) *proto.DTakoCars {
 	return &proto.DTakoCars{
 		Id:                  int32(model.ID),
 		CarCode:             model.CarCode,

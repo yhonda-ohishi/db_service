@@ -2,28 +2,28 @@ package repository
 
 import (
 	"github.com/yhonda-ohishi/db_service/src/config"
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 )
 
 // DTakoFerryRowsRepository インターフェース（本番DB用）
 type DTakoFerryRowsProdRepository interface {
-	GetAll(limit, offset int) ([]*models.DTakoFerryRows, int64, error)
-	GetByID(id int32) (*models.DTakoFerryRows, error)
-	GetByUnkoNo(unkoNo string) ([]*models.DTakoFerryRows, error)
+	GetAll(limit, offset int) ([]*mysql.DTakoFerryRows, int64, error)
+	GetByID(id int32) (*mysql.DTakoFerryRows, error)
+	GetByUnkoNo(unkoNo string) ([]*mysql.DTakoFerryRows, error)
 }
 
 // DTakoRowsRepository インターフェース
 type DTakoRowsRepository interface {
-	GetAll(limit, offset int, orderBy string) ([]*models.DTakoRows, int64, error)
-	GetByID(id string) (*models.DTakoRows, error)
-	GetByOperationNo(operationNo string) ([]*models.DTakoRows, error)
+	GetAll(limit, offset int, orderBy string) ([]*mysql.DTakoRows, int64, error)
+	GetByID(id string) (*mysql.DTakoRows, error)
+	GetByOperationNo(operationNo string) ([]*mysql.DTakoRows, error)
 }
 
 // ETCNumRepository インターフェース
 type ETCNumRepository interface {
-	GetAll(limit, offset int) ([]*models.ETCNum, int64, error)
-	GetByETCCardNum(etcCardNum string) ([]*models.ETCNum, error)
-	GetByCarID(carID string) ([]*models.ETCNum, error)
+	GetAll(limit, offset int) ([]*mysql.ETCNum, int64, error)
+	GetByETCCardNum(etcCardNum string) ([]*mysql.ETCNum, error)
+	GetByCarID(carID string) ([]*mysql.ETCNum, error)
 }
 
 // DTakoFerryRowsProdRepositoryImpl 本番DB用実装
@@ -39,12 +39,12 @@ func NewDTakoFerryRowsProdRepository(prodDB *config.ProdDatabase) DTakoFerryRows
 }
 
 // GetAll 全フェリー運行データを取得
-func (r *DTakoFerryRowsProdRepositoryImpl) GetAll(limit, offset int) ([]*models.DTakoFerryRows, int64, error) {
-	var rows []*models.DTakoFerryRows
+func (r *DTakoFerryRowsProdRepositoryImpl) GetAll(limit, offset int) ([]*mysql.DTakoFerryRows, int64, error) {
+	var rows []*mysql.DTakoFerryRows
 	var totalCount int64
 
 	// 総数取得
-	if err := r.prodDB.DB.Model(&models.DTakoFerryRows{}).Count(&totalCount).Error; err != nil {
+	if err := r.prodDB.DB.Model(&mysql.DTakoFerryRows{}).Count(&totalCount).Error; err != nil {
 		return nil, 0, err
 	}
 
@@ -57,8 +57,8 @@ func (r *DTakoFerryRowsProdRepositoryImpl) GetAll(limit, offset int) ([]*models.
 }
 
 // GetByID IDでフェリー運行データを取得
-func (r *DTakoFerryRowsProdRepositoryImpl) GetByID(id int32) (*models.DTakoFerryRows, error) {
-	var row models.DTakoFerryRows
+func (r *DTakoFerryRowsProdRepositoryImpl) GetByID(id int32) (*mysql.DTakoFerryRows, error) {
+	var row mysql.DTakoFerryRows
 	if err := r.prodDB.DB.Where("id = ?", id).First(&row).Error; err != nil {
 		return nil, err
 	}
@@ -66,8 +66,8 @@ func (r *DTakoFerryRowsProdRepositoryImpl) GetByID(id int32) (*models.DTakoFerry
 }
 
 // GetByUnkoNo 運行NOでフェリー運行データを取得
-func (r *DTakoFerryRowsProdRepositoryImpl) GetByUnkoNo(unkoNo string) ([]*models.DTakoFerryRows, error) {
-	var rows []*models.DTakoFerryRows
+func (r *DTakoFerryRowsProdRepositoryImpl) GetByUnkoNo(unkoNo string) ([]*mysql.DTakoFerryRows, error) {
+	var rows []*mysql.DTakoFerryRows
 	if err := r.prodDB.DB.Where("運行NO = ?", unkoNo).Order("運行日 ASC").Find(&rows).Error; err != nil {
 		return nil, err
 	}
@@ -87,12 +87,12 @@ func NewDTakoRowsRepository(prodDB *config.ProdDatabase) DTakoRowsRepository {
 }
 
 // GetAll 全運行データを取得
-func (r *DTakoRowsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*models.DTakoRows, int64, error) {
-	var rows []*models.DTakoRows
+func (r *DTakoRowsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*mysql.DTakoRows, int64, error) {
+	var rows []*mysql.DTakoRows
 	var totalCount int64
 
 	// 総数取得
-	if err := r.prodDB.DB.Model(&models.DTakoRows{}).Count(&totalCount).Error; err != nil {
+	if err := r.prodDB.DB.Model(&mysql.DTakoRows{}).Count(&totalCount).Error; err != nil {
 		return nil, 0, err
 	}
 
@@ -110,8 +110,8 @@ func (r *DTakoRowsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*
 }
 
 // GetByID IDで運行データを取得
-func (r *DTakoRowsRepositoryImpl) GetByID(id string) (*models.DTakoRows, error) {
-	var row models.DTakoRows
+func (r *DTakoRowsRepositoryImpl) GetByID(id string) (*mysql.DTakoRows, error) {
+	var row mysql.DTakoRows
 	if err := r.prodDB.DB.Where("id = ?", id).First(&row).Error; err != nil {
 		return nil, err
 	}
@@ -119,8 +119,8 @@ func (r *DTakoRowsRepositoryImpl) GetByID(id string) (*models.DTakoRows, error) 
 }
 
 // GetByOperationNo 運行NOで運行データを取得
-func (r *DTakoRowsRepositoryImpl) GetByOperationNo(operationNo string) ([]*models.DTakoRows, error) {
-	var rows []*models.DTakoRows
+func (r *DTakoRowsRepositoryImpl) GetByOperationNo(operationNo string) ([]*mysql.DTakoRows, error) {
+	var rows []*mysql.DTakoRows
 	if err := r.prodDB.DB.Where("運行NO = ?", operationNo).Order("読取日 ASC").Find(&rows).Error; err != nil {
 		return nil, err
 	}
@@ -140,12 +140,12 @@ func NewETCNumRepository(prodDB *config.ProdDatabase) ETCNumRepository {
 }
 
 // GetAll 全ETCカード番号を取得
-func (r *ETCNumRepositoryImpl) GetAll(limit, offset int) ([]*models.ETCNum, int64, error) {
-	var etcNums []*models.ETCNum
+func (r *ETCNumRepositoryImpl) GetAll(limit, offset int) ([]*mysql.ETCNum, int64, error) {
+	var etcNums []*mysql.ETCNum
 	var totalCount int64
 
 	// 総数取得
-	if err := r.prodDB.DB.Model(&models.ETCNum{}).Count(&totalCount).Error; err != nil {
+	if err := r.prodDB.DB.Model(&mysql.ETCNum{}).Count(&totalCount).Error; err != nil {
 		return nil, 0, err
 	}
 
@@ -158,8 +158,8 @@ func (r *ETCNumRepositoryImpl) GetAll(limit, offset int) ([]*models.ETCNum, int6
 }
 
 // GetByETCCardNum ETCカード番号でデータを取得
-func (r *ETCNumRepositoryImpl) GetByETCCardNum(etcCardNum string) ([]*models.ETCNum, error) {
-	var etcNums []*models.ETCNum
+func (r *ETCNumRepositoryImpl) GetByETCCardNum(etcCardNum string) ([]*mysql.ETCNum, error) {
+	var etcNums []*mysql.ETCNum
 	if err := r.prodDB.DB.Where("etc_card_num = ?", etcCardNum).Find(&etcNums).Error; err != nil {
 		return nil, err
 	}
@@ -167,8 +167,8 @@ func (r *ETCNumRepositoryImpl) GetByETCCardNum(etcCardNum string) ([]*models.ETC
 }
 
 // GetByCarID 車輌IDでETCカード番号を取得
-func (r *ETCNumRepositoryImpl) GetByCarID(carID string) ([]*models.ETCNum, error) {
-	var etcNums []*models.ETCNum
+func (r *ETCNumRepositoryImpl) GetByCarID(carID string) ([]*mysql.ETCNum, error) {
+	var etcNums []*mysql.ETCNum
 	if err := r.prodDB.DB.Where("car_id = ?", carID).Find(&etcNums).Error; err != nil {
 		return nil, err
 	}
@@ -177,16 +177,16 @@ func (r *ETCNumRepositoryImpl) GetByCarID(carID string) ([]*models.ETCNum, error
 
 // CarsRepository インターフェース
 type CarsRepository interface {
-	GetAll(limit, offset int, orderBy string) ([]*models.Cars, int64, error)
-	GetByID(id string) (*models.Cars, error)
-	GetByBumonCodeID(bumonCodeID string) ([]*models.Cars, error)
+	GetAll(limit, offset int, orderBy string) ([]*mysql.Cars, int64, error)
+	GetByID(id string) (*mysql.Cars, error)
+	GetByBumonCodeID(bumonCodeID string) ([]*mysql.Cars, error)
 }
 
 // DriversRepository インターフェース
 type DriversRepository interface {
-	GetAll(limit, offset int, orderBy string) ([]*models.Drivers, int64, error)
-	GetByID(id int) (*models.Drivers, error)
-	GetByBumon(bumon string) ([]*models.Drivers, error)
+	GetAll(limit, offset int, orderBy string) ([]*mysql.Drivers, int64, error)
+	GetByID(id int) (*mysql.Drivers, error)
+	GetByBumon(bumon string) ([]*mysql.Drivers, error)
 }
 
 // CarsRepositoryImpl 実装
@@ -202,12 +202,12 @@ func NewCarsRepository(prodDB *config.ProdDatabase) CarsRepository {
 }
 
 // GetAll 全車両情報を取得
-func (r *CarsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*models.Cars, int64, error) {
-	var cars []*models.Cars
+func (r *CarsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*mysql.Cars, int64, error) {
+	var cars []*mysql.Cars
 	var totalCount int64
 
 	// 総数取得
-	if err := r.prodDB.DB.Model(&models.Cars{}).Count(&totalCount).Error; err != nil {
+	if err := r.prodDB.DB.Model(&mysql.Cars{}).Count(&totalCount).Error; err != nil {
 		return nil, 0, err
 	}
 
@@ -225,8 +225,8 @@ func (r *CarsRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*model
 }
 
 // GetByID IDで車両情報を取得
-func (r *CarsRepositoryImpl) GetByID(id string) (*models.Cars, error) {
-	var car models.Cars
+func (r *CarsRepositoryImpl) GetByID(id string) (*mysql.Cars, error) {
+	var car mysql.Cars
 	if err := r.prodDB.DB.Where("id = ?", id).First(&car).Error; err != nil {
 		return nil, err
 	}
@@ -234,8 +234,8 @@ func (r *CarsRepositoryImpl) GetByID(id string) (*models.Cars, error) {
 }
 
 // GetByBumonCodeID 部門コードで車両情報を取得
-func (r *CarsRepositoryImpl) GetByBumonCodeID(bumonCodeID string) ([]*models.Cars, error) {
-	var cars []*models.Cars
+func (r *CarsRepositoryImpl) GetByBumonCodeID(bumonCodeID string) ([]*mysql.Cars, error) {
+	var cars []*mysql.Cars
 	if err := r.prodDB.DB.Where("bumon_code_id = ?", bumonCodeID).Order("id ASC").Find(&cars).Error; err != nil {
 		return nil, err
 	}
@@ -255,12 +255,12 @@ func NewDriversRepository(prodDB *config.ProdDatabase) DriversRepository {
 }
 
 // GetAll 全ドライバー情報を取得
-func (r *DriversRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*models.Drivers, int64, error) {
-	var drivers []*models.Drivers
+func (r *DriversRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*mysql.Drivers, int64, error) {
+	var drivers []*mysql.Drivers
 	var totalCount int64
 
 	// 総数取得
-	if err := r.prodDB.DB.Model(&models.Drivers{}).Count(&totalCount).Error; err != nil {
+	if err := r.prodDB.DB.Model(&mysql.Drivers{}).Count(&totalCount).Error; err != nil {
 		return nil, 0, err
 	}
 
@@ -278,8 +278,8 @@ func (r *DriversRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*mo
 }
 
 // GetByID IDでドライバー情報を取得
-func (r *DriversRepositoryImpl) GetByID(id int) (*models.Drivers, error) {
-	var driver models.Drivers
+func (r *DriversRepositoryImpl) GetByID(id int) (*mysql.Drivers, error) {
+	var driver mysql.Drivers
 	if err := r.prodDB.DB.Where("id = ?", id).First(&driver).Error; err != nil {
 		return nil, err
 	}
@@ -287,8 +287,8 @@ func (r *DriversRepositoryImpl) GetByID(id int) (*models.Drivers, error) {
 }
 
 // GetByBumon 部門コードでドライバー情報を取得
-func (r *DriversRepositoryImpl) GetByBumon(bumon string) ([]*models.Drivers, error) {
-	var drivers []*models.Drivers
+func (r *DriversRepositoryImpl) GetByBumon(bumon string) ([]*mysql.Drivers, error) {
+	var drivers []*mysql.Drivers
 	if err := r.prodDB.DB.Where("bumon = ?", bumon).Order("id ASC").Find(&drivers).Error; err != nil {
 		return nil, err
 	}

@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -85,7 +85,7 @@ func (s *DriversService) GetByBumon(ctx context.Context, req *proto.GetDriversBy
 }
 
 // driversModelToProto ModelからProtoへの変換
-func driversModelToProto(model *models.Drivers) *proto.Drivers {
+func driversModelToProto(model *mysql.Drivers) *proto.Drivers {
 	protoDriver := &proto.Drivers{
 		Id:          int32(model.ID),
 		Bumon:       model.Bumon,

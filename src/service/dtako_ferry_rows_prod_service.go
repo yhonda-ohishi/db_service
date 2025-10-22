@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/yhonda-ohishi/db_service/src/models"
+	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
 	"google.golang.org/grpc/codes"
@@ -79,7 +79,7 @@ func (s *DTakoFerryRowsProdService) GetByUnkoNo(ctx context.Context, req *proto.
 }
 
 // dtakoFerryRowsProdModelToProto ModelからProtoへの変換
-func dtakoFerryRowsProdModelToProto(model *models.DTakoFerryRows) *proto.DTakoFerryRowsProd {
+func dtakoFerryRowsProdModelToProto(model *mysql.DTakoFerryRows) *proto.DTakoFerryRowsProd {
 	protoRow := &proto.DTakoFerryRowsProd{
 		Id:                int32(model.ID),
 		UnkoNo:            model.UnkoNo,
