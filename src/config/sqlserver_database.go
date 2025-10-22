@@ -23,6 +23,7 @@ func NewSQLServerDatabase() (*SQLServerDatabase, error) {
 	_ = godotenv.Load("../../.env")
 
 	host := os.Getenv("SQLSERVER_HOST")
+	instance := os.Getenv("SQLSERVER_INSTANCE")
 	user := os.Getenv("SQLSERVER_USER")
 	password := os.Getenv("SQLSERVER_PASSWORD")
 	database := os.Getenv("SQLSERVER_DATABASE")
@@ -31,8 +32,18 @@ func NewSQLServerDatabase() (*SQLServerDatabase, error) {
 		return nil, fmt.Errorf("SQL Server connection info not provided in environment variables")
 	}
 
-	// SQL Server接続文字列
-	dsn := fmt.Sprintf("sqlserver://%s:%s@%s?database=%s", user, password, host, database)
+	// SQL Server接続文字列の構築
+	// インスタンス名がある場合は "server\instance" 形式にする
+	serverAddress := host
+	if instance != "" {
+		serverAddress = fmt.Sprintf("%s\\%s", host, instance)
+	}
+
+	dsn := fmt.Sprintf("sqlserver://%s:%s@%s?database=%s",
+		user,
+		password,
+		serverAddress,
+		database)
 
 	db, err := gorm.Open(sqlserver.Open(dsn), &gorm.Config{})
 	if err != nil {
