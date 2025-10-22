@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/joho/godotenv"
 	"gorm.io/driver/sqlserver"
 	"gorm.io/gorm"
 )
@@ -16,6 +17,11 @@ type SQLServerDatabase struct {
 
 // NewSQLServerDatabase SQL Serverデータベース接続を初期化
 func NewSQLServerDatabase() (*SQLServerDatabase, error) {
+	// .envファイルの読み込み
+	_ = godotenv.Load()
+	_ = godotenv.Load("../.env")
+	_ = godotenv.Load("../../.env")
+
 	host := os.Getenv("SQLSERVER_HOST")
 	user := os.Getenv("SQLSERVER_USER")
 	password := os.Getenv("SQLSERVER_PASSWORD")

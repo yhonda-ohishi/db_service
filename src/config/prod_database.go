@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -17,6 +18,11 @@ type ProdDatabase struct {
 
 // NewProdDatabase 本番データベース接続の初期化
 func NewProdDatabase() (*ProdDatabase, error) {
+	// .envファイルの読み込み
+	_ = godotenv.Load()
+	_ = godotenv.Load("../.env")
+	_ = godotenv.Load("../../.env")
+
 	host := os.Getenv("PROD_DB_HOST")
 	port := os.Getenv("PROD_DB_PORT")
 	user := os.Getenv("PROD_DB_USER")
