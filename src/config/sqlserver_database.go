@@ -33,17 +33,22 @@ func NewSQLServerDatabase() (*SQLServerDatabase, error) {
 	}
 
 	// SQL Server接続文字列の構築
-	// インスタンス名がある場合は "server\instance" 形式にする
-	serverAddress := host
+	// URL形式ではバックスラッシュが使えないため、インスタンス名はクエリパラメータで指定
+	var dsn string
 	if instance != "" {
-		serverAddress = fmt.Sprintf("%s\\%s", host, instance)
+		dsn = fmt.Sprintf("sqlserver://%s:%s@%s?database=%s&instance=%s",
+			user,
+			password,
+			host,
+			database,
+			instance)
+	} else {
+		dsn = fmt.Sprintf("sqlserver://%s:%s@%s?database=%s",
+			user,
+			password,
+			host,
+			database)
 	}
-
-	dsn := fmt.Sprintf("sqlserver://%s:%s@%s?database=%s",
-		user,
-		password,
-		serverAddress,
-		database)
 
 	db, err := gorm.Open(sqlserver.Open(dsn), &gorm.Config{})
 	if err != nil {
