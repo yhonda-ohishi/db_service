@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: ryohi.proto
+// source: db_service.proto
 
 package proto
 
@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DTakoUriageKeihiService_Create_FullMethodName = "/ryohi.DTakoUriageKeihiService/Create"
-	DTakoUriageKeihiService_Get_FullMethodName    = "/ryohi.DTakoUriageKeihiService/Get"
-	DTakoUriageKeihiService_Update_FullMethodName = "/ryohi.DTakoUriageKeihiService/Update"
-	DTakoUriageKeihiService_Delete_FullMethodName = "/ryohi.DTakoUriageKeihiService/Delete"
-	DTakoUriageKeihiService_List_FullMethodName   = "/ryohi.DTakoUriageKeihiService/List"
+	DTakoUriageKeihiService_Create_FullMethodName = "/db_service.DTakoUriageKeihiService/Create"
+	DTakoUriageKeihiService_Get_FullMethodName    = "/db_service.DTakoUriageKeihiService/Get"
+	DTakoUriageKeihiService_Update_FullMethodName = "/db_service.DTakoUriageKeihiService/Update"
+	DTakoUriageKeihiService_Delete_FullMethodName = "/db_service.DTakoUriageKeihiService/Delete"
+	DTakoUriageKeihiService_List_FullMethodName   = "/db_service.DTakoUriageKeihiService/List"
 )
 
 // DTakoUriageKeihiServiceClient is the client API for DTakoUriageKeihiService service.
@@ -256,7 +256,7 @@ func _DTakoUriageKeihiService_List_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DTakoUriageKeihiService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.DTakoUriageKeihiService",
+	ServiceName: "db_service.DTakoUriageKeihiService",
 	HandlerType: (*DTakoUriageKeihiServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -281,15 +281,15 @@ var DTakoUriageKeihiService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	ETCMeisaiService_Create_FullMethodName = "/ryohi.ETCMeisaiService/Create"
-	ETCMeisaiService_Get_FullMethodName    = "/ryohi.ETCMeisaiService/Get"
-	ETCMeisaiService_Update_FullMethodName = "/ryohi.ETCMeisaiService/Update"
-	ETCMeisaiService_Delete_FullMethodName = "/ryohi.ETCMeisaiService/Delete"
-	ETCMeisaiService_List_FullMethodName   = "/ryohi.ETCMeisaiService/List"
+	ETCMeisaiService_Create_FullMethodName = "/db_service.ETCMeisaiService/Create"
+	ETCMeisaiService_Get_FullMethodName    = "/db_service.ETCMeisaiService/Get"
+	ETCMeisaiService_Update_FullMethodName = "/db_service.ETCMeisaiService/Update"
+	ETCMeisaiService_Delete_FullMethodName = "/db_service.ETCMeisaiService/Delete"
+	ETCMeisaiService_List_FullMethodName   = "/db_service.ETCMeisaiService/List"
 )
 
 // ETCMeisaiServiceClient is the client API for ETCMeisaiService service.
@@ -522,7 +522,7 @@ func _ETCMeisaiService_List_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ETCMeisaiService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.ETCMeisaiService",
+	ServiceName: "db_service.ETCMeisaiService",
 	HandlerType: (*ETCMeisaiServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -547,15 +547,15 @@ var ETCMeisaiService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	DTakoFerryRowsService_Create_FullMethodName = "/ryohi.DTakoFerryRowsService/Create"
-	DTakoFerryRowsService_Get_FullMethodName    = "/ryohi.DTakoFerryRowsService/Get"
-	DTakoFerryRowsService_Update_FullMethodName = "/ryohi.DTakoFerryRowsService/Update"
-	DTakoFerryRowsService_Delete_FullMethodName = "/ryohi.DTakoFerryRowsService/Delete"
-	DTakoFerryRowsService_List_FullMethodName   = "/ryohi.DTakoFerryRowsService/List"
+	DTakoFerryRowsService_Create_FullMethodName = "/db_service.DTakoFerryRowsService/Create"
+	DTakoFerryRowsService_Get_FullMethodName    = "/db_service.DTakoFerryRowsService/Get"
+	DTakoFerryRowsService_Update_FullMethodName = "/db_service.DTakoFerryRowsService/Update"
+	DTakoFerryRowsService_Delete_FullMethodName = "/db_service.DTakoFerryRowsService/Delete"
+	DTakoFerryRowsService_List_FullMethodName   = "/db_service.DTakoFerryRowsService/List"
 )
 
 // DTakoFerryRowsServiceClient is the client API for DTakoFerryRowsService service.
@@ -788,7 +788,7 @@ func _DTakoFerryRowsService_List_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DTakoFerryRowsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.DTakoFerryRowsService",
+	ServiceName: "db_service.DTakoFerryRowsService",
 	HandlerType: (*DTakoFerryRowsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -813,16 +813,16 @@ var DTakoFerryRowsService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	ETCMeisaiMappingService_Create_FullMethodName              = "/ryohi.ETCMeisaiMappingService/Create"
-	ETCMeisaiMappingService_Get_FullMethodName                 = "/ryohi.ETCMeisaiMappingService/Get"
-	ETCMeisaiMappingService_Update_FullMethodName              = "/ryohi.ETCMeisaiMappingService/Update"
-	ETCMeisaiMappingService_Delete_FullMethodName              = "/ryohi.ETCMeisaiMappingService/Delete"
-	ETCMeisaiMappingService_List_FullMethodName                = "/ryohi.ETCMeisaiMappingService/List"
-	ETCMeisaiMappingService_GetDTakoRowIDByHash_FullMethodName = "/ryohi.ETCMeisaiMappingService/GetDTakoRowIDByHash"
+	ETCMeisaiMappingService_Create_FullMethodName              = "/db_service.ETCMeisaiMappingService/Create"
+	ETCMeisaiMappingService_Get_FullMethodName                 = "/db_service.ETCMeisaiMappingService/Get"
+	ETCMeisaiMappingService_Update_FullMethodName              = "/db_service.ETCMeisaiMappingService/Update"
+	ETCMeisaiMappingService_Delete_FullMethodName              = "/db_service.ETCMeisaiMappingService/Delete"
+	ETCMeisaiMappingService_List_FullMethodName                = "/db_service.ETCMeisaiMappingService/List"
+	ETCMeisaiMappingService_GetDTakoRowIDByHash_FullMethodName = "/db_service.ETCMeisaiMappingService/GetDTakoRowIDByHash"
 )
 
 // ETCMeisaiMappingServiceClient is the client API for ETCMeisaiMappingService service.
@@ -1090,7 +1090,7 @@ func _ETCMeisaiMappingService_GetDTakoRowIDByHash_Handler(srv interface{}, ctx c
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ETCMeisaiMappingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.ETCMeisaiMappingService",
+	ServiceName: "db_service.ETCMeisaiMappingService",
 	HandlerType: (*ETCMeisaiMappingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1119,13 +1119,13 @@ var ETCMeisaiMappingService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	DTakoCarsService_Get_FullMethodName          = "/ryohi.DTakoCarsService/Get"
-	DTakoCarsService_List_FullMethodName         = "/ryohi.DTakoCarsService/List"
-	DTakoCarsService_GetByCarCode_FullMethodName = "/ryohi.DTakoCarsService/GetByCarCode"
+	DTakoCarsService_Get_FullMethodName          = "/db_service.DTakoCarsService/Get"
+	DTakoCarsService_List_FullMethodName         = "/db_service.DTakoCarsService/List"
+	DTakoCarsService_GetByCarCode_FullMethodName = "/db_service.DTakoCarsService/GetByCarCode"
 )
 
 // DTakoCarsServiceClient is the client API for DTakoCarsService service.
@@ -1288,7 +1288,7 @@ func _DTakoCarsService_GetByCarCode_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DTakoCarsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.DTakoCarsService",
+	ServiceName: "db_service.DTakoCarsService",
 	HandlerType: (*DTakoCarsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1305,13 +1305,13 @@ var DTakoCarsService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	DTakoEventsService_Get_FullMethodName              = "/ryohi.DTakoEventsService/Get"
-	DTakoEventsService_List_FullMethodName             = "/ryohi.DTakoEventsService/List"
-	DTakoEventsService_GetByOperationNo_FullMethodName = "/ryohi.DTakoEventsService/GetByOperationNo"
+	DTakoEventsService_Get_FullMethodName              = "/db_service.DTakoEventsService/Get"
+	DTakoEventsService_List_FullMethodName             = "/db_service.DTakoEventsService/List"
+	DTakoEventsService_GetByOperationNo_FullMethodName = "/db_service.DTakoEventsService/GetByOperationNo"
 )
 
 // DTakoEventsServiceClient is the client API for DTakoEventsService service.
@@ -1474,7 +1474,7 @@ func _DTakoEventsService_GetByOperationNo_Handler(srv interface{}, ctx context.C
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DTakoEventsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.DTakoEventsService",
+	ServiceName: "db_service.DTakoEventsService",
 	HandlerType: (*DTakoEventsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1491,13 +1491,13 @@ var DTakoEventsService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	DTakoRowsService_Get_FullMethodName              = "/ryohi.DTakoRowsService/Get"
-	DTakoRowsService_List_FullMethodName             = "/ryohi.DTakoRowsService/List"
-	DTakoRowsService_GetByOperationNo_FullMethodName = "/ryohi.DTakoRowsService/GetByOperationNo"
+	DTakoRowsService_Get_FullMethodName              = "/db_service.DTakoRowsService/Get"
+	DTakoRowsService_List_FullMethodName             = "/db_service.DTakoRowsService/List"
+	DTakoRowsService_GetByOperationNo_FullMethodName = "/db_service.DTakoRowsService/GetByOperationNo"
 )
 
 // DTakoRowsServiceClient is the client API for DTakoRowsService service.
@@ -1660,7 +1660,7 @@ func _DTakoRowsService_GetByOperationNo_Handler(srv interface{}, ctx context.Con
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DTakoRowsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.DTakoRowsService",
+	ServiceName: "db_service.DTakoRowsService",
 	HandlerType: (*DTakoRowsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1677,13 +1677,13 @@ var DTakoRowsService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	ETCNumService_List_FullMethodName            = "/ryohi.ETCNumService/List"
-	ETCNumService_GetByETCCardNum_FullMethodName = "/ryohi.ETCNumService/GetByETCCardNum"
-	ETCNumService_GetByCarID_FullMethodName      = "/ryohi.ETCNumService/GetByCarID"
+	ETCNumService_List_FullMethodName            = "/db_service.ETCNumService/List"
+	ETCNumService_GetByETCCardNum_FullMethodName = "/db_service.ETCNumService/GetByETCCardNum"
+	ETCNumService_GetByCarID_FullMethodName      = "/db_service.ETCNumService/GetByCarID"
 )
 
 // ETCNumServiceClient is the client API for ETCNumService service.
@@ -1846,7 +1846,7 @@ func _ETCNumService_GetByCarID_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ETCNumService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.ETCNumService",
+	ServiceName: "db_service.ETCNumService",
 	HandlerType: (*ETCNumServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1863,13 +1863,13 @@ var ETCNumService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	DTakoFerryRowsProdService_Get_FullMethodName         = "/ryohi.DTakoFerryRowsProdService/Get"
-	DTakoFerryRowsProdService_List_FullMethodName        = "/ryohi.DTakoFerryRowsProdService/List"
-	DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName = "/ryohi.DTakoFerryRowsProdService/GetByUnkoNo"
+	DTakoFerryRowsProdService_Get_FullMethodName         = "/db_service.DTakoFerryRowsProdService/Get"
+	DTakoFerryRowsProdService_List_FullMethodName        = "/db_service.DTakoFerryRowsProdService/List"
+	DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName = "/db_service.DTakoFerryRowsProdService/GetByUnkoNo"
 )
 
 // DTakoFerryRowsProdServiceClient is the client API for DTakoFerryRowsProdService service.
@@ -2032,7 +2032,7 @@ func _DTakoFerryRowsProdService_GetByUnkoNo_Handler(srv interface{}, ctx context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DTakoFerryRowsProdService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.DTakoFerryRowsProdService",
+	ServiceName: "db_service.DTakoFerryRowsProdService",
 	HandlerType: (*DTakoFerryRowsProdServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2049,13 +2049,13 @@ var DTakoFerryRowsProdService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	CarsService_Get_FullMethodName              = "/ryohi.CarsService/Get"
-	CarsService_List_FullMethodName             = "/ryohi.CarsService/List"
-	CarsService_GetByBumonCodeID_FullMethodName = "/ryohi.CarsService/GetByBumonCodeID"
+	CarsService_Get_FullMethodName              = "/db_service.CarsService/Get"
+	CarsService_List_FullMethodName             = "/db_service.CarsService/List"
+	CarsService_GetByBumonCodeID_FullMethodName = "/db_service.CarsService/GetByBumonCodeID"
 )
 
 // CarsServiceClient is the client API for CarsService service.
@@ -2218,7 +2218,7 @@ func _CarsService_GetByBumonCodeID_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var CarsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.CarsService",
+	ServiceName: "db_service.CarsService",
 	HandlerType: (*CarsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2235,13 +2235,13 @@ var CarsService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	DriversService_Get_FullMethodName        = "/ryohi.DriversService/Get"
-	DriversService_List_FullMethodName       = "/ryohi.DriversService/List"
-	DriversService_GetByBumon_FullMethodName = "/ryohi.DriversService/GetByBumon"
+	DriversService_Get_FullMethodName        = "/db_service.DriversService/Get"
+	DriversService_List_FullMethodName       = "/db_service.DriversService/List"
+	DriversService_GetByBumon_FullMethodName = "/db_service.DriversService/GetByBumon"
 )
 
 // DriversServiceClient is the client API for DriversService service.
@@ -2404,7 +2404,7 @@ func _DriversService_GetByBumon_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var DriversService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.DriversService",
+	ServiceName: "db_service.DriversService",
 	HandlerType: (*DriversServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2421,14 +2421,14 @@ var DriversService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	UntenNippoMeisaiService_Get_FullMethodName            = "/ryohi.UntenNippoMeisaiService/Get"
-	UntenNippoMeisaiService_List_FullMethodName           = "/ryohi.UntenNippoMeisaiService/List"
-	UntenNippoMeisaiService_GetBySharyoC_FullMethodName   = "/ryohi.UntenNippoMeisaiService/GetBySharyoC"
-	UntenNippoMeisaiService_GetByDateRange_FullMethodName = "/ryohi.UntenNippoMeisaiService/GetByDateRange"
+	UntenNippoMeisaiService_Get_FullMethodName            = "/db_service.UntenNippoMeisaiService/Get"
+	UntenNippoMeisaiService_List_FullMethodName           = "/db_service.UntenNippoMeisaiService/List"
+	UntenNippoMeisaiService_GetBySharyoC_FullMethodName   = "/db_service.UntenNippoMeisaiService/GetBySharyoC"
+	UntenNippoMeisaiService_GetByDateRange_FullMethodName = "/db_service.UntenNippoMeisaiService/GetByDateRange"
 )
 
 // UntenNippoMeisaiServiceClient is the client API for UntenNippoMeisaiService service.
@@ -2618,7 +2618,7 @@ func _UntenNippoMeisaiService_GetByDateRange_Handler(srv interface{}, ctx contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UntenNippoMeisaiService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.UntenNippoMeisaiService",
+	ServiceName: "db_service.UntenNippoMeisaiService",
 	HandlerType: (*UntenNippoMeisaiServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2639,13 +2639,13 @@ var UntenNippoMeisaiService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	ShainMasterService_Get_FullMethodName         = "/ryohi.ShainMasterService/Get"
-	ShainMasterService_List_FullMethodName        = "/ryohi.ShainMasterService/List"
-	ShainMasterService_GetByBumonC_FullMethodName = "/ryohi.ShainMasterService/GetByBumonC"
+	ShainMasterService_Get_FullMethodName         = "/db_service.ShainMasterService/Get"
+	ShainMasterService_List_FullMethodName        = "/db_service.ShainMasterService/List"
+	ShainMasterService_GetByBumonC_FullMethodName = "/db_service.ShainMasterService/GetByBumonC"
 )
 
 // ShainMasterServiceClient is the client API for ShainMasterService service.
@@ -2802,7 +2802,7 @@ func _ShainMasterService_GetByBumonC_Handler(srv interface{}, ctx context.Contex
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ShainMasterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.ShainMasterService",
+	ServiceName: "db_service.ShainMasterService",
 	HandlerType: (*ShainMasterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2819,12 +2819,12 @@ var ShainMasterService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	ChiikiMasterService_Get_FullMethodName  = "/ryohi.ChiikiMasterService/Get"
-	ChiikiMasterService_List_FullMethodName = "/ryohi.ChiikiMasterService/List"
+	ChiikiMasterService_Get_FullMethodName  = "/db_service.ChiikiMasterService/Get"
+	ChiikiMasterService_List_FullMethodName = "/db_service.ChiikiMasterService/List"
 )
 
 // ChiikiMasterServiceClient is the client API for ChiikiMasterService service.
@@ -2948,7 +2948,7 @@ func _ChiikiMasterService_List_Handler(srv interface{}, ctx context.Context, dec
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ChiikiMasterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.ChiikiMasterService",
+	ServiceName: "db_service.ChiikiMasterService",
 	HandlerType: (*ChiikiMasterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2961,13 +2961,13 @@ var ChiikiMasterService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }
 
 const (
-	ChikuMasterService_Get_FullMethodName          = "/ryohi.ChikuMasterService/Get"
-	ChikuMasterService_List_FullMethodName         = "/ryohi.ChikuMasterService/List"
-	ChikuMasterService_GetByChiikiC_FullMethodName = "/ryohi.ChikuMasterService/GetByChiikiC"
+	ChikuMasterService_Get_FullMethodName          = "/db_service.ChikuMasterService/Get"
+	ChikuMasterService_List_FullMethodName         = "/db_service.ChikuMasterService/List"
+	ChikuMasterService_GetByChiikiC_FullMethodName = "/db_service.ChikuMasterService/GetByChiikiC"
 )
 
 // ChikuMasterServiceClient is the client API for ChikuMasterService service.
@@ -3124,7 +3124,7 @@ func _ChikuMasterService_GetByChiikiC_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ChikuMasterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "ryohi.ChikuMasterService",
+	ServiceName: "db_service.ChikuMasterService",
 	HandlerType: (*ChikuMasterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -3141,5 +3141,5 @@ var ChikuMasterService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "ryohi.proto",
+	Metadata: "db_service.proto",
 }

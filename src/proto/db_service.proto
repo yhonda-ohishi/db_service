@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ryohi;
+package db_service;
 
 import "google/api/annotations.proto";
 

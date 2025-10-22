@@ -1,4 +1,5 @@
 version: v1
+name: buf.build/yhonda-ohishi/db-service
 deps:
   - buf.build/googleapis/googleapis
 breaking:

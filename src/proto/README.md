@@ -4,7 +4,7 @@
 
 ## 概要
 
-- **パッケージ名**: `ryohi`
+- **パッケージ名**: `db_service`
 - **Go パッケージ**: `github.com/yhonda-ohishi/db_service/src/proto`
 - **Protocol Buffers バージョン**: proto3
 
@@ -46,7 +46,7 @@ import (
 他のプロジェクトからこのproto定義を使用する場合：
 
 ```protobuf
-import "ryohi.proto";
+import "db_service.proto";
 ```
 
 ### Bufを使用したコード生成

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "ryohi.proto",
+    "title": "db_service.proto",
     "version": "version not set"
   },
   "tags": [
@@ -66,7 +66,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListCarsResponse"
+              "$ref": "#/definitions/db_serviceListCarsResponse"
             }
           },
           "default": {
@@ -112,7 +112,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListCarsResponse"
+              "$ref": "#/definitions/db_serviceListCarsResponse"
             }
           },
           "default": {
@@ -143,7 +143,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiCarsResponse"
+              "$ref": "#/definitions/db_serviceCarsResponse"
             }
           },
           "default": {
@@ -173,7 +173,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListChiikiMasterResponse"
+              "$ref": "#/definitions/db_serviceListChiikiMasterResponse"
             }
           },
           "default": {
@@ -217,7 +217,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiChiikiMasterResponse"
+              "$ref": "#/definitions/db_serviceChiikiMasterResponse"
             }
           },
           "default": {
@@ -247,7 +247,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListChikuMasterResponse"
+              "$ref": "#/definitions/db_serviceListChikuMasterResponse"
             }
           },
           "default": {
@@ -291,7 +291,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListChikuMasterResponse"
+              "$ref": "#/definitions/db_serviceListChikuMasterResponse"
             }
           },
           "default": {
@@ -321,7 +321,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiChikuMasterResponse"
+              "$ref": "#/definitions/db_serviceChikuMasterResponse"
             }
           },
           "default": {
@@ -352,7 +352,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDriversResponse"
+              "$ref": "#/definitions/db_serviceListDriversResponse"
             }
           },
           "default": {
@@ -398,7 +398,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDriversResponse"
+              "$ref": "#/definitions/db_serviceListDriversResponse"
             }
           },
           "default": {
@@ -429,7 +429,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDriversResponse"
+              "$ref": "#/definitions/db_serviceDriversResponse"
             }
           },
           "default": {
@@ -461,7 +461,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDTakoCarsResponse"
+              "$ref": "#/definitions/db_serviceListDTakoCarsResponse"
             }
           },
           "default": {
@@ -500,7 +500,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoCarsResponse"
+              "$ref": "#/definitions/db_serviceDTakoCarsResponse"
             }
           },
           "default": {
@@ -531,7 +531,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoCarsResponse"
+              "$ref": "#/definitions/db_serviceDTakoCarsResponse"
             }
           },
           "default": {
@@ -563,7 +563,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDTakoEventsResponse"
+              "$ref": "#/definitions/db_serviceListDTakoEventsResponse"
             }
           },
           "default": {
@@ -609,7 +609,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDTakoEventsResponse"
+              "$ref": "#/definitions/db_serviceListDTakoEventsResponse"
             }
           },
           "default": {
@@ -640,7 +640,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoEventsResponse"
+              "$ref": "#/definitions/db_serviceDTakoEventsResponse"
             }
           },
           "default": {
@@ -672,7 +672,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDTakoFerryRowsResponse"
+              "$ref": "#/definitions/db_serviceListDTakoFerryRowsResponse"
             }
           },
           "default": {
@@ -727,7 +727,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoFerryRowsResponse"
+              "$ref": "#/definitions/db_serviceDTakoFerryRowsResponse"
             }
           },
           "default": {
@@ -743,7 +743,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoFerryRows"
+              "$ref": "#/definitions/db_serviceDTakoFerryRows"
             }
           }
         ],
@@ -760,7 +760,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDTakoFerryRowsProdResponse"
+              "$ref": "#/definitions/db_serviceListDTakoFerryRowsProdResponse"
             }
           },
           "default": {
@@ -799,7 +799,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDTakoFerryRowsProdResponse"
+              "$ref": "#/definitions/db_serviceListDTakoFerryRowsProdResponse"
             }
           },
           "default": {
@@ -830,7 +830,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoFerryRowsProdResponse"
+              "$ref": "#/definitions/db_serviceDTakoFerryRowsProdResponse"
             }
           },
           "default": {
@@ -862,7 +862,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoFerryRowsResponse"
+              "$ref": "#/definitions/db_serviceDTakoFerryRowsResponse"
             }
           },
           "default": {
@@ -1026,7 +1026,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoFerryRowsResponse"
+              "$ref": "#/definitions/db_serviceDTakoFerryRowsResponse"
             }
           },
           "default": {
@@ -1056,7 +1056,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiEmpty"
+              "$ref": "#/definitions/db_serviceEmpty"
             }
           },
           "default": {
@@ -1088,7 +1088,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDTakoRowsResponse"
+              "$ref": "#/definitions/db_serviceListDTakoRowsResponse"
             }
           },
           "default": {
@@ -1134,7 +1134,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDTakoRowsResponse"
+              "$ref": "#/definitions/db_serviceListDTakoRowsResponse"
             }
           },
           "default": {
@@ -1165,7 +1165,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoRowsResponse"
+              "$ref": "#/definitions/db_serviceDTakoRowsResponse"
             }
           },
           "default": {
@@ -1196,7 +1196,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListDTakoUriageKeihiResponse"
+              "$ref": "#/definitions/db_serviceListDTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1251,7 +1251,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoUriageKeihiResponse"
+              "$ref": "#/definitions/db_serviceDTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1267,7 +1267,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoUriageKeihi"
+              "$ref": "#/definitions/db_serviceDTakoUriageKeihi"
             }
           }
         ],
@@ -1284,7 +1284,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoUriageKeihiResponse"
+              "$ref": "#/definitions/db_serviceDTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1373,7 +1373,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiDTakoUriageKeihiResponse"
+              "$ref": "#/definitions/db_serviceDTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1415,7 +1415,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiEmpty"
+              "$ref": "#/definitions/db_serviceEmpty"
             }
           },
           "default": {
@@ -1459,7 +1459,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListETCMeisaiResponse"
+              "$ref": "#/definitions/db_serviceListETCMeisaiResponse"
             }
           },
           "default": {
@@ -1514,7 +1514,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiETCMeisaiResponse"
+              "$ref": "#/definitions/db_serviceETCMeisaiResponse"
             }
           },
           "default": {
@@ -1530,7 +1530,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ryohiETCMeisai"
+              "$ref": "#/definitions/db_serviceETCMeisai"
             }
           }
         ],
@@ -1547,7 +1547,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListETCMeisaiMappingResponse"
+              "$ref": "#/definitions/db_serviceListETCMeisaiMappingResponse"
             }
           },
           "default": {
@@ -1596,7 +1596,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiETCMeisaiMappingResponse"
+              "$ref": "#/definitions/db_serviceETCMeisaiMappingResponse"
             }
           },
           "default": {
@@ -1612,7 +1612,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ryohiETCMeisaiMapping"
+              "$ref": "#/definitions/db_serviceETCMeisaiMapping"
             }
           }
         ],
@@ -1629,7 +1629,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiGetDTakoRowIDByHashResponse"
+              "$ref": "#/definitions/db_serviceGetDTakoRowIDByHashResponse"
             }
           },
           "default": {
@@ -1660,7 +1660,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiETCMeisaiMappingResponse"
+              "$ref": "#/definitions/db_serviceETCMeisaiMappingResponse"
             }
           },
           "default": {
@@ -1722,7 +1722,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiETCMeisaiMappingResponse"
+              "$ref": "#/definitions/db_serviceETCMeisaiMappingResponse"
             }
           },
           "default": {
@@ -1752,7 +1752,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiEmpty"
+              "$ref": "#/definitions/db_serviceEmpty"
             }
           },
           "default": {
@@ -1784,7 +1784,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiETCMeisaiResponse"
+              "$ref": "#/definitions/db_serviceETCMeisaiResponse"
             }
           },
           "default": {
@@ -1876,7 +1876,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiETCMeisaiResponse"
+              "$ref": "#/definitions/db_serviceETCMeisaiResponse"
             }
           },
           "default": {
@@ -1906,7 +1906,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiEmpty"
+              "$ref": "#/definitions/db_serviceEmpty"
             }
           },
           "default": {
@@ -1938,7 +1938,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListETCNumResponse"
+              "$ref": "#/definitions/db_serviceListETCNumResponse"
             }
           },
           "default": {
@@ -1977,7 +1977,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListETCNumResponse"
+              "$ref": "#/definitions/db_serviceListETCNumResponse"
             }
           },
           "default": {
@@ -2008,7 +2008,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListETCNumResponse"
+              "$ref": "#/definitions/db_serviceListETCNumResponse"
             }
           },
           "default": {
@@ -2038,7 +2038,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListShainMasterResponse"
+              "$ref": "#/definitions/db_serviceListShainMasterResponse"
             }
           },
           "default": {
@@ -2082,7 +2082,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListShainMasterResponse"
+              "$ref": "#/definitions/db_serviceListShainMasterResponse"
             }
           },
           "default": {
@@ -2112,7 +2112,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiShainMasterResponse"
+              "$ref": "#/definitions/db_serviceShainMasterResponse"
             }
           },
           "default": {
@@ -2142,7 +2142,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListUntenNippoMeisaiResponse"
+              "$ref": "#/definitions/db_serviceListUntenNippoMeisaiResponse"
             }
           },
           "default": {
@@ -2186,7 +2186,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListUntenNippoMeisaiResponse"
+              "$ref": "#/definitions/db_serviceListUntenNippoMeisaiResponse"
             }
           },
           "default": {
@@ -2236,7 +2236,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiListUntenNippoMeisaiResponse"
+              "$ref": "#/definitions/db_serviceListUntenNippoMeisaiResponse"
             }
           },
           "default": {
@@ -2273,7 +2273,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/ryohiUntenNippoMeisaiResponse"
+              "$ref": "#/definitions/db_serviceUntenNippoMeisaiResponse"
             }
           },
           "default": {
@@ -2310,35 +2310,7 @@
     }
   },
   "definitions": {
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "ryohiCars": {
+    "db_serviceCars": {
       "type": "object",
       "properties": {
         "id": {
@@ -2425,15 +2397,15 @@
       },
       "title": "Cars メッセージ"
     },
-    "ryohiCarsResponse": {
+    "db_serviceCarsResponse": {
       "type": "object",
       "properties": {
         "cars": {
-          "$ref": "#/definitions/ryohiCars"
+          "$ref": "#/definitions/db_serviceCars"
         }
       }
     },
-    "ryohiChiikiMaster": {
+    "db_serviceChiikiMaster": {
       "type": "object",
       "properties": {
         "chiikiC": {
@@ -2451,15 +2423,15 @@
       },
       "title": "ChiikiMaster メッセージ（4カラム全て）"
     },
-    "ryohiChiikiMasterResponse": {
+    "db_serviceChiikiMasterResponse": {
       "type": "object",
       "properties": {
         "chiikiMaster": {
-          "$ref": "#/definitions/ryohiChiikiMaster"
+          "$ref": "#/definitions/db_serviceChiikiMaster"
         }
       }
     },
-    "ryohiChikuMaster": {
+    "db_serviceChikuMaster": {
       "type": "object",
       "properties": {
         "chikuC": {
@@ -2525,15 +2497,15 @@
       },
       "title": "ChikuMaster メッセージ（20カラム全て）"
     },
-    "ryohiChikuMasterResponse": {
+    "db_serviceChikuMasterResponse": {
       "type": "object",
       "properties": {
         "chikuMaster": {
-          "$ref": "#/definitions/ryohiChikuMaster"
+          "$ref": "#/definitions/db_serviceChikuMaster"
         }
       }
     },
-    "ryohiDTakoCars": {
+    "db_serviceDTakoCars": {
       "type": "object",
       "properties": {
         "id": {
@@ -2600,15 +2572,15 @@
       },
       "title": "車輌マスタデータ（本番DB）"
     },
-    "ryohiDTakoCarsResponse": {
+    "db_serviceDTakoCarsResponse": {
       "type": "object",
       "properties": {
         "dtakoCars": {
-          "$ref": "#/definitions/ryohiDTakoCars"
+          "$ref": "#/definitions/db_serviceDTakoCars"
         }
       }
     },
-    "ryohiDTakoEvents": {
+    "db_serviceDTakoEvents": {
       "type": "object",
       "properties": {
         "id": {
@@ -2727,15 +2699,15 @@
       },
       "title": "イベント情報データ（本番DB）"
     },
-    "ryohiDTakoEventsResponse": {
+    "db_serviceDTakoEventsResponse": {
       "type": "object",
       "properties": {
         "dtakoEvents": {
-          "$ref": "#/definitions/ryohiDTakoEvents"
+          "$ref": "#/definitions/db_serviceDTakoEvents"
         }
       }
     },
-    "ryohiDTakoFerryRows": {
+    "db_serviceDTakoFerryRows": {
       "type": "object",
       "properties": {
         "id": {
@@ -2865,7 +2837,7 @@
       },
       "title": "フェリー運行データ"
     },
-    "ryohiDTakoFerryRowsProd": {
+    "db_serviceDTakoFerryRowsProd": {
       "type": "object",
       "properties": {
         "id": {
@@ -2972,23 +2944,23 @@
       },
       "title": "DTakoFerryRowsProd（本番DB）データ"
     },
-    "ryohiDTakoFerryRowsProdResponse": {
+    "db_serviceDTakoFerryRowsProdResponse": {
       "type": "object",
       "properties": {
         "dtakoFerryRows": {
-          "$ref": "#/definitions/ryohiDTakoFerryRowsProd"
+          "$ref": "#/definitions/db_serviceDTakoFerryRowsProd"
         }
       }
     },
-    "ryohiDTakoFerryRowsResponse": {
+    "db_serviceDTakoFerryRowsResponse": {
       "type": "object",
       "properties": {
         "dtakoFerryRows": {
-          "$ref": "#/definitions/ryohiDTakoFerryRows"
+          "$ref": "#/definitions/db_serviceDTakoFerryRows"
         }
       }
     },
-    "ryohiDTakoRows": {
+    "db_serviceDTakoRows": {
       "type": "object",
       "properties": {
         "id": {
@@ -3109,15 +3081,15 @@
       },
       "title": "運行データ（本番DB）"
     },
-    "ryohiDTakoRowsResponse": {
+    "db_serviceDTakoRowsResponse": {
       "type": "object",
       "properties": {
         "dtakoRows": {
-          "$ref": "#/definitions/ryohiDTakoRows"
+          "$ref": "#/definitions/db_serviceDTakoRows"
         }
       }
     },
-    "ryohiDTakoUriageKeihi": {
+    "db_serviceDTakoUriageKeihi": {
       "type": "object",
       "properties": {
         "srchId": {
@@ -3172,15 +3144,15 @@
       },
       "title": "経費精算データ"
     },
-    "ryohiDTakoUriageKeihiResponse": {
+    "db_serviceDTakoUriageKeihiResponse": {
       "type": "object",
       "properties": {
         "dtakoUriageKeihi": {
-          "$ref": "#/definitions/ryohiDTakoUriageKeihi"
+          "$ref": "#/definitions/db_serviceDTakoUriageKeihi"
         }
       }
     },
-    "ryohiDrivers": {
+    "db_serviceDrivers": {
       "type": "object",
       "properties": {
         "id": {
@@ -3221,15 +3193,15 @@
       },
       "title": "Drivers メッセージ"
     },
-    "ryohiDriversResponse": {
+    "db_serviceDriversResponse": {
       "type": "object",
       "properties": {
         "drivers": {
-          "$ref": "#/definitions/ryohiDrivers"
+          "$ref": "#/definitions/db_serviceDrivers"
         }
       }
     },
-    "ryohiETCMeisai": {
+    "db_serviceETCMeisai": {
       "type": "object",
       "properties": {
         "id": {
@@ -3287,7 +3259,7 @@
       },
       "title": "ETC明細データ"
     },
-    "ryohiETCMeisaiMapping": {
+    "db_serviceETCMeisaiMapping": {
       "type": "object",
       "properties": {
         "id": {
@@ -3315,23 +3287,23 @@
       },
       "title": "ETC明細マッピングデータ"
     },
-    "ryohiETCMeisaiMappingResponse": {
+    "db_serviceETCMeisaiMappingResponse": {
       "type": "object",
       "properties": {
         "etcMeisaiMapping": {
-          "$ref": "#/definitions/ryohiETCMeisaiMapping"
+          "$ref": "#/definitions/db_serviceETCMeisaiMapping"
         }
       }
     },
-    "ryohiETCMeisaiResponse": {
+    "db_serviceETCMeisaiResponse": {
       "type": "object",
       "properties": {
         "etcMeisai": {
-          "$ref": "#/definitions/ryohiETCMeisai"
+          "$ref": "#/definitions/db_serviceETCMeisai"
         }
       }
     },
-    "ryohiETCNum": {
+    "db_serviceETCNum": {
       "type": "object",
       "properties": {
         "etcCardNum": {
@@ -3354,11 +3326,11 @@
       },
       "title": "ETCカード番号データ（本番DB）"
     },
-    "ryohiEmpty": {
+    "db_serviceEmpty": {
       "type": "object",
       "title": "共通メッセージ"
     },
-    "ryohiGetDTakoRowIDByHashResponse": {
+    "db_serviceGetDTakoRowIDByHashResponse": {
       "type": "object",
       "properties": {
         "dtakoRowIds": {
@@ -3369,14 +3341,14 @@
         }
       }
     },
-    "ryohiListCarsResponse": {
+    "db_serviceListCarsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiCars"
+            "$ref": "#/definitions/db_serviceCars"
           }
         },
         "totalCount": {
@@ -3385,14 +3357,14 @@
         }
       }
     },
-    "ryohiListChiikiMasterResponse": {
+    "db_serviceListChiikiMasterResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiChiikiMaster"
+            "$ref": "#/definitions/db_serviceChiikiMaster"
           }
         },
         "totalCount": {
@@ -3401,14 +3373,14 @@
         }
       }
     },
-    "ryohiListChikuMasterResponse": {
+    "db_serviceListChikuMasterResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiChikuMaster"
+            "$ref": "#/definitions/db_serviceChikuMaster"
           }
         },
         "totalCount": {
@@ -3417,14 +3389,14 @@
         }
       }
     },
-    "ryohiListDTakoCarsResponse": {
+    "db_serviceListDTakoCarsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiDTakoCars"
+            "$ref": "#/definitions/db_serviceDTakoCars"
           }
         },
         "totalCount": {
@@ -3433,14 +3405,14 @@
         }
       }
     },
-    "ryohiListDTakoEventsResponse": {
+    "db_serviceListDTakoEventsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiDTakoEvents"
+            "$ref": "#/definitions/db_serviceDTakoEvents"
           }
         },
         "totalCount": {
@@ -3449,14 +3421,14 @@
         }
       }
     },
-    "ryohiListDTakoFerryRowsProdResponse": {
+    "db_serviceListDTakoFerryRowsProdResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiDTakoFerryRowsProd"
+            "$ref": "#/definitions/db_serviceDTakoFerryRowsProd"
           }
         },
         "totalCount": {
@@ -3465,14 +3437,14 @@
         }
       }
     },
-    "ryohiListDTakoFerryRowsResponse": {
+    "db_serviceListDTakoFerryRowsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiDTakoFerryRows"
+            "$ref": "#/definitions/db_serviceDTakoFerryRows"
           }
         },
         "totalCount": {
@@ -3481,14 +3453,14 @@
         }
       }
     },
-    "ryohiListDTakoRowsResponse": {
+    "db_serviceListDTakoRowsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiDTakoRows"
+            "$ref": "#/definitions/db_serviceDTakoRows"
           }
         },
         "totalCount": {
@@ -3497,14 +3469,14 @@
         }
       }
     },
-    "ryohiListDTakoUriageKeihiResponse": {
+    "db_serviceListDTakoUriageKeihiResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiDTakoUriageKeihi"
+            "$ref": "#/definitions/db_serviceDTakoUriageKeihi"
           }
         },
         "totalCount": {
@@ -3513,14 +3485,14 @@
         }
       }
     },
-    "ryohiListDriversResponse": {
+    "db_serviceListDriversResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiDrivers"
+            "$ref": "#/definitions/db_serviceDrivers"
           }
         },
         "totalCount": {
@@ -3529,14 +3501,14 @@
         }
       }
     },
-    "ryohiListETCMeisaiMappingResponse": {
+    "db_serviceListETCMeisaiMappingResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiETCMeisaiMapping"
+            "$ref": "#/definitions/db_serviceETCMeisaiMapping"
           }
         },
         "totalCount": {
@@ -3545,14 +3517,14 @@
         }
       }
     },
-    "ryohiListETCMeisaiResponse": {
+    "db_serviceListETCMeisaiResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiETCMeisai"
+            "$ref": "#/definitions/db_serviceETCMeisai"
           }
         },
         "totalCount": {
@@ -3561,14 +3533,14 @@
         }
       }
     },
-    "ryohiListETCNumResponse": {
+    "db_serviceListETCNumResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiETCNum"
+            "$ref": "#/definitions/db_serviceETCNum"
           }
         },
         "totalCount": {
@@ -3577,14 +3549,14 @@
         }
       }
     },
-    "ryohiListShainMasterResponse": {
+    "db_serviceListShainMasterResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiShainMaster"
+            "$ref": "#/definitions/db_serviceShainMaster"
           }
         },
         "totalCount": {
@@ -3593,14 +3565,14 @@
         }
       }
     },
-    "ryohiListUntenNippoMeisaiResponse": {
+    "db_serviceListUntenNippoMeisaiResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/ryohiUntenNippoMeisai"
+            "$ref": "#/definitions/db_serviceUntenNippoMeisai"
           }
         },
         "totalCount": {
@@ -3609,7 +3581,7 @@
         }
       }
     },
-    "ryohiShainMaster": {
+    "db_serviceShainMaster": {
       "type": "object",
       "properties": {
         "shainC": {
@@ -3746,15 +3718,15 @@
       },
       "title": "ShainMaster メッセージ（43カラム全て）"
     },
-    "ryohiShainMasterResponse": {
+    "db_serviceShainMasterResponse": {
       "type": "object",
       "properties": {
         "shainMaster": {
-          "$ref": "#/definitions/ryohiShainMaster"
+          "$ref": "#/definitions/db_serviceShainMaster"
         }
       }
     },
-    "ryohiUntenNippoMeisai": {
+    "db_serviceUntenNippoMeisai": {
       "type": "object",
       "properties": {
         "nippoK": {
@@ -4125,11 +4097,39 @@
       },
       "title": "UntenNippoMeisai メッセージ（106カラム全て）"
     },
-    "ryohiUntenNippoMeisaiResponse": {
+    "db_serviceUntenNippoMeisaiResponse": {
       "type": "object",
       "properties": {
         "untenNippoMeisai": {
-          "$ref": "#/definitions/ryohiUntenNippoMeisai"
+          "$ref": "#/definitions/db_serviceUntenNippoMeisai"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
         }
       }
     }
