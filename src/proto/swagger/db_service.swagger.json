@@ -58,85 +58,8 @@
     "application/json"
   ],
   "paths": {
-    "/api/v1/db/cars": {
-      "get": {
-        "summary": "車両情報一覧取得",
-        "operationId": "db_CarsService_List",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListCarsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "orderBy",
-            "description": "例: \"id ASC\", \"name DESC\"",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_CarsService"
-        ]
-      }
-    },
-    "/api/v1/db/cars/bumon/{bumonCodeId}": {
-      "get": {
-        "summary": "部門コードで車両情報取得",
-        "operationId": "db_CarsService_GetByBumonCodeID",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListCarsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "bumonCodeId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_CarsService"
-        ]
-      }
-    },
-    "/api/v1/db/cars/{id}": {
-      "get": {
+    "/db_service.db_CarsService/Get": {
+      "post": {
         "summary": "車両情報取得",
         "operationId": "db_CarsService_Get",
         "responses": {
@@ -155,10 +78,12 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetCarsRequest"
+            }
           }
         ],
         "tags": [
@@ -166,14 +91,15 @@
         ]
       }
     },
-    "/api/v1/db/chiiki-master": {
-      "get": {
-        "operationId": "db_ChiikiMasterService_List",
+    "/db_service.db_CarsService/GetByBumonCodeID": {
+      "post": {
+        "summary": "部門コードで車両情報取得",
+        "operationId": "db_CarsService_GetByBumonCodeID",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListChiikiMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ListCarsResponse"
             }
           },
           "default": {
@@ -185,33 +111,54 @@
         },
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "orderBy",
-            "in": "query",
-            "required": false,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetCarsByBumonCodeIDRequest"
+            }
           }
         ],
         "tags": [
-          "db_ChiikiMasterService"
+          "db_CarsService"
         ]
       }
     },
-    "/api/v1/db/chiiki-master/{chiikiC}": {
-      "get": {
+    "/db_service.db_CarsService/List": {
+      "post": {
+        "summary": "車両情報一覧取得",
+        "operationId": "db_CarsService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListCarsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListCarsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_CarsService"
+        ]
+      }
+    },
+    "/db_service.db_ChiikiMasterService/Get": {
+      "post": {
         "operationId": "db_ChiikiMasterService_Get",
         "responses": {
           "200": {
@@ -229,10 +176,12 @@
         },
         "parameters": [
           {
-            "name": "chiikiC",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetChiikiMasterRequest"
+            }
           }
         ],
         "tags": [
@@ -240,14 +189,14 @@
         ]
       }
     },
-    "/api/v1/db/chiku-master": {
-      "get": {
-        "operationId": "db_ChikuMasterService_List",
+    "/db_service.db_ChiikiMasterService/List": {
+      "post": {
+        "operationId": "db_ChiikiMasterService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListChikuMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ListChiikiMasterResponse"
             }
           },
           "default": {
@@ -259,63 +208,21 @@
         },
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "orderBy",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_ChikuMasterService"
-        ]
-      }
-    },
-    "/api/v1/db/chiku-master/chiiki/{chiikiC}": {
-      "get": {
-        "operationId": "db_ChikuMasterService_GetByChiikiC",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListChikuMasterResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "chiikiC",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListChiikiMasterRequest"
+            }
           }
         ],
         "tags": [
-          "db_ChikuMasterService"
+          "db_ChiikiMasterService"
         ]
       }
     },
-    "/api/v1/db/chiku-master/{chikuC}": {
-      "get": {
+    "/db_service.db_ChikuMasterService/Get": {
+      "post": {
         "operationId": "db_ChikuMasterService_Get",
         "responses": {
           "200": {
@@ -333,10 +240,12 @@
         },
         "parameters": [
           {
-            "name": "chikuC",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetChikuMasterRequest"
+            }
           }
         ],
         "tags": [
@@ -344,15 +253,14 @@
         ]
       }
     },
-    "/api/v1/db/drivers": {
-      "get": {
-        "summary": "ドライバー情報一覧取得",
-        "operationId": "db_DriversService_List",
+    "/db_service.db_ChikuMasterService/GetByChiikiC": {
+      "post": {
+        "operationId": "db_ChikuMasterService_GetByChiikiC",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDriversResponse"
+              "$ref": "#/definitions/db_servicedb_ListChikuMasterResponse"
             }
           },
           "default": {
@@ -364,72 +272,27 @@
         },
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "orderBy",
-            "description": "例: \"id ASC\", \"name DESC\"",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_DriversService"
-        ]
-      }
-    },
-    "/api/v1/db/drivers/bumon/{bumon}": {
-      "get": {
-        "summary": "部門コードでドライバー情報取得",
-        "operationId": "db_DriversService_GetByBumon",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDriversResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "bumon",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetChikuMasterByChiikiCRequest"
+            }
           }
         ],
         "tags": [
-          "db_DriversService"
+          "db_ChikuMasterService"
         ]
       }
     },
-    "/api/v1/db/drivers/{id}": {
-      "get": {
-        "summary": "ドライバー情報取得",
-        "operationId": "db_DriversService_Get",
+    "/db_service.db_ChikuMasterService/List": {
+      "post": {
+        "operationId": "db_ChikuMasterService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_DriversResponse"
+              "$ref": "#/definitions/db_servicedb_ListChikuMasterResponse"
             }
           },
           "default": {
@@ -441,90 +304,21 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "integer",
-            "format": "int32"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListChikuMasterRequest"
+            }
           }
         ],
         "tags": [
-          "db_DriversService"
+          "db_ChikuMasterService"
         ]
       }
     },
-    "/api/v1/db/dtako-cars": {
-      "get": {
-        "summary": "車輌情報一覧取得",
-        "operationId": "db_DTakoCarsService_List",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDTakoCarsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "db_DTakoCarsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-cars/by-car-code/{carCode}": {
-      "get": {
-        "summary": "車輌CDで車輌情報取得",
-        "operationId": "db_DTakoCarsService_GetByCarCode",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_DTakoCarsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "carCode",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_DTakoCarsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-cars/{id}": {
-      "get": {
+    "/db_service.db_DTakoCarsService/Get": {
+      "post": {
         "summary": "車輌情報取得",
         "operationId": "db_DTakoCarsService_Get",
         "responses": {
@@ -543,11 +337,12 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "integer",
-            "format": "int32"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoCarsRequest"
+            }
           }
         ],
         "tags": [
@@ -555,15 +350,15 @@
         ]
       }
     },
-    "/api/v1/db/dtako-events": {
-      "get": {
-        "summary": "イベント情報一覧取得",
-        "operationId": "db_DTakoEventsService_List",
+    "/db_service.db_DTakoCarsService/GetByCarCode": {
+      "post": {
+        "summary": "車輌CDで車輌情報取得",
+        "operationId": "db_DTakoCarsService_GetByCarCode",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDTakoEventsResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoCarsResponse"
             }
           },
           "default": {
@@ -575,65 +370,54 @@
         },
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "orderBy",
-            "description": "例: \"開始日時 DESC\", \"id ASC\"",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_DTakoEventsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-events/by-operation-no/{operationNo}": {
-      "get": {
-        "summary": "運行NOでイベント情報取得",
-        "operationId": "db_DTakoEventsService_GetByOperationNo",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDTakoEventsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "operationNo",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoCarsByCarCodeRequest"
+            }
           }
         ],
         "tags": [
-          "db_DTakoEventsService"
+          "db_DTakoCarsService"
         ]
       }
     },
-    "/api/v1/db/dtako-events/{id}": {
-      "get": {
+    "/db_service.db_DTakoCarsService/List": {
+      "post": {
+        "summary": "車輌情報一覧取得",
+        "operationId": "db_DTakoCarsService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoCarsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoCarsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DTakoCarsService"
+        ]
+      }
+    },
+    "/db_service.db_DTakoEventsService/Get": {
+      "post": {
         "summary": "イベント情報取得",
         "operationId": "db_DTakoEventsService_Get",
         "responses": {
@@ -652,11 +436,12 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string",
-            "format": "int64"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoEventsRequest"
+            }
           }
         ],
         "tags": [
@@ -664,15 +449,15 @@
         ]
       }
     },
-    "/api/v1/db/dtako-ferry-rows": {
-      "get": {
-        "summary": "フェリー運行データ一覧取得",
-        "operationId": "db_DTakoFerryRowsService_List",
+    "/db_service.db_DTakoEventsService/GetByOperationNo": {
+      "post": {
+        "summary": "運行NOでイベント情報取得",
+        "operationId": "db_DTakoEventsService_GetByOperationNo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoEventsResponse"
             }
           },
           "default": {
@@ -684,42 +469,152 @@
         },
         "parameters": [
           {
-            "name": "unkoNo",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "startDate",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "endDate",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoEventsByOperationNoRequest"
+            }
           }
         ],
         "tags": [
-          "db_DTakoFerryRowsService"
+          "db_DTakoEventsService"
         ]
-      },
+      }
+    },
+    "/db_service.db_DTakoEventsService/List": {
+      "post": {
+        "summary": "イベント情報一覧取得",
+        "operationId": "db_DTakoEventsService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoEventsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoEventsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DTakoEventsService"
+        ]
+      }
+    },
+    "/db_service.db_DTakoFerryRowsProdService/Get": {
+      "post": {
+        "summary": "フェリー運行データ取得",
+        "operationId": "db_DTakoFerryRowsProdService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsProdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoFerryRowsProdRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DTakoFerryRowsProdService"
+        ]
+      }
+    },
+    "/db_service.db_DTakoFerryRowsProdService/GetByUnkoNo": {
+      "post": {
+        "summary": "運行NOでフェリー運行データ取得",
+        "operationId": "db_DTakoFerryRowsProdService_GetByUnkoNo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsProdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoFerryRowsProdByUnkoNoRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DTakoFerryRowsProdService"
+        ]
+      }
+    },
+    "/db_service.db_DTakoFerryRowsProdService/List": {
+      "post": {
+        "summary": "フェリー運行データ一覧取得",
+        "operationId": "db_DTakoFerryRowsProdService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsProdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsProdRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DTakoFerryRowsProdService"
+        ]
+      }
+    },
+    "/db_service.db_DTakoFerryRowsService/Create": {
       "post": {
         "summary": "フェリー運行データ作成",
         "operationId": "db_DTakoFerryRowsService_Create",
@@ -739,11 +634,11 @@
         },
         "parameters": [
           {
-            "name": "dtakoFerryRows",
+            "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/db_servicedb_DTakoFerryRows"
+              "$ref": "#/definitions/db_servicedb_CreateDTakoFerryRowsRequest"
             }
           }
         ],
@@ -752,304 +647,8 @@
         ]
       }
     },
-    "/api/v1/db/dtako-ferry-rows-prod": {
-      "get": {
-        "summary": "フェリー運行データ一覧取得",
-        "operationId": "db_DTakoFerryRowsProdService_List",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsProdResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "db_DTakoFerryRowsProdService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unkoNo}": {
-      "get": {
-        "summary": "運行NOでフェリー運行データ取得",
-        "operationId": "db_DTakoFerryRowsProdService_GetByUnkoNo",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsProdResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "unkoNo",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_DTakoFerryRowsProdService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-ferry-rows-prod/{id}": {
-      "get": {
-        "summary": "フェリー運行データ取得",
-        "operationId": "db_DTakoFerryRowsProdService_Get",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsProdResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "db_DTakoFerryRowsProdService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-ferry-rows/{dtakoFerryRows.id}": {
-      "put": {
-        "summary": "フェリー運行データ更新",
-        "operationId": "db_DTakoFerryRowsService_Update",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "dtakoFerryRows.id",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "dtakoFerryRows",
-            "description": "フェリー運行データ",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "unkoNo": {
-                  "type": "string",
-                  "title": "運行NO"
-                },
-                "unkoDate": {
-                  "type": "string",
-                  "title": "運行日"
-                },
-                "yomitoriDate": {
-                  "type": "string",
-                  "title": "読取日"
-                },
-                "jigyoshoCd": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "事業所CD"
-                },
-                "jigyoshoName": {
-                  "type": "string",
-                  "title": "事業所名"
-                },
-                "sharyoCd": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "車輌CD"
-                },
-                "sharyoName": {
-                  "type": "string",
-                  "title": "車輌名"
-                },
-                "jomuinCd1": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "乗務員CD1"
-                },
-                "jomuinName1": {
-                  "type": "string",
-                  "title": "乗務員名１"
-                },
-                "taishoJomuinKbn": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "対象乗務員区分"
-                },
-                "kaishiDatetime": {
-                  "type": "string",
-                  "title": "開始日時"
-                },
-                "shuryoDatetime": {
-                  "type": "string",
-                  "title": "終了日時"
-                },
-                "ferryCompanyCd": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "フェリー会社CD"
-                },
-                "ferryCompanyName": {
-                  "type": "string",
-                  "title": "フェリー会社名"
-                },
-                "noribaCd": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "乗場CD"
-                },
-                "noribaName": {
-                  "type": "string",
-                  "title": "乗場名"
-                },
-                "bin": {
-                  "type": "string",
-                  "title": "便"
-                },
-                "oribaCd": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "降場CD"
-                },
-                "oribaName": {
-                  "type": "string",
-                  "title": "降場名"
-                },
-                "seisanKbn": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "精算区分"
-                },
-                "seisanKbnName": {
-                  "type": "string",
-                  "title": "精算区分名"
-                },
-                "hyojunRyokin": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "標準料金"
-                },
-                "keiyakuRyokin": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "契約料金"
-                },
-                "kosoShashuKbn": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "航送車種区分"
-                },
-                "kosoShashuKbnName": {
-                  "type": "string",
-                  "title": "航送車種区分名"
-                },
-                "minashiKyori": {
-                  "type": "integer",
-                  "format": "int32",
-                  "title": "見なし距離"
-                },
-                "ferrySrch": {
-                  "type": "string",
-                  "title": "ferry_srch"
-                }
-              },
-              "title": "フェリー運行データ"
-            }
-          }
-        ],
-        "tags": [
-          "db_DTakoFerryRowsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-ferry-rows/{id}": {
-      "get": {
-        "summary": "フェリー運行データ取得",
-        "operationId": "db_DTakoFerryRowsService_Get",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "db_DTakoFerryRowsService"
-        ]
-      },
-      "delete": {
+    "/db_service.db_DTakoFerryRowsService/Delete": {
+      "post": {
         "summary": "フェリー運行データ削除",
         "operationId": "db_DTakoFerryRowsService_Delete",
         "responses": {
@@ -1068,11 +667,12 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "integer",
-            "format": "int32"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DeleteDTakoFerryRowsRequest"
+            }
           }
         ],
         "tags": [
@@ -1080,15 +680,15 @@
         ]
       }
     },
-    "/api/v1/db/dtako-rows": {
-      "get": {
-        "summary": "運行データ一覧取得",
-        "operationId": "db_DTakoRowsService_List",
+    "/db_service.db_DTakoFerryRowsService/Get": {
+      "post": {
+        "summary": "フェリー運行データ取得",
+        "operationId": "db_DTakoFerryRowsService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDTakoRowsResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsResponse"
             }
           },
           "default": {
@@ -1100,65 +700,87 @@
         },
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "orderBy",
-            "description": "例: \"読取日 DESC\", \"id ASC\"",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_DTakoRowsService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-rows/by-operation-no/{operationNo}": {
-      "get": {
-        "summary": "運行NOで運行データ取得",
-        "operationId": "db_DTakoRowsService_GetByOperationNo",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDTakoRowsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "operationNo",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoFerryRowsRequest"
+            }
           }
         ],
         "tags": [
-          "db_DTakoRowsService"
+          "db_DTakoFerryRowsService"
         ]
       }
     },
-    "/api/v1/db/dtako-rows/{id}": {
-      "get": {
+    "/db_service.db_DTakoFerryRowsService/List": {
+      "post": {
+        "summary": "フェリー運行データ一覧取得",
+        "operationId": "db_DTakoFerryRowsService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DTakoFerryRowsService"
+        ]
+      }
+    },
+    "/db_service.db_DTakoFerryRowsService/Update": {
+      "post": {
+        "summary": "フェリー運行データ更新",
+        "operationId": "db_DTakoFerryRowsService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_UpdateDTakoFerryRowsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DTakoFerryRowsService"
+        ]
+      }
+    },
+    "/db_service.db_DTakoRowsService/Get": {
+      "post": {
         "summary": "運行データ取得",
         "operationId": "db_DTakoRowsService_Get",
         "responses": {
@@ -1177,10 +799,12 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoRowsRequest"
+            }
           }
         ],
         "tags": [
@@ -1188,15 +812,15 @@
         ]
       }
     },
-    "/api/v1/db/dtako-uriage-keihi": {
-      "get": {
-        "summary": "経費精算データ一覧取得",
-        "operationId": "db_DTakoUriageKeihiService_List",
+    "/db_service.db_DTakoRowsService/GetByOperationNo": {
+      "post": {
+        "summary": "運行NOで運行データ取得",
+        "operationId": "db_DTakoRowsService_GetByOperationNo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListDTakoUriageKeihiResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoRowsResponse"
             }
           },
           "default": {
@@ -1208,42 +832,53 @@
         },
         "parameters": [
           {
-            "name": "dtakoRowId",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "startDate",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "endDate",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoRowsByOperationNoRequest"
+            }
           }
         ],
         "tags": [
-          "db_DTakoUriageKeihiService"
+          "db_DTakoRowsService"
         ]
-      },
+      }
+    },
+    "/db_service.db_DTakoRowsService/List": {
+      "post": {
+        "summary": "運行データ一覧取得",
+        "operationId": "db_DTakoRowsService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoRowsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoRowsRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DTakoRowsService"
+        ]
+      }
+    },
+    "/db_service.db_DTakoUriageKeihiService/Create": {
       "post": {
         "summary": "経費精算データ作成",
         "operationId": "db_DTakoUriageKeihiService_Create",
@@ -1263,11 +898,11 @@
         },
         "parameters": [
           {
-            "name": "dtakoUriageKeihi",
+            "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/db_servicedb_DTakoUriageKeihi"
+              "$ref": "#/definitions/db_servicedb_CreateDTakoUriageKeihiRequest"
             }
           }
         ],
@@ -1276,139 +911,8 @@
         ]
       }
     },
-    "/api/v1/db/dtako-uriage-keihi/{dtakoUriageKeihi.srchId}": {
-      "put": {
-        "summary": "経費精算データ更新",
-        "operationId": "db_DTakoUriageKeihiService_Update",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_DTakoUriageKeihiResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "dtakoUriageKeihi.srchId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "dtakoUriageKeihi",
-            "description": "経費精算データ",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "datetime": {
-                  "type": "string",
-                  "title": "RFC3339形式"
-                },
-                "keihiC": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "price": {
-                  "type": "number",
-                  "format": "double"
-                },
-                "km": {
-                  "type": "number",
-                  "format": "double"
-                },
-                "dtakoRowId": {
-                  "type": "string"
-                },
-                "dtakoRowIdR": {
-                  "type": "string"
-                },
-                "startSrchId": {
-                  "type": "string"
-                },
-                "startSrchTime": {
-                  "type": "string"
-                },
-                "startSrchPlace": {
-                  "type": "string"
-                },
-                "startSrchTokui": {
-                  "type": "string"
-                },
-                "endSrchId": {
-                  "type": "string"
-                },
-                "endSrchTime": {
-                  "type": "string"
-                },
-                "endSrchPlace": {
-                  "type": "string"
-                },
-                "manual": {
-                  "type": "boolean"
-                }
-              },
-              "title": "経費精算データ"
-            }
-          }
-        ],
-        "tags": [
-          "db_DTakoUriageKeihiService"
-        ]
-      }
-    },
-    "/api/v1/db/dtako-uriage-keihi/{srchId}": {
-      "get": {
-        "summary": "経費精算データ取得",
-        "operationId": "db_DTakoUriageKeihiService_Get",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_DTakoUriageKeihiResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "srchId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "datetime",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "keihiC",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "db_DTakoUriageKeihiService"
-        ]
-      },
-      "delete": {
+    "/db_service.db_DTakoUriageKeihiService/Delete": {
+      "post": {
         "summary": "経費精算データ削除",
         "operationId": "db_DTakoUriageKeihiService_Delete",
         "responses": {
@@ -1427,23 +931,12 @@
         },
         "parameters": [
           {
-            "name": "srchId",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
-          },
-          {
-            "name": "datetime",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "keihiC",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DeleteDTakoUriageKeihiRequest"
+            }
           }
         ],
         "tags": [
@@ -1451,70 +944,15 @@
         ]
       }
     },
-    "/api/v1/db/etc-meisai": {
-      "get": {
-        "summary": "ETC明細データ一覧取得",
-        "operationId": "db_ETCMeisaiService_List",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListETCMeisaiResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "hash",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "startDate",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "endDate",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "db_ETCMeisaiService"
-        ]
-      },
+    "/db_service.db_DTakoUriageKeihiService/Get": {
       "post": {
-        "summary": "ETC明細データ作成",
-        "operationId": "db_ETCMeisaiService_Create",
+        "summary": "経費精算データ取得",
+        "operationId": "db_DTakoUriageKeihiService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ETCMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1526,28 +964,28 @@
         },
         "parameters": [
           {
-            "name": "etcMeisai",
+            "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ETCMeisai"
+              "$ref": "#/definitions/db_servicedb_GetDTakoUriageKeihiRequest"
             }
           }
         ],
         "tags": [
-          "db_ETCMeisaiService"
+          "db_DTakoUriageKeihiService"
         ]
       }
     },
-    "/api/v1/db/etc-meisai-mapping": {
-      "get": {
-        "summary": "マッピング一覧取得",
-        "operationId": "db_ETCMeisaiMappingService_List",
+    "/db_service.db_DTakoUriageKeihiService/List": {
+      "post": {
+        "summary": "経費精算データ一覧取得",
+        "operationId": "db_DTakoUriageKeihiService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListETCMeisaiMappingResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1559,36 +997,152 @@
         },
         "parameters": [
           {
-            "name": "etcMeisaiHash",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "dtakoRowId",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDTakoUriageKeihiRequest"
+            }
           }
         ],
         "tags": [
-          "db_ETCMeisaiMappingService"
+          "db_DTakoUriageKeihiService"
         ]
-      },
+      }
+    },
+    "/db_service.db_DTakoUriageKeihiService/Update": {
+      "post": {
+        "summary": "経費精算データ更新",
+        "operationId": "db_DTakoUriageKeihiService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DTakoUriageKeihiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_UpdateDTakoUriageKeihiRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DTakoUriageKeihiService"
+        ]
+      }
+    },
+    "/db_service.db_DriversService/Get": {
+      "post": {
+        "summary": "ドライバー情報取得",
+        "operationId": "db_DriversService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DriversResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDriversRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DriversService"
+        ]
+      }
+    },
+    "/db_service.db_DriversService/GetByBumon": {
+      "post": {
+        "summary": "部門コードでドライバー情報取得",
+        "operationId": "db_DriversService_GetByBumon",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDriversResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDriversByBumonRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DriversService"
+        ]
+      }
+    },
+    "/db_service.db_DriversService/List": {
+      "post": {
+        "summary": "ドライバー情報一覧取得",
+        "operationId": "db_DriversService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDriversResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListDriversRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_DriversService"
+        ]
+      }
+    },
+    "/db_service.db_ETCMeisaiMappingService/Create": {
       "post": {
         "summary": "マッピング作成",
         "operationId": "db_ETCMeisaiMappingService_Create",
@@ -1608,11 +1162,11 @@
         },
         "parameters": [
           {
-            "name": "etcMeisaiMapping",
+            "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ETCMeisaiMapping"
+              "$ref": "#/definitions/db_servicedb_CreateETCMeisaiMappingRequest"
             }
           }
         ],
@@ -1621,131 +1175,8 @@
         ]
       }
     },
-    "/api/v1/db/etc-meisai-mapping/by-hash/{etcMeisaiHash}": {
-      "get": {
-        "summary": "ハッシュからDTakoRowIDを取得",
-        "operationId": "db_ETCMeisaiMappingService_GetDTakoRowIDByHash",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_GetDTakoRowIDByHashResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "etcMeisaiHash",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_ETCMeisaiMappingService"
-        ]
-      }
-    },
-    "/api/v1/db/etc-meisai-mapping/{etcMeisaiMapping.id}": {
-      "put": {
-        "summary": "マッピング更新",
-        "operationId": "db_ETCMeisaiMappingService_Update",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ETCMeisaiMappingResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "etcMeisaiMapping.id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "format": "int64"
-          },
-          {
-            "name": "etcMeisaiMapping",
-            "description": "ETC明細マッピングデータ",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "etcMeisaiHash": {
-                  "type": "string"
-                },
-                "dtakoRowId": {
-                  "type": "string"
-                },
-                "createdAt": {
-                  "type": "string"
-                },
-                "updatedAt": {
-                  "type": "string"
-                },
-                "createdBy": {
-                  "type": "string"
-                },
-                "notes": {
-                  "type": "string"
-                }
-              },
-              "title": "ETC明細マッピングデータ"
-            }
-          }
-        ],
-        "tags": [
-          "db_ETCMeisaiMappingService"
-        ]
-      }
-    },
-    "/api/v1/db/etc-meisai-mapping/{id}": {
-      "get": {
-        "summary": "マッピング取得",
-        "operationId": "db_ETCMeisaiMappingService_Get",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ETCMeisaiMappingResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "format": "int64"
-          }
-        ],
-        "tags": [
-          "db_ETCMeisaiMappingService"
-        ]
-      },
-      "delete": {
+    "/db_service.db_ETCMeisaiMappingService/Delete": {
+      "post": {
         "summary": "マッピング削除",
         "operationId": "db_ETCMeisaiMappingService_Delete",
         "responses": {
@@ -1764,11 +1195,12 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string",
-            "format": "int64"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DeleteETCMeisaiMappingRequest"
+            }
           }
         ],
         "tags": [
@@ -1776,10 +1208,142 @@
         ]
       }
     },
-    "/api/v1/db/etc-meisai/{etcMeisai.id}": {
-      "put": {
-        "summary": "ETC明細データ更新",
-        "operationId": "db_ETCMeisaiService_Update",
+    "/db_service.db_ETCMeisaiMappingService/Get": {
+      "post": {
+        "summary": "マッピング取得",
+        "operationId": "db_ETCMeisaiMappingService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiMappingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetETCMeisaiMappingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_ETCMeisaiMappingService"
+        ]
+      }
+    },
+    "/db_service.db_ETCMeisaiMappingService/GetDTakoRowIDByHash": {
+      "post": {
+        "summary": "ハッシュからDTakoRowIDを取得",
+        "operationId": "db_ETCMeisaiMappingService_GetDTakoRowIDByHash",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoRowIDByHashResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetDTakoRowIDByHashRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_ETCMeisaiMappingService"
+        ]
+      }
+    },
+    "/db_service.db_ETCMeisaiMappingService/List": {
+      "post": {
+        "summary": "マッピング一覧取得",
+        "operationId": "db_ETCMeisaiMappingService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListETCMeisaiMappingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListETCMeisaiMappingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_ETCMeisaiMappingService"
+        ]
+      }
+    },
+    "/db_service.db_ETCMeisaiMappingService/Update": {
+      "post": {
+        "summary": "マッピング更新",
+        "operationId": "db_ETCMeisaiMappingService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiMappingResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_UpdateETCMeisaiMappingRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_ETCMeisaiMappingService"
+        ]
+      }
+    },
+    "/db_service.db_ETCMeisaiService/Create": {
+      "post": {
+        "summary": "ETC明細データ作成",
+        "operationId": "db_ETCMeisaiService_Create",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -1796,70 +1360,11 @@
         },
         "parameters": [
           {
-            "name": "etcMeisai.id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "format": "int64"
-          },
-          {
-            "name": "etcMeisai",
-            "description": "ETC明細データ",
+            "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "dateFr": {
-                  "type": "string"
-                },
-                "dateTo": {
-                  "type": "string",
-                  "title": "RFC3339形式推奨 (例: 2025-10-18T00:00:00Z)"
-                },
-                "dateToDate": {
-                  "type": "string",
-                  "title": "YYYY-MM-DD形式 (例: 2025-10-18)"
-                },
-                "icFr": {
-                  "type": "string",
-                  "title": "入口IC不明の場合は省略可（実データの22.3%が空）"
-                },
-                "icTo": {
-                  "type": "string",
-                  "title": "出口IC（必須）"
-                },
-                "priceBf": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "descount": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "price": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "shashu": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "carIdNum": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "etcNum": {
-                  "type": "string"
-                },
-                "detail": {
-                  "type": "string"
-                },
-                "hash": {
-                  "type": "string"
-                }
-              },
-              "title": "ETC明細データ"
+              "$ref": "#/definitions/db_servicedb_CreateETCMeisaiRequest"
             }
           }
         ],
@@ -1868,38 +1373,8 @@
         ]
       }
     },
-    "/api/v1/db/etc-meisai/{id}": {
-      "get": {
-        "summary": "ETC明細データ取得",
-        "operationId": "db_ETCMeisaiService_Get",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ETCMeisaiResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "format": "int64"
-          }
-        ],
-        "tags": [
-          "db_ETCMeisaiService"
-        ]
-      },
-      "delete": {
+    "/db_service.db_ETCMeisaiService/Delete": {
+      "post": {
         "summary": "ETC明細データ削除",
         "operationId": "db_ETCMeisaiService_Delete",
         "responses": {
@@ -1918,11 +1393,12 @@
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string",
-            "format": "int64"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DeleteETCMeisaiRequest"
+            }
           }
         ],
         "tags": [
@@ -1930,15 +1406,15 @@
         ]
       }
     },
-    "/api/v1/db/etc-num": {
-      "get": {
-        "summary": "ETCカード番号一覧取得",
-        "operationId": "db_ETCNumService_List",
+    "/db_service.db_ETCMeisaiService/Get": {
+      "post": {
+        "summary": "ETC明細データ取得",
+        "operationId": "db_ETCMeisaiService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListETCNumResponse"
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiResponse"
             }
           },
           "default": {
@@ -1950,27 +1426,87 @@
         },
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetETCMeisaiRequest"
+            }
           }
         ],
         "tags": [
-          "db_ETCNumService"
+          "db_ETCMeisaiService"
         ]
       }
     },
-    "/api/v1/db/etc-num/by-car-id/{carId}": {
-      "get": {
+    "/db_service.db_ETCMeisaiService/List": {
+      "post": {
+        "summary": "ETC明細データ一覧取得",
+        "operationId": "db_ETCMeisaiService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListETCMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListETCMeisaiRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_ETCMeisaiService"
+        ]
+      }
+    },
+    "/db_service.db_ETCMeisaiService/Update": {
+      "post": {
+        "summary": "ETC明細データ更新",
+        "operationId": "db_ETCMeisaiService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_UpdateETCMeisaiRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_ETCMeisaiService"
+        ]
+      }
+    },
+    "/db_service.db_ETCNumService/GetByCarID": {
+      "post": {
         "summary": "車輌IDで取得",
         "operationId": "db_ETCNumService_GetByCarID",
         "responses": {
@@ -1989,10 +1525,12 @@
         },
         "parameters": [
           {
-            "name": "carId",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetETCNumByCarIDRequest"
+            }
           }
         ],
         "tags": [
@@ -2000,8 +1538,8 @@
         ]
       }
     },
-    "/api/v1/db/etc-num/by-etc-card-num/{etcCardNum}": {
-      "get": {
+    "/db_service.db_ETCNumService/GetByETCCardNum": {
+      "post": {
         "summary": "ETCカード番号で取得",
         "operationId": "db_ETCNumService_GetByETCCardNum",
         "responses": {
@@ -2020,10 +1558,12 @@
         },
         "parameters": [
           {
-            "name": "etcCardNum",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetETCNumByETCCardNumRequest"
+            }
           }
         ],
         "tags": [
@@ -2031,14 +1571,15 @@
         ]
       }
     },
-    "/api/v1/db/shain-master": {
-      "get": {
-        "operationId": "db_ShainMasterService_List",
+    "/db_service.db_ETCNumService/List": {
+      "post": {
+        "summary": "ETCカード番号一覧取得",
+        "operationId": "db_ETCNumService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListShainMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ListETCNumResponse"
             }
           },
           "default": {
@@ -2050,63 +1591,21 @@
         },
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "orderBy",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_ShainMasterService"
-        ]
-      }
-    },
-    "/api/v1/db/shain-master/bumon/{bumonC}": {
-      "get": {
-        "operationId": "db_ShainMasterService_GetByBumonC",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListShainMasterResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "bumonC",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListETCNumRequest"
+            }
           }
         ],
         "tags": [
-          "db_ShainMasterService"
+          "db_ETCNumService"
         ]
       }
     },
-    "/api/v1/db/shain-master/{shainC}": {
-      "get": {
+    "/db_service.db_ShainMasterService/Get": {
+      "post": {
         "operationId": "db_ShainMasterService_Get",
         "responses": {
           "200": {
@@ -2124,10 +1623,12 @@
         },
         "parameters": [
           {
-            "name": "shainC",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetShainMasterRequest"
+            }
           }
         ],
         "tags": [
@@ -2135,14 +1636,14 @@
         ]
       }
     },
-    "/api/v1/db/unten-nippo-meisai": {
-      "get": {
-        "operationId": "db_UntenNippoMeisaiService_List",
+    "/db_service.db_ShainMasterService/GetByBumonC": {
+      "post": {
+        "operationId": "db_ShainMasterService_GetByBumonC",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_ListShainMasterResponse"
             }
           },
           "default": {
@@ -2154,120 +1655,53 @@
         },
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "orderBy",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "db_UntenNippoMeisaiService"
-        ]
-      }
-    },
-    "/api/v1/db/unten-nippo-meisai/date-range": {
-      "get": {
-        "operationId": "db_UntenNippoMeisaiService_GetByDateRange",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "startDate",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "endDate",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "db_UntenNippoMeisaiService"
-        ]
-      }
-    },
-    "/api/v1/db/unten-nippo-meisai/sharyo/{sharyoC}": {
-      "get": {
-        "operationId": "db_UntenNippoMeisaiService_GetBySharyoC",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "sharyoC",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetShainMasterByBumonCRequest"
+            }
           }
         ],
         "tags": [
-          "db_UntenNippoMeisaiService"
+          "db_ShainMasterService"
         ]
       }
     },
-    "/api/v1/db/unten-nippo-meisai/{nippoK}/{haishaK}/{sharyoC}": {
-      "get": {
+    "/db_service.db_ShainMasterService/List": {
+      "post": {
+        "operationId": "db_ShainMasterService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListShainMasterResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListShainMasterRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_ShainMasterService"
+        ]
+      }
+    },
+    "/db_service.db_UntenNippoMeisaiService/Get": {
+      "post": {
         "operationId": "db_UntenNippoMeisaiService_Get",
         "responses": {
           "200": {
@@ -2285,22 +1719,108 @@
         },
         "parameters": [
           {
-            "name": "nippoK",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetUntenNippoMeisaiRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_UntenNippoMeisaiService"
+        ]
+      }
+    },
+    "/db_service.db_UntenNippoMeisaiService/GetByDateRange": {
+      "post": {
+        "operationId": "db_UntenNippoMeisaiService_GetByDateRange",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiResponse"
+            }
           },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
           {
-            "name": "haishaK",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetUntenNippoMeisaiByDateRangeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_UntenNippoMeisaiService"
+        ]
+      }
+    },
+    "/db_service.db_UntenNippoMeisaiService/GetBySharyoC": {
+      "post": {
+        "operationId": "db_UntenNippoMeisaiService_GetBySharyoC",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiResponse"
+            }
           },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
           {
-            "name": "sharyoC",
-            "in": "path",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetUntenNippoMeisaiBySharyoCRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_UntenNippoMeisaiService"
+        ]
+      }
+    },
+    "/db_service.db_UntenNippoMeisaiService/List": {
+      "post": {
+        "operationId": "db_UntenNippoMeisaiService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiRequest"
+            }
           }
         ],
         "tags": [
@@ -2504,6 +2024,42 @@
           "$ref": "#/definitions/db_servicedb_ChikuMaster"
         }
       }
+    },
+    "db_servicedb_CreateDTakoFerryRowsRequest": {
+      "type": "object",
+      "properties": {
+        "dtakoFerryRows": {
+          "$ref": "#/definitions/db_servicedb_DTakoFerryRows"
+        }
+      },
+      "title": "DTakoFerryRows用"
+    },
+    "db_servicedb_CreateDTakoUriageKeihiRequest": {
+      "type": "object",
+      "properties": {
+        "dtakoUriageKeihi": {
+          "$ref": "#/definitions/db_servicedb_DTakoUriageKeihi"
+        }
+      },
+      "title": "DTakoUriageKeihi用"
+    },
+    "db_servicedb_CreateETCMeisaiMappingRequest": {
+      "type": "object",
+      "properties": {
+        "etcMeisaiMapping": {
+          "$ref": "#/definitions/db_servicedb_ETCMeisaiMapping"
+        }
+      },
+      "title": "ETCMeisaiMapping用リクエスト/レスポンス"
+    },
+    "db_servicedb_CreateETCMeisaiRequest": {
+      "type": "object",
+      "properties": {
+        "etcMeisai": {
+          "$ref": "#/definitions/db_servicedb_ETCMeisai"
+        }
+      },
+      "title": "ETCMeisai用"
     },
     "db_servicedb_DTakoCars": {
       "type": "object",
@@ -3152,6 +2708,48 @@
         }
       }
     },
+    "db_servicedb_DeleteDTakoFerryRowsRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_DeleteDTakoUriageKeihiRequest": {
+      "type": "object",
+      "properties": {
+        "srchId": {
+          "type": "string"
+        },
+        "datetime": {
+          "type": "string"
+        },
+        "keihiC": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_DeleteETCMeisaiMappingRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "db_servicedb_DeleteETCMeisaiRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "db_servicedb_Drivers": {
       "type": "object",
       "properties": {
@@ -3330,6 +2928,120 @@
       "type": "object",
       "title": "共通メッセージ"
     },
+    "db_servicedb_GetCarsByBumonCodeIDRequest": {
+      "type": "object",
+      "properties": {
+        "bumonCodeId": {
+          "type": "string"
+        }
+      }
+    },
+    "db_servicedb_GetCarsRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "title": "Cars用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetChiikiMasterRequest": {
+      "type": "object",
+      "properties": {
+        "chiikiC": {
+          "type": "string"
+        }
+      },
+      "title": "ChiikiMaster用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetChikuMasterByChiikiCRequest": {
+      "type": "object",
+      "properties": {
+        "chiikiC": {
+          "type": "string"
+        }
+      }
+    },
+    "db_servicedb_GetChikuMasterRequest": {
+      "type": "object",
+      "properties": {
+        "chikuC": {
+          "type": "string"
+        }
+      },
+      "title": "ChikuMaster用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetDTakoCarsByCarCodeRequest": {
+      "type": "object",
+      "properties": {
+        "carCode": {
+          "type": "string"
+        }
+      }
+    },
+    "db_servicedb_GetDTakoCarsRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DTakoCars用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetDTakoEventsByOperationNoRequest": {
+      "type": "object",
+      "properties": {
+        "operationNo": {
+          "type": "string"
+        }
+      }
+    },
+    "db_servicedb_GetDTakoEventsRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "DTakoEvents用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetDTakoFerryRowsProdByUnkoNoRequest": {
+      "type": "object",
+      "properties": {
+        "unkoNo": {
+          "type": "string"
+        }
+      }
+    },
+    "db_servicedb_GetDTakoFerryRowsProdRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "DTakoFerryRowsProd用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetDTakoFerryRowsRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_GetDTakoRowIDByHashRequest": {
+      "type": "object",
+      "properties": {
+        "etcMeisaiHash": {
+          "type": "string"
+        }
+      }
+    },
     "db_servicedb_GetDTakoRowIDByHashResponse": {
       "type": "object",
       "properties": {
@@ -3338,6 +3050,171 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "db_servicedb_GetDTakoRowsByOperationNoRequest": {
+      "type": "object",
+      "properties": {
+        "operationNo": {
+          "type": "string"
+        }
+      }
+    },
+    "db_servicedb_GetDTakoRowsRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "title": "DTakoRows用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetDTakoUriageKeihiRequest": {
+      "type": "object",
+      "properties": {
+        "srchId": {
+          "type": "string"
+        },
+        "datetime": {
+          "type": "string"
+        },
+        "keihiC": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_GetDriversByBumonRequest": {
+      "type": "object",
+      "properties": {
+        "bumon": {
+          "type": "string"
+        }
+      }
+    },
+    "db_servicedb_GetDriversRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Drivers用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetETCMeisaiMappingRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "db_servicedb_GetETCMeisaiRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "db_servicedb_GetETCNumByCarIDRequest": {
+      "type": "object",
+      "properties": {
+        "carId": {
+          "type": "string"
+        }
+      }
+    },
+    "db_servicedb_GetETCNumByETCCardNumRequest": {
+      "type": "object",
+      "properties": {
+        "etcCardNum": {
+          "type": "string"
+        }
+      },
+      "title": "ETCNum用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetShainMasterByBumonCRequest": {
+      "type": "object",
+      "properties": {
+        "bumonC": {
+          "type": "string"
+        }
+      }
+    },
+    "db_servicedb_GetShainMasterRequest": {
+      "type": "object",
+      "properties": {
+        "shainC": {
+          "type": "string"
+        }
+      },
+      "title": "ShainMaster用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetUntenNippoMeisaiByDateRangeRequest": {
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_GetUntenNippoMeisaiBySharyoCRequest": {
+      "type": "object",
+      "properties": {
+        "sharyoC": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_GetUntenNippoMeisaiRequest": {
+      "type": "object",
+      "properties": {
+        "nippoK": {
+          "type": "string"
+        },
+        "haishaK": {
+          "type": "string"
+        },
+        "sharyoC": {
+          "type": "string"
+        }
+      },
+      "title": "UntenNippoMeisai用リクエスト/レスポンス"
+    },
+    "db_servicedb_ListCarsRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderBy": {
+          "type": "string",
+          "title": "例: \"id ASC\", \"name DESC\""
         }
       }
     },
@@ -3357,6 +3234,22 @@
         }
       }
     },
+    "db_servicedb_ListChiikiMasterRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderBy": {
+          "type": "string"
+        }
+      }
+    },
     "db_servicedb_ListChiikiMasterResponse": {
       "type": "object",
       "properties": {
@@ -3373,6 +3266,22 @@
         }
       }
     },
+    "db_servicedb_ListChikuMasterRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderBy": {
+          "type": "string"
+        }
+      }
+    },
     "db_servicedb_ListChikuMasterResponse": {
       "type": "object",
       "properties": {
@@ -3384,6 +3293,19 @@
           }
         },
         "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_ListDTakoCarsRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
           "type": "integer",
           "format": "int32"
         }
@@ -3405,6 +3327,23 @@
         }
       }
     },
+    "db_servicedb_ListDTakoEventsRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderBy": {
+          "type": "string",
+          "title": "例: \"開始日時 DESC\", \"id ASC\""
+        }
+      }
+    },
     "db_servicedb_ListDTakoEventsResponse": {
       "type": "object",
       "properties": {
@@ -3416,6 +3355,19 @@
           }
         },
         "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_ListDTakoFerryRowsProdRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
           "type": "integer",
           "format": "int32"
         }
@@ -3437,6 +3389,28 @@
         }
       }
     },
+    "db_servicedb_ListDTakoFerryRowsRequest": {
+      "type": "object",
+      "properties": {
+        "unkoNo": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "db_servicedb_ListDTakoFerryRowsResponse": {
       "type": "object",
       "properties": {
@@ -3453,6 +3427,23 @@
         }
       }
     },
+    "db_servicedb_ListDTakoRowsRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderBy": {
+          "type": "string",
+          "title": "例: \"読取日 DESC\", \"id ASC\""
+        }
+      }
+    },
     "db_servicedb_ListDTakoRowsResponse": {
       "type": "object",
       "properties": {
@@ -3464,6 +3455,28 @@
           }
         },
         "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_ListDTakoUriageKeihiRequest": {
+      "type": "object",
+      "properties": {
+        "dtakoRowId": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
           "type": "integer",
           "format": "int32"
         }
@@ -3485,6 +3498,23 @@
         }
       }
     },
+    "db_servicedb_ListDriversRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderBy": {
+          "type": "string",
+          "title": "例: \"id ASC\", \"name DESC\""
+        }
+      }
+    },
     "db_servicedb_ListDriversResponse": {
       "type": "object",
       "properties": {
@@ -3496,6 +3526,25 @@
           }
         },
         "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_ListETCMeisaiMappingRequest": {
+      "type": "object",
+      "properties": {
+        "etcMeisaiHash": {
+          "type": "string"
+        },
+        "dtakoRowId": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
           "type": "integer",
           "format": "int32"
         }
@@ -3517,6 +3566,28 @@
         }
       }
     },
+    "db_servicedb_ListETCMeisaiRequest": {
+      "type": "object",
+      "properties": {
+        "hash": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "db_servicedb_ListETCMeisaiResponse": {
       "type": "object",
       "properties": {
@@ -3528,6 +3599,19 @@
           }
         },
         "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_ListETCNumRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
           "type": "integer",
           "format": "int32"
         }
@@ -3549,6 +3633,22 @@
         }
       }
     },
+    "db_servicedb_ListShainMasterRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderBy": {
+          "type": "string"
+        }
+      }
+    },
     "db_servicedb_ListShainMasterResponse": {
       "type": "object",
       "properties": {
@@ -3562,6 +3662,22 @@
         "totalCount": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "db_servicedb_ListUntenNippoMeisaiRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderBy": {
+          "type": "string"
         }
       }
     },
@@ -4102,6 +4218,38 @@
       "properties": {
         "untenNippoMeisai": {
           "$ref": "#/definitions/db_servicedb_UntenNippoMeisai"
+        }
+      }
+    },
+    "db_servicedb_UpdateDTakoFerryRowsRequest": {
+      "type": "object",
+      "properties": {
+        "dtakoFerryRows": {
+          "$ref": "#/definitions/db_servicedb_DTakoFerryRows"
+        }
+      }
+    },
+    "db_servicedb_UpdateDTakoUriageKeihiRequest": {
+      "type": "object",
+      "properties": {
+        "dtakoUriageKeihi": {
+          "$ref": "#/definitions/db_servicedb_DTakoUriageKeihi"
+        }
+      }
+    },
+    "db_servicedb_UpdateETCMeisaiMappingRequest": {
+      "type": "object",
+      "properties": {
+        "etcMeisaiMapping": {
+          "$ref": "#/definitions/db_servicedb_ETCMeisaiMapping"
+        }
+      }
+    },
+    "db_servicedb_UpdateETCMeisaiRequest": {
+      "type": "object",
+      "properties": {
+        "etcMeisai": {
+          "$ref": "#/definitions/db_servicedb_ETCMeisai"
         }
       }
     },
