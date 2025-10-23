@@ -14,25 +14,25 @@ import (
 // ServiceRegistry holds all db_service gRPC service implementations
 type ServiceRegistry struct {
 	// ローカルDB用サービス
-	ETCMeisaiService        dbproto.ETCMeisaiServiceServer
-	DTakoUriageKeihiService dbproto.DTakoUriageKeihiServiceServer
-	DTakoFerryRowsService   dbproto.DTakoFerryRowsServiceServer
-	ETCMeisaiMappingService dbproto.ETCMeisaiMappingServiceServer
+	ETCMeisaiService        dbproto.Db_ETCMeisaiServiceServer
+	DTakoUriageKeihiService dbproto.Db_DTakoUriageKeihiServiceServer
+	DTakoFerryRowsService   dbproto.Db_DTakoFerryRowsServiceServer
+	ETCMeisaiMappingService dbproto.Db_ETCMeisaiMappingServiceServer
 
 	// 本番DB用サービス（読み取り専用）
-	DTakoCarsService         dbproto.DTakoCarsServiceServer
-	DTakoEventsService       dbproto.DTakoEventsServiceServer
-	DTakoRowsService         dbproto.DTakoRowsServiceServer
-	ETCNumService            dbproto.ETCNumServiceServer
-	DTakoFerryRowsProdService dbproto.DTakoFerryRowsProdServiceServer
-	CarsService              dbproto.CarsServiceServer
-	DriversService           dbproto.DriversServiceServer
+	DTakoCarsService         dbproto.Db_DTakoCarsServiceServer
+	DTakoEventsService       dbproto.Db_DTakoEventsServiceServer
+	DTakoRowsService         dbproto.Db_DTakoRowsServiceServer
+	ETCNumService            dbproto.Db_ETCNumServiceServer
+	DTakoFerryRowsProdService dbproto.Db_DTakoFerryRowsProdServiceServer
+	CarsService              dbproto.Db_CarsServiceServer
+	DriversService           dbproto.Db_DriversServiceServer
 
 	// SQL Server (ichibanboshi) 用サービス（読み取り専用）
-	UntenNippoMeisaiService dbproto.UntenNippoMeisaiServiceServer
-	ShainMasterService      dbproto.ShainMasterServiceServer
-	ChiikiMasterService     dbproto.ChiikiMasterServiceServer
-	ChikuMasterService      dbproto.ChikuMasterServiceServer
+	UntenNippoMeisaiService dbproto.Db_UntenNippoMeisaiServiceServer
+	ShainMasterService      dbproto.Db_ShainMasterServiceServer
+	ChiikiMasterService     dbproto.Db_ChiikiMasterServiceServer
+	ChikuMasterService      dbproto.Db_ChikuMasterServiceServer
 }
 
 // NewServiceRegistry creates a new service registry with all db_service services initialized
@@ -66,20 +66,20 @@ func NewServiceRegistry() *ServiceRegistry {
 
 	// Initialize production DB connection (optional)
 	prodDB, err := config.NewProdDatabase()
-	var dtakoCarsService dbproto.DTakoCarsServiceServer
-	var dtakoEventsService dbproto.DTakoEventsServiceServer
-	var dtakoRowsService dbproto.DTakoRowsServiceServer
-	var etcNumService dbproto.ETCNumServiceServer
-	var dtakoFerryRowsProdService dbproto.DTakoFerryRowsProdServiceServer
-	var carsService dbproto.CarsServiceServer
-	var driversService dbproto.DriversServiceServer
+	var dtakoCarsService dbproto.Db_DTakoCarsServiceServer
+	var dtakoEventsService dbproto.Db_DTakoEventsServiceServer
+	var dtakoRowsService dbproto.Db_DTakoRowsServiceServer
+	var etcNumService dbproto.Db_ETCNumServiceServer
+	var dtakoFerryRowsProdService dbproto.Db_DTakoFerryRowsProdServiceServer
+	var carsService dbproto.Db_CarsServiceServer
+	var driversService dbproto.Db_DriversServiceServer
 
 	// Initialize SQL Server (ichibanboshi) connection (optional)
 	sqlServerDB, sqlErr := config.NewSQLServerDatabase()
-	var untenNippoMeisaiService dbproto.UntenNippoMeisaiServiceServer
-	var shainMasterService dbproto.ShainMasterServiceServer
-	var chiikiMasterService dbproto.ChiikiMasterServiceServer
-	var chikuMasterService dbproto.ChikuMasterServiceServer
+	var untenNippoMeisaiService dbproto.Db_UntenNippoMeisaiServiceServer
+	var shainMasterService dbproto.Db_ShainMasterServiceServer
+	var chiikiMasterService dbproto.Db_ChiikiMasterServiceServer
+	var chikuMasterService dbproto.Db_ChikuMasterServiceServer
 
 	if err == nil && prodDB != nil {
 		// Initialize production DB repositories
