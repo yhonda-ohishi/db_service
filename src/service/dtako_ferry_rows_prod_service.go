@@ -12,7 +12,7 @@ import (
 
 // DTakoFerryRowsProdService gRPCサービス実装（本番DB、読み取り専用）
 type DTakoFerryRowsProdService struct {
-	proto.UnimplementedDTakoFerryRowsProdServiceServer
+	proto.UnimplementedDb_DTakoFerryRowsProdServiceServer
 	repo repository.DTakoFerryRowsProdRepository
 }
 
@@ -24,19 +24,19 @@ func NewDTakoFerryRowsProdService(repo repository.DTakoFerryRowsProdRepository) 
 }
 
 // Get フェリー運行データ取得
-func (s *DTakoFerryRowsProdService) Get(ctx context.Context, req *proto.GetDTakoFerryRowsProdRequest) (*proto.DTakoFerryRowsProdResponse, error) {
+func (s *DTakoFerryRowsProdService) Get(ctx context.Context, req *proto.Db_GetDTakoFerryRowsProdRequest) (*proto.Db_DTakoFerryRowsProdResponse, error) {
 	row, err := s.repo.GetByID(req.Id)
 	if err != nil {
 		return nil, status.Errorf(codes.NotFound, "ferry row not found: %v", err)
 	}
 
-	return &proto.DTakoFerryRowsProdResponse{
+	return &proto.Db_DTakoFerryRowsProdResponse{
 		DtakoFerryRows: dtakoFerryRowsProdModelToProto(row),
 	}, nil
 }
 
 // List フェリー運行データ一覧取得
-func (s *DTakoFerryRowsProdService) List(ctx context.Context, req *proto.ListDTakoFerryRowsProdRequest) (*proto.ListDTakoFerryRowsProdResponse, error) {
+func (s *DTakoFerryRowsProdService) List(ctx context.Context, req *proto.Db_ListDTakoFerryRowsProdRequest) (*proto.Db_ListDTakoFerryRowsProdResponse, error) {
 	limit := int(req.Limit)
 	offset := int(req.Offset)
 
@@ -49,38 +49,38 @@ func (s *DTakoFerryRowsProdService) List(ctx context.Context, req *proto.ListDTa
 		return nil, status.Errorf(codes.Internal, "failed to list ferry rows: %v", err)
 	}
 
-	items := make([]*proto.DTakoFerryRowsProd, len(rows))
+	items := make([]*proto.Db_DTakoFerryRowsProd, len(rows))
 	for i, row := range rows {
 		items[i] = dtakoFerryRowsProdModelToProto(row)
 	}
 
-	return &proto.ListDTakoFerryRowsProdResponse{
+	return &proto.Db_ListDTakoFerryRowsProdResponse{
 		Items:      items,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // GetByUnkoNo 運行NOでフェリー運行データ取得
-func (s *DTakoFerryRowsProdService) GetByUnkoNo(ctx context.Context, req *proto.GetDTakoFerryRowsProdByUnkoNoRequest) (*proto.ListDTakoFerryRowsProdResponse, error) {
+func (s *DTakoFerryRowsProdService) GetByUnkoNo(ctx context.Context, req *proto.Db_GetDTakoFerryRowsProdByUnkoNoRequest) (*proto.Db_ListDTakoFerryRowsProdResponse, error) {
 	rows, err := s.repo.GetByUnkoNo(req.UnkoNo)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "failed to get ferry rows by unko_no: %v", err)
 	}
 
-	items := make([]*proto.DTakoFerryRowsProd, len(rows))
+	items := make([]*proto.Db_DTakoFerryRowsProd, len(rows))
 	for i, row := range rows {
 		items[i] = dtakoFerryRowsProdModelToProto(row)
 	}
 
-	return &proto.ListDTakoFerryRowsProdResponse{
+	return &proto.Db_ListDTakoFerryRowsProdResponse{
 		Items:      items,
 		TotalCount: int32(len(rows)),
 	}, nil
 }
 
 // dtakoFerryRowsProdModelToProto ModelからProtoへの変換
-func dtakoFerryRowsProdModelToProto(model *mysql.DTakoFerryRows) *proto.DTakoFerryRowsProd {
-	protoRow := &proto.DTakoFerryRowsProd{
+func dtakoFerryRowsProdModelToProto(model *mysql.DTakoFerryRows) *proto.Db_DTakoFerryRowsProd {
+	protoRow := &proto.Db_DTakoFerryRowsProd{
 		Id:                int32(model.ID),
 		UnkoNo:            model.UnkoNo,
 		UnkoDate:          model.UnkoDate.Format("2006-01-02"),

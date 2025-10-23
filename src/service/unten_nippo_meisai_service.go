@@ -11,7 +11,7 @@ import (
 
 // UntenNippoMeisaiService 運転日報明細サービス
 type UntenNippoMeisaiService struct {
-	pb.UnimplementedUntenNippoMeisaiServiceServer
+	pb.UnimplementedDb_UntenNippoMeisaiServiceServer
 	repo repository.UntenNippoMeisaiRepository
 }
 
@@ -23,19 +23,19 @@ func NewUntenNippoMeisaiService(repo repository.UntenNippoMeisaiRepository) *Unt
 }
 
 // Get 単一の運転日報明細を取得（複合主キー: 日報K, 配車K, 車輌C）
-func (s *UntenNippoMeisaiService) Get(ctx context.Context, req *pb.GetUntenNippoMeisaiRequest) (*pb.UntenNippoMeisaiResponse, error) {
+func (s *UntenNippoMeisaiService) Get(ctx context.Context, req *pb.Db_GetUntenNippoMeisaiRequest) (*pb.Db_UntenNippoMeisaiResponse, error) {
 	meisai, err := s.repo.GetByNippoK(req.NippoK, req.HaishaK, req.SharyoC)
 	if err != nil {
 		return nil, status.Errorf(codes.NotFound, "運転日報明細が見つかりません: %v", err)
 	}
 
-	return &pb.UntenNippoMeisaiResponse{
+	return &pb.Db_UntenNippoMeisaiResponse{
 		UntenNippoMeisai: convertUntenNippoMeisaiToProto(meisai),
 	}, nil
 }
 
 // List 運転日報明細のリストを取得
-func (s *UntenNippoMeisaiService) List(ctx context.Context, req *pb.ListUntenNippoMeisaiRequest) (*pb.ListUntenNippoMeisaiResponse, error) {
+func (s *UntenNippoMeisaiService) List(ctx context.Context, req *pb.Db_ListUntenNippoMeisaiRequest) (*pb.Db_ListUntenNippoMeisaiResponse, error) {
 	limit := int(req.Limit)
 	if limit <= 0 {
 		limit = 10
@@ -52,19 +52,19 @@ func (s *UntenNippoMeisaiService) List(ctx context.Context, req *pb.ListUntenNip
 		return nil, status.Errorf(codes.Internal, "運転日報明細の取得に失敗しました: %v", err)
 	}
 
-	pbMeisaiList := make([]*pb.UntenNippoMeisai, len(meisaiList))
+	pbMeisaiList := make([]*pb.Db_UntenNippoMeisai, len(meisaiList))
 	for i, meisai := range meisaiList {
 		pbMeisaiList[i] = convertUntenNippoMeisaiToProto(meisai)
 	}
 
-	return &pb.ListUntenNippoMeisaiResponse{
+	return &pb.Db_ListUntenNippoMeisaiResponse{
 		Items:      pbMeisaiList,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // GetBySharyoC 車輌Cで運転日報明細を取得
-func (s *UntenNippoMeisaiService) GetBySharyoC(ctx context.Context, req *pb.GetUntenNippoMeisaiBySharyoCRequest) (*pb.ListUntenNippoMeisaiResponse, error) {
+func (s *UntenNippoMeisaiService) GetBySharyoC(ctx context.Context, req *pb.Db_GetUntenNippoMeisaiBySharyoCRequest) (*pb.Db_ListUntenNippoMeisaiResponse, error) {
 	limit := int(req.Limit)
 	if limit <= 0 {
 		limit = 10
@@ -75,19 +75,19 @@ func (s *UntenNippoMeisaiService) GetBySharyoC(ctx context.Context, req *pb.GetU
 		return nil, status.Errorf(codes.Internal, "車輌Cでの運転日報明細の取得に失敗しました: %v", err)
 	}
 
-	pbMeisaiList := make([]*pb.UntenNippoMeisai, len(meisaiList))
+	pbMeisaiList := make([]*pb.Db_UntenNippoMeisai, len(meisaiList))
 	for i, meisai := range meisaiList {
 		pbMeisaiList[i] = convertUntenNippoMeisaiToProto(meisai)
 	}
 
-	return &pb.ListUntenNippoMeisaiResponse{
+	return &pb.Db_ListUntenNippoMeisaiResponse{
 		Items:      pbMeisaiList,
 		TotalCount: int32(len(meisaiList)),
 	}, nil
 }
 
 // GetByDateRange 日付範囲で運転日報明細を取得
-func (s *UntenNippoMeisaiService) GetByDateRange(ctx context.Context, req *pb.GetUntenNippoMeisaiByDateRangeRequest) (*pb.ListUntenNippoMeisaiResponse, error) {
+func (s *UntenNippoMeisaiService) GetByDateRange(ctx context.Context, req *pb.Db_GetUntenNippoMeisaiByDateRangeRequest) (*pb.Db_ListUntenNippoMeisaiResponse, error) {
 	limit := int(req.Limit)
 	if limit <= 0 {
 		limit = 10
@@ -99,12 +99,12 @@ func (s *UntenNippoMeisaiService) GetByDateRange(ctx context.Context, req *pb.Ge
 		return nil, status.Errorf(codes.Internal, "日付範囲での運転日報明細の取得に失敗しました: %v", err)
 	}
 
-	pbMeisaiList := make([]*pb.UntenNippoMeisai, len(meisaiList))
+	pbMeisaiList := make([]*pb.Db_UntenNippoMeisai, len(meisaiList))
 	for i, meisai := range meisaiList {
 		pbMeisaiList[i] = convertUntenNippoMeisaiToProto(meisai)
 	}
 
-	return &pb.ListUntenNippoMeisaiResponse{
+	return &pb.Db_ListUntenNippoMeisaiResponse{
 		Items:      pbMeisaiList,
 		TotalCount: int32(totalCount),
 	}, nil

@@ -19,265 +19,265 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	DTakoUriageKeihiService_Create_FullMethodName = "/db_service.DTakoUriageKeihiService/Create"
-	DTakoUriageKeihiService_Get_FullMethodName    = "/db_service.DTakoUriageKeihiService/Get"
-	DTakoUriageKeihiService_Update_FullMethodName = "/db_service.DTakoUriageKeihiService/Update"
-	DTakoUriageKeihiService_Delete_FullMethodName = "/db_service.DTakoUriageKeihiService/Delete"
-	DTakoUriageKeihiService_List_FullMethodName   = "/db_service.DTakoUriageKeihiService/List"
+	Db_DTakoUriageKeihiService_Create_FullMethodName = "/db_service.db_DTakoUriageKeihiService/Create"
+	Db_DTakoUriageKeihiService_Get_FullMethodName    = "/db_service.db_DTakoUriageKeihiService/Get"
+	Db_DTakoUriageKeihiService_Update_FullMethodName = "/db_service.db_DTakoUriageKeihiService/Update"
+	Db_DTakoUriageKeihiService_Delete_FullMethodName = "/db_service.db_DTakoUriageKeihiService/Delete"
+	Db_DTakoUriageKeihiService_List_FullMethodName   = "/db_service.db_DTakoUriageKeihiService/List"
 )
 
-// DTakoUriageKeihiServiceClient is the client API for DTakoUriageKeihiService service.
+// Db_DTakoUriageKeihiServiceClient is the client API for Db_DTakoUriageKeihiService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // DTakoUriageKeihiサービス - 経費精算データ管理
-type DTakoUriageKeihiServiceClient interface {
+type Db_DTakoUriageKeihiServiceClient interface {
 	// 経費精算データ作成
-	Create(ctx context.Context, in *CreateDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*DTakoUriageKeihiResponse, error)
+	Create(ctx context.Context, in *Db_CreateDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_DTakoUriageKeihiResponse, error)
 	// 経費精算データ取得
-	Get(ctx context.Context, in *GetDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*DTakoUriageKeihiResponse, error)
+	Get(ctx context.Context, in *Db_GetDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_DTakoUriageKeihiResponse, error)
 	// 経費精算データ更新
-	Update(ctx context.Context, in *UpdateDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*DTakoUriageKeihiResponse, error)
+	Update(ctx context.Context, in *Db_UpdateDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_DTakoUriageKeihiResponse, error)
 	// 経費精算データ削除
-	Delete(ctx context.Context, in *DeleteDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Empty, error)
+	Delete(ctx context.Context, in *Db_DeleteDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_Empty, error)
 	// 経費精算データ一覧取得
-	List(ctx context.Context, in *ListDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*ListDTakoUriageKeihiResponse, error)
+	List(ctx context.Context, in *Db_ListDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_ListDTakoUriageKeihiResponse, error)
 }
 
-type dTakoUriageKeihiServiceClient struct {
+type db_DTakoUriageKeihiServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDTakoUriageKeihiServiceClient(cc grpc.ClientConnInterface) DTakoUriageKeihiServiceClient {
-	return &dTakoUriageKeihiServiceClient{cc}
+func NewDb_DTakoUriageKeihiServiceClient(cc grpc.ClientConnInterface) Db_DTakoUriageKeihiServiceClient {
+	return &db_DTakoUriageKeihiServiceClient{cc}
 }
 
-func (c *dTakoUriageKeihiServiceClient) Create(ctx context.Context, in *CreateDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*DTakoUriageKeihiResponse, error) {
+func (c *db_DTakoUriageKeihiServiceClient) Create(ctx context.Context, in *Db_CreateDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_DTakoUriageKeihiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoUriageKeihiResponse)
-	err := c.cc.Invoke(ctx, DTakoUriageKeihiService_Create_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoUriageKeihiResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoUriageKeihiService_Create_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoUriageKeihiServiceClient) Get(ctx context.Context, in *GetDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*DTakoUriageKeihiResponse, error) {
+func (c *db_DTakoUriageKeihiServiceClient) Get(ctx context.Context, in *Db_GetDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_DTakoUriageKeihiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoUriageKeihiResponse)
-	err := c.cc.Invoke(ctx, DTakoUriageKeihiService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoUriageKeihiResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoUriageKeihiService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoUriageKeihiServiceClient) Update(ctx context.Context, in *UpdateDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*DTakoUriageKeihiResponse, error) {
+func (c *db_DTakoUriageKeihiServiceClient) Update(ctx context.Context, in *Db_UpdateDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_DTakoUriageKeihiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoUriageKeihiResponse)
-	err := c.cc.Invoke(ctx, DTakoUriageKeihiService_Update_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoUriageKeihiResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoUriageKeihiService_Update_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoUriageKeihiServiceClient) Delete(ctx context.Context, in *DeleteDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Empty, error) {
+func (c *db_DTakoUriageKeihiServiceClient) Delete(ctx context.Context, in *Db_DeleteDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Empty)
-	err := c.cc.Invoke(ctx, DTakoUriageKeihiService_Delete_FullMethodName, in, out, cOpts...)
+	out := new(Db_Empty)
+	err := c.cc.Invoke(ctx, Db_DTakoUriageKeihiService_Delete_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoUriageKeihiServiceClient) List(ctx context.Context, in *ListDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*ListDTakoUriageKeihiResponse, error) {
+func (c *db_DTakoUriageKeihiServiceClient) List(ctx context.Context, in *Db_ListDTakoUriageKeihiRequest, opts ...grpc.CallOption) (*Db_ListDTakoUriageKeihiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDTakoUriageKeihiResponse)
-	err := c.cc.Invoke(ctx, DTakoUriageKeihiService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDTakoUriageKeihiResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoUriageKeihiService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DTakoUriageKeihiServiceServer is the server API for DTakoUriageKeihiService service.
-// All implementations should embed UnimplementedDTakoUriageKeihiServiceServer
+// Db_DTakoUriageKeihiServiceServer is the server API for Db_DTakoUriageKeihiService service.
+// All implementations should embed UnimplementedDb_DTakoUriageKeihiServiceServer
 // for forward compatibility.
 //
 // DTakoUriageKeihiサービス - 経費精算データ管理
-type DTakoUriageKeihiServiceServer interface {
+type Db_DTakoUriageKeihiServiceServer interface {
 	// 経費精算データ作成
-	Create(context.Context, *CreateDTakoUriageKeihiRequest) (*DTakoUriageKeihiResponse, error)
+	Create(context.Context, *Db_CreateDTakoUriageKeihiRequest) (*Db_DTakoUriageKeihiResponse, error)
 	// 経費精算データ取得
-	Get(context.Context, *GetDTakoUriageKeihiRequest) (*DTakoUriageKeihiResponse, error)
+	Get(context.Context, *Db_GetDTakoUriageKeihiRequest) (*Db_DTakoUriageKeihiResponse, error)
 	// 経費精算データ更新
-	Update(context.Context, *UpdateDTakoUriageKeihiRequest) (*DTakoUriageKeihiResponse, error)
+	Update(context.Context, *Db_UpdateDTakoUriageKeihiRequest) (*Db_DTakoUriageKeihiResponse, error)
 	// 経費精算データ削除
-	Delete(context.Context, *DeleteDTakoUriageKeihiRequest) (*Empty, error)
+	Delete(context.Context, *Db_DeleteDTakoUriageKeihiRequest) (*Db_Empty, error)
 	// 経費精算データ一覧取得
-	List(context.Context, *ListDTakoUriageKeihiRequest) (*ListDTakoUriageKeihiResponse, error)
+	List(context.Context, *Db_ListDTakoUriageKeihiRequest) (*Db_ListDTakoUriageKeihiResponse, error)
 }
 
-// UnimplementedDTakoUriageKeihiServiceServer should be embedded to have
+// UnimplementedDb_DTakoUriageKeihiServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedDTakoUriageKeihiServiceServer struct{}
+type UnimplementedDb_DTakoUriageKeihiServiceServer struct{}
 
-func (UnimplementedDTakoUriageKeihiServiceServer) Create(context.Context, *CreateDTakoUriageKeihiRequest) (*DTakoUriageKeihiResponse, error) {
+func (UnimplementedDb_DTakoUriageKeihiServiceServer) Create(context.Context, *Db_CreateDTakoUriageKeihiRequest) (*Db_DTakoUriageKeihiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedDTakoUriageKeihiServiceServer) Get(context.Context, *GetDTakoUriageKeihiRequest) (*DTakoUriageKeihiResponse, error) {
+func (UnimplementedDb_DTakoUriageKeihiServiceServer) Get(context.Context, *Db_GetDTakoUriageKeihiRequest) (*Db_DTakoUriageKeihiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedDTakoUriageKeihiServiceServer) Update(context.Context, *UpdateDTakoUriageKeihiRequest) (*DTakoUriageKeihiResponse, error) {
+func (UnimplementedDb_DTakoUriageKeihiServiceServer) Update(context.Context, *Db_UpdateDTakoUriageKeihiRequest) (*Db_DTakoUriageKeihiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedDTakoUriageKeihiServiceServer) Delete(context.Context, *DeleteDTakoUriageKeihiRequest) (*Empty, error) {
+func (UnimplementedDb_DTakoUriageKeihiServiceServer) Delete(context.Context, *Db_DeleteDTakoUriageKeihiRequest) (*Db_Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedDTakoUriageKeihiServiceServer) List(context.Context, *ListDTakoUriageKeihiRequest) (*ListDTakoUriageKeihiResponse, error) {
+func (UnimplementedDb_DTakoUriageKeihiServiceServer) List(context.Context, *Db_ListDTakoUriageKeihiRequest) (*Db_ListDTakoUriageKeihiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedDTakoUriageKeihiServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_DTakoUriageKeihiServiceServer) testEmbeddedByValue() {}
 
-// UnsafeDTakoUriageKeihiServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DTakoUriageKeihiServiceServer will
+// UnsafeDb_DTakoUriageKeihiServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_DTakoUriageKeihiServiceServer will
 // result in compilation errors.
-type UnsafeDTakoUriageKeihiServiceServer interface {
-	mustEmbedUnimplementedDTakoUriageKeihiServiceServer()
+type UnsafeDb_DTakoUriageKeihiServiceServer interface {
+	mustEmbedUnimplementedDb_DTakoUriageKeihiServiceServer()
 }
 
-func RegisterDTakoUriageKeihiServiceServer(s grpc.ServiceRegistrar, srv DTakoUriageKeihiServiceServer) {
-	// If the following call pancis, it indicates UnimplementedDTakoUriageKeihiServiceServer was
+func RegisterDb_DTakoUriageKeihiServiceServer(s grpc.ServiceRegistrar, srv Db_DTakoUriageKeihiServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_DTakoUriageKeihiServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&DTakoUriageKeihiService_ServiceDesc, srv)
+	s.RegisterService(&Db_DTakoUriageKeihiService_ServiceDesc, srv)
 }
 
-func _DTakoUriageKeihiService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateDTakoUriageKeihiRequest)
+func _Db_DTakoUriageKeihiService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_CreateDTakoUriageKeihiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoUriageKeihiServiceServer).Create(ctx, in)
+		return srv.(Db_DTakoUriageKeihiServiceServer).Create(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoUriageKeihiService_Create_FullMethodName,
+		FullMethod: Db_DTakoUriageKeihiService_Create_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoUriageKeihiServiceServer).Create(ctx, req.(*CreateDTakoUriageKeihiRequest))
+		return srv.(Db_DTakoUriageKeihiServiceServer).Create(ctx, req.(*Db_CreateDTakoUriageKeihiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoUriageKeihiService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoUriageKeihiRequest)
+func _Db_DTakoUriageKeihiService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoUriageKeihiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoUriageKeihiServiceServer).Get(ctx, in)
+		return srv.(Db_DTakoUriageKeihiServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoUriageKeihiService_Get_FullMethodName,
+		FullMethod: Db_DTakoUriageKeihiService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoUriageKeihiServiceServer).Get(ctx, req.(*GetDTakoUriageKeihiRequest))
+		return srv.(Db_DTakoUriageKeihiServiceServer).Get(ctx, req.(*Db_GetDTakoUriageKeihiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoUriageKeihiService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateDTakoUriageKeihiRequest)
+func _Db_DTakoUriageKeihiService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_UpdateDTakoUriageKeihiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoUriageKeihiServiceServer).Update(ctx, in)
+		return srv.(Db_DTakoUriageKeihiServiceServer).Update(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoUriageKeihiService_Update_FullMethodName,
+		FullMethod: Db_DTakoUriageKeihiService_Update_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoUriageKeihiServiceServer).Update(ctx, req.(*UpdateDTakoUriageKeihiRequest))
+		return srv.(Db_DTakoUriageKeihiServiceServer).Update(ctx, req.(*Db_UpdateDTakoUriageKeihiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoUriageKeihiService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteDTakoUriageKeihiRequest)
+func _Db_DTakoUriageKeihiService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_DeleteDTakoUriageKeihiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoUriageKeihiServiceServer).Delete(ctx, in)
+		return srv.(Db_DTakoUriageKeihiServiceServer).Delete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoUriageKeihiService_Delete_FullMethodName,
+		FullMethod: Db_DTakoUriageKeihiService_Delete_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoUriageKeihiServiceServer).Delete(ctx, req.(*DeleteDTakoUriageKeihiRequest))
+		return srv.(Db_DTakoUriageKeihiServiceServer).Delete(ctx, req.(*Db_DeleteDTakoUriageKeihiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoUriageKeihiService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListDTakoUriageKeihiRequest)
+func _Db_DTakoUriageKeihiService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListDTakoUriageKeihiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoUriageKeihiServiceServer).List(ctx, in)
+		return srv.(Db_DTakoUriageKeihiServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoUriageKeihiService_List_FullMethodName,
+		FullMethod: Db_DTakoUriageKeihiService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoUriageKeihiServiceServer).List(ctx, req.(*ListDTakoUriageKeihiRequest))
+		return srv.(Db_DTakoUriageKeihiServiceServer).List(ctx, req.(*Db_ListDTakoUriageKeihiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DTakoUriageKeihiService_ServiceDesc is the grpc.ServiceDesc for DTakoUriageKeihiService service.
+// Db_DTakoUriageKeihiService_ServiceDesc is the grpc.ServiceDesc for Db_DTakoUriageKeihiService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DTakoUriageKeihiService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.DTakoUriageKeihiService",
-	HandlerType: (*DTakoUriageKeihiServiceServer)(nil),
+var Db_DTakoUriageKeihiService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_DTakoUriageKeihiService",
+	HandlerType: (*Db_DTakoUriageKeihiServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Create",
-			Handler:    _DTakoUriageKeihiService_Create_Handler,
+			Handler:    _Db_DTakoUriageKeihiService_Create_Handler,
 		},
 		{
 			MethodName: "Get",
-			Handler:    _DTakoUriageKeihiService_Get_Handler,
+			Handler:    _Db_DTakoUriageKeihiService_Get_Handler,
 		},
 		{
 			MethodName: "Update",
-			Handler:    _DTakoUriageKeihiService_Update_Handler,
+			Handler:    _Db_DTakoUriageKeihiService_Update_Handler,
 		},
 		{
 			MethodName: "Delete",
-			Handler:    _DTakoUriageKeihiService_Delete_Handler,
+			Handler:    _Db_DTakoUriageKeihiService_Delete_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _DTakoUriageKeihiService_List_Handler,
+			Handler:    _Db_DTakoUriageKeihiService_List_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -285,265 +285,265 @@ var DTakoUriageKeihiService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	ETCMeisaiService_Create_FullMethodName = "/db_service.ETCMeisaiService/Create"
-	ETCMeisaiService_Get_FullMethodName    = "/db_service.ETCMeisaiService/Get"
-	ETCMeisaiService_Update_FullMethodName = "/db_service.ETCMeisaiService/Update"
-	ETCMeisaiService_Delete_FullMethodName = "/db_service.ETCMeisaiService/Delete"
-	ETCMeisaiService_List_FullMethodName   = "/db_service.ETCMeisaiService/List"
+	Db_ETCMeisaiService_Create_FullMethodName = "/db_service.db_ETCMeisaiService/Create"
+	Db_ETCMeisaiService_Get_FullMethodName    = "/db_service.db_ETCMeisaiService/Get"
+	Db_ETCMeisaiService_Update_FullMethodName = "/db_service.db_ETCMeisaiService/Update"
+	Db_ETCMeisaiService_Delete_FullMethodName = "/db_service.db_ETCMeisaiService/Delete"
+	Db_ETCMeisaiService_List_FullMethodName   = "/db_service.db_ETCMeisaiService/List"
 )
 
-// ETCMeisaiServiceClient is the client API for ETCMeisaiService service.
+// Db_ETCMeisaiServiceClient is the client API for Db_ETCMeisaiService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // ETCMeisaiサービス - ETC明細データ管理
-type ETCMeisaiServiceClient interface {
+type Db_ETCMeisaiServiceClient interface {
 	// ETC明細データ作成
-	Create(ctx context.Context, in *CreateETCMeisaiRequest, opts ...grpc.CallOption) (*ETCMeisaiResponse, error)
+	Create(ctx context.Context, in *Db_CreateETCMeisaiRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiResponse, error)
 	// ETC明細データ取得
-	Get(ctx context.Context, in *GetETCMeisaiRequest, opts ...grpc.CallOption) (*ETCMeisaiResponse, error)
+	Get(ctx context.Context, in *Db_GetETCMeisaiRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiResponse, error)
 	// ETC明細データ更新
-	Update(ctx context.Context, in *UpdateETCMeisaiRequest, opts ...grpc.CallOption) (*ETCMeisaiResponse, error)
+	Update(ctx context.Context, in *Db_UpdateETCMeisaiRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiResponse, error)
 	// ETC明細データ削除
-	Delete(ctx context.Context, in *DeleteETCMeisaiRequest, opts ...grpc.CallOption) (*Empty, error)
+	Delete(ctx context.Context, in *Db_DeleteETCMeisaiRequest, opts ...grpc.CallOption) (*Db_Empty, error)
 	// ETC明細データ一覧取得
-	List(ctx context.Context, in *ListETCMeisaiRequest, opts ...grpc.CallOption) (*ListETCMeisaiResponse, error)
+	List(ctx context.Context, in *Db_ListETCMeisaiRequest, opts ...grpc.CallOption) (*Db_ListETCMeisaiResponse, error)
 }
 
-type eTCMeisaiServiceClient struct {
+type db_ETCMeisaiServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewETCMeisaiServiceClient(cc grpc.ClientConnInterface) ETCMeisaiServiceClient {
-	return &eTCMeisaiServiceClient{cc}
+func NewDb_ETCMeisaiServiceClient(cc grpc.ClientConnInterface) Db_ETCMeisaiServiceClient {
+	return &db_ETCMeisaiServiceClient{cc}
 }
 
-func (c *eTCMeisaiServiceClient) Create(ctx context.Context, in *CreateETCMeisaiRequest, opts ...grpc.CallOption) (*ETCMeisaiResponse, error) {
+func (c *db_ETCMeisaiServiceClient) Create(ctx context.Context, in *Db_CreateETCMeisaiRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ETCMeisaiResponse)
-	err := c.cc.Invoke(ctx, ETCMeisaiService_Create_FullMethodName, in, out, cOpts...)
+	out := new(Db_ETCMeisaiResponse)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiService_Create_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCMeisaiServiceClient) Get(ctx context.Context, in *GetETCMeisaiRequest, opts ...grpc.CallOption) (*ETCMeisaiResponse, error) {
+func (c *db_ETCMeisaiServiceClient) Get(ctx context.Context, in *Db_GetETCMeisaiRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ETCMeisaiResponse)
-	err := c.cc.Invoke(ctx, ETCMeisaiService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_ETCMeisaiResponse)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCMeisaiServiceClient) Update(ctx context.Context, in *UpdateETCMeisaiRequest, opts ...grpc.CallOption) (*ETCMeisaiResponse, error) {
+func (c *db_ETCMeisaiServiceClient) Update(ctx context.Context, in *Db_UpdateETCMeisaiRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ETCMeisaiResponse)
-	err := c.cc.Invoke(ctx, ETCMeisaiService_Update_FullMethodName, in, out, cOpts...)
+	out := new(Db_ETCMeisaiResponse)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiService_Update_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCMeisaiServiceClient) Delete(ctx context.Context, in *DeleteETCMeisaiRequest, opts ...grpc.CallOption) (*Empty, error) {
+func (c *db_ETCMeisaiServiceClient) Delete(ctx context.Context, in *Db_DeleteETCMeisaiRequest, opts ...grpc.CallOption) (*Db_Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Empty)
-	err := c.cc.Invoke(ctx, ETCMeisaiService_Delete_FullMethodName, in, out, cOpts...)
+	out := new(Db_Empty)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiService_Delete_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCMeisaiServiceClient) List(ctx context.Context, in *ListETCMeisaiRequest, opts ...grpc.CallOption) (*ListETCMeisaiResponse, error) {
+func (c *db_ETCMeisaiServiceClient) List(ctx context.Context, in *Db_ListETCMeisaiRequest, opts ...grpc.CallOption) (*Db_ListETCMeisaiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListETCMeisaiResponse)
-	err := c.cc.Invoke(ctx, ETCMeisaiService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListETCMeisaiResponse)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ETCMeisaiServiceServer is the server API for ETCMeisaiService service.
-// All implementations should embed UnimplementedETCMeisaiServiceServer
+// Db_ETCMeisaiServiceServer is the server API for Db_ETCMeisaiService service.
+// All implementations should embed UnimplementedDb_ETCMeisaiServiceServer
 // for forward compatibility.
 //
 // ETCMeisaiサービス - ETC明細データ管理
-type ETCMeisaiServiceServer interface {
+type Db_ETCMeisaiServiceServer interface {
 	// ETC明細データ作成
-	Create(context.Context, *CreateETCMeisaiRequest) (*ETCMeisaiResponse, error)
+	Create(context.Context, *Db_CreateETCMeisaiRequest) (*Db_ETCMeisaiResponse, error)
 	// ETC明細データ取得
-	Get(context.Context, *GetETCMeisaiRequest) (*ETCMeisaiResponse, error)
+	Get(context.Context, *Db_GetETCMeisaiRequest) (*Db_ETCMeisaiResponse, error)
 	// ETC明細データ更新
-	Update(context.Context, *UpdateETCMeisaiRequest) (*ETCMeisaiResponse, error)
+	Update(context.Context, *Db_UpdateETCMeisaiRequest) (*Db_ETCMeisaiResponse, error)
 	// ETC明細データ削除
-	Delete(context.Context, *DeleteETCMeisaiRequest) (*Empty, error)
+	Delete(context.Context, *Db_DeleteETCMeisaiRequest) (*Db_Empty, error)
 	// ETC明細データ一覧取得
-	List(context.Context, *ListETCMeisaiRequest) (*ListETCMeisaiResponse, error)
+	List(context.Context, *Db_ListETCMeisaiRequest) (*Db_ListETCMeisaiResponse, error)
 }
 
-// UnimplementedETCMeisaiServiceServer should be embedded to have
+// UnimplementedDb_ETCMeisaiServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedETCMeisaiServiceServer struct{}
+type UnimplementedDb_ETCMeisaiServiceServer struct{}
 
-func (UnimplementedETCMeisaiServiceServer) Create(context.Context, *CreateETCMeisaiRequest) (*ETCMeisaiResponse, error) {
+func (UnimplementedDb_ETCMeisaiServiceServer) Create(context.Context, *Db_CreateETCMeisaiRequest) (*Db_ETCMeisaiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedETCMeisaiServiceServer) Get(context.Context, *GetETCMeisaiRequest) (*ETCMeisaiResponse, error) {
+func (UnimplementedDb_ETCMeisaiServiceServer) Get(context.Context, *Db_GetETCMeisaiRequest) (*Db_ETCMeisaiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedETCMeisaiServiceServer) Update(context.Context, *UpdateETCMeisaiRequest) (*ETCMeisaiResponse, error) {
+func (UnimplementedDb_ETCMeisaiServiceServer) Update(context.Context, *Db_UpdateETCMeisaiRequest) (*Db_ETCMeisaiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedETCMeisaiServiceServer) Delete(context.Context, *DeleteETCMeisaiRequest) (*Empty, error) {
+func (UnimplementedDb_ETCMeisaiServiceServer) Delete(context.Context, *Db_DeleteETCMeisaiRequest) (*Db_Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedETCMeisaiServiceServer) List(context.Context, *ListETCMeisaiRequest) (*ListETCMeisaiResponse, error) {
+func (UnimplementedDb_ETCMeisaiServiceServer) List(context.Context, *Db_ListETCMeisaiRequest) (*Db_ListETCMeisaiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedETCMeisaiServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_ETCMeisaiServiceServer) testEmbeddedByValue() {}
 
-// UnsafeETCMeisaiServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ETCMeisaiServiceServer will
+// UnsafeDb_ETCMeisaiServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_ETCMeisaiServiceServer will
 // result in compilation errors.
-type UnsafeETCMeisaiServiceServer interface {
-	mustEmbedUnimplementedETCMeisaiServiceServer()
+type UnsafeDb_ETCMeisaiServiceServer interface {
+	mustEmbedUnimplementedDb_ETCMeisaiServiceServer()
 }
 
-func RegisterETCMeisaiServiceServer(s grpc.ServiceRegistrar, srv ETCMeisaiServiceServer) {
-	// If the following call pancis, it indicates UnimplementedETCMeisaiServiceServer was
+func RegisterDb_ETCMeisaiServiceServer(s grpc.ServiceRegistrar, srv Db_ETCMeisaiServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_ETCMeisaiServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&ETCMeisaiService_ServiceDesc, srv)
+	s.RegisterService(&Db_ETCMeisaiService_ServiceDesc, srv)
 }
 
-func _ETCMeisaiService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateETCMeisaiRequest)
+func _Db_ETCMeisaiService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_CreateETCMeisaiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiServiceServer).Create(ctx, in)
+		return srv.(Db_ETCMeisaiServiceServer).Create(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiService_Create_FullMethodName,
+		FullMethod: Db_ETCMeisaiService_Create_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiServiceServer).Create(ctx, req.(*CreateETCMeisaiRequest))
+		return srv.(Db_ETCMeisaiServiceServer).Create(ctx, req.(*Db_CreateETCMeisaiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCMeisaiService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetETCMeisaiRequest)
+func _Db_ETCMeisaiService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetETCMeisaiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiServiceServer).Get(ctx, in)
+		return srv.(Db_ETCMeisaiServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiService_Get_FullMethodName,
+		FullMethod: Db_ETCMeisaiService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiServiceServer).Get(ctx, req.(*GetETCMeisaiRequest))
+		return srv.(Db_ETCMeisaiServiceServer).Get(ctx, req.(*Db_GetETCMeisaiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCMeisaiService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateETCMeisaiRequest)
+func _Db_ETCMeisaiService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_UpdateETCMeisaiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiServiceServer).Update(ctx, in)
+		return srv.(Db_ETCMeisaiServiceServer).Update(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiService_Update_FullMethodName,
+		FullMethod: Db_ETCMeisaiService_Update_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiServiceServer).Update(ctx, req.(*UpdateETCMeisaiRequest))
+		return srv.(Db_ETCMeisaiServiceServer).Update(ctx, req.(*Db_UpdateETCMeisaiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCMeisaiService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteETCMeisaiRequest)
+func _Db_ETCMeisaiService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_DeleteETCMeisaiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiServiceServer).Delete(ctx, in)
+		return srv.(Db_ETCMeisaiServiceServer).Delete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiService_Delete_FullMethodName,
+		FullMethod: Db_ETCMeisaiService_Delete_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiServiceServer).Delete(ctx, req.(*DeleteETCMeisaiRequest))
+		return srv.(Db_ETCMeisaiServiceServer).Delete(ctx, req.(*Db_DeleteETCMeisaiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCMeisaiService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListETCMeisaiRequest)
+func _Db_ETCMeisaiService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListETCMeisaiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiServiceServer).List(ctx, in)
+		return srv.(Db_ETCMeisaiServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiService_List_FullMethodName,
+		FullMethod: Db_ETCMeisaiService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiServiceServer).List(ctx, req.(*ListETCMeisaiRequest))
+		return srv.(Db_ETCMeisaiServiceServer).List(ctx, req.(*Db_ListETCMeisaiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ETCMeisaiService_ServiceDesc is the grpc.ServiceDesc for ETCMeisaiService service.
+// Db_ETCMeisaiService_ServiceDesc is the grpc.ServiceDesc for Db_ETCMeisaiService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ETCMeisaiService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.ETCMeisaiService",
-	HandlerType: (*ETCMeisaiServiceServer)(nil),
+var Db_ETCMeisaiService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_ETCMeisaiService",
+	HandlerType: (*Db_ETCMeisaiServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Create",
-			Handler:    _ETCMeisaiService_Create_Handler,
+			Handler:    _Db_ETCMeisaiService_Create_Handler,
 		},
 		{
 			MethodName: "Get",
-			Handler:    _ETCMeisaiService_Get_Handler,
+			Handler:    _Db_ETCMeisaiService_Get_Handler,
 		},
 		{
 			MethodName: "Update",
-			Handler:    _ETCMeisaiService_Update_Handler,
+			Handler:    _Db_ETCMeisaiService_Update_Handler,
 		},
 		{
 			MethodName: "Delete",
-			Handler:    _ETCMeisaiService_Delete_Handler,
+			Handler:    _Db_ETCMeisaiService_Delete_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _ETCMeisaiService_List_Handler,
+			Handler:    _Db_ETCMeisaiService_List_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -551,265 +551,265 @@ var ETCMeisaiService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	DTakoFerryRowsService_Create_FullMethodName = "/db_service.DTakoFerryRowsService/Create"
-	DTakoFerryRowsService_Get_FullMethodName    = "/db_service.DTakoFerryRowsService/Get"
-	DTakoFerryRowsService_Update_FullMethodName = "/db_service.DTakoFerryRowsService/Update"
-	DTakoFerryRowsService_Delete_FullMethodName = "/db_service.DTakoFerryRowsService/Delete"
-	DTakoFerryRowsService_List_FullMethodName   = "/db_service.DTakoFerryRowsService/List"
+	Db_DTakoFerryRowsService_Create_FullMethodName = "/db_service.db_DTakoFerryRowsService/Create"
+	Db_DTakoFerryRowsService_Get_FullMethodName    = "/db_service.db_DTakoFerryRowsService/Get"
+	Db_DTakoFerryRowsService_Update_FullMethodName = "/db_service.db_DTakoFerryRowsService/Update"
+	Db_DTakoFerryRowsService_Delete_FullMethodName = "/db_service.db_DTakoFerryRowsService/Delete"
+	Db_DTakoFerryRowsService_List_FullMethodName   = "/db_service.db_DTakoFerryRowsService/List"
 )
 
-// DTakoFerryRowsServiceClient is the client API for DTakoFerryRowsService service.
+// Db_DTakoFerryRowsServiceClient is the client API for Db_DTakoFerryRowsService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // DTakoFerryRowsサービス - フェリー運行データ管理
-type DTakoFerryRowsServiceClient interface {
+type Db_DTakoFerryRowsServiceClient interface {
 	// フェリー運行データ作成
-	Create(ctx context.Context, in *CreateDTakoFerryRowsRequest, opts ...grpc.CallOption) (*DTakoFerryRowsResponse, error)
+	Create(ctx context.Context, in *Db_CreateDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_DTakoFerryRowsResponse, error)
 	// フェリー運行データ取得
-	Get(ctx context.Context, in *GetDTakoFerryRowsRequest, opts ...grpc.CallOption) (*DTakoFerryRowsResponse, error)
+	Get(ctx context.Context, in *Db_GetDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_DTakoFerryRowsResponse, error)
 	// フェリー運行データ更新
-	Update(ctx context.Context, in *UpdateDTakoFerryRowsRequest, opts ...grpc.CallOption) (*DTakoFerryRowsResponse, error)
+	Update(ctx context.Context, in *Db_UpdateDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_DTakoFerryRowsResponse, error)
 	// フェリー運行データ削除
-	Delete(ctx context.Context, in *DeleteDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Empty, error)
+	Delete(ctx context.Context, in *Db_DeleteDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_Empty, error)
 	// フェリー運行データ一覧取得
-	List(ctx context.Context, in *ListDTakoFerryRowsRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsResponse, error)
+	List(ctx context.Context, in *Db_ListDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_ListDTakoFerryRowsResponse, error)
 }
 
-type dTakoFerryRowsServiceClient struct {
+type db_DTakoFerryRowsServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDTakoFerryRowsServiceClient(cc grpc.ClientConnInterface) DTakoFerryRowsServiceClient {
-	return &dTakoFerryRowsServiceClient{cc}
+func NewDb_DTakoFerryRowsServiceClient(cc grpc.ClientConnInterface) Db_DTakoFerryRowsServiceClient {
+	return &db_DTakoFerryRowsServiceClient{cc}
 }
 
-func (c *dTakoFerryRowsServiceClient) Create(ctx context.Context, in *CreateDTakoFerryRowsRequest, opts ...grpc.CallOption) (*DTakoFerryRowsResponse, error) {
+func (c *db_DTakoFerryRowsServiceClient) Create(ctx context.Context, in *Db_CreateDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_DTakoFerryRowsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoFerryRowsResponse)
-	err := c.cc.Invoke(ctx, DTakoFerryRowsService_Create_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoFerryRowsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoFerryRowsService_Create_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoFerryRowsServiceClient) Get(ctx context.Context, in *GetDTakoFerryRowsRequest, opts ...grpc.CallOption) (*DTakoFerryRowsResponse, error) {
+func (c *db_DTakoFerryRowsServiceClient) Get(ctx context.Context, in *Db_GetDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_DTakoFerryRowsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoFerryRowsResponse)
-	err := c.cc.Invoke(ctx, DTakoFerryRowsService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoFerryRowsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoFerryRowsService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoFerryRowsServiceClient) Update(ctx context.Context, in *UpdateDTakoFerryRowsRequest, opts ...grpc.CallOption) (*DTakoFerryRowsResponse, error) {
+func (c *db_DTakoFerryRowsServiceClient) Update(ctx context.Context, in *Db_UpdateDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_DTakoFerryRowsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoFerryRowsResponse)
-	err := c.cc.Invoke(ctx, DTakoFerryRowsService_Update_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoFerryRowsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoFerryRowsService_Update_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoFerryRowsServiceClient) Delete(ctx context.Context, in *DeleteDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Empty, error) {
+func (c *db_DTakoFerryRowsServiceClient) Delete(ctx context.Context, in *Db_DeleteDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Empty)
-	err := c.cc.Invoke(ctx, DTakoFerryRowsService_Delete_FullMethodName, in, out, cOpts...)
+	out := new(Db_Empty)
+	err := c.cc.Invoke(ctx, Db_DTakoFerryRowsService_Delete_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoFerryRowsServiceClient) List(ctx context.Context, in *ListDTakoFerryRowsRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsResponse, error) {
+func (c *db_DTakoFerryRowsServiceClient) List(ctx context.Context, in *Db_ListDTakoFerryRowsRequest, opts ...grpc.CallOption) (*Db_ListDTakoFerryRowsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDTakoFerryRowsResponse)
-	err := c.cc.Invoke(ctx, DTakoFerryRowsService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDTakoFerryRowsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoFerryRowsService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DTakoFerryRowsServiceServer is the server API for DTakoFerryRowsService service.
-// All implementations should embed UnimplementedDTakoFerryRowsServiceServer
+// Db_DTakoFerryRowsServiceServer is the server API for Db_DTakoFerryRowsService service.
+// All implementations should embed UnimplementedDb_DTakoFerryRowsServiceServer
 // for forward compatibility.
 //
 // DTakoFerryRowsサービス - フェリー運行データ管理
-type DTakoFerryRowsServiceServer interface {
+type Db_DTakoFerryRowsServiceServer interface {
 	// フェリー運行データ作成
-	Create(context.Context, *CreateDTakoFerryRowsRequest) (*DTakoFerryRowsResponse, error)
+	Create(context.Context, *Db_CreateDTakoFerryRowsRequest) (*Db_DTakoFerryRowsResponse, error)
 	// フェリー運行データ取得
-	Get(context.Context, *GetDTakoFerryRowsRequest) (*DTakoFerryRowsResponse, error)
+	Get(context.Context, *Db_GetDTakoFerryRowsRequest) (*Db_DTakoFerryRowsResponse, error)
 	// フェリー運行データ更新
-	Update(context.Context, *UpdateDTakoFerryRowsRequest) (*DTakoFerryRowsResponse, error)
+	Update(context.Context, *Db_UpdateDTakoFerryRowsRequest) (*Db_DTakoFerryRowsResponse, error)
 	// フェリー運行データ削除
-	Delete(context.Context, *DeleteDTakoFerryRowsRequest) (*Empty, error)
+	Delete(context.Context, *Db_DeleteDTakoFerryRowsRequest) (*Db_Empty, error)
 	// フェリー運行データ一覧取得
-	List(context.Context, *ListDTakoFerryRowsRequest) (*ListDTakoFerryRowsResponse, error)
+	List(context.Context, *Db_ListDTakoFerryRowsRequest) (*Db_ListDTakoFerryRowsResponse, error)
 }
 
-// UnimplementedDTakoFerryRowsServiceServer should be embedded to have
+// UnimplementedDb_DTakoFerryRowsServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedDTakoFerryRowsServiceServer struct{}
+type UnimplementedDb_DTakoFerryRowsServiceServer struct{}
 
-func (UnimplementedDTakoFerryRowsServiceServer) Create(context.Context, *CreateDTakoFerryRowsRequest) (*DTakoFerryRowsResponse, error) {
+func (UnimplementedDb_DTakoFerryRowsServiceServer) Create(context.Context, *Db_CreateDTakoFerryRowsRequest) (*Db_DTakoFerryRowsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedDTakoFerryRowsServiceServer) Get(context.Context, *GetDTakoFerryRowsRequest) (*DTakoFerryRowsResponse, error) {
+func (UnimplementedDb_DTakoFerryRowsServiceServer) Get(context.Context, *Db_GetDTakoFerryRowsRequest) (*Db_DTakoFerryRowsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedDTakoFerryRowsServiceServer) Update(context.Context, *UpdateDTakoFerryRowsRequest) (*DTakoFerryRowsResponse, error) {
+func (UnimplementedDb_DTakoFerryRowsServiceServer) Update(context.Context, *Db_UpdateDTakoFerryRowsRequest) (*Db_DTakoFerryRowsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedDTakoFerryRowsServiceServer) Delete(context.Context, *DeleteDTakoFerryRowsRequest) (*Empty, error) {
+func (UnimplementedDb_DTakoFerryRowsServiceServer) Delete(context.Context, *Db_DeleteDTakoFerryRowsRequest) (*Db_Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedDTakoFerryRowsServiceServer) List(context.Context, *ListDTakoFerryRowsRequest) (*ListDTakoFerryRowsResponse, error) {
+func (UnimplementedDb_DTakoFerryRowsServiceServer) List(context.Context, *Db_ListDTakoFerryRowsRequest) (*Db_ListDTakoFerryRowsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedDTakoFerryRowsServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_DTakoFerryRowsServiceServer) testEmbeddedByValue() {}
 
-// UnsafeDTakoFerryRowsServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DTakoFerryRowsServiceServer will
+// UnsafeDb_DTakoFerryRowsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_DTakoFerryRowsServiceServer will
 // result in compilation errors.
-type UnsafeDTakoFerryRowsServiceServer interface {
-	mustEmbedUnimplementedDTakoFerryRowsServiceServer()
+type UnsafeDb_DTakoFerryRowsServiceServer interface {
+	mustEmbedUnimplementedDb_DTakoFerryRowsServiceServer()
 }
 
-func RegisterDTakoFerryRowsServiceServer(s grpc.ServiceRegistrar, srv DTakoFerryRowsServiceServer) {
-	// If the following call pancis, it indicates UnimplementedDTakoFerryRowsServiceServer was
+func RegisterDb_DTakoFerryRowsServiceServer(s grpc.ServiceRegistrar, srv Db_DTakoFerryRowsServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_DTakoFerryRowsServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&DTakoFerryRowsService_ServiceDesc, srv)
+	s.RegisterService(&Db_DTakoFerryRowsService_ServiceDesc, srv)
 }
 
-func _DTakoFerryRowsService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateDTakoFerryRowsRequest)
+func _Db_DTakoFerryRowsService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_CreateDTakoFerryRowsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoFerryRowsServiceServer).Create(ctx, in)
+		return srv.(Db_DTakoFerryRowsServiceServer).Create(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoFerryRowsService_Create_FullMethodName,
+		FullMethod: Db_DTakoFerryRowsService_Create_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoFerryRowsServiceServer).Create(ctx, req.(*CreateDTakoFerryRowsRequest))
+		return srv.(Db_DTakoFerryRowsServiceServer).Create(ctx, req.(*Db_CreateDTakoFerryRowsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoFerryRowsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoFerryRowsRequest)
+func _Db_DTakoFerryRowsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoFerryRowsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoFerryRowsServiceServer).Get(ctx, in)
+		return srv.(Db_DTakoFerryRowsServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoFerryRowsService_Get_FullMethodName,
+		FullMethod: Db_DTakoFerryRowsService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoFerryRowsServiceServer).Get(ctx, req.(*GetDTakoFerryRowsRequest))
+		return srv.(Db_DTakoFerryRowsServiceServer).Get(ctx, req.(*Db_GetDTakoFerryRowsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoFerryRowsService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateDTakoFerryRowsRequest)
+func _Db_DTakoFerryRowsService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_UpdateDTakoFerryRowsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoFerryRowsServiceServer).Update(ctx, in)
+		return srv.(Db_DTakoFerryRowsServiceServer).Update(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoFerryRowsService_Update_FullMethodName,
+		FullMethod: Db_DTakoFerryRowsService_Update_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoFerryRowsServiceServer).Update(ctx, req.(*UpdateDTakoFerryRowsRequest))
+		return srv.(Db_DTakoFerryRowsServiceServer).Update(ctx, req.(*Db_UpdateDTakoFerryRowsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoFerryRowsService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteDTakoFerryRowsRequest)
+func _Db_DTakoFerryRowsService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_DeleteDTakoFerryRowsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoFerryRowsServiceServer).Delete(ctx, in)
+		return srv.(Db_DTakoFerryRowsServiceServer).Delete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoFerryRowsService_Delete_FullMethodName,
+		FullMethod: Db_DTakoFerryRowsService_Delete_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoFerryRowsServiceServer).Delete(ctx, req.(*DeleteDTakoFerryRowsRequest))
+		return srv.(Db_DTakoFerryRowsServiceServer).Delete(ctx, req.(*Db_DeleteDTakoFerryRowsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoFerryRowsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListDTakoFerryRowsRequest)
+func _Db_DTakoFerryRowsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListDTakoFerryRowsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoFerryRowsServiceServer).List(ctx, in)
+		return srv.(Db_DTakoFerryRowsServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoFerryRowsService_List_FullMethodName,
+		FullMethod: Db_DTakoFerryRowsService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoFerryRowsServiceServer).List(ctx, req.(*ListDTakoFerryRowsRequest))
+		return srv.(Db_DTakoFerryRowsServiceServer).List(ctx, req.(*Db_ListDTakoFerryRowsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DTakoFerryRowsService_ServiceDesc is the grpc.ServiceDesc for DTakoFerryRowsService service.
+// Db_DTakoFerryRowsService_ServiceDesc is the grpc.ServiceDesc for Db_DTakoFerryRowsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DTakoFerryRowsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.DTakoFerryRowsService",
-	HandlerType: (*DTakoFerryRowsServiceServer)(nil),
+var Db_DTakoFerryRowsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_DTakoFerryRowsService",
+	HandlerType: (*Db_DTakoFerryRowsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Create",
-			Handler:    _DTakoFerryRowsService_Create_Handler,
+			Handler:    _Db_DTakoFerryRowsService_Create_Handler,
 		},
 		{
 			MethodName: "Get",
-			Handler:    _DTakoFerryRowsService_Get_Handler,
+			Handler:    _Db_DTakoFerryRowsService_Get_Handler,
 		},
 		{
 			MethodName: "Update",
-			Handler:    _DTakoFerryRowsService_Update_Handler,
+			Handler:    _Db_DTakoFerryRowsService_Update_Handler,
 		},
 		{
 			MethodName: "Delete",
-			Handler:    _DTakoFerryRowsService_Delete_Handler,
+			Handler:    _Db_DTakoFerryRowsService_Delete_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _DTakoFerryRowsService_List_Handler,
+			Handler:    _Db_DTakoFerryRowsService_List_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -817,305 +817,305 @@ var DTakoFerryRowsService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	ETCMeisaiMappingService_Create_FullMethodName              = "/db_service.ETCMeisaiMappingService/Create"
-	ETCMeisaiMappingService_Get_FullMethodName                 = "/db_service.ETCMeisaiMappingService/Get"
-	ETCMeisaiMappingService_Update_FullMethodName              = "/db_service.ETCMeisaiMappingService/Update"
-	ETCMeisaiMappingService_Delete_FullMethodName              = "/db_service.ETCMeisaiMappingService/Delete"
-	ETCMeisaiMappingService_List_FullMethodName                = "/db_service.ETCMeisaiMappingService/List"
-	ETCMeisaiMappingService_GetDTakoRowIDByHash_FullMethodName = "/db_service.ETCMeisaiMappingService/GetDTakoRowIDByHash"
+	Db_ETCMeisaiMappingService_Create_FullMethodName              = "/db_service.db_ETCMeisaiMappingService/Create"
+	Db_ETCMeisaiMappingService_Get_FullMethodName                 = "/db_service.db_ETCMeisaiMappingService/Get"
+	Db_ETCMeisaiMappingService_Update_FullMethodName              = "/db_service.db_ETCMeisaiMappingService/Update"
+	Db_ETCMeisaiMappingService_Delete_FullMethodName              = "/db_service.db_ETCMeisaiMappingService/Delete"
+	Db_ETCMeisaiMappingService_List_FullMethodName                = "/db_service.db_ETCMeisaiMappingService/List"
+	Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_FullMethodName = "/db_service.db_ETCMeisaiMappingService/GetDTakoRowIDByHash"
 )
 
-// ETCMeisaiMappingServiceClient is the client API for ETCMeisaiMappingService service.
+// Db_ETCMeisaiMappingServiceClient is the client API for Db_ETCMeisaiMappingService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // ETCMeisaiMappingサービス - ETC明細とDTakoRowsのマッピング管理
-type ETCMeisaiMappingServiceClient interface {
+type Db_ETCMeisaiMappingServiceClient interface {
 	// マッピング作成
-	Create(ctx context.Context, in *CreateETCMeisaiMappingRequest, opts ...grpc.CallOption) (*ETCMeisaiMappingResponse, error)
+	Create(ctx context.Context, in *Db_CreateETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiMappingResponse, error)
 	// マッピング取得
-	Get(ctx context.Context, in *GetETCMeisaiMappingRequest, opts ...grpc.CallOption) (*ETCMeisaiMappingResponse, error)
+	Get(ctx context.Context, in *Db_GetETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiMappingResponse, error)
 	// マッピング更新
-	Update(ctx context.Context, in *UpdateETCMeisaiMappingRequest, opts ...grpc.CallOption) (*ETCMeisaiMappingResponse, error)
+	Update(ctx context.Context, in *Db_UpdateETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiMappingResponse, error)
 	// マッピング削除
-	Delete(ctx context.Context, in *DeleteETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Empty, error)
+	Delete(ctx context.Context, in *Db_DeleteETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_Empty, error)
 	// マッピング一覧取得
-	List(ctx context.Context, in *ListETCMeisaiMappingRequest, opts ...grpc.CallOption) (*ListETCMeisaiMappingResponse, error)
+	List(ctx context.Context, in *Db_ListETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_ListETCMeisaiMappingResponse, error)
 	// ハッシュからDTakoRowIDを取得
-	GetDTakoRowIDByHash(ctx context.Context, in *GetDTakoRowIDByHashRequest, opts ...grpc.CallOption) (*GetDTakoRowIDByHashResponse, error)
+	GetDTakoRowIDByHash(ctx context.Context, in *Db_GetDTakoRowIDByHashRequest, opts ...grpc.CallOption) (*Db_GetDTakoRowIDByHashResponse, error)
 }
 
-type eTCMeisaiMappingServiceClient struct {
+type db_ETCMeisaiMappingServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewETCMeisaiMappingServiceClient(cc grpc.ClientConnInterface) ETCMeisaiMappingServiceClient {
-	return &eTCMeisaiMappingServiceClient{cc}
+func NewDb_ETCMeisaiMappingServiceClient(cc grpc.ClientConnInterface) Db_ETCMeisaiMappingServiceClient {
+	return &db_ETCMeisaiMappingServiceClient{cc}
 }
 
-func (c *eTCMeisaiMappingServiceClient) Create(ctx context.Context, in *CreateETCMeisaiMappingRequest, opts ...grpc.CallOption) (*ETCMeisaiMappingResponse, error) {
+func (c *db_ETCMeisaiMappingServiceClient) Create(ctx context.Context, in *Db_CreateETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiMappingResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ETCMeisaiMappingResponse)
-	err := c.cc.Invoke(ctx, ETCMeisaiMappingService_Create_FullMethodName, in, out, cOpts...)
+	out := new(Db_ETCMeisaiMappingResponse)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiMappingService_Create_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCMeisaiMappingServiceClient) Get(ctx context.Context, in *GetETCMeisaiMappingRequest, opts ...grpc.CallOption) (*ETCMeisaiMappingResponse, error) {
+func (c *db_ETCMeisaiMappingServiceClient) Get(ctx context.Context, in *Db_GetETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiMappingResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ETCMeisaiMappingResponse)
-	err := c.cc.Invoke(ctx, ETCMeisaiMappingService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_ETCMeisaiMappingResponse)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiMappingService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCMeisaiMappingServiceClient) Update(ctx context.Context, in *UpdateETCMeisaiMappingRequest, opts ...grpc.CallOption) (*ETCMeisaiMappingResponse, error) {
+func (c *db_ETCMeisaiMappingServiceClient) Update(ctx context.Context, in *Db_UpdateETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_ETCMeisaiMappingResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ETCMeisaiMappingResponse)
-	err := c.cc.Invoke(ctx, ETCMeisaiMappingService_Update_FullMethodName, in, out, cOpts...)
+	out := new(Db_ETCMeisaiMappingResponse)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiMappingService_Update_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCMeisaiMappingServiceClient) Delete(ctx context.Context, in *DeleteETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Empty, error) {
+func (c *db_ETCMeisaiMappingServiceClient) Delete(ctx context.Context, in *Db_DeleteETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Empty)
-	err := c.cc.Invoke(ctx, ETCMeisaiMappingService_Delete_FullMethodName, in, out, cOpts...)
+	out := new(Db_Empty)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiMappingService_Delete_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCMeisaiMappingServiceClient) List(ctx context.Context, in *ListETCMeisaiMappingRequest, opts ...grpc.CallOption) (*ListETCMeisaiMappingResponse, error) {
+func (c *db_ETCMeisaiMappingServiceClient) List(ctx context.Context, in *Db_ListETCMeisaiMappingRequest, opts ...grpc.CallOption) (*Db_ListETCMeisaiMappingResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListETCMeisaiMappingResponse)
-	err := c.cc.Invoke(ctx, ETCMeisaiMappingService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListETCMeisaiMappingResponse)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiMappingService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCMeisaiMappingServiceClient) GetDTakoRowIDByHash(ctx context.Context, in *GetDTakoRowIDByHashRequest, opts ...grpc.CallOption) (*GetDTakoRowIDByHashResponse, error) {
+func (c *db_ETCMeisaiMappingServiceClient) GetDTakoRowIDByHash(ctx context.Context, in *Db_GetDTakoRowIDByHashRequest, opts ...grpc.CallOption) (*Db_GetDTakoRowIDByHashResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetDTakoRowIDByHashResponse)
-	err := c.cc.Invoke(ctx, ETCMeisaiMappingService_GetDTakoRowIDByHash_FullMethodName, in, out, cOpts...)
+	out := new(Db_GetDTakoRowIDByHashResponse)
+	err := c.cc.Invoke(ctx, Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ETCMeisaiMappingServiceServer is the server API for ETCMeisaiMappingService service.
-// All implementations should embed UnimplementedETCMeisaiMappingServiceServer
+// Db_ETCMeisaiMappingServiceServer is the server API for Db_ETCMeisaiMappingService service.
+// All implementations should embed UnimplementedDb_ETCMeisaiMappingServiceServer
 // for forward compatibility.
 //
 // ETCMeisaiMappingサービス - ETC明細とDTakoRowsのマッピング管理
-type ETCMeisaiMappingServiceServer interface {
+type Db_ETCMeisaiMappingServiceServer interface {
 	// マッピング作成
-	Create(context.Context, *CreateETCMeisaiMappingRequest) (*ETCMeisaiMappingResponse, error)
+	Create(context.Context, *Db_CreateETCMeisaiMappingRequest) (*Db_ETCMeisaiMappingResponse, error)
 	// マッピング取得
-	Get(context.Context, *GetETCMeisaiMappingRequest) (*ETCMeisaiMappingResponse, error)
+	Get(context.Context, *Db_GetETCMeisaiMappingRequest) (*Db_ETCMeisaiMappingResponse, error)
 	// マッピング更新
-	Update(context.Context, *UpdateETCMeisaiMappingRequest) (*ETCMeisaiMappingResponse, error)
+	Update(context.Context, *Db_UpdateETCMeisaiMappingRequest) (*Db_ETCMeisaiMappingResponse, error)
 	// マッピング削除
-	Delete(context.Context, *DeleteETCMeisaiMappingRequest) (*Empty, error)
+	Delete(context.Context, *Db_DeleteETCMeisaiMappingRequest) (*Db_Empty, error)
 	// マッピング一覧取得
-	List(context.Context, *ListETCMeisaiMappingRequest) (*ListETCMeisaiMappingResponse, error)
+	List(context.Context, *Db_ListETCMeisaiMappingRequest) (*Db_ListETCMeisaiMappingResponse, error)
 	// ハッシュからDTakoRowIDを取得
-	GetDTakoRowIDByHash(context.Context, *GetDTakoRowIDByHashRequest) (*GetDTakoRowIDByHashResponse, error)
+	GetDTakoRowIDByHash(context.Context, *Db_GetDTakoRowIDByHashRequest) (*Db_GetDTakoRowIDByHashResponse, error)
 }
 
-// UnimplementedETCMeisaiMappingServiceServer should be embedded to have
+// UnimplementedDb_ETCMeisaiMappingServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedETCMeisaiMappingServiceServer struct{}
+type UnimplementedDb_ETCMeisaiMappingServiceServer struct{}
 
-func (UnimplementedETCMeisaiMappingServiceServer) Create(context.Context, *CreateETCMeisaiMappingRequest) (*ETCMeisaiMappingResponse, error) {
+func (UnimplementedDb_ETCMeisaiMappingServiceServer) Create(context.Context, *Db_CreateETCMeisaiMappingRequest) (*Db_ETCMeisaiMappingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedETCMeisaiMappingServiceServer) Get(context.Context, *GetETCMeisaiMappingRequest) (*ETCMeisaiMappingResponse, error) {
+func (UnimplementedDb_ETCMeisaiMappingServiceServer) Get(context.Context, *Db_GetETCMeisaiMappingRequest) (*Db_ETCMeisaiMappingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedETCMeisaiMappingServiceServer) Update(context.Context, *UpdateETCMeisaiMappingRequest) (*ETCMeisaiMappingResponse, error) {
+func (UnimplementedDb_ETCMeisaiMappingServiceServer) Update(context.Context, *Db_UpdateETCMeisaiMappingRequest) (*Db_ETCMeisaiMappingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedETCMeisaiMappingServiceServer) Delete(context.Context, *DeleteETCMeisaiMappingRequest) (*Empty, error) {
+func (UnimplementedDb_ETCMeisaiMappingServiceServer) Delete(context.Context, *Db_DeleteETCMeisaiMappingRequest) (*Db_Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedETCMeisaiMappingServiceServer) List(context.Context, *ListETCMeisaiMappingRequest) (*ListETCMeisaiMappingResponse, error) {
+func (UnimplementedDb_ETCMeisaiMappingServiceServer) List(context.Context, *Db_ListETCMeisaiMappingRequest) (*Db_ListETCMeisaiMappingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedETCMeisaiMappingServiceServer) GetDTakoRowIDByHash(context.Context, *GetDTakoRowIDByHashRequest) (*GetDTakoRowIDByHashResponse, error) {
+func (UnimplementedDb_ETCMeisaiMappingServiceServer) GetDTakoRowIDByHash(context.Context, *Db_GetDTakoRowIDByHashRequest) (*Db_GetDTakoRowIDByHashResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDTakoRowIDByHash not implemented")
 }
-func (UnimplementedETCMeisaiMappingServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_ETCMeisaiMappingServiceServer) testEmbeddedByValue() {}
 
-// UnsafeETCMeisaiMappingServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ETCMeisaiMappingServiceServer will
+// UnsafeDb_ETCMeisaiMappingServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_ETCMeisaiMappingServiceServer will
 // result in compilation errors.
-type UnsafeETCMeisaiMappingServiceServer interface {
-	mustEmbedUnimplementedETCMeisaiMappingServiceServer()
+type UnsafeDb_ETCMeisaiMappingServiceServer interface {
+	mustEmbedUnimplementedDb_ETCMeisaiMappingServiceServer()
 }
 
-func RegisterETCMeisaiMappingServiceServer(s grpc.ServiceRegistrar, srv ETCMeisaiMappingServiceServer) {
-	// If the following call pancis, it indicates UnimplementedETCMeisaiMappingServiceServer was
+func RegisterDb_ETCMeisaiMappingServiceServer(s grpc.ServiceRegistrar, srv Db_ETCMeisaiMappingServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_ETCMeisaiMappingServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&ETCMeisaiMappingService_ServiceDesc, srv)
+	s.RegisterService(&Db_ETCMeisaiMappingService_ServiceDesc, srv)
 }
 
-func _ETCMeisaiMappingService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateETCMeisaiMappingRequest)
+func _Db_ETCMeisaiMappingService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_CreateETCMeisaiMappingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiMappingServiceServer).Create(ctx, in)
+		return srv.(Db_ETCMeisaiMappingServiceServer).Create(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiMappingService_Create_FullMethodName,
+		FullMethod: Db_ETCMeisaiMappingService_Create_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiMappingServiceServer).Create(ctx, req.(*CreateETCMeisaiMappingRequest))
+		return srv.(Db_ETCMeisaiMappingServiceServer).Create(ctx, req.(*Db_CreateETCMeisaiMappingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCMeisaiMappingService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetETCMeisaiMappingRequest)
+func _Db_ETCMeisaiMappingService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetETCMeisaiMappingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiMappingServiceServer).Get(ctx, in)
+		return srv.(Db_ETCMeisaiMappingServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiMappingService_Get_FullMethodName,
+		FullMethod: Db_ETCMeisaiMappingService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiMappingServiceServer).Get(ctx, req.(*GetETCMeisaiMappingRequest))
+		return srv.(Db_ETCMeisaiMappingServiceServer).Get(ctx, req.(*Db_GetETCMeisaiMappingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCMeisaiMappingService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateETCMeisaiMappingRequest)
+func _Db_ETCMeisaiMappingService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_UpdateETCMeisaiMappingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiMappingServiceServer).Update(ctx, in)
+		return srv.(Db_ETCMeisaiMappingServiceServer).Update(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiMappingService_Update_FullMethodName,
+		FullMethod: Db_ETCMeisaiMappingService_Update_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiMappingServiceServer).Update(ctx, req.(*UpdateETCMeisaiMappingRequest))
+		return srv.(Db_ETCMeisaiMappingServiceServer).Update(ctx, req.(*Db_UpdateETCMeisaiMappingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCMeisaiMappingService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteETCMeisaiMappingRequest)
+func _Db_ETCMeisaiMappingService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_DeleteETCMeisaiMappingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiMappingServiceServer).Delete(ctx, in)
+		return srv.(Db_ETCMeisaiMappingServiceServer).Delete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiMappingService_Delete_FullMethodName,
+		FullMethod: Db_ETCMeisaiMappingService_Delete_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiMappingServiceServer).Delete(ctx, req.(*DeleteETCMeisaiMappingRequest))
+		return srv.(Db_ETCMeisaiMappingServiceServer).Delete(ctx, req.(*Db_DeleteETCMeisaiMappingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCMeisaiMappingService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListETCMeisaiMappingRequest)
+func _Db_ETCMeisaiMappingService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListETCMeisaiMappingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiMappingServiceServer).List(ctx, in)
+		return srv.(Db_ETCMeisaiMappingServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiMappingService_List_FullMethodName,
+		FullMethod: Db_ETCMeisaiMappingService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiMappingServiceServer).List(ctx, req.(*ListETCMeisaiMappingRequest))
+		return srv.(Db_ETCMeisaiMappingServiceServer).List(ctx, req.(*Db_ListETCMeisaiMappingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCMeisaiMappingService_GetDTakoRowIDByHash_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoRowIDByHashRequest)
+func _Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoRowIDByHashRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCMeisaiMappingServiceServer).GetDTakoRowIDByHash(ctx, in)
+		return srv.(Db_ETCMeisaiMappingServiceServer).GetDTakoRowIDByHash(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCMeisaiMappingService_GetDTakoRowIDByHash_FullMethodName,
+		FullMethod: Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCMeisaiMappingServiceServer).GetDTakoRowIDByHash(ctx, req.(*GetDTakoRowIDByHashRequest))
+		return srv.(Db_ETCMeisaiMappingServiceServer).GetDTakoRowIDByHash(ctx, req.(*Db_GetDTakoRowIDByHashRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ETCMeisaiMappingService_ServiceDesc is the grpc.ServiceDesc for ETCMeisaiMappingService service.
+// Db_ETCMeisaiMappingService_ServiceDesc is the grpc.ServiceDesc for Db_ETCMeisaiMappingService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ETCMeisaiMappingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.ETCMeisaiMappingService",
-	HandlerType: (*ETCMeisaiMappingServiceServer)(nil),
+var Db_ETCMeisaiMappingService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_ETCMeisaiMappingService",
+	HandlerType: (*Db_ETCMeisaiMappingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Create",
-			Handler:    _ETCMeisaiMappingService_Create_Handler,
+			Handler:    _Db_ETCMeisaiMappingService_Create_Handler,
 		},
 		{
 			MethodName: "Get",
-			Handler:    _ETCMeisaiMappingService_Get_Handler,
+			Handler:    _Db_ETCMeisaiMappingService_Get_Handler,
 		},
 		{
 			MethodName: "Update",
-			Handler:    _ETCMeisaiMappingService_Update_Handler,
+			Handler:    _Db_ETCMeisaiMappingService_Update_Handler,
 		},
 		{
 			MethodName: "Delete",
-			Handler:    _ETCMeisaiMappingService_Delete_Handler,
+			Handler:    _Db_ETCMeisaiMappingService_Delete_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _ETCMeisaiMappingService_List_Handler,
+			Handler:    _Db_ETCMeisaiMappingService_List_Handler,
 		},
 		{
 			MethodName: "GetDTakoRowIDByHash",
-			Handler:    _ETCMeisaiMappingService_GetDTakoRowIDByHash_Handler,
+			Handler:    _Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1123,185 +1123,185 @@ var ETCMeisaiMappingService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	DTakoCarsService_Get_FullMethodName          = "/db_service.DTakoCarsService/Get"
-	DTakoCarsService_List_FullMethodName         = "/db_service.DTakoCarsService/List"
-	DTakoCarsService_GetByCarCode_FullMethodName = "/db_service.DTakoCarsService/GetByCarCode"
+	Db_DTakoCarsService_Get_FullMethodName          = "/db_service.db_DTakoCarsService/Get"
+	Db_DTakoCarsService_List_FullMethodName         = "/db_service.db_DTakoCarsService/List"
+	Db_DTakoCarsService_GetByCarCode_FullMethodName = "/db_service.db_DTakoCarsService/GetByCarCode"
 )
 
-// DTakoCarsServiceClient is the client API for DTakoCarsService service.
+// Db_DTakoCarsServiceClient is the client API for Db_DTakoCarsService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // DTakoCarsサービス - 車輌マスタ管理（本番DB、読み取り専用）
-type DTakoCarsServiceClient interface {
+type Db_DTakoCarsServiceClient interface {
 	// 車輌情報取得
-	Get(ctx context.Context, in *GetDTakoCarsRequest, opts ...grpc.CallOption) (*DTakoCarsResponse, error)
+	Get(ctx context.Context, in *Db_GetDTakoCarsRequest, opts ...grpc.CallOption) (*Db_DTakoCarsResponse, error)
 	// 車輌情報一覧取得
-	List(ctx context.Context, in *ListDTakoCarsRequest, opts ...grpc.CallOption) (*ListDTakoCarsResponse, error)
+	List(ctx context.Context, in *Db_ListDTakoCarsRequest, opts ...grpc.CallOption) (*Db_ListDTakoCarsResponse, error)
 	// 車輌CDで車輌情報取得
-	GetByCarCode(ctx context.Context, in *GetDTakoCarsByCarCodeRequest, opts ...grpc.CallOption) (*DTakoCarsResponse, error)
+	GetByCarCode(ctx context.Context, in *Db_GetDTakoCarsByCarCodeRequest, opts ...grpc.CallOption) (*Db_DTakoCarsResponse, error)
 }
 
-type dTakoCarsServiceClient struct {
+type db_DTakoCarsServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDTakoCarsServiceClient(cc grpc.ClientConnInterface) DTakoCarsServiceClient {
-	return &dTakoCarsServiceClient{cc}
+func NewDb_DTakoCarsServiceClient(cc grpc.ClientConnInterface) Db_DTakoCarsServiceClient {
+	return &db_DTakoCarsServiceClient{cc}
 }
 
-func (c *dTakoCarsServiceClient) Get(ctx context.Context, in *GetDTakoCarsRequest, opts ...grpc.CallOption) (*DTakoCarsResponse, error) {
+func (c *db_DTakoCarsServiceClient) Get(ctx context.Context, in *Db_GetDTakoCarsRequest, opts ...grpc.CallOption) (*Db_DTakoCarsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoCarsResponse)
-	err := c.cc.Invoke(ctx, DTakoCarsService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoCarsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoCarsService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoCarsServiceClient) List(ctx context.Context, in *ListDTakoCarsRequest, opts ...grpc.CallOption) (*ListDTakoCarsResponse, error) {
+func (c *db_DTakoCarsServiceClient) List(ctx context.Context, in *Db_ListDTakoCarsRequest, opts ...grpc.CallOption) (*Db_ListDTakoCarsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDTakoCarsResponse)
-	err := c.cc.Invoke(ctx, DTakoCarsService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDTakoCarsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoCarsService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoCarsServiceClient) GetByCarCode(ctx context.Context, in *GetDTakoCarsByCarCodeRequest, opts ...grpc.CallOption) (*DTakoCarsResponse, error) {
+func (c *db_DTakoCarsServiceClient) GetByCarCode(ctx context.Context, in *Db_GetDTakoCarsByCarCodeRequest, opts ...grpc.CallOption) (*Db_DTakoCarsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoCarsResponse)
-	err := c.cc.Invoke(ctx, DTakoCarsService_GetByCarCode_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoCarsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoCarsService_GetByCarCode_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DTakoCarsServiceServer is the server API for DTakoCarsService service.
-// All implementations should embed UnimplementedDTakoCarsServiceServer
+// Db_DTakoCarsServiceServer is the server API for Db_DTakoCarsService service.
+// All implementations should embed UnimplementedDb_DTakoCarsServiceServer
 // for forward compatibility.
 //
 // DTakoCarsサービス - 車輌マスタ管理（本番DB、読み取り専用）
-type DTakoCarsServiceServer interface {
+type Db_DTakoCarsServiceServer interface {
 	// 車輌情報取得
-	Get(context.Context, *GetDTakoCarsRequest) (*DTakoCarsResponse, error)
+	Get(context.Context, *Db_GetDTakoCarsRequest) (*Db_DTakoCarsResponse, error)
 	// 車輌情報一覧取得
-	List(context.Context, *ListDTakoCarsRequest) (*ListDTakoCarsResponse, error)
+	List(context.Context, *Db_ListDTakoCarsRequest) (*Db_ListDTakoCarsResponse, error)
 	// 車輌CDで車輌情報取得
-	GetByCarCode(context.Context, *GetDTakoCarsByCarCodeRequest) (*DTakoCarsResponse, error)
+	GetByCarCode(context.Context, *Db_GetDTakoCarsByCarCodeRequest) (*Db_DTakoCarsResponse, error)
 }
 
-// UnimplementedDTakoCarsServiceServer should be embedded to have
+// UnimplementedDb_DTakoCarsServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedDTakoCarsServiceServer struct{}
+type UnimplementedDb_DTakoCarsServiceServer struct{}
 
-func (UnimplementedDTakoCarsServiceServer) Get(context.Context, *GetDTakoCarsRequest) (*DTakoCarsResponse, error) {
+func (UnimplementedDb_DTakoCarsServiceServer) Get(context.Context, *Db_GetDTakoCarsRequest) (*Db_DTakoCarsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedDTakoCarsServiceServer) List(context.Context, *ListDTakoCarsRequest) (*ListDTakoCarsResponse, error) {
+func (UnimplementedDb_DTakoCarsServiceServer) List(context.Context, *Db_ListDTakoCarsRequest) (*Db_ListDTakoCarsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedDTakoCarsServiceServer) GetByCarCode(context.Context, *GetDTakoCarsByCarCodeRequest) (*DTakoCarsResponse, error) {
+func (UnimplementedDb_DTakoCarsServiceServer) GetByCarCode(context.Context, *Db_GetDTakoCarsByCarCodeRequest) (*Db_DTakoCarsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByCarCode not implemented")
 }
-func (UnimplementedDTakoCarsServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_DTakoCarsServiceServer) testEmbeddedByValue() {}
 
-// UnsafeDTakoCarsServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DTakoCarsServiceServer will
+// UnsafeDb_DTakoCarsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_DTakoCarsServiceServer will
 // result in compilation errors.
-type UnsafeDTakoCarsServiceServer interface {
-	mustEmbedUnimplementedDTakoCarsServiceServer()
+type UnsafeDb_DTakoCarsServiceServer interface {
+	mustEmbedUnimplementedDb_DTakoCarsServiceServer()
 }
 
-func RegisterDTakoCarsServiceServer(s grpc.ServiceRegistrar, srv DTakoCarsServiceServer) {
-	// If the following call pancis, it indicates UnimplementedDTakoCarsServiceServer was
+func RegisterDb_DTakoCarsServiceServer(s grpc.ServiceRegistrar, srv Db_DTakoCarsServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_DTakoCarsServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&DTakoCarsService_ServiceDesc, srv)
+	s.RegisterService(&Db_DTakoCarsService_ServiceDesc, srv)
 }
 
-func _DTakoCarsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoCarsRequest)
+func _Db_DTakoCarsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoCarsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoCarsServiceServer).Get(ctx, in)
+		return srv.(Db_DTakoCarsServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoCarsService_Get_FullMethodName,
+		FullMethod: Db_DTakoCarsService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoCarsServiceServer).Get(ctx, req.(*GetDTakoCarsRequest))
+		return srv.(Db_DTakoCarsServiceServer).Get(ctx, req.(*Db_GetDTakoCarsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoCarsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListDTakoCarsRequest)
+func _Db_DTakoCarsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListDTakoCarsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoCarsServiceServer).List(ctx, in)
+		return srv.(Db_DTakoCarsServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoCarsService_List_FullMethodName,
+		FullMethod: Db_DTakoCarsService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoCarsServiceServer).List(ctx, req.(*ListDTakoCarsRequest))
+		return srv.(Db_DTakoCarsServiceServer).List(ctx, req.(*Db_ListDTakoCarsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoCarsService_GetByCarCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoCarsByCarCodeRequest)
+func _Db_DTakoCarsService_GetByCarCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoCarsByCarCodeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoCarsServiceServer).GetByCarCode(ctx, in)
+		return srv.(Db_DTakoCarsServiceServer).GetByCarCode(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoCarsService_GetByCarCode_FullMethodName,
+		FullMethod: Db_DTakoCarsService_GetByCarCode_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoCarsServiceServer).GetByCarCode(ctx, req.(*GetDTakoCarsByCarCodeRequest))
+		return srv.(Db_DTakoCarsServiceServer).GetByCarCode(ctx, req.(*Db_GetDTakoCarsByCarCodeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DTakoCarsService_ServiceDesc is the grpc.ServiceDesc for DTakoCarsService service.
+// Db_DTakoCarsService_ServiceDesc is the grpc.ServiceDesc for Db_DTakoCarsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DTakoCarsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.DTakoCarsService",
-	HandlerType: (*DTakoCarsServiceServer)(nil),
+var Db_DTakoCarsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_DTakoCarsService",
+	HandlerType: (*Db_DTakoCarsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _DTakoCarsService_Get_Handler,
+			Handler:    _Db_DTakoCarsService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _DTakoCarsService_List_Handler,
+			Handler:    _Db_DTakoCarsService_List_Handler,
 		},
 		{
 			MethodName: "GetByCarCode",
-			Handler:    _DTakoCarsService_GetByCarCode_Handler,
+			Handler:    _Db_DTakoCarsService_GetByCarCode_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1309,185 +1309,185 @@ var DTakoCarsService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	DTakoEventsService_Get_FullMethodName              = "/db_service.DTakoEventsService/Get"
-	DTakoEventsService_List_FullMethodName             = "/db_service.DTakoEventsService/List"
-	DTakoEventsService_GetByOperationNo_FullMethodName = "/db_service.DTakoEventsService/GetByOperationNo"
+	Db_DTakoEventsService_Get_FullMethodName              = "/db_service.db_DTakoEventsService/Get"
+	Db_DTakoEventsService_List_FullMethodName             = "/db_service.db_DTakoEventsService/List"
+	Db_DTakoEventsService_GetByOperationNo_FullMethodName = "/db_service.db_DTakoEventsService/GetByOperationNo"
 )
 
-// DTakoEventsServiceClient is the client API for DTakoEventsService service.
+// Db_DTakoEventsServiceClient is the client API for Db_DTakoEventsService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // DTakoEventsサービス - イベント情報管理（本番DB、読み取り専用）
-type DTakoEventsServiceClient interface {
+type Db_DTakoEventsServiceClient interface {
 	// イベント情報取得
-	Get(ctx context.Context, in *GetDTakoEventsRequest, opts ...grpc.CallOption) (*DTakoEventsResponse, error)
+	Get(ctx context.Context, in *Db_GetDTakoEventsRequest, opts ...grpc.CallOption) (*Db_DTakoEventsResponse, error)
 	// イベント情報一覧取得
-	List(ctx context.Context, in *ListDTakoEventsRequest, opts ...grpc.CallOption) (*ListDTakoEventsResponse, error)
+	List(ctx context.Context, in *Db_ListDTakoEventsRequest, opts ...grpc.CallOption) (*Db_ListDTakoEventsResponse, error)
 	// 運行NOでイベント情報取得
-	GetByOperationNo(ctx context.Context, in *GetDTakoEventsByOperationNoRequest, opts ...grpc.CallOption) (*ListDTakoEventsResponse, error)
+	GetByOperationNo(ctx context.Context, in *Db_GetDTakoEventsByOperationNoRequest, opts ...grpc.CallOption) (*Db_ListDTakoEventsResponse, error)
 }
 
-type dTakoEventsServiceClient struct {
+type db_DTakoEventsServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDTakoEventsServiceClient(cc grpc.ClientConnInterface) DTakoEventsServiceClient {
-	return &dTakoEventsServiceClient{cc}
+func NewDb_DTakoEventsServiceClient(cc grpc.ClientConnInterface) Db_DTakoEventsServiceClient {
+	return &db_DTakoEventsServiceClient{cc}
 }
 
-func (c *dTakoEventsServiceClient) Get(ctx context.Context, in *GetDTakoEventsRequest, opts ...grpc.CallOption) (*DTakoEventsResponse, error) {
+func (c *db_DTakoEventsServiceClient) Get(ctx context.Context, in *Db_GetDTakoEventsRequest, opts ...grpc.CallOption) (*Db_DTakoEventsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoEventsResponse)
-	err := c.cc.Invoke(ctx, DTakoEventsService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoEventsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoEventsService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoEventsServiceClient) List(ctx context.Context, in *ListDTakoEventsRequest, opts ...grpc.CallOption) (*ListDTakoEventsResponse, error) {
+func (c *db_DTakoEventsServiceClient) List(ctx context.Context, in *Db_ListDTakoEventsRequest, opts ...grpc.CallOption) (*Db_ListDTakoEventsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDTakoEventsResponse)
-	err := c.cc.Invoke(ctx, DTakoEventsService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDTakoEventsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoEventsService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoEventsServiceClient) GetByOperationNo(ctx context.Context, in *GetDTakoEventsByOperationNoRequest, opts ...grpc.CallOption) (*ListDTakoEventsResponse, error) {
+func (c *db_DTakoEventsServiceClient) GetByOperationNo(ctx context.Context, in *Db_GetDTakoEventsByOperationNoRequest, opts ...grpc.CallOption) (*Db_ListDTakoEventsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDTakoEventsResponse)
-	err := c.cc.Invoke(ctx, DTakoEventsService_GetByOperationNo_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDTakoEventsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoEventsService_GetByOperationNo_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DTakoEventsServiceServer is the server API for DTakoEventsService service.
-// All implementations should embed UnimplementedDTakoEventsServiceServer
+// Db_DTakoEventsServiceServer is the server API for Db_DTakoEventsService service.
+// All implementations should embed UnimplementedDb_DTakoEventsServiceServer
 // for forward compatibility.
 //
 // DTakoEventsサービス - イベント情報管理（本番DB、読み取り専用）
-type DTakoEventsServiceServer interface {
+type Db_DTakoEventsServiceServer interface {
 	// イベント情報取得
-	Get(context.Context, *GetDTakoEventsRequest) (*DTakoEventsResponse, error)
+	Get(context.Context, *Db_GetDTakoEventsRequest) (*Db_DTakoEventsResponse, error)
 	// イベント情報一覧取得
-	List(context.Context, *ListDTakoEventsRequest) (*ListDTakoEventsResponse, error)
+	List(context.Context, *Db_ListDTakoEventsRequest) (*Db_ListDTakoEventsResponse, error)
 	// 運行NOでイベント情報取得
-	GetByOperationNo(context.Context, *GetDTakoEventsByOperationNoRequest) (*ListDTakoEventsResponse, error)
+	GetByOperationNo(context.Context, *Db_GetDTakoEventsByOperationNoRequest) (*Db_ListDTakoEventsResponse, error)
 }
 
-// UnimplementedDTakoEventsServiceServer should be embedded to have
+// UnimplementedDb_DTakoEventsServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedDTakoEventsServiceServer struct{}
+type UnimplementedDb_DTakoEventsServiceServer struct{}
 
-func (UnimplementedDTakoEventsServiceServer) Get(context.Context, *GetDTakoEventsRequest) (*DTakoEventsResponse, error) {
+func (UnimplementedDb_DTakoEventsServiceServer) Get(context.Context, *Db_GetDTakoEventsRequest) (*Db_DTakoEventsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedDTakoEventsServiceServer) List(context.Context, *ListDTakoEventsRequest) (*ListDTakoEventsResponse, error) {
+func (UnimplementedDb_DTakoEventsServiceServer) List(context.Context, *Db_ListDTakoEventsRequest) (*Db_ListDTakoEventsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedDTakoEventsServiceServer) GetByOperationNo(context.Context, *GetDTakoEventsByOperationNoRequest) (*ListDTakoEventsResponse, error) {
+func (UnimplementedDb_DTakoEventsServiceServer) GetByOperationNo(context.Context, *Db_GetDTakoEventsByOperationNoRequest) (*Db_ListDTakoEventsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByOperationNo not implemented")
 }
-func (UnimplementedDTakoEventsServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_DTakoEventsServiceServer) testEmbeddedByValue() {}
 
-// UnsafeDTakoEventsServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DTakoEventsServiceServer will
+// UnsafeDb_DTakoEventsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_DTakoEventsServiceServer will
 // result in compilation errors.
-type UnsafeDTakoEventsServiceServer interface {
-	mustEmbedUnimplementedDTakoEventsServiceServer()
+type UnsafeDb_DTakoEventsServiceServer interface {
+	mustEmbedUnimplementedDb_DTakoEventsServiceServer()
 }
 
-func RegisterDTakoEventsServiceServer(s grpc.ServiceRegistrar, srv DTakoEventsServiceServer) {
-	// If the following call pancis, it indicates UnimplementedDTakoEventsServiceServer was
+func RegisterDb_DTakoEventsServiceServer(s grpc.ServiceRegistrar, srv Db_DTakoEventsServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_DTakoEventsServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&DTakoEventsService_ServiceDesc, srv)
+	s.RegisterService(&Db_DTakoEventsService_ServiceDesc, srv)
 }
 
-func _DTakoEventsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoEventsRequest)
+func _Db_DTakoEventsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoEventsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoEventsServiceServer).Get(ctx, in)
+		return srv.(Db_DTakoEventsServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoEventsService_Get_FullMethodName,
+		FullMethod: Db_DTakoEventsService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoEventsServiceServer).Get(ctx, req.(*GetDTakoEventsRequest))
+		return srv.(Db_DTakoEventsServiceServer).Get(ctx, req.(*Db_GetDTakoEventsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoEventsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListDTakoEventsRequest)
+func _Db_DTakoEventsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListDTakoEventsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoEventsServiceServer).List(ctx, in)
+		return srv.(Db_DTakoEventsServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoEventsService_List_FullMethodName,
+		FullMethod: Db_DTakoEventsService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoEventsServiceServer).List(ctx, req.(*ListDTakoEventsRequest))
+		return srv.(Db_DTakoEventsServiceServer).List(ctx, req.(*Db_ListDTakoEventsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoEventsService_GetByOperationNo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoEventsByOperationNoRequest)
+func _Db_DTakoEventsService_GetByOperationNo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoEventsByOperationNoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoEventsServiceServer).GetByOperationNo(ctx, in)
+		return srv.(Db_DTakoEventsServiceServer).GetByOperationNo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoEventsService_GetByOperationNo_FullMethodName,
+		FullMethod: Db_DTakoEventsService_GetByOperationNo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoEventsServiceServer).GetByOperationNo(ctx, req.(*GetDTakoEventsByOperationNoRequest))
+		return srv.(Db_DTakoEventsServiceServer).GetByOperationNo(ctx, req.(*Db_GetDTakoEventsByOperationNoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DTakoEventsService_ServiceDesc is the grpc.ServiceDesc for DTakoEventsService service.
+// Db_DTakoEventsService_ServiceDesc is the grpc.ServiceDesc for Db_DTakoEventsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DTakoEventsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.DTakoEventsService",
-	HandlerType: (*DTakoEventsServiceServer)(nil),
+var Db_DTakoEventsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_DTakoEventsService",
+	HandlerType: (*Db_DTakoEventsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _DTakoEventsService_Get_Handler,
+			Handler:    _Db_DTakoEventsService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _DTakoEventsService_List_Handler,
+			Handler:    _Db_DTakoEventsService_List_Handler,
 		},
 		{
 			MethodName: "GetByOperationNo",
-			Handler:    _DTakoEventsService_GetByOperationNo_Handler,
+			Handler:    _Db_DTakoEventsService_GetByOperationNo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1495,185 +1495,185 @@ var DTakoEventsService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	DTakoRowsService_Get_FullMethodName              = "/db_service.DTakoRowsService/Get"
-	DTakoRowsService_List_FullMethodName             = "/db_service.DTakoRowsService/List"
-	DTakoRowsService_GetByOperationNo_FullMethodName = "/db_service.DTakoRowsService/GetByOperationNo"
+	Db_DTakoRowsService_Get_FullMethodName              = "/db_service.db_DTakoRowsService/Get"
+	Db_DTakoRowsService_List_FullMethodName             = "/db_service.db_DTakoRowsService/List"
+	Db_DTakoRowsService_GetByOperationNo_FullMethodName = "/db_service.db_DTakoRowsService/GetByOperationNo"
 )
 
-// DTakoRowsServiceClient is the client API for DTakoRowsService service.
+// Db_DTakoRowsServiceClient is the client API for Db_DTakoRowsService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // DTakoRowsサービス - 運行データ管理（本番DB、読み取り専用）
-type DTakoRowsServiceClient interface {
+type Db_DTakoRowsServiceClient interface {
 	// 運行データ取得
-	Get(ctx context.Context, in *GetDTakoRowsRequest, opts ...grpc.CallOption) (*DTakoRowsResponse, error)
+	Get(ctx context.Context, in *Db_GetDTakoRowsRequest, opts ...grpc.CallOption) (*Db_DTakoRowsResponse, error)
 	// 運行データ一覧取得
-	List(ctx context.Context, in *ListDTakoRowsRequest, opts ...grpc.CallOption) (*ListDTakoRowsResponse, error)
+	List(ctx context.Context, in *Db_ListDTakoRowsRequest, opts ...grpc.CallOption) (*Db_ListDTakoRowsResponse, error)
 	// 運行NOで運行データ取得
-	GetByOperationNo(ctx context.Context, in *GetDTakoRowsByOperationNoRequest, opts ...grpc.CallOption) (*ListDTakoRowsResponse, error)
+	GetByOperationNo(ctx context.Context, in *Db_GetDTakoRowsByOperationNoRequest, opts ...grpc.CallOption) (*Db_ListDTakoRowsResponse, error)
 }
 
-type dTakoRowsServiceClient struct {
+type db_DTakoRowsServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDTakoRowsServiceClient(cc grpc.ClientConnInterface) DTakoRowsServiceClient {
-	return &dTakoRowsServiceClient{cc}
+func NewDb_DTakoRowsServiceClient(cc grpc.ClientConnInterface) Db_DTakoRowsServiceClient {
+	return &db_DTakoRowsServiceClient{cc}
 }
 
-func (c *dTakoRowsServiceClient) Get(ctx context.Context, in *GetDTakoRowsRequest, opts ...grpc.CallOption) (*DTakoRowsResponse, error) {
+func (c *db_DTakoRowsServiceClient) Get(ctx context.Context, in *Db_GetDTakoRowsRequest, opts ...grpc.CallOption) (*Db_DTakoRowsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoRowsResponse)
-	err := c.cc.Invoke(ctx, DTakoRowsService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoRowsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoRowsService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoRowsServiceClient) List(ctx context.Context, in *ListDTakoRowsRequest, opts ...grpc.CallOption) (*ListDTakoRowsResponse, error) {
+func (c *db_DTakoRowsServiceClient) List(ctx context.Context, in *Db_ListDTakoRowsRequest, opts ...grpc.CallOption) (*Db_ListDTakoRowsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDTakoRowsResponse)
-	err := c.cc.Invoke(ctx, DTakoRowsService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDTakoRowsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoRowsService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoRowsServiceClient) GetByOperationNo(ctx context.Context, in *GetDTakoRowsByOperationNoRequest, opts ...grpc.CallOption) (*ListDTakoRowsResponse, error) {
+func (c *db_DTakoRowsServiceClient) GetByOperationNo(ctx context.Context, in *Db_GetDTakoRowsByOperationNoRequest, opts ...grpc.CallOption) (*Db_ListDTakoRowsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDTakoRowsResponse)
-	err := c.cc.Invoke(ctx, DTakoRowsService_GetByOperationNo_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDTakoRowsResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoRowsService_GetByOperationNo_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DTakoRowsServiceServer is the server API for DTakoRowsService service.
-// All implementations should embed UnimplementedDTakoRowsServiceServer
+// Db_DTakoRowsServiceServer is the server API for Db_DTakoRowsService service.
+// All implementations should embed UnimplementedDb_DTakoRowsServiceServer
 // for forward compatibility.
 //
 // DTakoRowsサービス - 運行データ管理（本番DB、読み取り専用）
-type DTakoRowsServiceServer interface {
+type Db_DTakoRowsServiceServer interface {
 	// 運行データ取得
-	Get(context.Context, *GetDTakoRowsRequest) (*DTakoRowsResponse, error)
+	Get(context.Context, *Db_GetDTakoRowsRequest) (*Db_DTakoRowsResponse, error)
 	// 運行データ一覧取得
-	List(context.Context, *ListDTakoRowsRequest) (*ListDTakoRowsResponse, error)
+	List(context.Context, *Db_ListDTakoRowsRequest) (*Db_ListDTakoRowsResponse, error)
 	// 運行NOで運行データ取得
-	GetByOperationNo(context.Context, *GetDTakoRowsByOperationNoRequest) (*ListDTakoRowsResponse, error)
+	GetByOperationNo(context.Context, *Db_GetDTakoRowsByOperationNoRequest) (*Db_ListDTakoRowsResponse, error)
 }
 
-// UnimplementedDTakoRowsServiceServer should be embedded to have
+// UnimplementedDb_DTakoRowsServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedDTakoRowsServiceServer struct{}
+type UnimplementedDb_DTakoRowsServiceServer struct{}
 
-func (UnimplementedDTakoRowsServiceServer) Get(context.Context, *GetDTakoRowsRequest) (*DTakoRowsResponse, error) {
+func (UnimplementedDb_DTakoRowsServiceServer) Get(context.Context, *Db_GetDTakoRowsRequest) (*Db_DTakoRowsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedDTakoRowsServiceServer) List(context.Context, *ListDTakoRowsRequest) (*ListDTakoRowsResponse, error) {
+func (UnimplementedDb_DTakoRowsServiceServer) List(context.Context, *Db_ListDTakoRowsRequest) (*Db_ListDTakoRowsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedDTakoRowsServiceServer) GetByOperationNo(context.Context, *GetDTakoRowsByOperationNoRequest) (*ListDTakoRowsResponse, error) {
+func (UnimplementedDb_DTakoRowsServiceServer) GetByOperationNo(context.Context, *Db_GetDTakoRowsByOperationNoRequest) (*Db_ListDTakoRowsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByOperationNo not implemented")
 }
-func (UnimplementedDTakoRowsServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_DTakoRowsServiceServer) testEmbeddedByValue() {}
 
-// UnsafeDTakoRowsServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DTakoRowsServiceServer will
+// UnsafeDb_DTakoRowsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_DTakoRowsServiceServer will
 // result in compilation errors.
-type UnsafeDTakoRowsServiceServer interface {
-	mustEmbedUnimplementedDTakoRowsServiceServer()
+type UnsafeDb_DTakoRowsServiceServer interface {
+	mustEmbedUnimplementedDb_DTakoRowsServiceServer()
 }
 
-func RegisterDTakoRowsServiceServer(s grpc.ServiceRegistrar, srv DTakoRowsServiceServer) {
-	// If the following call pancis, it indicates UnimplementedDTakoRowsServiceServer was
+func RegisterDb_DTakoRowsServiceServer(s grpc.ServiceRegistrar, srv Db_DTakoRowsServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_DTakoRowsServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&DTakoRowsService_ServiceDesc, srv)
+	s.RegisterService(&Db_DTakoRowsService_ServiceDesc, srv)
 }
 
-func _DTakoRowsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoRowsRequest)
+func _Db_DTakoRowsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoRowsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoRowsServiceServer).Get(ctx, in)
+		return srv.(Db_DTakoRowsServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoRowsService_Get_FullMethodName,
+		FullMethod: Db_DTakoRowsService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoRowsServiceServer).Get(ctx, req.(*GetDTakoRowsRequest))
+		return srv.(Db_DTakoRowsServiceServer).Get(ctx, req.(*Db_GetDTakoRowsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoRowsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListDTakoRowsRequest)
+func _Db_DTakoRowsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListDTakoRowsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoRowsServiceServer).List(ctx, in)
+		return srv.(Db_DTakoRowsServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoRowsService_List_FullMethodName,
+		FullMethod: Db_DTakoRowsService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoRowsServiceServer).List(ctx, req.(*ListDTakoRowsRequest))
+		return srv.(Db_DTakoRowsServiceServer).List(ctx, req.(*Db_ListDTakoRowsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoRowsService_GetByOperationNo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoRowsByOperationNoRequest)
+func _Db_DTakoRowsService_GetByOperationNo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoRowsByOperationNoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoRowsServiceServer).GetByOperationNo(ctx, in)
+		return srv.(Db_DTakoRowsServiceServer).GetByOperationNo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoRowsService_GetByOperationNo_FullMethodName,
+		FullMethod: Db_DTakoRowsService_GetByOperationNo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoRowsServiceServer).GetByOperationNo(ctx, req.(*GetDTakoRowsByOperationNoRequest))
+		return srv.(Db_DTakoRowsServiceServer).GetByOperationNo(ctx, req.(*Db_GetDTakoRowsByOperationNoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DTakoRowsService_ServiceDesc is the grpc.ServiceDesc for DTakoRowsService service.
+// Db_DTakoRowsService_ServiceDesc is the grpc.ServiceDesc for Db_DTakoRowsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DTakoRowsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.DTakoRowsService",
-	HandlerType: (*DTakoRowsServiceServer)(nil),
+var Db_DTakoRowsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_DTakoRowsService",
+	HandlerType: (*Db_DTakoRowsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _DTakoRowsService_Get_Handler,
+			Handler:    _Db_DTakoRowsService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _DTakoRowsService_List_Handler,
+			Handler:    _Db_DTakoRowsService_List_Handler,
 		},
 		{
 			MethodName: "GetByOperationNo",
-			Handler:    _DTakoRowsService_GetByOperationNo_Handler,
+			Handler:    _Db_DTakoRowsService_GetByOperationNo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1681,185 +1681,185 @@ var DTakoRowsService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	ETCNumService_List_FullMethodName            = "/db_service.ETCNumService/List"
-	ETCNumService_GetByETCCardNum_FullMethodName = "/db_service.ETCNumService/GetByETCCardNum"
-	ETCNumService_GetByCarID_FullMethodName      = "/db_service.ETCNumService/GetByCarID"
+	Db_ETCNumService_List_FullMethodName            = "/db_service.db_ETCNumService/List"
+	Db_ETCNumService_GetByETCCardNum_FullMethodName = "/db_service.db_ETCNumService/GetByETCCardNum"
+	Db_ETCNumService_GetByCarID_FullMethodName      = "/db_service.db_ETCNumService/GetByCarID"
 )
 
-// ETCNumServiceClient is the client API for ETCNumService service.
+// Db_ETCNumServiceClient is the client API for Db_ETCNumService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // ETCNumサービス - ETCカード番号マスタ管理（本番DB、読み取り専用）
-type ETCNumServiceClient interface {
+type Db_ETCNumServiceClient interface {
 	// ETCカード番号一覧取得
-	List(ctx context.Context, in *ListETCNumRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error)
+	List(ctx context.Context, in *Db_ListETCNumRequest, opts ...grpc.CallOption) (*Db_ListETCNumResponse, error)
 	// ETCカード番号で取得
-	GetByETCCardNum(ctx context.Context, in *GetETCNumByETCCardNumRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error)
+	GetByETCCardNum(ctx context.Context, in *Db_GetETCNumByETCCardNumRequest, opts ...grpc.CallOption) (*Db_ListETCNumResponse, error)
 	// 車輌IDで取得
-	GetByCarID(ctx context.Context, in *GetETCNumByCarIDRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error)
+	GetByCarID(ctx context.Context, in *Db_GetETCNumByCarIDRequest, opts ...grpc.CallOption) (*Db_ListETCNumResponse, error)
 }
 
-type eTCNumServiceClient struct {
+type db_ETCNumServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewETCNumServiceClient(cc grpc.ClientConnInterface) ETCNumServiceClient {
-	return &eTCNumServiceClient{cc}
+func NewDb_ETCNumServiceClient(cc grpc.ClientConnInterface) Db_ETCNumServiceClient {
+	return &db_ETCNumServiceClient{cc}
 }
 
-func (c *eTCNumServiceClient) List(ctx context.Context, in *ListETCNumRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error) {
+func (c *db_ETCNumServiceClient) List(ctx context.Context, in *Db_ListETCNumRequest, opts ...grpc.CallOption) (*Db_ListETCNumResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListETCNumResponse)
-	err := c.cc.Invoke(ctx, ETCNumService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListETCNumResponse)
+	err := c.cc.Invoke(ctx, Db_ETCNumService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCNumServiceClient) GetByETCCardNum(ctx context.Context, in *GetETCNumByETCCardNumRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error) {
+func (c *db_ETCNumServiceClient) GetByETCCardNum(ctx context.Context, in *Db_GetETCNumByETCCardNumRequest, opts ...grpc.CallOption) (*Db_ListETCNumResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListETCNumResponse)
-	err := c.cc.Invoke(ctx, ETCNumService_GetByETCCardNum_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListETCNumResponse)
+	err := c.cc.Invoke(ctx, Db_ETCNumService_GetByETCCardNum_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *eTCNumServiceClient) GetByCarID(ctx context.Context, in *GetETCNumByCarIDRequest, opts ...grpc.CallOption) (*ListETCNumResponse, error) {
+func (c *db_ETCNumServiceClient) GetByCarID(ctx context.Context, in *Db_GetETCNumByCarIDRequest, opts ...grpc.CallOption) (*Db_ListETCNumResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListETCNumResponse)
-	err := c.cc.Invoke(ctx, ETCNumService_GetByCarID_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListETCNumResponse)
+	err := c.cc.Invoke(ctx, Db_ETCNumService_GetByCarID_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ETCNumServiceServer is the server API for ETCNumService service.
-// All implementations should embed UnimplementedETCNumServiceServer
+// Db_ETCNumServiceServer is the server API for Db_ETCNumService service.
+// All implementations should embed UnimplementedDb_ETCNumServiceServer
 // for forward compatibility.
 //
 // ETCNumサービス - ETCカード番号マスタ管理（本番DB、読み取り専用）
-type ETCNumServiceServer interface {
+type Db_ETCNumServiceServer interface {
 	// ETCカード番号一覧取得
-	List(context.Context, *ListETCNumRequest) (*ListETCNumResponse, error)
+	List(context.Context, *Db_ListETCNumRequest) (*Db_ListETCNumResponse, error)
 	// ETCカード番号で取得
-	GetByETCCardNum(context.Context, *GetETCNumByETCCardNumRequest) (*ListETCNumResponse, error)
+	GetByETCCardNum(context.Context, *Db_GetETCNumByETCCardNumRequest) (*Db_ListETCNumResponse, error)
 	// 車輌IDで取得
-	GetByCarID(context.Context, *GetETCNumByCarIDRequest) (*ListETCNumResponse, error)
+	GetByCarID(context.Context, *Db_GetETCNumByCarIDRequest) (*Db_ListETCNumResponse, error)
 }
 
-// UnimplementedETCNumServiceServer should be embedded to have
+// UnimplementedDb_ETCNumServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedETCNumServiceServer struct{}
+type UnimplementedDb_ETCNumServiceServer struct{}
 
-func (UnimplementedETCNumServiceServer) List(context.Context, *ListETCNumRequest) (*ListETCNumResponse, error) {
+func (UnimplementedDb_ETCNumServiceServer) List(context.Context, *Db_ListETCNumRequest) (*Db_ListETCNumResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedETCNumServiceServer) GetByETCCardNum(context.Context, *GetETCNumByETCCardNumRequest) (*ListETCNumResponse, error) {
+func (UnimplementedDb_ETCNumServiceServer) GetByETCCardNum(context.Context, *Db_GetETCNumByETCCardNumRequest) (*Db_ListETCNumResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByETCCardNum not implemented")
 }
-func (UnimplementedETCNumServiceServer) GetByCarID(context.Context, *GetETCNumByCarIDRequest) (*ListETCNumResponse, error) {
+func (UnimplementedDb_ETCNumServiceServer) GetByCarID(context.Context, *Db_GetETCNumByCarIDRequest) (*Db_ListETCNumResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByCarID not implemented")
 }
-func (UnimplementedETCNumServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_ETCNumServiceServer) testEmbeddedByValue() {}
 
-// UnsafeETCNumServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ETCNumServiceServer will
+// UnsafeDb_ETCNumServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_ETCNumServiceServer will
 // result in compilation errors.
-type UnsafeETCNumServiceServer interface {
-	mustEmbedUnimplementedETCNumServiceServer()
+type UnsafeDb_ETCNumServiceServer interface {
+	mustEmbedUnimplementedDb_ETCNumServiceServer()
 }
 
-func RegisterETCNumServiceServer(s grpc.ServiceRegistrar, srv ETCNumServiceServer) {
-	// If the following call pancis, it indicates UnimplementedETCNumServiceServer was
+func RegisterDb_ETCNumServiceServer(s grpc.ServiceRegistrar, srv Db_ETCNumServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_ETCNumServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&ETCNumService_ServiceDesc, srv)
+	s.RegisterService(&Db_ETCNumService_ServiceDesc, srv)
 }
 
-func _ETCNumService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListETCNumRequest)
+func _Db_ETCNumService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListETCNumRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCNumServiceServer).List(ctx, in)
+		return srv.(Db_ETCNumServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCNumService_List_FullMethodName,
+		FullMethod: Db_ETCNumService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCNumServiceServer).List(ctx, req.(*ListETCNumRequest))
+		return srv.(Db_ETCNumServiceServer).List(ctx, req.(*Db_ListETCNumRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCNumService_GetByETCCardNum_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetETCNumByETCCardNumRequest)
+func _Db_ETCNumService_GetByETCCardNum_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetETCNumByETCCardNumRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCNumServiceServer).GetByETCCardNum(ctx, in)
+		return srv.(Db_ETCNumServiceServer).GetByETCCardNum(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCNumService_GetByETCCardNum_FullMethodName,
+		FullMethod: Db_ETCNumService_GetByETCCardNum_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCNumServiceServer).GetByETCCardNum(ctx, req.(*GetETCNumByETCCardNumRequest))
+		return srv.(Db_ETCNumServiceServer).GetByETCCardNum(ctx, req.(*Db_GetETCNumByETCCardNumRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ETCNumService_GetByCarID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetETCNumByCarIDRequest)
+func _Db_ETCNumService_GetByCarID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetETCNumByCarIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ETCNumServiceServer).GetByCarID(ctx, in)
+		return srv.(Db_ETCNumServiceServer).GetByCarID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ETCNumService_GetByCarID_FullMethodName,
+		FullMethod: Db_ETCNumService_GetByCarID_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ETCNumServiceServer).GetByCarID(ctx, req.(*GetETCNumByCarIDRequest))
+		return srv.(Db_ETCNumServiceServer).GetByCarID(ctx, req.(*Db_GetETCNumByCarIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ETCNumService_ServiceDesc is the grpc.ServiceDesc for ETCNumService service.
+// Db_ETCNumService_ServiceDesc is the grpc.ServiceDesc for Db_ETCNumService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ETCNumService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.ETCNumService",
-	HandlerType: (*ETCNumServiceServer)(nil),
+var Db_ETCNumService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_ETCNumService",
+	HandlerType: (*Db_ETCNumServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "List",
-			Handler:    _ETCNumService_List_Handler,
+			Handler:    _Db_ETCNumService_List_Handler,
 		},
 		{
 			MethodName: "GetByETCCardNum",
-			Handler:    _ETCNumService_GetByETCCardNum_Handler,
+			Handler:    _Db_ETCNumService_GetByETCCardNum_Handler,
 		},
 		{
 			MethodName: "GetByCarID",
-			Handler:    _ETCNumService_GetByCarID_Handler,
+			Handler:    _Db_ETCNumService_GetByCarID_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1867,185 +1867,185 @@ var ETCNumService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	DTakoFerryRowsProdService_Get_FullMethodName         = "/db_service.DTakoFerryRowsProdService/Get"
-	DTakoFerryRowsProdService_List_FullMethodName        = "/db_service.DTakoFerryRowsProdService/List"
-	DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName = "/db_service.DTakoFerryRowsProdService/GetByUnkoNo"
+	Db_DTakoFerryRowsProdService_Get_FullMethodName         = "/db_service.db_DTakoFerryRowsProdService/Get"
+	Db_DTakoFerryRowsProdService_List_FullMethodName        = "/db_service.db_DTakoFerryRowsProdService/List"
+	Db_DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName = "/db_service.db_DTakoFerryRowsProdService/GetByUnkoNo"
 )
 
-// DTakoFerryRowsProdServiceClient is the client API for DTakoFerryRowsProdService service.
+// Db_DTakoFerryRowsProdServiceClient is the client API for Db_DTakoFerryRowsProdService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // DTakoFerryRowsProdサービス - フェリー運行データ管理（本番DB、読み取り専用）
-type DTakoFerryRowsProdServiceClient interface {
+type Db_DTakoFerryRowsProdServiceClient interface {
 	// フェリー運行データ取得
-	Get(ctx context.Context, in *GetDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*DTakoFerryRowsProdResponse, error)
+	Get(ctx context.Context, in *Db_GetDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*Db_DTakoFerryRowsProdResponse, error)
 	// フェリー運行データ一覧取得
-	List(ctx context.Context, in *ListDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsProdResponse, error)
+	List(ctx context.Context, in *Db_ListDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*Db_ListDTakoFerryRowsProdResponse, error)
 	// 運行NOでフェリー運行データ取得
-	GetByUnkoNo(ctx context.Context, in *GetDTakoFerryRowsProdByUnkoNoRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsProdResponse, error)
+	GetByUnkoNo(ctx context.Context, in *Db_GetDTakoFerryRowsProdByUnkoNoRequest, opts ...grpc.CallOption) (*Db_ListDTakoFerryRowsProdResponse, error)
 }
 
-type dTakoFerryRowsProdServiceClient struct {
+type db_DTakoFerryRowsProdServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDTakoFerryRowsProdServiceClient(cc grpc.ClientConnInterface) DTakoFerryRowsProdServiceClient {
-	return &dTakoFerryRowsProdServiceClient{cc}
+func NewDb_DTakoFerryRowsProdServiceClient(cc grpc.ClientConnInterface) Db_DTakoFerryRowsProdServiceClient {
+	return &db_DTakoFerryRowsProdServiceClient{cc}
 }
 
-func (c *dTakoFerryRowsProdServiceClient) Get(ctx context.Context, in *GetDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*DTakoFerryRowsProdResponse, error) {
+func (c *db_DTakoFerryRowsProdServiceClient) Get(ctx context.Context, in *Db_GetDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*Db_DTakoFerryRowsProdResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DTakoFerryRowsProdResponse)
-	err := c.cc.Invoke(ctx, DTakoFerryRowsProdService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_DTakoFerryRowsProdResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoFerryRowsProdService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoFerryRowsProdServiceClient) List(ctx context.Context, in *ListDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsProdResponse, error) {
+func (c *db_DTakoFerryRowsProdServiceClient) List(ctx context.Context, in *Db_ListDTakoFerryRowsProdRequest, opts ...grpc.CallOption) (*Db_ListDTakoFerryRowsProdResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDTakoFerryRowsProdResponse)
-	err := c.cc.Invoke(ctx, DTakoFerryRowsProdService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDTakoFerryRowsProdResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoFerryRowsProdService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dTakoFerryRowsProdServiceClient) GetByUnkoNo(ctx context.Context, in *GetDTakoFerryRowsProdByUnkoNoRequest, opts ...grpc.CallOption) (*ListDTakoFerryRowsProdResponse, error) {
+func (c *db_DTakoFerryRowsProdServiceClient) GetByUnkoNo(ctx context.Context, in *Db_GetDTakoFerryRowsProdByUnkoNoRequest, opts ...grpc.CallOption) (*Db_ListDTakoFerryRowsProdResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDTakoFerryRowsProdResponse)
-	err := c.cc.Invoke(ctx, DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDTakoFerryRowsProdResponse)
+	err := c.cc.Invoke(ctx, Db_DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DTakoFerryRowsProdServiceServer is the server API for DTakoFerryRowsProdService service.
-// All implementations should embed UnimplementedDTakoFerryRowsProdServiceServer
+// Db_DTakoFerryRowsProdServiceServer is the server API for Db_DTakoFerryRowsProdService service.
+// All implementations should embed UnimplementedDb_DTakoFerryRowsProdServiceServer
 // for forward compatibility.
 //
 // DTakoFerryRowsProdサービス - フェリー運行データ管理（本番DB、読み取り専用）
-type DTakoFerryRowsProdServiceServer interface {
+type Db_DTakoFerryRowsProdServiceServer interface {
 	// フェリー運行データ取得
-	Get(context.Context, *GetDTakoFerryRowsProdRequest) (*DTakoFerryRowsProdResponse, error)
+	Get(context.Context, *Db_GetDTakoFerryRowsProdRequest) (*Db_DTakoFerryRowsProdResponse, error)
 	// フェリー運行データ一覧取得
-	List(context.Context, *ListDTakoFerryRowsProdRequest) (*ListDTakoFerryRowsProdResponse, error)
+	List(context.Context, *Db_ListDTakoFerryRowsProdRequest) (*Db_ListDTakoFerryRowsProdResponse, error)
 	// 運行NOでフェリー運行データ取得
-	GetByUnkoNo(context.Context, *GetDTakoFerryRowsProdByUnkoNoRequest) (*ListDTakoFerryRowsProdResponse, error)
+	GetByUnkoNo(context.Context, *Db_GetDTakoFerryRowsProdByUnkoNoRequest) (*Db_ListDTakoFerryRowsProdResponse, error)
 }
 
-// UnimplementedDTakoFerryRowsProdServiceServer should be embedded to have
+// UnimplementedDb_DTakoFerryRowsProdServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedDTakoFerryRowsProdServiceServer struct{}
+type UnimplementedDb_DTakoFerryRowsProdServiceServer struct{}
 
-func (UnimplementedDTakoFerryRowsProdServiceServer) Get(context.Context, *GetDTakoFerryRowsProdRequest) (*DTakoFerryRowsProdResponse, error) {
+func (UnimplementedDb_DTakoFerryRowsProdServiceServer) Get(context.Context, *Db_GetDTakoFerryRowsProdRequest) (*Db_DTakoFerryRowsProdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedDTakoFerryRowsProdServiceServer) List(context.Context, *ListDTakoFerryRowsProdRequest) (*ListDTakoFerryRowsProdResponse, error) {
+func (UnimplementedDb_DTakoFerryRowsProdServiceServer) List(context.Context, *Db_ListDTakoFerryRowsProdRequest) (*Db_ListDTakoFerryRowsProdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedDTakoFerryRowsProdServiceServer) GetByUnkoNo(context.Context, *GetDTakoFerryRowsProdByUnkoNoRequest) (*ListDTakoFerryRowsProdResponse, error) {
+func (UnimplementedDb_DTakoFerryRowsProdServiceServer) GetByUnkoNo(context.Context, *Db_GetDTakoFerryRowsProdByUnkoNoRequest) (*Db_ListDTakoFerryRowsProdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByUnkoNo not implemented")
 }
-func (UnimplementedDTakoFerryRowsProdServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_DTakoFerryRowsProdServiceServer) testEmbeddedByValue() {}
 
-// UnsafeDTakoFerryRowsProdServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DTakoFerryRowsProdServiceServer will
+// UnsafeDb_DTakoFerryRowsProdServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_DTakoFerryRowsProdServiceServer will
 // result in compilation errors.
-type UnsafeDTakoFerryRowsProdServiceServer interface {
-	mustEmbedUnimplementedDTakoFerryRowsProdServiceServer()
+type UnsafeDb_DTakoFerryRowsProdServiceServer interface {
+	mustEmbedUnimplementedDb_DTakoFerryRowsProdServiceServer()
 }
 
-func RegisterDTakoFerryRowsProdServiceServer(s grpc.ServiceRegistrar, srv DTakoFerryRowsProdServiceServer) {
-	// If the following call pancis, it indicates UnimplementedDTakoFerryRowsProdServiceServer was
+func RegisterDb_DTakoFerryRowsProdServiceServer(s grpc.ServiceRegistrar, srv Db_DTakoFerryRowsProdServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_DTakoFerryRowsProdServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&DTakoFerryRowsProdService_ServiceDesc, srv)
+	s.RegisterService(&Db_DTakoFerryRowsProdService_ServiceDesc, srv)
 }
 
-func _DTakoFerryRowsProdService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoFerryRowsProdRequest)
+func _Db_DTakoFerryRowsProdService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoFerryRowsProdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoFerryRowsProdServiceServer).Get(ctx, in)
+		return srv.(Db_DTakoFerryRowsProdServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoFerryRowsProdService_Get_FullMethodName,
+		FullMethod: Db_DTakoFerryRowsProdService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoFerryRowsProdServiceServer).Get(ctx, req.(*GetDTakoFerryRowsProdRequest))
+		return srv.(Db_DTakoFerryRowsProdServiceServer).Get(ctx, req.(*Db_GetDTakoFerryRowsProdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoFerryRowsProdService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListDTakoFerryRowsProdRequest)
+func _Db_DTakoFerryRowsProdService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListDTakoFerryRowsProdRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoFerryRowsProdServiceServer).List(ctx, in)
+		return srv.(Db_DTakoFerryRowsProdServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoFerryRowsProdService_List_FullMethodName,
+		FullMethod: Db_DTakoFerryRowsProdService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoFerryRowsProdServiceServer).List(ctx, req.(*ListDTakoFerryRowsProdRequest))
+		return srv.(Db_DTakoFerryRowsProdServiceServer).List(ctx, req.(*Db_ListDTakoFerryRowsProdRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DTakoFerryRowsProdService_GetByUnkoNo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDTakoFerryRowsProdByUnkoNoRequest)
+func _Db_DTakoFerryRowsProdService_GetByUnkoNo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDTakoFerryRowsProdByUnkoNoRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DTakoFerryRowsProdServiceServer).GetByUnkoNo(ctx, in)
+		return srv.(Db_DTakoFerryRowsProdServiceServer).GetByUnkoNo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName,
+		FullMethod: Db_DTakoFerryRowsProdService_GetByUnkoNo_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DTakoFerryRowsProdServiceServer).GetByUnkoNo(ctx, req.(*GetDTakoFerryRowsProdByUnkoNoRequest))
+		return srv.(Db_DTakoFerryRowsProdServiceServer).GetByUnkoNo(ctx, req.(*Db_GetDTakoFerryRowsProdByUnkoNoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DTakoFerryRowsProdService_ServiceDesc is the grpc.ServiceDesc for DTakoFerryRowsProdService service.
+// Db_DTakoFerryRowsProdService_ServiceDesc is the grpc.ServiceDesc for Db_DTakoFerryRowsProdService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DTakoFerryRowsProdService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.DTakoFerryRowsProdService",
-	HandlerType: (*DTakoFerryRowsProdServiceServer)(nil),
+var Db_DTakoFerryRowsProdService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_DTakoFerryRowsProdService",
+	HandlerType: (*Db_DTakoFerryRowsProdServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _DTakoFerryRowsProdService_Get_Handler,
+			Handler:    _Db_DTakoFerryRowsProdService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _DTakoFerryRowsProdService_List_Handler,
+			Handler:    _Db_DTakoFerryRowsProdService_List_Handler,
 		},
 		{
 			MethodName: "GetByUnkoNo",
-			Handler:    _DTakoFerryRowsProdService_GetByUnkoNo_Handler,
+			Handler:    _Db_DTakoFerryRowsProdService_GetByUnkoNo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -2053,185 +2053,185 @@ var DTakoFerryRowsProdService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	CarsService_Get_FullMethodName              = "/db_service.CarsService/Get"
-	CarsService_List_FullMethodName             = "/db_service.CarsService/List"
-	CarsService_GetByBumonCodeID_FullMethodName = "/db_service.CarsService/GetByBumonCodeID"
+	Db_CarsService_Get_FullMethodName              = "/db_service.db_CarsService/Get"
+	Db_CarsService_List_FullMethodName             = "/db_service.db_CarsService/List"
+	Db_CarsService_GetByBumonCodeID_FullMethodName = "/db_service.db_CarsService/GetByBumonCodeID"
 )
 
-// CarsServiceClient is the client API for CarsService service.
+// Db_CarsServiceClient is the client API for Db_CarsService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // CarsService - 車両マスタ管理（本番DB、読み取り専用）
-type CarsServiceClient interface {
+type Db_CarsServiceClient interface {
 	// 車両情報取得
-	Get(ctx context.Context, in *GetCarsRequest, opts ...grpc.CallOption) (*CarsResponse, error)
+	Get(ctx context.Context, in *Db_GetCarsRequest, opts ...grpc.CallOption) (*Db_CarsResponse, error)
 	// 車両情報一覧取得
-	List(ctx context.Context, in *ListCarsRequest, opts ...grpc.CallOption) (*ListCarsResponse, error)
+	List(ctx context.Context, in *Db_ListCarsRequest, opts ...grpc.CallOption) (*Db_ListCarsResponse, error)
 	// 部門コードで車両情報取得
-	GetByBumonCodeID(ctx context.Context, in *GetCarsByBumonCodeIDRequest, opts ...grpc.CallOption) (*ListCarsResponse, error)
+	GetByBumonCodeID(ctx context.Context, in *Db_GetCarsByBumonCodeIDRequest, opts ...grpc.CallOption) (*Db_ListCarsResponse, error)
 }
 
-type carsServiceClient struct {
+type db_CarsServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewCarsServiceClient(cc grpc.ClientConnInterface) CarsServiceClient {
-	return &carsServiceClient{cc}
+func NewDb_CarsServiceClient(cc grpc.ClientConnInterface) Db_CarsServiceClient {
+	return &db_CarsServiceClient{cc}
 }
 
-func (c *carsServiceClient) Get(ctx context.Context, in *GetCarsRequest, opts ...grpc.CallOption) (*CarsResponse, error) {
+func (c *db_CarsServiceClient) Get(ctx context.Context, in *Db_GetCarsRequest, opts ...grpc.CallOption) (*Db_CarsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(CarsResponse)
-	err := c.cc.Invoke(ctx, CarsService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_CarsResponse)
+	err := c.cc.Invoke(ctx, Db_CarsService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *carsServiceClient) List(ctx context.Context, in *ListCarsRequest, opts ...grpc.CallOption) (*ListCarsResponse, error) {
+func (c *db_CarsServiceClient) List(ctx context.Context, in *Db_ListCarsRequest, opts ...grpc.CallOption) (*Db_ListCarsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListCarsResponse)
-	err := c.cc.Invoke(ctx, CarsService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListCarsResponse)
+	err := c.cc.Invoke(ctx, Db_CarsService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *carsServiceClient) GetByBumonCodeID(ctx context.Context, in *GetCarsByBumonCodeIDRequest, opts ...grpc.CallOption) (*ListCarsResponse, error) {
+func (c *db_CarsServiceClient) GetByBumonCodeID(ctx context.Context, in *Db_GetCarsByBumonCodeIDRequest, opts ...grpc.CallOption) (*Db_ListCarsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListCarsResponse)
-	err := c.cc.Invoke(ctx, CarsService_GetByBumonCodeID_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListCarsResponse)
+	err := c.cc.Invoke(ctx, Db_CarsService_GetByBumonCodeID_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// CarsServiceServer is the server API for CarsService service.
-// All implementations should embed UnimplementedCarsServiceServer
+// Db_CarsServiceServer is the server API for Db_CarsService service.
+// All implementations should embed UnimplementedDb_CarsServiceServer
 // for forward compatibility.
 //
 // CarsService - 車両マスタ管理（本番DB、読み取り専用）
-type CarsServiceServer interface {
+type Db_CarsServiceServer interface {
 	// 車両情報取得
-	Get(context.Context, *GetCarsRequest) (*CarsResponse, error)
+	Get(context.Context, *Db_GetCarsRequest) (*Db_CarsResponse, error)
 	// 車両情報一覧取得
-	List(context.Context, *ListCarsRequest) (*ListCarsResponse, error)
+	List(context.Context, *Db_ListCarsRequest) (*Db_ListCarsResponse, error)
 	// 部門コードで車両情報取得
-	GetByBumonCodeID(context.Context, *GetCarsByBumonCodeIDRequest) (*ListCarsResponse, error)
+	GetByBumonCodeID(context.Context, *Db_GetCarsByBumonCodeIDRequest) (*Db_ListCarsResponse, error)
 }
 
-// UnimplementedCarsServiceServer should be embedded to have
+// UnimplementedDb_CarsServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedCarsServiceServer struct{}
+type UnimplementedDb_CarsServiceServer struct{}
 
-func (UnimplementedCarsServiceServer) Get(context.Context, *GetCarsRequest) (*CarsResponse, error) {
+func (UnimplementedDb_CarsServiceServer) Get(context.Context, *Db_GetCarsRequest) (*Db_CarsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedCarsServiceServer) List(context.Context, *ListCarsRequest) (*ListCarsResponse, error) {
+func (UnimplementedDb_CarsServiceServer) List(context.Context, *Db_ListCarsRequest) (*Db_ListCarsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedCarsServiceServer) GetByBumonCodeID(context.Context, *GetCarsByBumonCodeIDRequest) (*ListCarsResponse, error) {
+func (UnimplementedDb_CarsServiceServer) GetByBumonCodeID(context.Context, *Db_GetCarsByBumonCodeIDRequest) (*Db_ListCarsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByBumonCodeID not implemented")
 }
-func (UnimplementedCarsServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_CarsServiceServer) testEmbeddedByValue() {}
 
-// UnsafeCarsServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to CarsServiceServer will
+// UnsafeDb_CarsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_CarsServiceServer will
 // result in compilation errors.
-type UnsafeCarsServiceServer interface {
-	mustEmbedUnimplementedCarsServiceServer()
+type UnsafeDb_CarsServiceServer interface {
+	mustEmbedUnimplementedDb_CarsServiceServer()
 }
 
-func RegisterCarsServiceServer(s grpc.ServiceRegistrar, srv CarsServiceServer) {
-	// If the following call pancis, it indicates UnimplementedCarsServiceServer was
+func RegisterDb_CarsServiceServer(s grpc.ServiceRegistrar, srv Db_CarsServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_CarsServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&CarsService_ServiceDesc, srv)
+	s.RegisterService(&Db_CarsService_ServiceDesc, srv)
 }
 
-func _CarsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCarsRequest)
+func _Db_CarsService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetCarsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CarsServiceServer).Get(ctx, in)
+		return srv.(Db_CarsServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CarsService_Get_FullMethodName,
+		FullMethod: Db_CarsService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CarsServiceServer).Get(ctx, req.(*GetCarsRequest))
+		return srv.(Db_CarsServiceServer).Get(ctx, req.(*Db_GetCarsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CarsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListCarsRequest)
+func _Db_CarsService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListCarsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CarsServiceServer).List(ctx, in)
+		return srv.(Db_CarsServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CarsService_List_FullMethodName,
+		FullMethod: Db_CarsService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CarsServiceServer).List(ctx, req.(*ListCarsRequest))
+		return srv.(Db_CarsServiceServer).List(ctx, req.(*Db_ListCarsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CarsService_GetByBumonCodeID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetCarsByBumonCodeIDRequest)
+func _Db_CarsService_GetByBumonCodeID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetCarsByBumonCodeIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CarsServiceServer).GetByBumonCodeID(ctx, in)
+		return srv.(Db_CarsServiceServer).GetByBumonCodeID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: CarsService_GetByBumonCodeID_FullMethodName,
+		FullMethod: Db_CarsService_GetByBumonCodeID_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CarsServiceServer).GetByBumonCodeID(ctx, req.(*GetCarsByBumonCodeIDRequest))
+		return srv.(Db_CarsServiceServer).GetByBumonCodeID(ctx, req.(*Db_GetCarsByBumonCodeIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// CarsService_ServiceDesc is the grpc.ServiceDesc for CarsService service.
+// Db_CarsService_ServiceDesc is the grpc.ServiceDesc for Db_CarsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var CarsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.CarsService",
-	HandlerType: (*CarsServiceServer)(nil),
+var Db_CarsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_CarsService",
+	HandlerType: (*Db_CarsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _CarsService_Get_Handler,
+			Handler:    _Db_CarsService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _CarsService_List_Handler,
+			Handler:    _Db_CarsService_List_Handler,
 		},
 		{
 			MethodName: "GetByBumonCodeID",
-			Handler:    _CarsService_GetByBumonCodeID_Handler,
+			Handler:    _Db_CarsService_GetByBumonCodeID_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -2239,185 +2239,185 @@ var CarsService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	DriversService_Get_FullMethodName        = "/db_service.DriversService/Get"
-	DriversService_List_FullMethodName       = "/db_service.DriversService/List"
-	DriversService_GetByBumon_FullMethodName = "/db_service.DriversService/GetByBumon"
+	Db_DriversService_Get_FullMethodName        = "/db_service.db_DriversService/Get"
+	Db_DriversService_List_FullMethodName       = "/db_service.db_DriversService/List"
+	Db_DriversService_GetByBumon_FullMethodName = "/db_service.db_DriversService/GetByBumon"
 )
 
-// DriversServiceClient is the client API for DriversService service.
+// Db_DriversServiceClient is the client API for Db_DriversService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // DriversService - ドライバーマスタ管理（本番DB、読み取り専用）
-type DriversServiceClient interface {
+type Db_DriversServiceClient interface {
 	// ドライバー情報取得
-	Get(ctx context.Context, in *GetDriversRequest, opts ...grpc.CallOption) (*DriversResponse, error)
+	Get(ctx context.Context, in *Db_GetDriversRequest, opts ...grpc.CallOption) (*Db_DriversResponse, error)
 	// ドライバー情報一覧取得
-	List(ctx context.Context, in *ListDriversRequest, opts ...grpc.CallOption) (*ListDriversResponse, error)
+	List(ctx context.Context, in *Db_ListDriversRequest, opts ...grpc.CallOption) (*Db_ListDriversResponse, error)
 	// 部門コードでドライバー情報取得
-	GetByBumon(ctx context.Context, in *GetDriversByBumonRequest, opts ...grpc.CallOption) (*ListDriversResponse, error)
+	GetByBumon(ctx context.Context, in *Db_GetDriversByBumonRequest, opts ...grpc.CallOption) (*Db_ListDriversResponse, error)
 }
 
-type driversServiceClient struct {
+type db_DriversServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDriversServiceClient(cc grpc.ClientConnInterface) DriversServiceClient {
-	return &driversServiceClient{cc}
+func NewDb_DriversServiceClient(cc grpc.ClientConnInterface) Db_DriversServiceClient {
+	return &db_DriversServiceClient{cc}
 }
 
-func (c *driversServiceClient) Get(ctx context.Context, in *GetDriversRequest, opts ...grpc.CallOption) (*DriversResponse, error) {
+func (c *db_DriversServiceClient) Get(ctx context.Context, in *Db_GetDriversRequest, opts ...grpc.CallOption) (*Db_DriversResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(DriversResponse)
-	err := c.cc.Invoke(ctx, DriversService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_DriversResponse)
+	err := c.cc.Invoke(ctx, Db_DriversService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *driversServiceClient) List(ctx context.Context, in *ListDriversRequest, opts ...grpc.CallOption) (*ListDriversResponse, error) {
+func (c *db_DriversServiceClient) List(ctx context.Context, in *Db_ListDriversRequest, opts ...grpc.CallOption) (*Db_ListDriversResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDriversResponse)
-	err := c.cc.Invoke(ctx, DriversService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDriversResponse)
+	err := c.cc.Invoke(ctx, Db_DriversService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *driversServiceClient) GetByBumon(ctx context.Context, in *GetDriversByBumonRequest, opts ...grpc.CallOption) (*ListDriversResponse, error) {
+func (c *db_DriversServiceClient) GetByBumon(ctx context.Context, in *Db_GetDriversByBumonRequest, opts ...grpc.CallOption) (*Db_ListDriversResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListDriversResponse)
-	err := c.cc.Invoke(ctx, DriversService_GetByBumon_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListDriversResponse)
+	err := c.cc.Invoke(ctx, Db_DriversService_GetByBumon_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DriversServiceServer is the server API for DriversService service.
-// All implementations should embed UnimplementedDriversServiceServer
+// Db_DriversServiceServer is the server API for Db_DriversService service.
+// All implementations should embed UnimplementedDb_DriversServiceServer
 // for forward compatibility.
 //
 // DriversService - ドライバーマスタ管理（本番DB、読み取り専用）
-type DriversServiceServer interface {
+type Db_DriversServiceServer interface {
 	// ドライバー情報取得
-	Get(context.Context, *GetDriversRequest) (*DriversResponse, error)
+	Get(context.Context, *Db_GetDriversRequest) (*Db_DriversResponse, error)
 	// ドライバー情報一覧取得
-	List(context.Context, *ListDriversRequest) (*ListDriversResponse, error)
+	List(context.Context, *Db_ListDriversRequest) (*Db_ListDriversResponse, error)
 	// 部門コードでドライバー情報取得
-	GetByBumon(context.Context, *GetDriversByBumonRequest) (*ListDriversResponse, error)
+	GetByBumon(context.Context, *Db_GetDriversByBumonRequest) (*Db_ListDriversResponse, error)
 }
 
-// UnimplementedDriversServiceServer should be embedded to have
+// UnimplementedDb_DriversServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedDriversServiceServer struct{}
+type UnimplementedDb_DriversServiceServer struct{}
 
-func (UnimplementedDriversServiceServer) Get(context.Context, *GetDriversRequest) (*DriversResponse, error) {
+func (UnimplementedDb_DriversServiceServer) Get(context.Context, *Db_GetDriversRequest) (*Db_DriversResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedDriversServiceServer) List(context.Context, *ListDriversRequest) (*ListDriversResponse, error) {
+func (UnimplementedDb_DriversServiceServer) List(context.Context, *Db_ListDriversRequest) (*Db_ListDriversResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedDriversServiceServer) GetByBumon(context.Context, *GetDriversByBumonRequest) (*ListDriversResponse, error) {
+func (UnimplementedDb_DriversServiceServer) GetByBumon(context.Context, *Db_GetDriversByBumonRequest) (*Db_ListDriversResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByBumon not implemented")
 }
-func (UnimplementedDriversServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_DriversServiceServer) testEmbeddedByValue() {}
 
-// UnsafeDriversServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to DriversServiceServer will
+// UnsafeDb_DriversServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_DriversServiceServer will
 // result in compilation errors.
-type UnsafeDriversServiceServer interface {
-	mustEmbedUnimplementedDriversServiceServer()
+type UnsafeDb_DriversServiceServer interface {
+	mustEmbedUnimplementedDb_DriversServiceServer()
 }
 
-func RegisterDriversServiceServer(s grpc.ServiceRegistrar, srv DriversServiceServer) {
-	// If the following call pancis, it indicates UnimplementedDriversServiceServer was
+func RegisterDb_DriversServiceServer(s grpc.ServiceRegistrar, srv Db_DriversServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_DriversServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&DriversService_ServiceDesc, srv)
+	s.RegisterService(&Db_DriversService_ServiceDesc, srv)
 }
 
-func _DriversService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDriversRequest)
+func _Db_DriversService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDriversRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DriversServiceServer).Get(ctx, in)
+		return srv.(Db_DriversServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DriversService_Get_FullMethodName,
+		FullMethod: Db_DriversService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DriversServiceServer).Get(ctx, req.(*GetDriversRequest))
+		return srv.(Db_DriversServiceServer).Get(ctx, req.(*Db_GetDriversRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DriversService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListDriversRequest)
+func _Db_DriversService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListDriversRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DriversServiceServer).List(ctx, in)
+		return srv.(Db_DriversServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DriversService_List_FullMethodName,
+		FullMethod: Db_DriversService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DriversServiceServer).List(ctx, req.(*ListDriversRequest))
+		return srv.(Db_DriversServiceServer).List(ctx, req.(*Db_ListDriversRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DriversService_GetByBumon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetDriversByBumonRequest)
+func _Db_DriversService_GetByBumon_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetDriversByBumonRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DriversServiceServer).GetByBumon(ctx, in)
+		return srv.(Db_DriversServiceServer).GetByBumon(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: DriversService_GetByBumon_FullMethodName,
+		FullMethod: Db_DriversService_GetByBumon_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DriversServiceServer).GetByBumon(ctx, req.(*GetDriversByBumonRequest))
+		return srv.(Db_DriversServiceServer).GetByBumon(ctx, req.(*Db_GetDriversByBumonRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// DriversService_ServiceDesc is the grpc.ServiceDesc for DriversService service.
+// Db_DriversService_ServiceDesc is the grpc.ServiceDesc for Db_DriversService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var DriversService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.DriversService",
-	HandlerType: (*DriversServiceServer)(nil),
+var Db_DriversService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_DriversService",
+	HandlerType: (*Db_DriversServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _DriversService_Get_Handler,
+			Handler:    _Db_DriversService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _DriversService_List_Handler,
+			Handler:    _Db_DriversService_List_Handler,
 		},
 		{
 			MethodName: "GetByBumon",
-			Handler:    _DriversService_GetByBumon_Handler,
+			Handler:    _Db_DriversService_GetByBumon_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -2425,217 +2425,217 @@ var DriversService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	UntenNippoMeisaiService_Get_FullMethodName            = "/db_service.UntenNippoMeisaiService/Get"
-	UntenNippoMeisaiService_List_FullMethodName           = "/db_service.UntenNippoMeisaiService/List"
-	UntenNippoMeisaiService_GetBySharyoC_FullMethodName   = "/db_service.UntenNippoMeisaiService/GetBySharyoC"
-	UntenNippoMeisaiService_GetByDateRange_FullMethodName = "/db_service.UntenNippoMeisaiService/GetByDateRange"
+	Db_UntenNippoMeisaiService_Get_FullMethodName            = "/db_service.db_UntenNippoMeisaiService/Get"
+	Db_UntenNippoMeisaiService_List_FullMethodName           = "/db_service.db_UntenNippoMeisaiService/List"
+	Db_UntenNippoMeisaiService_GetBySharyoC_FullMethodName   = "/db_service.db_UntenNippoMeisaiService/GetBySharyoC"
+	Db_UntenNippoMeisaiService_GetByDateRange_FullMethodName = "/db_service.db_UntenNippoMeisaiService/GetByDateRange"
 )
 
-// UntenNippoMeisaiServiceClient is the client API for UntenNippoMeisaiService service.
+// Db_UntenNippoMeisaiServiceClient is the client API for Db_UntenNippoMeisaiService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // UntenNippoMeisaiService - 運転日報明細管理（SQL Server、読み取り専用）
-type UntenNippoMeisaiServiceClient interface {
-	Get(ctx context.Context, in *GetUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*UntenNippoMeisaiResponse, error)
-	List(ctx context.Context, in *ListUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error)
-	GetBySharyoC(ctx context.Context, in *GetUntenNippoMeisaiBySharyoCRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error)
-	GetByDateRange(ctx context.Context, in *GetUntenNippoMeisaiByDateRangeRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error)
+type Db_UntenNippoMeisaiServiceClient interface {
+	Get(ctx context.Context, in *Db_GetUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*Db_UntenNippoMeisaiResponse, error)
+	List(ctx context.Context, in *Db_ListUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*Db_ListUntenNippoMeisaiResponse, error)
+	GetBySharyoC(ctx context.Context, in *Db_GetUntenNippoMeisaiBySharyoCRequest, opts ...grpc.CallOption) (*Db_ListUntenNippoMeisaiResponse, error)
+	GetByDateRange(ctx context.Context, in *Db_GetUntenNippoMeisaiByDateRangeRequest, opts ...grpc.CallOption) (*Db_ListUntenNippoMeisaiResponse, error)
 }
 
-type untenNippoMeisaiServiceClient struct {
+type db_UntenNippoMeisaiServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewUntenNippoMeisaiServiceClient(cc grpc.ClientConnInterface) UntenNippoMeisaiServiceClient {
-	return &untenNippoMeisaiServiceClient{cc}
+func NewDb_UntenNippoMeisaiServiceClient(cc grpc.ClientConnInterface) Db_UntenNippoMeisaiServiceClient {
+	return &db_UntenNippoMeisaiServiceClient{cc}
 }
 
-func (c *untenNippoMeisaiServiceClient) Get(ctx context.Context, in *GetUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*UntenNippoMeisaiResponse, error) {
+func (c *db_UntenNippoMeisaiServiceClient) Get(ctx context.Context, in *Db_GetUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*Db_UntenNippoMeisaiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UntenNippoMeisaiResponse)
-	err := c.cc.Invoke(ctx, UntenNippoMeisaiService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_UntenNippoMeisaiResponse)
+	err := c.cc.Invoke(ctx, Db_UntenNippoMeisaiService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *untenNippoMeisaiServiceClient) List(ctx context.Context, in *ListUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error) {
+func (c *db_UntenNippoMeisaiServiceClient) List(ctx context.Context, in *Db_ListUntenNippoMeisaiRequest, opts ...grpc.CallOption) (*Db_ListUntenNippoMeisaiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListUntenNippoMeisaiResponse)
-	err := c.cc.Invoke(ctx, UntenNippoMeisaiService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListUntenNippoMeisaiResponse)
+	err := c.cc.Invoke(ctx, Db_UntenNippoMeisaiService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *untenNippoMeisaiServiceClient) GetBySharyoC(ctx context.Context, in *GetUntenNippoMeisaiBySharyoCRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error) {
+func (c *db_UntenNippoMeisaiServiceClient) GetBySharyoC(ctx context.Context, in *Db_GetUntenNippoMeisaiBySharyoCRequest, opts ...grpc.CallOption) (*Db_ListUntenNippoMeisaiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListUntenNippoMeisaiResponse)
-	err := c.cc.Invoke(ctx, UntenNippoMeisaiService_GetBySharyoC_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListUntenNippoMeisaiResponse)
+	err := c.cc.Invoke(ctx, Db_UntenNippoMeisaiService_GetBySharyoC_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *untenNippoMeisaiServiceClient) GetByDateRange(ctx context.Context, in *GetUntenNippoMeisaiByDateRangeRequest, opts ...grpc.CallOption) (*ListUntenNippoMeisaiResponse, error) {
+func (c *db_UntenNippoMeisaiServiceClient) GetByDateRange(ctx context.Context, in *Db_GetUntenNippoMeisaiByDateRangeRequest, opts ...grpc.CallOption) (*Db_ListUntenNippoMeisaiResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListUntenNippoMeisaiResponse)
-	err := c.cc.Invoke(ctx, UntenNippoMeisaiService_GetByDateRange_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListUntenNippoMeisaiResponse)
+	err := c.cc.Invoke(ctx, Db_UntenNippoMeisaiService_GetByDateRange_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// UntenNippoMeisaiServiceServer is the server API for UntenNippoMeisaiService service.
-// All implementations should embed UnimplementedUntenNippoMeisaiServiceServer
+// Db_UntenNippoMeisaiServiceServer is the server API for Db_UntenNippoMeisaiService service.
+// All implementations should embed UnimplementedDb_UntenNippoMeisaiServiceServer
 // for forward compatibility.
 //
 // UntenNippoMeisaiService - 運転日報明細管理（SQL Server、読み取り専用）
-type UntenNippoMeisaiServiceServer interface {
-	Get(context.Context, *GetUntenNippoMeisaiRequest) (*UntenNippoMeisaiResponse, error)
-	List(context.Context, *ListUntenNippoMeisaiRequest) (*ListUntenNippoMeisaiResponse, error)
-	GetBySharyoC(context.Context, *GetUntenNippoMeisaiBySharyoCRequest) (*ListUntenNippoMeisaiResponse, error)
-	GetByDateRange(context.Context, *GetUntenNippoMeisaiByDateRangeRequest) (*ListUntenNippoMeisaiResponse, error)
+type Db_UntenNippoMeisaiServiceServer interface {
+	Get(context.Context, *Db_GetUntenNippoMeisaiRequest) (*Db_UntenNippoMeisaiResponse, error)
+	List(context.Context, *Db_ListUntenNippoMeisaiRequest) (*Db_ListUntenNippoMeisaiResponse, error)
+	GetBySharyoC(context.Context, *Db_GetUntenNippoMeisaiBySharyoCRequest) (*Db_ListUntenNippoMeisaiResponse, error)
+	GetByDateRange(context.Context, *Db_GetUntenNippoMeisaiByDateRangeRequest) (*Db_ListUntenNippoMeisaiResponse, error)
 }
 
-// UnimplementedUntenNippoMeisaiServiceServer should be embedded to have
+// UnimplementedDb_UntenNippoMeisaiServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedUntenNippoMeisaiServiceServer struct{}
+type UnimplementedDb_UntenNippoMeisaiServiceServer struct{}
 
-func (UnimplementedUntenNippoMeisaiServiceServer) Get(context.Context, *GetUntenNippoMeisaiRequest) (*UntenNippoMeisaiResponse, error) {
+func (UnimplementedDb_UntenNippoMeisaiServiceServer) Get(context.Context, *Db_GetUntenNippoMeisaiRequest) (*Db_UntenNippoMeisaiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedUntenNippoMeisaiServiceServer) List(context.Context, *ListUntenNippoMeisaiRequest) (*ListUntenNippoMeisaiResponse, error) {
+func (UnimplementedDb_UntenNippoMeisaiServiceServer) List(context.Context, *Db_ListUntenNippoMeisaiRequest) (*Db_ListUntenNippoMeisaiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedUntenNippoMeisaiServiceServer) GetBySharyoC(context.Context, *GetUntenNippoMeisaiBySharyoCRequest) (*ListUntenNippoMeisaiResponse, error) {
+func (UnimplementedDb_UntenNippoMeisaiServiceServer) GetBySharyoC(context.Context, *Db_GetUntenNippoMeisaiBySharyoCRequest) (*Db_ListUntenNippoMeisaiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBySharyoC not implemented")
 }
-func (UnimplementedUntenNippoMeisaiServiceServer) GetByDateRange(context.Context, *GetUntenNippoMeisaiByDateRangeRequest) (*ListUntenNippoMeisaiResponse, error) {
+func (UnimplementedDb_UntenNippoMeisaiServiceServer) GetByDateRange(context.Context, *Db_GetUntenNippoMeisaiByDateRangeRequest) (*Db_ListUntenNippoMeisaiResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByDateRange not implemented")
 }
-func (UnimplementedUntenNippoMeisaiServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_UntenNippoMeisaiServiceServer) testEmbeddedByValue() {}
 
-// UnsafeUntenNippoMeisaiServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to UntenNippoMeisaiServiceServer will
+// UnsafeDb_UntenNippoMeisaiServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_UntenNippoMeisaiServiceServer will
 // result in compilation errors.
-type UnsafeUntenNippoMeisaiServiceServer interface {
-	mustEmbedUnimplementedUntenNippoMeisaiServiceServer()
+type UnsafeDb_UntenNippoMeisaiServiceServer interface {
+	mustEmbedUnimplementedDb_UntenNippoMeisaiServiceServer()
 }
 
-func RegisterUntenNippoMeisaiServiceServer(s grpc.ServiceRegistrar, srv UntenNippoMeisaiServiceServer) {
-	// If the following call pancis, it indicates UnimplementedUntenNippoMeisaiServiceServer was
+func RegisterDb_UntenNippoMeisaiServiceServer(s grpc.ServiceRegistrar, srv Db_UntenNippoMeisaiServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_UntenNippoMeisaiServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&UntenNippoMeisaiService_ServiceDesc, srv)
+	s.RegisterService(&Db_UntenNippoMeisaiService_ServiceDesc, srv)
 }
 
-func _UntenNippoMeisaiService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUntenNippoMeisaiRequest)
+func _Db_UntenNippoMeisaiService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetUntenNippoMeisaiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UntenNippoMeisaiServiceServer).Get(ctx, in)
+		return srv.(Db_UntenNippoMeisaiServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UntenNippoMeisaiService_Get_FullMethodName,
+		FullMethod: Db_UntenNippoMeisaiService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UntenNippoMeisaiServiceServer).Get(ctx, req.(*GetUntenNippoMeisaiRequest))
+		return srv.(Db_UntenNippoMeisaiServiceServer).Get(ctx, req.(*Db_GetUntenNippoMeisaiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UntenNippoMeisaiService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListUntenNippoMeisaiRequest)
+func _Db_UntenNippoMeisaiService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListUntenNippoMeisaiRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UntenNippoMeisaiServiceServer).List(ctx, in)
+		return srv.(Db_UntenNippoMeisaiServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UntenNippoMeisaiService_List_FullMethodName,
+		FullMethod: Db_UntenNippoMeisaiService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UntenNippoMeisaiServiceServer).List(ctx, req.(*ListUntenNippoMeisaiRequest))
+		return srv.(Db_UntenNippoMeisaiServiceServer).List(ctx, req.(*Db_ListUntenNippoMeisaiRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UntenNippoMeisaiService_GetBySharyoC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUntenNippoMeisaiBySharyoCRequest)
+func _Db_UntenNippoMeisaiService_GetBySharyoC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetUntenNippoMeisaiBySharyoCRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UntenNippoMeisaiServiceServer).GetBySharyoC(ctx, in)
+		return srv.(Db_UntenNippoMeisaiServiceServer).GetBySharyoC(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UntenNippoMeisaiService_GetBySharyoC_FullMethodName,
+		FullMethod: Db_UntenNippoMeisaiService_GetBySharyoC_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UntenNippoMeisaiServiceServer).GetBySharyoC(ctx, req.(*GetUntenNippoMeisaiBySharyoCRequest))
+		return srv.(Db_UntenNippoMeisaiServiceServer).GetBySharyoC(ctx, req.(*Db_GetUntenNippoMeisaiBySharyoCRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UntenNippoMeisaiService_GetByDateRange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUntenNippoMeisaiByDateRangeRequest)
+func _Db_UntenNippoMeisaiService_GetByDateRange_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetUntenNippoMeisaiByDateRangeRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UntenNippoMeisaiServiceServer).GetByDateRange(ctx, in)
+		return srv.(Db_UntenNippoMeisaiServiceServer).GetByDateRange(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UntenNippoMeisaiService_GetByDateRange_FullMethodName,
+		FullMethod: Db_UntenNippoMeisaiService_GetByDateRange_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UntenNippoMeisaiServiceServer).GetByDateRange(ctx, req.(*GetUntenNippoMeisaiByDateRangeRequest))
+		return srv.(Db_UntenNippoMeisaiServiceServer).GetByDateRange(ctx, req.(*Db_GetUntenNippoMeisaiByDateRangeRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// UntenNippoMeisaiService_ServiceDesc is the grpc.ServiceDesc for UntenNippoMeisaiService service.
+// Db_UntenNippoMeisaiService_ServiceDesc is the grpc.ServiceDesc for Db_UntenNippoMeisaiService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var UntenNippoMeisaiService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.UntenNippoMeisaiService",
-	HandlerType: (*UntenNippoMeisaiServiceServer)(nil),
+var Db_UntenNippoMeisaiService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_UntenNippoMeisaiService",
+	HandlerType: (*Db_UntenNippoMeisaiServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _UntenNippoMeisaiService_Get_Handler,
+			Handler:    _Db_UntenNippoMeisaiService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _UntenNippoMeisaiService_List_Handler,
+			Handler:    _Db_UntenNippoMeisaiService_List_Handler,
 		},
 		{
 			MethodName: "GetBySharyoC",
-			Handler:    _UntenNippoMeisaiService_GetBySharyoC_Handler,
+			Handler:    _Db_UntenNippoMeisaiService_GetBySharyoC_Handler,
 		},
 		{
 			MethodName: "GetByDateRange",
-			Handler:    _UntenNippoMeisaiService_GetByDateRange_Handler,
+			Handler:    _Db_UntenNippoMeisaiService_GetByDateRange_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -2643,179 +2643,179 @@ var UntenNippoMeisaiService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	ShainMasterService_Get_FullMethodName         = "/db_service.ShainMasterService/Get"
-	ShainMasterService_List_FullMethodName        = "/db_service.ShainMasterService/List"
-	ShainMasterService_GetByBumonC_FullMethodName = "/db_service.ShainMasterService/GetByBumonC"
+	Db_ShainMasterService_Get_FullMethodName         = "/db_service.db_ShainMasterService/Get"
+	Db_ShainMasterService_List_FullMethodName        = "/db_service.db_ShainMasterService/List"
+	Db_ShainMasterService_GetByBumonC_FullMethodName = "/db_service.db_ShainMasterService/GetByBumonC"
 )
 
-// ShainMasterServiceClient is the client API for ShainMasterService service.
+// Db_ShainMasterServiceClient is the client API for Db_ShainMasterService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // ShainMasterService - 社員マスタ管理（SQL Server、読み取り専用）
-type ShainMasterServiceClient interface {
-	Get(ctx context.Context, in *GetShainMasterRequest, opts ...grpc.CallOption) (*ShainMasterResponse, error)
-	List(ctx context.Context, in *ListShainMasterRequest, opts ...grpc.CallOption) (*ListShainMasterResponse, error)
-	GetByBumonC(ctx context.Context, in *GetShainMasterByBumonCRequest, opts ...grpc.CallOption) (*ListShainMasterResponse, error)
+type Db_ShainMasterServiceClient interface {
+	Get(ctx context.Context, in *Db_GetShainMasterRequest, opts ...grpc.CallOption) (*Db_ShainMasterResponse, error)
+	List(ctx context.Context, in *Db_ListShainMasterRequest, opts ...grpc.CallOption) (*Db_ListShainMasterResponse, error)
+	GetByBumonC(ctx context.Context, in *Db_GetShainMasterByBumonCRequest, opts ...grpc.CallOption) (*Db_ListShainMasterResponse, error)
 }
 
-type shainMasterServiceClient struct {
+type db_ShainMasterServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewShainMasterServiceClient(cc grpc.ClientConnInterface) ShainMasterServiceClient {
-	return &shainMasterServiceClient{cc}
+func NewDb_ShainMasterServiceClient(cc grpc.ClientConnInterface) Db_ShainMasterServiceClient {
+	return &db_ShainMasterServiceClient{cc}
 }
 
-func (c *shainMasterServiceClient) Get(ctx context.Context, in *GetShainMasterRequest, opts ...grpc.CallOption) (*ShainMasterResponse, error) {
+func (c *db_ShainMasterServiceClient) Get(ctx context.Context, in *Db_GetShainMasterRequest, opts ...grpc.CallOption) (*Db_ShainMasterResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ShainMasterResponse)
-	err := c.cc.Invoke(ctx, ShainMasterService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_ShainMasterResponse)
+	err := c.cc.Invoke(ctx, Db_ShainMasterService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *shainMasterServiceClient) List(ctx context.Context, in *ListShainMasterRequest, opts ...grpc.CallOption) (*ListShainMasterResponse, error) {
+func (c *db_ShainMasterServiceClient) List(ctx context.Context, in *Db_ListShainMasterRequest, opts ...grpc.CallOption) (*Db_ListShainMasterResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListShainMasterResponse)
-	err := c.cc.Invoke(ctx, ShainMasterService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListShainMasterResponse)
+	err := c.cc.Invoke(ctx, Db_ShainMasterService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *shainMasterServiceClient) GetByBumonC(ctx context.Context, in *GetShainMasterByBumonCRequest, opts ...grpc.CallOption) (*ListShainMasterResponse, error) {
+func (c *db_ShainMasterServiceClient) GetByBumonC(ctx context.Context, in *Db_GetShainMasterByBumonCRequest, opts ...grpc.CallOption) (*Db_ListShainMasterResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListShainMasterResponse)
-	err := c.cc.Invoke(ctx, ShainMasterService_GetByBumonC_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListShainMasterResponse)
+	err := c.cc.Invoke(ctx, Db_ShainMasterService_GetByBumonC_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ShainMasterServiceServer is the server API for ShainMasterService service.
-// All implementations should embed UnimplementedShainMasterServiceServer
+// Db_ShainMasterServiceServer is the server API for Db_ShainMasterService service.
+// All implementations should embed UnimplementedDb_ShainMasterServiceServer
 // for forward compatibility.
 //
 // ShainMasterService - 社員マスタ管理（SQL Server、読み取り専用）
-type ShainMasterServiceServer interface {
-	Get(context.Context, *GetShainMasterRequest) (*ShainMasterResponse, error)
-	List(context.Context, *ListShainMasterRequest) (*ListShainMasterResponse, error)
-	GetByBumonC(context.Context, *GetShainMasterByBumonCRequest) (*ListShainMasterResponse, error)
+type Db_ShainMasterServiceServer interface {
+	Get(context.Context, *Db_GetShainMasterRequest) (*Db_ShainMasterResponse, error)
+	List(context.Context, *Db_ListShainMasterRequest) (*Db_ListShainMasterResponse, error)
+	GetByBumonC(context.Context, *Db_GetShainMasterByBumonCRequest) (*Db_ListShainMasterResponse, error)
 }
 
-// UnimplementedShainMasterServiceServer should be embedded to have
+// UnimplementedDb_ShainMasterServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedShainMasterServiceServer struct{}
+type UnimplementedDb_ShainMasterServiceServer struct{}
 
-func (UnimplementedShainMasterServiceServer) Get(context.Context, *GetShainMasterRequest) (*ShainMasterResponse, error) {
+func (UnimplementedDb_ShainMasterServiceServer) Get(context.Context, *Db_GetShainMasterRequest) (*Db_ShainMasterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedShainMasterServiceServer) List(context.Context, *ListShainMasterRequest) (*ListShainMasterResponse, error) {
+func (UnimplementedDb_ShainMasterServiceServer) List(context.Context, *Db_ListShainMasterRequest) (*Db_ListShainMasterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedShainMasterServiceServer) GetByBumonC(context.Context, *GetShainMasterByBumonCRequest) (*ListShainMasterResponse, error) {
+func (UnimplementedDb_ShainMasterServiceServer) GetByBumonC(context.Context, *Db_GetShainMasterByBumonCRequest) (*Db_ListShainMasterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByBumonC not implemented")
 }
-func (UnimplementedShainMasterServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_ShainMasterServiceServer) testEmbeddedByValue() {}
 
-// UnsafeShainMasterServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ShainMasterServiceServer will
+// UnsafeDb_ShainMasterServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_ShainMasterServiceServer will
 // result in compilation errors.
-type UnsafeShainMasterServiceServer interface {
-	mustEmbedUnimplementedShainMasterServiceServer()
+type UnsafeDb_ShainMasterServiceServer interface {
+	mustEmbedUnimplementedDb_ShainMasterServiceServer()
 }
 
-func RegisterShainMasterServiceServer(s grpc.ServiceRegistrar, srv ShainMasterServiceServer) {
-	// If the following call pancis, it indicates UnimplementedShainMasterServiceServer was
+func RegisterDb_ShainMasterServiceServer(s grpc.ServiceRegistrar, srv Db_ShainMasterServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_ShainMasterServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&ShainMasterService_ServiceDesc, srv)
+	s.RegisterService(&Db_ShainMasterService_ServiceDesc, srv)
 }
 
-func _ShainMasterService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetShainMasterRequest)
+func _Db_ShainMasterService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetShainMasterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShainMasterServiceServer).Get(ctx, in)
+		return srv.(Db_ShainMasterServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ShainMasterService_Get_FullMethodName,
+		FullMethod: Db_ShainMasterService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShainMasterServiceServer).Get(ctx, req.(*GetShainMasterRequest))
+		return srv.(Db_ShainMasterServiceServer).Get(ctx, req.(*Db_GetShainMasterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShainMasterService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListShainMasterRequest)
+func _Db_ShainMasterService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListShainMasterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShainMasterServiceServer).List(ctx, in)
+		return srv.(Db_ShainMasterServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ShainMasterService_List_FullMethodName,
+		FullMethod: Db_ShainMasterService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShainMasterServiceServer).List(ctx, req.(*ListShainMasterRequest))
+		return srv.(Db_ShainMasterServiceServer).List(ctx, req.(*Db_ListShainMasterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShainMasterService_GetByBumonC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetShainMasterByBumonCRequest)
+func _Db_ShainMasterService_GetByBumonC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetShainMasterByBumonCRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShainMasterServiceServer).GetByBumonC(ctx, in)
+		return srv.(Db_ShainMasterServiceServer).GetByBumonC(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ShainMasterService_GetByBumonC_FullMethodName,
+		FullMethod: Db_ShainMasterService_GetByBumonC_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShainMasterServiceServer).GetByBumonC(ctx, req.(*GetShainMasterByBumonCRequest))
+		return srv.(Db_ShainMasterServiceServer).GetByBumonC(ctx, req.(*Db_GetShainMasterByBumonCRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ShainMasterService_ServiceDesc is the grpc.ServiceDesc for ShainMasterService service.
+// Db_ShainMasterService_ServiceDesc is the grpc.ServiceDesc for Db_ShainMasterService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ShainMasterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.ShainMasterService",
-	HandlerType: (*ShainMasterServiceServer)(nil),
+var Db_ShainMasterService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_ShainMasterService",
+	HandlerType: (*Db_ShainMasterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _ShainMasterService_Get_Handler,
+			Handler:    _Db_ShainMasterService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _ShainMasterService_List_Handler,
+			Handler:    _Db_ShainMasterService_List_Handler,
 		},
 		{
 			MethodName: "GetByBumonC",
-			Handler:    _ShainMasterService_GetByBumonC_Handler,
+			Handler:    _Db_ShainMasterService_GetByBumonC_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -2823,141 +2823,141 @@ var ShainMasterService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	ChiikiMasterService_Get_FullMethodName  = "/db_service.ChiikiMasterService/Get"
-	ChiikiMasterService_List_FullMethodName = "/db_service.ChiikiMasterService/List"
+	Db_ChiikiMasterService_Get_FullMethodName  = "/db_service.db_ChiikiMasterService/Get"
+	Db_ChiikiMasterService_List_FullMethodName = "/db_service.db_ChiikiMasterService/List"
 )
 
-// ChiikiMasterServiceClient is the client API for ChiikiMasterService service.
+// Db_ChiikiMasterServiceClient is the client API for Db_ChiikiMasterService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // ChiikiMasterService - 地域マスタ管理（SQL Server、読み取り専用）
-type ChiikiMasterServiceClient interface {
-	Get(ctx context.Context, in *GetChiikiMasterRequest, opts ...grpc.CallOption) (*ChiikiMasterResponse, error)
-	List(ctx context.Context, in *ListChiikiMasterRequest, opts ...grpc.CallOption) (*ListChiikiMasterResponse, error)
+type Db_ChiikiMasterServiceClient interface {
+	Get(ctx context.Context, in *Db_GetChiikiMasterRequest, opts ...grpc.CallOption) (*Db_ChiikiMasterResponse, error)
+	List(ctx context.Context, in *Db_ListChiikiMasterRequest, opts ...grpc.CallOption) (*Db_ListChiikiMasterResponse, error)
 }
 
-type chiikiMasterServiceClient struct {
+type db_ChiikiMasterServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewChiikiMasterServiceClient(cc grpc.ClientConnInterface) ChiikiMasterServiceClient {
-	return &chiikiMasterServiceClient{cc}
+func NewDb_ChiikiMasterServiceClient(cc grpc.ClientConnInterface) Db_ChiikiMasterServiceClient {
+	return &db_ChiikiMasterServiceClient{cc}
 }
 
-func (c *chiikiMasterServiceClient) Get(ctx context.Context, in *GetChiikiMasterRequest, opts ...grpc.CallOption) (*ChiikiMasterResponse, error) {
+func (c *db_ChiikiMasterServiceClient) Get(ctx context.Context, in *Db_GetChiikiMasterRequest, opts ...grpc.CallOption) (*Db_ChiikiMasterResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ChiikiMasterResponse)
-	err := c.cc.Invoke(ctx, ChiikiMasterService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_ChiikiMasterResponse)
+	err := c.cc.Invoke(ctx, Db_ChiikiMasterService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *chiikiMasterServiceClient) List(ctx context.Context, in *ListChiikiMasterRequest, opts ...grpc.CallOption) (*ListChiikiMasterResponse, error) {
+func (c *db_ChiikiMasterServiceClient) List(ctx context.Context, in *Db_ListChiikiMasterRequest, opts ...grpc.CallOption) (*Db_ListChiikiMasterResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListChiikiMasterResponse)
-	err := c.cc.Invoke(ctx, ChiikiMasterService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListChiikiMasterResponse)
+	err := c.cc.Invoke(ctx, Db_ChiikiMasterService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ChiikiMasterServiceServer is the server API for ChiikiMasterService service.
-// All implementations should embed UnimplementedChiikiMasterServiceServer
+// Db_ChiikiMasterServiceServer is the server API for Db_ChiikiMasterService service.
+// All implementations should embed UnimplementedDb_ChiikiMasterServiceServer
 // for forward compatibility.
 //
 // ChiikiMasterService - 地域マスタ管理（SQL Server、読み取り専用）
-type ChiikiMasterServiceServer interface {
-	Get(context.Context, *GetChiikiMasterRequest) (*ChiikiMasterResponse, error)
-	List(context.Context, *ListChiikiMasterRequest) (*ListChiikiMasterResponse, error)
+type Db_ChiikiMasterServiceServer interface {
+	Get(context.Context, *Db_GetChiikiMasterRequest) (*Db_ChiikiMasterResponse, error)
+	List(context.Context, *Db_ListChiikiMasterRequest) (*Db_ListChiikiMasterResponse, error)
 }
 
-// UnimplementedChiikiMasterServiceServer should be embedded to have
+// UnimplementedDb_ChiikiMasterServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedChiikiMasterServiceServer struct{}
+type UnimplementedDb_ChiikiMasterServiceServer struct{}
 
-func (UnimplementedChiikiMasterServiceServer) Get(context.Context, *GetChiikiMasterRequest) (*ChiikiMasterResponse, error) {
+func (UnimplementedDb_ChiikiMasterServiceServer) Get(context.Context, *Db_GetChiikiMasterRequest) (*Db_ChiikiMasterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedChiikiMasterServiceServer) List(context.Context, *ListChiikiMasterRequest) (*ListChiikiMasterResponse, error) {
+func (UnimplementedDb_ChiikiMasterServiceServer) List(context.Context, *Db_ListChiikiMasterRequest) (*Db_ListChiikiMasterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedChiikiMasterServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_ChiikiMasterServiceServer) testEmbeddedByValue() {}
 
-// UnsafeChiikiMasterServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ChiikiMasterServiceServer will
+// UnsafeDb_ChiikiMasterServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_ChiikiMasterServiceServer will
 // result in compilation errors.
-type UnsafeChiikiMasterServiceServer interface {
-	mustEmbedUnimplementedChiikiMasterServiceServer()
+type UnsafeDb_ChiikiMasterServiceServer interface {
+	mustEmbedUnimplementedDb_ChiikiMasterServiceServer()
 }
 
-func RegisterChiikiMasterServiceServer(s grpc.ServiceRegistrar, srv ChiikiMasterServiceServer) {
-	// If the following call pancis, it indicates UnimplementedChiikiMasterServiceServer was
+func RegisterDb_ChiikiMasterServiceServer(s grpc.ServiceRegistrar, srv Db_ChiikiMasterServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_ChiikiMasterServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&ChiikiMasterService_ServiceDesc, srv)
+	s.RegisterService(&Db_ChiikiMasterService_ServiceDesc, srv)
 }
 
-func _ChiikiMasterService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetChiikiMasterRequest)
+func _Db_ChiikiMasterService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetChiikiMasterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChiikiMasterServiceServer).Get(ctx, in)
+		return srv.(Db_ChiikiMasterServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ChiikiMasterService_Get_FullMethodName,
+		FullMethod: Db_ChiikiMasterService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChiikiMasterServiceServer).Get(ctx, req.(*GetChiikiMasterRequest))
+		return srv.(Db_ChiikiMasterServiceServer).Get(ctx, req.(*Db_GetChiikiMasterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ChiikiMasterService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListChiikiMasterRequest)
+func _Db_ChiikiMasterService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListChiikiMasterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChiikiMasterServiceServer).List(ctx, in)
+		return srv.(Db_ChiikiMasterServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ChiikiMasterService_List_FullMethodName,
+		FullMethod: Db_ChiikiMasterService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChiikiMasterServiceServer).List(ctx, req.(*ListChiikiMasterRequest))
+		return srv.(Db_ChiikiMasterServiceServer).List(ctx, req.(*Db_ListChiikiMasterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ChiikiMasterService_ServiceDesc is the grpc.ServiceDesc for ChiikiMasterService service.
+// Db_ChiikiMasterService_ServiceDesc is the grpc.ServiceDesc for Db_ChiikiMasterService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ChiikiMasterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.ChiikiMasterService",
-	HandlerType: (*ChiikiMasterServiceServer)(nil),
+var Db_ChiikiMasterService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_ChiikiMasterService",
+	HandlerType: (*Db_ChiikiMasterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _ChiikiMasterService_Get_Handler,
+			Handler:    _Db_ChiikiMasterService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _ChiikiMasterService_List_Handler,
+			Handler:    _Db_ChiikiMasterService_List_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -2965,179 +2965,179 @@ var ChiikiMasterService_ServiceDesc = grpc.ServiceDesc{
 }
 
 const (
-	ChikuMasterService_Get_FullMethodName          = "/db_service.ChikuMasterService/Get"
-	ChikuMasterService_List_FullMethodName         = "/db_service.ChikuMasterService/List"
-	ChikuMasterService_GetByChiikiC_FullMethodName = "/db_service.ChikuMasterService/GetByChiikiC"
+	Db_ChikuMasterService_Get_FullMethodName          = "/db_service.db_ChikuMasterService/Get"
+	Db_ChikuMasterService_List_FullMethodName         = "/db_service.db_ChikuMasterService/List"
+	Db_ChikuMasterService_GetByChiikiC_FullMethodName = "/db_service.db_ChikuMasterService/GetByChiikiC"
 )
 
-// ChikuMasterServiceClient is the client API for ChikuMasterService service.
+// Db_ChikuMasterServiceClient is the client API for Db_ChikuMasterService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 //
 // ChikuMasterService - 地区マスタ管理（SQL Server、読み取り専用）
-type ChikuMasterServiceClient interface {
-	Get(ctx context.Context, in *GetChikuMasterRequest, opts ...grpc.CallOption) (*ChikuMasterResponse, error)
-	List(ctx context.Context, in *ListChikuMasterRequest, opts ...grpc.CallOption) (*ListChikuMasterResponse, error)
-	GetByChiikiC(ctx context.Context, in *GetChikuMasterByChiikiCRequest, opts ...grpc.CallOption) (*ListChikuMasterResponse, error)
+type Db_ChikuMasterServiceClient interface {
+	Get(ctx context.Context, in *Db_GetChikuMasterRequest, opts ...grpc.CallOption) (*Db_ChikuMasterResponse, error)
+	List(ctx context.Context, in *Db_ListChikuMasterRequest, opts ...grpc.CallOption) (*Db_ListChikuMasterResponse, error)
+	GetByChiikiC(ctx context.Context, in *Db_GetChikuMasterByChiikiCRequest, opts ...grpc.CallOption) (*Db_ListChikuMasterResponse, error)
 }
 
-type chikuMasterServiceClient struct {
+type db_ChikuMasterServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewChikuMasterServiceClient(cc grpc.ClientConnInterface) ChikuMasterServiceClient {
-	return &chikuMasterServiceClient{cc}
+func NewDb_ChikuMasterServiceClient(cc grpc.ClientConnInterface) Db_ChikuMasterServiceClient {
+	return &db_ChikuMasterServiceClient{cc}
 }
 
-func (c *chikuMasterServiceClient) Get(ctx context.Context, in *GetChikuMasterRequest, opts ...grpc.CallOption) (*ChikuMasterResponse, error) {
+func (c *db_ChikuMasterServiceClient) Get(ctx context.Context, in *Db_GetChikuMasterRequest, opts ...grpc.CallOption) (*Db_ChikuMasterResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ChikuMasterResponse)
-	err := c.cc.Invoke(ctx, ChikuMasterService_Get_FullMethodName, in, out, cOpts...)
+	out := new(Db_ChikuMasterResponse)
+	err := c.cc.Invoke(ctx, Db_ChikuMasterService_Get_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *chikuMasterServiceClient) List(ctx context.Context, in *ListChikuMasterRequest, opts ...grpc.CallOption) (*ListChikuMasterResponse, error) {
+func (c *db_ChikuMasterServiceClient) List(ctx context.Context, in *Db_ListChikuMasterRequest, opts ...grpc.CallOption) (*Db_ListChikuMasterResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListChikuMasterResponse)
-	err := c.cc.Invoke(ctx, ChikuMasterService_List_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListChikuMasterResponse)
+	err := c.cc.Invoke(ctx, Db_ChikuMasterService_List_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *chikuMasterServiceClient) GetByChiikiC(ctx context.Context, in *GetChikuMasterByChiikiCRequest, opts ...grpc.CallOption) (*ListChikuMasterResponse, error) {
+func (c *db_ChikuMasterServiceClient) GetByChiikiC(ctx context.Context, in *Db_GetChikuMasterByChiikiCRequest, opts ...grpc.CallOption) (*Db_ListChikuMasterResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListChikuMasterResponse)
-	err := c.cc.Invoke(ctx, ChikuMasterService_GetByChiikiC_FullMethodName, in, out, cOpts...)
+	out := new(Db_ListChikuMasterResponse)
+	err := c.cc.Invoke(ctx, Db_ChikuMasterService_GetByChiikiC_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ChikuMasterServiceServer is the server API for ChikuMasterService service.
-// All implementations should embed UnimplementedChikuMasterServiceServer
+// Db_ChikuMasterServiceServer is the server API for Db_ChikuMasterService service.
+// All implementations should embed UnimplementedDb_ChikuMasterServiceServer
 // for forward compatibility.
 //
 // ChikuMasterService - 地区マスタ管理（SQL Server、読み取り専用）
-type ChikuMasterServiceServer interface {
-	Get(context.Context, *GetChikuMasterRequest) (*ChikuMasterResponse, error)
-	List(context.Context, *ListChikuMasterRequest) (*ListChikuMasterResponse, error)
-	GetByChiikiC(context.Context, *GetChikuMasterByChiikiCRequest) (*ListChikuMasterResponse, error)
+type Db_ChikuMasterServiceServer interface {
+	Get(context.Context, *Db_GetChikuMasterRequest) (*Db_ChikuMasterResponse, error)
+	List(context.Context, *Db_ListChikuMasterRequest) (*Db_ListChikuMasterResponse, error)
+	GetByChiikiC(context.Context, *Db_GetChikuMasterByChiikiCRequest) (*Db_ListChikuMasterResponse, error)
 }
 
-// UnimplementedChikuMasterServiceServer should be embedded to have
+// UnimplementedDb_ChikuMasterServiceServer should be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedChikuMasterServiceServer struct{}
+type UnimplementedDb_ChikuMasterServiceServer struct{}
 
-func (UnimplementedChikuMasterServiceServer) Get(context.Context, *GetChikuMasterRequest) (*ChikuMasterResponse, error) {
+func (UnimplementedDb_ChikuMasterServiceServer) Get(context.Context, *Db_GetChikuMasterRequest) (*Db_ChikuMasterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedChikuMasterServiceServer) List(context.Context, *ListChikuMasterRequest) (*ListChikuMasterResponse, error) {
+func (UnimplementedDb_ChikuMasterServiceServer) List(context.Context, *Db_ListChikuMasterRequest) (*Db_ListChikuMasterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedChikuMasterServiceServer) GetByChiikiC(context.Context, *GetChikuMasterByChiikiCRequest) (*ListChikuMasterResponse, error) {
+func (UnimplementedDb_ChikuMasterServiceServer) GetByChiikiC(context.Context, *Db_GetChikuMasterByChiikiCRequest) (*Db_ListChikuMasterResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetByChiikiC not implemented")
 }
-func (UnimplementedChikuMasterServiceServer) testEmbeddedByValue() {}
+func (UnimplementedDb_ChikuMasterServiceServer) testEmbeddedByValue() {}
 
-// UnsafeChikuMasterServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ChikuMasterServiceServer will
+// UnsafeDb_ChikuMasterServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_ChikuMasterServiceServer will
 // result in compilation errors.
-type UnsafeChikuMasterServiceServer interface {
-	mustEmbedUnimplementedChikuMasterServiceServer()
+type UnsafeDb_ChikuMasterServiceServer interface {
+	mustEmbedUnimplementedDb_ChikuMasterServiceServer()
 }
 
-func RegisterChikuMasterServiceServer(s grpc.ServiceRegistrar, srv ChikuMasterServiceServer) {
-	// If the following call pancis, it indicates UnimplementedChikuMasterServiceServer was
+func RegisterDb_ChikuMasterServiceServer(s grpc.ServiceRegistrar, srv Db_ChikuMasterServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_ChikuMasterServiceServer was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&ChikuMasterService_ServiceDesc, srv)
+	s.RegisterService(&Db_ChikuMasterService_ServiceDesc, srv)
 }
 
-func _ChikuMasterService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetChikuMasterRequest)
+func _Db_ChikuMasterService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetChikuMasterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChikuMasterServiceServer).Get(ctx, in)
+		return srv.(Db_ChikuMasterServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ChikuMasterService_Get_FullMethodName,
+		FullMethod: Db_ChikuMasterService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChikuMasterServiceServer).Get(ctx, req.(*GetChikuMasterRequest))
+		return srv.(Db_ChikuMasterServiceServer).Get(ctx, req.(*Db_GetChikuMasterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ChikuMasterService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListChikuMasterRequest)
+func _Db_ChikuMasterService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListChikuMasterRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChikuMasterServiceServer).List(ctx, in)
+		return srv.(Db_ChikuMasterServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ChikuMasterService_List_FullMethodName,
+		FullMethod: Db_ChikuMasterService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChikuMasterServiceServer).List(ctx, req.(*ListChikuMasterRequest))
+		return srv.(Db_ChikuMasterServiceServer).List(ctx, req.(*Db_ListChikuMasterRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ChikuMasterService_GetByChiikiC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetChikuMasterByChiikiCRequest)
+func _Db_ChikuMasterService_GetByChiikiC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetChikuMasterByChiikiCRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChikuMasterServiceServer).GetByChiikiC(ctx, in)
+		return srv.(Db_ChikuMasterServiceServer).GetByChiikiC(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: ChikuMasterService_GetByChiikiC_FullMethodName,
+		FullMethod: Db_ChikuMasterService_GetByChiikiC_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChikuMasterServiceServer).GetByChiikiC(ctx, req.(*GetChikuMasterByChiikiCRequest))
+		return srv.(Db_ChikuMasterServiceServer).GetByChiikiC(ctx, req.(*Db_GetChikuMasterByChiikiCRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ChikuMasterService_ServiceDesc is the grpc.ServiceDesc for ChikuMasterService service.
+// Db_ChikuMasterService_ServiceDesc is the grpc.ServiceDesc for Db_ChikuMasterService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ChikuMasterService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "db_service.ChikuMasterService",
-	HandlerType: (*ChikuMasterServiceServer)(nil),
+var Db_ChikuMasterService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_ChikuMasterService",
+	HandlerType: (*Db_ChikuMasterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Get",
-			Handler:    _ChikuMasterService_Get_Handler,
+			Handler:    _Db_ChikuMasterService_Get_Handler,
 		},
 		{
 			MethodName: "List",
-			Handler:    _ChikuMasterService_List_Handler,
+			Handler:    _Db_ChikuMasterService_List_Handler,
 		},
 		{
 			MethodName: "GetByChiikiC",
-			Handler:    _ChikuMasterService_GetByChiikiC_Handler,
+			Handler:    _Db_ChikuMasterService_GetByChiikiC_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

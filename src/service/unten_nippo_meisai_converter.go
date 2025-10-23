@@ -6,8 +6,8 @@ import (
 )
 
 // convertUntenNippoMeisaiToProto GORMモデルをProtoメッセージに変換
-func convertUntenNippoMeisaiToProto(m *ichibanboshi.UntenNippoMeisai) *pb.UntenNippoMeisai {
-	return &pb.UntenNippoMeisai{
+func convertUntenNippoMeisaiToProto(m *ichibanboshi.UntenNippoMeisai) *pb.Db_UntenNippoMeisai {
+	return &pb.Db_UntenNippoMeisai{
 		NippoK:                m.NippoK,
 		UnkoNengappi:          timeToStringPtr(m.UnkoNengappi),
 		HaishaK:               m.HaishaK,

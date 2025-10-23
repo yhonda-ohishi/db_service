@@ -33,14 +33,14 @@ func main() {
 }
 
 func testShainMaster(conn *grpc.ClientConn) {
-	client := pb.NewShainMasterServiceClient(conn)
+	client := pb.Db_NewShainMasterServiceClient(conn)
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
 	log.Println("\n=== Testing ShainMaster (社員マスタ) ===")
 
 	// List取得
-	resp, err := client.List(ctx, &pb.ListShainMasterRequest{
+	resp, err := client.List(ctx, &pb.Db_ListShainMasterRequest{
 		Limit:  5,
 		Offset: 0,
 	})
@@ -57,14 +57,14 @@ func testShainMaster(conn *grpc.ClientConn) {
 }
 
 func testChiikiMaster(conn *grpc.ClientConn) {
-	client := pb.NewChiikiMasterServiceClient(conn)
+	client := pb.Db_NewChiikiMasterServiceClient(conn)
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
 	log.Println("\n=== Testing ChiikiMaster (地域マスタ) ===")
 
 	// List取得
-	resp, err := client.List(ctx, &pb.ListChiikiMasterRequest{
+	resp, err := client.List(ctx, &pb.Db_ListChiikiMasterRequest{
 		Limit:  5,
 		Offset: 0,
 	})

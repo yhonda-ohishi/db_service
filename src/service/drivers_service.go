@@ -12,7 +12,7 @@ import (
 
 // DriversService gRPCサービス実装（本番DB、読み取り専用）
 type DriversService struct {
-	proto.UnimplementedDriversServiceServer
+	proto.UnimplementedDb_DriversServiceServer
 	repo repository.DriversRepository
 }
 
@@ -24,19 +24,19 @@ func NewDriversService(repo repository.DriversRepository) *DriversService {
 }
 
 // Get ドライバー情報取得
-func (s *DriversService) Get(ctx context.Context, req *proto.GetDriversRequest) (*proto.DriversResponse, error) {
+func (s *DriversService) Get(ctx context.Context, req *proto.Db_GetDriversRequest) (*proto.Db_DriversResponse, error) {
 	driver, err := s.repo.GetByID(int(req.Id))
 	if err != nil {
 		return nil, status.Errorf(codes.NotFound, "driver not found: %v", err)
 	}
 
-	return &proto.DriversResponse{
+	return &proto.Db_DriversResponse{
 		Drivers: driversModelToProto(driver),
 	}, nil
 }
 
 // List ドライバー情報一覧取得
-func (s *DriversService) List(ctx context.Context, req *proto.ListDriversRequest) (*proto.ListDriversResponse, error) {
+func (s *DriversService) List(ctx context.Context, req *proto.Db_ListDriversRequest) (*proto.Db_ListDriversResponse, error) {
 	limit := int(req.Limit)
 	offset := int(req.Offset)
 
@@ -55,38 +55,38 @@ func (s *DriversService) List(ctx context.Context, req *proto.ListDriversRequest
 		return nil, status.Errorf(codes.Internal, "failed to list drivers: %v", err)
 	}
 
-	items := make([]*proto.Drivers, len(drivers))
+	items := make([]*proto.Db_Drivers, len(drivers))
 	for i, driver := range drivers {
 		items[i] = driversModelToProto(driver)
 	}
 
-	return &proto.ListDriversResponse{
+	return &proto.Db_ListDriversResponse{
 		Items:      items,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // GetByBumon 部門コードでドライバー情報取得
-func (s *DriversService) GetByBumon(ctx context.Context, req *proto.GetDriversByBumonRequest) (*proto.ListDriversResponse, error) {
+func (s *DriversService) GetByBumon(ctx context.Context, req *proto.Db_GetDriversByBumonRequest) (*proto.Db_ListDriversResponse, error) {
 	drivers, err := s.repo.GetByBumon(req.Bumon)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "failed to get drivers by bumon: %v", err)
 	}
 
-	items := make([]*proto.Drivers, len(drivers))
+	items := make([]*proto.Db_Drivers, len(drivers))
 	for i, driver := range drivers {
 		items[i] = driversModelToProto(driver)
 	}
 
-	return &proto.ListDriversResponse{
+	return &proto.Db_ListDriversResponse{
 		Items:      items,
 		TotalCount: int32(len(drivers)),
 	}, nil
 }
 
 // driversModelToProto ModelからProtoへの変換
-func driversModelToProto(model *mysql.Drivers) *proto.Drivers {
-	protoDriver := &proto.Drivers{
+func driversModelToProto(model *mysql.Drivers) *proto.Db_Drivers {
+	protoDriver := &proto.Db_Drivers{
 		Id:          int32(model.ID),
 		Bumon:       model.Bumon,
 		KinmuTaikei: int32(model.KinmuTaikei),

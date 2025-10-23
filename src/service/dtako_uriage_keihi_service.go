@@ -13,7 +13,7 @@ import (
 
 // DTakoUriageKeihiService gRPCサービス実装
 type DTakoUriageKeihiService struct {
-	proto.UnimplementedDTakoUriageKeihiServiceServer
+	proto.UnimplementedDb_DTakoUriageKeihiServiceServer
 	repo repository.DTakoUriageKeihiRepository
 }
 
@@ -25,7 +25,7 @@ func NewDTakoUriageKeihiService(repo repository.DTakoUriageKeihiRepository) *DTa
 }
 
 // Create 経費精算データ作成
-func (s *DTakoUriageKeihiService) Create(ctx context.Context, req *proto.CreateDTakoUriageKeihiRequest) (*proto.DTakoUriageKeihiResponse, error) {
+func (s *DTakoUriageKeihiService) Create(ctx context.Context, req *proto.Db_CreateDTakoUriageKeihiRequest) (*proto.Db_DTakoUriageKeihiResponse, error) {
 	if req.DtakoUriageKeihi == nil {
 		return nil, status.Error(codes.InvalidArgument, "dtako_uriage_keihi is required")
 	}
@@ -42,13 +42,13 @@ func (s *DTakoUriageKeihiService) Create(ctx context.Context, req *proto.CreateD
 	}
 
 	// ModelからProtoへ変換して返却
-	return &proto.DTakoUriageKeihiResponse{
+	return &proto.Db_DTakoUriageKeihiResponse{
 		DtakoUriageKeihi: modelToProto(model),
 	}, nil
 }
 
 // Get 経費精算データ取得
-func (s *DTakoUriageKeihiService) Get(ctx context.Context, req *proto.GetDTakoUriageKeihiRequest) (*proto.DTakoUriageKeihiResponse, error) {
+func (s *DTakoUriageKeihiService) Get(ctx context.Context, req *proto.Db_GetDTakoUriageKeihiRequest) (*proto.Db_DTakoUriageKeihiResponse, error) {
 	// バリデーション
 	if req.SrchId == "" || req.Datetime == "" {
 		return nil, status.Error(codes.InvalidArgument, "srch_id, datetime, and keihi_c are required")
@@ -69,13 +69,13 @@ func (s *DTakoUriageKeihiService) Get(ctx context.Context, req *proto.GetDTakoUr
 		return nil, status.Errorf(codes.Internal, "failed to get record: %v", err)
 	}
 
-	return &proto.DTakoUriageKeihiResponse{
+	return &proto.Db_DTakoUriageKeihiResponse{
 		DtakoUriageKeihi: modelToProto(model),
 	}, nil
 }
 
 // Update 経費精算データ更新
-func (s *DTakoUriageKeihiService) Update(ctx context.Context, req *proto.UpdateDTakoUriageKeihiRequest) (*proto.DTakoUriageKeihiResponse, error) {
+func (s *DTakoUriageKeihiService) Update(ctx context.Context, req *proto.Db_UpdateDTakoUriageKeihiRequest) (*proto.Db_DTakoUriageKeihiResponse, error) {
 	if req.DtakoUriageKeihi == nil {
 		return nil, status.Error(codes.InvalidArgument, "dtako_uriage_keihi is required")
 	}
@@ -91,13 +91,13 @@ func (s *DTakoUriageKeihiService) Update(ctx context.Context, req *proto.UpdateD
 		return nil, status.Errorf(codes.Internal, "failed to update record: %v", err)
 	}
 
-	return &proto.DTakoUriageKeihiResponse{
+	return &proto.Db_DTakoUriageKeihiResponse{
 		DtakoUriageKeihi: modelToProto(model),
 	}, nil
 }
 
 // Delete 経費精算データ削除
-func (s *DTakoUriageKeihiService) Delete(ctx context.Context, req *proto.DeleteDTakoUriageKeihiRequest) (*proto.Empty, error) {
+func (s *DTakoUriageKeihiService) Delete(ctx context.Context, req *proto.Db_DeleteDTakoUriageKeihiRequest) (*proto.Db_Empty, error) {
 	// バリデーション
 	if req.SrchId == "" || req.Datetime == "" {
 		return nil, status.Error(codes.InvalidArgument, "srch_id, datetime, and keihi_c are required")
@@ -117,11 +117,11 @@ func (s *DTakoUriageKeihiService) Delete(ctx context.Context, req *proto.DeleteD
 		return nil, status.Errorf(codes.Internal, "failed to delete record: %v", err)
 	}
 
-	return &proto.Empty{}, nil
+	return &proto.Db_Empty{}, nil
 }
 
 // List 経費精算データ一覧取得
-func (s *DTakoUriageKeihiService) List(ctx context.Context, req *proto.ListDTakoUriageKeihiRequest) (*proto.ListDTakoUriageKeihiResponse, error) {
+func (s *DTakoUriageKeihiService) List(ctx context.Context, req *proto.Db_ListDTakoUriageKeihiRequest) (*proto.Db_ListDTakoUriageKeihiResponse, error) {
 	params := &repository.ListParams{
 		Limit:  int(req.Limit),
 		Offset: int(req.Offset),
@@ -151,19 +151,19 @@ func (s *DTakoUriageKeihiService) List(ctx context.Context, req *proto.ListDTako
 	}
 
 	// ModelからProtoへ変換
-	items := make([]*proto.DTakoUriageKeihi, len(models))
+	items := make([]*proto.Db_DTakoUriageKeihi, len(models))
 	for i, model := range models {
 		items[i] = modelToProto(model)
 	}
 
-	return &proto.ListDTakoUriageKeihiResponse{
+	return &proto.Db_ListDTakoUriageKeihiResponse{
 		Items:      items,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // protoToModel ProtoからModelへの変換
-func protoToModel(p *proto.DTakoUriageKeihi) *mysql.DTakoUriageKeihi {
+func protoToModel(p *proto.Db_DTakoUriageKeihi) *mysql.DTakoUriageKeihi {
 	datetime, _ := time.Parse(time.RFC3339, p.Datetime)
 
 	m := &mysql.DTakoUriageKeihi{
@@ -210,8 +210,8 @@ func protoToModel(p *proto.DTakoUriageKeihi) *mysql.DTakoUriageKeihi {
 }
 
 // modelToProto ModelからProtoへの変換
-func modelToProto(m *mysql.DTakoUriageKeihi) *proto.DTakoUriageKeihi {
-	p := &proto.DTakoUriageKeihi{
+func modelToProto(m *mysql.DTakoUriageKeihi) *proto.Db_DTakoUriageKeihi {
+	p := &proto.Db_DTakoUriageKeihi{
 		SrchId:      m.SrchID,
 		Datetime:    m.Datetime.Format(time.RFC3339),
 		KeihiC:      m.KeihiC,

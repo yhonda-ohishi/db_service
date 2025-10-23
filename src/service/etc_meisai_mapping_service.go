@@ -13,7 +13,7 @@ import (
 
 // ETCMeisaiMappingService ETC明細マッピングサービス実装
 type ETCMeisaiMappingService struct {
-	proto.UnimplementedETCMeisaiMappingServiceServer
+	proto.UnimplementedDb_ETCMeisaiMappingServiceServer
 	repo repository.ETCMeisaiMappingRepository
 }
 
@@ -25,7 +25,7 @@ func NewETCMeisaiMappingService(repo repository.ETCMeisaiMappingRepository) *ETC
 }
 
 // Create マッピング作成
-func (s *ETCMeisaiMappingService) Create(ctx context.Context, req *proto.CreateETCMeisaiMappingRequest) (*proto.ETCMeisaiMappingResponse, error) {
+func (s *ETCMeisaiMappingService) Create(ctx context.Context, req *proto.Db_CreateETCMeisaiMappingRequest) (*proto.Db_ETCMeisaiMappingResponse, error) {
 	if req.EtcMeisaiMapping == nil {
 		return nil, status.Error(codes.InvalidArgument, "etc_meisai_mapping is required")
 	}
@@ -42,13 +42,13 @@ func (s *ETCMeisaiMappingService) Create(ctx context.Context, req *proto.CreateE
 	}
 
 	// レスポンス作成
-	return &proto.ETCMeisaiMappingResponse{
+	return &proto.Db_ETCMeisaiMappingResponse{
 		EtcMeisaiMapping: etcMeisaiMappingModelToProto(model),
 	}, nil
 }
 
 // Get マッピング取得
-func (s *ETCMeisaiMappingService) Get(ctx context.Context, req *proto.GetETCMeisaiMappingRequest) (*proto.ETCMeisaiMappingResponse, error) {
+func (s *ETCMeisaiMappingService) Get(ctx context.Context, req *proto.Db_GetETCMeisaiMappingRequest) (*proto.Db_ETCMeisaiMappingResponse, error) {
 	if req.Id == 0 {
 		return nil, status.Error(codes.InvalidArgument, "id is required")
 	}
@@ -60,13 +60,13 @@ func (s *ETCMeisaiMappingService) Get(ctx context.Context, req *proto.GetETCMeis
 	}
 
 	// レスポンス作成
-	return &proto.ETCMeisaiMappingResponse{
+	return &proto.Db_ETCMeisaiMappingResponse{
 		EtcMeisaiMapping: etcMeisaiMappingModelToProto(model),
 	}, nil
 }
 
 // Update マッピング更新
-func (s *ETCMeisaiMappingService) Update(ctx context.Context, req *proto.UpdateETCMeisaiMappingRequest) (*proto.ETCMeisaiMappingResponse, error) {
+func (s *ETCMeisaiMappingService) Update(ctx context.Context, req *proto.Db_UpdateETCMeisaiMappingRequest) (*proto.Db_ETCMeisaiMappingResponse, error) {
 	if req.EtcMeisaiMapping == nil {
 		return nil, status.Error(codes.InvalidArgument, "etc_meisai_mapping is required")
 	}
@@ -86,13 +86,13 @@ func (s *ETCMeisaiMappingService) Update(ctx context.Context, req *proto.UpdateE
 	}
 
 	// レスポンス作成
-	return &proto.ETCMeisaiMappingResponse{
+	return &proto.Db_ETCMeisaiMappingResponse{
 		EtcMeisaiMapping: etcMeisaiMappingModelToProto(model),
 	}, nil
 }
 
 // Delete マッピング削除
-func (s *ETCMeisaiMappingService) Delete(ctx context.Context, req *proto.DeleteETCMeisaiMappingRequest) (*proto.Empty, error) {
+func (s *ETCMeisaiMappingService) Delete(ctx context.Context, req *proto.Db_DeleteETCMeisaiMappingRequest) (*proto.Db_Empty, error) {
 	if req.Id == 0 {
 		return nil, status.Error(codes.InvalidArgument, "id is required")
 	}
@@ -102,11 +102,11 @@ func (s *ETCMeisaiMappingService) Delete(ctx context.Context, req *proto.DeleteE
 		return nil, status.Errorf(codes.Internal, "failed to delete mapping: %v", err)
 	}
 
-	return &proto.Empty{}, nil
+	return &proto.Db_Empty{}, nil
 }
 
 // List マッピング一覧取得
-func (s *ETCMeisaiMappingService) List(ctx context.Context, req *proto.ListETCMeisaiMappingRequest) (*proto.ListETCMeisaiMappingResponse, error) {
+func (s *ETCMeisaiMappingService) List(ctx context.Context, req *proto.Db_ListETCMeisaiMappingRequest) (*proto.Db_ListETCMeisaiMappingResponse, error) {
 	if req.Limit <= 0 {
 		return nil, status.Error(codes.InvalidArgument, "limit must be positive")
 	}
@@ -135,19 +135,19 @@ func (s *ETCMeisaiMappingService) List(ctx context.Context, req *proto.ListETCMe
 	}
 
 	// プロトコルバッファーに変換
-	items := make([]*proto.ETCMeisaiMapping, len(models))
+	items := make([]*proto.Db_ETCMeisaiMapping, len(models))
 	for i, model := range models {
 		items[i] = etcMeisaiMappingModelToProto(model)
 	}
 
-	return &proto.ListETCMeisaiMappingResponse{
+	return &proto.Db_ListETCMeisaiMappingResponse{
 		Items:      items,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // GetDTakoRowIDByHash ハッシュからDTakoRowIDを取得
-func (s *ETCMeisaiMappingService) GetDTakoRowIDByHash(ctx context.Context, req *proto.GetDTakoRowIDByHashRequest) (*proto.GetDTakoRowIDByHashResponse, error) {
+func (s *ETCMeisaiMappingService) GetDTakoRowIDByHash(ctx context.Context, req *proto.Db_GetDTakoRowIDByHashRequest) (*proto.Db_GetDTakoRowIDByHashResponse, error) {
 	if req.EtcMeisaiHash == "" {
 		return nil, status.Error(codes.InvalidArgument, "etc_meisai_hash is required")
 	}
@@ -158,13 +158,13 @@ func (s *ETCMeisaiMappingService) GetDTakoRowIDByHash(ctx context.Context, req *
 		return nil, status.Errorf(codes.Internal, "failed to get dtako_row_ids: %v", err)
 	}
 
-	return &proto.GetDTakoRowIDByHashResponse{
+	return &proto.Db_GetDTakoRowIDByHashResponse{
 		DtakoRowIds: dtakoRowIDs,
 	}, nil
 }
 
 // etcMeisaiMappingProtoToModel プロトコルバッファーからモデルに変換
-func etcMeisaiMappingProtoToModel(p *proto.ETCMeisaiMapping) *mysql.ETCMeisaiMapping {
+func etcMeisaiMappingProtoToModel(p *proto.Db_ETCMeisaiMapping) *mysql.ETCMeisaiMapping {
 	m := &mysql.ETCMeisaiMapping{
 		ID:            p.Id,
 		ETCMeisaiHash: p.EtcMeisaiHash,
@@ -190,8 +190,8 @@ func etcMeisaiMappingProtoToModel(p *proto.ETCMeisaiMapping) *mysql.ETCMeisaiMap
 }
 
 // etcMeisaiMappingModelToProto モデルからプロトコルバッファーに変換
-func etcMeisaiMappingModelToProto(m *mysql.ETCMeisaiMapping) *proto.ETCMeisaiMapping {
-	p := &proto.ETCMeisaiMapping{
+func etcMeisaiMappingModelToProto(m *mysql.ETCMeisaiMapping) *proto.Db_ETCMeisaiMapping {
+	p := &proto.Db_ETCMeisaiMapping{
 		Id:            m.ID,
 		EtcMeisaiHash: m.ETCMeisaiHash,
 		DtakoRowId:    m.DTakoRowID,

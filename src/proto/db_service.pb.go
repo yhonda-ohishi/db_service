@@ -23,7 +23,7 @@ const (
 )
 
 // 経費精算データ
-type DTakoUriageKeihi struct {
+type Db_DTakoUriageKeihi struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	SrchId         string                 `protobuf:"bytes,1,opt,name=srch_id,json=srchId,proto3" json:"srch_id,omitempty"`
 	Datetime       string                 `protobuf:"bytes,2,opt,name=datetime,proto3" json:"datetime,omitempty"` // RFC3339形式
@@ -44,20 +44,20 @@ type DTakoUriageKeihi struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *DTakoUriageKeihi) Reset() {
-	*x = DTakoUriageKeihi{}
+func (x *Db_DTakoUriageKeihi) Reset() {
+	*x = Db_DTakoUriageKeihi{}
 	mi := &file_db_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoUriageKeihi) String() string {
+func (x *Db_DTakoUriageKeihi) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoUriageKeihi) ProtoMessage() {}
+func (*Db_DTakoUriageKeihi) ProtoMessage() {}
 
-func (x *DTakoUriageKeihi) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoUriageKeihi) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -69,110 +69,110 @@ func (x *DTakoUriageKeihi) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoUriageKeihi.ProtoReflect.Descriptor instead.
-func (*DTakoUriageKeihi) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoUriageKeihi.ProtoReflect.Descriptor instead.
+func (*Db_DTakoUriageKeihi) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *DTakoUriageKeihi) GetSrchId() string {
+func (x *Db_DTakoUriageKeihi) GetSrchId() string {
 	if x != nil {
 		return x.SrchId
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetDatetime() string {
+func (x *Db_DTakoUriageKeihi) GetDatetime() string {
 	if x != nil {
 		return x.Datetime
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetKeihiC() int32 {
+func (x *Db_DTakoUriageKeihi) GetKeihiC() int32 {
 	if x != nil {
 		return x.KeihiC
 	}
 	return 0
 }
 
-func (x *DTakoUriageKeihi) GetPrice() float64 {
+func (x *Db_DTakoUriageKeihi) GetPrice() float64 {
 	if x != nil {
 		return x.Price
 	}
 	return 0
 }
 
-func (x *DTakoUriageKeihi) GetKm() float64 {
+func (x *Db_DTakoUriageKeihi) GetKm() float64 {
 	if x != nil && x.Km != nil {
 		return *x.Km
 	}
 	return 0
 }
 
-func (x *DTakoUriageKeihi) GetDtakoRowId() string {
+func (x *Db_DTakoUriageKeihi) GetDtakoRowId() string {
 	if x != nil {
 		return x.DtakoRowId
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetDtakoRowIdR() string {
+func (x *Db_DTakoUriageKeihi) GetDtakoRowIdR() string {
 	if x != nil {
 		return x.DtakoRowIdR
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetStartSrchId() string {
+func (x *Db_DTakoUriageKeihi) GetStartSrchId() string {
 	if x != nil && x.StartSrchId != nil {
 		return *x.StartSrchId
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetStartSrchTime() string {
+func (x *Db_DTakoUriageKeihi) GetStartSrchTime() string {
 	if x != nil && x.StartSrchTime != nil {
 		return *x.StartSrchTime
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetStartSrchPlace() string {
+func (x *Db_DTakoUriageKeihi) GetStartSrchPlace() string {
 	if x != nil && x.StartSrchPlace != nil {
 		return *x.StartSrchPlace
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetStartSrchTokui() string {
+func (x *Db_DTakoUriageKeihi) GetStartSrchTokui() string {
 	if x != nil && x.StartSrchTokui != nil {
 		return *x.StartSrchTokui
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetEndSrchId() string {
+func (x *Db_DTakoUriageKeihi) GetEndSrchId() string {
 	if x != nil && x.EndSrchId != nil {
 		return *x.EndSrchId
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetEndSrchTime() string {
+func (x *Db_DTakoUriageKeihi) GetEndSrchTime() string {
 	if x != nil && x.EndSrchTime != nil {
 		return *x.EndSrchTime
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetEndSrchPlace() string {
+func (x *Db_DTakoUriageKeihi) GetEndSrchPlace() string {
 	if x != nil && x.EndSrchPlace != nil {
 		return *x.EndSrchPlace
 	}
 	return ""
 }
 
-func (x *DTakoUriageKeihi) GetManual() bool {
+func (x *Db_DTakoUriageKeihi) GetManual() bool {
 	if x != nil && x.Manual != nil {
 		return *x.Manual
 	}
@@ -180,7 +180,7 @@ func (x *DTakoUriageKeihi) GetManual() bool {
 }
 
 // ETC明細データ
-type ETCMeisai struct {
+type Db_ETCMeisai struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	DateFr        *string                `protobuf:"bytes,2,opt,name=date_fr,json=dateFr,proto3,oneof" json:"date_fr,omitempty"`
@@ -200,20 +200,20 @@ type ETCMeisai struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ETCMeisai) Reset() {
-	*x = ETCMeisai{}
+func (x *Db_ETCMeisai) Reset() {
+	*x = Db_ETCMeisai{}
 	mi := &file_db_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ETCMeisai) String() string {
+func (x *Db_ETCMeisai) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ETCMeisai) ProtoMessage() {}
+func (*Db_ETCMeisai) ProtoMessage() {}
 
-func (x *ETCMeisai) ProtoReflect() protoreflect.Message {
+func (x *Db_ETCMeisai) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -225,103 +225,103 @@ func (x *ETCMeisai) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ETCMeisai.ProtoReflect.Descriptor instead.
-func (*ETCMeisai) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ETCMeisai.ProtoReflect.Descriptor instead.
+func (*Db_ETCMeisai) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ETCMeisai) GetId() int64 {
+func (x *Db_ETCMeisai) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *ETCMeisai) GetDateFr() string {
+func (x *Db_ETCMeisai) GetDateFr() string {
 	if x != nil && x.DateFr != nil {
 		return *x.DateFr
 	}
 	return ""
 }
 
-func (x *ETCMeisai) GetDateTo() string {
+func (x *Db_ETCMeisai) GetDateTo() string {
 	if x != nil {
 		return x.DateTo
 	}
 	return ""
 }
 
-func (x *ETCMeisai) GetDateToDate() string {
+func (x *Db_ETCMeisai) GetDateToDate() string {
 	if x != nil {
 		return x.DateToDate
 	}
 	return ""
 }
 
-func (x *ETCMeisai) GetIcFr() string {
+func (x *Db_ETCMeisai) GetIcFr() string {
 	if x != nil && x.IcFr != nil {
 		return *x.IcFr
 	}
 	return ""
 }
 
-func (x *ETCMeisai) GetIcTo() string {
+func (x *Db_ETCMeisai) GetIcTo() string {
 	if x != nil {
 		return x.IcTo
 	}
 	return ""
 }
 
-func (x *ETCMeisai) GetPriceBf() int32 {
+func (x *Db_ETCMeisai) GetPriceBf() int32 {
 	if x != nil && x.PriceBf != nil {
 		return *x.PriceBf
 	}
 	return 0
 }
 
-func (x *ETCMeisai) GetDescount() int32 {
+func (x *Db_ETCMeisai) GetDescount() int32 {
 	if x != nil && x.Descount != nil {
 		return *x.Descount
 	}
 	return 0
 }
 
-func (x *ETCMeisai) GetPrice() int32 {
+func (x *Db_ETCMeisai) GetPrice() int32 {
 	if x != nil {
 		return x.Price
 	}
 	return 0
 }
 
-func (x *ETCMeisai) GetShashu() int32 {
+func (x *Db_ETCMeisai) GetShashu() int32 {
 	if x != nil {
 		return x.Shashu
 	}
 	return 0
 }
 
-func (x *ETCMeisai) GetCarIdNum() int32 {
+func (x *Db_ETCMeisai) GetCarIdNum() int32 {
 	if x != nil && x.CarIdNum != nil {
 		return *x.CarIdNum
 	}
 	return 0
 }
 
-func (x *ETCMeisai) GetEtcNum() string {
+func (x *Db_ETCMeisai) GetEtcNum() string {
 	if x != nil {
 		return x.EtcNum
 	}
 	return ""
 }
 
-func (x *ETCMeisai) GetDetail() string {
+func (x *Db_ETCMeisai) GetDetail() string {
 	if x != nil && x.Detail != nil {
 		return *x.Detail
 	}
 	return ""
 }
 
-func (x *ETCMeisai) GetHash() string {
+func (x *Db_ETCMeisai) GetHash() string {
 	if x != nil {
 		return x.Hash
 	}
@@ -329,7 +329,7 @@ func (x *ETCMeisai) GetHash() string {
 }
 
 // フェリー運行データ
-type DTakoFerryRows struct {
+type Db_DTakoFerryRows struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Id                int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	UnkoNo            string                 `protobuf:"bytes,2,opt,name=unko_no,json=unkoNo,proto3" json:"unko_no,omitempty"`                                       // 運行NO
@@ -363,20 +363,20 @@ type DTakoFerryRows struct {
 	sizeCache         protoimpl.SizeCache
 }
 
-func (x *DTakoFerryRows) Reset() {
-	*x = DTakoFerryRows{}
+func (x *Db_DTakoFerryRows) Reset() {
+	*x = Db_DTakoFerryRows{}
 	mi := &file_db_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoFerryRows) String() string {
+func (x *Db_DTakoFerryRows) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoFerryRows) ProtoMessage() {}
+func (*Db_DTakoFerryRows) ProtoMessage() {}
 
-func (x *DTakoFerryRows) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoFerryRows) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -388,201 +388,201 @@ func (x *DTakoFerryRows) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoFerryRows.ProtoReflect.Descriptor instead.
-func (*DTakoFerryRows) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoFerryRows.ProtoReflect.Descriptor instead.
+func (*Db_DTakoFerryRows) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *DTakoFerryRows) GetId() int32 {
+func (x *Db_DTakoFerryRows) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetUnkoNo() string {
+func (x *Db_DTakoFerryRows) GetUnkoNo() string {
 	if x != nil {
 		return x.UnkoNo
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetUnkoDate() string {
+func (x *Db_DTakoFerryRows) GetUnkoDate() string {
 	if x != nil {
 		return x.UnkoDate
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetYomitoriDate() string {
+func (x *Db_DTakoFerryRows) GetYomitoriDate() string {
 	if x != nil {
 		return x.YomitoriDate
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetJigyoshoCd() int32 {
+func (x *Db_DTakoFerryRows) GetJigyoshoCd() int32 {
 	if x != nil {
 		return x.JigyoshoCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetJigyoshoName() string {
+func (x *Db_DTakoFerryRows) GetJigyoshoName() string {
 	if x != nil {
 		return x.JigyoshoName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetSharyoCd() int32 {
+func (x *Db_DTakoFerryRows) GetSharyoCd() int32 {
 	if x != nil {
 		return x.SharyoCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetSharyoName() string {
+func (x *Db_DTakoFerryRows) GetSharyoName() string {
 	if x != nil {
 		return x.SharyoName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetJomuinCd1() int32 {
+func (x *Db_DTakoFerryRows) GetJomuinCd1() int32 {
 	if x != nil {
 		return x.JomuinCd1
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetJomuinName1() string {
+func (x *Db_DTakoFerryRows) GetJomuinName1() string {
 	if x != nil {
 		return x.JomuinName1
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetTaishoJomuinKbn() int32 {
+func (x *Db_DTakoFerryRows) GetTaishoJomuinKbn() int32 {
 	if x != nil {
 		return x.TaishoJomuinKbn
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetKaishiDatetime() string {
+func (x *Db_DTakoFerryRows) GetKaishiDatetime() string {
 	if x != nil {
 		return x.KaishiDatetime
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetShuryoDatetime() string {
+func (x *Db_DTakoFerryRows) GetShuryoDatetime() string {
 	if x != nil {
 		return x.ShuryoDatetime
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetFerryCompanyCd() int32 {
+func (x *Db_DTakoFerryRows) GetFerryCompanyCd() int32 {
 	if x != nil {
 		return x.FerryCompanyCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetFerryCompanyName() string {
+func (x *Db_DTakoFerryRows) GetFerryCompanyName() string {
 	if x != nil {
 		return x.FerryCompanyName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetNoribaCd() int32 {
+func (x *Db_DTakoFerryRows) GetNoribaCd() int32 {
 	if x != nil {
 		return x.NoribaCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetNoribaName() string {
+func (x *Db_DTakoFerryRows) GetNoribaName() string {
 	if x != nil {
 		return x.NoribaName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetBin() string {
+func (x *Db_DTakoFerryRows) GetBin() string {
 	if x != nil {
 		return x.Bin
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetOribaCd() int32 {
+func (x *Db_DTakoFerryRows) GetOribaCd() int32 {
 	if x != nil {
 		return x.OribaCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetOribaName() string {
+func (x *Db_DTakoFerryRows) GetOribaName() string {
 	if x != nil {
 		return x.OribaName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetSeisanKbn() int32 {
+func (x *Db_DTakoFerryRows) GetSeisanKbn() int32 {
 	if x != nil {
 		return x.SeisanKbn
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetSeisanKbnName() string {
+func (x *Db_DTakoFerryRows) GetSeisanKbnName() string {
 	if x != nil {
 		return x.SeisanKbnName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetHyojunRyokin() int32 {
+func (x *Db_DTakoFerryRows) GetHyojunRyokin() int32 {
 	if x != nil {
 		return x.HyojunRyokin
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetKeiyakuRyokin() int32 {
+func (x *Db_DTakoFerryRows) GetKeiyakuRyokin() int32 {
 	if x != nil {
 		return x.KeiyakuRyokin
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetKosoShashuKbn() int32 {
+func (x *Db_DTakoFerryRows) GetKosoShashuKbn() int32 {
 	if x != nil {
 		return x.KosoShashuKbn
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetKosoShashuKbnName() string {
+func (x *Db_DTakoFerryRows) GetKosoShashuKbnName() string {
 	if x != nil {
 		return x.KosoShashuKbnName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRows) GetMinashiKyori() int32 {
+func (x *Db_DTakoFerryRows) GetMinashiKyori() int32 {
 	if x != nil {
 		return x.MinashiKyori
 	}
 	return 0
 }
 
-func (x *DTakoFerryRows) GetFerrySrch() string {
+func (x *Db_DTakoFerryRows) GetFerrySrch() string {
 	if x != nil && x.FerrySrch != nil {
 		return *x.FerrySrch
 	}
@@ -590,27 +590,27 @@ func (x *DTakoFerryRows) GetFerrySrch() string {
 }
 
 // DTakoUriageKeihi用
-type CreateDTakoUriageKeihiRequest struct {
+type Db_CreateDTakoUriageKeihiRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	DtakoUriageKeihi *DTakoUriageKeihi      `protobuf:"bytes,1,opt,name=dtako_uriage_keihi,json=dtakoUriageKeihi,proto3" json:"dtako_uriage_keihi,omitempty"`
+	DtakoUriageKeihi *Db_DTakoUriageKeihi   `protobuf:"bytes,1,opt,name=dtako_uriage_keihi,json=dtakoUriageKeihi,proto3" json:"dtako_uriage_keihi,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
 
-func (x *CreateDTakoUriageKeihiRequest) Reset() {
-	*x = CreateDTakoUriageKeihiRequest{}
+func (x *Db_CreateDTakoUriageKeihiRequest) Reset() {
+	*x = Db_CreateDTakoUriageKeihiRequest{}
 	mi := &file_db_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateDTakoUriageKeihiRequest) String() string {
+func (x *Db_CreateDTakoUriageKeihiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateDTakoUriageKeihiRequest) ProtoMessage() {}
+func (*Db_CreateDTakoUriageKeihiRequest) ProtoMessage() {}
 
-func (x *CreateDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_CreateDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -622,19 +622,19 @@ func (x *CreateDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
-func (*CreateDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_CreateDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
+func (*Db_CreateDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *CreateDTakoUriageKeihiRequest) GetDtakoUriageKeihi() *DTakoUriageKeihi {
+func (x *Db_CreateDTakoUriageKeihiRequest) GetDtakoUriageKeihi() *Db_DTakoUriageKeihi {
 	if x != nil {
 		return x.DtakoUriageKeihi
 	}
 	return nil
 }
 
-type GetDTakoUriageKeihiRequest struct {
+type Db_GetDTakoUriageKeihiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SrchId        string                 `protobuf:"bytes,1,opt,name=srch_id,json=srchId,proto3" json:"srch_id,omitempty"`
 	Datetime      string                 `protobuf:"bytes,2,opt,name=datetime,proto3" json:"datetime,omitempty"`
@@ -643,20 +643,20 @@ type GetDTakoUriageKeihiRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoUriageKeihiRequest) Reset() {
-	*x = GetDTakoUriageKeihiRequest{}
+func (x *Db_GetDTakoUriageKeihiRequest) Reset() {
+	*x = Db_GetDTakoUriageKeihiRequest{}
 	mi := &file_db_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoUriageKeihiRequest) String() string {
+func (x *Db_GetDTakoUriageKeihiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoUriageKeihiRequest) ProtoMessage() {}
+func (*Db_GetDTakoUriageKeihiRequest) ProtoMessage() {}
 
-func (x *GetDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -668,53 +668,53 @@ func (x *GetDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *GetDTakoUriageKeihiRequest) GetSrchId() string {
+func (x *Db_GetDTakoUriageKeihiRequest) GetSrchId() string {
 	if x != nil {
 		return x.SrchId
 	}
 	return ""
 }
 
-func (x *GetDTakoUriageKeihiRequest) GetDatetime() string {
+func (x *Db_GetDTakoUriageKeihiRequest) GetDatetime() string {
 	if x != nil {
 		return x.Datetime
 	}
 	return ""
 }
 
-func (x *GetDTakoUriageKeihiRequest) GetKeihiC() int32 {
+func (x *Db_GetDTakoUriageKeihiRequest) GetKeihiC() int32 {
 	if x != nil {
 		return x.KeihiC
 	}
 	return 0
 }
 
-type UpdateDTakoUriageKeihiRequest struct {
+type Db_UpdateDTakoUriageKeihiRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	DtakoUriageKeihi *DTakoUriageKeihi      `protobuf:"bytes,1,opt,name=dtako_uriage_keihi,json=dtakoUriageKeihi,proto3" json:"dtako_uriage_keihi,omitempty"`
+	DtakoUriageKeihi *Db_DTakoUriageKeihi   `protobuf:"bytes,1,opt,name=dtako_uriage_keihi,json=dtakoUriageKeihi,proto3" json:"dtako_uriage_keihi,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
 
-func (x *UpdateDTakoUriageKeihiRequest) Reset() {
-	*x = UpdateDTakoUriageKeihiRequest{}
+func (x *Db_UpdateDTakoUriageKeihiRequest) Reset() {
+	*x = Db_UpdateDTakoUriageKeihiRequest{}
 	mi := &file_db_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateDTakoUriageKeihiRequest) String() string {
+func (x *Db_UpdateDTakoUriageKeihiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateDTakoUriageKeihiRequest) ProtoMessage() {}
+func (*Db_UpdateDTakoUriageKeihiRequest) ProtoMessage() {}
 
-func (x *UpdateDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_UpdateDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -726,19 +726,19 @@ func (x *UpdateDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
-func (*UpdateDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_UpdateDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
+func (*Db_UpdateDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *UpdateDTakoUriageKeihiRequest) GetDtakoUriageKeihi() *DTakoUriageKeihi {
+func (x *Db_UpdateDTakoUriageKeihiRequest) GetDtakoUriageKeihi() *Db_DTakoUriageKeihi {
 	if x != nil {
 		return x.DtakoUriageKeihi
 	}
 	return nil
 }
 
-type DeleteDTakoUriageKeihiRequest struct {
+type Db_DeleteDTakoUriageKeihiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SrchId        string                 `protobuf:"bytes,1,opt,name=srch_id,json=srchId,proto3" json:"srch_id,omitempty"`
 	Datetime      string                 `protobuf:"bytes,2,opt,name=datetime,proto3" json:"datetime,omitempty"`
@@ -747,20 +747,20 @@ type DeleteDTakoUriageKeihiRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteDTakoUriageKeihiRequest) Reset() {
-	*x = DeleteDTakoUriageKeihiRequest{}
+func (x *Db_DeleteDTakoUriageKeihiRequest) Reset() {
+	*x = Db_DeleteDTakoUriageKeihiRequest{}
 	mi := &file_db_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteDTakoUriageKeihiRequest) String() string {
+func (x *Db_DeleteDTakoUriageKeihiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteDTakoUriageKeihiRequest) ProtoMessage() {}
+func (*Db_DeleteDTakoUriageKeihiRequest) ProtoMessage() {}
 
-func (x *DeleteDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_DeleteDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -772,33 +772,33 @@ func (x *DeleteDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
-func (*DeleteDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DeleteDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
+func (*Db_DeleteDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *DeleteDTakoUriageKeihiRequest) GetSrchId() string {
+func (x *Db_DeleteDTakoUriageKeihiRequest) GetSrchId() string {
 	if x != nil {
 		return x.SrchId
 	}
 	return ""
 }
 
-func (x *DeleteDTakoUriageKeihiRequest) GetDatetime() string {
+func (x *Db_DeleteDTakoUriageKeihiRequest) GetDatetime() string {
 	if x != nil {
 		return x.Datetime
 	}
 	return ""
 }
 
-func (x *DeleteDTakoUriageKeihiRequest) GetKeihiC() int32 {
+func (x *Db_DeleteDTakoUriageKeihiRequest) GetKeihiC() int32 {
 	if x != nil {
 		return x.KeihiC
 	}
 	return 0
 }
 
-type ListDTakoUriageKeihiRequest struct {
+type Db_ListDTakoUriageKeihiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	DtakoRowId    *string                `protobuf:"bytes,1,opt,name=dtako_row_id,json=dtakoRowId,proto3,oneof" json:"dtako_row_id,omitempty"`
 	StartDate     *string                `protobuf:"bytes,2,opt,name=start_date,json=startDate,proto3,oneof" json:"start_date,omitempty"`
@@ -809,20 +809,20 @@ type ListDTakoUriageKeihiRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoUriageKeihiRequest) Reset() {
-	*x = ListDTakoUriageKeihiRequest{}
+func (x *Db_ListDTakoUriageKeihiRequest) Reset() {
+	*x = Db_ListDTakoUriageKeihiRequest{}
 	mi := &file_db_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoUriageKeihiRequest) String() string {
+func (x *Db_ListDTakoUriageKeihiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoUriageKeihiRequest) ProtoMessage() {}
+func (*Db_ListDTakoUriageKeihiRequest) ProtoMessage() {}
 
-func (x *ListDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -834,67 +834,67 @@ func (x *ListDTakoUriageKeihiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
-func (*ListDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoUriageKeihiRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoUriageKeihiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *ListDTakoUriageKeihiRequest) GetDtakoRowId() string {
+func (x *Db_ListDTakoUriageKeihiRequest) GetDtakoRowId() string {
 	if x != nil && x.DtakoRowId != nil {
 		return *x.DtakoRowId
 	}
 	return ""
 }
 
-func (x *ListDTakoUriageKeihiRequest) GetStartDate() string {
+func (x *Db_ListDTakoUriageKeihiRequest) GetStartDate() string {
 	if x != nil && x.StartDate != nil {
 		return *x.StartDate
 	}
 	return ""
 }
 
-func (x *ListDTakoUriageKeihiRequest) GetEndDate() string {
+func (x *Db_ListDTakoUriageKeihiRequest) GetEndDate() string {
 	if x != nil && x.EndDate != nil {
 		return *x.EndDate
 	}
 	return ""
 }
 
-func (x *ListDTakoUriageKeihiRequest) GetLimit() int32 {
+func (x *Db_ListDTakoUriageKeihiRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListDTakoUriageKeihiRequest) GetOffset() int32 {
+func (x *Db_ListDTakoUriageKeihiRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-type DTakoUriageKeihiResponse struct {
+type Db_DTakoUriageKeihiResponse struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	DtakoUriageKeihi *DTakoUriageKeihi      `protobuf:"bytes,1,opt,name=dtako_uriage_keihi,json=dtakoUriageKeihi,proto3" json:"dtako_uriage_keihi,omitempty"`
+	DtakoUriageKeihi *Db_DTakoUriageKeihi   `protobuf:"bytes,1,opt,name=dtako_uriage_keihi,json=dtakoUriageKeihi,proto3" json:"dtako_uriage_keihi,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
 
-func (x *DTakoUriageKeihiResponse) Reset() {
-	*x = DTakoUriageKeihiResponse{}
+func (x *Db_DTakoUriageKeihiResponse) Reset() {
+	*x = Db_DTakoUriageKeihiResponse{}
 	mi := &file_db_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoUriageKeihiResponse) String() string {
+func (x *Db_DTakoUriageKeihiResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoUriageKeihiResponse) ProtoMessage() {}
+func (*Db_DTakoUriageKeihiResponse) ProtoMessage() {}
 
-func (x *DTakoUriageKeihiResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoUriageKeihiResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -906,40 +906,40 @@ func (x *DTakoUriageKeihiResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoUriageKeihiResponse.ProtoReflect.Descriptor instead.
-func (*DTakoUriageKeihiResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoUriageKeihiResponse.ProtoReflect.Descriptor instead.
+func (*Db_DTakoUriageKeihiResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *DTakoUriageKeihiResponse) GetDtakoUriageKeihi() *DTakoUriageKeihi {
+func (x *Db_DTakoUriageKeihiResponse) GetDtakoUriageKeihi() *Db_DTakoUriageKeihi {
 	if x != nil {
 		return x.DtakoUriageKeihi
 	}
 	return nil
 }
 
-type ListDTakoUriageKeihiResponse struct {
+type Db_ListDTakoUriageKeihiResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*DTakoUriageKeihi    `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_DTakoUriageKeihi `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoUriageKeihiResponse) Reset() {
-	*x = ListDTakoUriageKeihiResponse{}
+func (x *Db_ListDTakoUriageKeihiResponse) Reset() {
+	*x = Db_ListDTakoUriageKeihiResponse{}
 	mi := &file_db_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoUriageKeihiResponse) String() string {
+func (x *Db_ListDTakoUriageKeihiResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoUriageKeihiResponse) ProtoMessage() {}
+func (*Db_ListDTakoUriageKeihiResponse) ProtoMessage() {}
 
-func (x *ListDTakoUriageKeihiResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoUriageKeihiResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -951,19 +951,19 @@ func (x *ListDTakoUriageKeihiResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoUriageKeihiResponse.ProtoReflect.Descriptor instead.
-func (*ListDTakoUriageKeihiResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoUriageKeihiResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoUriageKeihiResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *ListDTakoUriageKeihiResponse) GetItems() []*DTakoUriageKeihi {
+func (x *Db_ListDTakoUriageKeihiResponse) GetItems() []*Db_DTakoUriageKeihi {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListDTakoUriageKeihiResponse) GetTotalCount() int32 {
+func (x *Db_ListDTakoUriageKeihiResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -971,27 +971,27 @@ func (x *ListDTakoUriageKeihiResponse) GetTotalCount() int32 {
 }
 
 // ETCMeisai用
-type CreateETCMeisaiRequest struct {
+type Db_CreateETCMeisaiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EtcMeisai     *ETCMeisai             `protobuf:"bytes,1,opt,name=etc_meisai,json=etcMeisai,proto3" json:"etc_meisai,omitempty"`
+	EtcMeisai     *Db_ETCMeisai          `protobuf:"bytes,1,opt,name=etc_meisai,json=etcMeisai,proto3" json:"etc_meisai,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CreateETCMeisaiRequest) Reset() {
-	*x = CreateETCMeisaiRequest{}
+func (x *Db_CreateETCMeisaiRequest) Reset() {
+	*x = Db_CreateETCMeisaiRequest{}
 	mi := &file_db_service_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateETCMeisaiRequest) String() string {
+func (x *Db_CreateETCMeisaiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateETCMeisaiRequest) ProtoMessage() {}
+func (*Db_CreateETCMeisaiRequest) ProtoMessage() {}
 
-func (x *CreateETCMeisaiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_CreateETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1003,39 +1003,39 @@ func (x *CreateETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateETCMeisaiRequest.ProtoReflect.Descriptor instead.
-func (*CreateETCMeisaiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_CreateETCMeisaiRequest.ProtoReflect.Descriptor instead.
+func (*Db_CreateETCMeisaiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *CreateETCMeisaiRequest) GetEtcMeisai() *ETCMeisai {
+func (x *Db_CreateETCMeisaiRequest) GetEtcMeisai() *Db_ETCMeisai {
 	if x != nil {
 		return x.EtcMeisai
 	}
 	return nil
 }
 
-type GetETCMeisaiRequest struct {
+type Db_GetETCMeisaiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetETCMeisaiRequest) Reset() {
-	*x = GetETCMeisaiRequest{}
+func (x *Db_GetETCMeisaiRequest) Reset() {
+	*x = Db_GetETCMeisaiRequest{}
 	mi := &file_db_service_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetETCMeisaiRequest) String() string {
+func (x *Db_GetETCMeisaiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetETCMeisaiRequest) ProtoMessage() {}
+func (*Db_GetETCMeisaiRequest) ProtoMessage() {}
 
-func (x *GetETCMeisaiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1047,39 +1047,39 @@ func (x *GetETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetETCMeisaiRequest.ProtoReflect.Descriptor instead.
-func (*GetETCMeisaiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetETCMeisaiRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetETCMeisaiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *GetETCMeisaiRequest) GetId() int64 {
+func (x *Db_GetETCMeisaiRequest) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type UpdateETCMeisaiRequest struct {
+type Db_UpdateETCMeisaiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EtcMeisai     *ETCMeisai             `protobuf:"bytes,1,opt,name=etc_meisai,json=etcMeisai,proto3" json:"etc_meisai,omitempty"`
+	EtcMeisai     *Db_ETCMeisai          `protobuf:"bytes,1,opt,name=etc_meisai,json=etcMeisai,proto3" json:"etc_meisai,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UpdateETCMeisaiRequest) Reset() {
-	*x = UpdateETCMeisaiRequest{}
+func (x *Db_UpdateETCMeisaiRequest) Reset() {
+	*x = Db_UpdateETCMeisaiRequest{}
 	mi := &file_db_service_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateETCMeisaiRequest) String() string {
+func (x *Db_UpdateETCMeisaiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateETCMeisaiRequest) ProtoMessage() {}
+func (*Db_UpdateETCMeisaiRequest) ProtoMessage() {}
 
-func (x *UpdateETCMeisaiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_UpdateETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1091,39 +1091,39 @@ func (x *UpdateETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateETCMeisaiRequest.ProtoReflect.Descriptor instead.
-func (*UpdateETCMeisaiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_UpdateETCMeisaiRequest.ProtoReflect.Descriptor instead.
+func (*Db_UpdateETCMeisaiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *UpdateETCMeisaiRequest) GetEtcMeisai() *ETCMeisai {
+func (x *Db_UpdateETCMeisaiRequest) GetEtcMeisai() *Db_ETCMeisai {
 	if x != nil {
 		return x.EtcMeisai
 	}
 	return nil
 }
 
-type DeleteETCMeisaiRequest struct {
+type Db_DeleteETCMeisaiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteETCMeisaiRequest) Reset() {
-	*x = DeleteETCMeisaiRequest{}
+func (x *Db_DeleteETCMeisaiRequest) Reset() {
+	*x = Db_DeleteETCMeisaiRequest{}
 	mi := &file_db_service_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteETCMeisaiRequest) String() string {
+func (x *Db_DeleteETCMeisaiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteETCMeisaiRequest) ProtoMessage() {}
+func (*Db_DeleteETCMeisaiRequest) ProtoMessage() {}
 
-func (x *DeleteETCMeisaiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_DeleteETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1135,19 +1135,19 @@ func (x *DeleteETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteETCMeisaiRequest.ProtoReflect.Descriptor instead.
-func (*DeleteETCMeisaiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DeleteETCMeisaiRequest.ProtoReflect.Descriptor instead.
+func (*Db_DeleteETCMeisaiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{13}
 }
 
-func (x *DeleteETCMeisaiRequest) GetId() int64 {
+func (x *Db_DeleteETCMeisaiRequest) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type ListETCMeisaiRequest struct {
+type Db_ListETCMeisaiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Hash          *string                `protobuf:"bytes,1,opt,name=hash,proto3,oneof" json:"hash,omitempty"`
 	StartDate     *string                `protobuf:"bytes,2,opt,name=start_date,json=startDate,proto3,oneof" json:"start_date,omitempty"`
@@ -1158,20 +1158,20 @@ type ListETCMeisaiRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListETCMeisaiRequest) Reset() {
-	*x = ListETCMeisaiRequest{}
+func (x *Db_ListETCMeisaiRequest) Reset() {
+	*x = Db_ListETCMeisaiRequest{}
 	mi := &file_db_service_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListETCMeisaiRequest) String() string {
+func (x *Db_ListETCMeisaiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListETCMeisaiRequest) ProtoMessage() {}
+func (*Db_ListETCMeisaiRequest) ProtoMessage() {}
 
-func (x *ListETCMeisaiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1183,67 +1183,67 @@ func (x *ListETCMeisaiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListETCMeisaiRequest.ProtoReflect.Descriptor instead.
-func (*ListETCMeisaiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListETCMeisaiRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListETCMeisaiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *ListETCMeisaiRequest) GetHash() string {
+func (x *Db_ListETCMeisaiRequest) GetHash() string {
 	if x != nil && x.Hash != nil {
 		return *x.Hash
 	}
 	return ""
 }
 
-func (x *ListETCMeisaiRequest) GetStartDate() string {
+func (x *Db_ListETCMeisaiRequest) GetStartDate() string {
 	if x != nil && x.StartDate != nil {
 		return *x.StartDate
 	}
 	return ""
 }
 
-func (x *ListETCMeisaiRequest) GetEndDate() string {
+func (x *Db_ListETCMeisaiRequest) GetEndDate() string {
 	if x != nil && x.EndDate != nil {
 		return *x.EndDate
 	}
 	return ""
 }
 
-func (x *ListETCMeisaiRequest) GetLimit() int32 {
+func (x *Db_ListETCMeisaiRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListETCMeisaiRequest) GetOffset() int32 {
+func (x *Db_ListETCMeisaiRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-type ETCMeisaiResponse struct {
+type Db_ETCMeisaiResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	EtcMeisai     *ETCMeisai             `protobuf:"bytes,1,opt,name=etc_meisai,json=etcMeisai,proto3" json:"etc_meisai,omitempty"`
+	EtcMeisai     *Db_ETCMeisai          `protobuf:"bytes,1,opt,name=etc_meisai,json=etcMeisai,proto3" json:"etc_meisai,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ETCMeisaiResponse) Reset() {
-	*x = ETCMeisaiResponse{}
+func (x *Db_ETCMeisaiResponse) Reset() {
+	*x = Db_ETCMeisaiResponse{}
 	mi := &file_db_service_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ETCMeisaiResponse) String() string {
+func (x *Db_ETCMeisaiResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ETCMeisaiResponse) ProtoMessage() {}
+func (*Db_ETCMeisaiResponse) ProtoMessage() {}
 
-func (x *ETCMeisaiResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ETCMeisaiResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1255,40 +1255,40 @@ func (x *ETCMeisaiResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ETCMeisaiResponse.ProtoReflect.Descriptor instead.
-func (*ETCMeisaiResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ETCMeisaiResponse.ProtoReflect.Descriptor instead.
+func (*Db_ETCMeisaiResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *ETCMeisaiResponse) GetEtcMeisai() *ETCMeisai {
+func (x *Db_ETCMeisaiResponse) GetEtcMeisai() *Db_ETCMeisai {
 	if x != nil {
 		return x.EtcMeisai
 	}
 	return nil
 }
 
-type ListETCMeisaiResponse struct {
+type Db_ListETCMeisaiResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*ETCMeisai           `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_ETCMeisai        `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListETCMeisaiResponse) Reset() {
-	*x = ListETCMeisaiResponse{}
+func (x *Db_ListETCMeisaiResponse) Reset() {
+	*x = Db_ListETCMeisaiResponse{}
 	mi := &file_db_service_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListETCMeisaiResponse) String() string {
+func (x *Db_ListETCMeisaiResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListETCMeisaiResponse) ProtoMessage() {}
+func (*Db_ListETCMeisaiResponse) ProtoMessage() {}
 
-func (x *ListETCMeisaiResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListETCMeisaiResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1300,19 +1300,19 @@ func (x *ListETCMeisaiResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListETCMeisaiResponse.ProtoReflect.Descriptor instead.
-func (*ListETCMeisaiResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListETCMeisaiResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListETCMeisaiResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *ListETCMeisaiResponse) GetItems() []*ETCMeisai {
+func (x *Db_ListETCMeisaiResponse) GetItems() []*Db_ETCMeisai {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListETCMeisaiResponse) GetTotalCount() int32 {
+func (x *Db_ListETCMeisaiResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -1320,27 +1320,27 @@ func (x *ListETCMeisaiResponse) GetTotalCount() int32 {
 }
 
 // DTakoFerryRows用
-type CreateDTakoFerryRowsRequest struct {
+type Db_CreateDTakoFerryRowsRequest struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	DtakoFerryRows *DTakoFerryRows        `protobuf:"bytes,1,opt,name=dtako_ferry_rows,json=dtakoFerryRows,proto3" json:"dtako_ferry_rows,omitempty"`
+	DtakoFerryRows *Db_DTakoFerryRows     `protobuf:"bytes,1,opt,name=dtako_ferry_rows,json=dtakoFerryRows,proto3" json:"dtako_ferry_rows,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *CreateDTakoFerryRowsRequest) Reset() {
-	*x = CreateDTakoFerryRowsRequest{}
+func (x *Db_CreateDTakoFerryRowsRequest) Reset() {
+	*x = Db_CreateDTakoFerryRowsRequest{}
 	mi := &file_db_service_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateDTakoFerryRowsRequest) String() string {
+func (x *Db_CreateDTakoFerryRowsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateDTakoFerryRowsRequest) ProtoMessage() {}
+func (*Db_CreateDTakoFerryRowsRequest) ProtoMessage() {}
 
-func (x *CreateDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_CreateDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1352,39 +1352,39 @@ func (x *CreateDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
-func (*CreateDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_CreateDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
+func (*Db_CreateDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *CreateDTakoFerryRowsRequest) GetDtakoFerryRows() *DTakoFerryRows {
+func (x *Db_CreateDTakoFerryRowsRequest) GetDtakoFerryRows() *Db_DTakoFerryRows {
 	if x != nil {
 		return x.DtakoFerryRows
 	}
 	return nil
 }
 
-type GetDTakoFerryRowsRequest struct {
+type Db_GetDTakoFerryRowsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoFerryRowsRequest) Reset() {
-	*x = GetDTakoFerryRowsRequest{}
+func (x *Db_GetDTakoFerryRowsRequest) Reset() {
+	*x = Db_GetDTakoFerryRowsRequest{}
 	mi := &file_db_service_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoFerryRowsRequest) String() string {
+func (x *Db_GetDTakoFerryRowsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoFerryRowsRequest) ProtoMessage() {}
+func (*Db_GetDTakoFerryRowsRequest) ProtoMessage() {}
 
-func (x *GetDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1396,39 +1396,39 @@ func (x *GetDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *GetDTakoFerryRowsRequest) GetId() int32 {
+func (x *Db_GetDTakoFerryRowsRequest) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type UpdateDTakoFerryRowsRequest struct {
+type Db_UpdateDTakoFerryRowsRequest struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	DtakoFerryRows *DTakoFerryRows        `protobuf:"bytes,1,opt,name=dtako_ferry_rows,json=dtakoFerryRows,proto3" json:"dtako_ferry_rows,omitempty"`
+	DtakoFerryRows *Db_DTakoFerryRows     `protobuf:"bytes,1,opt,name=dtako_ferry_rows,json=dtakoFerryRows,proto3" json:"dtako_ferry_rows,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *UpdateDTakoFerryRowsRequest) Reset() {
-	*x = UpdateDTakoFerryRowsRequest{}
+func (x *Db_UpdateDTakoFerryRowsRequest) Reset() {
+	*x = Db_UpdateDTakoFerryRowsRequest{}
 	mi := &file_db_service_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateDTakoFerryRowsRequest) String() string {
+func (x *Db_UpdateDTakoFerryRowsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateDTakoFerryRowsRequest) ProtoMessage() {}
+func (*Db_UpdateDTakoFerryRowsRequest) ProtoMessage() {}
 
-func (x *UpdateDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_UpdateDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1440,39 +1440,39 @@ func (x *UpdateDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
-func (*UpdateDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_UpdateDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
+func (*Db_UpdateDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{19}
 }
 
-func (x *UpdateDTakoFerryRowsRequest) GetDtakoFerryRows() *DTakoFerryRows {
+func (x *Db_UpdateDTakoFerryRowsRequest) GetDtakoFerryRows() *Db_DTakoFerryRows {
 	if x != nil {
 		return x.DtakoFerryRows
 	}
 	return nil
 }
 
-type DeleteDTakoFerryRowsRequest struct {
+type Db_DeleteDTakoFerryRowsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteDTakoFerryRowsRequest) Reset() {
-	*x = DeleteDTakoFerryRowsRequest{}
+func (x *Db_DeleteDTakoFerryRowsRequest) Reset() {
+	*x = Db_DeleteDTakoFerryRowsRequest{}
 	mi := &file_db_service_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteDTakoFerryRowsRequest) String() string {
+func (x *Db_DeleteDTakoFerryRowsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteDTakoFerryRowsRequest) ProtoMessage() {}
+func (*Db_DeleteDTakoFerryRowsRequest) ProtoMessage() {}
 
-func (x *DeleteDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_DeleteDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1484,19 +1484,19 @@ func (x *DeleteDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
-func (*DeleteDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DeleteDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
+func (*Db_DeleteDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{20}
 }
 
-func (x *DeleteDTakoFerryRowsRequest) GetId() int32 {
+func (x *Db_DeleteDTakoFerryRowsRequest) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type ListDTakoFerryRowsRequest struct {
+type Db_ListDTakoFerryRowsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UnkoNo        *string                `protobuf:"bytes,1,opt,name=unko_no,json=unkoNo,proto3,oneof" json:"unko_no,omitempty"`
 	StartDate     *string                `protobuf:"bytes,2,opt,name=start_date,json=startDate,proto3,oneof" json:"start_date,omitempty"`
@@ -1507,20 +1507,20 @@ type ListDTakoFerryRowsRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoFerryRowsRequest) Reset() {
-	*x = ListDTakoFerryRowsRequest{}
+func (x *Db_ListDTakoFerryRowsRequest) Reset() {
+	*x = Db_ListDTakoFerryRowsRequest{}
 	mi := &file_db_service_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoFerryRowsRequest) String() string {
+func (x *Db_ListDTakoFerryRowsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoFerryRowsRequest) ProtoMessage() {}
+func (*Db_ListDTakoFerryRowsRequest) ProtoMessage() {}
 
-func (x *ListDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1532,67 +1532,67 @@ func (x *ListDTakoFerryRowsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
-func (*ListDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoFerryRowsRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoFerryRowsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{21}
 }
 
-func (x *ListDTakoFerryRowsRequest) GetUnkoNo() string {
+func (x *Db_ListDTakoFerryRowsRequest) GetUnkoNo() string {
 	if x != nil && x.UnkoNo != nil {
 		return *x.UnkoNo
 	}
 	return ""
 }
 
-func (x *ListDTakoFerryRowsRequest) GetStartDate() string {
+func (x *Db_ListDTakoFerryRowsRequest) GetStartDate() string {
 	if x != nil && x.StartDate != nil {
 		return *x.StartDate
 	}
 	return ""
 }
 
-func (x *ListDTakoFerryRowsRequest) GetEndDate() string {
+func (x *Db_ListDTakoFerryRowsRequest) GetEndDate() string {
 	if x != nil && x.EndDate != nil {
 		return *x.EndDate
 	}
 	return ""
 }
 
-func (x *ListDTakoFerryRowsRequest) GetLimit() int32 {
+func (x *Db_ListDTakoFerryRowsRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListDTakoFerryRowsRequest) GetOffset() int32 {
+func (x *Db_ListDTakoFerryRowsRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-type DTakoFerryRowsResponse struct {
+type Db_DTakoFerryRowsResponse struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	DtakoFerryRows *DTakoFerryRows        `protobuf:"bytes,1,opt,name=dtako_ferry_rows,json=dtakoFerryRows,proto3" json:"dtako_ferry_rows,omitempty"`
+	DtakoFerryRows *Db_DTakoFerryRows     `protobuf:"bytes,1,opt,name=dtako_ferry_rows,json=dtakoFerryRows,proto3" json:"dtako_ferry_rows,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *DTakoFerryRowsResponse) Reset() {
-	*x = DTakoFerryRowsResponse{}
+func (x *Db_DTakoFerryRowsResponse) Reset() {
+	*x = Db_DTakoFerryRowsResponse{}
 	mi := &file_db_service_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoFerryRowsResponse) String() string {
+func (x *Db_DTakoFerryRowsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoFerryRowsResponse) ProtoMessage() {}
+func (*Db_DTakoFerryRowsResponse) ProtoMessage() {}
 
-func (x *DTakoFerryRowsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoFerryRowsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1604,40 +1604,40 @@ func (x *DTakoFerryRowsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoFerryRowsResponse.ProtoReflect.Descriptor instead.
-func (*DTakoFerryRowsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoFerryRowsResponse.ProtoReflect.Descriptor instead.
+func (*Db_DTakoFerryRowsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{22}
 }
 
-func (x *DTakoFerryRowsResponse) GetDtakoFerryRows() *DTakoFerryRows {
+func (x *Db_DTakoFerryRowsResponse) GetDtakoFerryRows() *Db_DTakoFerryRows {
 	if x != nil {
 		return x.DtakoFerryRows
 	}
 	return nil
 }
 
-type ListDTakoFerryRowsResponse struct {
+type Db_ListDTakoFerryRowsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*DTakoFerryRows      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_DTakoFerryRows   `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoFerryRowsResponse) Reset() {
-	*x = ListDTakoFerryRowsResponse{}
+func (x *Db_ListDTakoFerryRowsResponse) Reset() {
+	*x = Db_ListDTakoFerryRowsResponse{}
 	mi := &file_db_service_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoFerryRowsResponse) String() string {
+func (x *Db_ListDTakoFerryRowsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoFerryRowsResponse) ProtoMessage() {}
+func (*Db_ListDTakoFerryRowsResponse) ProtoMessage() {}
 
-func (x *ListDTakoFerryRowsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoFerryRowsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1649,19 +1649,19 @@ func (x *ListDTakoFerryRowsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoFerryRowsResponse.ProtoReflect.Descriptor instead.
-func (*ListDTakoFerryRowsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoFerryRowsResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoFerryRowsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{23}
 }
 
-func (x *ListDTakoFerryRowsResponse) GetItems() []*DTakoFerryRows {
+func (x *Db_ListDTakoFerryRowsResponse) GetItems() []*Db_DTakoFerryRows {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListDTakoFerryRowsResponse) GetTotalCount() int32 {
+func (x *Db_ListDTakoFerryRowsResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -1669,7 +1669,7 @@ func (x *ListDTakoFerryRowsResponse) GetTotalCount() int32 {
 }
 
 // ETC明細マッピングデータ
-type ETCMeisaiMapping struct {
+type Db_ETCMeisaiMapping struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	EtcMeisaiHash string                 `protobuf:"bytes,2,opt,name=etc_meisai_hash,json=etcMeisaiHash,proto3" json:"etc_meisai_hash,omitempty"`
@@ -1682,20 +1682,20 @@ type ETCMeisaiMapping struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ETCMeisaiMapping) Reset() {
-	*x = ETCMeisaiMapping{}
+func (x *Db_ETCMeisaiMapping) Reset() {
+	*x = Db_ETCMeisaiMapping{}
 	mi := &file_db_service_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ETCMeisaiMapping) String() string {
+func (x *Db_ETCMeisaiMapping) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ETCMeisaiMapping) ProtoMessage() {}
+func (*Db_ETCMeisaiMapping) ProtoMessage() {}
 
-func (x *ETCMeisaiMapping) ProtoReflect() protoreflect.Message {
+func (x *Db_ETCMeisaiMapping) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1707,54 +1707,54 @@ func (x *ETCMeisaiMapping) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ETCMeisaiMapping.ProtoReflect.Descriptor instead.
-func (*ETCMeisaiMapping) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ETCMeisaiMapping.ProtoReflect.Descriptor instead.
+func (*Db_ETCMeisaiMapping) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{24}
 }
 
-func (x *ETCMeisaiMapping) GetId() int64 {
+func (x *Db_ETCMeisaiMapping) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *ETCMeisaiMapping) GetEtcMeisaiHash() string {
+func (x *Db_ETCMeisaiMapping) GetEtcMeisaiHash() string {
 	if x != nil {
 		return x.EtcMeisaiHash
 	}
 	return ""
 }
 
-func (x *ETCMeisaiMapping) GetDtakoRowId() string {
+func (x *Db_ETCMeisaiMapping) GetDtakoRowId() string {
 	if x != nil {
 		return x.DtakoRowId
 	}
 	return ""
 }
 
-func (x *ETCMeisaiMapping) GetCreatedAt() string {
+func (x *Db_ETCMeisaiMapping) GetCreatedAt() string {
 	if x != nil {
 		return x.CreatedAt
 	}
 	return ""
 }
 
-func (x *ETCMeisaiMapping) GetUpdatedAt() string {
+func (x *Db_ETCMeisaiMapping) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
 	}
 	return ""
 }
 
-func (x *ETCMeisaiMapping) GetCreatedBy() string {
+func (x *Db_ETCMeisaiMapping) GetCreatedBy() string {
 	if x != nil {
 		return x.CreatedBy
 	}
 	return ""
 }
 
-func (x *ETCMeisaiMapping) GetNotes() string {
+func (x *Db_ETCMeisaiMapping) GetNotes() string {
 	if x != nil && x.Notes != nil {
 		return *x.Notes
 	}
@@ -1762,27 +1762,27 @@ func (x *ETCMeisaiMapping) GetNotes() string {
 }
 
 // ETCMeisaiMapping用リクエスト/レスポンス
-type CreateETCMeisaiMappingRequest struct {
+type Db_CreateETCMeisaiMappingRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	EtcMeisaiMapping *ETCMeisaiMapping      `protobuf:"bytes,1,opt,name=etc_meisai_mapping,json=etcMeisaiMapping,proto3" json:"etc_meisai_mapping,omitempty"`
+	EtcMeisaiMapping *Db_ETCMeisaiMapping   `protobuf:"bytes,1,opt,name=etc_meisai_mapping,json=etcMeisaiMapping,proto3" json:"etc_meisai_mapping,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
 
-func (x *CreateETCMeisaiMappingRequest) Reset() {
-	*x = CreateETCMeisaiMappingRequest{}
+func (x *Db_CreateETCMeisaiMappingRequest) Reset() {
+	*x = Db_CreateETCMeisaiMappingRequest{}
 	mi := &file_db_service_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateETCMeisaiMappingRequest) String() string {
+func (x *Db_CreateETCMeisaiMappingRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateETCMeisaiMappingRequest) ProtoMessage() {}
+func (*Db_CreateETCMeisaiMappingRequest) ProtoMessage() {}
 
-func (x *CreateETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_CreateETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1794,39 +1794,39 @@ func (x *CreateETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
-func (*CreateETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_CreateETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
+func (*Db_CreateETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{25}
 }
 
-func (x *CreateETCMeisaiMappingRequest) GetEtcMeisaiMapping() *ETCMeisaiMapping {
+func (x *Db_CreateETCMeisaiMappingRequest) GetEtcMeisaiMapping() *Db_ETCMeisaiMapping {
 	if x != nil {
 		return x.EtcMeisaiMapping
 	}
 	return nil
 }
 
-type GetETCMeisaiMappingRequest struct {
+type Db_GetETCMeisaiMappingRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetETCMeisaiMappingRequest) Reset() {
-	*x = GetETCMeisaiMappingRequest{}
+func (x *Db_GetETCMeisaiMappingRequest) Reset() {
+	*x = Db_GetETCMeisaiMappingRequest{}
 	mi := &file_db_service_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetETCMeisaiMappingRequest) String() string {
+func (x *Db_GetETCMeisaiMappingRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetETCMeisaiMappingRequest) ProtoMessage() {}
+func (*Db_GetETCMeisaiMappingRequest) ProtoMessage() {}
 
-func (x *GetETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1838,39 +1838,39 @@ func (x *GetETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
-func (*GetETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{26}
 }
 
-func (x *GetETCMeisaiMappingRequest) GetId() int64 {
+func (x *Db_GetETCMeisaiMappingRequest) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type UpdateETCMeisaiMappingRequest struct {
+type Db_UpdateETCMeisaiMappingRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	EtcMeisaiMapping *ETCMeisaiMapping      `protobuf:"bytes,1,opt,name=etc_meisai_mapping,json=etcMeisaiMapping,proto3" json:"etc_meisai_mapping,omitempty"`
+	EtcMeisaiMapping *Db_ETCMeisaiMapping   `protobuf:"bytes,1,opt,name=etc_meisai_mapping,json=etcMeisaiMapping,proto3" json:"etc_meisai_mapping,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
 
-func (x *UpdateETCMeisaiMappingRequest) Reset() {
-	*x = UpdateETCMeisaiMappingRequest{}
+func (x *Db_UpdateETCMeisaiMappingRequest) Reset() {
+	*x = Db_UpdateETCMeisaiMappingRequest{}
 	mi := &file_db_service_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateETCMeisaiMappingRequest) String() string {
+func (x *Db_UpdateETCMeisaiMappingRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateETCMeisaiMappingRequest) ProtoMessage() {}
+func (*Db_UpdateETCMeisaiMappingRequest) ProtoMessage() {}
 
-func (x *UpdateETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_UpdateETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1882,39 +1882,39 @@ func (x *UpdateETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
-func (*UpdateETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_UpdateETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
+func (*Db_UpdateETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{27}
 }
 
-func (x *UpdateETCMeisaiMappingRequest) GetEtcMeisaiMapping() *ETCMeisaiMapping {
+func (x *Db_UpdateETCMeisaiMappingRequest) GetEtcMeisaiMapping() *Db_ETCMeisaiMapping {
 	if x != nil {
 		return x.EtcMeisaiMapping
 	}
 	return nil
 }
 
-type DeleteETCMeisaiMappingRequest struct {
+type Db_DeleteETCMeisaiMappingRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteETCMeisaiMappingRequest) Reset() {
-	*x = DeleteETCMeisaiMappingRequest{}
+func (x *Db_DeleteETCMeisaiMappingRequest) Reset() {
+	*x = Db_DeleteETCMeisaiMappingRequest{}
 	mi := &file_db_service_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteETCMeisaiMappingRequest) String() string {
+func (x *Db_DeleteETCMeisaiMappingRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteETCMeisaiMappingRequest) ProtoMessage() {}
+func (*Db_DeleteETCMeisaiMappingRequest) ProtoMessage() {}
 
-func (x *DeleteETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_DeleteETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1926,19 +1926,19 @@ func (x *DeleteETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
-func (*DeleteETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DeleteETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
+func (*Db_DeleteETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{28}
 }
 
-func (x *DeleteETCMeisaiMappingRequest) GetId() int64 {
+func (x *Db_DeleteETCMeisaiMappingRequest) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type ListETCMeisaiMappingRequest struct {
+type Db_ListETCMeisaiMappingRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	EtcMeisaiHash *string                `protobuf:"bytes,1,opt,name=etc_meisai_hash,json=etcMeisaiHash,proto3,oneof" json:"etc_meisai_hash,omitempty"`
 	DtakoRowId    *string                `protobuf:"bytes,2,opt,name=dtako_row_id,json=dtakoRowId,proto3,oneof" json:"dtako_row_id,omitempty"`
@@ -1948,20 +1948,20 @@ type ListETCMeisaiMappingRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListETCMeisaiMappingRequest) Reset() {
-	*x = ListETCMeisaiMappingRequest{}
+func (x *Db_ListETCMeisaiMappingRequest) Reset() {
+	*x = Db_ListETCMeisaiMappingRequest{}
 	mi := &file_db_service_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListETCMeisaiMappingRequest) String() string {
+func (x *Db_ListETCMeisaiMappingRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListETCMeisaiMappingRequest) ProtoMessage() {}
+func (*Db_ListETCMeisaiMappingRequest) ProtoMessage() {}
 
-func (x *ListETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1973,60 +1973,60 @@ func (x *ListETCMeisaiMappingRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
-func (*ListETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListETCMeisaiMappingRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListETCMeisaiMappingRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{29}
 }
 
-func (x *ListETCMeisaiMappingRequest) GetEtcMeisaiHash() string {
+func (x *Db_ListETCMeisaiMappingRequest) GetEtcMeisaiHash() string {
 	if x != nil && x.EtcMeisaiHash != nil {
 		return *x.EtcMeisaiHash
 	}
 	return ""
 }
 
-func (x *ListETCMeisaiMappingRequest) GetDtakoRowId() string {
+func (x *Db_ListETCMeisaiMappingRequest) GetDtakoRowId() string {
 	if x != nil && x.DtakoRowId != nil {
 		return *x.DtakoRowId
 	}
 	return ""
 }
 
-func (x *ListETCMeisaiMappingRequest) GetLimit() int32 {
+func (x *Db_ListETCMeisaiMappingRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListETCMeisaiMappingRequest) GetOffset() int32 {
+func (x *Db_ListETCMeisaiMappingRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-type ETCMeisaiMappingResponse struct {
+type Db_ETCMeisaiMappingResponse struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	EtcMeisaiMapping *ETCMeisaiMapping      `protobuf:"bytes,1,opt,name=etc_meisai_mapping,json=etcMeisaiMapping,proto3" json:"etc_meisai_mapping,omitempty"`
+	EtcMeisaiMapping *Db_ETCMeisaiMapping   `protobuf:"bytes,1,opt,name=etc_meisai_mapping,json=etcMeisaiMapping,proto3" json:"etc_meisai_mapping,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
 
-func (x *ETCMeisaiMappingResponse) Reset() {
-	*x = ETCMeisaiMappingResponse{}
+func (x *Db_ETCMeisaiMappingResponse) Reset() {
+	*x = Db_ETCMeisaiMappingResponse{}
 	mi := &file_db_service_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ETCMeisaiMappingResponse) String() string {
+func (x *Db_ETCMeisaiMappingResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ETCMeisaiMappingResponse) ProtoMessage() {}
+func (*Db_ETCMeisaiMappingResponse) ProtoMessage() {}
 
-func (x *ETCMeisaiMappingResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ETCMeisaiMappingResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2038,40 +2038,40 @@ func (x *ETCMeisaiMappingResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ETCMeisaiMappingResponse.ProtoReflect.Descriptor instead.
-func (*ETCMeisaiMappingResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ETCMeisaiMappingResponse.ProtoReflect.Descriptor instead.
+func (*Db_ETCMeisaiMappingResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{30}
 }
 
-func (x *ETCMeisaiMappingResponse) GetEtcMeisaiMapping() *ETCMeisaiMapping {
+func (x *Db_ETCMeisaiMappingResponse) GetEtcMeisaiMapping() *Db_ETCMeisaiMapping {
 	if x != nil {
 		return x.EtcMeisaiMapping
 	}
 	return nil
 }
 
-type ListETCMeisaiMappingResponse struct {
+type Db_ListETCMeisaiMappingResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*ETCMeisaiMapping    `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_ETCMeisaiMapping `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListETCMeisaiMappingResponse) Reset() {
-	*x = ListETCMeisaiMappingResponse{}
+func (x *Db_ListETCMeisaiMappingResponse) Reset() {
+	*x = Db_ListETCMeisaiMappingResponse{}
 	mi := &file_db_service_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListETCMeisaiMappingResponse) String() string {
+func (x *Db_ListETCMeisaiMappingResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListETCMeisaiMappingResponse) ProtoMessage() {}
+func (*Db_ListETCMeisaiMappingResponse) ProtoMessage() {}
 
-func (x *ListETCMeisaiMappingResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListETCMeisaiMappingResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2083,46 +2083,46 @@ func (x *ListETCMeisaiMappingResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListETCMeisaiMappingResponse.ProtoReflect.Descriptor instead.
-func (*ListETCMeisaiMappingResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListETCMeisaiMappingResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListETCMeisaiMappingResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{31}
 }
 
-func (x *ListETCMeisaiMappingResponse) GetItems() []*ETCMeisaiMapping {
+func (x *Db_ListETCMeisaiMappingResponse) GetItems() []*Db_ETCMeisaiMapping {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListETCMeisaiMappingResponse) GetTotalCount() int32 {
+func (x *Db_ListETCMeisaiMappingResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
 	return 0
 }
 
-type GetDTakoRowIDByHashRequest struct {
+type Db_GetDTakoRowIDByHashRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	EtcMeisaiHash string                 `protobuf:"bytes,1,opt,name=etc_meisai_hash,json=etcMeisaiHash,proto3" json:"etc_meisai_hash,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoRowIDByHashRequest) Reset() {
-	*x = GetDTakoRowIDByHashRequest{}
+func (x *Db_GetDTakoRowIDByHashRequest) Reset() {
+	*x = Db_GetDTakoRowIDByHashRequest{}
 	mi := &file_db_service_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoRowIDByHashRequest) String() string {
+func (x *Db_GetDTakoRowIDByHashRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoRowIDByHashRequest) ProtoMessage() {}
+func (*Db_GetDTakoRowIDByHashRequest) ProtoMessage() {}
 
-func (x *GetDTakoRowIDByHashRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoRowIDByHashRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2134,39 +2134,39 @@ func (x *GetDTakoRowIDByHashRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoRowIDByHashRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoRowIDByHashRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoRowIDByHashRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoRowIDByHashRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{32}
 }
 
-func (x *GetDTakoRowIDByHashRequest) GetEtcMeisaiHash() string {
+func (x *Db_GetDTakoRowIDByHashRequest) GetEtcMeisaiHash() string {
 	if x != nil {
 		return x.EtcMeisaiHash
 	}
 	return ""
 }
 
-type GetDTakoRowIDByHashResponse struct {
+type Db_GetDTakoRowIDByHashResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	DtakoRowIds   []string               `protobuf:"bytes,1,rep,name=dtako_row_ids,json=dtakoRowIds,proto3" json:"dtako_row_ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoRowIDByHashResponse) Reset() {
-	*x = GetDTakoRowIDByHashResponse{}
+func (x *Db_GetDTakoRowIDByHashResponse) Reset() {
+	*x = Db_GetDTakoRowIDByHashResponse{}
 	mi := &file_db_service_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoRowIDByHashResponse) String() string {
+func (x *Db_GetDTakoRowIDByHashResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoRowIDByHashResponse) ProtoMessage() {}
+func (*Db_GetDTakoRowIDByHashResponse) ProtoMessage() {}
 
-func (x *GetDTakoRowIDByHashResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoRowIDByHashResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2178,12 +2178,12 @@ func (x *GetDTakoRowIDByHashResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoRowIDByHashResponse.ProtoReflect.Descriptor instead.
-func (*GetDTakoRowIDByHashResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoRowIDByHashResponse.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoRowIDByHashResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{33}
 }
 
-func (x *GetDTakoRowIDByHashResponse) GetDtakoRowIds() []string {
+func (x *Db_GetDTakoRowIDByHashResponse) GetDtakoRowIds() []string {
 	if x != nil {
 		return x.DtakoRowIds
 	}
@@ -2191,7 +2191,7 @@ func (x *GetDTakoRowIDByHashResponse) GetDtakoRowIds() []string {
 }
 
 // 車輌マスタデータ（本番DB）
-type DTakoCars struct {
+type Db_DTakoCars struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	Id                  int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	CarCode             string                 `protobuf:"bytes,2,opt,name=car_code,json=carCode,proto3" json:"car_code,omitempty"`
@@ -2213,20 +2213,20 @@ type DTakoCars struct {
 	sizeCache           protoimpl.SizeCache
 }
 
-func (x *DTakoCars) Reset() {
-	*x = DTakoCars{}
+func (x *Db_DTakoCars) Reset() {
+	*x = Db_DTakoCars{}
 	mi := &file_db_service_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoCars) String() string {
+func (x *Db_DTakoCars) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoCars) ProtoMessage() {}
+func (*Db_DTakoCars) ProtoMessage() {}
 
-func (x *DTakoCars) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoCars) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2238,117 +2238,117 @@ func (x *DTakoCars) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoCars.ProtoReflect.Descriptor instead.
-func (*DTakoCars) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoCars.ProtoReflect.Descriptor instead.
+func (*Db_DTakoCars) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{34}
 }
 
-func (x *DTakoCars) GetId() int32 {
+func (x *Db_DTakoCars) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetCarCode() string {
+func (x *Db_DTakoCars) GetCarCode() string {
 	if x != nil {
 		return x.CarCode
 	}
 	return ""
 }
 
-func (x *DTakoCars) GetCarCc() string {
+func (x *Db_DTakoCars) GetCarCc() string {
 	if x != nil {
 		return x.CarCc
 	}
 	return ""
 }
 
-func (x *DTakoCars) GetCarName() string {
+func (x *Db_DTakoCars) GetCarName() string {
 	if x != nil {
 		return x.CarName
 	}
 	return ""
 }
 
-func (x *DTakoCars) GetBelongOfficeCode() int32 {
+func (x *Db_DTakoCars) GetBelongOfficeCode() int32 {
 	if x != nil {
 		return x.BelongOfficeCode
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetHighwayCarType() int32 {
+func (x *Db_DTakoCars) GetHighwayCarType() int32 {
 	if x != nil {
 		return x.HighwayCarType
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetFerryCarType() int32 {
+func (x *Db_DTakoCars) GetFerryCarType() int32 {
 	if x != nil {
 		return x.FerryCarType
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetEvaluationClassCode() int32 {
+func (x *Db_DTakoCars) GetEvaluationClassCode() int32 {
 	if x != nil {
 		return x.EvaluationClassCode
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetIdlingType() int32 {
+func (x *Db_DTakoCars) GetIdlingType() int32 {
 	if x != nil {
 		return x.IdlingType
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetMaxLoadWeightKg() int32 {
+func (x *Db_DTakoCars) GetMaxLoadWeightKg() int32 {
 	if x != nil {
 		return x.MaxLoadWeightKg
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetCarClass1() int32 {
+func (x *Db_DTakoCars) GetCarClass1() int32 {
 	if x != nil {
 		return x.CarClass1
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetCarClass2() int32 {
+func (x *Db_DTakoCars) GetCarClass2() int32 {
 	if x != nil {
 		return x.CarClass2
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetCarClass3() int32 {
+func (x *Db_DTakoCars) GetCarClass3() int32 {
 	if x != nil {
 		return x.CarClass3
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetCarClass4() int32 {
+func (x *Db_DTakoCars) GetCarClass4() int32 {
 	if x != nil {
 		return x.CarClass4
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetCarClass5() int32 {
+func (x *Db_DTakoCars) GetCarClass5() int32 {
 	if x != nil {
 		return x.CarClass5
 	}
 	return 0
 }
 
-func (x *DTakoCars) GetOperationType() int32 {
+func (x *Db_DTakoCars) GetOperationType() int32 {
 	if x != nil {
 		return x.OperationType
 	}
@@ -2356,7 +2356,7 @@ func (x *DTakoCars) GetOperationType() int32 {
 }
 
 // イベント情報データ（本番DB）
-type DTakoEvents struct {
+type Db_DTakoEvents struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Id                int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	OperationNo       string                 `protobuf:"bytes,2,opt,name=operation_no,json=operationNo,proto3" json:"operation_no,omitempty"`
@@ -2392,20 +2392,20 @@ type DTakoEvents struct {
 	sizeCache         protoimpl.SizeCache
 }
 
-func (x *DTakoEvents) Reset() {
-	*x = DTakoEvents{}
+func (x *Db_DTakoEvents) Reset() {
+	*x = Db_DTakoEvents{}
 	mi := &file_db_service_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoEvents) String() string {
+func (x *Db_DTakoEvents) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoEvents) ProtoMessage() {}
+func (*Db_DTakoEvents) ProtoMessage() {}
 
-func (x *DTakoEvents) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoEvents) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2417,215 +2417,215 @@ func (x *DTakoEvents) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoEvents.ProtoReflect.Descriptor instead.
-func (*DTakoEvents) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoEvents.ProtoReflect.Descriptor instead.
+func (*Db_DTakoEvents) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{35}
 }
 
-func (x *DTakoEvents) GetId() int64 {
+func (x *Db_DTakoEvents) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetOperationNo() string {
+func (x *Db_DTakoEvents) GetOperationNo() string {
 	if x != nil {
 		return x.OperationNo
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetReadDate() string {
+func (x *Db_DTakoEvents) GetReadDate() string {
 	if x != nil {
 		return x.ReadDate
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetCarCode() int32 {
+func (x *Db_DTakoEvents) GetCarCode() int32 {
 	if x != nil {
 		return x.CarCode
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetCarCc() string {
+func (x *Db_DTakoEvents) GetCarCc() string {
 	if x != nil {
 		return x.CarCc
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetTargetDriverType() int32 {
+func (x *Db_DTakoEvents) GetTargetDriverType() int32 {
 	if x != nil {
 		return x.TargetDriverType
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetDriverCode1() int32 {
+func (x *Db_DTakoEvents) GetDriverCode1() int32 {
 	if x != nil {
 		return x.DriverCode1
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetTargetDriverCode() int32 {
+func (x *Db_DTakoEvents) GetTargetDriverCode() int32 {
 	if x != nil {
 		return x.TargetDriverCode
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetStartDatetime() string {
+func (x *Db_DTakoEvents) GetStartDatetime() string {
 	if x != nil {
 		return x.StartDatetime
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetEndDatetime() string {
+func (x *Db_DTakoEvents) GetEndDatetime() string {
 	if x != nil {
 		return x.EndDatetime
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetEventCode() int32 {
+func (x *Db_DTakoEvents) GetEventCode() int32 {
 	if x != nil && x.EventCode != nil {
 		return *x.EventCode
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetEventName() string {
+func (x *Db_DTakoEvents) GetEventName() string {
 	if x != nil {
 		return x.EventName
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetStartMileage() float64 {
+func (x *Db_DTakoEvents) GetStartMileage() float64 {
 	if x != nil {
 		return x.StartMileage
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetEndMileage() float64 {
+func (x *Db_DTakoEvents) GetEndMileage() float64 {
 	if x != nil {
 		return x.EndMileage
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetSectionTime() int32 {
+func (x *Db_DTakoEvents) GetSectionTime() int32 {
 	if x != nil {
 		return x.SectionTime
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetSectionDistance() float64 {
+func (x *Db_DTakoEvents) GetSectionDistance() float64 {
 	if x != nil {
 		return x.SectionDistance
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetStartCityCode() int32 {
+func (x *Db_DTakoEvents) GetStartCityCode() int32 {
 	if x != nil && x.StartCityCode != nil {
 		return *x.StartCityCode
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetStartCityName() string {
+func (x *Db_DTakoEvents) GetStartCityName() string {
 	if x != nil {
 		return x.StartCityName
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetEndCityCode() int32 {
+func (x *Db_DTakoEvents) GetEndCityCode() int32 {
 	if x != nil && x.EndCityCode != nil {
 		return *x.EndCityCode
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetEndCityName() string {
+func (x *Db_DTakoEvents) GetEndCityName() string {
 	if x != nil {
 		return x.EndCityName
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetStartPlaceCode() int32 {
+func (x *Db_DTakoEvents) GetStartPlaceCode() int32 {
 	if x != nil && x.StartPlaceCode != nil {
 		return *x.StartPlaceCode
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetStartPlaceName() string {
+func (x *Db_DTakoEvents) GetStartPlaceName() string {
 	if x != nil {
 		return x.StartPlaceName
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetEndPlaceCode() int32 {
+func (x *Db_DTakoEvents) GetEndPlaceCode() int32 {
 	if x != nil && x.EndPlaceCode != nil {
 		return *x.EndPlaceCode
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetEndPlaceName() string {
+func (x *Db_DTakoEvents) GetEndPlaceName() string {
 	if x != nil {
 		return x.EndPlaceName
 	}
 	return ""
 }
 
-func (x *DTakoEvents) GetStartGpsValid() int32 {
+func (x *Db_DTakoEvents) GetStartGpsValid() int32 {
 	if x != nil && x.StartGpsValid != nil {
 		return *x.StartGpsValid
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetStartGpsLatitude() int64 {
+func (x *Db_DTakoEvents) GetStartGpsLatitude() int64 {
 	if x != nil && x.StartGpsLatitude != nil {
 		return *x.StartGpsLatitude
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetStartGpsLongitude() int64 {
+func (x *Db_DTakoEvents) GetStartGpsLongitude() int64 {
 	if x != nil && x.StartGpsLongitude != nil {
 		return *x.StartGpsLongitude
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetEndGpsValid() int32 {
+func (x *Db_DTakoEvents) GetEndGpsValid() int32 {
 	if x != nil && x.EndGpsValid != nil {
 		return *x.EndGpsValid
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetEndGpsLatitude() int64 {
+func (x *Db_DTakoEvents) GetEndGpsLatitude() int64 {
 	if x != nil && x.EndGpsLatitude != nil {
 		return *x.EndGpsLatitude
 	}
 	return 0
 }
 
-func (x *DTakoEvents) GetEndGpsLongitude() int64 {
+func (x *Db_DTakoEvents) GetEndGpsLongitude() int64 {
 	if x != nil && x.EndGpsLongitude != nil {
 		return *x.EndGpsLongitude
 	}
@@ -2633,7 +2633,7 @@ func (x *DTakoEvents) GetEndGpsLongitude() int64 {
 }
 
 // 運行データ（本番DB）
-type DTakoRows struct {
+type Db_DTakoRows struct {
 	state                protoimpl.MessageState `protogen:"open.v1"`
 	Id                   string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	OperationNo          string                 `protobuf:"bytes,2,opt,name=operation_no,json=operationNo,proto3" json:"operation_no,omitempty"`
@@ -2669,20 +2669,20 @@ type DTakoRows struct {
 	sizeCache            protoimpl.SizeCache
 }
 
-func (x *DTakoRows) Reset() {
-	*x = DTakoRows{}
+func (x *Db_DTakoRows) Reset() {
+	*x = Db_DTakoRows{}
 	mi := &file_db_service_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoRows) String() string {
+func (x *Db_DTakoRows) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoRows) ProtoMessage() {}
+func (*Db_DTakoRows) ProtoMessage() {}
 
-func (x *DTakoRows) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoRows) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2694,215 +2694,215 @@ func (x *DTakoRows) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoRows.ProtoReflect.Descriptor instead.
-func (*DTakoRows) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoRows.ProtoReflect.Descriptor instead.
+func (*Db_DTakoRows) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{36}
 }
 
-func (x *DTakoRows) GetId() string {
+func (x *Db_DTakoRows) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetOperationNo() string {
+func (x *Db_DTakoRows) GetOperationNo() string {
 	if x != nil {
 		return x.OperationNo
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetReadDate() string {
+func (x *Db_DTakoRows) GetReadDate() string {
 	if x != nil {
 		return x.ReadDate
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetOperationDate() string {
+func (x *Db_DTakoRows) GetOperationDate() string {
 	if x != nil {
 		return x.OperationDate
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetCarCode() int32 {
+func (x *Db_DTakoRows) GetCarCode() int32 {
 	if x != nil {
 		return x.CarCode
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetCarCc() string {
+func (x *Db_DTakoRows) GetCarCc() string {
 	if x != nil {
 		return x.CarCc
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetDriverCode1() int32 {
+func (x *Db_DTakoRows) GetDriverCode1() int32 {
 	if x != nil && x.DriverCode1 != nil {
 		return *x.DriverCode1
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetTargetDriverType() int32 {
+func (x *Db_DTakoRows) GetTargetDriverType() int32 {
 	if x != nil {
 		return x.TargetDriverType
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetTargetDriverCode() int32 {
+func (x *Db_DTakoRows) GetTargetDriverCode() int32 {
 	if x != nil {
 		return x.TargetDriverCode
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetStartWorkDatetime() string {
+func (x *Db_DTakoRows) GetStartWorkDatetime() string {
 	if x != nil {
 		return x.StartWorkDatetime
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetEndWorkDatetime() string {
+func (x *Db_DTakoRows) GetEndWorkDatetime() string {
 	if x != nil {
 		return x.EndWorkDatetime
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetDepartureDatetime() string {
+func (x *Db_DTakoRows) GetDepartureDatetime() string {
 	if x != nil {
 		return x.DepartureDatetime
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetReturnDatetime() string {
+func (x *Db_DTakoRows) GetReturnDatetime() string {
 	if x != nil {
 		return x.ReturnDatetime
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetDepartureMeter() float64 {
+func (x *Db_DTakoRows) GetDepartureMeter() float64 {
 	if x != nil {
 		return x.DepartureMeter
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetReturnMeter() float64 {
+func (x *Db_DTakoRows) GetReturnMeter() float64 {
 	if x != nil {
 		return x.ReturnMeter
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetTotalDistance() float64 {
+func (x *Db_DTakoRows) GetTotalDistance() float64 {
 	if x != nil {
 		return x.TotalDistance
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetLoadedDistance() float64 {
+func (x *Db_DTakoRows) GetLoadedDistance() float64 {
 	if x != nil && x.LoadedDistance != nil {
 		return *x.LoadedDistance
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetDestinationCityName() string {
+func (x *Db_DTakoRows) GetDestinationCityName() string {
 	if x != nil && x.DestinationCityName != nil {
 		return *x.DestinationCityName
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetDestinationPlaceName() string {
+func (x *Db_DTakoRows) GetDestinationPlaceName() string {
 	if x != nil && x.DestinationPlaceName != nil {
 		return *x.DestinationPlaceName
 	}
 	return ""
 }
 
-func (x *DTakoRows) GetGeneralRoadDriveTime() int32 {
+func (x *Db_DTakoRows) GetGeneralRoadDriveTime() int32 {
 	if x != nil {
 		return x.GeneralRoadDriveTime
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetHighwayDriveTime() int32 {
+func (x *Db_DTakoRows) GetHighwayDriveTime() int32 {
 	if x != nil {
 		return x.HighwayDriveTime
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetBypassDriveTime() int32 {
+func (x *Db_DTakoRows) GetBypassDriveTime() int32 {
 	if x != nil {
 		return x.BypassDriveTime
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetLoadedDriveTime() int32 {
+func (x *Db_DTakoRows) GetLoadedDriveTime() int32 {
 	if x != nil {
 		return x.LoadedDriveTime
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetEmptyDriveTime() int32 {
+func (x *Db_DTakoRows) GetEmptyDriveTime() int32 {
 	if x != nil {
 		return x.EmptyDriveTime
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetWork1Time() int32 {
+func (x *Db_DTakoRows) GetWork1Time() int32 {
 	if x != nil {
 		return x.Work1Time
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetWork2Time() int32 {
+func (x *Db_DTakoRows) GetWork2Time() int32 {
 	if x != nil {
 		return x.Work2Time
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetWork3Time() int32 {
+func (x *Db_DTakoRows) GetWork3Time() int32 {
 	if x != nil {
 		return x.Work3Time
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetWork4Time() int32 {
+func (x *Db_DTakoRows) GetWork4Time() int32 {
 	if x != nil {
 		return x.Work4Time
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetStatus1Distance() float64 {
+func (x *Db_DTakoRows) GetStatus1Distance() float64 {
 	if x != nil {
 		return x.Status1Distance
 	}
 	return 0
 }
 
-func (x *DTakoRows) GetStatus1Time() int32 {
+func (x *Db_DTakoRows) GetStatus1Time() int32 {
 	if x != nil {
 		return x.Status1Time
 	}
@@ -2910,7 +2910,7 @@ func (x *DTakoRows) GetStatus1Time() int32 {
 }
 
 // ETCカード番号データ（本番DB）
-type ETCNum struct {
+type Db_ETCNum struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	EtcCardNum    string                 `protobuf:"bytes,1,opt,name=etc_card_num,json=etcCardNum,proto3" json:"etc_card_num,omitempty"`
 	CarId         string                 `protobuf:"bytes,2,opt,name=car_id,json=carId,proto3" json:"car_id,omitempty"`
@@ -2921,20 +2921,20 @@ type ETCNum struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ETCNum) Reset() {
-	*x = ETCNum{}
+func (x *Db_ETCNum) Reset() {
+	*x = Db_ETCNum{}
 	mi := &file_db_service_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ETCNum) String() string {
+func (x *Db_ETCNum) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ETCNum) ProtoMessage() {}
+func (*Db_ETCNum) ProtoMessage() {}
 
-func (x *ETCNum) ProtoReflect() protoreflect.Message {
+func (x *Db_ETCNum) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2946,40 +2946,40 @@ func (x *ETCNum) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ETCNum.ProtoReflect.Descriptor instead.
-func (*ETCNum) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ETCNum.ProtoReflect.Descriptor instead.
+func (*Db_ETCNum) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{37}
 }
 
-func (x *ETCNum) GetEtcCardNum() string {
+func (x *Db_ETCNum) GetEtcCardNum() string {
 	if x != nil {
 		return x.EtcCardNum
 	}
 	return ""
 }
 
-func (x *ETCNum) GetCarId() string {
+func (x *Db_ETCNum) GetCarId() string {
 	if x != nil {
 		return x.CarId
 	}
 	return ""
 }
 
-func (x *ETCNum) GetStartDateTime() string {
+func (x *Db_ETCNum) GetStartDateTime() string {
 	if x != nil && x.StartDateTime != nil {
 		return *x.StartDateTime
 	}
 	return ""
 }
 
-func (x *ETCNum) GetDueDateTime() string {
+func (x *Db_ETCNum) GetDueDateTime() string {
 	if x != nil && x.DueDateTime != nil {
 		return *x.DueDateTime
 	}
 	return ""
 }
 
-func (x *ETCNum) GetToChange() bool {
+func (x *Db_ETCNum) GetToChange() bool {
 	if x != nil && x.ToChange != nil {
 		return *x.ToChange
 	}
@@ -2987,27 +2987,27 @@ func (x *ETCNum) GetToChange() bool {
 }
 
 // DTakoCars用リクエスト/レスポンス
-type GetDTakoCarsRequest struct {
+type Db_GetDTakoCarsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoCarsRequest) Reset() {
-	*x = GetDTakoCarsRequest{}
+func (x *Db_GetDTakoCarsRequest) Reset() {
+	*x = Db_GetDTakoCarsRequest{}
 	mi := &file_db_service_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoCarsRequest) String() string {
+func (x *Db_GetDTakoCarsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoCarsRequest) ProtoMessage() {}
+func (*Db_GetDTakoCarsRequest) ProtoMessage() {}
 
-func (x *GetDTakoCarsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoCarsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3019,39 +3019,39 @@ func (x *GetDTakoCarsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoCarsRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoCarsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoCarsRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoCarsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{38}
 }
 
-func (x *GetDTakoCarsRequest) GetId() int32 {
+func (x *Db_GetDTakoCarsRequest) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type GetDTakoCarsByCarCodeRequest struct {
+type Db_GetDTakoCarsByCarCodeRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	CarCode       string                 `protobuf:"bytes,1,opt,name=car_code,json=carCode,proto3" json:"car_code,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoCarsByCarCodeRequest) Reset() {
-	*x = GetDTakoCarsByCarCodeRequest{}
+func (x *Db_GetDTakoCarsByCarCodeRequest) Reset() {
+	*x = Db_GetDTakoCarsByCarCodeRequest{}
 	mi := &file_db_service_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoCarsByCarCodeRequest) String() string {
+func (x *Db_GetDTakoCarsByCarCodeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoCarsByCarCodeRequest) ProtoMessage() {}
+func (*Db_GetDTakoCarsByCarCodeRequest) ProtoMessage() {}
 
-func (x *GetDTakoCarsByCarCodeRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoCarsByCarCodeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3063,19 +3063,19 @@ func (x *GetDTakoCarsByCarCodeRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoCarsByCarCodeRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoCarsByCarCodeRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoCarsByCarCodeRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoCarsByCarCodeRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{39}
 }
 
-func (x *GetDTakoCarsByCarCodeRequest) GetCarCode() string {
+func (x *Db_GetDTakoCarsByCarCodeRequest) GetCarCode() string {
 	if x != nil {
 		return x.CarCode
 	}
 	return ""
 }
 
-type ListDTakoCarsRequest struct {
+type Db_ListDTakoCarsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -3083,20 +3083,20 @@ type ListDTakoCarsRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoCarsRequest) Reset() {
-	*x = ListDTakoCarsRequest{}
+func (x *Db_ListDTakoCarsRequest) Reset() {
+	*x = Db_ListDTakoCarsRequest{}
 	mi := &file_db_service_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoCarsRequest) String() string {
+func (x *Db_ListDTakoCarsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoCarsRequest) ProtoMessage() {}
+func (*Db_ListDTakoCarsRequest) ProtoMessage() {}
 
-func (x *ListDTakoCarsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoCarsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3108,46 +3108,46 @@ func (x *ListDTakoCarsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoCarsRequest.ProtoReflect.Descriptor instead.
-func (*ListDTakoCarsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoCarsRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoCarsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{40}
 }
 
-func (x *ListDTakoCarsRequest) GetLimit() int32 {
+func (x *Db_ListDTakoCarsRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListDTakoCarsRequest) GetOffset() int32 {
+func (x *Db_ListDTakoCarsRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-type DTakoCarsResponse struct {
+type Db_DTakoCarsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DtakoCars     *DTakoCars             `protobuf:"bytes,1,opt,name=dtako_cars,json=dtakoCars,proto3" json:"dtako_cars,omitempty"`
+	DtakoCars     *Db_DTakoCars          `protobuf:"bytes,1,opt,name=dtako_cars,json=dtakoCars,proto3" json:"dtako_cars,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DTakoCarsResponse) Reset() {
-	*x = DTakoCarsResponse{}
+func (x *Db_DTakoCarsResponse) Reset() {
+	*x = Db_DTakoCarsResponse{}
 	mi := &file_db_service_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoCarsResponse) String() string {
+func (x *Db_DTakoCarsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoCarsResponse) ProtoMessage() {}
+func (*Db_DTakoCarsResponse) ProtoMessage() {}
 
-func (x *DTakoCarsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoCarsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3159,40 +3159,40 @@ func (x *DTakoCarsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoCarsResponse.ProtoReflect.Descriptor instead.
-func (*DTakoCarsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoCarsResponse.ProtoReflect.Descriptor instead.
+func (*Db_DTakoCarsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{41}
 }
 
-func (x *DTakoCarsResponse) GetDtakoCars() *DTakoCars {
+func (x *Db_DTakoCarsResponse) GetDtakoCars() *Db_DTakoCars {
 	if x != nil {
 		return x.DtakoCars
 	}
 	return nil
 }
 
-type ListDTakoCarsResponse struct {
+type Db_ListDTakoCarsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*DTakoCars           `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_DTakoCars        `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoCarsResponse) Reset() {
-	*x = ListDTakoCarsResponse{}
+func (x *Db_ListDTakoCarsResponse) Reset() {
+	*x = Db_ListDTakoCarsResponse{}
 	mi := &file_db_service_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoCarsResponse) String() string {
+func (x *Db_ListDTakoCarsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoCarsResponse) ProtoMessage() {}
+func (*Db_ListDTakoCarsResponse) ProtoMessage() {}
 
-func (x *ListDTakoCarsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoCarsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3204,19 +3204,19 @@ func (x *ListDTakoCarsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoCarsResponse.ProtoReflect.Descriptor instead.
-func (*ListDTakoCarsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoCarsResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoCarsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{42}
 }
 
-func (x *ListDTakoCarsResponse) GetItems() []*DTakoCars {
+func (x *Db_ListDTakoCarsResponse) GetItems() []*Db_DTakoCars {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListDTakoCarsResponse) GetTotalCount() int32 {
+func (x *Db_ListDTakoCarsResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -3224,27 +3224,27 @@ func (x *ListDTakoCarsResponse) GetTotalCount() int32 {
 }
 
 // DTakoEvents用リクエスト/レスポンス
-type GetDTakoEventsRequest struct {
+type Db_GetDTakoEventsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoEventsRequest) Reset() {
-	*x = GetDTakoEventsRequest{}
+func (x *Db_GetDTakoEventsRequest) Reset() {
+	*x = Db_GetDTakoEventsRequest{}
 	mi := &file_db_service_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoEventsRequest) String() string {
+func (x *Db_GetDTakoEventsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoEventsRequest) ProtoMessage() {}
+func (*Db_GetDTakoEventsRequest) ProtoMessage() {}
 
-func (x *GetDTakoEventsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoEventsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3256,39 +3256,39 @@ func (x *GetDTakoEventsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoEventsRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoEventsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoEventsRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoEventsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{43}
 }
 
-func (x *GetDTakoEventsRequest) GetId() int64 {
+func (x *Db_GetDTakoEventsRequest) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type GetDTakoEventsByOperationNoRequest struct {
+type Db_GetDTakoEventsByOperationNoRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OperationNo   string                 `protobuf:"bytes,1,opt,name=operation_no,json=operationNo,proto3" json:"operation_no,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoEventsByOperationNoRequest) Reset() {
-	*x = GetDTakoEventsByOperationNoRequest{}
+func (x *Db_GetDTakoEventsByOperationNoRequest) Reset() {
+	*x = Db_GetDTakoEventsByOperationNoRequest{}
 	mi := &file_db_service_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoEventsByOperationNoRequest) String() string {
+func (x *Db_GetDTakoEventsByOperationNoRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoEventsByOperationNoRequest) ProtoMessage() {}
+func (*Db_GetDTakoEventsByOperationNoRequest) ProtoMessage() {}
 
-func (x *GetDTakoEventsByOperationNoRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoEventsByOperationNoRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3300,19 +3300,19 @@ func (x *GetDTakoEventsByOperationNoRequest) ProtoReflect() protoreflect.Message
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoEventsByOperationNoRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoEventsByOperationNoRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoEventsByOperationNoRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoEventsByOperationNoRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{44}
 }
 
-func (x *GetDTakoEventsByOperationNoRequest) GetOperationNo() string {
+func (x *Db_GetDTakoEventsByOperationNoRequest) GetOperationNo() string {
 	if x != nil {
 		return x.OperationNo
 	}
 	return ""
 }
 
-type ListDTakoEventsRequest struct {
+type Db_ListDTakoEventsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -3321,20 +3321,20 @@ type ListDTakoEventsRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoEventsRequest) Reset() {
-	*x = ListDTakoEventsRequest{}
+func (x *Db_ListDTakoEventsRequest) Reset() {
+	*x = Db_ListDTakoEventsRequest{}
 	mi := &file_db_service_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoEventsRequest) String() string {
+func (x *Db_ListDTakoEventsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoEventsRequest) ProtoMessage() {}
+func (*Db_ListDTakoEventsRequest) ProtoMessage() {}
 
-func (x *ListDTakoEventsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoEventsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3346,53 +3346,53 @@ func (x *ListDTakoEventsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoEventsRequest.ProtoReflect.Descriptor instead.
-func (*ListDTakoEventsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoEventsRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoEventsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{45}
 }
 
-func (x *ListDTakoEventsRequest) GetLimit() int32 {
+func (x *Db_ListDTakoEventsRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListDTakoEventsRequest) GetOffset() int32 {
+func (x *Db_ListDTakoEventsRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *ListDTakoEventsRequest) GetOrderBy() string {
+func (x *Db_ListDTakoEventsRequest) GetOrderBy() string {
 	if x != nil && x.OrderBy != nil {
 		return *x.OrderBy
 	}
 	return ""
 }
 
-type DTakoEventsResponse struct {
+type Db_DTakoEventsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DtakoEvents   *DTakoEvents           `protobuf:"bytes,1,opt,name=dtako_events,json=dtakoEvents,proto3" json:"dtako_events,omitempty"`
+	DtakoEvents   *Db_DTakoEvents        `protobuf:"bytes,1,opt,name=dtako_events,json=dtakoEvents,proto3" json:"dtako_events,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DTakoEventsResponse) Reset() {
-	*x = DTakoEventsResponse{}
+func (x *Db_DTakoEventsResponse) Reset() {
+	*x = Db_DTakoEventsResponse{}
 	mi := &file_db_service_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoEventsResponse) String() string {
+func (x *Db_DTakoEventsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoEventsResponse) ProtoMessage() {}
+func (*Db_DTakoEventsResponse) ProtoMessage() {}
 
-func (x *DTakoEventsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoEventsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3404,40 +3404,40 @@ func (x *DTakoEventsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoEventsResponse.ProtoReflect.Descriptor instead.
-func (*DTakoEventsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoEventsResponse.ProtoReflect.Descriptor instead.
+func (*Db_DTakoEventsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{46}
 }
 
-func (x *DTakoEventsResponse) GetDtakoEvents() *DTakoEvents {
+func (x *Db_DTakoEventsResponse) GetDtakoEvents() *Db_DTakoEvents {
 	if x != nil {
 		return x.DtakoEvents
 	}
 	return nil
 }
 
-type ListDTakoEventsResponse struct {
+type Db_ListDTakoEventsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*DTakoEvents         `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_DTakoEvents      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoEventsResponse) Reset() {
-	*x = ListDTakoEventsResponse{}
+func (x *Db_ListDTakoEventsResponse) Reset() {
+	*x = Db_ListDTakoEventsResponse{}
 	mi := &file_db_service_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoEventsResponse) String() string {
+func (x *Db_ListDTakoEventsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoEventsResponse) ProtoMessage() {}
+func (*Db_ListDTakoEventsResponse) ProtoMessage() {}
 
-func (x *ListDTakoEventsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoEventsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3449,19 +3449,19 @@ func (x *ListDTakoEventsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoEventsResponse.ProtoReflect.Descriptor instead.
-func (*ListDTakoEventsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoEventsResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoEventsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{47}
 }
 
-func (x *ListDTakoEventsResponse) GetItems() []*DTakoEvents {
+func (x *Db_ListDTakoEventsResponse) GetItems() []*Db_DTakoEvents {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListDTakoEventsResponse) GetTotalCount() int32 {
+func (x *Db_ListDTakoEventsResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -3469,27 +3469,27 @@ func (x *ListDTakoEventsResponse) GetTotalCount() int32 {
 }
 
 // DTakoRows用リクエスト/レスポンス
-type GetDTakoRowsRequest struct {
+type Db_GetDTakoRowsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoRowsRequest) Reset() {
-	*x = GetDTakoRowsRequest{}
+func (x *Db_GetDTakoRowsRequest) Reset() {
+	*x = Db_GetDTakoRowsRequest{}
 	mi := &file_db_service_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoRowsRequest) String() string {
+func (x *Db_GetDTakoRowsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoRowsRequest) ProtoMessage() {}
+func (*Db_GetDTakoRowsRequest) ProtoMessage() {}
 
-func (x *GetDTakoRowsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoRowsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3501,39 +3501,39 @@ func (x *GetDTakoRowsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoRowsRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoRowsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoRowsRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoRowsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{48}
 }
 
-func (x *GetDTakoRowsRequest) GetId() string {
+func (x *Db_GetDTakoRowsRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-type GetDTakoRowsByOperationNoRequest struct {
+type Db_GetDTakoRowsByOperationNoRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OperationNo   string                 `protobuf:"bytes,1,opt,name=operation_no,json=operationNo,proto3" json:"operation_no,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoRowsByOperationNoRequest) Reset() {
-	*x = GetDTakoRowsByOperationNoRequest{}
+func (x *Db_GetDTakoRowsByOperationNoRequest) Reset() {
+	*x = Db_GetDTakoRowsByOperationNoRequest{}
 	mi := &file_db_service_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoRowsByOperationNoRequest) String() string {
+func (x *Db_GetDTakoRowsByOperationNoRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoRowsByOperationNoRequest) ProtoMessage() {}
+func (*Db_GetDTakoRowsByOperationNoRequest) ProtoMessage() {}
 
-func (x *GetDTakoRowsByOperationNoRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoRowsByOperationNoRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3545,19 +3545,19 @@ func (x *GetDTakoRowsByOperationNoRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoRowsByOperationNoRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoRowsByOperationNoRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoRowsByOperationNoRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoRowsByOperationNoRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{49}
 }
 
-func (x *GetDTakoRowsByOperationNoRequest) GetOperationNo() string {
+func (x *Db_GetDTakoRowsByOperationNoRequest) GetOperationNo() string {
 	if x != nil {
 		return x.OperationNo
 	}
 	return ""
 }
 
-type ListDTakoRowsRequest struct {
+type Db_ListDTakoRowsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -3566,20 +3566,20 @@ type ListDTakoRowsRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoRowsRequest) Reset() {
-	*x = ListDTakoRowsRequest{}
+func (x *Db_ListDTakoRowsRequest) Reset() {
+	*x = Db_ListDTakoRowsRequest{}
 	mi := &file_db_service_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoRowsRequest) String() string {
+func (x *Db_ListDTakoRowsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoRowsRequest) ProtoMessage() {}
+func (*Db_ListDTakoRowsRequest) ProtoMessage() {}
 
-func (x *ListDTakoRowsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoRowsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3591,53 +3591,53 @@ func (x *ListDTakoRowsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoRowsRequest.ProtoReflect.Descriptor instead.
-func (*ListDTakoRowsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoRowsRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoRowsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{50}
 }
 
-func (x *ListDTakoRowsRequest) GetLimit() int32 {
+func (x *Db_ListDTakoRowsRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListDTakoRowsRequest) GetOffset() int32 {
+func (x *Db_ListDTakoRowsRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *ListDTakoRowsRequest) GetOrderBy() string {
+func (x *Db_ListDTakoRowsRequest) GetOrderBy() string {
 	if x != nil && x.OrderBy != nil {
 		return *x.OrderBy
 	}
 	return ""
 }
 
-type DTakoRowsResponse struct {
+type Db_DTakoRowsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	DtakoRows     *DTakoRows             `protobuf:"bytes,1,opt,name=dtako_rows,json=dtakoRows,proto3" json:"dtako_rows,omitempty"`
+	DtakoRows     *Db_DTakoRows          `protobuf:"bytes,1,opt,name=dtako_rows,json=dtakoRows,proto3" json:"dtako_rows,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DTakoRowsResponse) Reset() {
-	*x = DTakoRowsResponse{}
+func (x *Db_DTakoRowsResponse) Reset() {
+	*x = Db_DTakoRowsResponse{}
 	mi := &file_db_service_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoRowsResponse) String() string {
+func (x *Db_DTakoRowsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoRowsResponse) ProtoMessage() {}
+func (*Db_DTakoRowsResponse) ProtoMessage() {}
 
-func (x *DTakoRowsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoRowsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3649,40 +3649,40 @@ func (x *DTakoRowsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoRowsResponse.ProtoReflect.Descriptor instead.
-func (*DTakoRowsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoRowsResponse.ProtoReflect.Descriptor instead.
+func (*Db_DTakoRowsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{51}
 }
 
-func (x *DTakoRowsResponse) GetDtakoRows() *DTakoRows {
+func (x *Db_DTakoRowsResponse) GetDtakoRows() *Db_DTakoRows {
 	if x != nil {
 		return x.DtakoRows
 	}
 	return nil
 }
 
-type ListDTakoRowsResponse struct {
+type Db_ListDTakoRowsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*DTakoRows           `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_DTakoRows        `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoRowsResponse) Reset() {
-	*x = ListDTakoRowsResponse{}
+func (x *Db_ListDTakoRowsResponse) Reset() {
+	*x = Db_ListDTakoRowsResponse{}
 	mi := &file_db_service_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoRowsResponse) String() string {
+func (x *Db_ListDTakoRowsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoRowsResponse) ProtoMessage() {}
+func (*Db_ListDTakoRowsResponse) ProtoMessage() {}
 
-func (x *ListDTakoRowsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoRowsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3694,19 +3694,19 @@ func (x *ListDTakoRowsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoRowsResponse.ProtoReflect.Descriptor instead.
-func (*ListDTakoRowsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoRowsResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoRowsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{52}
 }
 
-func (x *ListDTakoRowsResponse) GetItems() []*DTakoRows {
+func (x *Db_ListDTakoRowsResponse) GetItems() []*Db_DTakoRows {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListDTakoRowsResponse) GetTotalCount() int32 {
+func (x *Db_ListDTakoRowsResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -3714,27 +3714,27 @@ func (x *ListDTakoRowsResponse) GetTotalCount() int32 {
 }
 
 // ETCNum用リクエスト/レスポンス
-type GetETCNumByETCCardNumRequest struct {
+type Db_GetETCNumByETCCardNumRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	EtcCardNum    string                 `protobuf:"bytes,1,opt,name=etc_card_num,json=etcCardNum,proto3" json:"etc_card_num,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetETCNumByETCCardNumRequest) Reset() {
-	*x = GetETCNumByETCCardNumRequest{}
+func (x *Db_GetETCNumByETCCardNumRequest) Reset() {
+	*x = Db_GetETCNumByETCCardNumRequest{}
 	mi := &file_db_service_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetETCNumByETCCardNumRequest) String() string {
+func (x *Db_GetETCNumByETCCardNumRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetETCNumByETCCardNumRequest) ProtoMessage() {}
+func (*Db_GetETCNumByETCCardNumRequest) ProtoMessage() {}
 
-func (x *GetETCNumByETCCardNumRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetETCNumByETCCardNumRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3746,39 +3746,39 @@ func (x *GetETCNumByETCCardNumRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetETCNumByETCCardNumRequest.ProtoReflect.Descriptor instead.
-func (*GetETCNumByETCCardNumRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetETCNumByETCCardNumRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetETCNumByETCCardNumRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{53}
 }
 
-func (x *GetETCNumByETCCardNumRequest) GetEtcCardNum() string {
+func (x *Db_GetETCNumByETCCardNumRequest) GetEtcCardNum() string {
 	if x != nil {
 		return x.EtcCardNum
 	}
 	return ""
 }
 
-type GetETCNumByCarIDRequest struct {
+type Db_GetETCNumByCarIDRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	CarId         string                 `protobuf:"bytes,1,opt,name=car_id,json=carId,proto3" json:"car_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetETCNumByCarIDRequest) Reset() {
-	*x = GetETCNumByCarIDRequest{}
+func (x *Db_GetETCNumByCarIDRequest) Reset() {
+	*x = Db_GetETCNumByCarIDRequest{}
 	mi := &file_db_service_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetETCNumByCarIDRequest) String() string {
+func (x *Db_GetETCNumByCarIDRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetETCNumByCarIDRequest) ProtoMessage() {}
+func (*Db_GetETCNumByCarIDRequest) ProtoMessage() {}
 
-func (x *GetETCNumByCarIDRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetETCNumByCarIDRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3790,19 +3790,19 @@ func (x *GetETCNumByCarIDRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetETCNumByCarIDRequest.ProtoReflect.Descriptor instead.
-func (*GetETCNumByCarIDRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetETCNumByCarIDRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetETCNumByCarIDRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{54}
 }
 
-func (x *GetETCNumByCarIDRequest) GetCarId() string {
+func (x *Db_GetETCNumByCarIDRequest) GetCarId() string {
 	if x != nil {
 		return x.CarId
 	}
 	return ""
 }
 
-type ListETCNumRequest struct {
+type Db_ListETCNumRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -3810,20 +3810,20 @@ type ListETCNumRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListETCNumRequest) Reset() {
-	*x = ListETCNumRequest{}
+func (x *Db_ListETCNumRequest) Reset() {
+	*x = Db_ListETCNumRequest{}
 	mi := &file_db_service_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListETCNumRequest) String() string {
+func (x *Db_ListETCNumRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListETCNumRequest) ProtoMessage() {}
+func (*Db_ListETCNumRequest) ProtoMessage() {}
 
-func (x *ListETCNumRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListETCNumRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3835,47 +3835,47 @@ func (x *ListETCNumRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListETCNumRequest.ProtoReflect.Descriptor instead.
-func (*ListETCNumRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListETCNumRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListETCNumRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{55}
 }
 
-func (x *ListETCNumRequest) GetLimit() int32 {
+func (x *Db_ListETCNumRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListETCNumRequest) GetOffset() int32 {
+func (x *Db_ListETCNumRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-type ListETCNumResponse struct {
+type Db_ListETCNumResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*ETCNum              `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_ETCNum           `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListETCNumResponse) Reset() {
-	*x = ListETCNumResponse{}
+func (x *Db_ListETCNumResponse) Reset() {
+	*x = Db_ListETCNumResponse{}
 	mi := &file_db_service_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListETCNumResponse) String() string {
+func (x *Db_ListETCNumResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListETCNumResponse) ProtoMessage() {}
+func (*Db_ListETCNumResponse) ProtoMessage() {}
 
-func (x *ListETCNumResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListETCNumResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3887,27 +3887,27 @@ func (x *ListETCNumResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListETCNumResponse.ProtoReflect.Descriptor instead.
-func (*ListETCNumResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListETCNumResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListETCNumResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{56}
 }
 
-func (x *ListETCNumResponse) GetItems() []*ETCNum {
+func (x *Db_ListETCNumResponse) GetItems() []*Db_ETCNum {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListETCNumResponse) GetTotalCount() int32 {
+func (x *Db_ListETCNumResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
 	return 0
 }
 
-// DTakoFerryRowsProd（本番DB）データ
-type DTakoFerryRowsProd struct {
+// db_DTakoFerryRowsProd（本番DB）データ
+type Db_DTakoFerryRowsProd struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	Id                int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	UnkoNo            string                 `protobuf:"bytes,2,opt,name=unko_no,json=unkoNo,proto3" json:"unko_no,omitempty"`
@@ -3941,20 +3941,20 @@ type DTakoFerryRowsProd struct {
 	sizeCache         protoimpl.SizeCache
 }
 
-func (x *DTakoFerryRowsProd) Reset() {
-	*x = DTakoFerryRowsProd{}
+func (x *Db_DTakoFerryRowsProd) Reset() {
+	*x = Db_DTakoFerryRowsProd{}
 	mi := &file_db_service_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoFerryRowsProd) String() string {
+func (x *Db_DTakoFerryRowsProd) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoFerryRowsProd) ProtoMessage() {}
+func (*Db_DTakoFerryRowsProd) ProtoMessage() {}
 
-func (x *DTakoFerryRowsProd) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoFerryRowsProd) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3966,201 +3966,201 @@ func (x *DTakoFerryRowsProd) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoFerryRowsProd.ProtoReflect.Descriptor instead.
-func (*DTakoFerryRowsProd) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoFerryRowsProd.ProtoReflect.Descriptor instead.
+func (*Db_DTakoFerryRowsProd) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{57}
 }
 
-func (x *DTakoFerryRowsProd) GetId() int32 {
+func (x *Db_DTakoFerryRowsProd) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetUnkoNo() string {
+func (x *Db_DTakoFerryRowsProd) GetUnkoNo() string {
 	if x != nil {
 		return x.UnkoNo
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetUnkoDate() string {
+func (x *Db_DTakoFerryRowsProd) GetUnkoDate() string {
 	if x != nil {
 		return x.UnkoDate
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetYomitoriDate() string {
+func (x *Db_DTakoFerryRowsProd) GetYomitoriDate() string {
 	if x != nil {
 		return x.YomitoriDate
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetJigyoshoCd() int32 {
+func (x *Db_DTakoFerryRowsProd) GetJigyoshoCd() int32 {
 	if x != nil {
 		return x.JigyoshoCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetJigyoshoName() string {
+func (x *Db_DTakoFerryRowsProd) GetJigyoshoName() string {
 	if x != nil {
 		return x.JigyoshoName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetSharyoCd() int32 {
+func (x *Db_DTakoFerryRowsProd) GetSharyoCd() int32 {
 	if x != nil {
 		return x.SharyoCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetSharyoName() string {
+func (x *Db_DTakoFerryRowsProd) GetSharyoName() string {
 	if x != nil {
 		return x.SharyoName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetJomuinCd1() int32 {
+func (x *Db_DTakoFerryRowsProd) GetJomuinCd1() int32 {
 	if x != nil {
 		return x.JomuinCd1
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetJomuinName1() string {
+func (x *Db_DTakoFerryRowsProd) GetJomuinName1() string {
 	if x != nil {
 		return x.JomuinName1
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetTaishoJomuinKbn() int32 {
+func (x *Db_DTakoFerryRowsProd) GetTaishoJomuinKbn() int32 {
 	if x != nil {
 		return x.TaishoJomuinKbn
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetKaishiDatetime() string {
+func (x *Db_DTakoFerryRowsProd) GetKaishiDatetime() string {
 	if x != nil {
 		return x.KaishiDatetime
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetShuryoDatetime() string {
+func (x *Db_DTakoFerryRowsProd) GetShuryoDatetime() string {
 	if x != nil {
 		return x.ShuryoDatetime
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetFerryCompanyCd() int32 {
+func (x *Db_DTakoFerryRowsProd) GetFerryCompanyCd() int32 {
 	if x != nil {
 		return x.FerryCompanyCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetFerryCompanyName() string {
+func (x *Db_DTakoFerryRowsProd) GetFerryCompanyName() string {
 	if x != nil {
 		return x.FerryCompanyName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetNoribaCd() int32 {
+func (x *Db_DTakoFerryRowsProd) GetNoribaCd() int32 {
 	if x != nil {
 		return x.NoribaCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetNoribaName() string {
+func (x *Db_DTakoFerryRowsProd) GetNoribaName() string {
 	if x != nil {
 		return x.NoribaName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetBin() string {
+func (x *Db_DTakoFerryRowsProd) GetBin() string {
 	if x != nil {
 		return x.Bin
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetOribaCd() int32 {
+func (x *Db_DTakoFerryRowsProd) GetOribaCd() int32 {
 	if x != nil {
 		return x.OribaCd
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetOribaName() string {
+func (x *Db_DTakoFerryRowsProd) GetOribaName() string {
 	if x != nil {
 		return x.OribaName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetSeisanKbn() int32 {
+func (x *Db_DTakoFerryRowsProd) GetSeisanKbn() int32 {
 	if x != nil {
 		return x.SeisanKbn
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetSeisanKbnName() string {
+func (x *Db_DTakoFerryRowsProd) GetSeisanKbnName() string {
 	if x != nil {
 		return x.SeisanKbnName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetHyojunRyokin() int32 {
+func (x *Db_DTakoFerryRowsProd) GetHyojunRyokin() int32 {
 	if x != nil {
 		return x.HyojunRyokin
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetKeiyakuRyokin() int32 {
+func (x *Db_DTakoFerryRowsProd) GetKeiyakuRyokin() int32 {
 	if x != nil {
 		return x.KeiyakuRyokin
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetKosoShashuKbn() int32 {
+func (x *Db_DTakoFerryRowsProd) GetKosoShashuKbn() int32 {
 	if x != nil {
 		return x.KosoShashuKbn
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetKosoShashuKbnName() string {
+func (x *Db_DTakoFerryRowsProd) GetKosoShashuKbnName() string {
 	if x != nil {
 		return x.KosoShashuKbnName
 	}
 	return ""
 }
 
-func (x *DTakoFerryRowsProd) GetMinashiKyori() int32 {
+func (x *Db_DTakoFerryRowsProd) GetMinashiKyori() int32 {
 	if x != nil {
 		return x.MinashiKyori
 	}
 	return 0
 }
 
-func (x *DTakoFerryRowsProd) GetFerrySrch() string {
+func (x *Db_DTakoFerryRowsProd) GetFerrySrch() string {
 	if x != nil && x.FerrySrch != nil {
 		return *x.FerrySrch
 	}
@@ -4168,27 +4168,27 @@ func (x *DTakoFerryRowsProd) GetFerrySrch() string {
 }
 
 // DTakoFerryRowsProd用リクエスト/レスポンス
-type GetDTakoFerryRowsProdRequest struct {
+type Db_GetDTakoFerryRowsProdRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoFerryRowsProdRequest) Reset() {
-	*x = GetDTakoFerryRowsProdRequest{}
+func (x *Db_GetDTakoFerryRowsProdRequest) Reset() {
+	*x = Db_GetDTakoFerryRowsProdRequest{}
 	mi := &file_db_service_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoFerryRowsProdRequest) String() string {
+func (x *Db_GetDTakoFerryRowsProdRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoFerryRowsProdRequest) ProtoMessage() {}
+func (*Db_GetDTakoFerryRowsProdRequest) ProtoMessage() {}
 
-func (x *GetDTakoFerryRowsProdRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoFerryRowsProdRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4200,39 +4200,39 @@ func (x *GetDTakoFerryRowsProdRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoFerryRowsProdRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoFerryRowsProdRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoFerryRowsProdRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoFerryRowsProdRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{58}
 }
 
-func (x *GetDTakoFerryRowsProdRequest) GetId() int32 {
+func (x *Db_GetDTakoFerryRowsProdRequest) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type GetDTakoFerryRowsProdByUnkoNoRequest struct {
+type Db_GetDTakoFerryRowsProdByUnkoNoRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UnkoNo        string                 `protobuf:"bytes,1,opt,name=unko_no,json=unkoNo,proto3" json:"unko_no,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDTakoFerryRowsProdByUnkoNoRequest) Reset() {
-	*x = GetDTakoFerryRowsProdByUnkoNoRequest{}
+func (x *Db_GetDTakoFerryRowsProdByUnkoNoRequest) Reset() {
+	*x = Db_GetDTakoFerryRowsProdByUnkoNoRequest{}
 	mi := &file_db_service_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDTakoFerryRowsProdByUnkoNoRequest) String() string {
+func (x *Db_GetDTakoFerryRowsProdByUnkoNoRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDTakoFerryRowsProdByUnkoNoRequest) ProtoMessage() {}
+func (*Db_GetDTakoFerryRowsProdByUnkoNoRequest) ProtoMessage() {}
 
-func (x *GetDTakoFerryRowsProdByUnkoNoRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDTakoFerryRowsProdByUnkoNoRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4244,19 +4244,19 @@ func (x *GetDTakoFerryRowsProdByUnkoNoRequest) ProtoReflect() protoreflect.Messa
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDTakoFerryRowsProdByUnkoNoRequest.ProtoReflect.Descriptor instead.
-func (*GetDTakoFerryRowsProdByUnkoNoRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDTakoFerryRowsProdByUnkoNoRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDTakoFerryRowsProdByUnkoNoRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{59}
 }
 
-func (x *GetDTakoFerryRowsProdByUnkoNoRequest) GetUnkoNo() string {
+func (x *Db_GetDTakoFerryRowsProdByUnkoNoRequest) GetUnkoNo() string {
 	if x != nil {
 		return x.UnkoNo
 	}
 	return ""
 }
 
-type ListDTakoFerryRowsProdRequest struct {
+type Db_ListDTakoFerryRowsProdRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -4264,20 +4264,20 @@ type ListDTakoFerryRowsProdRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoFerryRowsProdRequest) Reset() {
-	*x = ListDTakoFerryRowsProdRequest{}
+func (x *Db_ListDTakoFerryRowsProdRequest) Reset() {
+	*x = Db_ListDTakoFerryRowsProdRequest{}
 	mi := &file_db_service_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoFerryRowsProdRequest) String() string {
+func (x *Db_ListDTakoFerryRowsProdRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoFerryRowsProdRequest) ProtoMessage() {}
+func (*Db_ListDTakoFerryRowsProdRequest) ProtoMessage() {}
 
-func (x *ListDTakoFerryRowsProdRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoFerryRowsProdRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4289,46 +4289,46 @@ func (x *ListDTakoFerryRowsProdRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoFerryRowsProdRequest.ProtoReflect.Descriptor instead.
-func (*ListDTakoFerryRowsProdRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoFerryRowsProdRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoFerryRowsProdRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{60}
 }
 
-func (x *ListDTakoFerryRowsProdRequest) GetLimit() int32 {
+func (x *Db_ListDTakoFerryRowsProdRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListDTakoFerryRowsProdRequest) GetOffset() int32 {
+func (x *Db_ListDTakoFerryRowsProdRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-type DTakoFerryRowsProdResponse struct {
+type Db_DTakoFerryRowsProdResponse struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	DtakoFerryRows *DTakoFerryRowsProd    `protobuf:"bytes,1,opt,name=dtako_ferry_rows,json=dtakoFerryRows,proto3" json:"dtako_ferry_rows,omitempty"`
+	DtakoFerryRows *Db_DTakoFerryRowsProd `protobuf:"bytes,1,opt,name=dtako_ferry_rows,json=dtakoFerryRows,proto3" json:"dtako_ferry_rows,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *DTakoFerryRowsProdResponse) Reset() {
-	*x = DTakoFerryRowsProdResponse{}
+func (x *Db_DTakoFerryRowsProdResponse) Reset() {
+	*x = Db_DTakoFerryRowsProdResponse{}
 	mi := &file_db_service_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DTakoFerryRowsProdResponse) String() string {
+func (x *Db_DTakoFerryRowsProdResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DTakoFerryRowsProdResponse) ProtoMessage() {}
+func (*Db_DTakoFerryRowsProdResponse) ProtoMessage() {}
 
-func (x *DTakoFerryRowsProdResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_DTakoFerryRowsProdResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4340,40 +4340,40 @@ func (x *DTakoFerryRowsProdResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DTakoFerryRowsProdResponse.ProtoReflect.Descriptor instead.
-func (*DTakoFerryRowsProdResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DTakoFerryRowsProdResponse.ProtoReflect.Descriptor instead.
+func (*Db_DTakoFerryRowsProdResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{61}
 }
 
-func (x *DTakoFerryRowsProdResponse) GetDtakoFerryRows() *DTakoFerryRowsProd {
+func (x *Db_DTakoFerryRowsProdResponse) GetDtakoFerryRows() *Db_DTakoFerryRowsProd {
 	if x != nil {
 		return x.DtakoFerryRows
 	}
 	return nil
 }
 
-type ListDTakoFerryRowsProdResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*DTakoFerryRowsProd  `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
-	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+type Db_ListDTakoFerryRowsProdResponse struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Items         []*Db_DTakoFerryRowsProd `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	TotalCount    int32                    `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDTakoFerryRowsProdResponse) Reset() {
-	*x = ListDTakoFerryRowsProdResponse{}
+func (x *Db_ListDTakoFerryRowsProdResponse) Reset() {
+	*x = Db_ListDTakoFerryRowsProdResponse{}
 	mi := &file_db_service_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDTakoFerryRowsProdResponse) String() string {
+func (x *Db_ListDTakoFerryRowsProdResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDTakoFerryRowsProdResponse) ProtoMessage() {}
+func (*Db_ListDTakoFerryRowsProdResponse) ProtoMessage() {}
 
-func (x *ListDTakoFerryRowsProdResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDTakoFerryRowsProdResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4385,27 +4385,27 @@ func (x *ListDTakoFerryRowsProdResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDTakoFerryRowsProdResponse.ProtoReflect.Descriptor instead.
-func (*ListDTakoFerryRowsProdResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDTakoFerryRowsProdResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListDTakoFerryRowsProdResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{62}
 }
 
-func (x *ListDTakoFerryRowsProdResponse) GetItems() []*DTakoFerryRowsProd {
+func (x *Db_ListDTakoFerryRowsProdResponse) GetItems() []*Db_DTakoFerryRowsProd {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListDTakoFerryRowsProdResponse) GetTotalCount() int32 {
+func (x *Db_ListDTakoFerryRowsProdResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
 	return 0
 }
 
-// Cars メッセージ
-type Cars struct {
+// db_Cars メッセージ
+type Db_Cars struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Id4             int32                  `protobuf:"varint,2,opt,name=id4,proto3" json:"id4,omitempty"`
@@ -4433,20 +4433,20 @@ type Cars struct {
 	sizeCache       protoimpl.SizeCache
 }
 
-func (x *Cars) Reset() {
-	*x = Cars{}
+func (x *Db_Cars) Reset() {
+	*x = Db_Cars{}
 	mi := &file_db_service_proto_msgTypes[63]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Cars) String() string {
+func (x *Db_Cars) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Cars) ProtoMessage() {}
+func (*Db_Cars) ProtoMessage() {}
 
-func (x *Cars) ProtoReflect() protoreflect.Message {
+func (x *Db_Cars) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[63]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4458,167 +4458,167 @@ func (x *Cars) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Cars.ProtoReflect.Descriptor instead.
-func (*Cars) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_Cars.ProtoReflect.Descriptor instead.
+func (*Db_Cars) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{63}
 }
 
-func (x *Cars) GetId() string {
+func (x *Db_Cars) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *Cars) GetId4() int32 {
+func (x *Db_Cars) GetId4() int32 {
 	if x != nil {
 		return x.Id4
 	}
 	return 0
 }
 
-func (x *Cars) GetName() string {
+func (x *Db_Cars) GetName() string {
 	if x != nil && x.Name != nil {
 		return *x.Name
 	}
 	return ""
 }
 
-func (x *Cars) GetNameR() string {
+func (x *Db_Cars) GetNameR() string {
 	if x != nil && x.NameR != nil {
 		return *x.NameR
 	}
 	return ""
 }
 
-func (x *Cars) GetShashu() string {
+func (x *Db_Cars) GetShashu() string {
 	if x != nil && x.Shashu != nil {
 		return *x.Shashu
 	}
 	return ""
 }
 
-func (x *Cars) GetSekisai() float64 {
+func (x *Db_Cars) GetSekisai() float64 {
 	if x != nil && x.Sekisai != nil {
 		return *x.Sekisai
 	}
 	return 0
 }
 
-func (x *Cars) GetYouseki() float64 {
+func (x *Db_Cars) GetYouseki() float64 {
 	if x != nil && x.Youseki != nil {
 		return *x.Youseki
 	}
 	return 0
 }
 
-func (x *Cars) GetRegDate() string {
+func (x *Db_Cars) GetRegDate() string {
 	if x != nil && x.RegDate != nil {
 		return *x.RegDate
 	}
 	return ""
 }
 
-func (x *Cars) GetNextInspectDate() string {
+func (x *Db_Cars) GetNextInspectDate() string {
 	if x != nil && x.NextInspectDate != nil {
 		return *x.NextInspectDate
 	}
 	return ""
 }
 
-func (x *Cars) GetParchDate() string {
+func (x *Db_Cars) GetParchDate() string {
 	if x != nil && x.ParchDate != nil {
 		return *x.ParchDate
 	}
 	return ""
 }
 
-func (x *Cars) GetScrapDate() string {
+func (x *Db_Cars) GetScrapDate() string {
 	if x != nil && x.ScrapDate != nil {
 		return *x.ScrapDate
 	}
 	return ""
 }
 
-func (x *Cars) GetBumonCodeId() string {
+func (x *Db_Cars) GetBumonCodeId() string {
 	if x != nil && x.BumonCodeId != nil {
 		return *x.BumonCodeId
 	}
 	return ""
 }
 
-func (x *Cars) GetDriverId() int32 {
+func (x *Db_Cars) GetDriverId() int32 {
 	if x != nil && x.DriverId != nil {
 		return *x.DriverId
 	}
 	return 0
 }
 
-func (x *Cars) GetEtc() int32 {
+func (x *Db_Cars) GetEtc() int32 {
 	if x != nil && x.Etc != nil {
 		return *x.Etc
 	}
 	return 0
 }
 
-func (x *Cars) GetDai1() int32 {
+func (x *Db_Cars) GetDai1() int32 {
 	if x != nil {
 		return x.Dai1
 	}
 	return 0
 }
 
-func (x *Cars) GetChu1() int32 {
+func (x *Db_Cars) GetChu1() int32 {
 	if x != nil {
 		return x.Chu1
 	}
 	return 0
 }
 
-func (x *Cars) GetSho1() int32 {
+func (x *Db_Cars) GetSho1() int32 {
 	if x != nil {
 		return x.Sho1
 	}
 	return 0
 }
 
-func (x *Cars) GetDai2() int32 {
+func (x *Db_Cars) GetDai2() int32 {
 	if x != nil {
 		return x.Dai2
 	}
 	return 0
 }
 
-func (x *Cars) GetChu2() int32 {
+func (x *Db_Cars) GetChu2() int32 {
 	if x != nil {
 		return x.Chu2
 	}
 	return 0
 }
 
-func (x *Cars) GetSho2() int32 {
+func (x *Db_Cars) GetSho2() int32 {
 	if x != nil {
 		return x.Sho2
 	}
 	return 0
 }
 
-func (x *Cars) GetDaichusho1() string {
+func (x *Db_Cars) GetDaichusho1() string {
 	if x != nil && x.Daichusho1 != nil {
 		return *x.Daichusho1
 	}
 	return ""
 }
 
-func (x *Cars) GetDaichusho2() string {
+func (x *Db_Cars) GetDaichusho2() string {
 	if x != nil && x.Daichusho2 != nil {
 		return *x.Daichusho2
 	}
 	return ""
 }
 
-// Drivers メッセージ
-type Drivers struct {
+// db_Drivers メッセージ
+type Db_Drivers struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          *string                `protobuf:"bytes,2,opt,name=name,proto3,oneof" json:"name,omitempty"`
@@ -4634,20 +4634,20 @@ type Drivers struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Drivers) Reset() {
-	*x = Drivers{}
+func (x *Db_Drivers) Reset() {
+	*x = Db_Drivers{}
 	mi := &file_db_service_proto_msgTypes[64]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Drivers) String() string {
+func (x *Db_Drivers) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Drivers) ProtoMessage() {}
+func (*Db_Drivers) ProtoMessage() {}
 
-func (x *Drivers) ProtoReflect() protoreflect.Message {
+func (x *Db_Drivers) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[64]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4659,75 +4659,75 @@ func (x *Drivers) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Drivers.ProtoReflect.Descriptor instead.
-func (*Drivers) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_Drivers.ProtoReflect.Descriptor instead.
+func (*Db_Drivers) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{64}
 }
 
-func (x *Drivers) GetId() int32 {
+func (x *Db_Drivers) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *Drivers) GetName() string {
+func (x *Db_Drivers) GetName() string {
 	if x != nil && x.Name != nil {
 		return *x.Name
 	}
 	return ""
 }
 
-func (x *Drivers) GetShainR() string {
+func (x *Db_Drivers) GetShainR() string {
 	if x != nil && x.ShainR != nil {
 		return *x.ShainR
 	}
 	return ""
 }
 
-func (x *Drivers) GetBumon() string {
+func (x *Db_Drivers) GetBumon() string {
 	if x != nil {
 		return x.Bumon
 	}
 	return ""
 }
 
-func (x *Drivers) GetJoinDate() string {
+func (x *Db_Drivers) GetJoinDate() string {
 	if x != nil && x.JoinDate != nil {
 		return *x.JoinDate
 	}
 	return ""
 }
 
-func (x *Drivers) GetRetireDate() string {
+func (x *Db_Drivers) GetRetireDate() string {
 	if x != nil && x.RetireDate != nil {
 		return *x.RetireDate
 	}
 	return ""
 }
 
-func (x *Drivers) GetBunrui1() string {
+func (x *Db_Drivers) GetBunrui1() string {
 	if x != nil && x.Bunrui1 != nil {
 		return *x.Bunrui1
 	}
 	return ""
 }
 
-func (x *Drivers) GetBunrui2() string {
+func (x *Db_Drivers) GetBunrui2() string {
 	if x != nil && x.Bunrui2 != nil {
 		return *x.Bunrui2
 	}
 	return ""
 }
 
-func (x *Drivers) GetKubun() int32 {
+func (x *Db_Drivers) GetKubun() int32 {
 	if x != nil && x.Kubun != nil {
 		return *x.Kubun
 	}
 	return 0
 }
 
-func (x *Drivers) GetKinmuTaikei() int32 {
+func (x *Db_Drivers) GetKinmuTaikei() int32 {
 	if x != nil {
 		return x.KinmuTaikei
 	}
@@ -4735,27 +4735,27 @@ func (x *Drivers) GetKinmuTaikei() int32 {
 }
 
 // Cars用リクエスト/レスポンス
-type GetCarsRequest struct {
+type Db_GetCarsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetCarsRequest) Reset() {
-	*x = GetCarsRequest{}
+func (x *Db_GetCarsRequest) Reset() {
+	*x = Db_GetCarsRequest{}
 	mi := &file_db_service_proto_msgTypes[65]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetCarsRequest) String() string {
+func (x *Db_GetCarsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetCarsRequest) ProtoMessage() {}
+func (*Db_GetCarsRequest) ProtoMessage() {}
 
-func (x *GetCarsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetCarsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[65]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4767,39 +4767,39 @@ func (x *GetCarsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetCarsRequest.ProtoReflect.Descriptor instead.
-func (*GetCarsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetCarsRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetCarsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{65}
 }
 
-func (x *GetCarsRequest) GetId() string {
+func (x *Db_GetCarsRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-type GetCarsByBumonCodeIDRequest struct {
+type Db_GetCarsByBumonCodeIDRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	BumonCodeId   string                 `protobuf:"bytes,1,opt,name=bumon_code_id,json=bumonCodeId,proto3" json:"bumon_code_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetCarsByBumonCodeIDRequest) Reset() {
-	*x = GetCarsByBumonCodeIDRequest{}
+func (x *Db_GetCarsByBumonCodeIDRequest) Reset() {
+	*x = Db_GetCarsByBumonCodeIDRequest{}
 	mi := &file_db_service_proto_msgTypes[66]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetCarsByBumonCodeIDRequest) String() string {
+func (x *Db_GetCarsByBumonCodeIDRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetCarsByBumonCodeIDRequest) ProtoMessage() {}
+func (*Db_GetCarsByBumonCodeIDRequest) ProtoMessage() {}
 
-func (x *GetCarsByBumonCodeIDRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetCarsByBumonCodeIDRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[66]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4811,19 +4811,19 @@ func (x *GetCarsByBumonCodeIDRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetCarsByBumonCodeIDRequest.ProtoReflect.Descriptor instead.
-func (*GetCarsByBumonCodeIDRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetCarsByBumonCodeIDRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetCarsByBumonCodeIDRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{66}
 }
 
-func (x *GetCarsByBumonCodeIDRequest) GetBumonCodeId() string {
+func (x *Db_GetCarsByBumonCodeIDRequest) GetBumonCodeId() string {
 	if x != nil {
 		return x.BumonCodeId
 	}
 	return ""
 }
 
-type ListCarsRequest struct {
+type Db_ListCarsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -4832,20 +4832,20 @@ type ListCarsRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListCarsRequest) Reset() {
-	*x = ListCarsRequest{}
+func (x *Db_ListCarsRequest) Reset() {
+	*x = Db_ListCarsRequest{}
 	mi := &file_db_service_proto_msgTypes[67]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListCarsRequest) String() string {
+func (x *Db_ListCarsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListCarsRequest) ProtoMessage() {}
+func (*Db_ListCarsRequest) ProtoMessage() {}
 
-func (x *ListCarsRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListCarsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[67]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4857,53 +4857,53 @@ func (x *ListCarsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListCarsRequest.ProtoReflect.Descriptor instead.
-func (*ListCarsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListCarsRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListCarsRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{67}
 }
 
-func (x *ListCarsRequest) GetLimit() int32 {
+func (x *Db_ListCarsRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListCarsRequest) GetOffset() int32 {
+func (x *Db_ListCarsRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *ListCarsRequest) GetOrderBy() string {
+func (x *Db_ListCarsRequest) GetOrderBy() string {
 	if x != nil && x.OrderBy != nil {
 		return *x.OrderBy
 	}
 	return ""
 }
 
-type CarsResponse struct {
+type Db_CarsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Cars          *Cars                  `protobuf:"bytes,1,opt,name=cars,proto3" json:"cars,omitempty"`
+	Cars          *Db_Cars               `protobuf:"bytes,1,opt,name=cars,proto3" json:"cars,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CarsResponse) Reset() {
-	*x = CarsResponse{}
+func (x *Db_CarsResponse) Reset() {
+	*x = Db_CarsResponse{}
 	mi := &file_db_service_proto_msgTypes[68]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CarsResponse) String() string {
+func (x *Db_CarsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CarsResponse) ProtoMessage() {}
+func (*Db_CarsResponse) ProtoMessage() {}
 
-func (x *CarsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_CarsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[68]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4915,40 +4915,40 @@ func (x *CarsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CarsResponse.ProtoReflect.Descriptor instead.
-func (*CarsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_CarsResponse.ProtoReflect.Descriptor instead.
+func (*Db_CarsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{68}
 }
 
-func (x *CarsResponse) GetCars() *Cars {
+func (x *Db_CarsResponse) GetCars() *Db_Cars {
 	if x != nil {
 		return x.Cars
 	}
 	return nil
 }
 
-type ListCarsResponse struct {
+type Db_ListCarsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*Cars                `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_Cars             `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListCarsResponse) Reset() {
-	*x = ListCarsResponse{}
+func (x *Db_ListCarsResponse) Reset() {
+	*x = Db_ListCarsResponse{}
 	mi := &file_db_service_proto_msgTypes[69]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListCarsResponse) String() string {
+func (x *Db_ListCarsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListCarsResponse) ProtoMessage() {}
+func (*Db_ListCarsResponse) ProtoMessage() {}
 
-func (x *ListCarsResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListCarsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[69]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4960,19 +4960,19 @@ func (x *ListCarsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListCarsResponse.ProtoReflect.Descriptor instead.
-func (*ListCarsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListCarsResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListCarsResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{69}
 }
 
-func (x *ListCarsResponse) GetItems() []*Cars {
+func (x *Db_ListCarsResponse) GetItems() []*Db_Cars {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListCarsResponse) GetTotalCount() int32 {
+func (x *Db_ListCarsResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -4980,27 +4980,27 @@ func (x *ListCarsResponse) GetTotalCount() int32 {
 }
 
 // Drivers用リクエスト/レスポンス
-type GetDriversRequest struct {
+type Db_GetDriversRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDriversRequest) Reset() {
-	*x = GetDriversRequest{}
+func (x *Db_GetDriversRequest) Reset() {
+	*x = Db_GetDriversRequest{}
 	mi := &file_db_service_proto_msgTypes[70]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDriversRequest) String() string {
+func (x *Db_GetDriversRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDriversRequest) ProtoMessage() {}
+func (*Db_GetDriversRequest) ProtoMessage() {}
 
-func (x *GetDriversRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDriversRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[70]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5012,39 +5012,39 @@ func (x *GetDriversRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDriversRequest.ProtoReflect.Descriptor instead.
-func (*GetDriversRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDriversRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDriversRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{70}
 }
 
-func (x *GetDriversRequest) GetId() int32 {
+func (x *Db_GetDriversRequest) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type GetDriversByBumonRequest struct {
+type Db_GetDriversByBumonRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Bumon         string                 `protobuf:"bytes,1,opt,name=bumon,proto3" json:"bumon,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetDriversByBumonRequest) Reset() {
-	*x = GetDriversByBumonRequest{}
+func (x *Db_GetDriversByBumonRequest) Reset() {
+	*x = Db_GetDriversByBumonRequest{}
 	mi := &file_db_service_proto_msgTypes[71]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetDriversByBumonRequest) String() string {
+func (x *Db_GetDriversByBumonRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetDriversByBumonRequest) ProtoMessage() {}
+func (*Db_GetDriversByBumonRequest) ProtoMessage() {}
 
-func (x *GetDriversByBumonRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetDriversByBumonRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[71]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5056,19 +5056,19 @@ func (x *GetDriversByBumonRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetDriversByBumonRequest.ProtoReflect.Descriptor instead.
-func (*GetDriversByBumonRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetDriversByBumonRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetDriversByBumonRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{71}
 }
 
-func (x *GetDriversByBumonRequest) GetBumon() string {
+func (x *Db_GetDriversByBumonRequest) GetBumon() string {
 	if x != nil {
 		return x.Bumon
 	}
 	return ""
 }
 
-type ListDriversRequest struct {
+type Db_ListDriversRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -5077,20 +5077,20 @@ type ListDriversRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDriversRequest) Reset() {
-	*x = ListDriversRequest{}
+func (x *Db_ListDriversRequest) Reset() {
+	*x = Db_ListDriversRequest{}
 	mi := &file_db_service_proto_msgTypes[72]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDriversRequest) String() string {
+func (x *Db_ListDriversRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDriversRequest) ProtoMessage() {}
+func (*Db_ListDriversRequest) ProtoMessage() {}
 
-func (x *ListDriversRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDriversRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[72]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5102,53 +5102,53 @@ func (x *ListDriversRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDriversRequest.ProtoReflect.Descriptor instead.
-func (*ListDriversRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDriversRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListDriversRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{72}
 }
 
-func (x *ListDriversRequest) GetLimit() int32 {
+func (x *Db_ListDriversRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListDriversRequest) GetOffset() int32 {
+func (x *Db_ListDriversRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *ListDriversRequest) GetOrderBy() string {
+func (x *Db_ListDriversRequest) GetOrderBy() string {
 	if x != nil && x.OrderBy != nil {
 		return *x.OrderBy
 	}
 	return ""
 }
 
-type DriversResponse struct {
+type Db_DriversResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Drivers       *Drivers               `protobuf:"bytes,1,opt,name=drivers,proto3" json:"drivers,omitempty"`
+	Drivers       *Db_Drivers            `protobuf:"bytes,1,opt,name=drivers,proto3" json:"drivers,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DriversResponse) Reset() {
-	*x = DriversResponse{}
+func (x *Db_DriversResponse) Reset() {
+	*x = Db_DriversResponse{}
 	mi := &file_db_service_proto_msgTypes[73]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DriversResponse) String() string {
+func (x *Db_DriversResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DriversResponse) ProtoMessage() {}
+func (*Db_DriversResponse) ProtoMessage() {}
 
-func (x *DriversResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_DriversResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[73]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5160,40 +5160,40 @@ func (x *DriversResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DriversResponse.ProtoReflect.Descriptor instead.
-func (*DriversResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_DriversResponse.ProtoReflect.Descriptor instead.
+func (*Db_DriversResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{73}
 }
 
-func (x *DriversResponse) GetDrivers() *Drivers {
+func (x *Db_DriversResponse) GetDrivers() *Db_Drivers {
 	if x != nil {
 		return x.Drivers
 	}
 	return nil
 }
 
-type ListDriversResponse struct {
+type Db_ListDriversResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*Drivers             `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_Drivers          `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListDriversResponse) Reset() {
-	*x = ListDriversResponse{}
+func (x *Db_ListDriversResponse) Reset() {
+	*x = Db_ListDriversResponse{}
 	mi := &file_db_service_proto_msgTypes[74]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListDriversResponse) String() string {
+func (x *Db_ListDriversResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListDriversResponse) ProtoMessage() {}
+func (*Db_ListDriversResponse) ProtoMessage() {}
 
-func (x *ListDriversResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListDriversResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[74]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5205,27 +5205,27 @@ func (x *ListDriversResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListDriversResponse.ProtoReflect.Descriptor instead.
-func (*ListDriversResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListDriversResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListDriversResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{74}
 }
 
-func (x *ListDriversResponse) GetItems() []*Drivers {
+func (x *Db_ListDriversResponse) GetItems() []*Db_Drivers {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListDriversResponse) GetTotalCount() int32 {
+func (x *Db_ListDriversResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
 	return 0
 }
 
-// UntenNippoMeisai メッセージ（106カラム全て）
-type UntenNippoMeisai struct {
+// db_UntenNippoMeisai メッセージ（106カラム全て）
+type Db_UntenNippoMeisai struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
 	NippoK                string                 `protobuf:"bytes,1,opt,name=nippo_k,json=nippoK,proto3" json:"nippo_k,omitempty"`
 	UnkoNengappi          *string                `protobuf:"bytes,2,opt,name=unko_nengappi,json=unkoNengappi,proto3,oneof" json:"unko_nengappi,omitempty"`
@@ -5337,20 +5337,20 @@ type UntenNippoMeisai struct {
 	sizeCache             protoimpl.SizeCache
 }
 
-func (x *UntenNippoMeisai) Reset() {
-	*x = UntenNippoMeisai{}
+func (x *Db_UntenNippoMeisai) Reset() {
+	*x = Db_UntenNippoMeisai{}
 	mi := &file_db_service_proto_msgTypes[75]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UntenNippoMeisai) String() string {
+func (x *Db_UntenNippoMeisai) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UntenNippoMeisai) ProtoMessage() {}
+func (*Db_UntenNippoMeisai) ProtoMessage() {}
 
-func (x *UntenNippoMeisai) ProtoReflect() protoreflect.Message {
+func (x *Db_UntenNippoMeisai) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[75]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5362,755 +5362,755 @@ func (x *UntenNippoMeisai) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UntenNippoMeisai.ProtoReflect.Descriptor instead.
-func (*UntenNippoMeisai) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_UntenNippoMeisai.ProtoReflect.Descriptor instead.
+func (*Db_UntenNippoMeisai) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{75}
 }
 
-func (x *UntenNippoMeisai) GetNippoK() string {
+func (x *Db_UntenNippoMeisai) GetNippoK() string {
 	if x != nil {
 		return x.NippoK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetUnkoNengappi() string {
+func (x *Db_UntenNippoMeisai) GetUnkoNengappi() string {
 	if x != nil && x.UnkoNengappi != nil {
 		return *x.UnkoNengappi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetHaishaK() string {
+func (x *Db_UntenNippoMeisai) GetHaishaK() string {
 	if x != nil {
 		return x.HaishaK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetSharyoC() string {
+func (x *Db_UntenNippoMeisai) GetSharyoC() string {
 	if x != nil {
 		return x.SharyoC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetSharyoH() string {
+func (x *Db_UntenNippoMeisai) GetSharyoH() string {
 	if x != nil {
 		return x.SharyoH
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetUntenshuC() string {
+func (x *Db_UntenNippoMeisai) GetUntenshuC() string {
 	if x != nil {
 		return x.UntenshuC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetYoshasakiC() string {
+func (x *Db_UntenNippoMeisai) GetYoshasakiC() string {
 	if x != nil {
 		return x.YoshasakiC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetYoshasakiH() string {
+func (x *Db_UntenNippoMeisai) GetYoshasakiH() string {
 	if x != nil {
 		return x.YoshasakiH
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetJoshu1() string {
+func (x *Db_UntenNippoMeisai) GetJoshu1() string {
 	if x != nil {
 		return x.Joshu1
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetJoshu2() string {
+func (x *Db_UntenNippoMeisai) GetJoshu2() string {
 	if x != nil {
 		return x.Joshu2
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetNyuryokuNengappi() string {
+func (x *Db_UntenNippoMeisai) GetNyuryokuNengappi() string {
 	if x != nil && x.NyuryokuNengappi != nil {
 		return *x.NyuryokuNengappi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetShokaiNengappi() string {
+func (x *Db_UntenNippoMeisai) GetShokaiNengappi() string {
 	if x != nil && x.ShokaiNengappi != nil {
 		return *x.ShokaiNengappi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetNyuryokuTantoC() string {
+func (x *Db_UntenNippoMeisai) GetNyuryokuTantoC() string {
 	if x != nil {
 		return x.NyuryokuTantoC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetJuchuNengappi() string {
+func (x *Db_UntenNippoMeisai) GetJuchuNengappi() string {
 	if x != nil && x.JuchuNengappi != nil {
 		return *x.JuchuNengappi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetKanriNengappi() string {
+func (x *Db_UntenNippoMeisai) GetKanriNengappi() string {
 	if x != nil {
 		return x.KanriNengappi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetKanriC() int32 {
+func (x *Db_UntenNippoMeisai) GetKanriC() int32 {
 	if x != nil {
 		return x.KanriC
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetTsumikomiNengappi() string {
+func (x *Db_UntenNippoMeisai) GetTsumikomiNengappi() string {
 	if x != nil && x.TsumikomiNengappi != nil {
 		return *x.TsumikomiNengappi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetNoninNengappi() string {
+func (x *Db_UntenNippoMeisai) GetNoninNengappi() string {
 	if x != nil && x.NoninNengappi != nil {
 		return *x.NoninNengappi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetTsumoiK() string {
+func (x *Db_UntenNippoMeisai) GetTsumoiK() string {
 	if x != nil && x.TsumoiK != nil {
 		return *x.TsumoiK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetShashuC() string {
+func (x *Db_UntenNippoMeisai) GetShashuC() string {
 	if x != nil {
 		return x.ShashuC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetJuchuBumon() string {
+func (x *Db_UntenNippoMeisai) GetJuchuBumon() string {
 	if x != nil {
 		return x.JuchuBumon
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetKadoBumon() string {
+func (x *Db_UntenNippoMeisai) GetKadoBumon() string {
 	if x != nil {
 		return x.KadoBumon
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetUriageK() string {
+func (x *Db_UntenNippoMeisai) GetUriageK() string {
 	if x != nil {
 		return x.UriageK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetUriageShubekiC() string {
+func (x *Db_UntenNippoMeisai) GetUriageShubekiC() string {
 	if x != nil {
 		return x.UriageShubekiC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetSeikyuK() string {
+func (x *Db_UntenNippoMeisai) GetSeikyuK() string {
 	if x != nil {
 		return x.SeikyuK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetDenpyoNo() string {
+func (x *Db_UntenNippoMeisai) GetDenpyoNo() string {
 	if x != nil && x.DenpyoNo != nil {
 		return *x.DenpyoNo
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetTokuisakiC() string {
+func (x *Db_UntenNippoMeisai) GetTokuisakiC() string {
 	if x != nil {
 		return x.TokuisakiC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetTokuisakiH() string {
+func (x *Db_UntenNippoMeisai) GetTokuisakiH() string {
 	if x != nil {
 		return x.TokuisakiH
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetHatchiC() string {
+func (x *Db_UntenNippoMeisai) GetHatchiC() string {
 	if x != nil {
 		return x.HatchiC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetHatchiN() string {
+func (x *Db_UntenNippoMeisai) GetHatchiN() string {
 	if x != nil && x.HatchiN != nil {
 		return *x.HatchiN
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetChakuchiC() string {
+func (x *Db_UntenNippoMeisai) GetChakuchiC() string {
 	if x != nil {
 		return x.ChakuchiC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetChakuchiN() string {
+func (x *Db_UntenNippoMeisai) GetChakuchiN() string {
 	if x != nil && x.ChakuchiN != nil {
 		return *x.ChakuchiN
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetHinmeiC() string {
+func (x *Db_UntenNippoMeisai) GetHinmeiC() string {
 	if x != nil {
 		return x.HinmeiC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetHinmeiH() string {
+func (x *Db_UntenNippoMeisai) GetHinmeiH() string {
 	if x != nil {
 		return x.HinmeiH
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetHinmeiN() string {
+func (x *Db_UntenNippoMeisai) GetHinmeiN() string {
 	if x != nil && x.HinmeiN != nil {
 		return *x.HinmeiN
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetSokoKm() float64 {
+func (x *Db_UntenNippoMeisai) GetSokoKm() float64 {
 	if x != nil {
 		return x.SokoKm
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetJisshaKm() float64 {
+func (x *Db_UntenNippoMeisai) GetJisshaKm() float64 {
 	if x != nil {
 		return x.JisshaKm
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetSeikyuSokoKm() float64 {
+func (x *Db_UntenNippoMeisai) GetSeikyuSokoKm() float64 {
 	if x != nil {
 		return x.SeikyuSokoKm
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetSeikyuJisshaKm() float64 {
+func (x *Db_UntenNippoMeisai) GetSeikyuJisshaKm() float64 {
 	if x != nil {
 		return x.SeikyuJisshaKm
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetSuryo() float64 {
+func (x *Db_UntenNippoMeisai) GetSuryo() float64 {
 	if x != nil {
 		return x.Suryo
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetTani() string {
+func (x *Db_UntenNippoMeisai) GetTani() string {
 	if x != nil && x.Tani != nil {
 		return *x.Tani
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetTonSu() float64 {
+func (x *Db_UntenNippoMeisai) GetTonSu() float64 {
 	if x != nil {
 		return x.TonSu
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetTanka() float64 {
+func (x *Db_UntenNippoMeisai) GetTanka() float64 {
 	if x != nil {
 		return x.Tanka
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetKingaku() int32 {
+func (x *Db_UntenNippoMeisai) GetKingaku() int32 {
 	if x != nil {
 		return x.Kingaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetNebiki() int32 {
+func (x *Db_UntenNippoMeisai) GetNebiki() int32 {
 	if x != nil {
 		return x.Nebiki
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetWarimashi() int32 {
+func (x *Db_UntenNippoMeisai) GetWarimashi() int32 {
 	if x != nil {
 		return x.Warimashi
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetJippi() int32 {
+func (x *Db_UntenNippoMeisai) GetJippi() int32 {
 	if x != nil {
 		return x.Jippi
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaTanka() float64 {
+func (x *Db_UntenNippoMeisai) GetYoshaTanka() float64 {
 	if x != nil {
 		return x.YoshaTanka
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaKingaku() int32 {
+func (x *Db_UntenNippoMeisai) GetYoshaKingaku() int32 {
 	if x != nil {
 		return x.YoshaKingaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaNebiki() int32 {
+func (x *Db_UntenNippoMeisai) GetYoshaNebiki() int32 {
 	if x != nil {
 		return x.YoshaNebiki
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaWarimashi() int32 {
+func (x *Db_UntenNippoMeisai) GetYoshaWarimashi() int32 {
 	if x != nil {
 		return x.YoshaWarimashi
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaJippi() int32 {
+func (x *Db_UntenNippoMeisai) GetYoshaJippi() int32 {
 	if x != nil {
 		return x.YoshaJippi
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetKakuteiK() string {
+func (x *Db_UntenNippoMeisai) GetKakuteiK() string {
 	if x != nil {
 		return x.KakuteiK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetBiko() string {
+func (x *Db_UntenNippoMeisai) GetBiko() string {
 	if x != nil && x.Biko != nil {
 		return *x.Biko
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetUriageNengappi() string {
+func (x *Db_UntenNippoMeisai) GetUriageNengappi() string {
 	if x != nil && x.UriageNengappi != nil {
 		return *x.UriageNengappi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetShiharaiNengappi() string {
+func (x *Db_UntenNippoMeisai) GetShiharaiNengappi() string {
 	if x != nil && x.ShiharaiNengappi != nil {
 		return *x.ShiharaiNengappi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetNyukinYoteibi() string {
+func (x *Db_UntenNippoMeisai) GetNyukinYoteibi() string {
 	if x != nil && x.NyukinYoteibi != nil {
 		return *x.NyukinYoteibi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetShiharaiYoteibi() string {
+func (x *Db_UntenNippoMeisai) GetShiharaiYoteibi() string {
 	if x != nil && x.ShiharaiYoteibi != nil {
 		return *x.ShiharaiYoteibi
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetShohizei() int32 {
+func (x *Db_UntenNippoMeisai) GetShohizei() int32 {
 	if x != nil {
 		return x.Shohizei
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaShohizei() int32 {
+func (x *Db_UntenNippoMeisai) GetYoshaShohizei() int32 {
 	if x != nil {
 		return x.YoshaShohizei
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetZeigaku() int32 {
+func (x *Db_UntenNippoMeisai) GetZeigaku() int32 {
 	if x != nil {
 		return x.Zeigaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetWarimashiZeigaku() int32 {
+func (x *Db_UntenNippoMeisai) GetWarimashiZeigaku() int32 {
 	if x != nil {
 		return x.WarimashiZeigaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetJippiZeigaku() int32 {
+func (x *Db_UntenNippoMeisai) GetJippiZeigaku() int32 {
 	if x != nil {
 		return x.JippiZeigaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaZeigaku() int32 {
+func (x *Db_UntenNippoMeisai) GetYoshaZeigaku() int32 {
 	if x != nil {
 		return x.YoshaZeigaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaWarimashiZeigaku() int32 {
+func (x *Db_UntenNippoMeisai) GetYoshaWarimashiZeigaku() int32 {
 	if x != nil {
 		return x.YoshaWarimashiZeigaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaJippiZeigaku() int32 {
+func (x *Db_UntenNippoMeisai) GetYoshaJippiZeigaku() int32 {
 	if x != nil {
 		return x.YoshaJippiZeigaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetZeinukiKingaku() int32 {
+func (x *Db_UntenNippoMeisai) GetZeinukiKingaku() int32 {
 	if x != nil {
 		return x.ZeinukiKingaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetZeinukiWarimashi() int32 {
+func (x *Db_UntenNippoMeisai) GetZeinukiWarimashi() int32 {
 	if x != nil {
 		return x.ZeinukiWarimashi
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetZeinukiJippi() int32 {
+func (x *Db_UntenNippoMeisai) GetZeinukiJippi() int32 {
 	if x != nil {
 		return x.ZeinukiJippi
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetZeinukiYoshaKingaku() int32 {
+func (x *Db_UntenNippoMeisai) GetZeinukiYoshaKingaku() int32 {
 	if x != nil {
 		return x.ZeinukiYoshaKingaku
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetZeinukiYoshaWarimashi() int32 {
+func (x *Db_UntenNippoMeisai) GetZeinukiYoshaWarimashi() int32 {
 	if x != nil {
 		return x.ZeinukiYoshaWarimashi
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetZeinukiYoshaJippi() int32 {
+func (x *Db_UntenNippoMeisai) GetZeinukiYoshaJippi() int32 {
 	if x != nil {
 		return x.ZeinukiYoshaJippi
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetZeiK() string {
+func (x *Db_UntenNippoMeisai) GetZeiK() string {
 	if x != nil {
 		return x.ZeiK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetYoshaZeiK() string {
+func (x *Db_UntenNippoMeisai) GetYoshaZeiK() string {
 	if x != nil {
 		return x.YoshaZeiK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetZeiritsu() float64 {
+func (x *Db_UntenNippoMeisai) GetZeiritsu() float64 {
 	if x != nil {
 		return x.Zeiritsu
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYoshaZeiritsu() float64 {
+func (x *Db_UntenNippoMeisai) GetYoshaZeiritsu() float64 {
 	if x != nil {
 		return x.YoshaZeiritsu
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetUntenshuUriage() int32 {
+func (x *Db_UntenNippoMeisai) GetUntenshuUriage() int32 {
 	if x != nil {
 		return x.UntenshuUriage
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetJoshu1Uriage() int32 {
+func (x *Db_UntenNippoMeisai) GetJoshu1Uriage() int32 {
 	if x != nil {
 		return x.Joshu1Uriage
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetJoshu2Uriage() int32 {
+func (x *Db_UntenNippoMeisai) GetJoshu2Uriage() int32 {
 	if x != nil {
 		return x.Joshu2Uriage
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYusoShunyuFurikae() int32 {
+func (x *Db_UntenNippoMeisai) GetYusoShunyuFurikae() int32 {
 	if x != nil {
 		return x.YusoShunyuFurikae
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetUriageKingakuFurikae() int32 {
+func (x *Db_UntenNippoMeisai) GetUriageKingakuFurikae() int32 {
 	if x != nil {
 		return x.UriageKingakuFurikae
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetKazeiUriage() int32 {
+func (x *Db_UntenNippoMeisai) GetKazeiUriage() int32 {
 	if x != nil {
 		return x.KazeiUriage
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetHikazeiUriage() int32 {
+func (x *Db_UntenNippoMeisai) GetHikazeiUriage() int32 {
 	if x != nil {
 		return x.HikazeiUriage
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetKazeiShiharai() int32 {
+func (x *Db_UntenNippoMeisai) GetKazeiShiharai() int32 {
 	if x != nil {
 		return x.KazeiShiharai
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetHikazeiShiharai() int32 {
+func (x *Db_UntenNippoMeisai) GetHikazeiShiharai() int32 {
 	if x != nil {
 		return x.HikazeiShiharai
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetHatchiikiC() string {
+func (x *Db_UntenNippoMeisai) GetHatchiikiC() string {
 	if x != nil {
 		return x.HatchiikiC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetChakuchiikiC() string {
+func (x *Db_UntenNippoMeisai) GetChakuchiikiC() string {
 	if x != nil {
 		return x.ChakuchiikiC
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetRikunkyoku() string {
+func (x *Db_UntenNippoMeisai) GetRikunkyoku() string {
 	if x != nil && x.Rikunkyoku != nil {
 		return *x.Rikunkyoku
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetYoseki() float64 {
+func (x *Db_UntenNippoMeisai) GetYoseki() float64 {
 	if x != nil && x.Yoseki != nil {
 		return *x.Yoseki
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetJuryoKakuninTenpushoK() string {
+func (x *Db_UntenNippoMeisai) GetJuryoKakuninTenpushoK() string {
 	if x != nil {
 		return x.JuryoKakuninTenpushoK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetSaishuKoshin() string {
+func (x *Db_UntenNippoMeisai) GetSaishuKoshin() string {
 	if x != nil && x.SaishuKoshin != nil {
 		return *x.SaishuKoshin
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetLc() int32 {
+func (x *Db_UntenNippoMeisai) GetLc() int32 {
 	if x != nil {
 		return x.Lc
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetKoguchiK() string {
+func (x *Db_UntenNippoMeisai) GetKoguchiK() string {
 	if x != nil && x.KoguchiK != nil {
 		return *x.KoguchiK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetUnsoGaishaN() string {
+func (x *Db_UntenNippoMeisai) GetUnsoGaishaN() string {
 	if x != nil && x.UnsoGaishaN != nil {
 		return *x.UnsoGaishaN
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetJomuinN() string {
+func (x *Db_UntenNippoMeisai) GetJomuinN() string {
 	if x != nil && x.JomuinN != nil {
 		return *x.JomuinN
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetRenrakusaki() string {
+func (x *Db_UntenNippoMeisai) GetRenrakusaki() string {
 	if x != nil && x.Renrakusaki != nil {
 		return *x.Renrakusaki
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetTaniJuryo() float64 {
+func (x *Db_UntenNippoMeisai) GetTaniJuryo() float64 {
 	if x != nil && x.TaniJuryo != nil {
 		return *x.TaniJuryo
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetShiharaiKakuteiK() string {
+func (x *Db_UntenNippoMeisai) GetShiharaiKakuteiK() string {
 	if x != nil {
 		return x.ShiharaiKakuteiK
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetBiko2() string {
+func (x *Db_UntenNippoMeisai) GetBiko2() string {
 	if x != nil && x.Biko2 != nil {
 		return *x.Biko2
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetYobi1() float64 {
+func (x *Db_UntenNippoMeisai) GetYobi1() float64 {
 	if x != nil && x.Yobi1 != nil {
 		return *x.Yobi1
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYobi2() float64 {
+func (x *Db_UntenNippoMeisai) GetYobi2() float64 {
 	if x != nil && x.Yobi2 != nil {
 		return *x.Yobi2
 	}
 	return 0
 }
 
-func (x *UntenNippoMeisai) GetYobi3() string {
+func (x *Db_UntenNippoMeisai) GetYobi3() string {
 	if x != nil && x.Yobi3 != nil {
 		return *x.Yobi3
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetYobi4() string {
+func (x *Db_UntenNippoMeisai) GetYobi4() string {
 	if x != nil && x.Yobi4 != nil {
 		return *x.Yobi4
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetYobi5() string {
+func (x *Db_UntenNippoMeisai) GetYobi5() string {
 	if x != nil && x.Yobi5 != nil {
 		return *x.Yobi5
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetYobi6() string {
+func (x *Db_UntenNippoMeisai) GetYobi6() string {
 	if x != nil && x.Yobi6 != nil {
 		return *x.Yobi6
 	}
 	return ""
 }
 
-func (x *UntenNippoMeisai) GetYobi7() string {
+func (x *Db_UntenNippoMeisai) GetYobi7() string {
 	if x != nil && x.Yobi7 != nil {
 		return *x.Yobi7
 	}
 	return ""
 }
 
-// ShainMaster メッセージ（43カラム全て）
-type ShainMaster struct {
+// db_ShainMaster メッセージ（43カラム全て）
+type Db_ShainMaster struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	ShainC            string                 `protobuf:"bytes,1,opt,name=shain_c,json=shainC,proto3" json:"shain_c,omitempty"`
 	ShainN            *string                `protobuf:"bytes,2,opt,name=shain_n,json=shainN,proto3,oneof" json:"shain_n,omitempty"`
@@ -6159,20 +6159,20 @@ type ShainMaster struct {
 	sizeCache         protoimpl.SizeCache
 }
 
-func (x *ShainMaster) Reset() {
-	*x = ShainMaster{}
+func (x *Db_ShainMaster) Reset() {
+	*x = Db_ShainMaster{}
 	mi := &file_db_service_proto_msgTypes[76]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ShainMaster) String() string {
+func (x *Db_ShainMaster) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ShainMaster) ProtoMessage() {}
+func (*Db_ShainMaster) ProtoMessage() {}
 
-func (x *ShainMaster) ProtoReflect() protoreflect.Message {
+func (x *Db_ShainMaster) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[76]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -6184,314 +6184,314 @@ func (x *ShainMaster) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ShainMaster.ProtoReflect.Descriptor instead.
-func (*ShainMaster) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ShainMaster.ProtoReflect.Descriptor instead.
+func (*Db_ShainMaster) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{76}
 }
 
-func (x *ShainMaster) GetShainC() string {
+func (x *Db_ShainMaster) GetShainC() string {
 	if x != nil {
 		return x.ShainC
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetShainN() string {
+func (x *Db_ShainMaster) GetShainN() string {
 	if x != nil && x.ShainN != nil {
 		return *x.ShainN
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetShainR() string {
+func (x *Db_ShainMaster) GetShainR() string {
 	if x != nil && x.ShainR != nil {
 		return *x.ShainR
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetShainF() string {
+func (x *Db_ShainMaster) GetShainF() string {
 	if x != nil && x.ShainF != nil {
 		return *x.ShainF
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetYubinBango() string {
+func (x *Db_ShainMaster) GetYubinBango() string {
 	if x != nil && x.YubinBango != nil {
 		return *x.YubinBango
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetJusho1() string {
+func (x *Db_ShainMaster) GetJusho1() string {
 	if x != nil && x.Jusho1 != nil {
 		return *x.Jusho1
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetJusho2() string {
+func (x *Db_ShainMaster) GetJusho2() string {
 	if x != nil && x.Jusho2 != nil {
 		return *x.Jusho2
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetDenwaBango() string {
+func (x *Db_ShainMaster) GetDenwaBango() string {
 	if x != nil && x.DenwaBango != nil {
 		return *x.DenwaBango
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKeitaiBango() string {
+func (x *Db_ShainMaster) GetKeitaiBango() string {
 	if x != nil && x.KeitaiBango != nil {
 		return *x.KeitaiBango
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetShainK() string {
+func (x *Db_ShainMaster) GetShainK() string {
 	if x != nil {
 		return x.ShainK
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetSeibetsu() string {
+func (x *Db_ShainMaster) GetSeibetsu() string {
 	if x != nil {
 		return x.Seibetsu
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKetsuekigata() string {
+func (x *Db_ShainMaster) GetKetsuekigata() string {
 	if x != nil {
 		return x.Ketsuekigata
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetSeinengappi() string {
+func (x *Db_ShainMaster) GetSeinengappi() string {
 	if x != nil && x.Seinengappi != nil {
 		return *x.Seinengappi
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetNyushaNengappi() string {
+func (x *Db_ShainMaster) GetNyushaNengappi() string {
 	if x != nil && x.NyushaNengappi != nil {
 		return *x.NyushaNengappi
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetTaishokuNengappi() string {
+func (x *Db_ShainMaster) GetTaishokuNengappi() string {
 	if x != nil && x.TaishokuNengappi != nil {
 		return *x.TaishokuNengappi
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetDaiBunrui1() string {
+func (x *Db_ShainMaster) GetDaiBunrui1() string {
 	if x != nil {
 		return x.DaiBunrui1
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetChuBunrui1() string {
+func (x *Db_ShainMaster) GetChuBunrui1() string {
 	if x != nil {
 		return x.ChuBunrui1
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetShoBunrui1() string {
+func (x *Db_ShainMaster) GetShoBunrui1() string {
 	if x != nil {
 		return x.ShoBunrui1
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetDaiBunrui2() string {
+func (x *Db_ShainMaster) GetDaiBunrui2() string {
 	if x != nil {
 		return x.DaiBunrui2
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetChuBunrui2() string {
+func (x *Db_ShainMaster) GetChuBunrui2() string {
 	if x != nil {
 		return x.ChuBunrui2
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetShoBunrui2() string {
+func (x *Db_ShainMaster) GetShoBunrui2() string {
 	if x != nil {
 		return x.ShoBunrui2
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKodanPlate() string {
+func (x *Db_ShainMaster) GetKodanPlate() string {
 	if x != nil && x.KodanPlate != nil {
 		return *x.KodanPlate
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetUriageMokuhyogaku() int32 {
+func (x *Db_ShainMaster) GetUriageMokuhyogaku() int32 {
 	if x != nil {
 		return x.UriageMokuhyogaku
 	}
 	return 0
 }
 
-func (x *ShainMaster) GetUntenMenkyoK() string {
+func (x *Db_ShainMaster) GetUntenMenkyoK() string {
 	if x != nil {
 		return x.UntenMenkyoK
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetMenkyoshoBango() string {
+func (x *Db_ShainMaster) GetMenkyoshoBango() string {
 	if x != nil && x.MenkyoshoBango != nil {
 		return *x.MenkyoshoBango
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetJikaiKoshinbi() string {
+func (x *Db_ShainMaster) GetJikaiKoshinbi() string {
 	if x != nil && x.JikaiKoshinbi != nil {
 		return *x.JikaiKoshinbi
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetJishaYoshaK() string {
+func (x *Db_ShainMaster) GetJishaYoshaK() string {
 	if x != nil {
 		return x.JishaYoshaK
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKeisanK() string {
+func (x *Db_ShainMaster) GetKeisanK() string {
 	if x != nil {
 		return x.KeisanK
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetShiharaiRitsu() float64 {
+func (x *Db_ShainMaster) GetShiharaiRitsu() float64 {
 	if x != nil {
 		return x.ShiharaiRitsu
 	}
 	return 0
 }
 
-func (x *ShainMaster) GetHasuK() string {
+func (x *Db_ShainMaster) GetHasuK() string {
 	if x != nil {
 		return x.HasuK
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetBumonC() string {
+func (x *Db_ShainMaster) GetBumonC() string {
 	if x != nil {
 		return x.BumonC
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetUnchinPatternC() string {
+func (x *Db_ShainMaster) GetUnchinPatternC() string {
 	if x != nil {
 		return x.UnchinPatternC
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKiji1() string {
+func (x *Db_ShainMaster) GetKiji1() string {
 	if x != nil && x.Kiji1 != nil {
 		return *x.Kiji1
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKiji2() string {
+func (x *Db_ShainMaster) GetKiji2() string {
 	if x != nil && x.Kiji2 != nil {
 		return *x.Kiji2
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKiji3() string {
+func (x *Db_ShainMaster) GetKiji3() string {
 	if x != nil && x.Kiji3 != nil {
 		return *x.Kiji3
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKiji4() string {
+func (x *Db_ShainMaster) GetKiji4() string {
 	if x != nil && x.Kiji4 != nil {
 		return *x.Kiji4
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKiji5() string {
+func (x *Db_ShainMaster) GetKiji5() string {
 	if x != nil && x.Kiji5 != nil {
 		return *x.Kiji5
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetYobi1() string {
+func (x *Db_ShainMaster) GetYobi1() string {
 	if x != nil && x.Yobi1 != nil {
 		return *x.Yobi1
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetYobi2() string {
+func (x *Db_ShainMaster) GetYobi2() string {
 	if x != nil && x.Yobi2 != nil {
 		return *x.Yobi2
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetYobi3() string {
+func (x *Db_ShainMaster) GetYobi3() string {
 	if x != nil && x.Yobi3 != nil {
 		return *x.Yobi3
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetYobi4() string {
+func (x *Db_ShainMaster) GetYobi4() string {
 	if x != nil && x.Yobi4 != nil {
 		return *x.Yobi4
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetYobi5() string {
+func (x *Db_ShainMaster) GetYobi5() string {
 	if x != nil && x.Yobi5 != nil {
 		return *x.Yobi5
 	}
 	return ""
 }
 
-func (x *ShainMaster) GetKinmuTaikeiC() string {
+func (x *Db_ShainMaster) GetKinmuTaikeiC() string {
 	if x != nil {
 		return x.KinmuTaikeiC
 	}
 	return ""
 }
 
-// ChiikiMaster メッセージ（4カラム全て）
-type ChiikiMaster struct {
+// db_ChiikiMaster メッセージ（4カラム全て）
+type Db_ChiikiMaster struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ChiikiC       string                 `protobuf:"bytes,1,opt,name=chiiki_c,json=chiikiC,proto3" json:"chiiki_c,omitempty"`
 	ChiikiN       *string                `protobuf:"bytes,2,opt,name=chiiki_n,json=chiikiN,proto3,oneof" json:"chiiki_n,omitempty"`
@@ -6501,20 +6501,20 @@ type ChiikiMaster struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ChiikiMaster) Reset() {
-	*x = ChiikiMaster{}
+func (x *Db_ChiikiMaster) Reset() {
+	*x = Db_ChiikiMaster{}
 	mi := &file_db_service_proto_msgTypes[77]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ChiikiMaster) String() string {
+func (x *Db_ChiikiMaster) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ChiikiMaster) ProtoMessage() {}
+func (*Db_ChiikiMaster) ProtoMessage() {}
 
-func (x *ChiikiMaster) ProtoReflect() protoreflect.Message {
+func (x *Db_ChiikiMaster) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[77]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -6526,41 +6526,41 @@ func (x *ChiikiMaster) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ChiikiMaster.ProtoReflect.Descriptor instead.
-func (*ChiikiMaster) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ChiikiMaster.ProtoReflect.Descriptor instead.
+func (*Db_ChiikiMaster) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{77}
 }
 
-func (x *ChiikiMaster) GetChiikiC() string {
+func (x *Db_ChiikiMaster) GetChiikiC() string {
 	if x != nil {
 		return x.ChiikiC
 	}
 	return ""
 }
 
-func (x *ChiikiMaster) GetChiikiN() string {
+func (x *Db_ChiikiMaster) GetChiikiN() string {
 	if x != nil && x.ChiikiN != nil {
 		return *x.ChiikiN
 	}
 	return ""
 }
 
-func (x *ChiikiMaster) GetChiikiR() string {
+func (x *Db_ChiikiMaster) GetChiikiR() string {
 	if x != nil && x.ChiikiR != nil {
 		return *x.ChiikiR
 	}
 	return ""
 }
 
-func (x *ChiikiMaster) GetChiikiF() string {
+func (x *Db_ChiikiMaster) GetChiikiF() string {
 	if x != nil && x.ChiikiF != nil {
 		return *x.ChiikiF
 	}
 	return ""
 }
 
-// ChikuMaster メッセージ（20カラム全て）
-type ChikuMaster struct {
+// db_ChikuMaster メッセージ（20カラム全て）
+type Db_ChikuMaster struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ChikuC        string                 `protobuf:"bytes,1,opt,name=chiku_c,json=chikuC,proto3" json:"chiku_c,omitempty"`
 	ChikuN        *string                `protobuf:"bytes,2,opt,name=chiku_n,json=chikuN,proto3,oneof" json:"chiku_n,omitempty"`
@@ -6586,20 +6586,20 @@ type ChikuMaster struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ChikuMaster) Reset() {
-	*x = ChikuMaster{}
+func (x *Db_ChikuMaster) Reset() {
+	*x = Db_ChikuMaster{}
 	mi := &file_db_service_proto_msgTypes[78]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ChikuMaster) String() string {
+func (x *Db_ChikuMaster) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ChikuMaster) ProtoMessage() {}
+func (*Db_ChikuMaster) ProtoMessage() {}
 
-func (x *ChikuMaster) ProtoReflect() protoreflect.Message {
+func (x *Db_ChikuMaster) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[78]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -6611,145 +6611,145 @@ func (x *ChikuMaster) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ChikuMaster.ProtoReflect.Descriptor instead.
-func (*ChikuMaster) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ChikuMaster.ProtoReflect.Descriptor instead.
+func (*Db_ChikuMaster) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{78}
 }
 
-func (x *ChikuMaster) GetChikuC() string {
+func (x *Db_ChikuMaster) GetChikuC() string {
 	if x != nil {
 		return x.ChikuC
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetChikuN() string {
+func (x *Db_ChikuMaster) GetChikuN() string {
 	if x != nil && x.ChikuN != nil {
 		return *x.ChikuN
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetChikuR() string {
+func (x *Db_ChikuMaster) GetChikuR() string {
 	if x != nil && x.ChikuR != nil {
 		return *x.ChikuR
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetChikuF() string {
+func (x *Db_ChikuMaster) GetChikuF() string {
 	if x != nil && x.ChikuF != nil {
 		return *x.ChikuF
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetChiikiC() string {
+func (x *Db_ChikuMaster) GetChiikiC() string {
 	if x != nil {
 		return x.ChiikiC
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetYubinBango() string {
+func (x *Db_ChikuMaster) GetYubinBango() string {
 	if x != nil && x.YubinBango != nil {
 		return *x.YubinBango
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetJusho1() string {
+func (x *Db_ChikuMaster) GetJusho1() string {
 	if x != nil && x.Jusho1 != nil {
 		return *x.Jusho1
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetJusho2() string {
+func (x *Db_ChikuMaster) GetJusho2() string {
 	if x != nil && x.Jusho2 != nil {
 		return *x.Jusho2
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetDenwaBango() string {
+func (x *Db_ChikuMaster) GetDenwaBango() string {
 	if x != nil && x.DenwaBango != nil {
 		return *x.DenwaBango
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetFaxBango() string {
+func (x *Db_ChikuMaster) GetFaxBango() string {
 	if x != nil && x.FaxBango != nil {
 		return *x.FaxBango
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetTantosha() string {
+func (x *Db_ChikuMaster) GetTantosha() string {
 	if x != nil && x.Tantosha != nil {
 		return *x.Tantosha
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetYobi1() string {
+func (x *Db_ChikuMaster) GetYobi1() string {
 	if x != nil && x.Yobi1 != nil {
 		return *x.Yobi1
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetYobi2() string {
+func (x *Db_ChikuMaster) GetYobi2() string {
 	if x != nil && x.Yobi2 != nil {
 		return *x.Yobi2
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetYobi3() string {
+func (x *Db_ChikuMaster) GetYobi3() string {
 	if x != nil && x.Yobi3 != nil {
 		return *x.Yobi3
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetYobi4() string {
+func (x *Db_ChikuMaster) GetYobi4() string {
 	if x != nil && x.Yobi4 != nil {
 		return *x.Yobi4
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetYobi5() string {
+func (x *Db_ChikuMaster) GetYobi5() string {
 	if x != nil && x.Yobi5 != nil {
 		return *x.Yobi5
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetDgrTokuisakiC() string {
+func (x *Db_ChikuMaster) GetDgrTokuisakiC() string {
 	if x != nil {
 		return x.DgrTokuisakiC
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetDgrTokuisakiH() string {
+func (x *Db_ChikuMaster) GetDgrTokuisakiH() string {
 	if x != nil {
 		return x.DgrTokuisakiH
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetDgrHinmeiC() string {
+func (x *Db_ChikuMaster) GetDgrHinmeiC() string {
 	if x != nil {
 		return x.DgrHinmeiC
 	}
 	return ""
 }
 
-func (x *ChikuMaster) GetDgrHinmeiH() string {
+func (x *Db_ChikuMaster) GetDgrHinmeiH() string {
 	if x != nil {
 		return x.DgrHinmeiH
 	}
@@ -6757,7 +6757,7 @@ func (x *ChikuMaster) GetDgrHinmeiH() string {
 }
 
 // UntenNippoMeisai用リクエスト/レスポンス
-type GetUntenNippoMeisaiRequest struct {
+type Db_GetUntenNippoMeisaiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	NippoK        string                 `protobuf:"bytes,1,opt,name=nippo_k,json=nippoK,proto3" json:"nippo_k,omitempty"`
 	HaishaK       string                 `protobuf:"bytes,2,opt,name=haisha_k,json=haishaK,proto3" json:"haisha_k,omitempty"`
@@ -6766,20 +6766,20 @@ type GetUntenNippoMeisaiRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetUntenNippoMeisaiRequest) Reset() {
-	*x = GetUntenNippoMeisaiRequest{}
+func (x *Db_GetUntenNippoMeisaiRequest) Reset() {
+	*x = Db_GetUntenNippoMeisaiRequest{}
 	mi := &file_db_service_proto_msgTypes[79]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetUntenNippoMeisaiRequest) String() string {
+func (x *Db_GetUntenNippoMeisaiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetUntenNippoMeisaiRequest) ProtoMessage() {}
+func (*Db_GetUntenNippoMeisaiRequest) ProtoMessage() {}
 
-func (x *GetUntenNippoMeisaiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetUntenNippoMeisaiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[79]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -6791,33 +6791,33 @@ func (x *GetUntenNippoMeisaiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetUntenNippoMeisaiRequest.ProtoReflect.Descriptor instead.
-func (*GetUntenNippoMeisaiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetUntenNippoMeisaiRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetUntenNippoMeisaiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{79}
 }
 
-func (x *GetUntenNippoMeisaiRequest) GetNippoK() string {
+func (x *Db_GetUntenNippoMeisaiRequest) GetNippoK() string {
 	if x != nil {
 		return x.NippoK
 	}
 	return ""
 }
 
-func (x *GetUntenNippoMeisaiRequest) GetHaishaK() string {
+func (x *Db_GetUntenNippoMeisaiRequest) GetHaishaK() string {
 	if x != nil {
 		return x.HaishaK
 	}
 	return ""
 }
 
-func (x *GetUntenNippoMeisaiRequest) GetSharyoC() string {
+func (x *Db_GetUntenNippoMeisaiRequest) GetSharyoC() string {
 	if x != nil {
 		return x.SharyoC
 	}
 	return ""
 }
 
-type GetUntenNippoMeisaiBySharyoCRequest struct {
+type Db_GetUntenNippoMeisaiBySharyoCRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SharyoC       string                 `protobuf:"bytes,1,opt,name=sharyo_c,json=sharyoC,proto3" json:"sharyo_c,omitempty"`
 	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
@@ -6825,20 +6825,20 @@ type GetUntenNippoMeisaiBySharyoCRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetUntenNippoMeisaiBySharyoCRequest) Reset() {
-	*x = GetUntenNippoMeisaiBySharyoCRequest{}
+func (x *Db_GetUntenNippoMeisaiBySharyoCRequest) Reset() {
+	*x = Db_GetUntenNippoMeisaiBySharyoCRequest{}
 	mi := &file_db_service_proto_msgTypes[80]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetUntenNippoMeisaiBySharyoCRequest) String() string {
+func (x *Db_GetUntenNippoMeisaiBySharyoCRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetUntenNippoMeisaiBySharyoCRequest) ProtoMessage() {}
+func (*Db_GetUntenNippoMeisaiBySharyoCRequest) ProtoMessage() {}
 
-func (x *GetUntenNippoMeisaiBySharyoCRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetUntenNippoMeisaiBySharyoCRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[80]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -6850,26 +6850,26 @@ func (x *GetUntenNippoMeisaiBySharyoCRequest) ProtoReflect() protoreflect.Messag
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetUntenNippoMeisaiBySharyoCRequest.ProtoReflect.Descriptor instead.
-func (*GetUntenNippoMeisaiBySharyoCRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetUntenNippoMeisaiBySharyoCRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetUntenNippoMeisaiBySharyoCRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{80}
 }
 
-func (x *GetUntenNippoMeisaiBySharyoCRequest) GetSharyoC() string {
+func (x *Db_GetUntenNippoMeisaiBySharyoCRequest) GetSharyoC() string {
 	if x != nil {
 		return x.SharyoC
 	}
 	return ""
 }
 
-func (x *GetUntenNippoMeisaiBySharyoCRequest) GetLimit() int32 {
+func (x *Db_GetUntenNippoMeisaiBySharyoCRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-type GetUntenNippoMeisaiByDateRangeRequest struct {
+type Db_GetUntenNippoMeisaiByDateRangeRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	StartDate     string                 `protobuf:"bytes,1,opt,name=start_date,json=startDate,proto3" json:"start_date,omitempty"`
 	EndDate       string                 `protobuf:"bytes,2,opt,name=end_date,json=endDate,proto3" json:"end_date,omitempty"`
@@ -6879,20 +6879,20 @@ type GetUntenNippoMeisaiByDateRangeRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetUntenNippoMeisaiByDateRangeRequest) Reset() {
-	*x = GetUntenNippoMeisaiByDateRangeRequest{}
+func (x *Db_GetUntenNippoMeisaiByDateRangeRequest) Reset() {
+	*x = Db_GetUntenNippoMeisaiByDateRangeRequest{}
 	mi := &file_db_service_proto_msgTypes[81]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetUntenNippoMeisaiByDateRangeRequest) String() string {
+func (x *Db_GetUntenNippoMeisaiByDateRangeRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetUntenNippoMeisaiByDateRangeRequest) ProtoMessage() {}
+func (*Db_GetUntenNippoMeisaiByDateRangeRequest) ProtoMessage() {}
 
-func (x *GetUntenNippoMeisaiByDateRangeRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetUntenNippoMeisaiByDateRangeRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[81]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -6904,40 +6904,40 @@ func (x *GetUntenNippoMeisaiByDateRangeRequest) ProtoReflect() protoreflect.Mess
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetUntenNippoMeisaiByDateRangeRequest.ProtoReflect.Descriptor instead.
-func (*GetUntenNippoMeisaiByDateRangeRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetUntenNippoMeisaiByDateRangeRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetUntenNippoMeisaiByDateRangeRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{81}
 }
 
-func (x *GetUntenNippoMeisaiByDateRangeRequest) GetStartDate() string {
+func (x *Db_GetUntenNippoMeisaiByDateRangeRequest) GetStartDate() string {
 	if x != nil {
 		return x.StartDate
 	}
 	return ""
 }
 
-func (x *GetUntenNippoMeisaiByDateRangeRequest) GetEndDate() string {
+func (x *Db_GetUntenNippoMeisaiByDateRangeRequest) GetEndDate() string {
 	if x != nil {
 		return x.EndDate
 	}
 	return ""
 }
 
-func (x *GetUntenNippoMeisaiByDateRangeRequest) GetLimit() int32 {
+func (x *Db_GetUntenNippoMeisaiByDateRangeRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *GetUntenNippoMeisaiByDateRangeRequest) GetOffset() int32 {
+func (x *Db_GetUntenNippoMeisaiByDateRangeRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-type ListUntenNippoMeisaiRequest struct {
+type Db_ListUntenNippoMeisaiRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -6946,20 +6946,20 @@ type ListUntenNippoMeisaiRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListUntenNippoMeisaiRequest) Reset() {
-	*x = ListUntenNippoMeisaiRequest{}
+func (x *Db_ListUntenNippoMeisaiRequest) Reset() {
+	*x = Db_ListUntenNippoMeisaiRequest{}
 	mi := &file_db_service_proto_msgTypes[82]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListUntenNippoMeisaiRequest) String() string {
+func (x *Db_ListUntenNippoMeisaiRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListUntenNippoMeisaiRequest) ProtoMessage() {}
+func (*Db_ListUntenNippoMeisaiRequest) ProtoMessage() {}
 
-func (x *ListUntenNippoMeisaiRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListUntenNippoMeisaiRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[82]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -6971,53 +6971,53 @@ func (x *ListUntenNippoMeisaiRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListUntenNippoMeisaiRequest.ProtoReflect.Descriptor instead.
-func (*ListUntenNippoMeisaiRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListUntenNippoMeisaiRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListUntenNippoMeisaiRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{82}
 }
 
-func (x *ListUntenNippoMeisaiRequest) GetLimit() int32 {
+func (x *Db_ListUntenNippoMeisaiRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListUntenNippoMeisaiRequest) GetOffset() int32 {
+func (x *Db_ListUntenNippoMeisaiRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *ListUntenNippoMeisaiRequest) GetOrderBy() string {
+func (x *Db_ListUntenNippoMeisaiRequest) GetOrderBy() string {
 	if x != nil && x.OrderBy != nil {
 		return *x.OrderBy
 	}
 	return ""
 }
 
-type UntenNippoMeisaiResponse struct {
+type Db_UntenNippoMeisaiResponse struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	UntenNippoMeisai *UntenNippoMeisai      `protobuf:"bytes,1,opt,name=unten_nippo_meisai,json=untenNippoMeisai,proto3" json:"unten_nippo_meisai,omitempty"`
+	UntenNippoMeisai *Db_UntenNippoMeisai   `protobuf:"bytes,1,opt,name=unten_nippo_meisai,json=untenNippoMeisai,proto3" json:"unten_nippo_meisai,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
 
-func (x *UntenNippoMeisaiResponse) Reset() {
-	*x = UntenNippoMeisaiResponse{}
+func (x *Db_UntenNippoMeisaiResponse) Reset() {
+	*x = Db_UntenNippoMeisaiResponse{}
 	mi := &file_db_service_proto_msgTypes[83]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UntenNippoMeisaiResponse) String() string {
+func (x *Db_UntenNippoMeisaiResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UntenNippoMeisaiResponse) ProtoMessage() {}
+func (*Db_UntenNippoMeisaiResponse) ProtoMessage() {}
 
-func (x *UntenNippoMeisaiResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_UntenNippoMeisaiResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[83]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7029,40 +7029,40 @@ func (x *UntenNippoMeisaiResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UntenNippoMeisaiResponse.ProtoReflect.Descriptor instead.
-func (*UntenNippoMeisaiResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_UntenNippoMeisaiResponse.ProtoReflect.Descriptor instead.
+func (*Db_UntenNippoMeisaiResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{83}
 }
 
-func (x *UntenNippoMeisaiResponse) GetUntenNippoMeisai() *UntenNippoMeisai {
+func (x *Db_UntenNippoMeisaiResponse) GetUntenNippoMeisai() *Db_UntenNippoMeisai {
 	if x != nil {
 		return x.UntenNippoMeisai
 	}
 	return nil
 }
 
-type ListUntenNippoMeisaiResponse struct {
+type Db_ListUntenNippoMeisaiResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*UntenNippoMeisai    `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_UntenNippoMeisai `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListUntenNippoMeisaiResponse) Reset() {
-	*x = ListUntenNippoMeisaiResponse{}
+func (x *Db_ListUntenNippoMeisaiResponse) Reset() {
+	*x = Db_ListUntenNippoMeisaiResponse{}
 	mi := &file_db_service_proto_msgTypes[84]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListUntenNippoMeisaiResponse) String() string {
+func (x *Db_ListUntenNippoMeisaiResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListUntenNippoMeisaiResponse) ProtoMessage() {}
+func (*Db_ListUntenNippoMeisaiResponse) ProtoMessage() {}
 
-func (x *ListUntenNippoMeisaiResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListUntenNippoMeisaiResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[84]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7074,19 +7074,19 @@ func (x *ListUntenNippoMeisaiResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListUntenNippoMeisaiResponse.ProtoReflect.Descriptor instead.
-func (*ListUntenNippoMeisaiResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListUntenNippoMeisaiResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListUntenNippoMeisaiResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{84}
 }
 
-func (x *ListUntenNippoMeisaiResponse) GetItems() []*UntenNippoMeisai {
+func (x *Db_ListUntenNippoMeisaiResponse) GetItems() []*Db_UntenNippoMeisai {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListUntenNippoMeisaiResponse) GetTotalCount() int32 {
+func (x *Db_ListUntenNippoMeisaiResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -7094,27 +7094,27 @@ func (x *ListUntenNippoMeisaiResponse) GetTotalCount() int32 {
 }
 
 // ShainMaster用リクエスト/レスポンス
-type GetShainMasterRequest struct {
+type Db_GetShainMasterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ShainC        string                 `protobuf:"bytes,1,opt,name=shain_c,json=shainC,proto3" json:"shain_c,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetShainMasterRequest) Reset() {
-	*x = GetShainMasterRequest{}
+func (x *Db_GetShainMasterRequest) Reset() {
+	*x = Db_GetShainMasterRequest{}
 	mi := &file_db_service_proto_msgTypes[85]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetShainMasterRequest) String() string {
+func (x *Db_GetShainMasterRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetShainMasterRequest) ProtoMessage() {}
+func (*Db_GetShainMasterRequest) ProtoMessage() {}
 
-func (x *GetShainMasterRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetShainMasterRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[85]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7126,39 +7126,39 @@ func (x *GetShainMasterRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetShainMasterRequest.ProtoReflect.Descriptor instead.
-func (*GetShainMasterRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetShainMasterRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetShainMasterRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{85}
 }
 
-func (x *GetShainMasterRequest) GetShainC() string {
+func (x *Db_GetShainMasterRequest) GetShainC() string {
 	if x != nil {
 		return x.ShainC
 	}
 	return ""
 }
 
-type GetShainMasterByBumonCRequest struct {
+type Db_GetShainMasterByBumonCRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	BumonC        string                 `protobuf:"bytes,1,opt,name=bumon_c,json=bumonC,proto3" json:"bumon_c,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetShainMasterByBumonCRequest) Reset() {
-	*x = GetShainMasterByBumonCRequest{}
+func (x *Db_GetShainMasterByBumonCRequest) Reset() {
+	*x = Db_GetShainMasterByBumonCRequest{}
 	mi := &file_db_service_proto_msgTypes[86]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetShainMasterByBumonCRequest) String() string {
+func (x *Db_GetShainMasterByBumonCRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetShainMasterByBumonCRequest) ProtoMessage() {}
+func (*Db_GetShainMasterByBumonCRequest) ProtoMessage() {}
 
-func (x *GetShainMasterByBumonCRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetShainMasterByBumonCRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[86]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7170,19 +7170,19 @@ func (x *GetShainMasterByBumonCRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetShainMasterByBumonCRequest.ProtoReflect.Descriptor instead.
-func (*GetShainMasterByBumonCRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetShainMasterByBumonCRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetShainMasterByBumonCRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{86}
 }
 
-func (x *GetShainMasterByBumonCRequest) GetBumonC() string {
+func (x *Db_GetShainMasterByBumonCRequest) GetBumonC() string {
 	if x != nil {
 		return x.BumonC
 	}
 	return ""
 }
 
-type ListShainMasterRequest struct {
+type Db_ListShainMasterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -7191,20 +7191,20 @@ type ListShainMasterRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListShainMasterRequest) Reset() {
-	*x = ListShainMasterRequest{}
+func (x *Db_ListShainMasterRequest) Reset() {
+	*x = Db_ListShainMasterRequest{}
 	mi := &file_db_service_proto_msgTypes[87]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListShainMasterRequest) String() string {
+func (x *Db_ListShainMasterRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListShainMasterRequest) ProtoMessage() {}
+func (*Db_ListShainMasterRequest) ProtoMessage() {}
 
-func (x *ListShainMasterRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListShainMasterRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[87]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7216,53 +7216,53 @@ func (x *ListShainMasterRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListShainMasterRequest.ProtoReflect.Descriptor instead.
-func (*ListShainMasterRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListShainMasterRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListShainMasterRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{87}
 }
 
-func (x *ListShainMasterRequest) GetLimit() int32 {
+func (x *Db_ListShainMasterRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListShainMasterRequest) GetOffset() int32 {
+func (x *Db_ListShainMasterRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *ListShainMasterRequest) GetOrderBy() string {
+func (x *Db_ListShainMasterRequest) GetOrderBy() string {
 	if x != nil && x.OrderBy != nil {
 		return *x.OrderBy
 	}
 	return ""
 }
 
-type ShainMasterResponse struct {
+type Db_ShainMasterResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ShainMaster   *ShainMaster           `protobuf:"bytes,1,opt,name=shain_master,json=shainMaster,proto3" json:"shain_master,omitempty"`
+	ShainMaster   *Db_ShainMaster        `protobuf:"bytes,1,opt,name=shain_master,json=shainMaster,proto3" json:"shain_master,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ShainMasterResponse) Reset() {
-	*x = ShainMasterResponse{}
+func (x *Db_ShainMasterResponse) Reset() {
+	*x = Db_ShainMasterResponse{}
 	mi := &file_db_service_proto_msgTypes[88]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ShainMasterResponse) String() string {
+func (x *Db_ShainMasterResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ShainMasterResponse) ProtoMessage() {}
+func (*Db_ShainMasterResponse) ProtoMessage() {}
 
-func (x *ShainMasterResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ShainMasterResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[88]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7274,40 +7274,40 @@ func (x *ShainMasterResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ShainMasterResponse.ProtoReflect.Descriptor instead.
-func (*ShainMasterResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ShainMasterResponse.ProtoReflect.Descriptor instead.
+func (*Db_ShainMasterResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{88}
 }
 
-func (x *ShainMasterResponse) GetShainMaster() *ShainMaster {
+func (x *Db_ShainMasterResponse) GetShainMaster() *Db_ShainMaster {
 	if x != nil {
 		return x.ShainMaster
 	}
 	return nil
 }
 
-type ListShainMasterResponse struct {
+type Db_ListShainMasterResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*ShainMaster         `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_ShainMaster      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListShainMasterResponse) Reset() {
-	*x = ListShainMasterResponse{}
+func (x *Db_ListShainMasterResponse) Reset() {
+	*x = Db_ListShainMasterResponse{}
 	mi := &file_db_service_proto_msgTypes[89]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListShainMasterResponse) String() string {
+func (x *Db_ListShainMasterResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListShainMasterResponse) ProtoMessage() {}
+func (*Db_ListShainMasterResponse) ProtoMessage() {}
 
-func (x *ListShainMasterResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListShainMasterResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[89]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7319,19 +7319,19 @@ func (x *ListShainMasterResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListShainMasterResponse.ProtoReflect.Descriptor instead.
-func (*ListShainMasterResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListShainMasterResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListShainMasterResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{89}
 }
 
-func (x *ListShainMasterResponse) GetItems() []*ShainMaster {
+func (x *Db_ListShainMasterResponse) GetItems() []*Db_ShainMaster {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListShainMasterResponse) GetTotalCount() int32 {
+func (x *Db_ListShainMasterResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -7339,27 +7339,27 @@ func (x *ListShainMasterResponse) GetTotalCount() int32 {
 }
 
 // ChiikiMaster用リクエスト/レスポンス
-type GetChiikiMasterRequest struct {
+type Db_GetChiikiMasterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ChiikiC       string                 `protobuf:"bytes,1,opt,name=chiiki_c,json=chiikiC,proto3" json:"chiiki_c,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetChiikiMasterRequest) Reset() {
-	*x = GetChiikiMasterRequest{}
+func (x *Db_GetChiikiMasterRequest) Reset() {
+	*x = Db_GetChiikiMasterRequest{}
 	mi := &file_db_service_proto_msgTypes[90]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetChiikiMasterRequest) String() string {
+func (x *Db_GetChiikiMasterRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetChiikiMasterRequest) ProtoMessage() {}
+func (*Db_GetChiikiMasterRequest) ProtoMessage() {}
 
-func (x *GetChiikiMasterRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetChiikiMasterRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[90]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7371,19 +7371,19 @@ func (x *GetChiikiMasterRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetChiikiMasterRequest.ProtoReflect.Descriptor instead.
-func (*GetChiikiMasterRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetChiikiMasterRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetChiikiMasterRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{90}
 }
 
-func (x *GetChiikiMasterRequest) GetChiikiC() string {
+func (x *Db_GetChiikiMasterRequest) GetChiikiC() string {
 	if x != nil {
 		return x.ChiikiC
 	}
 	return ""
 }
 
-type ListChiikiMasterRequest struct {
+type Db_ListChiikiMasterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -7392,20 +7392,20 @@ type ListChiikiMasterRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListChiikiMasterRequest) Reset() {
-	*x = ListChiikiMasterRequest{}
+func (x *Db_ListChiikiMasterRequest) Reset() {
+	*x = Db_ListChiikiMasterRequest{}
 	mi := &file_db_service_proto_msgTypes[91]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListChiikiMasterRequest) String() string {
+func (x *Db_ListChiikiMasterRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListChiikiMasterRequest) ProtoMessage() {}
+func (*Db_ListChiikiMasterRequest) ProtoMessage() {}
 
-func (x *ListChiikiMasterRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListChiikiMasterRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[91]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7417,53 +7417,53 @@ func (x *ListChiikiMasterRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListChiikiMasterRequest.ProtoReflect.Descriptor instead.
-func (*ListChiikiMasterRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListChiikiMasterRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListChiikiMasterRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{91}
 }
 
-func (x *ListChiikiMasterRequest) GetLimit() int32 {
+func (x *Db_ListChiikiMasterRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListChiikiMasterRequest) GetOffset() int32 {
+func (x *Db_ListChiikiMasterRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *ListChiikiMasterRequest) GetOrderBy() string {
+func (x *Db_ListChiikiMasterRequest) GetOrderBy() string {
 	if x != nil && x.OrderBy != nil {
 		return *x.OrderBy
 	}
 	return ""
 }
 
-type ChiikiMasterResponse struct {
+type Db_ChiikiMasterResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ChiikiMaster  *ChiikiMaster          `protobuf:"bytes,1,opt,name=chiiki_master,json=chiikiMaster,proto3" json:"chiiki_master,omitempty"`
+	ChiikiMaster  *Db_ChiikiMaster       `protobuf:"bytes,1,opt,name=chiiki_master,json=chiikiMaster,proto3" json:"chiiki_master,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ChiikiMasterResponse) Reset() {
-	*x = ChiikiMasterResponse{}
+func (x *Db_ChiikiMasterResponse) Reset() {
+	*x = Db_ChiikiMasterResponse{}
 	mi := &file_db_service_proto_msgTypes[92]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ChiikiMasterResponse) String() string {
+func (x *Db_ChiikiMasterResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ChiikiMasterResponse) ProtoMessage() {}
+func (*Db_ChiikiMasterResponse) ProtoMessage() {}
 
-func (x *ChiikiMasterResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ChiikiMasterResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[92]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7475,40 +7475,40 @@ func (x *ChiikiMasterResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ChiikiMasterResponse.ProtoReflect.Descriptor instead.
-func (*ChiikiMasterResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ChiikiMasterResponse.ProtoReflect.Descriptor instead.
+func (*Db_ChiikiMasterResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{92}
 }
 
-func (x *ChiikiMasterResponse) GetChiikiMaster() *ChiikiMaster {
+func (x *Db_ChiikiMasterResponse) GetChiikiMaster() *Db_ChiikiMaster {
 	if x != nil {
 		return x.ChiikiMaster
 	}
 	return nil
 }
 
-type ListChiikiMasterResponse struct {
+type Db_ListChiikiMasterResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*ChiikiMaster        `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_ChiikiMaster     `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListChiikiMasterResponse) Reset() {
-	*x = ListChiikiMasterResponse{}
+func (x *Db_ListChiikiMasterResponse) Reset() {
+	*x = Db_ListChiikiMasterResponse{}
 	mi := &file_db_service_proto_msgTypes[93]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListChiikiMasterResponse) String() string {
+func (x *Db_ListChiikiMasterResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListChiikiMasterResponse) ProtoMessage() {}
+func (*Db_ListChiikiMasterResponse) ProtoMessage() {}
 
-func (x *ListChiikiMasterResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListChiikiMasterResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[93]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7520,19 +7520,19 @@ func (x *ListChiikiMasterResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListChiikiMasterResponse.ProtoReflect.Descriptor instead.
-func (*ListChiikiMasterResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListChiikiMasterResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListChiikiMasterResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{93}
 }
 
-func (x *ListChiikiMasterResponse) GetItems() []*ChiikiMaster {
+func (x *Db_ListChiikiMasterResponse) GetItems() []*Db_ChiikiMaster {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListChiikiMasterResponse) GetTotalCount() int32 {
+func (x *Db_ListChiikiMasterResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -7540,27 +7540,27 @@ func (x *ListChiikiMasterResponse) GetTotalCount() int32 {
 }
 
 // ChikuMaster用リクエスト/レスポンス
-type GetChikuMasterRequest struct {
+type Db_GetChikuMasterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ChikuC        string                 `protobuf:"bytes,1,opt,name=chiku_c,json=chikuC,proto3" json:"chiku_c,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetChikuMasterRequest) Reset() {
-	*x = GetChikuMasterRequest{}
+func (x *Db_GetChikuMasterRequest) Reset() {
+	*x = Db_GetChikuMasterRequest{}
 	mi := &file_db_service_proto_msgTypes[94]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetChikuMasterRequest) String() string {
+func (x *Db_GetChikuMasterRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetChikuMasterRequest) ProtoMessage() {}
+func (*Db_GetChikuMasterRequest) ProtoMessage() {}
 
-func (x *GetChikuMasterRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetChikuMasterRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[94]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7572,39 +7572,39 @@ func (x *GetChikuMasterRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetChikuMasterRequest.ProtoReflect.Descriptor instead.
-func (*GetChikuMasterRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetChikuMasterRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetChikuMasterRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{94}
 }
 
-func (x *GetChikuMasterRequest) GetChikuC() string {
+func (x *Db_GetChikuMasterRequest) GetChikuC() string {
 	if x != nil {
 		return x.ChikuC
 	}
 	return ""
 }
 
-type GetChikuMasterByChiikiCRequest struct {
+type Db_GetChikuMasterByChiikiCRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ChiikiC       string                 `protobuf:"bytes,1,opt,name=chiiki_c,json=chiikiC,proto3" json:"chiiki_c,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetChikuMasterByChiikiCRequest) Reset() {
-	*x = GetChikuMasterByChiikiCRequest{}
+func (x *Db_GetChikuMasterByChiikiCRequest) Reset() {
+	*x = Db_GetChikuMasterByChiikiCRequest{}
 	mi := &file_db_service_proto_msgTypes[95]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetChikuMasterByChiikiCRequest) String() string {
+func (x *Db_GetChikuMasterByChiikiCRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetChikuMasterByChiikiCRequest) ProtoMessage() {}
+func (*Db_GetChikuMasterByChiikiCRequest) ProtoMessage() {}
 
-func (x *GetChikuMasterByChiikiCRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_GetChikuMasterByChiikiCRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[95]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7616,19 +7616,19 @@ func (x *GetChikuMasterByChiikiCRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetChikuMasterByChiikiCRequest.ProtoReflect.Descriptor instead.
-func (*GetChikuMasterByChiikiCRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_GetChikuMasterByChiikiCRequest.ProtoReflect.Descriptor instead.
+func (*Db_GetChikuMasterByChiikiCRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{95}
 }
 
-func (x *GetChikuMasterByChiikiCRequest) GetChiikiC() string {
+func (x *Db_GetChikuMasterByChiikiCRequest) GetChiikiC() string {
 	if x != nil {
 		return x.ChiikiC
 	}
 	return ""
 }
 
-type ListChikuMasterRequest struct {
+type Db_ListChikuMasterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Limit         int32                  `protobuf:"varint,1,opt,name=limit,proto3" json:"limit,omitempty"`
 	Offset        int32                  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`
@@ -7637,20 +7637,20 @@ type ListChikuMasterRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListChikuMasterRequest) Reset() {
-	*x = ListChikuMasterRequest{}
+func (x *Db_ListChikuMasterRequest) Reset() {
+	*x = Db_ListChikuMasterRequest{}
 	mi := &file_db_service_proto_msgTypes[96]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListChikuMasterRequest) String() string {
+func (x *Db_ListChikuMasterRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListChikuMasterRequest) ProtoMessage() {}
+func (*Db_ListChikuMasterRequest) ProtoMessage() {}
 
-func (x *ListChikuMasterRequest) ProtoReflect() protoreflect.Message {
+func (x *Db_ListChikuMasterRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[96]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7662,53 +7662,53 @@ func (x *ListChikuMasterRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListChikuMasterRequest.ProtoReflect.Descriptor instead.
-func (*ListChikuMasterRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListChikuMasterRequest.ProtoReflect.Descriptor instead.
+func (*Db_ListChikuMasterRequest) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{96}
 }
 
-func (x *ListChikuMasterRequest) GetLimit() int32 {
+func (x *Db_ListChikuMasterRequest) GetLimit() int32 {
 	if x != nil {
 		return x.Limit
 	}
 	return 0
 }
 
-func (x *ListChikuMasterRequest) GetOffset() int32 {
+func (x *Db_ListChikuMasterRequest) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *ListChikuMasterRequest) GetOrderBy() string {
+func (x *Db_ListChikuMasterRequest) GetOrderBy() string {
 	if x != nil && x.OrderBy != nil {
 		return *x.OrderBy
 	}
 	return ""
 }
 
-type ChikuMasterResponse struct {
+type Db_ChikuMasterResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ChikuMaster   *ChikuMaster           `protobuf:"bytes,1,opt,name=chiku_master,json=chikuMaster,proto3" json:"chiku_master,omitempty"`
+	ChikuMaster   *Db_ChikuMaster        `protobuf:"bytes,1,opt,name=chiku_master,json=chikuMaster,proto3" json:"chiku_master,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ChikuMasterResponse) Reset() {
-	*x = ChikuMasterResponse{}
+func (x *Db_ChikuMasterResponse) Reset() {
+	*x = Db_ChikuMasterResponse{}
 	mi := &file_db_service_proto_msgTypes[97]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ChikuMasterResponse) String() string {
+func (x *Db_ChikuMasterResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ChikuMasterResponse) ProtoMessage() {}
+func (*Db_ChikuMasterResponse) ProtoMessage() {}
 
-func (x *ChikuMasterResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ChikuMasterResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[97]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7720,40 +7720,40 @@ func (x *ChikuMasterResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ChikuMasterResponse.ProtoReflect.Descriptor instead.
-func (*ChikuMasterResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ChikuMasterResponse.ProtoReflect.Descriptor instead.
+func (*Db_ChikuMasterResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{97}
 }
 
-func (x *ChikuMasterResponse) GetChikuMaster() *ChikuMaster {
+func (x *Db_ChikuMasterResponse) GetChikuMaster() *Db_ChikuMaster {
 	if x != nil {
 		return x.ChikuMaster
 	}
 	return nil
 }
 
-type ListChikuMasterResponse struct {
+type Db_ListChikuMasterResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Items         []*ChikuMaster         `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	Items         []*Db_ChikuMaster      `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
 	TotalCount    int32                  `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListChikuMasterResponse) Reset() {
-	*x = ListChikuMasterResponse{}
+func (x *Db_ListChikuMasterResponse) Reset() {
+	*x = Db_ListChikuMasterResponse{}
 	mi := &file_db_service_proto_msgTypes[98]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListChikuMasterResponse) String() string {
+func (x *Db_ListChikuMasterResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListChikuMasterResponse) ProtoMessage() {}
+func (*Db_ListChikuMasterResponse) ProtoMessage() {}
 
-func (x *ListChikuMasterResponse) ProtoReflect() protoreflect.Message {
+func (x *Db_ListChikuMasterResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[98]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7765,19 +7765,19 @@ func (x *ListChikuMasterResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListChikuMasterResponse.ProtoReflect.Descriptor instead.
-func (*ListChikuMasterResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_ListChikuMasterResponse.ProtoReflect.Descriptor instead.
+func (*Db_ListChikuMasterResponse) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{98}
 }
 
-func (x *ListChikuMasterResponse) GetItems() []*ChikuMaster {
+func (x *Db_ListChikuMasterResponse) GetItems() []*Db_ChikuMaster {
 	if x != nil {
 		return x.Items
 	}
 	return nil
 }
 
-func (x *ListChikuMasterResponse) GetTotalCount() int32 {
+func (x *Db_ListChikuMasterResponse) GetTotalCount() int32 {
 	if x != nil {
 		return x.TotalCount
 	}
@@ -7785,26 +7785,26 @@ func (x *ListChikuMasterResponse) GetTotalCount() int32 {
 }
 
 // 共通メッセージ
-type Empty struct {
+type Db_Empty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *Empty) Reset() {
-	*x = Empty{}
+func (x *Db_Empty) Reset() {
+	*x = Db_Empty{}
 	mi := &file_db_service_proto_msgTypes[99]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *Empty) String() string {
+func (x *Db_Empty) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*Empty) ProtoMessage() {}
+func (*Db_Empty) ProtoMessage() {}
 
-func (x *Empty) ProtoReflect() protoreflect.Message {
+func (x *Db_Empty) ProtoReflect() protoreflect.Message {
 	mi := &file_db_service_proto_msgTypes[99]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7816,8 +7816,8 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use Empty.ProtoReflect.Descriptor instead.
-func (*Empty) Descriptor() ([]byte, []int) {
+// Deprecated: Use Db_Empty.ProtoReflect.Descriptor instead.
+func (*Db_Empty) Descriptor() ([]byte, []int) {
 	return file_db_service_proto_rawDescGZIP(), []int{99}
 }
 
@@ -7826,8 +7826,8 @@ var File_db_service_proto protoreflect.FileDescriptor
 const file_db_service_proto_rawDesc = "" +
 	"\n" +
 	"\x10db_service.proto\x12\n" +
-	"db_service\x1a\x1cgoogle/api/annotations.proto\"\xb3\x05\n" +
-	"\x10DTakoUriageKeihi\x12\x17\n" +
+	"db_service\x1a\x1cgoogle/api/annotations.proto\"\xb6\x05\n" +
+	"\x13db_DTakoUriageKeihi\x12\x17\n" +
 	"\asrch_id\x18\x01 \x01(\tR\x06srchId\x12\x1a\n" +
 	"\bdatetime\x18\x02 \x01(\tR\bdatetime\x12\x17\n" +
 	"\akeihi_c\x18\x03 \x01(\x05R\x06keihiC\x12\x14\n" +
@@ -7853,8 +7853,8 @@ const file_db_service_proto_rawDesc = "" +
 	"\f_end_srch_idB\x10\n" +
 	"\x0e_end_srch_timeB\x11\n" +
 	"\x0f_end_srch_placeB\t\n" +
-	"\a_manual\"\xc9\x03\n" +
-	"\tETCMeisai\x12\x0e\n" +
+	"\a_manual\"\xcc\x03\n" +
+	"\fdb_ETCMeisai\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x1c\n" +
 	"\adate_fr\x18\x02 \x01(\tH\x00R\x06dateFr\x88\x01\x01\x12\x17\n" +
 	"\adate_to\x18\x03 \x01(\tR\x06dateTo\x12 \n" +
@@ -7878,8 +7878,8 @@ const file_db_service_proto_rawDesc = "" +
 	"\t_price_bfB\v\n" +
 	"\t_descountB\r\n" +
 	"\v_car_id_numB\t\n" +
-	"\a_detail\"\xe5\a\n" +
-	"\x0eDTakoFerryRows\x12\x0e\n" +
+	"\a_detail\"\xe8\a\n" +
+	"\x11db_DTakoFerryRows\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x17\n" +
 	"\aunko_no\x18\x02 \x01(\tR\x06unkoNo\x12\x1b\n" +
 	"\tunko_date\x18\x03 \x01(\tR\bunkoDate\x12#\n" +
@@ -7916,20 +7916,20 @@ const file_db_service_proto_rawDesc = "" +
 	"\rminashi_kyori\x18\x1b \x01(\x05R\fminashiKyori\x12\"\n" +
 	"\n" +
 	"ferry_srch\x18\x1c \x01(\tH\x00R\tferrySrch\x88\x01\x01B\r\n" +
-	"\v_ferry_srch\"k\n" +
-	"\x1dCreateDTakoUriageKeihiRequest\x12J\n" +
-	"\x12dtako_uriage_keihi\x18\x01 \x01(\v2\x1c.db_service.DTakoUriageKeihiR\x10dtakoUriageKeihi\"j\n" +
-	"\x1aGetDTakoUriageKeihiRequest\x12\x17\n" +
+	"\v_ferry_srch\"q\n" +
+	" db_CreateDTakoUriageKeihiRequest\x12M\n" +
+	"\x12dtako_uriage_keihi\x18\x01 \x01(\v2\x1f.db_service.db_DTakoUriageKeihiR\x10dtakoUriageKeihi\"m\n" +
+	"\x1ddb_GetDTakoUriageKeihiRequest\x12\x17\n" +
 	"\asrch_id\x18\x01 \x01(\tR\x06srchId\x12\x1a\n" +
 	"\bdatetime\x18\x02 \x01(\tR\bdatetime\x12\x17\n" +
-	"\akeihi_c\x18\x03 \x01(\x05R\x06keihiC\"k\n" +
-	"\x1dUpdateDTakoUriageKeihiRequest\x12J\n" +
-	"\x12dtako_uriage_keihi\x18\x01 \x01(\v2\x1c.db_service.DTakoUriageKeihiR\x10dtakoUriageKeihi\"m\n" +
-	"\x1dDeleteDTakoUriageKeihiRequest\x12\x17\n" +
+	"\akeihi_c\x18\x03 \x01(\x05R\x06keihiC\"q\n" +
+	" db_UpdateDTakoUriageKeihiRequest\x12M\n" +
+	"\x12dtako_uriage_keihi\x18\x01 \x01(\v2\x1f.db_service.db_DTakoUriageKeihiR\x10dtakoUriageKeihi\"p\n" +
+	" db_DeleteDTakoUriageKeihiRequest\x12\x17\n" +
 	"\asrch_id\x18\x01 \x01(\tR\x06srchId\x12\x1a\n" +
 	"\bdatetime\x18\x02 \x01(\tR\bdatetime\x12\x17\n" +
-	"\akeihi_c\x18\x03 \x01(\x05R\x06keihiC\"\xe3\x01\n" +
-	"\x1bListDTakoUriageKeihiRequest\x12%\n" +
+	"\akeihi_c\x18\x03 \x01(\x05R\x06keihiC\"\xe6\x01\n" +
+	"\x1edb_ListDTakoUriageKeihiRequest\x12%\n" +
 	"\fdtako_row_id\x18\x01 \x01(\tH\x00R\n" +
 	"dtakoRowId\x88\x01\x01\x12\"\n" +
 	"\n" +
@@ -7939,24 +7939,24 @@ const file_db_service_proto_rawDesc = "" +
 	"\x06offset\x18\x05 \x01(\x05R\x06offsetB\x0f\n" +
 	"\r_dtako_row_idB\r\n" +
 	"\v_start_dateB\v\n" +
-	"\t_end_date\"f\n" +
-	"\x18DTakoUriageKeihiResponse\x12J\n" +
-	"\x12dtako_uriage_keihi\x18\x01 \x01(\v2\x1c.db_service.DTakoUriageKeihiR\x10dtakoUriageKeihi\"s\n" +
-	"\x1cListDTakoUriageKeihiResponse\x122\n" +
-	"\x05items\x18\x01 \x03(\v2\x1c.db_service.DTakoUriageKeihiR\x05items\x12\x1f\n" +
+	"\t_end_date\"l\n" +
+	"\x1bdb_DTakoUriageKeihiResponse\x12M\n" +
+	"\x12dtako_uriage_keihi\x18\x01 \x01(\v2\x1f.db_service.db_DTakoUriageKeihiR\x10dtakoUriageKeihi\"y\n" +
+	"\x1fdb_ListDTakoUriageKeihiResponse\x125\n" +
+	"\x05items\x18\x01 \x03(\v2\x1f.db_service.db_DTakoUriageKeihiR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"N\n" +
-	"\x16CreateETCMeisaiRequest\x124\n" +
+	"totalCount\"T\n" +
+	"\x19db_CreateETCMeisaiRequest\x127\n" +
 	"\n" +
-	"etc_meisai\x18\x01 \x01(\v2\x15.db_service.ETCMeisaiR\tetcMeisai\"%\n" +
-	"\x13GetETCMeisaiRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x03R\x02id\"N\n" +
-	"\x16UpdateETCMeisaiRequest\x124\n" +
+	"etc_meisai\x18\x01 \x01(\v2\x18.db_service.db_ETCMeisaiR\tetcMeisai\"(\n" +
+	"\x16db_GetETCMeisaiRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"T\n" +
+	"\x19db_UpdateETCMeisaiRequest\x127\n" +
 	"\n" +
-	"etc_meisai\x18\x01 \x01(\v2\x15.db_service.ETCMeisaiR\tetcMeisai\"(\n" +
-	"\x16DeleteETCMeisaiRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x03R\x02id\"\xc6\x01\n" +
-	"\x14ListETCMeisaiRequest\x12\x17\n" +
+	"etc_meisai\x18\x01 \x01(\v2\x18.db_service.db_ETCMeisaiR\tetcMeisai\"+\n" +
+	"\x19db_DeleteETCMeisaiRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"\xc9\x01\n" +
+	"\x17db_ListETCMeisaiRequest\x12\x17\n" +
 	"\x04hash\x18\x01 \x01(\tH\x00R\x04hash\x88\x01\x01\x12\"\n" +
 	"\n" +
 	"start_date\x18\x02 \x01(\tH\x01R\tstartDate\x88\x01\x01\x12\x1e\n" +
@@ -7965,23 +7965,23 @@ const file_db_service_proto_rawDesc = "" +
 	"\x06offset\x18\x05 \x01(\x05R\x06offsetB\a\n" +
 	"\x05_hashB\r\n" +
 	"\v_start_dateB\v\n" +
-	"\t_end_date\"I\n" +
-	"\x11ETCMeisaiResponse\x124\n" +
+	"\t_end_date\"O\n" +
+	"\x14db_ETCMeisaiResponse\x127\n" +
 	"\n" +
-	"etc_meisai\x18\x01 \x01(\v2\x15.db_service.ETCMeisaiR\tetcMeisai\"e\n" +
-	"\x15ListETCMeisaiResponse\x12+\n" +
-	"\x05items\x18\x01 \x03(\v2\x15.db_service.ETCMeisaiR\x05items\x12\x1f\n" +
+	"etc_meisai\x18\x01 \x01(\v2\x18.db_service.db_ETCMeisaiR\tetcMeisai\"k\n" +
+	"\x18db_ListETCMeisaiResponse\x12.\n" +
+	"\x05items\x18\x01 \x03(\v2\x18.db_service.db_ETCMeisaiR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"c\n" +
-	"\x1bCreateDTakoFerryRowsRequest\x12D\n" +
-	"\x10dtako_ferry_rows\x18\x01 \x01(\v2\x1a.db_service.DTakoFerryRowsR\x0edtakoFerryRows\"*\n" +
-	"\x18GetDTakoFerryRowsRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x05R\x02id\"c\n" +
-	"\x1bUpdateDTakoFerryRowsRequest\x12D\n" +
-	"\x10dtako_ferry_rows\x18\x01 \x01(\v2\x1a.db_service.DTakoFerryRowsR\x0edtakoFerryRows\"-\n" +
-	"\x1bDeleteDTakoFerryRowsRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x05R\x02id\"\xd3\x01\n" +
-	"\x19ListDTakoFerryRowsRequest\x12\x1c\n" +
+	"totalCount\"i\n" +
+	"\x1edb_CreateDTakoFerryRowsRequest\x12G\n" +
+	"\x10dtako_ferry_rows\x18\x01 \x01(\v2\x1d.db_service.db_DTakoFerryRowsR\x0edtakoFerryRows\"-\n" +
+	"\x1bdb_GetDTakoFerryRowsRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\"i\n" +
+	"\x1edb_UpdateDTakoFerryRowsRequest\x12G\n" +
+	"\x10dtako_ferry_rows\x18\x01 \x01(\v2\x1d.db_service.db_DTakoFerryRowsR\x0edtakoFerryRows\"0\n" +
+	"\x1edb_DeleteDTakoFerryRowsRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\"\xd6\x01\n" +
+	"\x1cdb_ListDTakoFerryRowsRequest\x12\x1c\n" +
 	"\aunko_no\x18\x01 \x01(\tH\x00R\x06unkoNo\x88\x01\x01\x12\"\n" +
 	"\n" +
 	"start_date\x18\x02 \x01(\tH\x01R\tstartDate\x88\x01\x01\x12\x1e\n" +
@@ -7991,14 +7991,14 @@ const file_db_service_proto_rawDesc = "" +
 	"\n" +
 	"\b_unko_noB\r\n" +
 	"\v_start_dateB\v\n" +
-	"\t_end_date\"^\n" +
-	"\x16DTakoFerryRowsResponse\x12D\n" +
-	"\x10dtako_ferry_rows\x18\x01 \x01(\v2\x1a.db_service.DTakoFerryRowsR\x0edtakoFerryRows\"o\n" +
-	"\x1aListDTakoFerryRowsResponse\x120\n" +
-	"\x05items\x18\x01 \x03(\v2\x1a.db_service.DTakoFerryRowsR\x05items\x12\x1f\n" +
+	"\t_end_date\"d\n" +
+	"\x19db_DTakoFerryRowsResponse\x12G\n" +
+	"\x10dtako_ferry_rows\x18\x01 \x01(\v2\x1d.db_service.db_DTakoFerryRowsR\x0edtakoFerryRows\"u\n" +
+	"\x1ddb_ListDTakoFerryRowsResponse\x123\n" +
+	"\x05items\x18\x01 \x03(\v2\x1d.db_service.db_DTakoFerryRowsR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"\xee\x01\n" +
-	"\x10ETCMeisaiMapping\x12\x0e\n" +
+	"totalCount\"\xf1\x01\n" +
+	"\x13db_ETCMeisaiMapping\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12&\n" +
 	"\x0fetc_meisai_hash\x18\x02 \x01(\tR\retcMeisaiHash\x12 \n" +
 	"\fdtako_row_id\x18\x03 \x01(\tR\n" +
@@ -8010,34 +8010,34 @@ const file_db_service_proto_rawDesc = "" +
 	"\n" +
 	"created_by\x18\x06 \x01(\tR\tcreatedBy\x12\x19\n" +
 	"\x05notes\x18\a \x01(\tH\x00R\x05notes\x88\x01\x01B\b\n" +
-	"\x06_notes\"k\n" +
-	"\x1dCreateETCMeisaiMappingRequest\x12J\n" +
-	"\x12etc_meisai_mapping\x18\x01 \x01(\v2\x1c.db_service.ETCMeisaiMappingR\x10etcMeisaiMapping\",\n" +
-	"\x1aGetETCMeisaiMappingRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x03R\x02id\"k\n" +
-	"\x1dUpdateETCMeisaiMappingRequest\x12J\n" +
-	"\x12etc_meisai_mapping\x18\x01 \x01(\v2\x1c.db_service.ETCMeisaiMappingR\x10etcMeisaiMapping\"/\n" +
-	"\x1dDeleteETCMeisaiMappingRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x03R\x02id\"\xc4\x01\n" +
-	"\x1bListETCMeisaiMappingRequest\x12+\n" +
+	"\x06_notes\"q\n" +
+	" db_CreateETCMeisaiMappingRequest\x12M\n" +
+	"\x12etc_meisai_mapping\x18\x01 \x01(\v2\x1f.db_service.db_ETCMeisaiMappingR\x10etcMeisaiMapping\"/\n" +
+	"\x1ddb_GetETCMeisaiMappingRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"q\n" +
+	" db_UpdateETCMeisaiMappingRequest\x12M\n" +
+	"\x12etc_meisai_mapping\x18\x01 \x01(\v2\x1f.db_service.db_ETCMeisaiMappingR\x10etcMeisaiMapping\"2\n" +
+	" db_DeleteETCMeisaiMappingRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"\xc7\x01\n" +
+	"\x1edb_ListETCMeisaiMappingRequest\x12+\n" +
 	"\x0fetc_meisai_hash\x18\x01 \x01(\tH\x00R\retcMeisaiHash\x88\x01\x01\x12%\n" +
 	"\fdtako_row_id\x18\x02 \x01(\tH\x01R\n" +
 	"dtakoRowId\x88\x01\x01\x12\x14\n" +
 	"\x05limit\x18\x03 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x04 \x01(\x05R\x06offsetB\x12\n" +
 	"\x10_etc_meisai_hashB\x0f\n" +
-	"\r_dtako_row_id\"f\n" +
-	"\x18ETCMeisaiMappingResponse\x12J\n" +
-	"\x12etc_meisai_mapping\x18\x01 \x01(\v2\x1c.db_service.ETCMeisaiMappingR\x10etcMeisaiMapping\"s\n" +
-	"\x1cListETCMeisaiMappingResponse\x122\n" +
-	"\x05items\x18\x01 \x03(\v2\x1c.db_service.ETCMeisaiMappingR\x05items\x12\x1f\n" +
+	"\r_dtako_row_id\"l\n" +
+	"\x1bdb_ETCMeisaiMappingResponse\x12M\n" +
+	"\x12etc_meisai_mapping\x18\x01 \x01(\v2\x1f.db_service.db_ETCMeisaiMappingR\x10etcMeisaiMapping\"y\n" +
+	"\x1fdb_ListETCMeisaiMappingResponse\x125\n" +
+	"\x05items\x18\x01 \x03(\v2\x1f.db_service.db_ETCMeisaiMappingR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"D\n" +
-	"\x1aGetDTakoRowIDByHashRequest\x12&\n" +
-	"\x0fetc_meisai_hash\x18\x01 \x01(\tR\retcMeisaiHash\"A\n" +
-	"\x1bGetDTakoRowIDByHashResponse\x12\"\n" +
-	"\rdtako_row_ids\x18\x01 \x03(\tR\vdtakoRowIds\"\xaa\x04\n" +
-	"\tDTakoCars\x12\x0e\n" +
+	"totalCount\"G\n" +
+	"\x1ddb_GetDTakoRowIDByHashRequest\x12&\n" +
+	"\x0fetc_meisai_hash\x18\x01 \x01(\tR\retcMeisaiHash\"D\n" +
+	"\x1edb_GetDTakoRowIDByHashResponse\x12\"\n" +
+	"\rdtako_row_ids\x18\x01 \x03(\tR\vdtakoRowIds\"\xad\x04\n" +
+	"\fdb_DTakoCars\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x19\n" +
 	"\bcar_code\x18\x02 \x01(\tR\acarCode\x12\x15\n" +
 	"\x06car_cc\x18\x03 \x01(\tR\x05carCc\x12\x19\n" +
@@ -8060,9 +8060,9 @@ const file_db_service_proto_rawDesc = "" +
 	"car_class4\x18\x0e \x01(\x05R\tcarClass4\x12\x1d\n" +
 	"\n" +
 	"car_class5\x18\x0f \x01(\x05R\tcarClass5\x12%\n" +
-	"\x0eoperation_type\x18\x10 \x01(\x05R\roperationType\"\xf6\n" +
+	"\x0eoperation_type\x18\x10 \x01(\x05R\roperationType\"\xf9\n" +
 	"\n" +
-	"\vDTakoEvents\x12\x0e\n" +
+	"\x0edb_DTakoEvents\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12!\n" +
 	"\foperation_no\x18\x02 \x01(\tR\voperationNo\x12\x1b\n" +
 	"\tread_date\x18\x03 \x01(\tR\breadDate\x12\x19\n" +
@@ -8108,9 +8108,9 @@ const file_db_service_proto_rawDesc = "" +
 	"\x14_start_gps_longitudeB\x10\n" +
 	"\x0e_end_gps_validB\x13\n" +
 	"\x11_end_gps_latitudeB\x14\n" +
-	"\x12_end_gps_longitude\"\x8c\n" +
+	"\x12_end_gps_longitude\"\x8f\n" +
 	"\n" +
-	"\tDTakoRows\x12\x0e\n" +
+	"\fdb_DTakoRows\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
 	"\foperation_no\x18\x02 \x01(\tR\voperationNo\x12\x1b\n" +
 	"\tread_date\x18\x03 \x01(\tR\breadDate\x12%\n" +
@@ -8149,8 +8149,8 @@ const file_db_service_proto_rawDesc = "" +
 	"\r_driver_code1B\x12\n" +
 	"\x10_loaded_distanceB\x18\n" +
 	"\x16_destination_city_nameB\x19\n" +
-	"\x17_destination_place_name\"\xed\x01\n" +
-	"\x06ETCNum\x12 \n" +
+	"\x17_destination_place_name\"\xf0\x01\n" +
+	"\tdb_ETCNum\x12 \n" +
 	"\fetc_card_num\x18\x01 \x01(\tR\n" +
 	"etcCardNum\x12\x15\n" +
 	"\x06car_id\x18\x02 \x01(\tR\x05carId\x12+\n" +
@@ -8160,65 +8160,65 @@ const file_db_service_proto_rawDesc = "" +
 	"\x10_start_date_timeB\x10\n" +
 	"\x0e_due_date_timeB\f\n" +
 	"\n" +
-	"_to_change\"%\n" +
-	"\x13GetDTakoCarsRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x05R\x02id\"9\n" +
-	"\x1cGetDTakoCarsByCarCodeRequest\x12\x19\n" +
-	"\bcar_code\x18\x01 \x01(\tR\acarCode\"D\n" +
-	"\x14ListDTakoCarsRequest\x12\x14\n" +
+	"_to_change\"(\n" +
+	"\x16db_GetDTakoCarsRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\"<\n" +
+	"\x1fdb_GetDTakoCarsByCarCodeRequest\x12\x19\n" +
+	"\bcar_code\x18\x01 \x01(\tR\acarCode\"G\n" +
+	"\x17db_ListDTakoCarsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
-	"\x06offset\x18\x02 \x01(\x05R\x06offset\"I\n" +
-	"\x11DTakoCarsResponse\x124\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\"O\n" +
+	"\x14db_DTakoCarsResponse\x127\n" +
 	"\n" +
-	"dtako_cars\x18\x01 \x01(\v2\x15.db_service.DTakoCarsR\tdtakoCars\"e\n" +
-	"\x15ListDTakoCarsResponse\x12+\n" +
-	"\x05items\x18\x01 \x03(\v2\x15.db_service.DTakoCarsR\x05items\x12\x1f\n" +
+	"dtako_cars\x18\x01 \x01(\v2\x18.db_service.db_DTakoCarsR\tdtakoCars\"k\n" +
+	"\x18db_ListDTakoCarsResponse\x12.\n" +
+	"\x05items\x18\x01 \x03(\v2\x18.db_service.db_DTakoCarsR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"'\n" +
-	"\x15GetDTakoEventsRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x03R\x02id\"G\n" +
-	"\"GetDTakoEventsByOperationNoRequest\x12!\n" +
-	"\foperation_no\x18\x01 \x01(\tR\voperationNo\"s\n" +
-	"\x16ListDTakoEventsRequest\x12\x14\n" +
+	"totalCount\"*\n" +
+	"\x18db_GetDTakoEventsRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"J\n" +
+	"%db_GetDTakoEventsByOperationNoRequest\x12!\n" +
+	"\foperation_no\x18\x01 \x01(\tR\voperationNo\"v\n" +
+	"\x19db_ListDTakoEventsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
 	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
-	"\t_order_by\"Q\n" +
-	"\x13DTakoEventsResponse\x12:\n" +
-	"\fdtako_events\x18\x01 \x01(\v2\x17.db_service.DTakoEventsR\vdtakoEvents\"i\n" +
-	"\x17ListDTakoEventsResponse\x12-\n" +
-	"\x05items\x18\x01 \x03(\v2\x17.db_service.DTakoEventsR\x05items\x12\x1f\n" +
+	"\t_order_by\"W\n" +
+	"\x16db_DTakoEventsResponse\x12=\n" +
+	"\fdtako_events\x18\x01 \x01(\v2\x1a.db_service.db_DTakoEventsR\vdtakoEvents\"o\n" +
+	"\x1adb_ListDTakoEventsResponse\x120\n" +
+	"\x05items\x18\x01 \x03(\v2\x1a.db_service.db_DTakoEventsR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"%\n" +
-	"\x13GetDTakoRowsRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"E\n" +
-	" GetDTakoRowsByOperationNoRequest\x12!\n" +
-	"\foperation_no\x18\x01 \x01(\tR\voperationNo\"q\n" +
-	"\x14ListDTakoRowsRequest\x12\x14\n" +
+	"totalCount\"(\n" +
+	"\x16db_GetDTakoRowsRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"H\n" +
+	"#db_GetDTakoRowsByOperationNoRequest\x12!\n" +
+	"\foperation_no\x18\x01 \x01(\tR\voperationNo\"t\n" +
+	"\x17db_ListDTakoRowsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
 	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
-	"\t_order_by\"I\n" +
-	"\x11DTakoRowsResponse\x124\n" +
+	"\t_order_by\"O\n" +
+	"\x14db_DTakoRowsResponse\x127\n" +
 	"\n" +
-	"dtako_rows\x18\x01 \x01(\v2\x15.db_service.DTakoRowsR\tdtakoRows\"e\n" +
-	"\x15ListDTakoRowsResponse\x12+\n" +
-	"\x05items\x18\x01 \x03(\v2\x15.db_service.DTakoRowsR\x05items\x12\x1f\n" +
+	"dtako_rows\x18\x01 \x01(\v2\x18.db_service.db_DTakoRowsR\tdtakoRows\"k\n" +
+	"\x18db_ListDTakoRowsResponse\x12.\n" +
+	"\x05items\x18\x01 \x03(\v2\x18.db_service.db_DTakoRowsR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"@\n" +
-	"\x1cGetETCNumByETCCardNumRequest\x12 \n" +
+	"totalCount\"C\n" +
+	"\x1fdb_GetETCNumByETCCardNumRequest\x12 \n" +
 	"\fetc_card_num\x18\x01 \x01(\tR\n" +
-	"etcCardNum\"0\n" +
-	"\x17GetETCNumByCarIDRequest\x12\x15\n" +
-	"\x06car_id\x18\x01 \x01(\tR\x05carId\"A\n" +
-	"\x11ListETCNumRequest\x12\x14\n" +
+	"etcCardNum\"3\n" +
+	"\x1adb_GetETCNumByCarIDRequest\x12\x15\n" +
+	"\x06car_id\x18\x01 \x01(\tR\x05carId\"D\n" +
+	"\x14db_ListETCNumRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
-	"\x06offset\x18\x02 \x01(\x05R\x06offset\"_\n" +
-	"\x12ListETCNumResponse\x12(\n" +
-	"\x05items\x18\x01 \x03(\v2\x12.db_service.ETCNumR\x05items\x12\x1f\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\"e\n" +
+	"\x15db_ListETCNumResponse\x12+\n" +
+	"\x05items\x18\x01 \x03(\v2\x15.db_service.db_ETCNumR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"\xe9\a\n" +
-	"\x12DTakoFerryRowsProd\x12\x0e\n" +
+	"totalCount\"\xec\a\n" +
+	"\x15db_DTakoFerryRowsProd\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x17\n" +
 	"\aunko_no\x18\x02 \x01(\tR\x06unkoNo\x12\x1b\n" +
 	"\tunko_date\x18\x03 \x01(\tR\bunkoDate\x12#\n" +
@@ -8255,21 +8255,21 @@ const file_db_service_proto_rawDesc = "" +
 	"\rminashi_kyori\x18\x1b \x01(\x05R\fminashiKyori\x12\"\n" +
 	"\n" +
 	"ferry_srch\x18\x1c \x01(\tH\x00R\tferrySrch\x88\x01\x01B\r\n" +
-	"\v_ferry_srch\".\n" +
-	"\x1cGetDTakoFerryRowsProdRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x05R\x02id\"?\n" +
-	"$GetDTakoFerryRowsProdByUnkoNoRequest\x12\x17\n" +
-	"\aunko_no\x18\x01 \x01(\tR\x06unkoNo\"M\n" +
-	"\x1dListDTakoFerryRowsProdRequest\x12\x14\n" +
+	"\v_ferry_srch\"1\n" +
+	"\x1fdb_GetDTakoFerryRowsProdRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\"B\n" +
+	"'db_GetDTakoFerryRowsProdByUnkoNoRequest\x12\x17\n" +
+	"\aunko_no\x18\x01 \x01(\tR\x06unkoNo\"P\n" +
+	" db_ListDTakoFerryRowsProdRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
-	"\x06offset\x18\x02 \x01(\x05R\x06offset\"f\n" +
-	"\x1aDTakoFerryRowsProdResponse\x12H\n" +
-	"\x10dtako_ferry_rows\x18\x01 \x01(\v2\x1e.db_service.DTakoFerryRowsProdR\x0edtakoFerryRows\"w\n" +
-	"\x1eListDTakoFerryRowsProdResponse\x124\n" +
-	"\x05items\x18\x01 \x03(\v2\x1e.db_service.DTakoFerryRowsProdR\x05items\x12\x1f\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\"l\n" +
+	"\x1ddb_DTakoFerryRowsProdResponse\x12K\n" +
+	"\x10dtako_ferry_rows\x18\x01 \x01(\v2!.db_service.db_DTakoFerryRowsProdR\x0edtakoFerryRows\"}\n" +
+	"!db_ListDTakoFerryRowsProdResponse\x127\n" +
+	"\x05items\x18\x01 \x03(\v2!.db_service.db_DTakoFerryRowsProdR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"\xb3\x06\n" +
-	"\x04Cars\x12\x0e\n" +
+	"totalCount\"\xb6\x06\n" +
+	"\adb_Cars\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x10\n" +
 	"\x03id4\x18\x02 \x01(\x05R\x03id4\x12\x17\n" +
 	"\x04name\x18\x03 \x01(\tH\x00R\x04name\x88\x01\x01\x12\x1a\n" +
@@ -8316,8 +8316,9 @@ const file_db_service_proto_rawDesc = "" +
 	"_driver_idB\x06\n" +
 	"\x04_etcB\r\n" +
 	"\v_daichusho1B\r\n" +
-	"\v_daichusho2\"\xff\x02\n" +
-	"\aDrivers\x12\x0e\n" +
+	"\v_daichusho2\"\x82\x03\n" +
+	"\n" +
+	"db_Drivers\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x17\n" +
 	"\x04name\x18\x02 \x01(\tH\x00R\x04name\x88\x01\x01\x12\x1c\n" +
 	"\ashain_r\x18\x03 \x01(\tH\x01R\x06shainR\x88\x01\x01\x12\x14\n" +
@@ -8340,38 +8341,38 @@ const file_db_service_proto_rawDesc = "" +
 	"\b_bunrui1B\n" +
 	"\n" +
 	"\b_bunrui2B\b\n" +
-	"\x06_kubun\" \n" +
-	"\x0eGetCarsRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"A\n" +
-	"\x1bGetCarsByBumonCodeIDRequest\x12\"\n" +
-	"\rbumon_code_id\x18\x01 \x01(\tR\vbumonCodeId\"l\n" +
-	"\x0fListCarsRequest\x12\x14\n" +
+	"\x06_kubun\"#\n" +
+	"\x11db_GetCarsRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"D\n" +
+	"\x1edb_GetCarsByBumonCodeIDRequest\x12\"\n" +
+	"\rbumon_code_id\x18\x01 \x01(\tR\vbumonCodeId\"o\n" +
+	"\x12db_ListCarsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
 	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
-	"\t_order_by\"4\n" +
-	"\fCarsResponse\x12$\n" +
-	"\x04cars\x18\x01 \x01(\v2\x10.db_service.CarsR\x04cars\"[\n" +
-	"\x10ListCarsResponse\x12&\n" +
-	"\x05items\x18\x01 \x03(\v2\x10.db_service.CarsR\x05items\x12\x1f\n" +
+	"\t_order_by\":\n" +
+	"\x0fdb_CarsResponse\x12'\n" +
+	"\x04cars\x18\x01 \x01(\v2\x13.db_service.db_CarsR\x04cars\"a\n" +
+	"\x13db_ListCarsResponse\x12)\n" +
+	"\x05items\x18\x01 \x03(\v2\x13.db_service.db_CarsR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"#\n" +
-	"\x11GetDriversRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x05R\x02id\"0\n" +
-	"\x18GetDriversByBumonRequest\x12\x14\n" +
-	"\x05bumon\x18\x01 \x01(\tR\x05bumon\"o\n" +
-	"\x12ListDriversRequest\x12\x14\n" +
+	"totalCount\"&\n" +
+	"\x14db_GetDriversRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\"3\n" +
+	"\x1bdb_GetDriversByBumonRequest\x12\x14\n" +
+	"\x05bumon\x18\x01 \x01(\tR\x05bumon\"r\n" +
+	"\x15db_ListDriversRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
 	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
-	"\t_order_by\"@\n" +
-	"\x0fDriversResponse\x12-\n" +
-	"\adrivers\x18\x01 \x01(\v2\x13.db_service.DriversR\adrivers\"a\n" +
-	"\x13ListDriversResponse\x12)\n" +
-	"\x05items\x18\x01 \x03(\v2\x13.db_service.DriversR\x05items\x12\x1f\n" +
+	"\t_order_by\"F\n" +
+	"\x12db_DriversResponse\x120\n" +
+	"\adrivers\x18\x01 \x01(\v2\x16.db_service.db_DriversR\adrivers\"g\n" +
+	"\x16db_ListDriversResponse\x12,\n" +
+	"\x05items\x18\x01 \x03(\v2\x16.db_service.db_DriversR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"\xed \n" +
-	"\x10UntenNippoMeisai\x12\x17\n" +
+	"totalCount\"\xf0 \n" +
+	"\x13db_UntenNippoMeisai\x12\x17\n" +
 	"\anippo_k\x18\x01 \x01(\tR\x06nippoK\x12(\n" +
 	"\runko_nengappi\x18\x02 \x01(\tH\x00R\funkoNengappi\x88\x01\x01\x12\x19\n" +
 	"\bhaisha_k\x18\x03 \x01(\tR\ahaishaK\x12\x19\n" +
@@ -8529,8 +8530,8 @@ const file_db_service_proto_rawDesc = "" +
 	"\x06_yobi4B\b\n" +
 	"\x06_yobi5B\b\n" +
 	"\x06_yobi6B\b\n" +
-	"\x06_yobi7\"\xdd\r\n" +
-	"\vShainMaster\x12\x17\n" +
+	"\x06_yobi7\"\xe0\r\n" +
+	"\x0edb_ShainMaster\x12\x17\n" +
 	"\ashain_c\x18\x01 \x01(\tR\x06shainC\x12\x1c\n" +
 	"\ashain_n\x18\x02 \x01(\tH\x00R\x06shainN\x88\x01\x01\x12\x1c\n" +
 	"\ashain_r\x18\x03 \x01(\tH\x01R\x06shainR\x88\x01\x01\x12\x1c\n" +
@@ -8611,16 +8612,16 @@ const file_db_service_proto_rawDesc = "" +
 	"\x06_yobi2B\b\n" +
 	"\x06_yobi3B\b\n" +
 	"\x06_yobi4B\b\n" +
-	"\x06_yobi5\"\xb0\x01\n" +
-	"\fChiikiMaster\x12\x19\n" +
+	"\x06_yobi5\"\xb3\x01\n" +
+	"\x0fdb_ChiikiMaster\x12\x19\n" +
 	"\bchiiki_c\x18\x01 \x01(\tR\achiikiC\x12\x1e\n" +
 	"\bchiiki_n\x18\x02 \x01(\tH\x00R\achiikiN\x88\x01\x01\x12\x1e\n" +
 	"\bchiiki_r\x18\x03 \x01(\tH\x01R\achiikiR\x88\x01\x01\x12\x1e\n" +
 	"\bchiiki_f\x18\x04 \x01(\tH\x02R\achiikiF\x88\x01\x01B\v\n" +
 	"\t_chiiki_nB\v\n" +
 	"\t_chiiki_rB\v\n" +
-	"\t_chiiki_f\"\xa6\x06\n" +
-	"\vChikuMaster\x12\x17\n" +
+	"\t_chiiki_f\"\xa9\x06\n" +
+	"\x0edb_ChikuMaster\x12\x17\n" +
 	"\achiku_c\x18\x01 \x01(\tR\x06chikuC\x12\x1c\n" +
 	"\achiku_n\x18\x02 \x01(\tH\x00R\x06chikuN\x88\x01\x01\x12\x1c\n" +
 	"\achiku_r\x18\x03 \x01(\tH\x01R\x06chikuR\x88\x01\x01\x12\x1c\n" +
@@ -8664,148 +8665,149 @@ const file_db_service_proto_rawDesc = "" +
 	"\x06_yobi2B\b\n" +
 	"\x06_yobi3B\b\n" +
 	"\x06_yobi4B\b\n" +
-	"\x06_yobi5\"k\n" +
-	"\x1aGetUntenNippoMeisaiRequest\x12\x17\n" +
+	"\x06_yobi5\"n\n" +
+	"\x1ddb_GetUntenNippoMeisaiRequest\x12\x17\n" +
 	"\anippo_k\x18\x01 \x01(\tR\x06nippoK\x12\x19\n" +
 	"\bhaisha_k\x18\x02 \x01(\tR\ahaishaK\x12\x19\n" +
-	"\bsharyo_c\x18\x03 \x01(\tR\asharyoC\"V\n" +
-	"#GetUntenNippoMeisaiBySharyoCRequest\x12\x19\n" +
+	"\bsharyo_c\x18\x03 \x01(\tR\asharyoC\"Y\n" +
+	"&db_GetUntenNippoMeisaiBySharyoCRequest\x12\x19\n" +
 	"\bsharyo_c\x18\x01 \x01(\tR\asharyoC\x12\x14\n" +
-	"\x05limit\x18\x02 \x01(\x05R\x05limit\"\x8f\x01\n" +
-	"%GetUntenNippoMeisaiByDateRangeRequest\x12\x1d\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\"\x92\x01\n" +
+	"(db_GetUntenNippoMeisaiByDateRangeRequest\x12\x1d\n" +
 	"\n" +
 	"start_date\x18\x01 \x01(\tR\tstartDate\x12\x19\n" +
 	"\bend_date\x18\x02 \x01(\tR\aendDate\x12\x14\n" +
 	"\x05limit\x18\x03 \x01(\x05R\x05limit\x12\x16\n" +
-	"\x06offset\x18\x04 \x01(\x05R\x06offset\"x\n" +
-	"\x1bListUntenNippoMeisaiRequest\x12\x14\n" +
+	"\x06offset\x18\x04 \x01(\x05R\x06offset\"{\n" +
+	"\x1edb_ListUntenNippoMeisaiRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
 	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
-	"\t_order_by\"f\n" +
-	"\x18UntenNippoMeisaiResponse\x12J\n" +
-	"\x12unten_nippo_meisai\x18\x01 \x01(\v2\x1c.db_service.UntenNippoMeisaiR\x10untenNippoMeisai\"s\n" +
-	"\x1cListUntenNippoMeisaiResponse\x122\n" +
-	"\x05items\x18\x01 \x03(\v2\x1c.db_service.UntenNippoMeisaiR\x05items\x12\x1f\n" +
-	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"0\n" +
-	"\x15GetShainMasterRequest\x12\x17\n" +
-	"\ashain_c\x18\x01 \x01(\tR\x06shainC\"8\n" +
-	"\x1dGetShainMasterByBumonCRequest\x12\x17\n" +
-	"\abumon_c\x18\x01 \x01(\tR\x06bumonC\"s\n" +
-	"\x16ListShainMasterRequest\x12\x14\n" +
-	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
-	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
-	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
-	"\t_order_by\"Q\n" +
-	"\x13ShainMasterResponse\x12:\n" +
-	"\fshain_master\x18\x01 \x01(\v2\x17.db_service.ShainMasterR\vshainMaster\"i\n" +
-	"\x17ListShainMasterResponse\x12-\n" +
-	"\x05items\x18\x01 \x03(\v2\x17.db_service.ShainMasterR\x05items\x12\x1f\n" +
+	"\t_order_by\"l\n" +
+	"\x1bdb_UntenNippoMeisaiResponse\x12M\n" +
+	"\x12unten_nippo_meisai\x18\x01 \x01(\v2\x1f.db_service.db_UntenNippoMeisaiR\x10untenNippoMeisai\"y\n" +
+	"\x1fdb_ListUntenNippoMeisaiResponse\x125\n" +
+	"\x05items\x18\x01 \x03(\v2\x1f.db_service.db_UntenNippoMeisaiR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
 	"totalCount\"3\n" +
-	"\x16GetChiikiMasterRequest\x12\x19\n" +
-	"\bchiiki_c\x18\x01 \x01(\tR\achiikiC\"t\n" +
-	"\x17ListChiikiMasterRequest\x12\x14\n" +
+	"\x18db_GetShainMasterRequest\x12\x17\n" +
+	"\ashain_c\x18\x01 \x01(\tR\x06shainC\";\n" +
+	" db_GetShainMasterByBumonCRequest\x12\x17\n" +
+	"\abumon_c\x18\x01 \x01(\tR\x06bumonC\"v\n" +
+	"\x19db_ListShainMasterRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
 	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
-	"\t_order_by\"U\n" +
-	"\x14ChiikiMasterResponse\x12=\n" +
-	"\rchiiki_master\x18\x01 \x01(\v2\x18.db_service.ChiikiMasterR\fchiikiMaster\"k\n" +
-	"\x18ListChiikiMasterResponse\x12.\n" +
-	"\x05items\x18\x01 \x03(\v2\x18.db_service.ChiikiMasterR\x05items\x12\x1f\n" +
+	"\t_order_by\"W\n" +
+	"\x16db_ShainMasterResponse\x12=\n" +
+	"\fshain_master\x18\x01 \x01(\v2\x1a.db_service.db_ShainMasterR\vshainMaster\"o\n" +
+	"\x1adb_ListShainMasterResponse\x120\n" +
+	"\x05items\x18\x01 \x03(\v2\x1a.db_service.db_ShainMasterR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"0\n" +
-	"\x15GetChikuMasterRequest\x12\x17\n" +
-	"\achiku_c\x18\x01 \x01(\tR\x06chikuC\";\n" +
-	"\x1eGetChikuMasterByChiikiCRequest\x12\x19\n" +
-	"\bchiiki_c\x18\x01 \x01(\tR\achiikiC\"s\n" +
-	"\x16ListChikuMasterRequest\x12\x14\n" +
+	"totalCount\"6\n" +
+	"\x19db_GetChiikiMasterRequest\x12\x19\n" +
+	"\bchiiki_c\x18\x01 \x01(\tR\achiikiC\"w\n" +
+	"\x1adb_ListChiikiMasterRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
 	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
-	"\t_order_by\"Q\n" +
-	"\x13ChikuMasterResponse\x12:\n" +
-	"\fchiku_master\x18\x01 \x01(\v2\x17.db_service.ChikuMasterR\vchikuMaster\"i\n" +
-	"\x17ListChikuMasterResponse\x12-\n" +
-	"\x05items\x18\x01 \x03(\v2\x17.db_service.ChikuMasterR\x05items\x12\x1f\n" +
+	"\t_order_by\"[\n" +
+	"\x17db_ChiikiMasterResponse\x12@\n" +
+	"\rchiiki_master\x18\x01 \x01(\v2\x1b.db_service.db_ChiikiMasterR\fchiikiMaster\"q\n" +
+	"\x1bdb_ListChiikiMasterResponse\x121\n" +
+	"\x05items\x18\x01 \x03(\v2\x1b.db_service.db_ChiikiMasterR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"\a\n" +
-	"\x05Empty2\xe7\x05\n" +
-	"\x17DTakoUriageKeihiService\x12\x94\x01\n" +
-	"\x06Create\x12).db_service.CreateDTakoUriageKeihiRequest\x1a$.db_service.DTakoUriageKeihiResponse\"9\x82\xd3\xe4\x93\x023:\x12dtako_uriage_keihi\"\x1d/api/v1/db/dtako-uriage-keihi\x12\x84\x01\n" +
-	"\x03Get\x12&.db_service.GetDTakoUriageKeihiRequest\x1a$.db_service.DTakoUriageKeihiResponse\"/\x82\xd3\xe4\x93\x02)\x12'/api/v1/db/dtako-uriage-keihi/{srch_id}\x12\xb1\x01\n" +
-	"\x06Update\x12).db_service.UpdateDTakoUriageKeihiRequest\x1a$.db_service.DTakoUriageKeihiResponse\"V\x82\xd3\xe4\x93\x02P:\x12dtako_uriage_keihi\x1a:/api/v1/db/dtako-uriage-keihi/{dtako_uriage_keihi.srch_id}\x12w\n" +
-	"\x06Delete\x12).db_service.DeleteDTakoUriageKeihiRequest\x1a\x11.db_service.Empty\"/\x82\xd3\xe4\x93\x02)*'/api/v1/db/dtako-uriage-keihi/{srch_id}\x12\x80\x01\n" +
-	"\x04List\x12'.db_service.ListDTakoUriageKeihiRequest\x1a(.db_service.ListDTakoUriageKeihiResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1/db/dtako-uriage-keihi2\xcf\x04\n" +
-	"\x10ETCMeisaiService\x12v\n" +
-	"\x06Create\x12\".db_service.CreateETCMeisaiRequest\x1a\x1d.db_service.ETCMeisaiResponse\")\x82\xd3\xe4\x93\x02#:\n" +
-	"etc_meisai\"\x15/api/v1/db/etc-meisai\x12i\n" +
-	"\x03Get\x12\x1f.db_service.GetETCMeisaiRequest\x1a\x1d.db_service.ETCMeisaiResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1/db/etc-meisai/{id}\x12\x86\x01\n" +
-	"\x06Update\x12\".db_service.UpdateETCMeisaiRequest\x1a\x1d.db_service.ETCMeisaiResponse\"9\x82\xd3\xe4\x93\x023:\n" +
-	"etc_meisai\x1a%/api/v1/db/etc-meisai/{etc_meisai.id}\x12c\n" +
-	"\x06Delete\x12\".db_service.DeleteETCMeisaiRequest\x1a\x11.db_service.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/api/v1/db/etc-meisai/{id}\x12j\n" +
-	"\x04List\x12 .db_service.ListETCMeisaiRequest\x1a!.db_service.ListETCMeisaiResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1/db/etc-meisai2\xb2\x05\n" +
-	"\x15DTakoFerryRowsService\x12\x8c\x01\n" +
-	"\x06Create\x12'.db_service.CreateDTakoFerryRowsRequest\x1a\".db_service.DTakoFerryRowsResponse\"5\x82\xd3\xe4\x93\x02/:\x10dtako_ferry_rows\"\x1b/api/v1/db/dtako-ferry-rows\x12y\n" +
-	"\x03Get\x12$.db_service.GetDTakoFerryRowsRequest\x1a\".db_service.DTakoFerryRowsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/dtako-ferry-rows/{id}\x12\xa2\x01\n" +
-	"\x06Update\x12'.db_service.UpdateDTakoFerryRowsRequest\x1a\".db_service.DTakoFerryRowsResponse\"K\x82\xd3\xe4\x93\x02E:\x10dtako_ferry_rows\x1a1/api/v1/db/dtako-ferry-rows/{dtako_ferry_rows.id}\x12n\n" +
-	"\x06Delete\x12'.db_service.DeleteDTakoFerryRowsRequest\x1a\x11.db_service.Empty\"(\x82\xd3\xe4\x93\x02\"* /api/v1/db/dtako-ferry-rows/{id}\x12z\n" +
-	"\x04List\x12%.db_service.ListDTakoFerryRowsRequest\x1a&.db_service.ListDTakoFerryRowsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/api/v1/db/dtako-ferry-rows2\x81\a\n" +
-	"\x17ETCMeisaiMappingService\x12\x94\x01\n" +
-	"\x06Create\x12).db_service.CreateETCMeisaiMappingRequest\x1a$.db_service.ETCMeisaiMappingResponse\"9\x82\xd3\xe4\x93\x023:\x12etc_meisai_mapping\"\x1d/api/v1/db/etc-meisai-mapping\x12\x7f\n" +
-	"\x03Get\x12&.db_service.GetETCMeisaiMappingRequest\x1a$.db_service.ETCMeisaiMappingResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/api/v1/db/etc-meisai-mapping/{id}\x12\xac\x01\n" +
-	"\x06Update\x12).db_service.UpdateETCMeisaiMappingRequest\x1a$.db_service.ETCMeisaiMappingResponse\"Q\x82\xd3\xe4\x93\x02K:\x12etc_meisai_mapping\x1a5/api/v1/db/etc-meisai-mapping/{etc_meisai_mapping.id}\x12r\n" +
-	"\x06Delete\x12).db_service.DeleteETCMeisaiMappingRequest\x1a\x11.db_service.Empty\"*\x82\xd3\xe4\x93\x02$*\"/api/v1/db/etc-meisai-mapping/{id}\x12\x80\x01\n" +
-	"\x04List\x12'.db_service.ListETCMeisaiMappingRequest\x1a(.db_service.ListETCMeisaiMappingResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1/db/etc-meisai-mapping\x12\xa7\x01\n" +
-	"\x13GetDTakoRowIDByHash\x12&.db_service.GetDTakoRowIDByHashRequest\x1a'.db_service.GetDTakoRowIDByHashResponse\"?\x82\xd3\xe4\x93\x029\x127/api/v1/db/etc-meisai-mapping/by-hash/{etc_meisai_hash}2\xf9\x02\n" +
-	"\x10DTakoCarsService\x12i\n" +
-	"\x03Get\x12\x1f.db_service.GetDTakoCarsRequest\x1a\x1d.db_service.DTakoCarsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1/db/dtako-cars/{id}\x12j\n" +
-	"\x04List\x12 .db_service.ListDTakoCarsRequest\x1a!.db_service.ListDTakoCarsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1/db/dtako-cars\x12\x8d\x01\n" +
-	"\fGetByCarCode\x12(.db_service.GetDTakoCarsByCarCodeRequest\x1a\x1d.db_service.DTakoCarsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/api/v1/db/dtako-cars/by-car-code/{car_code}2\xa1\x03\n" +
-	"\x12DTakoEventsService\x12o\n" +
-	"\x03Get\x12!.db_service.GetDTakoEventsRequest\x1a\x1f.db_service.DTakoEventsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/v1/db/dtako-events/{id}\x12p\n" +
-	"\x04List\x12\".db_service.ListDTakoEventsRequest\x1a#.db_service.ListDTakoEventsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/dtako-events\x12\xa7\x01\n" +
-	"\x10GetByOperationNo\x12..db_service.GetDTakoEventsByOperationNoRequest\x1a#.db_service.ListDTakoEventsResponse\">\x82\xd3\xe4\x93\x028\x126/api/v1/db/dtako-events/by-operation-no/{operation_no}2\x8d\x03\n" +
-	"\x10DTakoRowsService\x12i\n" +
-	"\x03Get\x12\x1f.db_service.GetDTakoRowsRequest\x1a\x1d.db_service.DTakoRowsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1/db/dtako-rows/{id}\x12j\n" +
-	"\x04List\x12 .db_service.ListDTakoRowsRequest\x1a!.db_service.ListDTakoRowsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1/db/dtako-rows\x12\xa1\x01\n" +
-	"\x10GetByOperationNo\x12,.db_service.GetDTakoRowsByOperationNoRequest\x1a!.db_service.ListDTakoRowsResponse\"<\x82\xd3\xe4\x93\x026\x124/api/v1/db/dtako-rows/by-operation-no/{operation_no}2\x8e\x03\n" +
-	"\rETCNumService\x12a\n" +
-	"\x04List\x12\x1d.db_service.ListETCNumRequest\x1a\x1e.db_service.ListETCNumResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1/db/etc-num\x12\x96\x01\n" +
-	"\x0fGetByETCCardNum\x12(.db_service.GetETCNumByETCCardNumRequest\x1a\x1e.db_service.ListETCNumResponse\"9\x82\xd3\xe4\x93\x023\x121/api/v1/db/etc-num/by-etc-card-num/{etc_card_num}\x12\x80\x01\n" +
+	"totalCount\"3\n" +
+	"\x18db_GetChikuMasterRequest\x12\x17\n" +
+	"\achiku_c\x18\x01 \x01(\tR\x06chikuC\">\n" +
+	"!db_GetChikuMasterByChiikiCRequest\x12\x19\n" +
+	"\bchiiki_c\x18\x01 \x01(\tR\achiikiC\"v\n" +
+	"\x19db_ListChikuMasterRequest\x12\x14\n" +
+	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
+	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +
+	"\border_by\x18\x03 \x01(\tH\x00R\aorderBy\x88\x01\x01B\v\n" +
+	"\t_order_by\"W\n" +
+	"\x16db_ChikuMasterResponse\x12=\n" +
+	"\fchiku_master\x18\x01 \x01(\v2\x1a.db_service.db_ChikuMasterR\vchikuMaster\"o\n" +
+	"\x1adb_ListChikuMasterResponse\x120\n" +
+	"\x05items\x18\x01 \x03(\v2\x1a.db_service.db_ChikuMasterR\x05items\x12\x1f\n" +
+	"\vtotal_count\x18\x02 \x01(\x05R\n" +
+	"totalCount\"\n" +
 	"\n" +
-	"GetByCarID\x12#.db_service.GetETCNumByCarIDRequest\x1a\x1e.db_service.ListETCNumResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/etc-num/by-car-id/{car_id}2\xdb\x03\n" +
-	"\x19DTakoFerryRowsProdService\x12\x86\x01\n" +
-	"\x03Get\x12(.db_service.GetDTakoFerryRowsProdRequest\x1a&.db_service.DTakoFerryRowsProdResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/dtako-ferry-rows-prod/{id}\x12\x87\x01\n" +
-	"\x04List\x12).db_service.ListDTakoFerryRowsProdRequest\x1a*.db_service.ListDTakoFerryRowsProdResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/dtako-ferry-rows-prod\x12\xaa\x01\n" +
-	"\vGetByUnkoNo\x120.db_service.GetDTakoFerryRowsProdByUnkoNoRequest\x1a*.db_service.ListDTakoFerryRowsProdResponse\"=\x82\xd3\xe4\x93\x027\x125/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}2\xcf\x02\n" +
-	"\vCarsService\x12Y\n" +
-	"\x03Get\x12\x1a.db_service.GetCarsRequest\x1a\x18.db_service.CarsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/v1/db/cars/{id}\x12Z\n" +
-	"\x04List\x12\x1b.db_service.ListCarsRequest\x1a\x1c.db_service.ListCarsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/api/v1/db/cars\x12\x88\x01\n" +
-	"\x10GetByBumonCodeID\x12'.db_service.GetCarsByBumonCodeIDRequest\x1a\x1c.db_service.ListCarsResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/cars/bumon/{bumon_code_id}2\xd8\x02\n" +
-	"\x0eDriversService\x12b\n" +
-	"\x03Get\x12\x1d.db_service.GetDriversRequest\x1a\x1b.db_service.DriversResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/drivers/{id}\x12c\n" +
-	"\x04List\x12\x1e.db_service.ListDriversRequest\x1a\x1f.db_service.ListDriversResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1/db/drivers\x12}\n" +
+	"\bdb_Empty2\x88\x06\n" +
+	"\x1adb_DTakoUriageKeihiService\x12\x9a\x01\n" +
+	"\x06Create\x12,.db_service.db_CreateDTakoUriageKeihiRequest\x1a'.db_service.db_DTakoUriageKeihiResponse\"9\x82\xd3\xe4\x93\x023:\x12dtako_uriage_keihi\"\x1d/api/v1/db/dtako-uriage-keihi\x12\x8a\x01\n" +
+	"\x03Get\x12).db_service.db_GetDTakoUriageKeihiRequest\x1a'.db_service.db_DTakoUriageKeihiResponse\"/\x82\xd3\xe4\x93\x02)\x12'/api/v1/db/dtako-uriage-keihi/{srch_id}\x12\xb7\x01\n" +
+	"\x06Update\x12,.db_service.db_UpdateDTakoUriageKeihiRequest\x1a'.db_service.db_DTakoUriageKeihiResponse\"V\x82\xd3\xe4\x93\x02P:\x12dtako_uriage_keihi\x1a:/api/v1/db/dtako-uriage-keihi/{dtako_uriage_keihi.srch_id}\x12}\n" +
+	"\x06Delete\x12,.db_service.db_DeleteDTakoUriageKeihiRequest\x1a\x14.db_service.db_Empty\"/\x82\xd3\xe4\x93\x02)*'/api/v1/db/dtako-uriage-keihi/{srch_id}\x12\x86\x01\n" +
+	"\x04List\x12*.db_service.db_ListDTakoUriageKeihiRequest\x1a+.db_service.db_ListDTakoUriageKeihiResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1/db/dtako-uriage-keihi2\xf0\x04\n" +
+	"\x13db_ETCMeisaiService\x12|\n" +
+	"\x06Create\x12%.db_service.db_CreateETCMeisaiRequest\x1a .db_service.db_ETCMeisaiResponse\")\x82\xd3\xe4\x93\x02#:\n" +
+	"etc_meisai\"\x15/api/v1/db/etc-meisai\x12o\n" +
+	"\x03Get\x12\".db_service.db_GetETCMeisaiRequest\x1a .db_service.db_ETCMeisaiResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1/db/etc-meisai/{id}\x12\x8c\x01\n" +
+	"\x06Update\x12%.db_service.db_UpdateETCMeisaiRequest\x1a .db_service.db_ETCMeisaiResponse\"9\x82\xd3\xe4\x93\x023:\n" +
+	"etc_meisai\x1a%/api/v1/db/etc-meisai/{etc_meisai.id}\x12i\n" +
+	"\x06Delete\x12%.db_service.db_DeleteETCMeisaiRequest\x1a\x14.db_service.db_Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/api/v1/db/etc-meisai/{id}\x12p\n" +
+	"\x04List\x12#.db_service.db_ListETCMeisaiRequest\x1a$.db_service.db_ListETCMeisaiResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1/db/etc-meisai2\xd4\x05\n" +
+	"\x18db_DTakoFerryRowsService\x12\x92\x01\n" +
+	"\x06Create\x12*.db_service.db_CreateDTakoFerryRowsRequest\x1a%.db_service.db_DTakoFerryRowsResponse\"5\x82\xd3\xe4\x93\x02/:\x10dtako_ferry_rows\"\x1b/api/v1/db/dtako-ferry-rows\x12\x7f\n" +
+	"\x03Get\x12'.db_service.db_GetDTakoFerryRowsRequest\x1a%.db_service.db_DTakoFerryRowsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/dtako-ferry-rows/{id}\x12\xa8\x01\n" +
+	"\x06Update\x12*.db_service.db_UpdateDTakoFerryRowsRequest\x1a%.db_service.db_DTakoFerryRowsResponse\"K\x82\xd3\xe4\x93\x02E:\x10dtako_ferry_rows\x1a1/api/v1/db/dtako-ferry-rows/{dtako_ferry_rows.id}\x12t\n" +
+	"\x06Delete\x12*.db_service.db_DeleteDTakoFerryRowsRequest\x1a\x14.db_service.db_Empty\"(\x82\xd3\xe4\x93\x02\"* /api/v1/db/dtako-ferry-rows/{id}\x12\x80\x01\n" +
+	"\x04List\x12(.db_service.db_ListDTakoFerryRowsRequest\x1a).db_service.db_ListDTakoFerryRowsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/api/v1/db/dtako-ferry-rows2\xa9\a\n" +
+	"\x1adb_ETCMeisaiMappingService\x12\x9a\x01\n" +
+	"\x06Create\x12,.db_service.db_CreateETCMeisaiMappingRequest\x1a'.db_service.db_ETCMeisaiMappingResponse\"9\x82\xd3\xe4\x93\x023:\x12etc_meisai_mapping\"\x1d/api/v1/db/etc-meisai-mapping\x12\x85\x01\n" +
+	"\x03Get\x12).db_service.db_GetETCMeisaiMappingRequest\x1a'.db_service.db_ETCMeisaiMappingResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/api/v1/db/etc-meisai-mapping/{id}\x12\xb2\x01\n" +
+	"\x06Update\x12,.db_service.db_UpdateETCMeisaiMappingRequest\x1a'.db_service.db_ETCMeisaiMappingResponse\"Q\x82\xd3\xe4\x93\x02K:\x12etc_meisai_mapping\x1a5/api/v1/db/etc-meisai-mapping/{etc_meisai_mapping.id}\x12x\n" +
+	"\x06Delete\x12,.db_service.db_DeleteETCMeisaiMappingRequest\x1a\x14.db_service.db_Empty\"*\x82\xd3\xe4\x93\x02$*\"/api/v1/db/etc-meisai-mapping/{id}\x12\x86\x01\n" +
+	"\x04List\x12*.db_service.db_ListETCMeisaiMappingRequest\x1a+.db_service.db_ListETCMeisaiMappingResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1/db/etc-meisai-mapping\x12\xad\x01\n" +
+	"\x13GetDTakoRowIDByHash\x12).db_service.db_GetDTakoRowIDByHashRequest\x1a*.db_service.db_GetDTakoRowIDByHashResponse\"?\x82\xd3\xe4\x93\x029\x127/api/v1/db/etc-meisai-mapping/by-hash/{etc_meisai_hash}2\x8e\x03\n" +
+	"\x13db_DTakoCarsService\x12o\n" +
+	"\x03Get\x12\".db_service.db_GetDTakoCarsRequest\x1a .db_service.db_DTakoCarsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1/db/dtako-cars/{id}\x12p\n" +
+	"\x04List\x12#.db_service.db_ListDTakoCarsRequest\x1a$.db_service.db_ListDTakoCarsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1/db/dtako-cars\x12\x93\x01\n" +
+	"\fGetByCarCode\x12+.db_service.db_GetDTakoCarsByCarCodeRequest\x1a .db_service.db_DTakoCarsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/api/v1/db/dtako-cars/by-car-code/{car_code}2\xb6\x03\n" +
+	"\x15db_DTakoEventsService\x12u\n" +
+	"\x03Get\x12$.db_service.db_GetDTakoEventsRequest\x1a\".db_service.db_DTakoEventsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/api/v1/db/dtako-events/{id}\x12v\n" +
+	"\x04List\x12%.db_service.db_ListDTakoEventsRequest\x1a&.db_service.db_ListDTakoEventsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/dtako-events\x12\xad\x01\n" +
+	"\x10GetByOperationNo\x121.db_service.db_GetDTakoEventsByOperationNoRequest\x1a&.db_service.db_ListDTakoEventsResponse\">\x82\xd3\xe4\x93\x028\x126/api/v1/db/dtako-events/by-operation-no/{operation_no}2\xa2\x03\n" +
+	"\x13db_DTakoRowsService\x12o\n" +
+	"\x03Get\x12\".db_service.db_GetDTakoRowsRequest\x1a .db_service.db_DTakoRowsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1/db/dtako-rows/{id}\x12p\n" +
+	"\x04List\x12#.db_service.db_ListDTakoRowsRequest\x1a$.db_service.db_ListDTakoRowsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/api/v1/db/dtako-rows\x12\xa7\x01\n" +
+	"\x10GetByOperationNo\x12/.db_service.db_GetDTakoRowsByOperationNoRequest\x1a$.db_service.db_ListDTakoRowsResponse\"<\x82\xd3\xe4\x93\x026\x124/api/v1/db/dtako-rows/by-operation-no/{operation_no}2\xa3\x03\n" +
+	"\x10db_ETCNumService\x12g\n" +
+	"\x04List\x12 .db_service.db_ListETCNumRequest\x1a!.db_service.db_ListETCNumResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1/db/etc-num\x12\x9c\x01\n" +
+	"\x0fGetByETCCardNum\x12+.db_service.db_GetETCNumByETCCardNumRequest\x1a!.db_service.db_ListETCNumResponse\"9\x82\xd3\xe4\x93\x023\x121/api/v1/db/etc-num/by-etc-card-num/{etc_card_num}\x12\x86\x01\n" +
 	"\n" +
-	"GetByBumon\x12$.db_service.GetDriversByBumonRequest\x1a\x1f.db_service.ListDriversResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/drivers/bumon/{bumon}2\x80\x05\n" +
-	"\x17UntenNippoMeisaiService\x12\x9a\x01\n" +
-	"\x03Get\x12&.db_service.GetUntenNippoMeisaiRequest\x1a$.db_service.UntenNippoMeisaiResponse\"E\x82\xd3\xe4\x93\x02?\x12=/api/v1/db/unten-nippo-meisai/{nippo_k}/{haisha_k}/{sharyo_c}\x12\x80\x01\n" +
-	"\x04List\x12'.db_service.ListUntenNippoMeisaiRequest\x1a(.db_service.ListUntenNippoMeisaiResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1/db/unten-nippo-meisai\x12\xa2\x01\n" +
-	"\fGetBySharyoC\x12/.db_service.GetUntenNippoMeisaiBySharyoCRequest\x1a(.db_service.ListUntenNippoMeisaiResponse\"7\x82\xd3\xe4\x93\x021\x12//api/v1/db/unten-nippo-meisai/sharyo/{sharyo_c}\x12\x9f\x01\n" +
-	"\x0eGetByDateRange\x121.db_service.GetUntenNippoMeisaiByDateRangeRequest\x1a(.db_service.ListUntenNippoMeisaiResponse\"0\x82\xd3\xe4\x93\x02*\x12(/api/v1/db/unten-nippo-meisai/date-range2\x8d\x03\n" +
-	"\x12ShainMasterService\x12t\n" +
-	"\x03Get\x12!.db_service.GetShainMasterRequest\x1a\x1f.db_service.ShainMasterResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/v1/db/shain-master/{shain_c}\x12p\n" +
-	"\x04List\x12\".db_service.ListShainMasterRequest\x1a#.db_service.ListShainMasterResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/shain-master\x12\x8e\x01\n" +
-	"\vGetByBumonC\x12).db_service.GetShainMasterByBumonCRequest\x1a#.db_service.ListShainMasterResponse\"/\x82\xd3\xe4\x93\x02)\x12'/api/v1/db/shain-master/bumon/{bumon_c}2\x84\x02\n" +
-	"\x13ChiikiMasterService\x12x\n" +
-	"\x03Get\x12\".db_service.GetChiikiMasterRequest\x1a .db_service.ChiikiMasterResponse\"+\x82\xd3\xe4\x93\x02%\x12#/api/v1/db/chiiki-master/{chiiki_c}\x12s\n" +
-	"\x04List\x12#.db_service.ListChiikiMasterRequest\x1a$.db_service.ListChiikiMasterResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/v1/db/chiiki-master2\x91\x03\n" +
-	"\x12ChikuMasterService\x12t\n" +
-	"\x03Get\x12!.db_service.GetChikuMasterRequest\x1a\x1f.db_service.ChikuMasterResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/v1/db/chiku-master/{chiku_c}\x12p\n" +
-	"\x04List\x12\".db_service.ListChikuMasterRequest\x1a#.db_service.ListChikuMasterResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/chiku-master\x12\x92\x01\n" +
-	"\fGetByChiikiC\x12*.db_service.GetChikuMasterByChiikiCRequest\x1a#.db_service.ListChikuMasterResponse\"1\x82\xd3\xe4\x93\x02+\x12)/api/v1/db/chiku-master/chiiki/{chiiki_c}B/Z-github.com/yhonda-ohishi/db_service/src/protob\x06proto3"
+	"GetByCarID\x12&.db_service.db_GetETCNumByCarIDRequest\x1a!.db_service.db_ListETCNumResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/etc-num/by-car-id/{car_id}2\xf0\x03\n" +
+	"\x1cdb_DTakoFerryRowsProdService\x12\x8c\x01\n" +
+	"\x03Get\x12+.db_service.db_GetDTakoFerryRowsProdRequest\x1a).db_service.db_DTakoFerryRowsProdResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/dtako-ferry-rows-prod/{id}\x12\x8d\x01\n" +
+	"\x04List\x12,.db_service.db_ListDTakoFerryRowsProdRequest\x1a-.db_service.db_ListDTakoFerryRowsProdResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/dtako-ferry-rows-prod\x12\xb0\x01\n" +
+	"\vGetByUnkoNo\x123.db_service.db_GetDTakoFerryRowsProdByUnkoNoRequest\x1a-.db_service.db_ListDTakoFerryRowsProdResponse\"=\x82\xd3\xe4\x93\x027\x125/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}2\xe4\x02\n" +
+	"\x0edb_CarsService\x12_\n" +
+	"\x03Get\x12\x1d.db_service.db_GetCarsRequest\x1a\x1b.db_service.db_CarsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/api/v1/db/cars/{id}\x12`\n" +
+	"\x04List\x12\x1e.db_service.db_ListCarsRequest\x1a\x1f.db_service.db_ListCarsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/api/v1/db/cars\x12\x8e\x01\n" +
+	"\x10GetByBumonCodeID\x12*.db_service.db_GetCarsByBumonCodeIDRequest\x1a\x1f.db_service.db_ListCarsResponse\"-\x82\xd3\xe4\x93\x02'\x12%/api/v1/db/cars/bumon/{bumon_code_id}2\xee\x02\n" +
+	"\x11db_DriversService\x12h\n" +
+	"\x03Get\x12 .db_service.db_GetDriversRequest\x1a\x1e.db_service.db_DriversResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/drivers/{id}\x12i\n" +
+	"\x04List\x12!.db_service.db_ListDriversRequest\x1a\".db_service.db_ListDriversResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/api/v1/db/drivers\x12\x83\x01\n" +
+	"\n" +
+	"GetByBumon\x12'.db_service.db_GetDriversByBumonRequest\x1a\".db_service.db_ListDriversResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /api/v1/db/drivers/bumon/{bumon}2\x9b\x05\n" +
+	"\x1adb_UntenNippoMeisaiService\x12\xa0\x01\n" +
+	"\x03Get\x12).db_service.db_GetUntenNippoMeisaiRequest\x1a'.db_service.db_UntenNippoMeisaiResponse\"E\x82\xd3\xe4\x93\x02?\x12=/api/v1/db/unten-nippo-meisai/{nippo_k}/{haisha_k}/{sharyo_c}\x12\x86\x01\n" +
+	"\x04List\x12*.db_service.db_ListUntenNippoMeisaiRequest\x1a+.db_service.db_ListUntenNippoMeisaiResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/api/v1/db/unten-nippo-meisai\x12\xa8\x01\n" +
+	"\fGetBySharyoC\x122.db_service.db_GetUntenNippoMeisaiBySharyoCRequest\x1a+.db_service.db_ListUntenNippoMeisaiResponse\"7\x82\xd3\xe4\x93\x021\x12//api/v1/db/unten-nippo-meisai/sharyo/{sharyo_c}\x12\xa5\x01\n" +
+	"\x0eGetByDateRange\x124.db_service.db_GetUntenNippoMeisaiByDateRangeRequest\x1a+.db_service.db_ListUntenNippoMeisaiResponse\"0\x82\xd3\xe4\x93\x02*\x12(/api/v1/db/unten-nippo-meisai/date-range2\xa2\x03\n" +
+	"\x15db_ShainMasterService\x12z\n" +
+	"\x03Get\x12$.db_service.db_GetShainMasterRequest\x1a\".db_service.db_ShainMasterResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/v1/db/shain-master/{shain_c}\x12v\n" +
+	"\x04List\x12%.db_service.db_ListShainMasterRequest\x1a&.db_service.db_ListShainMasterResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/shain-master\x12\x94\x01\n" +
+	"\vGetByBumonC\x12,.db_service.db_GetShainMasterByBumonCRequest\x1a&.db_service.db_ListShainMasterResponse\"/\x82\xd3\xe4\x93\x02)\x12'/api/v1/db/shain-master/bumon/{bumon_c}2\x93\x02\n" +
+	"\x16db_ChiikiMasterService\x12~\n" +
+	"\x03Get\x12%.db_service.db_GetChiikiMasterRequest\x1a#.db_service.db_ChiikiMasterResponse\"+\x82\xd3\xe4\x93\x02%\x12#/api/v1/db/chiiki-master/{chiiki_c}\x12y\n" +
+	"\x04List\x12&.db_service.db_ListChiikiMasterRequest\x1a'.db_service.db_ListChiikiMasterResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/api/v1/db/chiiki-master2\xa6\x03\n" +
+	"\x15db_ChikuMasterService\x12z\n" +
+	"\x03Get\x12$.db_service.db_GetChikuMasterRequest\x1a\".db_service.db_ChikuMasterResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/v1/db/chiku-master/{chiku_c}\x12v\n" +
+	"\x04List\x12%.db_service.db_ListChikuMasterRequest\x1a&.db_service.db_ListChikuMasterResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1/db/chiku-master\x12\x98\x01\n" +
+	"\fGetByChiikiC\x12-.db_service.db_GetChikuMasterByChiikiCRequest\x1a&.db_service.db_ListChikuMasterResponse\"1\x82\xd3\xe4\x93\x02+\x12)/api/v1/db/chiku-master/chiiki/{chiiki_c}B/Z-github.com/yhonda-ohishi/db_service/src/protob\x06proto3"
 
 var (
 	file_db_service_proto_rawDescOnce sync.Once
@@ -8821,253 +8823,253 @@ func file_db_service_proto_rawDescGZIP() []byte {
 
 var file_db_service_proto_msgTypes = make([]protoimpl.MessageInfo, 100)
 var file_db_service_proto_goTypes = []any{
-	(*DTakoUriageKeihi)(nil),                      // 0: db_service.DTakoUriageKeihi
-	(*ETCMeisai)(nil),                             // 1: db_service.ETCMeisai
-	(*DTakoFerryRows)(nil),                        // 2: db_service.DTakoFerryRows
-	(*CreateDTakoUriageKeihiRequest)(nil),         // 3: db_service.CreateDTakoUriageKeihiRequest
-	(*GetDTakoUriageKeihiRequest)(nil),            // 4: db_service.GetDTakoUriageKeihiRequest
-	(*UpdateDTakoUriageKeihiRequest)(nil),         // 5: db_service.UpdateDTakoUriageKeihiRequest
-	(*DeleteDTakoUriageKeihiRequest)(nil),         // 6: db_service.DeleteDTakoUriageKeihiRequest
-	(*ListDTakoUriageKeihiRequest)(nil),           // 7: db_service.ListDTakoUriageKeihiRequest
-	(*DTakoUriageKeihiResponse)(nil),              // 8: db_service.DTakoUriageKeihiResponse
-	(*ListDTakoUriageKeihiResponse)(nil),          // 9: db_service.ListDTakoUriageKeihiResponse
-	(*CreateETCMeisaiRequest)(nil),                // 10: db_service.CreateETCMeisaiRequest
-	(*GetETCMeisaiRequest)(nil),                   // 11: db_service.GetETCMeisaiRequest
-	(*UpdateETCMeisaiRequest)(nil),                // 12: db_service.UpdateETCMeisaiRequest
-	(*DeleteETCMeisaiRequest)(nil),                // 13: db_service.DeleteETCMeisaiRequest
-	(*ListETCMeisaiRequest)(nil),                  // 14: db_service.ListETCMeisaiRequest
-	(*ETCMeisaiResponse)(nil),                     // 15: db_service.ETCMeisaiResponse
-	(*ListETCMeisaiResponse)(nil),                 // 16: db_service.ListETCMeisaiResponse
-	(*CreateDTakoFerryRowsRequest)(nil),           // 17: db_service.CreateDTakoFerryRowsRequest
-	(*GetDTakoFerryRowsRequest)(nil),              // 18: db_service.GetDTakoFerryRowsRequest
-	(*UpdateDTakoFerryRowsRequest)(nil),           // 19: db_service.UpdateDTakoFerryRowsRequest
-	(*DeleteDTakoFerryRowsRequest)(nil),           // 20: db_service.DeleteDTakoFerryRowsRequest
-	(*ListDTakoFerryRowsRequest)(nil),             // 21: db_service.ListDTakoFerryRowsRequest
-	(*DTakoFerryRowsResponse)(nil),                // 22: db_service.DTakoFerryRowsResponse
-	(*ListDTakoFerryRowsResponse)(nil),            // 23: db_service.ListDTakoFerryRowsResponse
-	(*ETCMeisaiMapping)(nil),                      // 24: db_service.ETCMeisaiMapping
-	(*CreateETCMeisaiMappingRequest)(nil),         // 25: db_service.CreateETCMeisaiMappingRequest
-	(*GetETCMeisaiMappingRequest)(nil),            // 26: db_service.GetETCMeisaiMappingRequest
-	(*UpdateETCMeisaiMappingRequest)(nil),         // 27: db_service.UpdateETCMeisaiMappingRequest
-	(*DeleteETCMeisaiMappingRequest)(nil),         // 28: db_service.DeleteETCMeisaiMappingRequest
-	(*ListETCMeisaiMappingRequest)(nil),           // 29: db_service.ListETCMeisaiMappingRequest
-	(*ETCMeisaiMappingResponse)(nil),              // 30: db_service.ETCMeisaiMappingResponse
-	(*ListETCMeisaiMappingResponse)(nil),          // 31: db_service.ListETCMeisaiMappingResponse
-	(*GetDTakoRowIDByHashRequest)(nil),            // 32: db_service.GetDTakoRowIDByHashRequest
-	(*GetDTakoRowIDByHashResponse)(nil),           // 33: db_service.GetDTakoRowIDByHashResponse
-	(*DTakoCars)(nil),                             // 34: db_service.DTakoCars
-	(*DTakoEvents)(nil),                           // 35: db_service.DTakoEvents
-	(*DTakoRows)(nil),                             // 36: db_service.DTakoRows
-	(*ETCNum)(nil),                                // 37: db_service.ETCNum
-	(*GetDTakoCarsRequest)(nil),                   // 38: db_service.GetDTakoCarsRequest
-	(*GetDTakoCarsByCarCodeRequest)(nil),          // 39: db_service.GetDTakoCarsByCarCodeRequest
-	(*ListDTakoCarsRequest)(nil),                  // 40: db_service.ListDTakoCarsRequest
-	(*DTakoCarsResponse)(nil),                     // 41: db_service.DTakoCarsResponse
-	(*ListDTakoCarsResponse)(nil),                 // 42: db_service.ListDTakoCarsResponse
-	(*GetDTakoEventsRequest)(nil),                 // 43: db_service.GetDTakoEventsRequest
-	(*GetDTakoEventsByOperationNoRequest)(nil),    // 44: db_service.GetDTakoEventsByOperationNoRequest
-	(*ListDTakoEventsRequest)(nil),                // 45: db_service.ListDTakoEventsRequest
-	(*DTakoEventsResponse)(nil),                   // 46: db_service.DTakoEventsResponse
-	(*ListDTakoEventsResponse)(nil),               // 47: db_service.ListDTakoEventsResponse
-	(*GetDTakoRowsRequest)(nil),                   // 48: db_service.GetDTakoRowsRequest
-	(*GetDTakoRowsByOperationNoRequest)(nil),      // 49: db_service.GetDTakoRowsByOperationNoRequest
-	(*ListDTakoRowsRequest)(nil),                  // 50: db_service.ListDTakoRowsRequest
-	(*DTakoRowsResponse)(nil),                     // 51: db_service.DTakoRowsResponse
-	(*ListDTakoRowsResponse)(nil),                 // 52: db_service.ListDTakoRowsResponse
-	(*GetETCNumByETCCardNumRequest)(nil),          // 53: db_service.GetETCNumByETCCardNumRequest
-	(*GetETCNumByCarIDRequest)(nil),               // 54: db_service.GetETCNumByCarIDRequest
-	(*ListETCNumRequest)(nil),                     // 55: db_service.ListETCNumRequest
-	(*ListETCNumResponse)(nil),                    // 56: db_service.ListETCNumResponse
-	(*DTakoFerryRowsProd)(nil),                    // 57: db_service.DTakoFerryRowsProd
-	(*GetDTakoFerryRowsProdRequest)(nil),          // 58: db_service.GetDTakoFerryRowsProdRequest
-	(*GetDTakoFerryRowsProdByUnkoNoRequest)(nil),  // 59: db_service.GetDTakoFerryRowsProdByUnkoNoRequest
-	(*ListDTakoFerryRowsProdRequest)(nil),         // 60: db_service.ListDTakoFerryRowsProdRequest
-	(*DTakoFerryRowsProdResponse)(nil),            // 61: db_service.DTakoFerryRowsProdResponse
-	(*ListDTakoFerryRowsProdResponse)(nil),        // 62: db_service.ListDTakoFerryRowsProdResponse
-	(*Cars)(nil),                                  // 63: db_service.Cars
-	(*Drivers)(nil),                               // 64: db_service.Drivers
-	(*GetCarsRequest)(nil),                        // 65: db_service.GetCarsRequest
-	(*GetCarsByBumonCodeIDRequest)(nil),           // 66: db_service.GetCarsByBumonCodeIDRequest
-	(*ListCarsRequest)(nil),                       // 67: db_service.ListCarsRequest
-	(*CarsResponse)(nil),                          // 68: db_service.CarsResponse
-	(*ListCarsResponse)(nil),                      // 69: db_service.ListCarsResponse
-	(*GetDriversRequest)(nil),                     // 70: db_service.GetDriversRequest
-	(*GetDriversByBumonRequest)(nil),              // 71: db_service.GetDriversByBumonRequest
-	(*ListDriversRequest)(nil),                    // 72: db_service.ListDriversRequest
-	(*DriversResponse)(nil),                       // 73: db_service.DriversResponse
-	(*ListDriversResponse)(nil),                   // 74: db_service.ListDriversResponse
-	(*UntenNippoMeisai)(nil),                      // 75: db_service.UntenNippoMeisai
-	(*ShainMaster)(nil),                           // 76: db_service.ShainMaster
-	(*ChiikiMaster)(nil),                          // 77: db_service.ChiikiMaster
-	(*ChikuMaster)(nil),                           // 78: db_service.ChikuMaster
-	(*GetUntenNippoMeisaiRequest)(nil),            // 79: db_service.GetUntenNippoMeisaiRequest
-	(*GetUntenNippoMeisaiBySharyoCRequest)(nil),   // 80: db_service.GetUntenNippoMeisaiBySharyoCRequest
-	(*GetUntenNippoMeisaiByDateRangeRequest)(nil), // 81: db_service.GetUntenNippoMeisaiByDateRangeRequest
-	(*ListUntenNippoMeisaiRequest)(nil),           // 82: db_service.ListUntenNippoMeisaiRequest
-	(*UntenNippoMeisaiResponse)(nil),              // 83: db_service.UntenNippoMeisaiResponse
-	(*ListUntenNippoMeisaiResponse)(nil),          // 84: db_service.ListUntenNippoMeisaiResponse
-	(*GetShainMasterRequest)(nil),                 // 85: db_service.GetShainMasterRequest
-	(*GetShainMasterByBumonCRequest)(nil),         // 86: db_service.GetShainMasterByBumonCRequest
-	(*ListShainMasterRequest)(nil),                // 87: db_service.ListShainMasterRequest
-	(*ShainMasterResponse)(nil),                   // 88: db_service.ShainMasterResponse
-	(*ListShainMasterResponse)(nil),               // 89: db_service.ListShainMasterResponse
-	(*GetChiikiMasterRequest)(nil),                // 90: db_service.GetChiikiMasterRequest
-	(*ListChiikiMasterRequest)(nil),               // 91: db_service.ListChiikiMasterRequest
-	(*ChiikiMasterResponse)(nil),                  // 92: db_service.ChiikiMasterResponse
-	(*ListChiikiMasterResponse)(nil),              // 93: db_service.ListChiikiMasterResponse
-	(*GetChikuMasterRequest)(nil),                 // 94: db_service.GetChikuMasterRequest
-	(*GetChikuMasterByChiikiCRequest)(nil),        // 95: db_service.GetChikuMasterByChiikiCRequest
-	(*ListChikuMasterRequest)(nil),                // 96: db_service.ListChikuMasterRequest
-	(*ChikuMasterResponse)(nil),                   // 97: db_service.ChikuMasterResponse
-	(*ListChikuMasterResponse)(nil),               // 98: db_service.ListChikuMasterResponse
-	(*Empty)(nil),                                 // 99: db_service.Empty
+	(*Db_DTakoUriageKeihi)(nil),                      // 0: db_service.db_DTakoUriageKeihi
+	(*Db_ETCMeisai)(nil),                             // 1: db_service.db_ETCMeisai
+	(*Db_DTakoFerryRows)(nil),                        // 2: db_service.db_DTakoFerryRows
+	(*Db_CreateDTakoUriageKeihiRequest)(nil),         // 3: db_service.db_CreateDTakoUriageKeihiRequest
+	(*Db_GetDTakoUriageKeihiRequest)(nil),            // 4: db_service.db_GetDTakoUriageKeihiRequest
+	(*Db_UpdateDTakoUriageKeihiRequest)(nil),         // 5: db_service.db_UpdateDTakoUriageKeihiRequest
+	(*Db_DeleteDTakoUriageKeihiRequest)(nil),         // 6: db_service.db_DeleteDTakoUriageKeihiRequest
+	(*Db_ListDTakoUriageKeihiRequest)(nil),           // 7: db_service.db_ListDTakoUriageKeihiRequest
+	(*Db_DTakoUriageKeihiResponse)(nil),              // 8: db_service.db_DTakoUriageKeihiResponse
+	(*Db_ListDTakoUriageKeihiResponse)(nil),          // 9: db_service.db_ListDTakoUriageKeihiResponse
+	(*Db_CreateETCMeisaiRequest)(nil),                // 10: db_service.db_CreateETCMeisaiRequest
+	(*Db_GetETCMeisaiRequest)(nil),                   // 11: db_service.db_GetETCMeisaiRequest
+	(*Db_UpdateETCMeisaiRequest)(nil),                // 12: db_service.db_UpdateETCMeisaiRequest
+	(*Db_DeleteETCMeisaiRequest)(nil),                // 13: db_service.db_DeleteETCMeisaiRequest
+	(*Db_ListETCMeisaiRequest)(nil),                  // 14: db_service.db_ListETCMeisaiRequest
+	(*Db_ETCMeisaiResponse)(nil),                     // 15: db_service.db_ETCMeisaiResponse
+	(*Db_ListETCMeisaiResponse)(nil),                 // 16: db_service.db_ListETCMeisaiResponse
+	(*Db_CreateDTakoFerryRowsRequest)(nil),           // 17: db_service.db_CreateDTakoFerryRowsRequest
+	(*Db_GetDTakoFerryRowsRequest)(nil),              // 18: db_service.db_GetDTakoFerryRowsRequest
+	(*Db_UpdateDTakoFerryRowsRequest)(nil),           // 19: db_service.db_UpdateDTakoFerryRowsRequest
+	(*Db_DeleteDTakoFerryRowsRequest)(nil),           // 20: db_service.db_DeleteDTakoFerryRowsRequest
+	(*Db_ListDTakoFerryRowsRequest)(nil),             // 21: db_service.db_ListDTakoFerryRowsRequest
+	(*Db_DTakoFerryRowsResponse)(nil),                // 22: db_service.db_DTakoFerryRowsResponse
+	(*Db_ListDTakoFerryRowsResponse)(nil),            // 23: db_service.db_ListDTakoFerryRowsResponse
+	(*Db_ETCMeisaiMapping)(nil),                      // 24: db_service.db_ETCMeisaiMapping
+	(*Db_CreateETCMeisaiMappingRequest)(nil),         // 25: db_service.db_CreateETCMeisaiMappingRequest
+	(*Db_GetETCMeisaiMappingRequest)(nil),            // 26: db_service.db_GetETCMeisaiMappingRequest
+	(*Db_UpdateETCMeisaiMappingRequest)(nil),         // 27: db_service.db_UpdateETCMeisaiMappingRequest
+	(*Db_DeleteETCMeisaiMappingRequest)(nil),         // 28: db_service.db_DeleteETCMeisaiMappingRequest
+	(*Db_ListETCMeisaiMappingRequest)(nil),           // 29: db_service.db_ListETCMeisaiMappingRequest
+	(*Db_ETCMeisaiMappingResponse)(nil),              // 30: db_service.db_ETCMeisaiMappingResponse
+	(*Db_ListETCMeisaiMappingResponse)(nil),          // 31: db_service.db_ListETCMeisaiMappingResponse
+	(*Db_GetDTakoRowIDByHashRequest)(nil),            // 32: db_service.db_GetDTakoRowIDByHashRequest
+	(*Db_GetDTakoRowIDByHashResponse)(nil),           // 33: db_service.db_GetDTakoRowIDByHashResponse
+	(*Db_DTakoCars)(nil),                             // 34: db_service.db_DTakoCars
+	(*Db_DTakoEvents)(nil),                           // 35: db_service.db_DTakoEvents
+	(*Db_DTakoRows)(nil),                             // 36: db_service.db_DTakoRows
+	(*Db_ETCNum)(nil),                                // 37: db_service.db_ETCNum
+	(*Db_GetDTakoCarsRequest)(nil),                   // 38: db_service.db_GetDTakoCarsRequest
+	(*Db_GetDTakoCarsByCarCodeRequest)(nil),          // 39: db_service.db_GetDTakoCarsByCarCodeRequest
+	(*Db_ListDTakoCarsRequest)(nil),                  // 40: db_service.db_ListDTakoCarsRequest
+	(*Db_DTakoCarsResponse)(nil),                     // 41: db_service.db_DTakoCarsResponse
+	(*Db_ListDTakoCarsResponse)(nil),                 // 42: db_service.db_ListDTakoCarsResponse
+	(*Db_GetDTakoEventsRequest)(nil),                 // 43: db_service.db_GetDTakoEventsRequest
+	(*Db_GetDTakoEventsByOperationNoRequest)(nil),    // 44: db_service.db_GetDTakoEventsByOperationNoRequest
+	(*Db_ListDTakoEventsRequest)(nil),                // 45: db_service.db_ListDTakoEventsRequest
+	(*Db_DTakoEventsResponse)(nil),                   // 46: db_service.db_DTakoEventsResponse
+	(*Db_ListDTakoEventsResponse)(nil),               // 47: db_service.db_ListDTakoEventsResponse
+	(*Db_GetDTakoRowsRequest)(nil),                   // 48: db_service.db_GetDTakoRowsRequest
+	(*Db_GetDTakoRowsByOperationNoRequest)(nil),      // 49: db_service.db_GetDTakoRowsByOperationNoRequest
+	(*Db_ListDTakoRowsRequest)(nil),                  // 50: db_service.db_ListDTakoRowsRequest
+	(*Db_DTakoRowsResponse)(nil),                     // 51: db_service.db_DTakoRowsResponse
+	(*Db_ListDTakoRowsResponse)(nil),                 // 52: db_service.db_ListDTakoRowsResponse
+	(*Db_GetETCNumByETCCardNumRequest)(nil),          // 53: db_service.db_GetETCNumByETCCardNumRequest
+	(*Db_GetETCNumByCarIDRequest)(nil),               // 54: db_service.db_GetETCNumByCarIDRequest
+	(*Db_ListETCNumRequest)(nil),                     // 55: db_service.db_ListETCNumRequest
+	(*Db_ListETCNumResponse)(nil),                    // 56: db_service.db_ListETCNumResponse
+	(*Db_DTakoFerryRowsProd)(nil),                    // 57: db_service.db_DTakoFerryRowsProd
+	(*Db_GetDTakoFerryRowsProdRequest)(nil),          // 58: db_service.db_GetDTakoFerryRowsProdRequest
+	(*Db_GetDTakoFerryRowsProdByUnkoNoRequest)(nil),  // 59: db_service.db_GetDTakoFerryRowsProdByUnkoNoRequest
+	(*Db_ListDTakoFerryRowsProdRequest)(nil),         // 60: db_service.db_ListDTakoFerryRowsProdRequest
+	(*Db_DTakoFerryRowsProdResponse)(nil),            // 61: db_service.db_DTakoFerryRowsProdResponse
+	(*Db_ListDTakoFerryRowsProdResponse)(nil),        // 62: db_service.db_ListDTakoFerryRowsProdResponse
+	(*Db_Cars)(nil),                                  // 63: db_service.db_Cars
+	(*Db_Drivers)(nil),                               // 64: db_service.db_Drivers
+	(*Db_GetCarsRequest)(nil),                        // 65: db_service.db_GetCarsRequest
+	(*Db_GetCarsByBumonCodeIDRequest)(nil),           // 66: db_service.db_GetCarsByBumonCodeIDRequest
+	(*Db_ListCarsRequest)(nil),                       // 67: db_service.db_ListCarsRequest
+	(*Db_CarsResponse)(nil),                          // 68: db_service.db_CarsResponse
+	(*Db_ListCarsResponse)(nil),                      // 69: db_service.db_ListCarsResponse
+	(*Db_GetDriversRequest)(nil),                     // 70: db_service.db_GetDriversRequest
+	(*Db_GetDriversByBumonRequest)(nil),              // 71: db_service.db_GetDriversByBumonRequest
+	(*Db_ListDriversRequest)(nil),                    // 72: db_service.db_ListDriversRequest
+	(*Db_DriversResponse)(nil),                       // 73: db_service.db_DriversResponse
+	(*Db_ListDriversResponse)(nil),                   // 74: db_service.db_ListDriversResponse
+	(*Db_UntenNippoMeisai)(nil),                      // 75: db_service.db_UntenNippoMeisai
+	(*Db_ShainMaster)(nil),                           // 76: db_service.db_ShainMaster
+	(*Db_ChiikiMaster)(nil),                          // 77: db_service.db_ChiikiMaster
+	(*Db_ChikuMaster)(nil),                           // 78: db_service.db_ChikuMaster
+	(*Db_GetUntenNippoMeisaiRequest)(nil),            // 79: db_service.db_GetUntenNippoMeisaiRequest
+	(*Db_GetUntenNippoMeisaiBySharyoCRequest)(nil),   // 80: db_service.db_GetUntenNippoMeisaiBySharyoCRequest
+	(*Db_GetUntenNippoMeisaiByDateRangeRequest)(nil), // 81: db_service.db_GetUntenNippoMeisaiByDateRangeRequest
+	(*Db_ListUntenNippoMeisaiRequest)(nil),           // 82: db_service.db_ListUntenNippoMeisaiRequest
+	(*Db_UntenNippoMeisaiResponse)(nil),              // 83: db_service.db_UntenNippoMeisaiResponse
+	(*Db_ListUntenNippoMeisaiResponse)(nil),          // 84: db_service.db_ListUntenNippoMeisaiResponse
+	(*Db_GetShainMasterRequest)(nil),                 // 85: db_service.db_GetShainMasterRequest
+	(*Db_GetShainMasterByBumonCRequest)(nil),         // 86: db_service.db_GetShainMasterByBumonCRequest
+	(*Db_ListShainMasterRequest)(nil),                // 87: db_service.db_ListShainMasterRequest
+	(*Db_ShainMasterResponse)(nil),                   // 88: db_service.db_ShainMasterResponse
+	(*Db_ListShainMasterResponse)(nil),               // 89: db_service.db_ListShainMasterResponse
+	(*Db_GetChiikiMasterRequest)(nil),                // 90: db_service.db_GetChiikiMasterRequest
+	(*Db_ListChiikiMasterRequest)(nil),               // 91: db_service.db_ListChiikiMasterRequest
+	(*Db_ChiikiMasterResponse)(nil),                  // 92: db_service.db_ChiikiMasterResponse
+	(*Db_ListChiikiMasterResponse)(nil),              // 93: db_service.db_ListChiikiMasterResponse
+	(*Db_GetChikuMasterRequest)(nil),                 // 94: db_service.db_GetChikuMasterRequest
+	(*Db_GetChikuMasterByChiikiCRequest)(nil),        // 95: db_service.db_GetChikuMasterByChiikiCRequest
+	(*Db_ListChikuMasterRequest)(nil),                // 96: db_service.db_ListChikuMasterRequest
+	(*Db_ChikuMasterResponse)(nil),                   // 97: db_service.db_ChikuMasterResponse
+	(*Db_ListChikuMasterResponse)(nil),               // 98: db_service.db_ListChikuMasterResponse
+	(*Db_Empty)(nil),                                 // 99: db_service.db_Empty
 }
 var file_db_service_proto_depIdxs = []int32{
-	0,  // 0: db_service.CreateDTakoUriageKeihiRequest.dtako_uriage_keihi:type_name -> db_service.DTakoUriageKeihi
-	0,  // 1: db_service.UpdateDTakoUriageKeihiRequest.dtako_uriage_keihi:type_name -> db_service.DTakoUriageKeihi
-	0,  // 2: db_service.DTakoUriageKeihiResponse.dtako_uriage_keihi:type_name -> db_service.DTakoUriageKeihi
-	0,  // 3: db_service.ListDTakoUriageKeihiResponse.items:type_name -> db_service.DTakoUriageKeihi
-	1,  // 4: db_service.CreateETCMeisaiRequest.etc_meisai:type_name -> db_service.ETCMeisai
-	1,  // 5: db_service.UpdateETCMeisaiRequest.etc_meisai:type_name -> db_service.ETCMeisai
-	1,  // 6: db_service.ETCMeisaiResponse.etc_meisai:type_name -> db_service.ETCMeisai
-	1,  // 7: db_service.ListETCMeisaiResponse.items:type_name -> db_service.ETCMeisai
-	2,  // 8: db_service.CreateDTakoFerryRowsRequest.dtako_ferry_rows:type_name -> db_service.DTakoFerryRows
-	2,  // 9: db_service.UpdateDTakoFerryRowsRequest.dtako_ferry_rows:type_name -> db_service.DTakoFerryRows
-	2,  // 10: db_service.DTakoFerryRowsResponse.dtako_ferry_rows:type_name -> db_service.DTakoFerryRows
-	2,  // 11: db_service.ListDTakoFerryRowsResponse.items:type_name -> db_service.DTakoFerryRows
-	24, // 12: db_service.CreateETCMeisaiMappingRequest.etc_meisai_mapping:type_name -> db_service.ETCMeisaiMapping
-	24, // 13: db_service.UpdateETCMeisaiMappingRequest.etc_meisai_mapping:type_name -> db_service.ETCMeisaiMapping
-	24, // 14: db_service.ETCMeisaiMappingResponse.etc_meisai_mapping:type_name -> db_service.ETCMeisaiMapping
-	24, // 15: db_service.ListETCMeisaiMappingResponse.items:type_name -> db_service.ETCMeisaiMapping
-	34, // 16: db_service.DTakoCarsResponse.dtako_cars:type_name -> db_service.DTakoCars
-	34, // 17: db_service.ListDTakoCarsResponse.items:type_name -> db_service.DTakoCars
-	35, // 18: db_service.DTakoEventsResponse.dtako_events:type_name -> db_service.DTakoEvents
-	35, // 19: db_service.ListDTakoEventsResponse.items:type_name -> db_service.DTakoEvents
-	36, // 20: db_service.DTakoRowsResponse.dtako_rows:type_name -> db_service.DTakoRows
-	36, // 21: db_service.ListDTakoRowsResponse.items:type_name -> db_service.DTakoRows
-	37, // 22: db_service.ListETCNumResponse.items:type_name -> db_service.ETCNum
-	57, // 23: db_service.DTakoFerryRowsProdResponse.dtako_ferry_rows:type_name -> db_service.DTakoFerryRowsProd
-	57, // 24: db_service.ListDTakoFerryRowsProdResponse.items:type_name -> db_service.DTakoFerryRowsProd
-	63, // 25: db_service.CarsResponse.cars:type_name -> db_service.Cars
-	63, // 26: db_service.ListCarsResponse.items:type_name -> db_service.Cars
-	64, // 27: db_service.DriversResponse.drivers:type_name -> db_service.Drivers
-	64, // 28: db_service.ListDriversResponse.items:type_name -> db_service.Drivers
-	75, // 29: db_service.UntenNippoMeisaiResponse.unten_nippo_meisai:type_name -> db_service.UntenNippoMeisai
-	75, // 30: db_service.ListUntenNippoMeisaiResponse.items:type_name -> db_service.UntenNippoMeisai
-	76, // 31: db_service.ShainMasterResponse.shain_master:type_name -> db_service.ShainMaster
-	76, // 32: db_service.ListShainMasterResponse.items:type_name -> db_service.ShainMaster
-	77, // 33: db_service.ChiikiMasterResponse.chiiki_master:type_name -> db_service.ChiikiMaster
-	77, // 34: db_service.ListChiikiMasterResponse.items:type_name -> db_service.ChiikiMaster
-	78, // 35: db_service.ChikuMasterResponse.chiku_master:type_name -> db_service.ChikuMaster
-	78, // 36: db_service.ListChikuMasterResponse.items:type_name -> db_service.ChikuMaster
-	3,  // 37: db_service.DTakoUriageKeihiService.Create:input_type -> db_service.CreateDTakoUriageKeihiRequest
-	4,  // 38: db_service.DTakoUriageKeihiService.Get:input_type -> db_service.GetDTakoUriageKeihiRequest
-	5,  // 39: db_service.DTakoUriageKeihiService.Update:input_type -> db_service.UpdateDTakoUriageKeihiRequest
-	6,  // 40: db_service.DTakoUriageKeihiService.Delete:input_type -> db_service.DeleteDTakoUriageKeihiRequest
-	7,  // 41: db_service.DTakoUriageKeihiService.List:input_type -> db_service.ListDTakoUriageKeihiRequest
-	10, // 42: db_service.ETCMeisaiService.Create:input_type -> db_service.CreateETCMeisaiRequest
-	11, // 43: db_service.ETCMeisaiService.Get:input_type -> db_service.GetETCMeisaiRequest
-	12, // 44: db_service.ETCMeisaiService.Update:input_type -> db_service.UpdateETCMeisaiRequest
-	13, // 45: db_service.ETCMeisaiService.Delete:input_type -> db_service.DeleteETCMeisaiRequest
-	14, // 46: db_service.ETCMeisaiService.List:input_type -> db_service.ListETCMeisaiRequest
-	17, // 47: db_service.DTakoFerryRowsService.Create:input_type -> db_service.CreateDTakoFerryRowsRequest
-	18, // 48: db_service.DTakoFerryRowsService.Get:input_type -> db_service.GetDTakoFerryRowsRequest
-	19, // 49: db_service.DTakoFerryRowsService.Update:input_type -> db_service.UpdateDTakoFerryRowsRequest
-	20, // 50: db_service.DTakoFerryRowsService.Delete:input_type -> db_service.DeleteDTakoFerryRowsRequest
-	21, // 51: db_service.DTakoFerryRowsService.List:input_type -> db_service.ListDTakoFerryRowsRequest
-	25, // 52: db_service.ETCMeisaiMappingService.Create:input_type -> db_service.CreateETCMeisaiMappingRequest
-	26, // 53: db_service.ETCMeisaiMappingService.Get:input_type -> db_service.GetETCMeisaiMappingRequest
-	27, // 54: db_service.ETCMeisaiMappingService.Update:input_type -> db_service.UpdateETCMeisaiMappingRequest
-	28, // 55: db_service.ETCMeisaiMappingService.Delete:input_type -> db_service.DeleteETCMeisaiMappingRequest
-	29, // 56: db_service.ETCMeisaiMappingService.List:input_type -> db_service.ListETCMeisaiMappingRequest
-	32, // 57: db_service.ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> db_service.GetDTakoRowIDByHashRequest
-	38, // 58: db_service.DTakoCarsService.Get:input_type -> db_service.GetDTakoCarsRequest
-	40, // 59: db_service.DTakoCarsService.List:input_type -> db_service.ListDTakoCarsRequest
-	39, // 60: db_service.DTakoCarsService.GetByCarCode:input_type -> db_service.GetDTakoCarsByCarCodeRequest
-	43, // 61: db_service.DTakoEventsService.Get:input_type -> db_service.GetDTakoEventsRequest
-	45, // 62: db_service.DTakoEventsService.List:input_type -> db_service.ListDTakoEventsRequest
-	44, // 63: db_service.DTakoEventsService.GetByOperationNo:input_type -> db_service.GetDTakoEventsByOperationNoRequest
-	48, // 64: db_service.DTakoRowsService.Get:input_type -> db_service.GetDTakoRowsRequest
-	50, // 65: db_service.DTakoRowsService.List:input_type -> db_service.ListDTakoRowsRequest
-	49, // 66: db_service.DTakoRowsService.GetByOperationNo:input_type -> db_service.GetDTakoRowsByOperationNoRequest
-	55, // 67: db_service.ETCNumService.List:input_type -> db_service.ListETCNumRequest
-	53, // 68: db_service.ETCNumService.GetByETCCardNum:input_type -> db_service.GetETCNumByETCCardNumRequest
-	54, // 69: db_service.ETCNumService.GetByCarID:input_type -> db_service.GetETCNumByCarIDRequest
-	58, // 70: db_service.DTakoFerryRowsProdService.Get:input_type -> db_service.GetDTakoFerryRowsProdRequest
-	60, // 71: db_service.DTakoFerryRowsProdService.List:input_type -> db_service.ListDTakoFerryRowsProdRequest
-	59, // 72: db_service.DTakoFerryRowsProdService.GetByUnkoNo:input_type -> db_service.GetDTakoFerryRowsProdByUnkoNoRequest
-	65, // 73: db_service.CarsService.Get:input_type -> db_service.GetCarsRequest
-	67, // 74: db_service.CarsService.List:input_type -> db_service.ListCarsRequest
-	66, // 75: db_service.CarsService.GetByBumonCodeID:input_type -> db_service.GetCarsByBumonCodeIDRequest
-	70, // 76: db_service.DriversService.Get:input_type -> db_service.GetDriversRequest
-	72, // 77: db_service.DriversService.List:input_type -> db_service.ListDriversRequest
-	71, // 78: db_service.DriversService.GetByBumon:input_type -> db_service.GetDriversByBumonRequest
-	79, // 79: db_service.UntenNippoMeisaiService.Get:input_type -> db_service.GetUntenNippoMeisaiRequest
-	82, // 80: db_service.UntenNippoMeisaiService.List:input_type -> db_service.ListUntenNippoMeisaiRequest
-	80, // 81: db_service.UntenNippoMeisaiService.GetBySharyoC:input_type -> db_service.GetUntenNippoMeisaiBySharyoCRequest
-	81, // 82: db_service.UntenNippoMeisaiService.GetByDateRange:input_type -> db_service.GetUntenNippoMeisaiByDateRangeRequest
-	85, // 83: db_service.ShainMasterService.Get:input_type -> db_service.GetShainMasterRequest
-	87, // 84: db_service.ShainMasterService.List:input_type -> db_service.ListShainMasterRequest
-	86, // 85: db_service.ShainMasterService.GetByBumonC:input_type -> db_service.GetShainMasterByBumonCRequest
-	90, // 86: db_service.ChiikiMasterService.Get:input_type -> db_service.GetChiikiMasterRequest
-	91, // 87: db_service.ChiikiMasterService.List:input_type -> db_service.ListChiikiMasterRequest
-	94, // 88: db_service.ChikuMasterService.Get:input_type -> db_service.GetChikuMasterRequest
-	96, // 89: db_service.ChikuMasterService.List:input_type -> db_service.ListChikuMasterRequest
-	95, // 90: db_service.ChikuMasterService.GetByChiikiC:input_type -> db_service.GetChikuMasterByChiikiCRequest
-	8,  // 91: db_service.DTakoUriageKeihiService.Create:output_type -> db_service.DTakoUriageKeihiResponse
-	8,  // 92: db_service.DTakoUriageKeihiService.Get:output_type -> db_service.DTakoUriageKeihiResponse
-	8,  // 93: db_service.DTakoUriageKeihiService.Update:output_type -> db_service.DTakoUriageKeihiResponse
-	99, // 94: db_service.DTakoUriageKeihiService.Delete:output_type -> db_service.Empty
-	9,  // 95: db_service.DTakoUriageKeihiService.List:output_type -> db_service.ListDTakoUriageKeihiResponse
-	15, // 96: db_service.ETCMeisaiService.Create:output_type -> db_service.ETCMeisaiResponse
-	15, // 97: db_service.ETCMeisaiService.Get:output_type -> db_service.ETCMeisaiResponse
-	15, // 98: db_service.ETCMeisaiService.Update:output_type -> db_service.ETCMeisaiResponse
-	99, // 99: db_service.ETCMeisaiService.Delete:output_type -> db_service.Empty
-	16, // 100: db_service.ETCMeisaiService.List:output_type -> db_service.ListETCMeisaiResponse
-	22, // 101: db_service.DTakoFerryRowsService.Create:output_type -> db_service.DTakoFerryRowsResponse
-	22, // 102: db_service.DTakoFerryRowsService.Get:output_type -> db_service.DTakoFerryRowsResponse
-	22, // 103: db_service.DTakoFerryRowsService.Update:output_type -> db_service.DTakoFerryRowsResponse
-	99, // 104: db_service.DTakoFerryRowsService.Delete:output_type -> db_service.Empty
-	23, // 105: db_service.DTakoFerryRowsService.List:output_type -> db_service.ListDTakoFerryRowsResponse
-	30, // 106: db_service.ETCMeisaiMappingService.Create:output_type -> db_service.ETCMeisaiMappingResponse
-	30, // 107: db_service.ETCMeisaiMappingService.Get:output_type -> db_service.ETCMeisaiMappingResponse
-	30, // 108: db_service.ETCMeisaiMappingService.Update:output_type -> db_service.ETCMeisaiMappingResponse
-	99, // 109: db_service.ETCMeisaiMappingService.Delete:output_type -> db_service.Empty
-	31, // 110: db_service.ETCMeisaiMappingService.List:output_type -> db_service.ListETCMeisaiMappingResponse
-	33, // 111: db_service.ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> db_service.GetDTakoRowIDByHashResponse
-	41, // 112: db_service.DTakoCarsService.Get:output_type -> db_service.DTakoCarsResponse
-	42, // 113: db_service.DTakoCarsService.List:output_type -> db_service.ListDTakoCarsResponse
-	41, // 114: db_service.DTakoCarsService.GetByCarCode:output_type -> db_service.DTakoCarsResponse
-	46, // 115: db_service.DTakoEventsService.Get:output_type -> db_service.DTakoEventsResponse
-	47, // 116: db_service.DTakoEventsService.List:output_type -> db_service.ListDTakoEventsResponse
-	47, // 117: db_service.DTakoEventsService.GetByOperationNo:output_type -> db_service.ListDTakoEventsResponse
-	51, // 118: db_service.DTakoRowsService.Get:output_type -> db_service.DTakoRowsResponse
-	52, // 119: db_service.DTakoRowsService.List:output_type -> db_service.ListDTakoRowsResponse
-	52, // 120: db_service.DTakoRowsService.GetByOperationNo:output_type -> db_service.ListDTakoRowsResponse
-	56, // 121: db_service.ETCNumService.List:output_type -> db_service.ListETCNumResponse
-	56, // 122: db_service.ETCNumService.GetByETCCardNum:output_type -> db_service.ListETCNumResponse
-	56, // 123: db_service.ETCNumService.GetByCarID:output_type -> db_service.ListETCNumResponse
-	61, // 124: db_service.DTakoFerryRowsProdService.Get:output_type -> db_service.DTakoFerryRowsProdResponse
-	62, // 125: db_service.DTakoFerryRowsProdService.List:output_type -> db_service.ListDTakoFerryRowsProdResponse
-	62, // 126: db_service.DTakoFerryRowsProdService.GetByUnkoNo:output_type -> db_service.ListDTakoFerryRowsProdResponse
-	68, // 127: db_service.CarsService.Get:output_type -> db_service.CarsResponse
-	69, // 128: db_service.CarsService.List:output_type -> db_service.ListCarsResponse
-	69, // 129: db_service.CarsService.GetByBumonCodeID:output_type -> db_service.ListCarsResponse
-	73, // 130: db_service.DriversService.Get:output_type -> db_service.DriversResponse
-	74, // 131: db_service.DriversService.List:output_type -> db_service.ListDriversResponse
-	74, // 132: db_service.DriversService.GetByBumon:output_type -> db_service.ListDriversResponse
-	83, // 133: db_service.UntenNippoMeisaiService.Get:output_type -> db_service.UntenNippoMeisaiResponse
-	84, // 134: db_service.UntenNippoMeisaiService.List:output_type -> db_service.ListUntenNippoMeisaiResponse
-	84, // 135: db_service.UntenNippoMeisaiService.GetBySharyoC:output_type -> db_service.ListUntenNippoMeisaiResponse
-	84, // 136: db_service.UntenNippoMeisaiService.GetByDateRange:output_type -> db_service.ListUntenNippoMeisaiResponse
-	88, // 137: db_service.ShainMasterService.Get:output_type -> db_service.ShainMasterResponse
-	89, // 138: db_service.ShainMasterService.List:output_type -> db_service.ListShainMasterResponse
-	89, // 139: db_service.ShainMasterService.GetByBumonC:output_type -> db_service.ListShainMasterResponse
-	92, // 140: db_service.ChiikiMasterService.Get:output_type -> db_service.ChiikiMasterResponse
-	93, // 141: db_service.ChiikiMasterService.List:output_type -> db_service.ListChiikiMasterResponse
-	97, // 142: db_service.ChikuMasterService.Get:output_type -> db_service.ChikuMasterResponse
-	98, // 143: db_service.ChikuMasterService.List:output_type -> db_service.ListChikuMasterResponse
-	98, // 144: db_service.ChikuMasterService.GetByChiikiC:output_type -> db_service.ListChikuMasterResponse
+	0,  // 0: db_service.db_CreateDTakoUriageKeihiRequest.dtako_uriage_keihi:type_name -> db_service.db_DTakoUriageKeihi
+	0,  // 1: db_service.db_UpdateDTakoUriageKeihiRequest.dtako_uriage_keihi:type_name -> db_service.db_DTakoUriageKeihi
+	0,  // 2: db_service.db_DTakoUriageKeihiResponse.dtako_uriage_keihi:type_name -> db_service.db_DTakoUriageKeihi
+	0,  // 3: db_service.db_ListDTakoUriageKeihiResponse.items:type_name -> db_service.db_DTakoUriageKeihi
+	1,  // 4: db_service.db_CreateETCMeisaiRequest.etc_meisai:type_name -> db_service.db_ETCMeisai
+	1,  // 5: db_service.db_UpdateETCMeisaiRequest.etc_meisai:type_name -> db_service.db_ETCMeisai
+	1,  // 6: db_service.db_ETCMeisaiResponse.etc_meisai:type_name -> db_service.db_ETCMeisai
+	1,  // 7: db_service.db_ListETCMeisaiResponse.items:type_name -> db_service.db_ETCMeisai
+	2,  // 8: db_service.db_CreateDTakoFerryRowsRequest.dtako_ferry_rows:type_name -> db_service.db_DTakoFerryRows
+	2,  // 9: db_service.db_UpdateDTakoFerryRowsRequest.dtako_ferry_rows:type_name -> db_service.db_DTakoFerryRows
+	2,  // 10: db_service.db_DTakoFerryRowsResponse.dtako_ferry_rows:type_name -> db_service.db_DTakoFerryRows
+	2,  // 11: db_service.db_ListDTakoFerryRowsResponse.items:type_name -> db_service.db_DTakoFerryRows
+	24, // 12: db_service.db_CreateETCMeisaiMappingRequest.etc_meisai_mapping:type_name -> db_service.db_ETCMeisaiMapping
+	24, // 13: db_service.db_UpdateETCMeisaiMappingRequest.etc_meisai_mapping:type_name -> db_service.db_ETCMeisaiMapping
+	24, // 14: db_service.db_ETCMeisaiMappingResponse.etc_meisai_mapping:type_name -> db_service.db_ETCMeisaiMapping
+	24, // 15: db_service.db_ListETCMeisaiMappingResponse.items:type_name -> db_service.db_ETCMeisaiMapping
+	34, // 16: db_service.db_DTakoCarsResponse.dtako_cars:type_name -> db_service.db_DTakoCars
+	34, // 17: db_service.db_ListDTakoCarsResponse.items:type_name -> db_service.db_DTakoCars
+	35, // 18: db_service.db_DTakoEventsResponse.dtako_events:type_name -> db_service.db_DTakoEvents
+	35, // 19: db_service.db_ListDTakoEventsResponse.items:type_name -> db_service.db_DTakoEvents
+	36, // 20: db_service.db_DTakoRowsResponse.dtako_rows:type_name -> db_service.db_DTakoRows
+	36, // 21: db_service.db_ListDTakoRowsResponse.items:type_name -> db_service.db_DTakoRows
+	37, // 22: db_service.db_ListETCNumResponse.items:type_name -> db_service.db_ETCNum
+	57, // 23: db_service.db_DTakoFerryRowsProdResponse.dtako_ferry_rows:type_name -> db_service.db_DTakoFerryRowsProd
+	57, // 24: db_service.db_ListDTakoFerryRowsProdResponse.items:type_name -> db_service.db_DTakoFerryRowsProd
+	63, // 25: db_service.db_CarsResponse.cars:type_name -> db_service.db_Cars
+	63, // 26: db_service.db_ListCarsResponse.items:type_name -> db_service.db_Cars
+	64, // 27: db_service.db_DriversResponse.drivers:type_name -> db_service.db_Drivers
+	64, // 28: db_service.db_ListDriversResponse.items:type_name -> db_service.db_Drivers
+	75, // 29: db_service.db_UntenNippoMeisaiResponse.unten_nippo_meisai:type_name -> db_service.db_UntenNippoMeisai
+	75, // 30: db_service.db_ListUntenNippoMeisaiResponse.items:type_name -> db_service.db_UntenNippoMeisai
+	76, // 31: db_service.db_ShainMasterResponse.shain_master:type_name -> db_service.db_ShainMaster
+	76, // 32: db_service.db_ListShainMasterResponse.items:type_name -> db_service.db_ShainMaster
+	77, // 33: db_service.db_ChiikiMasterResponse.chiiki_master:type_name -> db_service.db_ChiikiMaster
+	77, // 34: db_service.db_ListChiikiMasterResponse.items:type_name -> db_service.db_ChiikiMaster
+	78, // 35: db_service.db_ChikuMasterResponse.chiku_master:type_name -> db_service.db_ChikuMaster
+	78, // 36: db_service.db_ListChikuMasterResponse.items:type_name -> db_service.db_ChikuMaster
+	3,  // 37: db_service.db_DTakoUriageKeihiService.Create:input_type -> db_service.db_CreateDTakoUriageKeihiRequest
+	4,  // 38: db_service.db_DTakoUriageKeihiService.Get:input_type -> db_service.db_GetDTakoUriageKeihiRequest
+	5,  // 39: db_service.db_DTakoUriageKeihiService.Update:input_type -> db_service.db_UpdateDTakoUriageKeihiRequest
+	6,  // 40: db_service.db_DTakoUriageKeihiService.Delete:input_type -> db_service.db_DeleteDTakoUriageKeihiRequest
+	7,  // 41: db_service.db_DTakoUriageKeihiService.List:input_type -> db_service.db_ListDTakoUriageKeihiRequest
+	10, // 42: db_service.db_ETCMeisaiService.Create:input_type -> db_service.db_CreateETCMeisaiRequest
+	11, // 43: db_service.db_ETCMeisaiService.Get:input_type -> db_service.db_GetETCMeisaiRequest
+	12, // 44: db_service.db_ETCMeisaiService.Update:input_type -> db_service.db_UpdateETCMeisaiRequest
+	13, // 45: db_service.db_ETCMeisaiService.Delete:input_type -> db_service.db_DeleteETCMeisaiRequest
+	14, // 46: db_service.db_ETCMeisaiService.List:input_type -> db_service.db_ListETCMeisaiRequest
+	17, // 47: db_service.db_DTakoFerryRowsService.Create:input_type -> db_service.db_CreateDTakoFerryRowsRequest
+	18, // 48: db_service.db_DTakoFerryRowsService.Get:input_type -> db_service.db_GetDTakoFerryRowsRequest
+	19, // 49: db_service.db_DTakoFerryRowsService.Update:input_type -> db_service.db_UpdateDTakoFerryRowsRequest
+	20, // 50: db_service.db_DTakoFerryRowsService.Delete:input_type -> db_service.db_DeleteDTakoFerryRowsRequest
+	21, // 51: db_service.db_DTakoFerryRowsService.List:input_type -> db_service.db_ListDTakoFerryRowsRequest
+	25, // 52: db_service.db_ETCMeisaiMappingService.Create:input_type -> db_service.db_CreateETCMeisaiMappingRequest
+	26, // 53: db_service.db_ETCMeisaiMappingService.Get:input_type -> db_service.db_GetETCMeisaiMappingRequest
+	27, // 54: db_service.db_ETCMeisaiMappingService.Update:input_type -> db_service.db_UpdateETCMeisaiMappingRequest
+	28, // 55: db_service.db_ETCMeisaiMappingService.Delete:input_type -> db_service.db_DeleteETCMeisaiMappingRequest
+	29, // 56: db_service.db_ETCMeisaiMappingService.List:input_type -> db_service.db_ListETCMeisaiMappingRequest
+	32, // 57: db_service.db_ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> db_service.db_GetDTakoRowIDByHashRequest
+	38, // 58: db_service.db_DTakoCarsService.Get:input_type -> db_service.db_GetDTakoCarsRequest
+	40, // 59: db_service.db_DTakoCarsService.List:input_type -> db_service.db_ListDTakoCarsRequest
+	39, // 60: db_service.db_DTakoCarsService.GetByCarCode:input_type -> db_service.db_GetDTakoCarsByCarCodeRequest
+	43, // 61: db_service.db_DTakoEventsService.Get:input_type -> db_service.db_GetDTakoEventsRequest
+	45, // 62: db_service.db_DTakoEventsService.List:input_type -> db_service.db_ListDTakoEventsRequest
+	44, // 63: db_service.db_DTakoEventsService.GetByOperationNo:input_type -> db_service.db_GetDTakoEventsByOperationNoRequest
+	48, // 64: db_service.db_DTakoRowsService.Get:input_type -> db_service.db_GetDTakoRowsRequest
+	50, // 65: db_service.db_DTakoRowsService.List:input_type -> db_service.db_ListDTakoRowsRequest
+	49, // 66: db_service.db_DTakoRowsService.GetByOperationNo:input_type -> db_service.db_GetDTakoRowsByOperationNoRequest
+	55, // 67: db_service.db_ETCNumService.List:input_type -> db_service.db_ListETCNumRequest
+	53, // 68: db_service.db_ETCNumService.GetByETCCardNum:input_type -> db_service.db_GetETCNumByETCCardNumRequest
+	54, // 69: db_service.db_ETCNumService.GetByCarID:input_type -> db_service.db_GetETCNumByCarIDRequest
+	58, // 70: db_service.db_DTakoFerryRowsProdService.Get:input_type -> db_service.db_GetDTakoFerryRowsProdRequest
+	60, // 71: db_service.db_DTakoFerryRowsProdService.List:input_type -> db_service.db_ListDTakoFerryRowsProdRequest
+	59, // 72: db_service.db_DTakoFerryRowsProdService.GetByUnkoNo:input_type -> db_service.db_GetDTakoFerryRowsProdByUnkoNoRequest
+	65, // 73: db_service.db_CarsService.Get:input_type -> db_service.db_GetCarsRequest
+	67, // 74: db_service.db_CarsService.List:input_type -> db_service.db_ListCarsRequest
+	66, // 75: db_service.db_CarsService.GetByBumonCodeID:input_type -> db_service.db_GetCarsByBumonCodeIDRequest
+	70, // 76: db_service.db_DriversService.Get:input_type -> db_service.db_GetDriversRequest
+	72, // 77: db_service.db_DriversService.List:input_type -> db_service.db_ListDriversRequest
+	71, // 78: db_service.db_DriversService.GetByBumon:input_type -> db_service.db_GetDriversByBumonRequest
+	79, // 79: db_service.db_UntenNippoMeisaiService.Get:input_type -> db_service.db_GetUntenNippoMeisaiRequest
+	82, // 80: db_service.db_UntenNippoMeisaiService.List:input_type -> db_service.db_ListUntenNippoMeisaiRequest
+	80, // 81: db_service.db_UntenNippoMeisaiService.GetBySharyoC:input_type -> db_service.db_GetUntenNippoMeisaiBySharyoCRequest
+	81, // 82: db_service.db_UntenNippoMeisaiService.GetByDateRange:input_type -> db_service.db_GetUntenNippoMeisaiByDateRangeRequest
+	85, // 83: db_service.db_ShainMasterService.Get:input_type -> db_service.db_GetShainMasterRequest
+	87, // 84: db_service.db_ShainMasterService.List:input_type -> db_service.db_ListShainMasterRequest
+	86, // 85: db_service.db_ShainMasterService.GetByBumonC:input_type -> db_service.db_GetShainMasterByBumonCRequest
+	90, // 86: db_service.db_ChiikiMasterService.Get:input_type -> db_service.db_GetChiikiMasterRequest
+	91, // 87: db_service.db_ChiikiMasterService.List:input_type -> db_service.db_ListChiikiMasterRequest
+	94, // 88: db_service.db_ChikuMasterService.Get:input_type -> db_service.db_GetChikuMasterRequest
+	96, // 89: db_service.db_ChikuMasterService.List:input_type -> db_service.db_ListChikuMasterRequest
+	95, // 90: db_service.db_ChikuMasterService.GetByChiikiC:input_type -> db_service.db_GetChikuMasterByChiikiCRequest
+	8,  // 91: db_service.db_DTakoUriageKeihiService.Create:output_type -> db_service.db_DTakoUriageKeihiResponse
+	8,  // 92: db_service.db_DTakoUriageKeihiService.Get:output_type -> db_service.db_DTakoUriageKeihiResponse
+	8,  // 93: db_service.db_DTakoUriageKeihiService.Update:output_type -> db_service.db_DTakoUriageKeihiResponse
+	99, // 94: db_service.db_DTakoUriageKeihiService.Delete:output_type -> db_service.db_Empty
+	9,  // 95: db_service.db_DTakoUriageKeihiService.List:output_type -> db_service.db_ListDTakoUriageKeihiResponse
+	15, // 96: db_service.db_ETCMeisaiService.Create:output_type -> db_service.db_ETCMeisaiResponse
+	15, // 97: db_service.db_ETCMeisaiService.Get:output_type -> db_service.db_ETCMeisaiResponse
+	15, // 98: db_service.db_ETCMeisaiService.Update:output_type -> db_service.db_ETCMeisaiResponse
+	99, // 99: db_service.db_ETCMeisaiService.Delete:output_type -> db_service.db_Empty
+	16, // 100: db_service.db_ETCMeisaiService.List:output_type -> db_service.db_ListETCMeisaiResponse
+	22, // 101: db_service.db_DTakoFerryRowsService.Create:output_type -> db_service.db_DTakoFerryRowsResponse
+	22, // 102: db_service.db_DTakoFerryRowsService.Get:output_type -> db_service.db_DTakoFerryRowsResponse
+	22, // 103: db_service.db_DTakoFerryRowsService.Update:output_type -> db_service.db_DTakoFerryRowsResponse
+	99, // 104: db_service.db_DTakoFerryRowsService.Delete:output_type -> db_service.db_Empty
+	23, // 105: db_service.db_DTakoFerryRowsService.List:output_type -> db_service.db_ListDTakoFerryRowsResponse
+	30, // 106: db_service.db_ETCMeisaiMappingService.Create:output_type -> db_service.db_ETCMeisaiMappingResponse
+	30, // 107: db_service.db_ETCMeisaiMappingService.Get:output_type -> db_service.db_ETCMeisaiMappingResponse
+	30, // 108: db_service.db_ETCMeisaiMappingService.Update:output_type -> db_service.db_ETCMeisaiMappingResponse
+	99, // 109: db_service.db_ETCMeisaiMappingService.Delete:output_type -> db_service.db_Empty
+	31, // 110: db_service.db_ETCMeisaiMappingService.List:output_type -> db_service.db_ListETCMeisaiMappingResponse
+	33, // 111: db_service.db_ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> db_service.db_GetDTakoRowIDByHashResponse
+	41, // 112: db_service.db_DTakoCarsService.Get:output_type -> db_service.db_DTakoCarsResponse
+	42, // 113: db_service.db_DTakoCarsService.List:output_type -> db_service.db_ListDTakoCarsResponse
+	41, // 114: db_service.db_DTakoCarsService.GetByCarCode:output_type -> db_service.db_DTakoCarsResponse
+	46, // 115: db_service.db_DTakoEventsService.Get:output_type -> db_service.db_DTakoEventsResponse
+	47, // 116: db_service.db_DTakoEventsService.List:output_type -> db_service.db_ListDTakoEventsResponse
+	47, // 117: db_service.db_DTakoEventsService.GetByOperationNo:output_type -> db_service.db_ListDTakoEventsResponse
+	51, // 118: db_service.db_DTakoRowsService.Get:output_type -> db_service.db_DTakoRowsResponse
+	52, // 119: db_service.db_DTakoRowsService.List:output_type -> db_service.db_ListDTakoRowsResponse
+	52, // 120: db_service.db_DTakoRowsService.GetByOperationNo:output_type -> db_service.db_ListDTakoRowsResponse
+	56, // 121: db_service.db_ETCNumService.List:output_type -> db_service.db_ListETCNumResponse
+	56, // 122: db_service.db_ETCNumService.GetByETCCardNum:output_type -> db_service.db_ListETCNumResponse
+	56, // 123: db_service.db_ETCNumService.GetByCarID:output_type -> db_service.db_ListETCNumResponse
+	61, // 124: db_service.db_DTakoFerryRowsProdService.Get:output_type -> db_service.db_DTakoFerryRowsProdResponse
+	62, // 125: db_service.db_DTakoFerryRowsProdService.List:output_type -> db_service.db_ListDTakoFerryRowsProdResponse
+	62, // 126: db_service.db_DTakoFerryRowsProdService.GetByUnkoNo:output_type -> db_service.db_ListDTakoFerryRowsProdResponse
+	68, // 127: db_service.db_CarsService.Get:output_type -> db_service.db_CarsResponse
+	69, // 128: db_service.db_CarsService.List:output_type -> db_service.db_ListCarsResponse
+	69, // 129: db_service.db_CarsService.GetByBumonCodeID:output_type -> db_service.db_ListCarsResponse
+	73, // 130: db_service.db_DriversService.Get:output_type -> db_service.db_DriversResponse
+	74, // 131: db_service.db_DriversService.List:output_type -> db_service.db_ListDriversResponse
+	74, // 132: db_service.db_DriversService.GetByBumon:output_type -> db_service.db_ListDriversResponse
+	83, // 133: db_service.db_UntenNippoMeisaiService.Get:output_type -> db_service.db_UntenNippoMeisaiResponse
+	84, // 134: db_service.db_UntenNippoMeisaiService.List:output_type -> db_service.db_ListUntenNippoMeisaiResponse
+	84, // 135: db_service.db_UntenNippoMeisaiService.GetBySharyoC:output_type -> db_service.db_ListUntenNippoMeisaiResponse
+	84, // 136: db_service.db_UntenNippoMeisaiService.GetByDateRange:output_type -> db_service.db_ListUntenNippoMeisaiResponse
+	88, // 137: db_service.db_ShainMasterService.Get:output_type -> db_service.db_ShainMasterResponse
+	89, // 138: db_service.db_ShainMasterService.List:output_type -> db_service.db_ListShainMasterResponse
+	89, // 139: db_service.db_ShainMasterService.GetByBumonC:output_type -> db_service.db_ListShainMasterResponse
+	92, // 140: db_service.db_ChiikiMasterService.Get:output_type -> db_service.db_ChiikiMasterResponse
+	93, // 141: db_service.db_ChiikiMasterService.List:output_type -> db_service.db_ListChiikiMasterResponse
+	97, // 142: db_service.db_ChikuMasterService.Get:output_type -> db_service.db_ChikuMasterResponse
+	98, // 143: db_service.db_ChikuMasterService.List:output_type -> db_service.db_ListChikuMasterResponse
+	98, // 144: db_service.db_ChikuMasterService.GetByChiikiC:output_type -> db_service.db_ListChikuMasterResponse
 	91, // [91:145] is the sub-list for method output_type
 	37, // [37:91] is the sub-list for method input_type
 	37, // [37:37] is the sub-list for extension type_name

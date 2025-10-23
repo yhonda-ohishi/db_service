@@ -7,35 +7,35 @@ import "google/api/annotations.proto";
 option go_package = "github.com/yhonda-ohishi/db_service/src/proto";
 
 // DTakoUriageKeihiサービス - 経費精算データ管理
-service DTakoUriageKeihiService {
+service db_DTakoUriageKeihiService {
   // 経費精算データ作成
-  rpc Create(CreateDTakoUriageKeihiRequest) returns (DTakoUriageKeihiResponse) {
+  rpc Create(db_CreateDTakoUriageKeihiRequest) returns (db_DTakoUriageKeihiResponse) {
     option (google.api.http) = {
       post: "/api/v1/db/dtako-uriage-keihi"
       body: "dtako_uriage_keihi"
     };
   }
   // 経費精算データ取得
-  rpc Get(GetDTakoUriageKeihiRequest) returns (DTakoUriageKeihiResponse) {
+  rpc Get(db_GetDTakoUriageKeihiRequest) returns (db_DTakoUriageKeihiResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-uriage-keihi/{srch_id}"
     };
   }
   // 経費精算データ更新
-  rpc Update(UpdateDTakoUriageKeihiRequest) returns (DTakoUriageKeihiResponse) {
+  rpc Update(db_UpdateDTakoUriageKeihiRequest) returns (db_DTakoUriageKeihiResponse) {
     option (google.api.http) = {
       put: "/api/v1/db/dtako-uriage-keihi/{dtako_uriage_keihi.srch_id}"
       body: "dtako_uriage_keihi"
     };
   }
   // 経費精算データ削除
-  rpc Delete(DeleteDTakoUriageKeihiRequest) returns (Empty) {
+  rpc Delete(db_DeleteDTakoUriageKeihiRequest) returns (db_Empty) {
     option (google.api.http) = {
       delete: "/api/v1/db/dtako-uriage-keihi/{srch_id}"
     };
   }
   // 経費精算データ一覧取得
-  rpc List(ListDTakoUriageKeihiRequest) returns (ListDTakoUriageKeihiResponse) {
+  rpc List(db_ListDTakoUriageKeihiRequest) returns (db_ListDTakoUriageKeihiResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-uriage-keihi"
     };
@@ -43,35 +43,35 @@ service DTakoUriageKeihiService {
 }
 
 // ETCMeisaiサービス - ETC明細データ管理
-service ETCMeisaiService {
+service db_ETCMeisaiService {
   // ETC明細データ作成
-  rpc Create(CreateETCMeisaiRequest) returns (ETCMeisaiResponse) {
+  rpc Create(db_CreateETCMeisaiRequest) returns (db_ETCMeisaiResponse) {
     option (google.api.http) = {
       post: "/api/v1/db/etc-meisai"
       body: "etc_meisai"
     };
   }
   // ETC明細データ取得
-  rpc Get(GetETCMeisaiRequest) returns (ETCMeisaiResponse) {
+  rpc Get(db_GetETCMeisaiRequest) returns (db_ETCMeisaiResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/etc-meisai/{id}"
     };
   }
   // ETC明細データ更新
-  rpc Update(UpdateETCMeisaiRequest) returns (ETCMeisaiResponse) {
+  rpc Update(db_UpdateETCMeisaiRequest) returns (db_ETCMeisaiResponse) {
     option (google.api.http) = {
       put: "/api/v1/db/etc-meisai/{etc_meisai.id}"
       body: "etc_meisai"
     };
   }
   // ETC明細データ削除
-  rpc Delete(DeleteETCMeisaiRequest) returns (Empty) {
+  rpc Delete(db_DeleteETCMeisaiRequest) returns (db_Empty) {
     option (google.api.http) = {
       delete: "/api/v1/db/etc-meisai/{id}"
     };
   }
   // ETC明細データ一覧取得
-  rpc List(ListETCMeisaiRequest) returns (ListETCMeisaiResponse) {
+  rpc List(db_ListETCMeisaiRequest) returns (db_ListETCMeisaiResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/etc-meisai"
     };
@@ -79,35 +79,35 @@ service ETCMeisaiService {
 }
 
 // DTakoFerryRowsサービス - フェリー運行データ管理
-service DTakoFerryRowsService {
+service db_DTakoFerryRowsService {
   // フェリー運行データ作成
-  rpc Create(CreateDTakoFerryRowsRequest) returns (DTakoFerryRowsResponse) {
+  rpc Create(db_CreateDTakoFerryRowsRequest) returns (db_DTakoFerryRowsResponse) {
     option (google.api.http) = {
       post: "/api/v1/db/dtako-ferry-rows"
       body: "dtako_ferry_rows"
     };
   }
   // フェリー運行データ取得
-  rpc Get(GetDTakoFerryRowsRequest) returns (DTakoFerryRowsResponse) {
+  rpc Get(db_GetDTakoFerryRowsRequest) returns (db_DTakoFerryRowsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-ferry-rows/{id}"
     };
   }
   // フェリー運行データ更新
-  rpc Update(UpdateDTakoFerryRowsRequest) returns (DTakoFerryRowsResponse) {
+  rpc Update(db_UpdateDTakoFerryRowsRequest) returns (db_DTakoFerryRowsResponse) {
     option (google.api.http) = {
       put: "/api/v1/db/dtako-ferry-rows/{dtako_ferry_rows.id}"
       body: "dtako_ferry_rows"
     };
   }
   // フェリー運行データ削除
-  rpc Delete(DeleteDTakoFerryRowsRequest) returns (Empty) {
+  rpc Delete(db_DeleteDTakoFerryRowsRequest) returns (db_Empty) {
     option (google.api.http) = {
       delete: "/api/v1/db/dtako-ferry-rows/{id}"
     };
   }
   // フェリー運行データ一覧取得
-  rpc List(ListDTakoFerryRowsRequest) returns (ListDTakoFerryRowsResponse) {
+  rpc List(db_ListDTakoFerryRowsRequest) returns (db_ListDTakoFerryRowsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-ferry-rows"
     };
@@ -115,41 +115,41 @@ service DTakoFerryRowsService {
 }
 
 // ETCMeisaiMappingサービス - ETC明細とDTakoRowsのマッピング管理
-service ETCMeisaiMappingService {
+service db_ETCMeisaiMappingService {
   // マッピング作成
-  rpc Create(CreateETCMeisaiMappingRequest) returns (ETCMeisaiMappingResponse) {
+  rpc Create(db_CreateETCMeisaiMappingRequest) returns (db_ETCMeisaiMappingResponse) {
     option (google.api.http) = {
       post: "/api/v1/db/etc-meisai-mapping"
       body: "etc_meisai_mapping"
     };
   }
   // マッピング取得
-  rpc Get(GetETCMeisaiMappingRequest) returns (ETCMeisaiMappingResponse) {
+  rpc Get(db_GetETCMeisaiMappingRequest) returns (db_ETCMeisaiMappingResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/etc-meisai-mapping/{id}"
     };
   }
   // マッピング更新
-  rpc Update(UpdateETCMeisaiMappingRequest) returns (ETCMeisaiMappingResponse) {
+  rpc Update(db_UpdateETCMeisaiMappingRequest) returns (db_ETCMeisaiMappingResponse) {
     option (google.api.http) = {
       put: "/api/v1/db/etc-meisai-mapping/{etc_meisai_mapping.id}"
       body: "etc_meisai_mapping"
     };
   }
   // マッピング削除
-  rpc Delete(DeleteETCMeisaiMappingRequest) returns (Empty) {
+  rpc Delete(db_DeleteETCMeisaiMappingRequest) returns (db_Empty) {
     option (google.api.http) = {
       delete: "/api/v1/db/etc-meisai-mapping/{id}"
     };
   }
   // マッピング一覧取得
-  rpc List(ListETCMeisaiMappingRequest) returns (ListETCMeisaiMappingResponse) {
+  rpc List(db_ListETCMeisaiMappingRequest) returns (db_ListETCMeisaiMappingResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/etc-meisai-mapping"
     };
   }
   // ハッシュからDTakoRowIDを取得
-  rpc GetDTakoRowIDByHash(GetDTakoRowIDByHashRequest) returns (GetDTakoRowIDByHashResponse) {
+  rpc GetDTakoRowIDByHash(db_GetDTakoRowIDByHashRequest) returns (db_GetDTakoRowIDByHashResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/etc-meisai-mapping/by-hash/{etc_meisai_hash}"
     };
@@ -157,7 +157,7 @@ service ETCMeisaiMappingService {
 }
 
 // 経費精算データ
-message DTakoUriageKeihi {
+message db_DTakoUriageKeihi {
   string srch_id = 1;
   string datetime = 2;  // RFC3339形式
   int32 keihi_c = 3;
@@ -176,7 +176,7 @@ message DTakoUriageKeihi {
 }
 
 // ETC明細データ
-message ETCMeisai {
+message db_ETCMeisai {
   int64 id = 1;
   optional string date_fr = 2;
   string date_to = 3;  // RFC3339形式推奨 (例: 2025-10-18T00:00:00Z)
@@ -194,7 +194,7 @@ message ETCMeisai {
 }
 
 // フェリー運行データ
-message DTakoFerryRows {
+message db_DTakoFerryRows {
   int32 id = 1;
   string unko_no = 2;  // 運行NO
   string unko_date = 3;  // 運行日
@@ -228,27 +228,27 @@ message DTakoFerryRows {
 // リクエスト/レスポンスメッセージ
 
 // DTakoUriageKeihi用
-message CreateDTakoUriageKeihiRequest {
-  DTakoUriageKeihi dtako_uriage_keihi = 1;
+message db_CreateDTakoUriageKeihiRequest {
+  db_DTakoUriageKeihi dtako_uriage_keihi = 1;
 }
 
-message GetDTakoUriageKeihiRequest {
+message db_GetDTakoUriageKeihiRequest {
   string srch_id = 1;
   string datetime = 2;
   int32 keihi_c = 3;
 }
 
-message UpdateDTakoUriageKeihiRequest {
-  DTakoUriageKeihi dtako_uriage_keihi = 1;
+message db_UpdateDTakoUriageKeihiRequest {
+  db_DTakoUriageKeihi dtako_uriage_keihi = 1;
 }
 
-message DeleteDTakoUriageKeihiRequest {
+message db_DeleteDTakoUriageKeihiRequest {
   string srch_id = 1;
   string datetime = 2;
   int32 keihi_c = 3;
 }
 
-message ListDTakoUriageKeihiRequest {
+message db_ListDTakoUriageKeihiRequest {
   optional string dtako_row_id = 1;
   optional string start_date = 2;
   optional string end_date = 3;
@@ -256,33 +256,33 @@ message ListDTakoUriageKeihiRequest {
   int32 offset = 5;
 }
 
-message DTakoUriageKeihiResponse {
-  DTakoUriageKeihi dtako_uriage_keihi = 1;
+message db_DTakoUriageKeihiResponse {
+  db_DTakoUriageKeihi dtako_uriage_keihi = 1;
 }
 
-message ListDTakoUriageKeihiResponse {
-  repeated DTakoUriageKeihi items = 1;
+message db_ListDTakoUriageKeihiResponse {
+  repeated db_DTakoUriageKeihi items = 1;
   int32 total_count = 2;
 }
 
 // ETCMeisai用
-message CreateETCMeisaiRequest {
-  ETCMeisai etc_meisai = 1;
+message db_CreateETCMeisaiRequest {
+  db_ETCMeisai etc_meisai = 1;
 }
 
-message GetETCMeisaiRequest {
+message db_GetETCMeisaiRequest {
   int64 id = 1;
 }
 
-message UpdateETCMeisaiRequest {
-  ETCMeisai etc_meisai = 1;
+message db_UpdateETCMeisaiRequest {
+  db_ETCMeisai etc_meisai = 1;
 }
 
-message DeleteETCMeisaiRequest {
+message db_DeleteETCMeisaiRequest {
   int64 id = 1;
 }
 
-message ListETCMeisaiRequest {
+message db_ListETCMeisaiRequest {
   optional string hash = 1;
   optional string start_date = 2;
   optional string end_date = 3;
@@ -290,33 +290,33 @@ message ListETCMeisaiRequest {
   int32 offset = 5;
 }
 
-message ETCMeisaiResponse {
-  ETCMeisai etc_meisai = 1;
+message db_ETCMeisaiResponse {
+  db_ETCMeisai etc_meisai = 1;
 }
 
-message ListETCMeisaiResponse {
-  repeated ETCMeisai items = 1;
+message db_ListETCMeisaiResponse {
+  repeated db_ETCMeisai items = 1;
   int32 total_count = 2;
 }
 
 // DTakoFerryRows用
-message CreateDTakoFerryRowsRequest {
-  DTakoFerryRows dtako_ferry_rows = 1;
+message db_CreateDTakoFerryRowsRequest {
+  db_DTakoFerryRows dtako_ferry_rows = 1;
 }
 
-message GetDTakoFerryRowsRequest {
+message db_GetDTakoFerryRowsRequest {
   int32 id = 1;
 }
 
-message UpdateDTakoFerryRowsRequest {
-  DTakoFerryRows dtako_ferry_rows = 1;
+message db_UpdateDTakoFerryRowsRequest {
+  db_DTakoFerryRows dtako_ferry_rows = 1;
 }
 
-message DeleteDTakoFerryRowsRequest {
+message db_DeleteDTakoFerryRowsRequest {
   int32 id = 1;
 }
 
-message ListDTakoFerryRowsRequest {
+message db_ListDTakoFerryRowsRequest {
   optional string unko_no = 1;
   optional string start_date = 2;
   optional string end_date = 3;
@@ -324,17 +324,17 @@ message ListDTakoFerryRowsRequest {
   int32 offset = 5;
 }
 
-message DTakoFerryRowsResponse {
-  DTakoFerryRows dtako_ferry_rows = 1;
+message db_DTakoFerryRowsResponse {
+  db_DTakoFerryRows dtako_ferry_rows = 1;
 }
 
-message ListDTakoFerryRowsResponse {
-  repeated DTakoFerryRows items = 1;
+message db_ListDTakoFerryRowsResponse {
+  repeated db_DTakoFerryRows items = 1;
   int32 total_count = 2;
 }
 
 // ETC明細マッピングデータ
-message ETCMeisaiMapping {
+message db_ETCMeisaiMapping {
   int64 id = 1;
   string etc_meisai_hash = 2;
   string dtako_row_id = 3;
@@ -345,62 +345,62 @@ message ETCMeisaiMapping {
 }
 
 // ETCMeisaiMapping用リクエスト/レスポンス
-message CreateETCMeisaiMappingRequest {
-  ETCMeisaiMapping etc_meisai_mapping = 1;
+message db_CreateETCMeisaiMappingRequest {
+  db_ETCMeisaiMapping etc_meisai_mapping = 1;
 }
 
-message GetETCMeisaiMappingRequest {
+message db_GetETCMeisaiMappingRequest {
   int64 id = 1;
 }
 
-message UpdateETCMeisaiMappingRequest {
-  ETCMeisaiMapping etc_meisai_mapping = 1;
+message db_UpdateETCMeisaiMappingRequest {
+  db_ETCMeisaiMapping etc_meisai_mapping = 1;
 }
 
-message DeleteETCMeisaiMappingRequest {
+message db_DeleteETCMeisaiMappingRequest {
   int64 id = 1;
 }
 
-message ListETCMeisaiMappingRequest {
+message db_ListETCMeisaiMappingRequest {
   optional string etc_meisai_hash = 1;
   optional string dtako_row_id = 2;
   int32 limit = 3;
   int32 offset = 4;
 }
 
-message ETCMeisaiMappingResponse {
-  ETCMeisaiMapping etc_meisai_mapping = 1;
+message db_ETCMeisaiMappingResponse {
+  db_ETCMeisaiMapping etc_meisai_mapping = 1;
 }
 
-message ListETCMeisaiMappingResponse {
-  repeated ETCMeisaiMapping items = 1;
+message db_ListETCMeisaiMappingResponse {
+  repeated db_ETCMeisaiMapping items = 1;
   int32 total_count = 2;
 }
 
-message GetDTakoRowIDByHashRequest {
+message db_GetDTakoRowIDByHashRequest {
   string etc_meisai_hash = 1;
 }
 
-message GetDTakoRowIDByHashResponse {
+message db_GetDTakoRowIDByHashResponse {
   repeated string dtako_row_ids = 1;
 }
 
 // DTakoCarsサービス - 車輌マスタ管理（本番DB、読み取り専用）
-service DTakoCarsService {
+service db_DTakoCarsService {
   // 車輌情報取得
-  rpc Get(GetDTakoCarsRequest) returns (DTakoCarsResponse) {
+  rpc Get(db_GetDTakoCarsRequest) returns (db_DTakoCarsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-cars/{id}"
     };
   }
   // 車輌情報一覧取得
-  rpc List(ListDTakoCarsRequest) returns (ListDTakoCarsResponse) {
+  rpc List(db_ListDTakoCarsRequest) returns (db_ListDTakoCarsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-cars"
     };
   }
   // 車輌CDで車輌情報取得
-  rpc GetByCarCode(GetDTakoCarsByCarCodeRequest) returns (DTakoCarsResponse) {
+  rpc GetByCarCode(db_GetDTakoCarsByCarCodeRequest) returns (db_DTakoCarsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-cars/by-car-code/{car_code}"
     };
@@ -408,21 +408,21 @@ service DTakoCarsService {
 }
 
 // DTakoEventsサービス - イベント情報管理（本番DB、読み取り専用）
-service DTakoEventsService {
+service db_DTakoEventsService {
   // イベント情報取得
-  rpc Get(GetDTakoEventsRequest) returns (DTakoEventsResponse) {
+  rpc Get(db_GetDTakoEventsRequest) returns (db_DTakoEventsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-events/{id}"
     };
   }
   // イベント情報一覧取得
-  rpc List(ListDTakoEventsRequest) returns (ListDTakoEventsResponse) {
+  rpc List(db_ListDTakoEventsRequest) returns (db_ListDTakoEventsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-events"
     };
   }
   // 運行NOでイベント情報取得
-  rpc GetByOperationNo(GetDTakoEventsByOperationNoRequest) returns (ListDTakoEventsResponse) {
+  rpc GetByOperationNo(db_GetDTakoEventsByOperationNoRequest) returns (db_ListDTakoEventsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-events/by-operation-no/{operation_no}"
     };
@@ -430,21 +430,21 @@ service DTakoEventsService {
 }
 
 // DTakoRowsサービス - 運行データ管理（本番DB、読み取り専用）
-service DTakoRowsService {
+service db_DTakoRowsService {
   // 運行データ取得
-  rpc Get(GetDTakoRowsRequest) returns (DTakoRowsResponse) {
+  rpc Get(db_GetDTakoRowsRequest) returns (db_DTakoRowsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-rows/{id}"
     };
   }
   // 運行データ一覧取得
-  rpc List(ListDTakoRowsRequest) returns (ListDTakoRowsResponse) {
+  rpc List(db_ListDTakoRowsRequest) returns (db_ListDTakoRowsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-rows"
     };
   }
   // 運行NOで運行データ取得
-  rpc GetByOperationNo(GetDTakoRowsByOperationNoRequest) returns (ListDTakoRowsResponse) {
+  rpc GetByOperationNo(db_GetDTakoRowsByOperationNoRequest) returns (db_ListDTakoRowsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-rows/by-operation-no/{operation_no}"
     };
@@ -452,21 +452,21 @@ service DTakoRowsService {
 }
 
 // ETCNumサービス - ETCカード番号マスタ管理（本番DB、読み取り専用）
-service ETCNumService {
+service db_ETCNumService {
   // ETCカード番号一覧取得
-  rpc List(ListETCNumRequest) returns (ListETCNumResponse) {
+  rpc List(db_ListETCNumRequest) returns (db_ListETCNumResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/etc-num"
     };
   }
   // ETCカード番号で取得
-  rpc GetByETCCardNum(GetETCNumByETCCardNumRequest) returns (ListETCNumResponse) {
+  rpc GetByETCCardNum(db_GetETCNumByETCCardNumRequest) returns (db_ListETCNumResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/etc-num/by-etc-card-num/{etc_card_num}"
     };
   }
   // 車輌IDで取得
-  rpc GetByCarID(GetETCNumByCarIDRequest) returns (ListETCNumResponse) {
+  rpc GetByCarID(db_GetETCNumByCarIDRequest) returns (db_ListETCNumResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/etc-num/by-car-id/{car_id}"
     };
@@ -474,21 +474,21 @@ service ETCNumService {
 }
 
 // DTakoFerryRowsProdサービス - フェリー運行データ管理（本番DB、読み取り専用）
-service DTakoFerryRowsProdService {
+service db_DTakoFerryRowsProdService {
   // フェリー運行データ取得
-  rpc Get(GetDTakoFerryRowsProdRequest) returns (DTakoFerryRowsProdResponse) {
+  rpc Get(db_GetDTakoFerryRowsProdRequest) returns (db_DTakoFerryRowsProdResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-ferry-rows-prod/{id}"
     };
   }
   // フェリー運行データ一覧取得
-  rpc List(ListDTakoFerryRowsProdRequest) returns (ListDTakoFerryRowsProdResponse) {
+  rpc List(db_ListDTakoFerryRowsProdRequest) returns (db_ListDTakoFerryRowsProdResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-ferry-rows-prod"
     };
   }
   // 運行NOでフェリー運行データ取得
-  rpc GetByUnkoNo(GetDTakoFerryRowsProdByUnkoNoRequest) returns (ListDTakoFerryRowsProdResponse) {
+  rpc GetByUnkoNo(db_GetDTakoFerryRowsProdByUnkoNoRequest) returns (db_ListDTakoFerryRowsProdResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}"
     };
@@ -496,7 +496,7 @@ service DTakoFerryRowsProdService {
 }
 
 // 車輌マスタデータ（本番DB）
-message DTakoCars {
+message db_DTakoCars {
   int32 id = 1;
   string car_code = 2;
   string car_cc = 3;
@@ -516,7 +516,7 @@ message DTakoCars {
 }
 
 // イベント情報データ（本番DB）
-message DTakoEvents {
+message db_DTakoEvents {
   int64 id = 1;
   string operation_no = 2;
   string read_date = 3;  // RFC3339形式
@@ -550,7 +550,7 @@ message DTakoEvents {
 }
 
 // 運行データ（本番DB）
-message DTakoRows {
+message db_DTakoRows {
   string id = 1;
   string operation_no = 2;
   string read_date = 3;  // RFC3339形式
@@ -584,7 +584,7 @@ message DTakoRows {
 }
 
 // ETCカード番号データ（本番DB）
-message ETCNum {
+message db_ETCNum {
   string etc_card_num = 1;
   string car_id = 2;
   optional string start_date_time = 3;  // RFC3339形式
@@ -593,97 +593,97 @@ message ETCNum {
 }
 
 // DTakoCars用リクエスト/レスポンス
-message GetDTakoCarsRequest {
+message db_GetDTakoCarsRequest {
   int32 id = 1;
 }
 
-message GetDTakoCarsByCarCodeRequest {
+message db_GetDTakoCarsByCarCodeRequest {
   string car_code = 1;
 }
 
-message ListDTakoCarsRequest {
+message db_ListDTakoCarsRequest {
   int32 limit = 1;
   int32 offset = 2;
 }
 
-message DTakoCarsResponse {
-  DTakoCars dtako_cars = 1;
+message db_DTakoCarsResponse {
+  db_DTakoCars dtako_cars = 1;
 }
 
-message ListDTakoCarsResponse {
-  repeated DTakoCars items = 1;
+message db_ListDTakoCarsResponse {
+  repeated db_DTakoCars items = 1;
   int32 total_count = 2;
 }
 
 // DTakoEvents用リクエスト/レスポンス
-message GetDTakoEventsRequest {
+message db_GetDTakoEventsRequest {
   int64 id = 1;
 }
 
-message GetDTakoEventsByOperationNoRequest {
+message db_GetDTakoEventsByOperationNoRequest {
   string operation_no = 1;
 }
 
-message ListDTakoEventsRequest {
+message db_ListDTakoEventsRequest {
   int32 limit = 1;
   int32 offset = 2;
   optional string order_by = 3;  // 例: "開始日時 DESC", "id ASC"
 }
 
-message DTakoEventsResponse {
-  DTakoEvents dtako_events = 1;
+message db_DTakoEventsResponse {
+  db_DTakoEvents dtako_events = 1;
 }
 
-message ListDTakoEventsResponse {
-  repeated DTakoEvents items = 1;
+message db_ListDTakoEventsResponse {
+  repeated db_DTakoEvents items = 1;
   int32 total_count = 2;
 }
 
 // DTakoRows用リクエスト/レスポンス
-message GetDTakoRowsRequest {
+message db_GetDTakoRowsRequest {
   string id = 1;
 }
 
-message GetDTakoRowsByOperationNoRequest {
+message db_GetDTakoRowsByOperationNoRequest {
   string operation_no = 1;
 }
 
-message ListDTakoRowsRequest {
+message db_ListDTakoRowsRequest {
   int32 limit = 1;
   int32 offset = 2;
   optional string order_by = 3;  // 例: "読取日 DESC", "id ASC"
 }
 
-message DTakoRowsResponse {
-  DTakoRows dtako_rows = 1;
+message db_DTakoRowsResponse {
+  db_DTakoRows dtako_rows = 1;
 }
 
-message ListDTakoRowsResponse {
-  repeated DTakoRows items = 1;
+message db_ListDTakoRowsResponse {
+  repeated db_DTakoRows items = 1;
   int32 total_count = 2;
 }
 
 // ETCNum用リクエスト/レスポンス
-message GetETCNumByETCCardNumRequest {
+message db_GetETCNumByETCCardNumRequest {
   string etc_card_num = 1;
 }
 
-message GetETCNumByCarIDRequest {
+message db_GetETCNumByCarIDRequest {
   string car_id = 1;
 }
 
-message ListETCNumRequest {
+message db_ListETCNumRequest {
   int32 limit = 1;
   int32 offset = 2;
 }
 
-message ListETCNumResponse {
-  repeated ETCNum items = 1;
+message db_ListETCNumResponse {
+  repeated db_ETCNum items = 1;
   int32 total_count = 2;
 }
 
-// DTakoFerryRowsProd（本番DB）データ
-message DTakoFerryRowsProd {
+// db_DTakoFerryRowsProd（本番DB）データ
+message db_DTakoFerryRowsProd {
   int32 id = 1;
   string unko_no = 2;
   string unko_date = 3;  // YYYY-MM-DD形式
@@ -715,44 +715,44 @@ message DTakoFerryRowsProd {
 }
 
 // DTakoFerryRowsProd用リクエスト/レスポンス
-message GetDTakoFerryRowsProdRequest {
+message db_GetDTakoFerryRowsProdRequest {
   int32 id = 1;
 }
 
-message GetDTakoFerryRowsProdByUnkoNoRequest {
+message db_GetDTakoFerryRowsProdByUnkoNoRequest {
   string unko_no = 1;
 }
 
-message ListDTakoFerryRowsProdRequest {
+message db_ListDTakoFerryRowsProdRequest {
   int32 limit = 1;
   int32 offset = 2;
 }
 
-message DTakoFerryRowsProdResponse {
-  DTakoFerryRowsProd dtako_ferry_rows = 1;
+message db_DTakoFerryRowsProdResponse {
+  db_DTakoFerryRowsProd dtako_ferry_rows = 1;
 }
 
-message ListDTakoFerryRowsProdResponse {
-  repeated DTakoFerryRowsProd items = 1;
+message db_ListDTakoFerryRowsProdResponse {
+  repeated db_DTakoFerryRowsProd items = 1;
   int32 total_count = 2;
 }
 
 // CarsService - 車両マスタ管理（本番DB、読み取り専用）
-service CarsService {
+service db_CarsService {
   // 車両情報取得
-  rpc Get(GetCarsRequest) returns (CarsResponse) {
+  rpc Get(db_GetCarsRequest) returns (db_CarsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/cars/{id}"
     };
   }
   // 車両情報一覧取得
-  rpc List(ListCarsRequest) returns (ListCarsResponse) {
+  rpc List(db_ListCarsRequest) returns (db_ListCarsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/cars"
     };
   }
   // 部門コードで車両情報取得
-  rpc GetByBumonCodeID(GetCarsByBumonCodeIDRequest) returns (ListCarsResponse) {
+  rpc GetByBumonCodeID(db_GetCarsByBumonCodeIDRequest) returns (db_ListCarsResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/cars/bumon/{bumon_code_id}"
     };
@@ -760,29 +760,29 @@ service CarsService {
 }
 
 // DriversService - ドライバーマスタ管理（本番DB、読み取り専用）
-service DriversService {
+service db_DriversService {
   // ドライバー情報取得
-  rpc Get(GetDriversRequest) returns (DriversResponse) {
+  rpc Get(db_GetDriversRequest) returns (db_DriversResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/drivers/{id}"
     };
   }
   // ドライバー情報一覧取得
-  rpc List(ListDriversRequest) returns (ListDriversResponse) {
+  rpc List(db_ListDriversRequest) returns (db_ListDriversResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/drivers"
     };
   }
   // 部門コードでドライバー情報取得
-  rpc GetByBumon(GetDriversByBumonRequest) returns (ListDriversResponse) {
+  rpc GetByBumon(db_GetDriversByBumonRequest) returns (db_ListDriversResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/drivers/bumon/{bumon}"
     };
   }
 }
 
-// Cars メッセージ
-message Cars {
+// db_Cars メッセージ
+message db_Cars {
   string id = 1;
   int32 id4 = 2;
   optional string name = 3;
@@ -807,8 +807,8 @@ message Cars {
   optional string daichusho2 = 22;
 }
 
-// Drivers メッセージ
-message Drivers {
+// db_Drivers メッセージ
+message db_Drivers {
   int32 id = 1;
   optional string name = 2;
   optional string shain_r = 3;
@@ -822,71 +822,71 @@ message Drivers {
 }
 
 // Cars用リクエスト/レスポンス
-message GetCarsRequest {
+message db_GetCarsRequest {
   string id = 1;
 }
 
-message GetCarsByBumonCodeIDRequest {
+message db_GetCarsByBumonCodeIDRequest {
   string bumon_code_id = 1;
 }
 
-message ListCarsRequest {
+message db_ListCarsRequest {
   int32 limit = 1;
   int32 offset = 2;
   optional string order_by = 3;  // 例: "id ASC", "name DESC"
 }
 
-message CarsResponse {
-  Cars cars = 1;
+message db_CarsResponse {
+  db_Cars cars = 1;
 }
 
-message ListCarsResponse {
-  repeated Cars items = 1;
+message db_ListCarsResponse {
+  repeated db_Cars items = 1;
   int32 total_count = 2;
 }
 
 // Drivers用リクエスト/レスポンス
-message GetDriversRequest {
+message db_GetDriversRequest {
   int32 id = 1;
 }
 
-message GetDriversByBumonRequest {
+message db_GetDriversByBumonRequest {
   string bumon = 1;
 }
 
-message ListDriversRequest {
+message db_ListDriversRequest {
   int32 limit = 1;
   int32 offset = 2;
   optional string order_by = 3;  // 例: "id ASC", "name DESC"
 }
 
-message DriversResponse {
-  Drivers drivers = 1;
+message db_DriversResponse {
+  db_Drivers drivers = 1;
 }
 
-message ListDriversResponse {
-  repeated Drivers items = 1;
+message db_ListDriversResponse {
+  repeated db_Drivers items = 1;
   int32 total_count = 2;
 }
 
 // UntenNippoMeisaiService - 運転日報明細管理（SQL Server、読み取り専用）
-service UntenNippoMeisaiService {
-  rpc Get(GetUntenNippoMeisaiRequest) returns (UntenNippoMeisaiResponse) {
+service db_UntenNippoMeisaiService {
+  rpc Get(db_GetUntenNippoMeisaiRequest) returns (db_UntenNippoMeisaiResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/unten-nippo-meisai/{nippo_k}/{haisha_k}/{sharyo_c}"
     };
   }
-  rpc List(ListUntenNippoMeisaiRequest) returns (ListUntenNippoMeisaiResponse) {
+  rpc List(db_ListUntenNippoMeisaiRequest) returns (db_ListUntenNippoMeisaiResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/unten-nippo-meisai"
     };
   }
-  rpc GetBySharyoC(GetUntenNippoMeisaiBySharyoCRequest) returns (ListUntenNippoMeisaiResponse) {
+  rpc GetBySharyoC(db_GetUntenNippoMeisaiBySharyoCRequest) returns (db_ListUntenNippoMeisaiResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/unten-nippo-meisai/sharyo/{sharyo_c}"
     };
   }
-  rpc GetByDateRange(GetUntenNippoMeisaiByDateRangeRequest) returns (ListUntenNippoMeisaiResponse) {
+  rpc GetByDateRange(db_GetUntenNippoMeisaiByDateRangeRequest) returns (db_ListUntenNippoMeisaiResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/unten-nippo-meisai/date-range"
     };
@@ -894,18 +894,18 @@ service UntenNippoMeisaiService {
 }
 
 // ShainMasterService - 社員マスタ管理（SQL Server、読み取り専用）
-service ShainMasterService {
-  rpc Get(GetShainMasterRequest) returns (ShainMasterResponse) {
+service db_ShainMasterService {
+  rpc Get(db_GetShainMasterRequest) returns (db_ShainMasterResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/shain-master/{shain_c}"
     };
   }
-  rpc List(ListShainMasterRequest) returns (ListShainMasterResponse) {
+  rpc List(db_ListShainMasterRequest) returns (db_ListShainMasterResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/shain-master"
     };
   }
-  rpc GetByBumonC(GetShainMasterByBumonCRequest) returns (ListShainMasterResponse) {
+  rpc GetByBumonC(db_GetShainMasterByBumonCRequest) returns (db_ListShainMasterResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/shain-master/bumon/{bumon_c}"
     };
@@ -913,13 +913,13 @@ service ShainMasterService {
 }
 
 // ChiikiMasterService - 地域マスタ管理（SQL Server、読み取り専用）
-service ChiikiMasterService {
-  rpc Get(GetChiikiMasterRequest) returns (ChiikiMasterResponse) {
+service db_ChiikiMasterService {
+  rpc Get(db_GetChiikiMasterRequest) returns (db_ChiikiMasterResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/chiiki-master/{chiiki_c}"
     };
   }
-  rpc List(ListChiikiMasterRequest) returns (ListChiikiMasterResponse) {
+  rpc List(db_ListChiikiMasterRequest) returns (db_ListChiikiMasterResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/chiiki-master"
     };
@@ -927,26 +927,26 @@ service ChiikiMasterService {
 }
 
 // ChikuMasterService - 地区マスタ管理（SQL Server、読み取り専用）
-service ChikuMasterService {
-  rpc Get(GetChikuMasterRequest) returns (ChikuMasterResponse) {
+service db_ChikuMasterService {
+  rpc Get(db_GetChikuMasterRequest) returns (db_ChikuMasterResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/chiku-master/{chiku_c}"
     };
   }
-  rpc List(ListChikuMasterRequest) returns (ListChikuMasterResponse) {
+  rpc List(db_ListChikuMasterRequest) returns (db_ListChikuMasterResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/chiku-master"
     };
   }
-  rpc GetByChiikiC(GetChikuMasterByChiikiCRequest) returns (ListChikuMasterResponse) {
+  rpc GetByChiikiC(db_GetChikuMasterByChiikiCRequest) returns (db_ListChikuMasterResponse) {
     option (google.api.http) = {
       get: "/api/v1/db/chiku-master/chiiki/{chiiki_c}"
     };
   }
 }
 
-// UntenNippoMeisai メッセージ（106カラム全て）
-message UntenNippoMeisai {
+// db_UntenNippoMeisai メッセージ（106カラム全て）
+message db_UntenNippoMeisai {
   string nippo_k = 1;
   optional string unko_nengappi = 2;
   string haisha_k = 3;
@@ -1055,8 +1055,8 @@ message UntenNippoMeisai {
   optional string yobi7 = 106;
 }
 
-// ShainMaster メッセージ（43カラム全て）
-message ShainMaster {
+// db_ShainMaster メッセージ（43カラム全て）
+message db_ShainMaster {
   string shain_c = 1;
   optional string shain_n = 2;
   optional string shain_r = 3;
@@ -1102,16 +1102,16 @@ message ShainMaster {
   string kinmu_taikei_c = 43;
 }
 
-// ChiikiMaster メッセージ（4カラム全て）
-message ChiikiMaster {
+// db_ChiikiMaster メッセージ（4カラム全て）
+message db_ChiikiMaster {
   string chiiki_c = 1;
   optional string chiiki_n = 2;
   optional string chiiki_r = 3;
   optional string chiiki_f = 4;
 }
 
-// ChikuMaster メッセージ（20カラム全て）
-message ChikuMaster {
+// db_ChikuMaster メッセージ（20カラム全て）
+message db_ChikuMaster {
   string chiku_c = 1;
   optional string chiku_n = 2;
   optional string chiku_r = 3;
@@ -1135,106 +1135,106 @@ message ChikuMaster {
 }
 
 // UntenNippoMeisai用リクエスト/レスポンス
-message GetUntenNippoMeisaiRequest {
+message db_GetUntenNippoMeisaiRequest {
   string nippo_k = 1;
   string haisha_k = 2;
   string sharyo_c = 3;
 }
 
-message GetUntenNippoMeisaiBySharyoCRequest {
+message db_GetUntenNippoMeisaiBySharyoCRequest {
   string sharyo_c = 1;
   int32 limit = 2;
 }
 
-message GetUntenNippoMeisaiByDateRangeRequest {
+message db_GetUntenNippoMeisaiByDateRangeRequest {
   string start_date = 1;
   string end_date = 2;
   int32 limit = 3;
   int32 offset = 4;
 }
 
-message ListUntenNippoMeisaiRequest {
+message db_ListUntenNippoMeisaiRequest {
   int32 limit = 1;
   int32 offset = 2;
   optional string order_by = 3;
 }
 
-message UntenNippoMeisaiResponse {
-  UntenNippoMeisai unten_nippo_meisai = 1;
+message db_UntenNippoMeisaiResponse {
+  db_UntenNippoMeisai unten_nippo_meisai = 1;
 }
 
-message ListUntenNippoMeisaiResponse {
-  repeated UntenNippoMeisai items = 1;
+message db_ListUntenNippoMeisaiResponse {
+  repeated db_UntenNippoMeisai items = 1;
   int32 total_count = 2;
 }
 
 // ShainMaster用リクエスト/レスポンス
-message GetShainMasterRequest {
+message db_GetShainMasterRequest {
   string shain_c = 1;
 }
 
-message GetShainMasterByBumonCRequest {
+message db_GetShainMasterByBumonCRequest {
   string bumon_c = 1;
 }
 
-message ListShainMasterRequest {
+message db_ListShainMasterRequest {
   int32 limit = 1;
   int32 offset = 2;
   optional string order_by = 3;
 }
 
-message ShainMasterResponse {
-  ShainMaster shain_master = 1;
+message db_ShainMasterResponse {
+  db_ShainMaster shain_master = 1;
 }
 
-message ListShainMasterResponse {
-  repeated ShainMaster items = 1;
+message db_ListShainMasterResponse {
+  repeated db_ShainMaster items = 1;
   int32 total_count = 2;
 }
 
 // ChiikiMaster用リクエスト/レスポンス
-message GetChiikiMasterRequest {
+message db_GetChiikiMasterRequest {
   string chiiki_c = 1;
 }
 
-message ListChiikiMasterRequest {
+message db_ListChiikiMasterRequest {
   int32 limit = 1;
   int32 offset = 2;
   optional string order_by = 3;
 }
 
-message ChiikiMasterResponse {
-  ChiikiMaster chiiki_master = 1;
+message db_ChiikiMasterResponse {
+  db_ChiikiMaster chiiki_master = 1;
 }
 
-message ListChiikiMasterResponse {
-  repeated ChiikiMaster items = 1;
+message db_ListChiikiMasterResponse {
+  repeated db_ChiikiMaster items = 1;
   int32 total_count = 2;
 }
 
 // ChikuMaster用リクエスト/レスポンス
-message GetChikuMasterRequest {
+message db_GetChikuMasterRequest {
   string chiku_c = 1;
 }
 
-message GetChikuMasterByChiikiCRequest {
+message db_GetChikuMasterByChiikiCRequest {
   string chiiki_c = 1;
 }
 
-message ListChikuMasterRequest {
+message db_ListChikuMasterRequest {
   int32 limit = 1;
   int32 offset = 2;
   optional string order_by = 3;
 }
 
-message ChikuMasterResponse {
-  ChikuMaster chiku_master = 1;
+message db_ChikuMasterResponse {
+  db_ChikuMaster chiku_master = 1;
 }
 
-message ListChikuMasterResponse {
-  repeated ChikuMaster items = 1;
+message db_ListChikuMasterResponse {
+  repeated db_ChikuMaster items = 1;
   int32 total_count = 2;
 }
 
 // 共通メッセージ
-message Empty {}
+message db_Empty {}

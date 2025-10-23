@@ -35,9 +35,9 @@ var (
 	_ = metadata.Join
 )
 
-func request_DTakoUriageKeihiService_Create_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoUriageKeihiService_Create_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq CreateDTakoUriageKeihiRequest
+		protoReq Db_CreateDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.DtakoUriageKeihi); err != nil && !errors.Is(err, io.EOF) {
@@ -50,9 +50,9 @@ func request_DTakoUriageKeihiService_Create_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
-func local_request_DTakoUriageKeihiService_Create_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoUriageKeihiService_Create_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq CreateDTakoUriageKeihiRequest
+		protoReq Db_CreateDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.DtakoUriageKeihi); err != nil && !errors.Is(err, io.EOF) {
@@ -62,11 +62,11 @@ func local_request_DTakoUriageKeihiService_Create_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-var filter_DTakoUriageKeihiService_Get_0 = &utilities.DoubleArray{Encoding: map[string]int{"srch_id": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+var filter_Db_DTakoUriageKeihiService_Get_0 = &utilities.DoubleArray{Encoding: map[string]int{"srch_id": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
-func request_DTakoUriageKeihiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoUriageKeihiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoUriageKeihiRequest
+		protoReq Db_GetDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -84,16 +84,16 @@ func request_DTakoUriageKeihiService_Get_0(ctx context.Context, marshaler runtim
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoUriageKeihiService_Get_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoUriageKeihiService_Get_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.Get(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_DTakoUriageKeihiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoUriageKeihiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoUriageKeihiRequest
+		protoReq Db_GetDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -108,16 +108,16 @@ func local_request_DTakoUriageKeihiService_Get_0(ctx context.Context, marshaler 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoUriageKeihiService_Get_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoUriageKeihiService_Get_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.Get(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_DTakoUriageKeihiService_Update_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoUriageKeihiService_Update_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq UpdateDTakoUriageKeihiRequest
+		protoReq Db_UpdateDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -139,9 +139,9 @@ func request_DTakoUriageKeihiService_Update_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
-func local_request_DTakoUriageKeihiService_Update_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoUriageKeihiService_Update_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq UpdateDTakoUriageKeihiRequest
+		protoReq Db_UpdateDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -160,11 +160,11 @@ func local_request_DTakoUriageKeihiService_Update_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-var filter_DTakoUriageKeihiService_Delete_0 = &utilities.DoubleArray{Encoding: map[string]int{"srch_id": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+var filter_Db_DTakoUriageKeihiService_Delete_0 = &utilities.DoubleArray{Encoding: map[string]int{"srch_id": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
-func request_DTakoUriageKeihiService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoUriageKeihiService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq DeleteDTakoUriageKeihiRequest
+		protoReq Db_DeleteDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -182,16 +182,16 @@ func request_DTakoUriageKeihiService_Delete_0(ctx context.Context, marshaler run
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoUriageKeihiService_Delete_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoUriageKeihiService_Delete_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.Delete(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_DTakoUriageKeihiService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoUriageKeihiService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq DeleteDTakoUriageKeihiRequest
+		protoReq Db_DeleteDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -206,18 +206,18 @@ func local_request_DTakoUriageKeihiService_Delete_0(ctx context.Context, marshal
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoUriageKeihiService_Delete_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoUriageKeihiService_Delete_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.Delete(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-var filter_DTakoUriageKeihiService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_DTakoUriageKeihiService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_DTakoUriageKeihiService_List_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoUriageKeihiService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoUriageKeihiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoUriageKeihiRequest
+		protoReq Db_ListDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -226,31 +226,31 @@ func request_DTakoUriageKeihiService_List_0(ctx context.Context, marshaler runti
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoUriageKeihiService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoUriageKeihiService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_DTakoUriageKeihiService_List_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoUriageKeihiService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoUriageKeihiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoUriageKeihiRequest
+		protoReq Db_ListDTakoUriageKeihiRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoUriageKeihiService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoUriageKeihiService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_ETCMeisaiService_Create_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiService_Create_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq CreateETCMeisaiRequest
+		protoReq Db_CreateETCMeisaiRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.EtcMeisai); err != nil && !errors.Is(err, io.EOF) {
@@ -263,9 +263,9 @@ func request_ETCMeisaiService_Create_0(ctx context.Context, marshaler runtime.Ma
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiService_Create_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiService_Create_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq CreateETCMeisaiRequest
+		protoReq Db_CreateETCMeisaiRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.EtcMeisai); err != nil && !errors.Is(err, io.EOF) {
@@ -275,9 +275,9 @@ func local_request_ETCMeisaiService_Create_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func request_ETCMeisaiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetETCMeisaiRequest
+		protoReq Db_GetETCMeisaiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -296,9 +296,9 @@ func request_ETCMeisaiService_Get_0(ctx context.Context, marshaler runtime.Marsh
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetETCMeisaiRequest
+		protoReq Db_GetETCMeisaiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -314,9 +314,9 @@ func local_request_ETCMeisaiService_Get_0(ctx context.Context, marshaler runtime
 	return msg, metadata, err
 }
 
-func request_ETCMeisaiService_Update_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiService_Update_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq UpdateETCMeisaiRequest
+		protoReq Db_UpdateETCMeisaiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -338,9 +338,9 @@ func request_ETCMeisaiService_Update_0(ctx context.Context, marshaler runtime.Ma
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiService_Update_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiService_Update_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq UpdateETCMeisaiRequest
+		protoReq Db_UpdateETCMeisaiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -359,9 +359,9 @@ func local_request_ETCMeisaiService_Update_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func request_ETCMeisaiService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq DeleteETCMeisaiRequest
+		protoReq Db_DeleteETCMeisaiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -380,9 +380,9 @@ func request_ETCMeisaiService_Delete_0(ctx context.Context, marshaler runtime.Ma
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq DeleteETCMeisaiRequest
+		protoReq Db_DeleteETCMeisaiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -398,11 +398,11 @@ func local_request_ETCMeisaiService_Delete_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-var filter_ETCMeisaiService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_ETCMeisaiService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_ETCMeisaiService_List_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListETCMeisaiRequest
+		protoReq Db_ListETCMeisaiRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -411,31 +411,31 @@ func request_ETCMeisaiService_List_0(ctx context.Context, marshaler runtime.Mars
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ETCMeisaiService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ETCMeisaiService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiService_List_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListETCMeisaiRequest
+		protoReq Db_ListETCMeisaiRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ETCMeisaiService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ETCMeisaiService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_DTakoFerryRowsService_Create_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoFerryRowsService_Create_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq CreateDTakoFerryRowsRequest
+		protoReq Db_CreateDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.DtakoFerryRows); err != nil && !errors.Is(err, io.EOF) {
@@ -448,9 +448,9 @@ func request_DTakoFerryRowsService_Create_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-func local_request_DTakoFerryRowsService_Create_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoFerryRowsService_Create_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq CreateDTakoFerryRowsRequest
+		protoReq Db_CreateDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.DtakoFerryRows); err != nil && !errors.Is(err, io.EOF) {
@@ -460,9 +460,9 @@ func local_request_DTakoFerryRowsService_Create_0(ctx context.Context, marshaler
 	return msg, metadata, err
 }
 
-func request_DTakoFerryRowsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoFerryRowsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoFerryRowsRequest
+		protoReq Db_GetDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -481,9 +481,9 @@ func request_DTakoFerryRowsService_Get_0(ctx context.Context, marshaler runtime.
 	return msg, metadata, err
 }
 
-func local_request_DTakoFerryRowsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoFerryRowsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoFerryRowsRequest
+		protoReq Db_GetDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -499,9 +499,9 @@ func local_request_DTakoFerryRowsService_Get_0(ctx context.Context, marshaler ru
 	return msg, metadata, err
 }
 
-func request_DTakoFerryRowsService_Update_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoFerryRowsService_Update_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq UpdateDTakoFerryRowsRequest
+		protoReq Db_UpdateDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -523,9 +523,9 @@ func request_DTakoFerryRowsService_Update_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-func local_request_DTakoFerryRowsService_Update_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoFerryRowsService_Update_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq UpdateDTakoFerryRowsRequest
+		protoReq Db_UpdateDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -544,9 +544,9 @@ func local_request_DTakoFerryRowsService_Update_0(ctx context.Context, marshaler
 	return msg, metadata, err
 }
 
-func request_DTakoFerryRowsService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoFerryRowsService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq DeleteDTakoFerryRowsRequest
+		protoReq Db_DeleteDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -565,9 +565,9 @@ func request_DTakoFerryRowsService_Delete_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-func local_request_DTakoFerryRowsService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoFerryRowsService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq DeleteDTakoFerryRowsRequest
+		protoReq Db_DeleteDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -583,11 +583,11 @@ func local_request_DTakoFerryRowsService_Delete_0(ctx context.Context, marshaler
 	return msg, metadata, err
 }
 
-var filter_DTakoFerryRowsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_DTakoFerryRowsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_DTakoFerryRowsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoFerryRowsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoFerryRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoFerryRowsRequest
+		protoReq Db_ListDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -596,31 +596,31 @@ func request_DTakoFerryRowsService_List_0(ctx context.Context, marshaler runtime
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoFerryRowsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoFerryRowsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_DTakoFerryRowsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoFerryRowsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoFerryRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoFerryRowsRequest
+		protoReq Db_ListDTakoFerryRowsRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoFerryRowsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoFerryRowsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_ETCMeisaiMappingService_Create_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiMappingService_Create_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq CreateETCMeisaiMappingRequest
+		protoReq Db_CreateETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.EtcMeisaiMapping); err != nil && !errors.Is(err, io.EOF) {
@@ -633,9 +633,9 @@ func request_ETCMeisaiMappingService_Create_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiMappingService_Create_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiMappingService_Create_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq CreateETCMeisaiMappingRequest
+		protoReq Db_CreateETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq.EtcMeisaiMapping); err != nil && !errors.Is(err, io.EOF) {
@@ -645,9 +645,9 @@ func local_request_ETCMeisaiMappingService_Create_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-func request_ETCMeisaiMappingService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiMappingService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetETCMeisaiMappingRequest
+		protoReq Db_GetETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -666,9 +666,9 @@ func request_ETCMeisaiMappingService_Get_0(ctx context.Context, marshaler runtim
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiMappingService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiMappingService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetETCMeisaiMappingRequest
+		protoReq Db_GetETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -684,9 +684,9 @@ func local_request_ETCMeisaiMappingService_Get_0(ctx context.Context, marshaler 
 	return msg, metadata, err
 }
 
-func request_ETCMeisaiMappingService_Update_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiMappingService_Update_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq UpdateETCMeisaiMappingRequest
+		protoReq Db_UpdateETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -708,9 +708,9 @@ func request_ETCMeisaiMappingService_Update_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiMappingService_Update_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiMappingService_Update_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq UpdateETCMeisaiMappingRequest
+		protoReq Db_UpdateETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -729,9 +729,9 @@ func local_request_ETCMeisaiMappingService_Update_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-func request_ETCMeisaiMappingService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiMappingService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq DeleteETCMeisaiMappingRequest
+		protoReq Db_DeleteETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -750,9 +750,9 @@ func request_ETCMeisaiMappingService_Delete_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiMappingService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiMappingService_Delete_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq DeleteETCMeisaiMappingRequest
+		protoReq Db_DeleteETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -768,11 +768,11 @@ func local_request_ETCMeisaiMappingService_Delete_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-var filter_ETCMeisaiMappingService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_ETCMeisaiMappingService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_ETCMeisaiMappingService_List_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiMappingService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListETCMeisaiMappingRequest
+		protoReq Db_ListETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -781,31 +781,31 @@ func request_ETCMeisaiMappingService_List_0(ctx context.Context, marshaler runti
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ETCMeisaiMappingService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ETCMeisaiMappingService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiMappingService_List_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiMappingService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListETCMeisaiMappingRequest
+		protoReq Db_ListETCMeisaiMappingRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ETCMeisaiMappingService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ETCMeisaiMappingService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(ctx context.Context, marshaler runtime.Marshaler, client ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCMeisaiMappingServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoRowIDByHashRequest
+		protoReq Db_GetDTakoRowIDByHashRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -824,9 +824,9 @@ func request_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(ctx context.Context, 
 	return msg, metadata, err
 }
 
-func local_request_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(ctx context.Context, marshaler runtime.Marshaler, server ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCMeisaiMappingServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoRowIDByHashRequest
+		protoReq Db_GetDTakoRowIDByHashRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -842,9 +842,9 @@ func local_request_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(ctx context.Con
 	return msg, metadata, err
 }
 
-func request_DTakoCarsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoCarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoCarsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoCarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoCarsRequest
+		protoReq Db_GetDTakoCarsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -863,9 +863,9 @@ func request_DTakoCarsService_Get_0(ctx context.Context, marshaler runtime.Marsh
 	return msg, metadata, err
 }
 
-func local_request_DTakoCarsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoCarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoCarsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoCarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoCarsRequest
+		protoReq Db_GetDTakoCarsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -881,11 +881,11 @@ func local_request_DTakoCarsService_Get_0(ctx context.Context, marshaler runtime
 	return msg, metadata, err
 }
 
-var filter_DTakoCarsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_DTakoCarsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_DTakoCarsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoCarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoCarsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoCarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoCarsRequest
+		protoReq Db_ListDTakoCarsRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -894,31 +894,31 @@ func request_DTakoCarsService_List_0(ctx context.Context, marshaler runtime.Mars
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoCarsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoCarsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_DTakoCarsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoCarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoCarsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoCarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoCarsRequest
+		protoReq Db_ListDTakoCarsRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoCarsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoCarsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_DTakoCarsService_GetByCarCode_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoCarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoCarsService_GetByCarCode_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoCarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoCarsByCarCodeRequest
+		protoReq Db_GetDTakoCarsByCarCodeRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -937,9 +937,9 @@ func request_DTakoCarsService_GetByCarCode_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func local_request_DTakoCarsService_GetByCarCode_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoCarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoCarsService_GetByCarCode_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoCarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoCarsByCarCodeRequest
+		protoReq Db_GetDTakoCarsByCarCodeRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -955,9 +955,9 @@ func local_request_DTakoCarsService_GetByCarCode_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func request_DTakoEventsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoEventsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoEventsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoEventsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoEventsRequest
+		protoReq Db_GetDTakoEventsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -976,9 +976,9 @@ func request_DTakoEventsService_Get_0(ctx context.Context, marshaler runtime.Mar
 	return msg, metadata, err
 }
 
-func local_request_DTakoEventsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoEventsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoEventsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoEventsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoEventsRequest
+		protoReq Db_GetDTakoEventsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -994,11 +994,11 @@ func local_request_DTakoEventsService_Get_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-var filter_DTakoEventsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_DTakoEventsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_DTakoEventsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoEventsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoEventsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoEventsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoEventsRequest
+		protoReq Db_ListDTakoEventsRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1007,31 +1007,31 @@ func request_DTakoEventsService_List_0(ctx context.Context, marshaler runtime.Ma
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoEventsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoEventsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_DTakoEventsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoEventsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoEventsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoEventsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoEventsRequest
+		protoReq Db_ListDTakoEventsRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoEventsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoEventsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_DTakoEventsService_GetByOperationNo_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoEventsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoEventsService_GetByOperationNo_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoEventsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoEventsByOperationNoRequest
+		protoReq Db_GetDTakoEventsByOperationNoRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1050,9 +1050,9 @@ func request_DTakoEventsService_GetByOperationNo_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func local_request_DTakoEventsService_GetByOperationNo_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoEventsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoEventsService_GetByOperationNo_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoEventsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoEventsByOperationNoRequest
+		protoReq Db_GetDTakoEventsByOperationNoRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1068,9 +1068,9 @@ func local_request_DTakoEventsService_GetByOperationNo_0(ctx context.Context, ma
 	return msg, metadata, err
 }
 
-func request_DTakoRowsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoRowsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoRowsRequest
+		protoReq Db_GetDTakoRowsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1089,9 +1089,9 @@ func request_DTakoRowsService_Get_0(ctx context.Context, marshaler runtime.Marsh
 	return msg, metadata, err
 }
 
-func local_request_DTakoRowsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoRowsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoRowsRequest
+		protoReq Db_GetDTakoRowsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1107,11 +1107,11 @@ func local_request_DTakoRowsService_Get_0(ctx context.Context, marshaler runtime
 	return msg, metadata, err
 }
 
-var filter_DTakoRowsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_DTakoRowsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_DTakoRowsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoRowsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoRowsRequest
+		protoReq Db_ListDTakoRowsRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1120,31 +1120,31 @@ func request_DTakoRowsService_List_0(ctx context.Context, marshaler runtime.Mars
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoRowsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoRowsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_DTakoRowsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoRowsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoRowsRequest
+		protoReq Db_ListDTakoRowsRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoRowsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoRowsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_DTakoRowsService_GetByOperationNo_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoRowsService_GetByOperationNo_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoRowsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoRowsByOperationNoRequest
+		protoReq Db_GetDTakoRowsByOperationNoRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1163,9 +1163,9 @@ func request_DTakoRowsService_GetByOperationNo_0(ctx context.Context, marshaler 
 	return msg, metadata, err
 }
 
-func local_request_DTakoRowsService_GetByOperationNo_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoRowsService_GetByOperationNo_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoRowsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoRowsByOperationNoRequest
+		protoReq Db_GetDTakoRowsByOperationNoRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1181,11 +1181,11 @@ func local_request_DTakoRowsService_GetByOperationNo_0(ctx context.Context, mars
 	return msg, metadata, err
 }
 
-var filter_ETCNumService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_ETCNumService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_ETCNumService_List_0(ctx context.Context, marshaler runtime.Marshaler, client ETCNumServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCNumService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCNumServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListETCNumRequest
+		protoReq Db_ListETCNumRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1194,31 +1194,31 @@ func request_ETCNumService_List_0(ctx context.Context, marshaler runtime.Marshal
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ETCNumService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ETCNumService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_ETCNumService_List_0(ctx context.Context, marshaler runtime.Marshaler, server ETCNumServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCNumService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCNumServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListETCNumRequest
+		protoReq Db_ListETCNumRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ETCNumService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ETCNumService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_ETCNumService_GetByETCCardNum_0(ctx context.Context, marshaler runtime.Marshaler, client ETCNumServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCNumService_GetByETCCardNum_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCNumServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetETCNumByETCCardNumRequest
+		protoReq Db_GetETCNumByETCCardNumRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1237,9 +1237,9 @@ func request_ETCNumService_GetByETCCardNum_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func local_request_ETCNumService_GetByETCCardNum_0(ctx context.Context, marshaler runtime.Marshaler, server ETCNumServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCNumService_GetByETCCardNum_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCNumServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetETCNumByETCCardNumRequest
+		protoReq Db_GetETCNumByETCCardNumRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1255,9 +1255,9 @@ func local_request_ETCNumService_GetByETCCardNum_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-func request_ETCNumService_GetByCarID_0(ctx context.Context, marshaler runtime.Marshaler, client ETCNumServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ETCNumService_GetByCarID_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ETCNumServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetETCNumByCarIDRequest
+		protoReq Db_GetETCNumByCarIDRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1276,9 +1276,9 @@ func request_ETCNumService_GetByCarID_0(ctx context.Context, marshaler runtime.M
 	return msg, metadata, err
 }
 
-func local_request_ETCNumService_GetByCarID_0(ctx context.Context, marshaler runtime.Marshaler, server ETCNumServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ETCNumService_GetByCarID_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ETCNumServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetETCNumByCarIDRequest
+		protoReq Db_GetETCNumByCarIDRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1294,9 +1294,9 @@ func local_request_ETCNumService_GetByCarID_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
-func request_DTakoFerryRowsProdService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsProdServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoFerryRowsProdService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoFerryRowsProdServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoFerryRowsProdRequest
+		protoReq Db_GetDTakoFerryRowsProdRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1315,9 +1315,9 @@ func request_DTakoFerryRowsProdService_Get_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-func local_request_DTakoFerryRowsProdService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsProdServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoFerryRowsProdService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoFerryRowsProdServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoFerryRowsProdRequest
+		protoReq Db_GetDTakoFerryRowsProdRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1333,11 +1333,11 @@ func local_request_DTakoFerryRowsProdService_Get_0(ctx context.Context, marshale
 	return msg, metadata, err
 }
 
-var filter_DTakoFerryRowsProdService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_DTakoFerryRowsProdService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_DTakoFerryRowsProdService_List_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsProdServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoFerryRowsProdService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoFerryRowsProdServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoFerryRowsProdRequest
+		protoReq Db_ListDTakoFerryRowsProdRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1346,31 +1346,31 @@ func request_DTakoFerryRowsProdService_List_0(ctx context.Context, marshaler run
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoFerryRowsProdService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoFerryRowsProdService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_DTakoFerryRowsProdService_List_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsProdServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoFerryRowsProdService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoFerryRowsProdServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDTakoFerryRowsProdRequest
+		protoReq Db_ListDTakoFerryRowsProdRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DTakoFerryRowsProdService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DTakoFerryRowsProdService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_DTakoFerryRowsProdService_GetByUnkoNo_0(ctx context.Context, marshaler runtime.Marshaler, client DTakoFerryRowsProdServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DTakoFerryRowsProdService_GetByUnkoNo_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DTakoFerryRowsProdServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoFerryRowsProdByUnkoNoRequest
+		protoReq Db_GetDTakoFerryRowsProdByUnkoNoRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1389,9 +1389,9 @@ func request_DTakoFerryRowsProdService_GetByUnkoNo_0(ctx context.Context, marsha
 	return msg, metadata, err
 }
 
-func local_request_DTakoFerryRowsProdService_GetByUnkoNo_0(ctx context.Context, marshaler runtime.Marshaler, server DTakoFerryRowsProdServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DTakoFerryRowsProdService_GetByUnkoNo_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DTakoFerryRowsProdServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDTakoFerryRowsProdByUnkoNoRequest
+		protoReq Db_GetDTakoFerryRowsProdByUnkoNoRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1407,9 +1407,9 @@ func local_request_DTakoFerryRowsProdService_GetByUnkoNo_0(ctx context.Context, 
 	return msg, metadata, err
 }
 
-func request_CarsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client CarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_CarsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_CarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetCarsRequest
+		protoReq Db_GetCarsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1428,9 +1428,9 @@ func request_CarsService_Get_0(ctx context.Context, marshaler runtime.Marshaler,
 	return msg, metadata, err
 }
 
-func local_request_CarsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server CarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_CarsService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_CarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetCarsRequest
+		protoReq Db_GetCarsRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1446,11 +1446,11 @@ func local_request_CarsService_Get_0(ctx context.Context, marshaler runtime.Mars
 	return msg, metadata, err
 }
 
-var filter_CarsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_CarsService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_CarsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client CarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_CarsService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_CarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListCarsRequest
+		protoReq Db_ListCarsRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1459,31 +1459,31 @@ func request_CarsService_List_0(ctx context.Context, marshaler runtime.Marshaler
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CarsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_CarsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_CarsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server CarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_CarsService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_CarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListCarsRequest
+		protoReq Db_ListCarsRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_CarsService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_CarsService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_CarsService_GetByBumonCodeID_0(ctx context.Context, marshaler runtime.Marshaler, client CarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_CarsService_GetByBumonCodeID_0(ctx context.Context, marshaler runtime.Marshaler, client Db_CarsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetCarsByBumonCodeIDRequest
+		protoReq Db_GetCarsByBumonCodeIDRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1502,9 +1502,9 @@ func request_CarsService_GetByBumonCodeID_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-func local_request_CarsService_GetByBumonCodeID_0(ctx context.Context, marshaler runtime.Marshaler, server CarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_CarsService_GetByBumonCodeID_0(ctx context.Context, marshaler runtime.Marshaler, server Db_CarsServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetCarsByBumonCodeIDRequest
+		protoReq Db_GetCarsByBumonCodeIDRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1520,9 +1520,9 @@ func local_request_CarsService_GetByBumonCodeID_0(ctx context.Context, marshaler
 	return msg, metadata, err
 }
 
-func request_DriversService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client DriversServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DriversService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DriversServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDriversRequest
+		protoReq Db_GetDriversRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1541,9 +1541,9 @@ func request_DriversService_Get_0(ctx context.Context, marshaler runtime.Marshal
 	return msg, metadata, err
 }
 
-func local_request_DriversService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server DriversServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DriversService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DriversServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDriversRequest
+		protoReq Db_GetDriversRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1559,11 +1559,11 @@ func local_request_DriversService_Get_0(ctx context.Context, marshaler runtime.M
 	return msg, metadata, err
 }
 
-var filter_DriversService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_DriversService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_DriversService_List_0(ctx context.Context, marshaler runtime.Marshaler, client DriversServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DriversService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DriversServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDriversRequest
+		protoReq Db_ListDriversRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1572,31 +1572,31 @@ func request_DriversService_List_0(ctx context.Context, marshaler runtime.Marsha
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DriversService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DriversService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_DriversService_List_0(ctx context.Context, marshaler runtime.Marshaler, server DriversServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DriversService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DriversServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListDriversRequest
+		protoReq Db_ListDriversRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DriversService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_DriversService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_DriversService_GetByBumon_0(ctx context.Context, marshaler runtime.Marshaler, client DriversServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_DriversService_GetByBumon_0(ctx context.Context, marshaler runtime.Marshaler, client Db_DriversServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDriversByBumonRequest
+		protoReq Db_GetDriversByBumonRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1615,9 +1615,9 @@ func request_DriversService_GetByBumon_0(ctx context.Context, marshaler runtime.
 	return msg, metadata, err
 }
 
-func local_request_DriversService_GetByBumon_0(ctx context.Context, marshaler runtime.Marshaler, server DriversServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_DriversService_GetByBumon_0(ctx context.Context, marshaler runtime.Marshaler, server Db_DriversServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetDriversByBumonRequest
+		protoReq Db_GetDriversByBumonRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1633,9 +1633,9 @@ func local_request_DriversService_GetByBumon_0(ctx context.Context, marshaler ru
 	return msg, metadata, err
 }
 
-func request_UntenNippoMeisaiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client UntenNippoMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_UntenNippoMeisaiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_UntenNippoMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetUntenNippoMeisaiRequest
+		protoReq Db_GetUntenNippoMeisaiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1670,9 +1670,9 @@ func request_UntenNippoMeisaiService_Get_0(ctx context.Context, marshaler runtim
 	return msg, metadata, err
 }
 
-func local_request_UntenNippoMeisaiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server UntenNippoMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_UntenNippoMeisaiService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_UntenNippoMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetUntenNippoMeisaiRequest
+		protoReq Db_GetUntenNippoMeisaiRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1704,11 +1704,11 @@ func local_request_UntenNippoMeisaiService_Get_0(ctx context.Context, marshaler 
 	return msg, metadata, err
 }
 
-var filter_UntenNippoMeisaiService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_UntenNippoMeisaiService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_UntenNippoMeisaiService_List_0(ctx context.Context, marshaler runtime.Marshaler, client UntenNippoMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_UntenNippoMeisaiService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_UntenNippoMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListUntenNippoMeisaiRequest
+		protoReq Db_ListUntenNippoMeisaiRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1717,33 +1717,33 @@ func request_UntenNippoMeisaiService_List_0(ctx context.Context, marshaler runti
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_UntenNippoMeisaiService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_UntenNippoMeisaiService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_UntenNippoMeisaiService_List_0(ctx context.Context, marshaler runtime.Marshaler, server UntenNippoMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_UntenNippoMeisaiService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_UntenNippoMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListUntenNippoMeisaiRequest
+		protoReq Db_ListUntenNippoMeisaiRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_UntenNippoMeisaiService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_UntenNippoMeisaiService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-var filter_UntenNippoMeisaiService_GetBySharyoC_0 = &utilities.DoubleArray{Encoding: map[string]int{"sharyo_c": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+var filter_Db_UntenNippoMeisaiService_GetBySharyoC_0 = &utilities.DoubleArray{Encoding: map[string]int{"sharyo_c": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
-func request_UntenNippoMeisaiService_GetBySharyoC_0(ctx context.Context, marshaler runtime.Marshaler, client UntenNippoMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_UntenNippoMeisaiService_GetBySharyoC_0(ctx context.Context, marshaler runtime.Marshaler, client Db_UntenNippoMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetUntenNippoMeisaiBySharyoCRequest
+		protoReq Db_GetUntenNippoMeisaiBySharyoCRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1761,16 +1761,16 @@ func request_UntenNippoMeisaiService_GetBySharyoC_0(ctx context.Context, marshal
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_UntenNippoMeisaiService_GetBySharyoC_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_UntenNippoMeisaiService_GetBySharyoC_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.GetBySharyoC(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_UntenNippoMeisaiService_GetBySharyoC_0(ctx context.Context, marshaler runtime.Marshaler, server UntenNippoMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_UntenNippoMeisaiService_GetBySharyoC_0(ctx context.Context, marshaler runtime.Marshaler, server Db_UntenNippoMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetUntenNippoMeisaiBySharyoCRequest
+		protoReq Db_GetUntenNippoMeisaiBySharyoCRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1785,18 +1785,18 @@ func local_request_UntenNippoMeisaiService_GetBySharyoC_0(ctx context.Context, m
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_UntenNippoMeisaiService_GetBySharyoC_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_UntenNippoMeisaiService_GetBySharyoC_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.GetBySharyoC(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-var filter_UntenNippoMeisaiService_GetByDateRange_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_UntenNippoMeisaiService_GetByDateRange_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_UntenNippoMeisaiService_GetByDateRange_0(ctx context.Context, marshaler runtime.Marshaler, client UntenNippoMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_UntenNippoMeisaiService_GetByDateRange_0(ctx context.Context, marshaler runtime.Marshaler, client Db_UntenNippoMeisaiServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetUntenNippoMeisaiByDateRangeRequest
+		protoReq Db_GetUntenNippoMeisaiByDateRangeRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1805,31 +1805,31 @@ func request_UntenNippoMeisaiService_GetByDateRange_0(ctx context.Context, marsh
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_UntenNippoMeisaiService_GetByDateRange_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_UntenNippoMeisaiService_GetByDateRange_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.GetByDateRange(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_UntenNippoMeisaiService_GetByDateRange_0(ctx context.Context, marshaler runtime.Marshaler, server UntenNippoMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_UntenNippoMeisaiService_GetByDateRange_0(ctx context.Context, marshaler runtime.Marshaler, server Db_UntenNippoMeisaiServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetUntenNippoMeisaiByDateRangeRequest
+		protoReq Db_GetUntenNippoMeisaiByDateRangeRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_UntenNippoMeisaiService_GetByDateRange_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_UntenNippoMeisaiService_GetByDateRange_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.GetByDateRange(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_ShainMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client ShainMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ShainMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ShainMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetShainMasterRequest
+		protoReq Db_GetShainMasterRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1848,9 +1848,9 @@ func request_ShainMasterService_Get_0(ctx context.Context, marshaler runtime.Mar
 	return msg, metadata, err
 }
 
-func local_request_ShainMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server ShainMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ShainMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ShainMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetShainMasterRequest
+		protoReq Db_GetShainMasterRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1866,11 +1866,11 @@ func local_request_ShainMasterService_Get_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-var filter_ShainMasterService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_ShainMasterService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_ShainMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, client ShainMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ShainMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ShainMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListShainMasterRequest
+		protoReq Db_ListShainMasterRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1879,31 +1879,31 @@ func request_ShainMasterService_List_0(ctx context.Context, marshaler runtime.Ma
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ShainMasterService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ShainMasterService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_ShainMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, server ShainMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ShainMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ShainMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListShainMasterRequest
+		protoReq Db_ListShainMasterRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ShainMasterService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ShainMasterService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_ShainMasterService_GetByBumonC_0(ctx context.Context, marshaler runtime.Marshaler, client ShainMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ShainMasterService_GetByBumonC_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ShainMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetShainMasterByBumonCRequest
+		protoReq Db_GetShainMasterByBumonCRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1922,9 +1922,9 @@ func request_ShainMasterService_GetByBumonC_0(ctx context.Context, marshaler run
 	return msg, metadata, err
 }
 
-func local_request_ShainMasterService_GetByBumonC_0(ctx context.Context, marshaler runtime.Marshaler, server ShainMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ShainMasterService_GetByBumonC_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ShainMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetShainMasterByBumonCRequest
+		protoReq Db_GetShainMasterByBumonCRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1940,9 +1940,9 @@ func local_request_ShainMasterService_GetByBumonC_0(ctx context.Context, marshal
 	return msg, metadata, err
 }
 
-func request_ChiikiMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client ChiikiMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ChiikiMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ChiikiMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetChiikiMasterRequest
+		protoReq Db_GetChiikiMasterRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1961,9 +1961,9 @@ func request_ChiikiMasterService_Get_0(ctx context.Context, marshaler runtime.Ma
 	return msg, metadata, err
 }
 
-func local_request_ChiikiMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server ChiikiMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ChiikiMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ChiikiMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetChiikiMasterRequest
+		protoReq Db_GetChiikiMasterRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -1979,11 +1979,11 @@ func local_request_ChiikiMasterService_Get_0(ctx context.Context, marshaler runt
 	return msg, metadata, err
 }
 
-var filter_ChiikiMasterService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_ChiikiMasterService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_ChiikiMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, client ChiikiMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ChiikiMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ChiikiMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListChiikiMasterRequest
+		protoReq Db_ListChiikiMasterRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -1992,31 +1992,31 @@ func request_ChiikiMasterService_List_0(ctx context.Context, marshaler runtime.M
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ChiikiMasterService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ChiikiMasterService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_ChiikiMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, server ChiikiMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ChiikiMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ChiikiMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListChiikiMasterRequest
+		protoReq Db_ListChiikiMasterRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ChiikiMasterService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ChiikiMasterService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_ChikuMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client ChikuMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ChikuMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ChikuMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetChikuMasterRequest
+		protoReq Db_GetChikuMasterRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -2035,9 +2035,9 @@ func request_ChikuMasterService_Get_0(ctx context.Context, marshaler runtime.Mar
 	return msg, metadata, err
 }
 
-func local_request_ChikuMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server ChikuMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ChikuMasterService_Get_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ChikuMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetChikuMasterRequest
+		protoReq Db_GetChikuMasterRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -2053,11 +2053,11 @@ func local_request_ChikuMasterService_Get_0(ctx context.Context, marshaler runti
 	return msg, metadata, err
 }
 
-var filter_ChikuMasterService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+var filter_Db_ChikuMasterService_List_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 
-func request_ChikuMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, client ChikuMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ChikuMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ChikuMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListChikuMasterRequest
+		protoReq Db_ListChikuMasterRequest
 		metadata runtime.ServerMetadata
 	)
 	if req.Body != nil {
@@ -2066,31 +2066,31 @@ func request_ChikuMasterService_List_0(ctx context.Context, marshaler runtime.Ma
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ChikuMasterService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ChikuMasterService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := client.List(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_ChikuMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, server ChikuMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ChikuMasterService_List_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ChikuMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq ListChikuMasterRequest
+		protoReq Db_ListChikuMasterRequest
 		metadata runtime.ServerMetadata
 	)
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_ChikuMasterService_List_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Db_ChikuMasterService_List_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 	msg, err := server.List(ctx, &protoReq)
 	return msg, metadata, err
 }
 
-func request_ChikuMasterService_GetByChiikiC_0(ctx context.Context, marshaler runtime.Marshaler, client ChikuMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_Db_ChikuMasterService_GetByChiikiC_0(ctx context.Context, marshaler runtime.Marshaler, client Db_ChikuMasterServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetChikuMasterByChiikiCRequest
+		protoReq Db_GetChikuMasterByChiikiCRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -2109,9 +2109,9 @@ func request_ChikuMasterService_GetByChiikiC_0(ctx context.Context, marshaler ru
 	return msg, metadata, err
 }
 
-func local_request_ChikuMasterService_GetByChiikiC_0(ctx context.Context, marshaler runtime.Marshaler, server ChikuMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_Db_ChikuMasterService_GetByChiikiC_0(ctx context.Context, marshaler runtime.Marshaler, server Db_ChikuMasterServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq GetChikuMasterByChiikiCRequest
+		protoReq Db_GetChikuMasterByChiikiCRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -2127,1239 +2127,1239 @@ func local_request_ChikuMasterService_GetByChiikiC_0(ctx context.Context, marsha
 	return msg, metadata, err
 }
 
-// RegisterDTakoUriageKeihiServiceHandlerServer registers the http handlers for service DTakoUriageKeihiService to "mux".
-// UnaryRPC     :call DTakoUriageKeihiServiceServer directly.
+// RegisterDb_DTakoUriageKeihiServiceHandlerServer registers the http handlers for service Db_DTakoUriageKeihiService to "mux".
+// UnaryRPC     :call Db_DTakoUriageKeihiServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDTakoUriageKeihiServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_DTakoUriageKeihiServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterDTakoUriageKeihiServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DTakoUriageKeihiServiceServer) error {
-	mux.Handle(http.MethodPost, pattern_DTakoUriageKeihiService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_DTakoUriageKeihiServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_DTakoUriageKeihiServiceServer) error {
+	mux.Handle(http.MethodPost, pattern_Db_DTakoUriageKeihiService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/Create", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/Create", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoUriageKeihiService_Create_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoUriageKeihiService_Create_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoUriageKeihiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoUriageKeihiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{srch_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{srch_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoUriageKeihiService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoUriageKeihiService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPut, pattern_DTakoUriageKeihiService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPut, pattern_Db_DTakoUriageKeihiService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/Update", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{dtako_uriage_keihi.srch_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/Update", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{dtako_uriage_keihi.srch_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoUriageKeihiService_Update_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoUriageKeihiService_Update_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_DTakoUriageKeihiService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_Db_DTakoUriageKeihiService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{srch_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{srch_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoUriageKeihiService_Delete_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoUriageKeihiService_Delete_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoUriageKeihiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoUriageKeihiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoUriageKeihiService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoUriageKeihiService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterETCMeisaiServiceHandlerServer registers the http handlers for service ETCMeisaiService to "mux".
-// UnaryRPC     :call ETCMeisaiServiceServer directly.
+// RegisterDb_ETCMeisaiServiceHandlerServer registers the http handlers for service Db_ETCMeisaiService to "mux".
+// UnaryRPC     :call Db_ETCMeisaiServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterETCMeisaiServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_ETCMeisaiServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterETCMeisaiServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ETCMeisaiServiceServer) error {
-	mux.Handle(http.MethodPost, pattern_ETCMeisaiService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_ETCMeisaiServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_ETCMeisaiServiceServer) error {
+	mux.Handle(http.MethodPost, pattern_Db_ETCMeisaiService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiService/Create", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/Create", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiService_Create_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiService_Create_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPut, pattern_ETCMeisaiService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPut, pattern_Db_ETCMeisaiService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiService/Update", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{etc_meisai.id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/Update", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{etc_meisai.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiService_Update_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiService_Update_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_ETCMeisaiService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_Db_ETCMeisaiService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiService_Delete_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiService_Delete_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterDTakoFerryRowsServiceHandlerServer registers the http handlers for service DTakoFerryRowsService to "mux".
-// UnaryRPC     :call DTakoFerryRowsServiceServer directly.
+// RegisterDb_DTakoFerryRowsServiceHandlerServer registers the http handlers for service Db_DTakoFerryRowsService to "mux".
+// UnaryRPC     :call Db_DTakoFerryRowsServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDTakoFerryRowsServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_DTakoFerryRowsServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterDTakoFerryRowsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DTakoFerryRowsServiceServer) error {
-	mux.Handle(http.MethodPost, pattern_DTakoFerryRowsService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_DTakoFerryRowsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_DTakoFerryRowsServiceServer) error {
+	mux.Handle(http.MethodPost, pattern_Db_DTakoFerryRowsService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/Create", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/Create", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoFerryRowsService_Create_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoFerryRowsService_Create_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoFerryRowsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoFerryRowsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPut, pattern_DTakoFerryRowsService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPut, pattern_Db_DTakoFerryRowsService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/Update", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{dtako_ferry_rows.id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/Update", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{dtako_ferry_rows.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoFerryRowsService_Update_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoFerryRowsService_Update_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_DTakoFerryRowsService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_Db_DTakoFerryRowsService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoFerryRowsService_Delete_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoFerryRowsService_Delete_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoFerryRowsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoFerryRowsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterETCMeisaiMappingServiceHandlerServer registers the http handlers for service ETCMeisaiMappingService to "mux".
-// UnaryRPC     :call ETCMeisaiMappingServiceServer directly.
+// RegisterDb_ETCMeisaiMappingServiceHandlerServer registers the http handlers for service Db_ETCMeisaiMappingService to "mux".
+// UnaryRPC     :call Db_ETCMeisaiMappingServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterETCMeisaiMappingServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_ETCMeisaiMappingServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterETCMeisaiMappingServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ETCMeisaiMappingServiceServer) error {
-	mux.Handle(http.MethodPost, pattern_ETCMeisaiMappingService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_ETCMeisaiMappingServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_ETCMeisaiMappingServiceServer) error {
+	mux.Handle(http.MethodPost, pattern_Db_ETCMeisaiMappingService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/Create", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/Create", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiMappingService_Create_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiMappingService_Create_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiMappingService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiMappingService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/Get", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/Get", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiMappingService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiMappingService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPut, pattern_ETCMeisaiMappingService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPut, pattern_Db_ETCMeisaiMappingService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/Update", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{etc_meisai_mapping.id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/Update", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{etc_meisai_mapping.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiMappingService_Update_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiMappingService_Update_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_ETCMeisaiMappingService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_Db_ETCMeisaiMappingService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiMappingService_Delete_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiMappingService_Delete_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiMappingService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiMappingService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiMappingService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiMappingService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiMappingService_GetDTakoRowIDByHash_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/GetDTakoRowIDByHash", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/by-hash/{etc_meisai_hash}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/GetDTakoRowIDByHash", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/by-hash/{etc_meisai_hash}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterDTakoCarsServiceHandlerServer registers the http handlers for service DTakoCarsService to "mux".
-// UnaryRPC     :call DTakoCarsServiceServer directly.
+// RegisterDb_DTakoCarsServiceHandlerServer registers the http handlers for service Db_DTakoCarsService to "mux".
+// UnaryRPC     :call Db_DTakoCarsServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDTakoCarsServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_DTakoCarsServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterDTakoCarsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DTakoCarsServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_DTakoCarsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_DTakoCarsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_DTakoCarsServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoCarsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoCarsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoCarsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoCarsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoCarsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoCarsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoCarsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoCarsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoCarsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoCarsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoCarsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoCarsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoCarsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoCarsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoCarsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoCarsService_GetByCarCode_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoCarsService_GetByCarCode_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoCarsService/GetByCarCode", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars/by-car-code/{car_code}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoCarsService/GetByCarCode", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars/by-car-code/{car_code}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoCarsService_GetByCarCode_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoCarsService_GetByCarCode_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoCarsService_GetByCarCode_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoCarsService_GetByCarCode_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterDTakoEventsServiceHandlerServer registers the http handlers for service DTakoEventsService to "mux".
-// UnaryRPC     :call DTakoEventsServiceServer directly.
+// RegisterDb_DTakoEventsServiceHandlerServer registers the http handlers for service Db_DTakoEventsService to "mux".
+// UnaryRPC     :call Db_DTakoEventsServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDTakoEventsServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_DTakoEventsServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterDTakoEventsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DTakoEventsServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_DTakoEventsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_DTakoEventsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_DTakoEventsServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoEventsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoEventsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoEventsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoEventsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoEventsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoEventsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoEventsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoEventsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoEventsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoEventsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoEventsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoEventsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoEventsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoEventsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoEventsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoEventsService_GetByOperationNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoEventsService_GetByOperationNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoEventsService/GetByOperationNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events/by-operation-no/{operation_no}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoEventsService/GetByOperationNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events/by-operation-no/{operation_no}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoEventsService_GetByOperationNo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoEventsService_GetByOperationNo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoEventsService_GetByOperationNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoEventsService_GetByOperationNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterDTakoRowsServiceHandlerServer registers the http handlers for service DTakoRowsService to "mux".
-// UnaryRPC     :call DTakoRowsServiceServer directly.
+// RegisterDb_DTakoRowsServiceHandlerServer registers the http handlers for service Db_DTakoRowsService to "mux".
+// UnaryRPC     :call Db_DTakoRowsServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDTakoRowsServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_DTakoRowsServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterDTakoRowsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DTakoRowsServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_DTakoRowsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_DTakoRowsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_DTakoRowsServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoRowsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoRowsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoRowsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoRowsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoRowsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoRowsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoRowsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoRowsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoRowsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoRowsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoRowsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoRowsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoRowsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoRowsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoRowsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoRowsService_GetByOperationNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoRowsService_GetByOperationNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoRowsService/GetByOperationNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows/by-operation-no/{operation_no}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoRowsService/GetByOperationNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows/by-operation-no/{operation_no}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoRowsService_GetByOperationNo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoRowsService_GetByOperationNo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoRowsService_GetByOperationNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoRowsService_GetByOperationNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterETCNumServiceHandlerServer registers the http handlers for service ETCNumService to "mux".
-// UnaryRPC     :call ETCNumServiceServer directly.
+// RegisterDb_ETCNumServiceHandlerServer registers the http handlers for service Db_ETCNumService to "mux".
+// UnaryRPC     :call Db_ETCNumServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterETCNumServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_ETCNumServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterETCNumServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ETCNumServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_ETCNumService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_ETCNumServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_ETCNumServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_ETCNumService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCNumService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-num"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCNumService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-num"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCNumService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCNumService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCNumService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCNumService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCNumService_GetByETCCardNum_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCNumService_GetByETCCardNum_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCNumService/GetByETCCardNum", runtime.WithHTTPPathPattern("/api/v1/db/etc-num/by-etc-card-num/{etc_card_num}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCNumService/GetByETCCardNum", runtime.WithHTTPPathPattern("/api/v1/db/etc-num/by-etc-card-num/{etc_card_num}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCNumService_GetByETCCardNum_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCNumService_GetByETCCardNum_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCNumService_GetByETCCardNum_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCNumService_GetByETCCardNum_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCNumService_GetByCarID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCNumService_GetByCarID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ETCNumService/GetByCarID", runtime.WithHTTPPathPattern("/api/v1/db/etc-num/by-car-id/{car_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ETCNumService/GetByCarID", runtime.WithHTTPPathPattern("/api/v1/db/etc-num/by-car-id/{car_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ETCNumService_GetByCarID_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ETCNumService_GetByCarID_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCNumService_GetByCarID_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCNumService_GetByCarID_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterDTakoFerryRowsProdServiceHandlerServer registers the http handlers for service DTakoFerryRowsProdService to "mux".
-// UnaryRPC     :call DTakoFerryRowsProdServiceServer directly.
+// RegisterDb_DTakoFerryRowsProdServiceHandlerServer registers the http handlers for service Db_DTakoFerryRowsProdService to "mux".
+// UnaryRPC     :call Db_DTakoFerryRowsProdServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDTakoFerryRowsProdServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_DTakoFerryRowsProdServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterDTakoFerryRowsProdServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DTakoFerryRowsProdServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_DTakoFerryRowsProdServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_DTakoFerryRowsProdServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsProdService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoFerryRowsProdService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsProdService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoFerryRowsProdService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoFerryRowsProdService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsProdService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsProdService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsProdService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoFerryRowsProdService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsProdService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoFerryRowsProdService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoFerryRowsProdService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsProdService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsProdService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_GetByUnkoNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsProdService_GetByUnkoNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DTakoFerryRowsProdService/GetByUnkoNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsProdService/GetByUnkoNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterCarsServiceHandlerServer registers the http handlers for service CarsService to "mux".
-// UnaryRPC     :call CarsServiceServer directly.
+// RegisterDb_CarsServiceHandlerServer registers the http handlers for service Db_CarsService to "mux".
+// UnaryRPC     :call Db_CarsServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterCarsServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_CarsServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterCarsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server CarsServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_CarsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_CarsServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_CarsServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_CarsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.CarsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/cars/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_CarsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/cars/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CarsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_CarsService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_CarsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_CarsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_CarsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_CarsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.CarsService/List", runtime.WithHTTPPathPattern("/api/v1/db/cars"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_CarsService/List", runtime.WithHTTPPathPattern("/api/v1/db/cars"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CarsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_CarsService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_CarsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_CarsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_CarsService_GetByBumonCodeID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_CarsService_GetByBumonCodeID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.CarsService/GetByBumonCodeID", runtime.WithHTTPPathPattern("/api/v1/db/cars/bumon/{bumon_code_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_CarsService/GetByBumonCodeID", runtime.WithHTTPPathPattern("/api/v1/db/cars/bumon/{bumon_code_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CarsService_GetByBumonCodeID_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_CarsService_GetByBumonCodeID_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_CarsService_GetByBumonCodeID_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_CarsService_GetByBumonCodeID_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterDriversServiceHandlerServer registers the http handlers for service DriversService to "mux".
-// UnaryRPC     :call DriversServiceServer directly.
+// RegisterDb_DriversServiceHandlerServer registers the http handlers for service Db_DriversService to "mux".
+// UnaryRPC     :call Db_DriversServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDriversServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_DriversServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterDriversServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DriversServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_DriversService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_DriversServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_DriversServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_DriversService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DriversService/Get", runtime.WithHTTPPathPattern("/api/v1/db/drivers/{id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DriversService/Get", runtime.WithHTTPPathPattern("/api/v1/db/drivers/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DriversService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DriversService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DriversService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DriversService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DriversService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DriversService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DriversService/List", runtime.WithHTTPPathPattern("/api/v1/db/drivers"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DriversService/List", runtime.WithHTTPPathPattern("/api/v1/db/drivers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DriversService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DriversService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DriversService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DriversService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DriversService_GetByBumon_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DriversService_GetByBumon_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.DriversService/GetByBumon", runtime.WithHTTPPathPattern("/api/v1/db/drivers/bumon/{bumon}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_DriversService/GetByBumon", runtime.WithHTTPPathPattern("/api/v1/db/drivers/bumon/{bumon}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DriversService_GetByBumon_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_DriversService_GetByBumon_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DriversService_GetByBumon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DriversService_GetByBumon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterUntenNippoMeisaiServiceHandlerServer registers the http handlers for service UntenNippoMeisaiService to "mux".
-// UnaryRPC     :call UntenNippoMeisaiServiceServer directly.
+// RegisterDb_UntenNippoMeisaiServiceHandlerServer registers the http handlers for service Db_UntenNippoMeisaiService to "mux".
+// UnaryRPC     :call Db_UntenNippoMeisaiServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterUntenNippoMeisaiServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_UntenNippoMeisaiServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterUntenNippoMeisaiServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server UntenNippoMeisaiServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_UntenNippoMeisaiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_UntenNippoMeisaiServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_UntenNippoMeisaiServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_UntenNippoMeisaiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.UntenNippoMeisaiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/{nippo_k}/{haisha_k}/{sharyo_c}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_UntenNippoMeisaiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/{nippo_k}/{haisha_k}/{sharyo_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_UntenNippoMeisaiService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_UntenNippoMeisaiService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_UntenNippoMeisaiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_UntenNippoMeisaiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_UntenNippoMeisaiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_UntenNippoMeisaiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.UntenNippoMeisaiService/List", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_UntenNippoMeisaiService/List", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_UntenNippoMeisaiService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_UntenNippoMeisaiService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_UntenNippoMeisaiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_UntenNippoMeisaiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_UntenNippoMeisaiService_GetBySharyoC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_UntenNippoMeisaiService_GetBySharyoC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.UntenNippoMeisaiService/GetBySharyoC", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/sharyo/{sharyo_c}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_UntenNippoMeisaiService/GetBySharyoC", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/sharyo/{sharyo_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_UntenNippoMeisaiService_GetBySharyoC_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_UntenNippoMeisaiService_GetBySharyoC_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_UntenNippoMeisaiService_GetBySharyoC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_UntenNippoMeisaiService_GetBySharyoC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_UntenNippoMeisaiService_GetByDateRange_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_UntenNippoMeisaiService_GetByDateRange_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.UntenNippoMeisaiService/GetByDateRange", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/date-range"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_UntenNippoMeisaiService/GetByDateRange", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/date-range"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_UntenNippoMeisaiService_GetByDateRange_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_UntenNippoMeisaiService_GetByDateRange_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_UntenNippoMeisaiService_GetByDateRange_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_UntenNippoMeisaiService_GetByDateRange_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterShainMasterServiceHandlerServer registers the http handlers for service ShainMasterService to "mux".
-// UnaryRPC     :call ShainMasterServiceServer directly.
+// RegisterDb_ShainMasterServiceHandlerServer registers the http handlers for service Db_ShainMasterService to "mux".
+// UnaryRPC     :call Db_ShainMasterServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterShainMasterServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_ShainMasterServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterShainMasterServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ShainMasterServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_ShainMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_ShainMasterServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_ShainMasterServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_ShainMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ShainMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/shain-master/{shain_c}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ShainMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/shain-master/{shain_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ShainMasterService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ShainMasterService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ShainMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ShainMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ShainMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ShainMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ShainMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/shain-master"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ShainMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/shain-master"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ShainMasterService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ShainMasterService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ShainMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ShainMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ShainMasterService_GetByBumonC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ShainMasterService_GetByBumonC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ShainMasterService/GetByBumonC", runtime.WithHTTPPathPattern("/api/v1/db/shain-master/bumon/{bumon_c}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ShainMasterService/GetByBumonC", runtime.WithHTTPPathPattern("/api/v1/db/shain-master/bumon/{bumon_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ShainMasterService_GetByBumonC_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ShainMasterService_GetByBumonC_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ShainMasterService_GetByBumonC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ShainMasterService_GetByBumonC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterChiikiMasterServiceHandlerServer registers the http handlers for service ChiikiMasterService to "mux".
-// UnaryRPC     :call ChiikiMasterServiceServer directly.
+// RegisterDb_ChiikiMasterServiceHandlerServer registers the http handlers for service Db_ChiikiMasterService to "mux".
+// UnaryRPC     :call Db_ChiikiMasterServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterChiikiMasterServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_ChiikiMasterServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterChiikiMasterServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ChiikiMasterServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_ChiikiMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_ChiikiMasterServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_ChiikiMasterServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_ChiikiMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ChiikiMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/chiiki-master/{chiiki_c}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ChiikiMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/chiiki-master/{chiiki_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ChiikiMasterService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ChiikiMasterService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChiikiMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChiikiMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ChiikiMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ChiikiMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ChiikiMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/chiiki-master"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ChiikiMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/chiiki-master"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ChiikiMasterService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ChiikiMasterService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChiikiMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChiikiMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterChikuMasterServiceHandlerServer registers the http handlers for service ChikuMasterService to "mux".
-// UnaryRPC     :call ChikuMasterServiceServer directly.
+// RegisterDb_ChikuMasterServiceHandlerServer registers the http handlers for service Db_ChikuMasterService to "mux".
+// UnaryRPC     :call Db_ChikuMasterServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterChikuMasterServiceHandlerFromEndpoint instead.
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDb_ChikuMasterServiceHandlerFromEndpoint instead.
 // GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
-func RegisterChikuMasterServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ChikuMasterServiceServer) error {
-	mux.Handle(http.MethodGet, pattern_ChikuMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+func RegisterDb_ChikuMasterServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server Db_ChikuMasterServiceServer) error {
+	mux.Handle(http.MethodGet, pattern_Db_ChikuMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ChikuMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master/{chiku_c}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ChikuMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master/{chiku_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ChikuMasterService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ChikuMasterService_Get_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChikuMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChikuMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ChikuMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ChikuMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ChikuMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ChikuMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ChikuMasterService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ChikuMasterService_List_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChikuMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChikuMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ChikuMasterService_GetByChiikiC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ChikuMasterService_GetByChiikiC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.ChikuMasterService/GetByChiikiC", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master/chiiki/{chiiki_c}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/db_service.Db_ChikuMasterService/GetByChiikiC", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master/chiiki/{chiiki_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_ChikuMasterService_GetByChiikiC_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Db_ChikuMasterService_GetByChiikiC_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChikuMasterService_GetByChiikiC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChikuMasterService_GetByChiikiC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
 }
 
-// RegisterDTakoUriageKeihiServiceHandlerFromEndpoint is same as RegisterDTakoUriageKeihiServiceHandler but
+// RegisterDb_DTakoUriageKeihiServiceHandlerFromEndpoint is same as RegisterDb_DTakoUriageKeihiServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterDTakoUriageKeihiServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_DTakoUriageKeihiServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -3378,128 +3378,128 @@ func RegisterDTakoUriageKeihiServiceHandlerFromEndpoint(ctx context.Context, mux
 			}
 		}()
 	}()
-	return RegisterDTakoUriageKeihiServiceHandler(ctx, mux, conn)
+	return RegisterDb_DTakoUriageKeihiServiceHandler(ctx, mux, conn)
 }
 
-// RegisterDTakoUriageKeihiServiceHandler registers the http handlers for service DTakoUriageKeihiService to "mux".
+// RegisterDb_DTakoUriageKeihiServiceHandler registers the http handlers for service Db_DTakoUriageKeihiService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterDTakoUriageKeihiServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterDTakoUriageKeihiServiceHandlerClient(ctx, mux, NewDTakoUriageKeihiServiceClient(conn))
+func RegisterDb_DTakoUriageKeihiServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_DTakoUriageKeihiServiceHandlerClient(ctx, mux, NewDb_DTakoUriageKeihiServiceClient(conn))
 }
 
-// RegisterDTakoUriageKeihiServiceHandlerClient registers the http handlers for service DTakoUriageKeihiService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DTakoUriageKeihiServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DTakoUriageKeihiServiceClient"
+// RegisterDb_DTakoUriageKeihiServiceHandlerClient registers the http handlers for service Db_DTakoUriageKeihiService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_DTakoUriageKeihiServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_DTakoUriageKeihiServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DTakoUriageKeihiServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterDTakoUriageKeihiServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DTakoUriageKeihiServiceClient) error {
-	mux.Handle(http.MethodPost, pattern_DTakoUriageKeihiService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_DTakoUriageKeihiServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_DTakoUriageKeihiServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_DTakoUriageKeihiServiceClient) error {
+	mux.Handle(http.MethodPost, pattern_Db_DTakoUriageKeihiService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/Create", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/Create", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoUriageKeihiService_Create_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoUriageKeihiService_Create_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoUriageKeihiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoUriageKeihiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{srch_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{srch_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoUriageKeihiService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoUriageKeihiService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPut, pattern_DTakoUriageKeihiService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPut, pattern_Db_DTakoUriageKeihiService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/Update", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{dtako_uriage_keihi.srch_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/Update", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{dtako_uriage_keihi.srch_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoUriageKeihiService_Update_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoUriageKeihiService_Update_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_DTakoUriageKeihiService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_Db_DTakoUriageKeihiService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{srch_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi/{srch_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoUriageKeihiService_Delete_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoUriageKeihiService_Delete_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoUriageKeihiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoUriageKeihiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoUriageKeihiService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoUriageKeihiService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-uriage-keihi"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoUriageKeihiService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoUriageKeihiService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoUriageKeihiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoUriageKeihiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_DTakoUriageKeihiService_Create_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-uriage-keihi"}, ""))
-	pattern_DTakoUriageKeihiService_Get_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-uriage-keihi", "srch_id"}, ""))
-	pattern_DTakoUriageKeihiService_Update_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-uriage-keihi", "dtako_uriage_keihi.srch_id"}, ""))
-	pattern_DTakoUriageKeihiService_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-uriage-keihi", "srch_id"}, ""))
-	pattern_DTakoUriageKeihiService_List_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-uriage-keihi"}, ""))
+	pattern_Db_DTakoUriageKeihiService_Create_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-uriage-keihi"}, ""))
+	pattern_Db_DTakoUriageKeihiService_Get_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-uriage-keihi", "srch_id"}, ""))
+	pattern_Db_DTakoUriageKeihiService_Update_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-uriage-keihi", "dtako_uriage_keihi.srch_id"}, ""))
+	pattern_Db_DTakoUriageKeihiService_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-uriage-keihi", "srch_id"}, ""))
+	pattern_Db_DTakoUriageKeihiService_List_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-uriage-keihi"}, ""))
 )
 
 var (
-	forward_DTakoUriageKeihiService_Create_0 = runtime.ForwardResponseMessage
-	forward_DTakoUriageKeihiService_Get_0    = runtime.ForwardResponseMessage
-	forward_DTakoUriageKeihiService_Update_0 = runtime.ForwardResponseMessage
-	forward_DTakoUriageKeihiService_Delete_0 = runtime.ForwardResponseMessage
-	forward_DTakoUriageKeihiService_List_0   = runtime.ForwardResponseMessage
+	forward_Db_DTakoUriageKeihiService_Create_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoUriageKeihiService_Get_0    = runtime.ForwardResponseMessage
+	forward_Db_DTakoUriageKeihiService_Update_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoUriageKeihiService_Delete_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoUriageKeihiService_List_0   = runtime.ForwardResponseMessage
 )
 
-// RegisterETCMeisaiServiceHandlerFromEndpoint is same as RegisterETCMeisaiServiceHandler but
+// RegisterDb_ETCMeisaiServiceHandlerFromEndpoint is same as RegisterDb_ETCMeisaiServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterETCMeisaiServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_ETCMeisaiServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -3518,128 +3518,128 @@ func RegisterETCMeisaiServiceHandlerFromEndpoint(ctx context.Context, mux *runti
 			}
 		}()
 	}()
-	return RegisterETCMeisaiServiceHandler(ctx, mux, conn)
+	return RegisterDb_ETCMeisaiServiceHandler(ctx, mux, conn)
 }
 
-// RegisterETCMeisaiServiceHandler registers the http handlers for service ETCMeisaiService to "mux".
+// RegisterDb_ETCMeisaiServiceHandler registers the http handlers for service Db_ETCMeisaiService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterETCMeisaiServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterETCMeisaiServiceHandlerClient(ctx, mux, NewETCMeisaiServiceClient(conn))
+func RegisterDb_ETCMeisaiServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_ETCMeisaiServiceHandlerClient(ctx, mux, NewDb_ETCMeisaiServiceClient(conn))
 }
 
-// RegisterETCMeisaiServiceHandlerClient registers the http handlers for service ETCMeisaiService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ETCMeisaiServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ETCMeisaiServiceClient"
+// RegisterDb_ETCMeisaiServiceHandlerClient registers the http handlers for service Db_ETCMeisaiService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_ETCMeisaiServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_ETCMeisaiServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "ETCMeisaiServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterETCMeisaiServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ETCMeisaiServiceClient) error {
-	mux.Handle(http.MethodPost, pattern_ETCMeisaiService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_ETCMeisaiServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_ETCMeisaiServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_ETCMeisaiServiceClient) error {
+	mux.Handle(http.MethodPost, pattern_Db_ETCMeisaiService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiService/Create", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/Create", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiService_Create_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiService_Create_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPut, pattern_ETCMeisaiService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPut, pattern_Db_ETCMeisaiService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiService/Update", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{etc_meisai.id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/Update", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{etc_meisai.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiService_Update_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiService_Update_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_ETCMeisaiService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_Db_ETCMeisaiService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiService_Delete_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiService_Delete_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_ETCMeisaiService_Create_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-meisai"}, ""))
-	pattern_ETCMeisaiService_Get_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai", "id"}, ""))
-	pattern_ETCMeisaiService_Update_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai", "etc_meisai.id"}, ""))
-	pattern_ETCMeisaiService_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai", "id"}, ""))
-	pattern_ETCMeisaiService_List_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-meisai"}, ""))
+	pattern_Db_ETCMeisaiService_Create_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-meisai"}, ""))
+	pattern_Db_ETCMeisaiService_Get_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai", "id"}, ""))
+	pattern_Db_ETCMeisaiService_Update_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai", "etc_meisai.id"}, ""))
+	pattern_Db_ETCMeisaiService_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai", "id"}, ""))
+	pattern_Db_ETCMeisaiService_List_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-meisai"}, ""))
 )
 
 var (
-	forward_ETCMeisaiService_Create_0 = runtime.ForwardResponseMessage
-	forward_ETCMeisaiService_Get_0    = runtime.ForwardResponseMessage
-	forward_ETCMeisaiService_Update_0 = runtime.ForwardResponseMessage
-	forward_ETCMeisaiService_Delete_0 = runtime.ForwardResponseMessage
-	forward_ETCMeisaiService_List_0   = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiService_Create_0 = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiService_Get_0    = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiService_Update_0 = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiService_Delete_0 = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiService_List_0   = runtime.ForwardResponseMessage
 )
 
-// RegisterDTakoFerryRowsServiceHandlerFromEndpoint is same as RegisterDTakoFerryRowsServiceHandler but
+// RegisterDb_DTakoFerryRowsServiceHandlerFromEndpoint is same as RegisterDb_DTakoFerryRowsServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterDTakoFerryRowsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_DTakoFerryRowsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -3658,128 +3658,128 @@ func RegisterDTakoFerryRowsServiceHandlerFromEndpoint(ctx context.Context, mux *
 			}
 		}()
 	}()
-	return RegisterDTakoFerryRowsServiceHandler(ctx, mux, conn)
+	return RegisterDb_DTakoFerryRowsServiceHandler(ctx, mux, conn)
 }
 
-// RegisterDTakoFerryRowsServiceHandler registers the http handlers for service DTakoFerryRowsService to "mux".
+// RegisterDb_DTakoFerryRowsServiceHandler registers the http handlers for service Db_DTakoFerryRowsService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterDTakoFerryRowsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterDTakoFerryRowsServiceHandlerClient(ctx, mux, NewDTakoFerryRowsServiceClient(conn))
+func RegisterDb_DTakoFerryRowsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_DTakoFerryRowsServiceHandlerClient(ctx, mux, NewDb_DTakoFerryRowsServiceClient(conn))
 }
 
-// RegisterDTakoFerryRowsServiceHandlerClient registers the http handlers for service DTakoFerryRowsService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DTakoFerryRowsServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DTakoFerryRowsServiceClient"
+// RegisterDb_DTakoFerryRowsServiceHandlerClient registers the http handlers for service Db_DTakoFerryRowsService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_DTakoFerryRowsServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_DTakoFerryRowsServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DTakoFerryRowsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterDTakoFerryRowsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DTakoFerryRowsServiceClient) error {
-	mux.Handle(http.MethodPost, pattern_DTakoFerryRowsService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_DTakoFerryRowsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_DTakoFerryRowsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_DTakoFerryRowsServiceClient) error {
+	mux.Handle(http.MethodPost, pattern_Db_DTakoFerryRowsService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/Create", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/Create", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoFerryRowsService_Create_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoFerryRowsService_Create_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoFerryRowsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoFerryRowsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPut, pattern_DTakoFerryRowsService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPut, pattern_Db_DTakoFerryRowsService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/Update", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{dtako_ferry_rows.id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/Update", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{dtako_ferry_rows.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoFerryRowsService_Update_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoFerryRowsService_Update_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_DTakoFerryRowsService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_Db_DTakoFerryRowsService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoFerryRowsService_Delete_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoFerryRowsService_Delete_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoFerryRowsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoFerryRowsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoFerryRowsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_DTakoFerryRowsService_Create_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-ferry-rows"}, ""))
-	pattern_DTakoFerryRowsService_Get_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-ferry-rows", "id"}, ""))
-	pattern_DTakoFerryRowsService_Update_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-ferry-rows", "dtako_ferry_rows.id"}, ""))
-	pattern_DTakoFerryRowsService_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-ferry-rows", "id"}, ""))
-	pattern_DTakoFerryRowsService_List_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-ferry-rows"}, ""))
+	pattern_Db_DTakoFerryRowsService_Create_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-ferry-rows"}, ""))
+	pattern_Db_DTakoFerryRowsService_Get_0    = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-ferry-rows", "id"}, ""))
+	pattern_Db_DTakoFerryRowsService_Update_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-ferry-rows", "dtako_ferry_rows.id"}, ""))
+	pattern_Db_DTakoFerryRowsService_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-ferry-rows", "id"}, ""))
+	pattern_Db_DTakoFerryRowsService_List_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-ferry-rows"}, ""))
 )
 
 var (
-	forward_DTakoFerryRowsService_Create_0 = runtime.ForwardResponseMessage
-	forward_DTakoFerryRowsService_Get_0    = runtime.ForwardResponseMessage
-	forward_DTakoFerryRowsService_Update_0 = runtime.ForwardResponseMessage
-	forward_DTakoFerryRowsService_Delete_0 = runtime.ForwardResponseMessage
-	forward_DTakoFerryRowsService_List_0   = runtime.ForwardResponseMessage
+	forward_Db_DTakoFerryRowsService_Create_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoFerryRowsService_Get_0    = runtime.ForwardResponseMessage
+	forward_Db_DTakoFerryRowsService_Update_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoFerryRowsService_Delete_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoFerryRowsService_List_0   = runtime.ForwardResponseMessage
 )
 
-// RegisterETCMeisaiMappingServiceHandlerFromEndpoint is same as RegisterETCMeisaiMappingServiceHandler but
+// RegisterDb_ETCMeisaiMappingServiceHandlerFromEndpoint is same as RegisterDb_ETCMeisaiMappingServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterETCMeisaiMappingServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_ETCMeisaiMappingServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -3798,147 +3798,147 @@ func RegisterETCMeisaiMappingServiceHandlerFromEndpoint(ctx context.Context, mux
 			}
 		}()
 	}()
-	return RegisterETCMeisaiMappingServiceHandler(ctx, mux, conn)
+	return RegisterDb_ETCMeisaiMappingServiceHandler(ctx, mux, conn)
 }
 
-// RegisterETCMeisaiMappingServiceHandler registers the http handlers for service ETCMeisaiMappingService to "mux".
+// RegisterDb_ETCMeisaiMappingServiceHandler registers the http handlers for service Db_ETCMeisaiMappingService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterETCMeisaiMappingServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterETCMeisaiMappingServiceHandlerClient(ctx, mux, NewETCMeisaiMappingServiceClient(conn))
+func RegisterDb_ETCMeisaiMappingServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_ETCMeisaiMappingServiceHandlerClient(ctx, mux, NewDb_ETCMeisaiMappingServiceClient(conn))
 }
 
-// RegisterETCMeisaiMappingServiceHandlerClient registers the http handlers for service ETCMeisaiMappingService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ETCMeisaiMappingServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ETCMeisaiMappingServiceClient"
+// RegisterDb_ETCMeisaiMappingServiceHandlerClient registers the http handlers for service Db_ETCMeisaiMappingService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_ETCMeisaiMappingServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_ETCMeisaiMappingServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "ETCMeisaiMappingServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterETCMeisaiMappingServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ETCMeisaiMappingServiceClient) error {
-	mux.Handle(http.MethodPost, pattern_ETCMeisaiMappingService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_ETCMeisaiMappingServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_ETCMeisaiMappingServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_ETCMeisaiMappingServiceClient) error {
+	mux.Handle(http.MethodPost, pattern_Db_ETCMeisaiMappingService_Create_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/Create", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/Create", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiMappingService_Create_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiMappingService_Create_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_Create_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiMappingService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiMappingService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/Get", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/Get", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiMappingService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiMappingService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodPut, pattern_ETCMeisaiMappingService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPut, pattern_Db_ETCMeisaiMappingService_Update_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/Update", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{etc_meisai_mapping.id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/Update", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{etc_meisai_mapping.id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiMappingService_Update_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiMappingService_Update_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_Update_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodDelete, pattern_ETCMeisaiMappingService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodDelete, pattern_Db_ETCMeisaiMappingService_Delete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/Delete", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiMappingService_Delete_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiMappingService_Delete_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_Delete_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiMappingService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiMappingService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiMappingService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiMappingService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCMeisaiMappingService_GetDTakoRowIDByHash_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCMeisaiMappingService/GetDTakoRowIDByHash", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/by-hash/{etc_meisai_hash}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCMeisaiMappingService/GetDTakoRowIDByHash", runtime.WithHTTPPathPattern("/api/v1/db/etc-meisai-mapping/by-hash/{etc_meisai_hash}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_ETCMeisaiMappingService_Create_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-meisai-mapping"}, ""))
-	pattern_ETCMeisaiMappingService_Get_0                 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai-mapping", "id"}, ""))
-	pattern_ETCMeisaiMappingService_Update_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai-mapping", "etc_meisai_mapping.id"}, ""))
-	pattern_ETCMeisaiMappingService_Delete_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai-mapping", "id"}, ""))
-	pattern_ETCMeisaiMappingService_List_0                = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-meisai-mapping"}, ""))
-	pattern_ETCMeisaiMappingService_GetDTakoRowIDByHash_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "etc-meisai-mapping", "by-hash", "etc_meisai_hash"}, ""))
+	pattern_Db_ETCMeisaiMappingService_Create_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-meisai-mapping"}, ""))
+	pattern_Db_ETCMeisaiMappingService_Get_0                 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai-mapping", "id"}, ""))
+	pattern_Db_ETCMeisaiMappingService_Update_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai-mapping", "etc_meisai_mapping.id"}, ""))
+	pattern_Db_ETCMeisaiMappingService_Delete_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "etc-meisai-mapping", "id"}, ""))
+	pattern_Db_ETCMeisaiMappingService_List_0                = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-meisai-mapping"}, ""))
+	pattern_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "etc-meisai-mapping", "by-hash", "etc_meisai_hash"}, ""))
 )
 
 var (
-	forward_ETCMeisaiMappingService_Create_0              = runtime.ForwardResponseMessage
-	forward_ETCMeisaiMappingService_Get_0                 = runtime.ForwardResponseMessage
-	forward_ETCMeisaiMappingService_Update_0              = runtime.ForwardResponseMessage
-	forward_ETCMeisaiMappingService_Delete_0              = runtime.ForwardResponseMessage
-	forward_ETCMeisaiMappingService_List_0                = runtime.ForwardResponseMessage
-	forward_ETCMeisaiMappingService_GetDTakoRowIDByHash_0 = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiMappingService_Create_0              = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiMappingService_Get_0                 = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiMappingService_Update_0              = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiMappingService_Delete_0              = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiMappingService_List_0                = runtime.ForwardResponseMessage
+	forward_Db_ETCMeisaiMappingService_GetDTakoRowIDByHash_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterDTakoCarsServiceHandlerFromEndpoint is same as RegisterDTakoCarsServiceHandler but
+// RegisterDb_DTakoCarsServiceHandlerFromEndpoint is same as RegisterDb_DTakoCarsServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterDTakoCarsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_DTakoCarsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -3957,90 +3957,90 @@ func RegisterDTakoCarsServiceHandlerFromEndpoint(ctx context.Context, mux *runti
 			}
 		}()
 	}()
-	return RegisterDTakoCarsServiceHandler(ctx, mux, conn)
+	return RegisterDb_DTakoCarsServiceHandler(ctx, mux, conn)
 }
 
-// RegisterDTakoCarsServiceHandler registers the http handlers for service DTakoCarsService to "mux".
+// RegisterDb_DTakoCarsServiceHandler registers the http handlers for service Db_DTakoCarsService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterDTakoCarsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterDTakoCarsServiceHandlerClient(ctx, mux, NewDTakoCarsServiceClient(conn))
+func RegisterDb_DTakoCarsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_DTakoCarsServiceHandlerClient(ctx, mux, NewDb_DTakoCarsServiceClient(conn))
 }
 
-// RegisterDTakoCarsServiceHandlerClient registers the http handlers for service DTakoCarsService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DTakoCarsServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DTakoCarsServiceClient"
+// RegisterDb_DTakoCarsServiceHandlerClient registers the http handlers for service Db_DTakoCarsService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_DTakoCarsServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_DTakoCarsServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DTakoCarsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterDTakoCarsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DTakoCarsServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_DTakoCarsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_DTakoCarsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_DTakoCarsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_DTakoCarsServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoCarsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoCarsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoCarsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoCarsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoCarsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoCarsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoCarsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoCarsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoCarsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoCarsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoCarsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoCarsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoCarsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoCarsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoCarsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoCarsService_GetByCarCode_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoCarsService_GetByCarCode_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoCarsService/GetByCarCode", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars/by-car-code/{car_code}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoCarsService/GetByCarCode", runtime.WithHTTPPathPattern("/api/v1/db/dtako-cars/by-car-code/{car_code}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoCarsService_GetByCarCode_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoCarsService_GetByCarCode_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoCarsService_GetByCarCode_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoCarsService_GetByCarCode_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_DTakoCarsService_Get_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-cars", "id"}, ""))
-	pattern_DTakoCarsService_List_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-cars"}, ""))
-	pattern_DTakoCarsService_GetByCarCode_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "dtako-cars", "by-car-code", "car_code"}, ""))
+	pattern_Db_DTakoCarsService_Get_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-cars", "id"}, ""))
+	pattern_Db_DTakoCarsService_List_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-cars"}, ""))
+	pattern_Db_DTakoCarsService_GetByCarCode_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "dtako-cars", "by-car-code", "car_code"}, ""))
 )
 
 var (
-	forward_DTakoCarsService_Get_0          = runtime.ForwardResponseMessage
-	forward_DTakoCarsService_List_0         = runtime.ForwardResponseMessage
-	forward_DTakoCarsService_GetByCarCode_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoCarsService_Get_0          = runtime.ForwardResponseMessage
+	forward_Db_DTakoCarsService_List_0         = runtime.ForwardResponseMessage
+	forward_Db_DTakoCarsService_GetByCarCode_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterDTakoEventsServiceHandlerFromEndpoint is same as RegisterDTakoEventsServiceHandler but
+// RegisterDb_DTakoEventsServiceHandlerFromEndpoint is same as RegisterDb_DTakoEventsServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterDTakoEventsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_DTakoEventsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4059,90 +4059,90 @@ func RegisterDTakoEventsServiceHandlerFromEndpoint(ctx context.Context, mux *run
 			}
 		}()
 	}()
-	return RegisterDTakoEventsServiceHandler(ctx, mux, conn)
+	return RegisterDb_DTakoEventsServiceHandler(ctx, mux, conn)
 }
 
-// RegisterDTakoEventsServiceHandler registers the http handlers for service DTakoEventsService to "mux".
+// RegisterDb_DTakoEventsServiceHandler registers the http handlers for service Db_DTakoEventsService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterDTakoEventsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterDTakoEventsServiceHandlerClient(ctx, mux, NewDTakoEventsServiceClient(conn))
+func RegisterDb_DTakoEventsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_DTakoEventsServiceHandlerClient(ctx, mux, NewDb_DTakoEventsServiceClient(conn))
 }
 
-// RegisterDTakoEventsServiceHandlerClient registers the http handlers for service DTakoEventsService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DTakoEventsServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DTakoEventsServiceClient"
+// RegisterDb_DTakoEventsServiceHandlerClient registers the http handlers for service Db_DTakoEventsService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_DTakoEventsServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_DTakoEventsServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DTakoEventsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterDTakoEventsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DTakoEventsServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_DTakoEventsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_DTakoEventsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_DTakoEventsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_DTakoEventsServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoEventsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoEventsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoEventsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoEventsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoEventsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoEventsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoEventsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoEventsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoEventsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoEventsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoEventsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoEventsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoEventsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoEventsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoEventsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoEventsService_GetByOperationNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoEventsService_GetByOperationNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoEventsService/GetByOperationNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events/by-operation-no/{operation_no}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoEventsService/GetByOperationNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-events/by-operation-no/{operation_no}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoEventsService_GetByOperationNo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoEventsService_GetByOperationNo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoEventsService_GetByOperationNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoEventsService_GetByOperationNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_DTakoEventsService_Get_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-events", "id"}, ""))
-	pattern_DTakoEventsService_List_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-events"}, ""))
-	pattern_DTakoEventsService_GetByOperationNo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "dtako-events", "by-operation-no", "operation_no"}, ""))
+	pattern_Db_DTakoEventsService_Get_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-events", "id"}, ""))
+	pattern_Db_DTakoEventsService_List_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-events"}, ""))
+	pattern_Db_DTakoEventsService_GetByOperationNo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "dtako-events", "by-operation-no", "operation_no"}, ""))
 )
 
 var (
-	forward_DTakoEventsService_Get_0              = runtime.ForwardResponseMessage
-	forward_DTakoEventsService_List_0             = runtime.ForwardResponseMessage
-	forward_DTakoEventsService_GetByOperationNo_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoEventsService_Get_0              = runtime.ForwardResponseMessage
+	forward_Db_DTakoEventsService_List_0             = runtime.ForwardResponseMessage
+	forward_Db_DTakoEventsService_GetByOperationNo_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterDTakoRowsServiceHandlerFromEndpoint is same as RegisterDTakoRowsServiceHandler but
+// RegisterDb_DTakoRowsServiceHandlerFromEndpoint is same as RegisterDb_DTakoRowsServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterDTakoRowsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_DTakoRowsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4161,90 +4161,90 @@ func RegisterDTakoRowsServiceHandlerFromEndpoint(ctx context.Context, mux *runti
 			}
 		}()
 	}()
-	return RegisterDTakoRowsServiceHandler(ctx, mux, conn)
+	return RegisterDb_DTakoRowsServiceHandler(ctx, mux, conn)
 }
 
-// RegisterDTakoRowsServiceHandler registers the http handlers for service DTakoRowsService to "mux".
+// RegisterDb_DTakoRowsServiceHandler registers the http handlers for service Db_DTakoRowsService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterDTakoRowsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterDTakoRowsServiceHandlerClient(ctx, mux, NewDTakoRowsServiceClient(conn))
+func RegisterDb_DTakoRowsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_DTakoRowsServiceHandlerClient(ctx, mux, NewDb_DTakoRowsServiceClient(conn))
 }
 
-// RegisterDTakoRowsServiceHandlerClient registers the http handlers for service DTakoRowsService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DTakoRowsServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DTakoRowsServiceClient"
+// RegisterDb_DTakoRowsServiceHandlerClient registers the http handlers for service Db_DTakoRowsService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_DTakoRowsServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_DTakoRowsServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DTakoRowsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterDTakoRowsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DTakoRowsServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_DTakoRowsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_DTakoRowsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_DTakoRowsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_DTakoRowsServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoRowsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoRowsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoRowsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoRowsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoRowsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoRowsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoRowsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoRowsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoRowsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoRowsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoRowsService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoRowsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoRowsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoRowsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoRowsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoRowsService_GetByOperationNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoRowsService_GetByOperationNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoRowsService/GetByOperationNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows/by-operation-no/{operation_no}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoRowsService/GetByOperationNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-rows/by-operation-no/{operation_no}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoRowsService_GetByOperationNo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoRowsService_GetByOperationNo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoRowsService_GetByOperationNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoRowsService_GetByOperationNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_DTakoRowsService_Get_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-rows", "id"}, ""))
-	pattern_DTakoRowsService_List_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-rows"}, ""))
-	pattern_DTakoRowsService_GetByOperationNo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "dtako-rows", "by-operation-no", "operation_no"}, ""))
+	pattern_Db_DTakoRowsService_Get_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-rows", "id"}, ""))
+	pattern_Db_DTakoRowsService_List_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-rows"}, ""))
+	pattern_Db_DTakoRowsService_GetByOperationNo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "dtako-rows", "by-operation-no", "operation_no"}, ""))
 )
 
 var (
-	forward_DTakoRowsService_Get_0              = runtime.ForwardResponseMessage
-	forward_DTakoRowsService_List_0             = runtime.ForwardResponseMessage
-	forward_DTakoRowsService_GetByOperationNo_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoRowsService_Get_0              = runtime.ForwardResponseMessage
+	forward_Db_DTakoRowsService_List_0             = runtime.ForwardResponseMessage
+	forward_Db_DTakoRowsService_GetByOperationNo_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterETCNumServiceHandlerFromEndpoint is same as RegisterETCNumServiceHandler but
+// RegisterDb_ETCNumServiceHandlerFromEndpoint is same as RegisterDb_ETCNumServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterETCNumServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_ETCNumServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4263,90 +4263,90 @@ func RegisterETCNumServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.
 			}
 		}()
 	}()
-	return RegisterETCNumServiceHandler(ctx, mux, conn)
+	return RegisterDb_ETCNumServiceHandler(ctx, mux, conn)
 }
 
-// RegisterETCNumServiceHandler registers the http handlers for service ETCNumService to "mux".
+// RegisterDb_ETCNumServiceHandler registers the http handlers for service Db_ETCNumService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterETCNumServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterETCNumServiceHandlerClient(ctx, mux, NewETCNumServiceClient(conn))
+func RegisterDb_ETCNumServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_ETCNumServiceHandlerClient(ctx, mux, NewDb_ETCNumServiceClient(conn))
 }
 
-// RegisterETCNumServiceHandlerClient registers the http handlers for service ETCNumService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ETCNumServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ETCNumServiceClient"
+// RegisterDb_ETCNumServiceHandlerClient registers the http handlers for service Db_ETCNumService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_ETCNumServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_ETCNumServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "ETCNumServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterETCNumServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ETCNumServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_ETCNumService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_ETCNumServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_ETCNumServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_ETCNumServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_ETCNumService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCNumService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-num"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCNumService/List", runtime.WithHTTPPathPattern("/api/v1/db/etc-num"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCNumService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCNumService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCNumService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCNumService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCNumService_GetByETCCardNum_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCNumService_GetByETCCardNum_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCNumService/GetByETCCardNum", runtime.WithHTTPPathPattern("/api/v1/db/etc-num/by-etc-card-num/{etc_card_num}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCNumService/GetByETCCardNum", runtime.WithHTTPPathPattern("/api/v1/db/etc-num/by-etc-card-num/{etc_card_num}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCNumService_GetByETCCardNum_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCNumService_GetByETCCardNum_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCNumService_GetByETCCardNum_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCNumService_GetByETCCardNum_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ETCNumService_GetByCarID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ETCNumService_GetByCarID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ETCNumService/GetByCarID", runtime.WithHTTPPathPattern("/api/v1/db/etc-num/by-car-id/{car_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ETCNumService/GetByCarID", runtime.WithHTTPPathPattern("/api/v1/db/etc-num/by-car-id/{car_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ETCNumService_GetByCarID_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ETCNumService_GetByCarID_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ETCNumService_GetByCarID_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ETCNumService_GetByCarID_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_ETCNumService_List_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-num"}, ""))
-	pattern_ETCNumService_GetByETCCardNum_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "etc-num", "by-etc-card-num", "etc_card_num"}, ""))
-	pattern_ETCNumService_GetByCarID_0      = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "etc-num", "by-car-id", "car_id"}, ""))
+	pattern_Db_ETCNumService_List_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "etc-num"}, ""))
+	pattern_Db_ETCNumService_GetByETCCardNum_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "etc-num", "by-etc-card-num", "etc_card_num"}, ""))
+	pattern_Db_ETCNumService_GetByCarID_0      = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "etc-num", "by-car-id", "car_id"}, ""))
 )
 
 var (
-	forward_ETCNumService_List_0            = runtime.ForwardResponseMessage
-	forward_ETCNumService_GetByETCCardNum_0 = runtime.ForwardResponseMessage
-	forward_ETCNumService_GetByCarID_0      = runtime.ForwardResponseMessage
+	forward_Db_ETCNumService_List_0            = runtime.ForwardResponseMessage
+	forward_Db_ETCNumService_GetByETCCardNum_0 = runtime.ForwardResponseMessage
+	forward_Db_ETCNumService_GetByCarID_0      = runtime.ForwardResponseMessage
 )
 
-// RegisterDTakoFerryRowsProdServiceHandlerFromEndpoint is same as RegisterDTakoFerryRowsProdServiceHandler but
+// RegisterDb_DTakoFerryRowsProdServiceHandlerFromEndpoint is same as RegisterDb_DTakoFerryRowsProdServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterDTakoFerryRowsProdServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_DTakoFerryRowsProdServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4365,90 +4365,90 @@ func RegisterDTakoFerryRowsProdServiceHandlerFromEndpoint(ctx context.Context, m
 			}
 		}()
 	}()
-	return RegisterDTakoFerryRowsProdServiceHandler(ctx, mux, conn)
+	return RegisterDb_DTakoFerryRowsProdServiceHandler(ctx, mux, conn)
 }
 
-// RegisterDTakoFerryRowsProdServiceHandler registers the http handlers for service DTakoFerryRowsProdService to "mux".
+// RegisterDb_DTakoFerryRowsProdServiceHandler registers the http handlers for service Db_DTakoFerryRowsProdService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterDTakoFerryRowsProdServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterDTakoFerryRowsProdServiceHandlerClient(ctx, mux, NewDTakoFerryRowsProdServiceClient(conn))
+func RegisterDb_DTakoFerryRowsProdServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_DTakoFerryRowsProdServiceHandlerClient(ctx, mux, NewDb_DTakoFerryRowsProdServiceClient(conn))
 }
 
-// RegisterDTakoFerryRowsProdServiceHandlerClient registers the http handlers for service DTakoFerryRowsProdService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DTakoFerryRowsProdServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DTakoFerryRowsProdServiceClient"
+// RegisterDb_DTakoFerryRowsProdServiceHandlerClient registers the http handlers for service Db_DTakoFerryRowsProdService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_DTakoFerryRowsProdServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_DTakoFerryRowsProdServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DTakoFerryRowsProdServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterDTakoFerryRowsProdServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DTakoFerryRowsProdServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_DTakoFerryRowsProdServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_DTakoFerryRowsProdServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_DTakoFerryRowsProdServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsProdService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoFerryRowsProdService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsProdService/Get", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoFerryRowsProdService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoFerryRowsProdService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsProdService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsProdService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsProdService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoFerryRowsProdService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsProdService/List", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoFerryRowsProdService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoFerryRowsProdService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsProdService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsProdService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DTakoFerryRowsProdService_GetByUnkoNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DTakoFerryRowsProdService_GetByUnkoNo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DTakoFerryRowsProdService/GetByUnkoNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DTakoFerryRowsProdService/GetByUnkoNo", runtime.WithHTTPPathPattern("/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unko_no}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DTakoFerryRowsProdService_GetByUnkoNo_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_DTakoFerryRowsProdService_Get_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-ferry-rows-prod", "id"}, ""))
-	pattern_DTakoFerryRowsProdService_List_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-ferry-rows-prod"}, ""))
-	pattern_DTakoFerryRowsProdService_GetByUnkoNo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "dtako-ferry-rows-prod", "by-unko-no", "unko_no"}, ""))
+	pattern_Db_DTakoFerryRowsProdService_Get_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "dtako-ferry-rows-prod", "id"}, ""))
+	pattern_Db_DTakoFerryRowsProdService_List_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "dtako-ferry-rows-prod"}, ""))
+	pattern_Db_DTakoFerryRowsProdService_GetByUnkoNo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "dtako-ferry-rows-prod", "by-unko-no", "unko_no"}, ""))
 )
 
 var (
-	forward_DTakoFerryRowsProdService_Get_0         = runtime.ForwardResponseMessage
-	forward_DTakoFerryRowsProdService_List_0        = runtime.ForwardResponseMessage
-	forward_DTakoFerryRowsProdService_GetByUnkoNo_0 = runtime.ForwardResponseMessage
+	forward_Db_DTakoFerryRowsProdService_Get_0         = runtime.ForwardResponseMessage
+	forward_Db_DTakoFerryRowsProdService_List_0        = runtime.ForwardResponseMessage
+	forward_Db_DTakoFerryRowsProdService_GetByUnkoNo_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterCarsServiceHandlerFromEndpoint is same as RegisterCarsServiceHandler but
+// RegisterDb_CarsServiceHandlerFromEndpoint is same as RegisterDb_CarsServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterCarsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_CarsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4467,90 +4467,90 @@ func RegisterCarsServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.Se
 			}
 		}()
 	}()
-	return RegisterCarsServiceHandler(ctx, mux, conn)
+	return RegisterDb_CarsServiceHandler(ctx, mux, conn)
 }
 
-// RegisterCarsServiceHandler registers the http handlers for service CarsService to "mux".
+// RegisterDb_CarsServiceHandler registers the http handlers for service Db_CarsService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterCarsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterCarsServiceHandlerClient(ctx, mux, NewCarsServiceClient(conn))
+func RegisterDb_CarsServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_CarsServiceHandlerClient(ctx, mux, NewDb_CarsServiceClient(conn))
 }
 
-// RegisterCarsServiceHandlerClient registers the http handlers for service CarsService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "CarsServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "CarsServiceClient"
+// RegisterDb_CarsServiceHandlerClient registers the http handlers for service Db_CarsService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_CarsServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_CarsServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "CarsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterCarsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client CarsServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_CarsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_CarsServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_CarsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_CarsServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_CarsService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.CarsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/cars/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_CarsService/Get", runtime.WithHTTPPathPattern("/api/v1/db/cars/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CarsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_CarsService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_CarsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_CarsService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_CarsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_CarsService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.CarsService/List", runtime.WithHTTPPathPattern("/api/v1/db/cars"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_CarsService/List", runtime.WithHTTPPathPattern("/api/v1/db/cars"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CarsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_CarsService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_CarsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_CarsService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_CarsService_GetByBumonCodeID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_CarsService_GetByBumonCodeID_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.CarsService/GetByBumonCodeID", runtime.WithHTTPPathPattern("/api/v1/db/cars/bumon/{bumon_code_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_CarsService/GetByBumonCodeID", runtime.WithHTTPPathPattern("/api/v1/db/cars/bumon/{bumon_code_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CarsService_GetByBumonCodeID_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_CarsService_GetByBumonCodeID_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_CarsService_GetByBumonCodeID_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_CarsService_GetByBumonCodeID_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_CarsService_Get_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "cars", "id"}, ""))
-	pattern_CarsService_List_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "cars"}, ""))
-	pattern_CarsService_GetByBumonCodeID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "cars", "bumon", "bumon_code_id"}, ""))
+	pattern_Db_CarsService_Get_0              = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "cars", "id"}, ""))
+	pattern_Db_CarsService_List_0             = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "cars"}, ""))
+	pattern_Db_CarsService_GetByBumonCodeID_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "cars", "bumon", "bumon_code_id"}, ""))
 )
 
 var (
-	forward_CarsService_Get_0              = runtime.ForwardResponseMessage
-	forward_CarsService_List_0             = runtime.ForwardResponseMessage
-	forward_CarsService_GetByBumonCodeID_0 = runtime.ForwardResponseMessage
+	forward_Db_CarsService_Get_0              = runtime.ForwardResponseMessage
+	forward_Db_CarsService_List_0             = runtime.ForwardResponseMessage
+	forward_Db_CarsService_GetByBumonCodeID_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterDriversServiceHandlerFromEndpoint is same as RegisterDriversServiceHandler but
+// RegisterDb_DriversServiceHandlerFromEndpoint is same as RegisterDb_DriversServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterDriversServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_DriversServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4569,90 +4569,90 @@ func RegisterDriversServiceHandlerFromEndpoint(ctx context.Context, mux *runtime
 			}
 		}()
 	}()
-	return RegisterDriversServiceHandler(ctx, mux, conn)
+	return RegisterDb_DriversServiceHandler(ctx, mux, conn)
 }
 
-// RegisterDriversServiceHandler registers the http handlers for service DriversService to "mux".
+// RegisterDb_DriversServiceHandler registers the http handlers for service Db_DriversService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterDriversServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterDriversServiceHandlerClient(ctx, mux, NewDriversServiceClient(conn))
+func RegisterDb_DriversServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_DriversServiceHandlerClient(ctx, mux, NewDb_DriversServiceClient(conn))
 }
 
-// RegisterDriversServiceHandlerClient registers the http handlers for service DriversService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DriversServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DriversServiceClient"
+// RegisterDb_DriversServiceHandlerClient registers the http handlers for service Db_DriversService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_DriversServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_DriversServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DriversServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterDriversServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DriversServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_DriversService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_DriversServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_DriversServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_DriversServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_DriversService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DriversService/Get", runtime.WithHTTPPathPattern("/api/v1/db/drivers/{id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DriversService/Get", runtime.WithHTTPPathPattern("/api/v1/db/drivers/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DriversService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DriversService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DriversService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DriversService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DriversService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DriversService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DriversService/List", runtime.WithHTTPPathPattern("/api/v1/db/drivers"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DriversService/List", runtime.WithHTTPPathPattern("/api/v1/db/drivers"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DriversService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DriversService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DriversService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DriversService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_DriversService_GetByBumon_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_DriversService_GetByBumon_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.DriversService/GetByBumon", runtime.WithHTTPPathPattern("/api/v1/db/drivers/bumon/{bumon}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_DriversService/GetByBumon", runtime.WithHTTPPathPattern("/api/v1/db/drivers/bumon/{bumon}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DriversService_GetByBumon_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_DriversService_GetByBumon_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_DriversService_GetByBumon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_DriversService_GetByBumon_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_DriversService_Get_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "drivers", "id"}, ""))
-	pattern_DriversService_List_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "drivers"}, ""))
-	pattern_DriversService_GetByBumon_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "drivers", "bumon"}, ""))
+	pattern_Db_DriversService_Get_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "drivers", "id"}, ""))
+	pattern_Db_DriversService_List_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "drivers"}, ""))
+	pattern_Db_DriversService_GetByBumon_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "drivers", "bumon"}, ""))
 )
 
 var (
-	forward_DriversService_Get_0        = runtime.ForwardResponseMessage
-	forward_DriversService_List_0       = runtime.ForwardResponseMessage
-	forward_DriversService_GetByBumon_0 = runtime.ForwardResponseMessage
+	forward_Db_DriversService_Get_0        = runtime.ForwardResponseMessage
+	forward_Db_DriversService_List_0       = runtime.ForwardResponseMessage
+	forward_Db_DriversService_GetByBumon_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterUntenNippoMeisaiServiceHandlerFromEndpoint is same as RegisterUntenNippoMeisaiServiceHandler but
+// RegisterDb_UntenNippoMeisaiServiceHandlerFromEndpoint is same as RegisterDb_UntenNippoMeisaiServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterUntenNippoMeisaiServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_UntenNippoMeisaiServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4671,109 +4671,109 @@ func RegisterUntenNippoMeisaiServiceHandlerFromEndpoint(ctx context.Context, mux
 			}
 		}()
 	}()
-	return RegisterUntenNippoMeisaiServiceHandler(ctx, mux, conn)
+	return RegisterDb_UntenNippoMeisaiServiceHandler(ctx, mux, conn)
 }
 
-// RegisterUntenNippoMeisaiServiceHandler registers the http handlers for service UntenNippoMeisaiService to "mux".
+// RegisterDb_UntenNippoMeisaiServiceHandler registers the http handlers for service Db_UntenNippoMeisaiService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterUntenNippoMeisaiServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterUntenNippoMeisaiServiceHandlerClient(ctx, mux, NewUntenNippoMeisaiServiceClient(conn))
+func RegisterDb_UntenNippoMeisaiServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_UntenNippoMeisaiServiceHandlerClient(ctx, mux, NewDb_UntenNippoMeisaiServiceClient(conn))
 }
 
-// RegisterUntenNippoMeisaiServiceHandlerClient registers the http handlers for service UntenNippoMeisaiService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "UntenNippoMeisaiServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "UntenNippoMeisaiServiceClient"
+// RegisterDb_UntenNippoMeisaiServiceHandlerClient registers the http handlers for service Db_UntenNippoMeisaiService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_UntenNippoMeisaiServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_UntenNippoMeisaiServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "UntenNippoMeisaiServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterUntenNippoMeisaiServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client UntenNippoMeisaiServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_UntenNippoMeisaiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_UntenNippoMeisaiServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_UntenNippoMeisaiServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_UntenNippoMeisaiServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_UntenNippoMeisaiService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.UntenNippoMeisaiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/{nippo_k}/{haisha_k}/{sharyo_c}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_UntenNippoMeisaiService/Get", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/{nippo_k}/{haisha_k}/{sharyo_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_UntenNippoMeisaiService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_UntenNippoMeisaiService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_UntenNippoMeisaiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_UntenNippoMeisaiService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_UntenNippoMeisaiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_UntenNippoMeisaiService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.UntenNippoMeisaiService/List", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_UntenNippoMeisaiService/List", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_UntenNippoMeisaiService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_UntenNippoMeisaiService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_UntenNippoMeisaiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_UntenNippoMeisaiService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_UntenNippoMeisaiService_GetBySharyoC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_UntenNippoMeisaiService_GetBySharyoC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.UntenNippoMeisaiService/GetBySharyoC", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/sharyo/{sharyo_c}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_UntenNippoMeisaiService/GetBySharyoC", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/sharyo/{sharyo_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_UntenNippoMeisaiService_GetBySharyoC_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_UntenNippoMeisaiService_GetBySharyoC_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_UntenNippoMeisaiService_GetBySharyoC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_UntenNippoMeisaiService_GetBySharyoC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_UntenNippoMeisaiService_GetByDateRange_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_UntenNippoMeisaiService_GetByDateRange_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.UntenNippoMeisaiService/GetByDateRange", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/date-range"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_UntenNippoMeisaiService/GetByDateRange", runtime.WithHTTPPathPattern("/api/v1/db/unten-nippo-meisai/date-range"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_UntenNippoMeisaiService_GetByDateRange_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_UntenNippoMeisaiService_GetByDateRange_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_UntenNippoMeisaiService_GetByDateRange_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_UntenNippoMeisaiService_GetByDateRange_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_UntenNippoMeisaiService_Get_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "db", "unten-nippo-meisai", "nippo_k", "haisha_k", "sharyo_c"}, ""))
-	pattern_UntenNippoMeisaiService_List_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "unten-nippo-meisai"}, ""))
-	pattern_UntenNippoMeisaiService_GetBySharyoC_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "unten-nippo-meisai", "sharyo", "sharyo_c"}, ""))
-	pattern_UntenNippoMeisaiService_GetByDateRange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"api", "v1", "db", "unten-nippo-meisai", "date-range"}, ""))
+	pattern_Db_UntenNippoMeisaiService_Get_0            = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 1, 0, 4, 1, 5, 5, 1, 0, 4, 1, 5, 6}, []string{"api", "v1", "db", "unten-nippo-meisai", "nippo_k", "haisha_k", "sharyo_c"}, ""))
+	pattern_Db_UntenNippoMeisaiService_List_0           = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "unten-nippo-meisai"}, ""))
+	pattern_Db_UntenNippoMeisaiService_GetBySharyoC_0   = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "unten-nippo-meisai", "sharyo", "sharyo_c"}, ""))
+	pattern_Db_UntenNippoMeisaiService_GetByDateRange_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"api", "v1", "db", "unten-nippo-meisai", "date-range"}, ""))
 )
 
 var (
-	forward_UntenNippoMeisaiService_Get_0            = runtime.ForwardResponseMessage
-	forward_UntenNippoMeisaiService_List_0           = runtime.ForwardResponseMessage
-	forward_UntenNippoMeisaiService_GetBySharyoC_0   = runtime.ForwardResponseMessage
-	forward_UntenNippoMeisaiService_GetByDateRange_0 = runtime.ForwardResponseMessage
+	forward_Db_UntenNippoMeisaiService_Get_0            = runtime.ForwardResponseMessage
+	forward_Db_UntenNippoMeisaiService_List_0           = runtime.ForwardResponseMessage
+	forward_Db_UntenNippoMeisaiService_GetBySharyoC_0   = runtime.ForwardResponseMessage
+	forward_Db_UntenNippoMeisaiService_GetByDateRange_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterShainMasterServiceHandlerFromEndpoint is same as RegisterShainMasterServiceHandler but
+// RegisterDb_ShainMasterServiceHandlerFromEndpoint is same as RegisterDb_ShainMasterServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterShainMasterServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_ShainMasterServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4792,90 +4792,90 @@ func RegisterShainMasterServiceHandlerFromEndpoint(ctx context.Context, mux *run
 			}
 		}()
 	}()
-	return RegisterShainMasterServiceHandler(ctx, mux, conn)
+	return RegisterDb_ShainMasterServiceHandler(ctx, mux, conn)
 }
 
-// RegisterShainMasterServiceHandler registers the http handlers for service ShainMasterService to "mux".
+// RegisterDb_ShainMasterServiceHandler registers the http handlers for service Db_ShainMasterService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterShainMasterServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterShainMasterServiceHandlerClient(ctx, mux, NewShainMasterServiceClient(conn))
+func RegisterDb_ShainMasterServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_ShainMasterServiceHandlerClient(ctx, mux, NewDb_ShainMasterServiceClient(conn))
 }
 
-// RegisterShainMasterServiceHandlerClient registers the http handlers for service ShainMasterService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ShainMasterServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ShainMasterServiceClient"
+// RegisterDb_ShainMasterServiceHandlerClient registers the http handlers for service Db_ShainMasterService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_ShainMasterServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_ShainMasterServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "ShainMasterServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterShainMasterServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ShainMasterServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_ShainMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_ShainMasterServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_ShainMasterServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_ShainMasterServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_ShainMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ShainMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/shain-master/{shain_c}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ShainMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/shain-master/{shain_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ShainMasterService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ShainMasterService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ShainMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ShainMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ShainMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ShainMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ShainMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/shain-master"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ShainMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/shain-master"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ShainMasterService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ShainMasterService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ShainMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ShainMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ShainMasterService_GetByBumonC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ShainMasterService_GetByBumonC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ShainMasterService/GetByBumonC", runtime.WithHTTPPathPattern("/api/v1/db/shain-master/bumon/{bumon_c}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ShainMasterService/GetByBumonC", runtime.WithHTTPPathPattern("/api/v1/db/shain-master/bumon/{bumon_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ShainMasterService_GetByBumonC_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ShainMasterService_GetByBumonC_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ShainMasterService_GetByBumonC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ShainMasterService_GetByBumonC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_ShainMasterService_Get_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "shain-master", "shain_c"}, ""))
-	pattern_ShainMasterService_List_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "shain-master"}, ""))
-	pattern_ShainMasterService_GetByBumonC_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "shain-master", "bumon", "bumon_c"}, ""))
+	pattern_Db_ShainMasterService_Get_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "shain-master", "shain_c"}, ""))
+	pattern_Db_ShainMasterService_List_0        = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "shain-master"}, ""))
+	pattern_Db_ShainMasterService_GetByBumonC_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "shain-master", "bumon", "bumon_c"}, ""))
 )
 
 var (
-	forward_ShainMasterService_Get_0         = runtime.ForwardResponseMessage
-	forward_ShainMasterService_List_0        = runtime.ForwardResponseMessage
-	forward_ShainMasterService_GetByBumonC_0 = runtime.ForwardResponseMessage
+	forward_Db_ShainMasterService_Get_0         = runtime.ForwardResponseMessage
+	forward_Db_ShainMasterService_List_0        = runtime.ForwardResponseMessage
+	forward_Db_ShainMasterService_GetByBumonC_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterChiikiMasterServiceHandlerFromEndpoint is same as RegisterChiikiMasterServiceHandler but
+// RegisterDb_ChiikiMasterServiceHandlerFromEndpoint is same as RegisterDb_ChiikiMasterServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterChiikiMasterServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_ChiikiMasterServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4894,71 +4894,71 @@ func RegisterChiikiMasterServiceHandlerFromEndpoint(ctx context.Context, mux *ru
 			}
 		}()
 	}()
-	return RegisterChiikiMasterServiceHandler(ctx, mux, conn)
+	return RegisterDb_ChiikiMasterServiceHandler(ctx, mux, conn)
 }
 
-// RegisterChiikiMasterServiceHandler registers the http handlers for service ChiikiMasterService to "mux".
+// RegisterDb_ChiikiMasterServiceHandler registers the http handlers for service Db_ChiikiMasterService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterChiikiMasterServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterChiikiMasterServiceHandlerClient(ctx, mux, NewChiikiMasterServiceClient(conn))
+func RegisterDb_ChiikiMasterServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_ChiikiMasterServiceHandlerClient(ctx, mux, NewDb_ChiikiMasterServiceClient(conn))
 }
 
-// RegisterChiikiMasterServiceHandlerClient registers the http handlers for service ChiikiMasterService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ChiikiMasterServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ChiikiMasterServiceClient"
+// RegisterDb_ChiikiMasterServiceHandlerClient registers the http handlers for service Db_ChiikiMasterService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_ChiikiMasterServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_ChiikiMasterServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "ChiikiMasterServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterChiikiMasterServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ChiikiMasterServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_ChiikiMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_ChiikiMasterServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_ChiikiMasterServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_ChiikiMasterServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_ChiikiMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ChiikiMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/chiiki-master/{chiiki_c}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ChiikiMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/chiiki-master/{chiiki_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ChiikiMasterService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ChiikiMasterService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChiikiMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChiikiMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ChiikiMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ChiikiMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ChiikiMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/chiiki-master"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ChiikiMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/chiiki-master"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ChiikiMasterService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ChiikiMasterService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChiikiMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChiikiMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_ChiikiMasterService_Get_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "chiiki-master", "chiiki_c"}, ""))
-	pattern_ChiikiMasterService_List_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "chiiki-master"}, ""))
+	pattern_Db_ChiikiMasterService_Get_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "chiiki-master", "chiiki_c"}, ""))
+	pattern_Db_ChiikiMasterService_List_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "chiiki-master"}, ""))
 )
 
 var (
-	forward_ChiikiMasterService_Get_0  = runtime.ForwardResponseMessage
-	forward_ChiikiMasterService_List_0 = runtime.ForwardResponseMessage
+	forward_Db_ChiikiMasterService_Get_0  = runtime.ForwardResponseMessage
+	forward_Db_ChiikiMasterService_List_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterChikuMasterServiceHandlerFromEndpoint is same as RegisterChikuMasterServiceHandler but
+// RegisterDb_ChikuMasterServiceHandlerFromEndpoint is same as RegisterDb_ChikuMasterServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterChikuMasterServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterDb_ChikuMasterServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
@@ -4977,83 +4977,83 @@ func RegisterChikuMasterServiceHandlerFromEndpoint(ctx context.Context, mux *run
 			}
 		}()
 	}()
-	return RegisterChikuMasterServiceHandler(ctx, mux, conn)
+	return RegisterDb_ChikuMasterServiceHandler(ctx, mux, conn)
 }
 
-// RegisterChikuMasterServiceHandler registers the http handlers for service ChikuMasterService to "mux".
+// RegisterDb_ChikuMasterServiceHandler registers the http handlers for service Db_ChikuMasterService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterChikuMasterServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterChikuMasterServiceHandlerClient(ctx, mux, NewChikuMasterServiceClient(conn))
+func RegisterDb_ChikuMasterServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterDb_ChikuMasterServiceHandlerClient(ctx, mux, NewDb_ChikuMasterServiceClient(conn))
 }
 
-// RegisterChikuMasterServiceHandlerClient registers the http handlers for service ChikuMasterService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "ChikuMasterServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "ChikuMasterServiceClient"
+// RegisterDb_ChikuMasterServiceHandlerClient registers the http handlers for service Db_ChikuMasterService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "Db_ChikuMasterServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "Db_ChikuMasterServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "ChikuMasterServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
-func RegisterChikuMasterServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ChikuMasterServiceClient) error {
-	mux.Handle(http.MethodGet, pattern_ChikuMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+// "Db_ChikuMasterServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
+func RegisterDb_ChikuMasterServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client Db_ChikuMasterServiceClient) error {
+	mux.Handle(http.MethodGet, pattern_Db_ChikuMasterService_Get_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ChikuMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master/{chiku_c}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ChikuMasterService/Get", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master/{chiku_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ChikuMasterService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ChikuMasterService_Get_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChikuMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChikuMasterService_Get_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ChikuMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ChikuMasterService_List_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ChikuMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ChikuMasterService/List", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ChikuMasterService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ChikuMasterService_List_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChikuMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChikuMasterService_List_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_ChikuMasterService_GetByChiikiC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_Db_ChikuMasterService_GetByChiikiC_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.ChikuMasterService/GetByChiikiC", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master/chiiki/{chiiki_c}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/db_service.Db_ChikuMasterService/GetByChiikiC", runtime.WithHTTPPathPattern("/api/v1/db/chiku-master/chiiki/{chiiki_c}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ChikuMasterService_GetByChiikiC_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Db_ChikuMasterService_GetByChiikiC_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_ChikuMasterService_GetByChiikiC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Db_ChikuMasterService_GetByChiikiC_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
 
 var (
-	pattern_ChikuMasterService_Get_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "chiku-master", "chiku_c"}, ""))
-	pattern_ChikuMasterService_List_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "chiku-master"}, ""))
-	pattern_ChikuMasterService_GetByChiikiC_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "chiku-master", "chiiki", "chiiki_c"}, ""))
+	pattern_Db_ChikuMasterService_Get_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "v1", "db", "chiku-master", "chiku_c"}, ""))
+	pattern_Db_ChikuMasterService_List_0         = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"api", "v1", "db", "chiku-master"}, ""))
+	pattern_Db_ChikuMasterService_GetByChiikiC_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"api", "v1", "db", "chiku-master", "chiiki", "chiiki_c"}, ""))
 )
 
 var (
-	forward_ChikuMasterService_Get_0          = runtime.ForwardResponseMessage
-	forward_ChikuMasterService_List_0         = runtime.ForwardResponseMessage
-	forward_ChikuMasterService_GetByChiikiC_0 = runtime.ForwardResponseMessage
+	forward_Db_ChikuMasterService_Get_0          = runtime.ForwardResponseMessage
+	forward_Db_ChikuMasterService_List_0         = runtime.ForwardResponseMessage
+	forward_Db_ChikuMasterService_GetByChiikiC_0 = runtime.ForwardResponseMessage
 )

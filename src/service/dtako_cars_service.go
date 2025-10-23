@@ -12,7 +12,7 @@ import (
 
 // DTakoCarsService gRPCサービス実装（本番DB、読み取り専用）
 type DTakoCarsService struct {
-	proto.UnimplementedDTakoCarsServiceServer
+	proto.UnimplementedDb_DTakoCarsServiceServer
 	repo repository.DTakoCarsRepository
 }
 
@@ -24,19 +24,19 @@ func NewDTakoCarsService(repo repository.DTakoCarsRepository) *DTakoCarsService 
 }
 
 // Get 車輌情報取得
-func (s *DTakoCarsService) Get(ctx context.Context, req *proto.GetDTakoCarsRequest) (*proto.DTakoCarsResponse, error) {
+func (s *DTakoCarsService) Get(ctx context.Context, req *proto.Db_GetDTakoCarsRequest) (*proto.Db_DTakoCarsResponse, error) {
 	car, err := s.repo.GetByID(int(req.Id))
 	if err != nil {
 		return nil, status.Errorf(codes.NotFound, "car not found: %v", err)
 	}
 
-	return &proto.DTakoCarsResponse{
+	return &proto.Db_DTakoCarsResponse{
 		DtakoCars: dtakoCarsModelToProto(car),
 	}, nil
 }
 
 // List 車輌情報一覧取得
-func (s *DTakoCarsService) List(ctx context.Context, req *proto.ListDTakoCarsRequest) (*proto.ListDTakoCarsResponse, error) {
+func (s *DTakoCarsService) List(ctx context.Context, req *proto.Db_ListDTakoCarsRequest) (*proto.Db_ListDTakoCarsResponse, error) {
 	limit := int(req.Limit)
 	offset := int(req.Offset)
 
@@ -49,32 +49,32 @@ func (s *DTakoCarsService) List(ctx context.Context, req *proto.ListDTakoCarsReq
 		return nil, status.Errorf(codes.Internal, "failed to list cars: %v", err)
 	}
 
-	items := make([]*proto.DTakoCars, len(cars))
+	items := make([]*proto.Db_DTakoCars, len(cars))
 	for i, car := range cars {
 		items[i] = dtakoCarsModelToProto(car)
 	}
 
-	return &proto.ListDTakoCarsResponse{
+	return &proto.Db_ListDTakoCarsResponse{
 		Items:      items,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // GetByCarCode 車輌CDで車輌情報取得
-func (s *DTakoCarsService) GetByCarCode(ctx context.Context, req *proto.GetDTakoCarsByCarCodeRequest) (*proto.DTakoCarsResponse, error) {
+func (s *DTakoCarsService) GetByCarCode(ctx context.Context, req *proto.Db_GetDTakoCarsByCarCodeRequest) (*proto.Db_DTakoCarsResponse, error) {
 	car, err := s.repo.GetByCarCode(req.CarCode)
 	if err != nil {
 		return nil, status.Errorf(codes.NotFound, "car not found: %v", err)
 	}
 
-	return &proto.DTakoCarsResponse{
+	return &proto.Db_DTakoCarsResponse{
 		DtakoCars: dtakoCarsModelToProto(car),
 	}, nil
 }
 
 // dtakoCarsModelToProto ModelからProtoへの変換
-func dtakoCarsModelToProto(model *mysql.DTakoCars) *proto.DTakoCars {
-	return &proto.DTakoCars{
+func dtakoCarsModelToProto(model *mysql.DTakoCars) *proto.Db_DTakoCars {
+	return &proto.Db_DTakoCars{
 		Id:                  int32(model.ID),
 		CarCode:             model.CarCode,
 		CarCc:               model.CarCC,

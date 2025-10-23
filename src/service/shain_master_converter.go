@@ -6,7 +6,7 @@ import (
 )
 
 // convertShainMasterToProto GORMモデルをProtoメッセージに変換
-func convertShainMasterToProto(m *ichibanboshi.ShainMaster) *pb.ShainMaster {
+func convertShainMasterToProto(m *ichibanboshi.ShainMaster) *pb.Db_ShainMaster {
 	// time.Time から string への変換
 	var seinengappi *string
 	if m.Seinengappi != nil {
@@ -29,7 +29,7 @@ func convertShainMasterToProto(m *ichibanboshi.ShainMaster) *pb.ShainMaster {
 		jikaiKoshinbi = &s
 	}
 
-	return &pb.ShainMaster{
+	return &pb.Db_ShainMaster{
 		ShainC:             m.ShainC,
 		ShainN:             m.ShainN,
 		ShainR:             m.ShainR,

@@ -6,49 +6,49 @@
   },
   "tags": [
     {
-      "name": "DTakoUriageKeihiService"
+      "name": "db_DTakoUriageKeihiService"
     },
     {
-      "name": "ETCMeisaiService"
+      "name": "db_ETCMeisaiService"
     },
     {
-      "name": "DTakoFerryRowsService"
+      "name": "db_DTakoFerryRowsService"
     },
     {
-      "name": "ETCMeisaiMappingService"
+      "name": "db_ETCMeisaiMappingService"
     },
     {
-      "name": "DTakoCarsService"
+      "name": "db_DTakoCarsService"
     },
     {
-      "name": "DTakoEventsService"
+      "name": "db_DTakoEventsService"
     },
     {
-      "name": "DTakoRowsService"
+      "name": "db_DTakoRowsService"
     },
     {
-      "name": "ETCNumService"
+      "name": "db_ETCNumService"
     },
     {
-      "name": "DTakoFerryRowsProdService"
+      "name": "db_DTakoFerryRowsProdService"
     },
     {
-      "name": "CarsService"
+      "name": "db_CarsService"
     },
     {
-      "name": "DriversService"
+      "name": "db_DriversService"
     },
     {
-      "name": "UntenNippoMeisaiService"
+      "name": "db_UntenNippoMeisaiService"
     },
     {
-      "name": "ShainMasterService"
+      "name": "db_ShainMasterService"
     },
     {
-      "name": "ChiikiMasterService"
+      "name": "db_ChiikiMasterService"
     },
     {
-      "name": "ChikuMasterService"
+      "name": "db_ChikuMasterService"
     }
   ],
   "consumes": [
@@ -61,12 +61,12 @@
     "/api/v1/db/cars": {
       "get": {
         "summary": "車両情報一覧取得",
-        "operationId": "CarsService_List",
+        "operationId": "db_CarsService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListCarsResponse"
+              "$ref": "#/definitions/db_servicedb_ListCarsResponse"
             }
           },
           "default": {
@@ -100,19 +100,19 @@
           }
         ],
         "tags": [
-          "CarsService"
+          "db_CarsService"
         ]
       }
     },
     "/api/v1/db/cars/bumon/{bumonCodeId}": {
       "get": {
         "summary": "部門コードで車両情報取得",
-        "operationId": "CarsService_GetByBumonCodeID",
+        "operationId": "db_CarsService_GetByBumonCodeID",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListCarsResponse"
+              "$ref": "#/definitions/db_servicedb_ListCarsResponse"
             }
           },
           "default": {
@@ -131,19 +131,19 @@
           }
         ],
         "tags": [
-          "CarsService"
+          "db_CarsService"
         ]
       }
     },
     "/api/v1/db/cars/{id}": {
       "get": {
         "summary": "車両情報取得",
-        "operationId": "CarsService_Get",
+        "operationId": "db_CarsService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceCarsResponse"
+              "$ref": "#/definitions/db_servicedb_CarsResponse"
             }
           },
           "default": {
@@ -162,18 +162,18 @@
           }
         ],
         "tags": [
-          "CarsService"
+          "db_CarsService"
         ]
       }
     },
     "/api/v1/db/chiiki-master": {
       "get": {
-        "operationId": "ChiikiMasterService_List",
+        "operationId": "db_ChiikiMasterService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListChiikiMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ListChiikiMasterResponse"
             }
           },
           "default": {
@@ -206,18 +206,18 @@
           }
         ],
         "tags": [
-          "ChiikiMasterService"
+          "db_ChiikiMasterService"
         ]
       }
     },
     "/api/v1/db/chiiki-master/{chiikiC}": {
       "get": {
-        "operationId": "ChiikiMasterService_Get",
+        "operationId": "db_ChiikiMasterService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceChiikiMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ChiikiMasterResponse"
             }
           },
           "default": {
@@ -236,18 +236,18 @@
           }
         ],
         "tags": [
-          "ChiikiMasterService"
+          "db_ChiikiMasterService"
         ]
       }
     },
     "/api/v1/db/chiku-master": {
       "get": {
-        "operationId": "ChikuMasterService_List",
+        "operationId": "db_ChikuMasterService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListChikuMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ListChikuMasterResponse"
             }
           },
           "default": {
@@ -280,18 +280,18 @@
           }
         ],
         "tags": [
-          "ChikuMasterService"
+          "db_ChikuMasterService"
         ]
       }
     },
     "/api/v1/db/chiku-master/chiiki/{chiikiC}": {
       "get": {
-        "operationId": "ChikuMasterService_GetByChiikiC",
+        "operationId": "db_ChikuMasterService_GetByChiikiC",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListChikuMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ListChikuMasterResponse"
             }
           },
           "default": {
@@ -310,18 +310,18 @@
           }
         ],
         "tags": [
-          "ChikuMasterService"
+          "db_ChikuMasterService"
         ]
       }
     },
     "/api/v1/db/chiku-master/{chikuC}": {
       "get": {
-        "operationId": "ChikuMasterService_Get",
+        "operationId": "db_ChikuMasterService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceChikuMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ChikuMasterResponse"
             }
           },
           "default": {
@@ -340,19 +340,19 @@
           }
         ],
         "tags": [
-          "ChikuMasterService"
+          "db_ChikuMasterService"
         ]
       }
     },
     "/api/v1/db/drivers": {
       "get": {
         "summary": "ドライバー情報一覧取得",
-        "operationId": "DriversService_List",
+        "operationId": "db_DriversService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDriversResponse"
+              "$ref": "#/definitions/db_servicedb_ListDriversResponse"
             }
           },
           "default": {
@@ -386,19 +386,19 @@
           }
         ],
         "tags": [
-          "DriversService"
+          "db_DriversService"
         ]
       }
     },
     "/api/v1/db/drivers/bumon/{bumon}": {
       "get": {
         "summary": "部門コードでドライバー情報取得",
-        "operationId": "DriversService_GetByBumon",
+        "operationId": "db_DriversService_GetByBumon",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDriversResponse"
+              "$ref": "#/definitions/db_servicedb_ListDriversResponse"
             }
           },
           "default": {
@@ -417,19 +417,19 @@
           }
         ],
         "tags": [
-          "DriversService"
+          "db_DriversService"
         ]
       }
     },
     "/api/v1/db/drivers/{id}": {
       "get": {
         "summary": "ドライバー情報取得",
-        "operationId": "DriversService_Get",
+        "operationId": "db_DriversService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDriversResponse"
+              "$ref": "#/definitions/db_servicedb_DriversResponse"
             }
           },
           "default": {
@@ -449,19 +449,19 @@
           }
         ],
         "tags": [
-          "DriversService"
+          "db_DriversService"
         ]
       }
     },
     "/api/v1/db/dtako-cars": {
       "get": {
         "summary": "車輌情報一覧取得",
-        "operationId": "DTakoCarsService_List",
+        "operationId": "db_DTakoCarsService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDTakoCarsResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoCarsResponse"
             }
           },
           "default": {
@@ -488,19 +488,19 @@
           }
         ],
         "tags": [
-          "DTakoCarsService"
+          "db_DTakoCarsService"
         ]
       }
     },
     "/api/v1/db/dtako-cars/by-car-code/{carCode}": {
       "get": {
         "summary": "車輌CDで車輌情報取得",
-        "operationId": "DTakoCarsService_GetByCarCode",
+        "operationId": "db_DTakoCarsService_GetByCarCode",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoCarsResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoCarsResponse"
             }
           },
           "default": {
@@ -519,19 +519,19 @@
           }
         ],
         "tags": [
-          "DTakoCarsService"
+          "db_DTakoCarsService"
         ]
       }
     },
     "/api/v1/db/dtako-cars/{id}": {
       "get": {
         "summary": "車輌情報取得",
-        "operationId": "DTakoCarsService_Get",
+        "operationId": "db_DTakoCarsService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoCarsResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoCarsResponse"
             }
           },
           "default": {
@@ -551,19 +551,19 @@
           }
         ],
         "tags": [
-          "DTakoCarsService"
+          "db_DTakoCarsService"
         ]
       }
     },
     "/api/v1/db/dtako-events": {
       "get": {
         "summary": "イベント情報一覧取得",
-        "operationId": "DTakoEventsService_List",
+        "operationId": "db_DTakoEventsService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDTakoEventsResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoEventsResponse"
             }
           },
           "default": {
@@ -597,19 +597,19 @@
           }
         ],
         "tags": [
-          "DTakoEventsService"
+          "db_DTakoEventsService"
         ]
       }
     },
     "/api/v1/db/dtako-events/by-operation-no/{operationNo}": {
       "get": {
         "summary": "運行NOでイベント情報取得",
-        "operationId": "DTakoEventsService_GetByOperationNo",
+        "operationId": "db_DTakoEventsService_GetByOperationNo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDTakoEventsResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoEventsResponse"
             }
           },
           "default": {
@@ -628,19 +628,19 @@
           }
         ],
         "tags": [
-          "DTakoEventsService"
+          "db_DTakoEventsService"
         ]
       }
     },
     "/api/v1/db/dtako-events/{id}": {
       "get": {
         "summary": "イベント情報取得",
-        "operationId": "DTakoEventsService_Get",
+        "operationId": "db_DTakoEventsService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoEventsResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoEventsResponse"
             }
           },
           "default": {
@@ -660,19 +660,19 @@
           }
         ],
         "tags": [
-          "DTakoEventsService"
+          "db_DTakoEventsService"
         ]
       }
     },
     "/api/v1/db/dtako-ferry-rows": {
       "get": {
         "summary": "フェリー運行データ一覧取得",
-        "operationId": "DTakoFerryRowsService_List",
+        "operationId": "db_DTakoFerryRowsService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDTakoFerryRowsResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsResponse"
             }
           },
           "default": {
@@ -717,17 +717,17 @@
           }
         ],
         "tags": [
-          "DTakoFerryRowsService"
+          "db_DTakoFerryRowsService"
         ]
       },
       "post": {
         "summary": "フェリー運行データ作成",
-        "operationId": "DTakoFerryRowsService_Create",
+        "operationId": "db_DTakoFerryRowsService_Create",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoFerryRowsResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsResponse"
             }
           },
           "default": {
@@ -743,24 +743,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoFerryRows"
+              "$ref": "#/definitions/db_servicedb_DTakoFerryRows"
             }
           }
         ],
         "tags": [
-          "DTakoFerryRowsService"
+          "db_DTakoFerryRowsService"
         ]
       }
     },
     "/api/v1/db/dtako-ferry-rows-prod": {
       "get": {
         "summary": "フェリー運行データ一覧取得",
-        "operationId": "DTakoFerryRowsProdService_List",
+        "operationId": "db_DTakoFerryRowsProdService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDTakoFerryRowsProdResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsProdResponse"
             }
           },
           "default": {
@@ -787,19 +787,19 @@
           }
         ],
         "tags": [
-          "DTakoFerryRowsProdService"
+          "db_DTakoFerryRowsProdService"
         ]
       }
     },
     "/api/v1/db/dtako-ferry-rows-prod/by-unko-no/{unkoNo}": {
       "get": {
         "summary": "運行NOでフェリー運行データ取得",
-        "operationId": "DTakoFerryRowsProdService_GetByUnkoNo",
+        "operationId": "db_DTakoFerryRowsProdService_GetByUnkoNo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDTakoFerryRowsProdResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoFerryRowsProdResponse"
             }
           },
           "default": {
@@ -818,19 +818,19 @@
           }
         ],
         "tags": [
-          "DTakoFerryRowsProdService"
+          "db_DTakoFerryRowsProdService"
         ]
       }
     },
     "/api/v1/db/dtako-ferry-rows-prod/{id}": {
       "get": {
         "summary": "フェリー運行データ取得",
-        "operationId": "DTakoFerryRowsProdService_Get",
+        "operationId": "db_DTakoFerryRowsProdService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoFerryRowsProdResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsProdResponse"
             }
           },
           "default": {
@@ -850,19 +850,19 @@
           }
         ],
         "tags": [
-          "DTakoFerryRowsProdService"
+          "db_DTakoFerryRowsProdService"
         ]
       }
     },
     "/api/v1/db/dtako-ferry-rows/{dtakoFerryRows.id}": {
       "put": {
         "summary": "フェリー運行データ更新",
-        "operationId": "DTakoFerryRowsService_Update",
+        "operationId": "db_DTakoFerryRowsService_Update",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoFerryRowsResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsResponse"
             }
           },
           "default": {
@@ -1014,19 +1014,19 @@
           }
         ],
         "tags": [
-          "DTakoFerryRowsService"
+          "db_DTakoFerryRowsService"
         ]
       }
     },
     "/api/v1/db/dtako-ferry-rows/{id}": {
       "get": {
         "summary": "フェリー運行データ取得",
-        "operationId": "DTakoFerryRowsService_Get",
+        "operationId": "db_DTakoFerryRowsService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoFerryRowsResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoFerryRowsResponse"
             }
           },
           "default": {
@@ -1046,17 +1046,17 @@
           }
         ],
         "tags": [
-          "DTakoFerryRowsService"
+          "db_DTakoFerryRowsService"
         ]
       },
       "delete": {
         "summary": "フェリー運行データ削除",
-        "operationId": "DTakoFerryRowsService_Delete",
+        "operationId": "db_DTakoFerryRowsService_Delete",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceEmpty"
+              "$ref": "#/definitions/db_servicedb_Empty"
             }
           },
           "default": {
@@ -1076,19 +1076,19 @@
           }
         ],
         "tags": [
-          "DTakoFerryRowsService"
+          "db_DTakoFerryRowsService"
         ]
       }
     },
     "/api/v1/db/dtako-rows": {
       "get": {
         "summary": "運行データ一覧取得",
-        "operationId": "DTakoRowsService_List",
+        "operationId": "db_DTakoRowsService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDTakoRowsResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoRowsResponse"
             }
           },
           "default": {
@@ -1122,19 +1122,19 @@
           }
         ],
         "tags": [
-          "DTakoRowsService"
+          "db_DTakoRowsService"
         ]
       }
     },
     "/api/v1/db/dtako-rows/by-operation-no/{operationNo}": {
       "get": {
         "summary": "運行NOで運行データ取得",
-        "operationId": "DTakoRowsService_GetByOperationNo",
+        "operationId": "db_DTakoRowsService_GetByOperationNo",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDTakoRowsResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoRowsResponse"
             }
           },
           "default": {
@@ -1153,19 +1153,19 @@
           }
         ],
         "tags": [
-          "DTakoRowsService"
+          "db_DTakoRowsService"
         ]
       }
     },
     "/api/v1/db/dtako-rows/{id}": {
       "get": {
         "summary": "運行データ取得",
-        "operationId": "DTakoRowsService_Get",
+        "operationId": "db_DTakoRowsService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoRowsResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoRowsResponse"
             }
           },
           "default": {
@@ -1184,19 +1184,19 @@
           }
         ],
         "tags": [
-          "DTakoRowsService"
+          "db_DTakoRowsService"
         ]
       }
     },
     "/api/v1/db/dtako-uriage-keihi": {
       "get": {
         "summary": "経費精算データ一覧取得",
-        "operationId": "DTakoUriageKeihiService_List",
+        "operationId": "db_DTakoUriageKeihiService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListDTakoUriageKeihiResponse"
+              "$ref": "#/definitions/db_servicedb_ListDTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1241,17 +1241,17 @@
           }
         ],
         "tags": [
-          "DTakoUriageKeihiService"
+          "db_DTakoUriageKeihiService"
         ]
       },
       "post": {
         "summary": "経費精算データ作成",
-        "operationId": "DTakoUriageKeihiService_Create",
+        "operationId": "db_DTakoUriageKeihiService_Create",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoUriageKeihiResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1267,24 +1267,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoUriageKeihi"
+              "$ref": "#/definitions/db_servicedb_DTakoUriageKeihi"
             }
           }
         ],
         "tags": [
-          "DTakoUriageKeihiService"
+          "db_DTakoUriageKeihiService"
         ]
       }
     },
     "/api/v1/db/dtako-uriage-keihi/{dtakoUriageKeihi.srchId}": {
       "put": {
         "summary": "経費精算データ更新",
-        "operationId": "DTakoUriageKeihiService_Update",
+        "operationId": "db_DTakoUriageKeihiService_Update",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoUriageKeihiResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1361,19 +1361,19 @@
           }
         ],
         "tags": [
-          "DTakoUriageKeihiService"
+          "db_DTakoUriageKeihiService"
         ]
       }
     },
     "/api/v1/db/dtako-uriage-keihi/{srchId}": {
       "get": {
         "summary": "経費精算データ取得",
-        "operationId": "DTakoUriageKeihiService_Get",
+        "operationId": "db_DTakoUriageKeihiService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceDTakoUriageKeihiResponse"
+              "$ref": "#/definitions/db_servicedb_DTakoUriageKeihiResponse"
             }
           },
           "default": {
@@ -1405,17 +1405,17 @@
           }
         ],
         "tags": [
-          "DTakoUriageKeihiService"
+          "db_DTakoUriageKeihiService"
         ]
       },
       "delete": {
         "summary": "経費精算データ削除",
-        "operationId": "DTakoUriageKeihiService_Delete",
+        "operationId": "db_DTakoUriageKeihiService_Delete",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceEmpty"
+              "$ref": "#/definitions/db_servicedb_Empty"
             }
           },
           "default": {
@@ -1447,19 +1447,19 @@
           }
         ],
         "tags": [
-          "DTakoUriageKeihiService"
+          "db_DTakoUriageKeihiService"
         ]
       }
     },
     "/api/v1/db/etc-meisai": {
       "get": {
         "summary": "ETC明細データ一覧取得",
-        "operationId": "ETCMeisaiService_List",
+        "operationId": "db_ETCMeisaiService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListETCMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_ListETCMeisaiResponse"
             }
           },
           "default": {
@@ -1504,17 +1504,17 @@
           }
         ],
         "tags": [
-          "ETCMeisaiService"
+          "db_ETCMeisaiService"
         ]
       },
       "post": {
         "summary": "ETC明細データ作成",
-        "operationId": "ETCMeisaiService_Create",
+        "operationId": "db_ETCMeisaiService_Create",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceETCMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiResponse"
             }
           },
           "default": {
@@ -1530,24 +1530,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/db_serviceETCMeisai"
+              "$ref": "#/definitions/db_servicedb_ETCMeisai"
             }
           }
         ],
         "tags": [
-          "ETCMeisaiService"
+          "db_ETCMeisaiService"
         ]
       }
     },
     "/api/v1/db/etc-meisai-mapping": {
       "get": {
         "summary": "マッピング一覧取得",
-        "operationId": "ETCMeisaiMappingService_List",
+        "operationId": "db_ETCMeisaiMappingService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListETCMeisaiMappingResponse"
+              "$ref": "#/definitions/db_servicedb_ListETCMeisaiMappingResponse"
             }
           },
           "default": {
@@ -1586,17 +1586,17 @@
           }
         ],
         "tags": [
-          "ETCMeisaiMappingService"
+          "db_ETCMeisaiMappingService"
         ]
       },
       "post": {
         "summary": "マッピング作成",
-        "operationId": "ETCMeisaiMappingService_Create",
+        "operationId": "db_ETCMeisaiMappingService_Create",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceETCMeisaiMappingResponse"
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiMappingResponse"
             }
           },
           "default": {
@@ -1612,24 +1612,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/db_serviceETCMeisaiMapping"
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiMapping"
             }
           }
         ],
         "tags": [
-          "ETCMeisaiMappingService"
+          "db_ETCMeisaiMappingService"
         ]
       }
     },
     "/api/v1/db/etc-meisai-mapping/by-hash/{etcMeisaiHash}": {
       "get": {
         "summary": "ハッシュからDTakoRowIDを取得",
-        "operationId": "ETCMeisaiMappingService_GetDTakoRowIDByHash",
+        "operationId": "db_ETCMeisaiMappingService_GetDTakoRowIDByHash",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceGetDTakoRowIDByHashResponse"
+              "$ref": "#/definitions/db_servicedb_GetDTakoRowIDByHashResponse"
             }
           },
           "default": {
@@ -1648,19 +1648,19 @@
           }
         ],
         "tags": [
-          "ETCMeisaiMappingService"
+          "db_ETCMeisaiMappingService"
         ]
       }
     },
     "/api/v1/db/etc-meisai-mapping/{etcMeisaiMapping.id}": {
       "put": {
         "summary": "マッピング更新",
-        "operationId": "ETCMeisaiMappingService_Update",
+        "operationId": "db_ETCMeisaiMappingService_Update",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceETCMeisaiMappingResponse"
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiMappingResponse"
             }
           },
           "default": {
@@ -1710,19 +1710,19 @@
           }
         ],
         "tags": [
-          "ETCMeisaiMappingService"
+          "db_ETCMeisaiMappingService"
         ]
       }
     },
     "/api/v1/db/etc-meisai-mapping/{id}": {
       "get": {
         "summary": "マッピング取得",
-        "operationId": "ETCMeisaiMappingService_Get",
+        "operationId": "db_ETCMeisaiMappingService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceETCMeisaiMappingResponse"
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiMappingResponse"
             }
           },
           "default": {
@@ -1742,17 +1742,17 @@
           }
         ],
         "tags": [
-          "ETCMeisaiMappingService"
+          "db_ETCMeisaiMappingService"
         ]
       },
       "delete": {
         "summary": "マッピング削除",
-        "operationId": "ETCMeisaiMappingService_Delete",
+        "operationId": "db_ETCMeisaiMappingService_Delete",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceEmpty"
+              "$ref": "#/definitions/db_servicedb_Empty"
             }
           },
           "default": {
@@ -1772,19 +1772,19 @@
           }
         ],
         "tags": [
-          "ETCMeisaiMappingService"
+          "db_ETCMeisaiMappingService"
         ]
       }
     },
     "/api/v1/db/etc-meisai/{etcMeisai.id}": {
       "put": {
         "summary": "ETC明細データ更新",
-        "operationId": "ETCMeisaiService_Update",
+        "operationId": "db_ETCMeisaiService_Update",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceETCMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiResponse"
             }
           },
           "default": {
@@ -1864,19 +1864,19 @@
           }
         ],
         "tags": [
-          "ETCMeisaiService"
+          "db_ETCMeisaiService"
         ]
       }
     },
     "/api/v1/db/etc-meisai/{id}": {
       "get": {
         "summary": "ETC明細データ取得",
-        "operationId": "ETCMeisaiService_Get",
+        "operationId": "db_ETCMeisaiService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceETCMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_ETCMeisaiResponse"
             }
           },
           "default": {
@@ -1896,17 +1896,17 @@
           }
         ],
         "tags": [
-          "ETCMeisaiService"
+          "db_ETCMeisaiService"
         ]
       },
       "delete": {
         "summary": "ETC明細データ削除",
-        "operationId": "ETCMeisaiService_Delete",
+        "operationId": "db_ETCMeisaiService_Delete",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceEmpty"
+              "$ref": "#/definitions/db_servicedb_Empty"
             }
           },
           "default": {
@@ -1926,19 +1926,19 @@
           }
         ],
         "tags": [
-          "ETCMeisaiService"
+          "db_ETCMeisaiService"
         ]
       }
     },
     "/api/v1/db/etc-num": {
       "get": {
         "summary": "ETCカード番号一覧取得",
-        "operationId": "ETCNumService_List",
+        "operationId": "db_ETCNumService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListETCNumResponse"
+              "$ref": "#/definitions/db_servicedb_ListETCNumResponse"
             }
           },
           "default": {
@@ -1965,19 +1965,19 @@
           }
         ],
         "tags": [
-          "ETCNumService"
+          "db_ETCNumService"
         ]
       }
     },
     "/api/v1/db/etc-num/by-car-id/{carId}": {
       "get": {
         "summary": "車輌IDで取得",
-        "operationId": "ETCNumService_GetByCarID",
+        "operationId": "db_ETCNumService_GetByCarID",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListETCNumResponse"
+              "$ref": "#/definitions/db_servicedb_ListETCNumResponse"
             }
           },
           "default": {
@@ -1996,19 +1996,19 @@
           }
         ],
         "tags": [
-          "ETCNumService"
+          "db_ETCNumService"
         ]
       }
     },
     "/api/v1/db/etc-num/by-etc-card-num/{etcCardNum}": {
       "get": {
         "summary": "ETCカード番号で取得",
-        "operationId": "ETCNumService_GetByETCCardNum",
+        "operationId": "db_ETCNumService_GetByETCCardNum",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListETCNumResponse"
+              "$ref": "#/definitions/db_servicedb_ListETCNumResponse"
             }
           },
           "default": {
@@ -2027,18 +2027,18 @@
           }
         ],
         "tags": [
-          "ETCNumService"
+          "db_ETCNumService"
         ]
       }
     },
     "/api/v1/db/shain-master": {
       "get": {
-        "operationId": "ShainMasterService_List",
+        "operationId": "db_ShainMasterService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListShainMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ListShainMasterResponse"
             }
           },
           "default": {
@@ -2071,18 +2071,18 @@
           }
         ],
         "tags": [
-          "ShainMasterService"
+          "db_ShainMasterService"
         ]
       }
     },
     "/api/v1/db/shain-master/bumon/{bumonC}": {
       "get": {
-        "operationId": "ShainMasterService_GetByBumonC",
+        "operationId": "db_ShainMasterService_GetByBumonC",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListShainMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ListShainMasterResponse"
             }
           },
           "default": {
@@ -2101,18 +2101,18 @@
           }
         ],
         "tags": [
-          "ShainMasterService"
+          "db_ShainMasterService"
         ]
       }
     },
     "/api/v1/db/shain-master/{shainC}": {
       "get": {
-        "operationId": "ShainMasterService_Get",
+        "operationId": "db_ShainMasterService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceShainMasterResponse"
+              "$ref": "#/definitions/db_servicedb_ShainMasterResponse"
             }
           },
           "default": {
@@ -2131,18 +2131,18 @@
           }
         ],
         "tags": [
-          "ShainMasterService"
+          "db_ShainMasterService"
         ]
       }
     },
     "/api/v1/db/unten-nippo-meisai": {
       "get": {
-        "operationId": "UntenNippoMeisaiService_List",
+        "operationId": "db_UntenNippoMeisaiService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListUntenNippoMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiResponse"
             }
           },
           "default": {
@@ -2175,18 +2175,18 @@
           }
         ],
         "tags": [
-          "UntenNippoMeisaiService"
+          "db_UntenNippoMeisaiService"
         ]
       }
     },
     "/api/v1/db/unten-nippo-meisai/date-range": {
       "get": {
-        "operationId": "UntenNippoMeisaiService_GetByDateRange",
+        "operationId": "db_UntenNippoMeisaiService_GetByDateRange",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListUntenNippoMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiResponse"
             }
           },
           "default": {
@@ -2225,18 +2225,18 @@
           }
         ],
         "tags": [
-          "UntenNippoMeisaiService"
+          "db_UntenNippoMeisaiService"
         ]
       }
     },
     "/api/v1/db/unten-nippo-meisai/sharyo/{sharyoC}": {
       "get": {
-        "operationId": "UntenNippoMeisaiService_GetBySharyoC",
+        "operationId": "db_UntenNippoMeisaiService_GetBySharyoC",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceListUntenNippoMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_ListUntenNippoMeisaiResponse"
             }
           },
           "default": {
@@ -2262,18 +2262,18 @@
           }
         ],
         "tags": [
-          "UntenNippoMeisaiService"
+          "db_UntenNippoMeisaiService"
         ]
       }
     },
     "/api/v1/db/unten-nippo-meisai/{nippoK}/{haishaK}/{sharyoC}": {
       "get": {
-        "operationId": "UntenNippoMeisaiService_Get",
+        "operationId": "db_UntenNippoMeisaiService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/db_serviceUntenNippoMeisaiResponse"
+              "$ref": "#/definitions/db_servicedb_UntenNippoMeisaiResponse"
             }
           },
           "default": {
@@ -2304,13 +2304,13 @@
           }
         ],
         "tags": [
-          "UntenNippoMeisaiService"
+          "db_UntenNippoMeisaiService"
         ]
       }
     }
   },
   "definitions": {
-    "db_serviceCars": {
+    "db_servicedb_Cars": {
       "type": "object",
       "properties": {
         "id": {
@@ -2395,17 +2395,17 @@
           "type": "string"
         }
       },
-      "title": "Cars メッセージ"
+      "title": "db_Cars メッセージ"
     },
-    "db_serviceCarsResponse": {
+    "db_servicedb_CarsResponse": {
       "type": "object",
       "properties": {
         "cars": {
-          "$ref": "#/definitions/db_serviceCars"
+          "$ref": "#/definitions/db_servicedb_Cars"
         }
       }
     },
-    "db_serviceChiikiMaster": {
+    "db_servicedb_ChiikiMaster": {
       "type": "object",
       "properties": {
         "chiikiC": {
@@ -2421,17 +2421,17 @@
           "type": "string"
         }
       },
-      "title": "ChiikiMaster メッセージ（4カラム全て）"
+      "title": "db_ChiikiMaster メッセージ（4カラム全て）"
     },
-    "db_serviceChiikiMasterResponse": {
+    "db_servicedb_ChiikiMasterResponse": {
       "type": "object",
       "properties": {
         "chiikiMaster": {
-          "$ref": "#/definitions/db_serviceChiikiMaster"
+          "$ref": "#/definitions/db_servicedb_ChiikiMaster"
         }
       }
     },
-    "db_serviceChikuMaster": {
+    "db_servicedb_ChikuMaster": {
       "type": "object",
       "properties": {
         "chikuC": {
@@ -2495,17 +2495,17 @@
           "type": "string"
         }
       },
-      "title": "ChikuMaster メッセージ（20カラム全て）"
+      "title": "db_ChikuMaster メッセージ（20カラム全て）"
     },
-    "db_serviceChikuMasterResponse": {
+    "db_servicedb_ChikuMasterResponse": {
       "type": "object",
       "properties": {
         "chikuMaster": {
-          "$ref": "#/definitions/db_serviceChikuMaster"
+          "$ref": "#/definitions/db_servicedb_ChikuMaster"
         }
       }
     },
-    "db_serviceDTakoCars": {
+    "db_servicedb_DTakoCars": {
       "type": "object",
       "properties": {
         "id": {
@@ -2572,15 +2572,15 @@
       },
       "title": "車輌マスタデータ（本番DB）"
     },
-    "db_serviceDTakoCarsResponse": {
+    "db_servicedb_DTakoCarsResponse": {
       "type": "object",
       "properties": {
         "dtakoCars": {
-          "$ref": "#/definitions/db_serviceDTakoCars"
+          "$ref": "#/definitions/db_servicedb_DTakoCars"
         }
       }
     },
-    "db_serviceDTakoEvents": {
+    "db_servicedb_DTakoEvents": {
       "type": "object",
       "properties": {
         "id": {
@@ -2699,15 +2699,15 @@
       },
       "title": "イベント情報データ（本番DB）"
     },
-    "db_serviceDTakoEventsResponse": {
+    "db_servicedb_DTakoEventsResponse": {
       "type": "object",
       "properties": {
         "dtakoEvents": {
-          "$ref": "#/definitions/db_serviceDTakoEvents"
+          "$ref": "#/definitions/db_servicedb_DTakoEvents"
         }
       }
     },
-    "db_serviceDTakoFerryRows": {
+    "db_servicedb_DTakoFerryRows": {
       "type": "object",
       "properties": {
         "id": {
@@ -2837,7 +2837,7 @@
       },
       "title": "フェリー運行データ"
     },
-    "db_serviceDTakoFerryRowsProd": {
+    "db_servicedb_DTakoFerryRowsProd": {
       "type": "object",
       "properties": {
         "id": {
@@ -2942,25 +2942,25 @@
           "type": "string"
         }
       },
-      "title": "DTakoFerryRowsProd（本番DB）データ"
+      "title": "db_DTakoFerryRowsProd（本番DB）データ"
     },
-    "db_serviceDTakoFerryRowsProdResponse": {
+    "db_servicedb_DTakoFerryRowsProdResponse": {
       "type": "object",
       "properties": {
         "dtakoFerryRows": {
-          "$ref": "#/definitions/db_serviceDTakoFerryRowsProd"
+          "$ref": "#/definitions/db_servicedb_DTakoFerryRowsProd"
         }
       }
     },
-    "db_serviceDTakoFerryRowsResponse": {
+    "db_servicedb_DTakoFerryRowsResponse": {
       "type": "object",
       "properties": {
         "dtakoFerryRows": {
-          "$ref": "#/definitions/db_serviceDTakoFerryRows"
+          "$ref": "#/definitions/db_servicedb_DTakoFerryRows"
         }
       }
     },
-    "db_serviceDTakoRows": {
+    "db_servicedb_DTakoRows": {
       "type": "object",
       "properties": {
         "id": {
@@ -3081,15 +3081,15 @@
       },
       "title": "運行データ（本番DB）"
     },
-    "db_serviceDTakoRowsResponse": {
+    "db_servicedb_DTakoRowsResponse": {
       "type": "object",
       "properties": {
         "dtakoRows": {
-          "$ref": "#/definitions/db_serviceDTakoRows"
+          "$ref": "#/definitions/db_servicedb_DTakoRows"
         }
       }
     },
-    "db_serviceDTakoUriageKeihi": {
+    "db_servicedb_DTakoUriageKeihi": {
       "type": "object",
       "properties": {
         "srchId": {
@@ -3144,15 +3144,15 @@
       },
       "title": "経費精算データ"
     },
-    "db_serviceDTakoUriageKeihiResponse": {
+    "db_servicedb_DTakoUriageKeihiResponse": {
       "type": "object",
       "properties": {
         "dtakoUriageKeihi": {
-          "$ref": "#/definitions/db_serviceDTakoUriageKeihi"
+          "$ref": "#/definitions/db_servicedb_DTakoUriageKeihi"
         }
       }
     },
-    "db_serviceDrivers": {
+    "db_servicedb_Drivers": {
       "type": "object",
       "properties": {
         "id": {
@@ -3191,17 +3191,17 @@
           "format": "int32"
         }
       },
-      "title": "Drivers メッセージ"
+      "title": "db_Drivers メッセージ"
     },
-    "db_serviceDriversResponse": {
+    "db_servicedb_DriversResponse": {
       "type": "object",
       "properties": {
         "drivers": {
-          "$ref": "#/definitions/db_serviceDrivers"
+          "$ref": "#/definitions/db_servicedb_Drivers"
         }
       }
     },
-    "db_serviceETCMeisai": {
+    "db_servicedb_ETCMeisai": {
       "type": "object",
       "properties": {
         "id": {
@@ -3259,7 +3259,7 @@
       },
       "title": "ETC明細データ"
     },
-    "db_serviceETCMeisaiMapping": {
+    "db_servicedb_ETCMeisaiMapping": {
       "type": "object",
       "properties": {
         "id": {
@@ -3287,23 +3287,23 @@
       },
       "title": "ETC明細マッピングデータ"
     },
-    "db_serviceETCMeisaiMappingResponse": {
+    "db_servicedb_ETCMeisaiMappingResponse": {
       "type": "object",
       "properties": {
         "etcMeisaiMapping": {
-          "$ref": "#/definitions/db_serviceETCMeisaiMapping"
+          "$ref": "#/definitions/db_servicedb_ETCMeisaiMapping"
         }
       }
     },
-    "db_serviceETCMeisaiResponse": {
+    "db_servicedb_ETCMeisaiResponse": {
       "type": "object",
       "properties": {
         "etcMeisai": {
-          "$ref": "#/definitions/db_serviceETCMeisai"
+          "$ref": "#/definitions/db_servicedb_ETCMeisai"
         }
       }
     },
-    "db_serviceETCNum": {
+    "db_servicedb_ETCNum": {
       "type": "object",
       "properties": {
         "etcCardNum": {
@@ -3326,11 +3326,11 @@
       },
       "title": "ETCカード番号データ（本番DB）"
     },
-    "db_serviceEmpty": {
+    "db_servicedb_Empty": {
       "type": "object",
       "title": "共通メッセージ"
     },
-    "db_serviceGetDTakoRowIDByHashResponse": {
+    "db_servicedb_GetDTakoRowIDByHashResponse": {
       "type": "object",
       "properties": {
         "dtakoRowIds": {
@@ -3341,14 +3341,14 @@
         }
       }
     },
-    "db_serviceListCarsResponse": {
+    "db_servicedb_ListCarsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceCars"
+            "$ref": "#/definitions/db_servicedb_Cars"
           }
         },
         "totalCount": {
@@ -3357,14 +3357,14 @@
         }
       }
     },
-    "db_serviceListChiikiMasterResponse": {
+    "db_servicedb_ListChiikiMasterResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceChiikiMaster"
+            "$ref": "#/definitions/db_servicedb_ChiikiMaster"
           }
         },
         "totalCount": {
@@ -3373,14 +3373,14 @@
         }
       }
     },
-    "db_serviceListChikuMasterResponse": {
+    "db_servicedb_ListChikuMasterResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceChikuMaster"
+            "$ref": "#/definitions/db_servicedb_ChikuMaster"
           }
         },
         "totalCount": {
@@ -3389,14 +3389,14 @@
         }
       }
     },
-    "db_serviceListDTakoCarsResponse": {
+    "db_servicedb_ListDTakoCarsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceDTakoCars"
+            "$ref": "#/definitions/db_servicedb_DTakoCars"
           }
         },
         "totalCount": {
@@ -3405,14 +3405,14 @@
         }
       }
     },
-    "db_serviceListDTakoEventsResponse": {
+    "db_servicedb_ListDTakoEventsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceDTakoEvents"
+            "$ref": "#/definitions/db_servicedb_DTakoEvents"
           }
         },
         "totalCount": {
@@ -3421,14 +3421,14 @@
         }
       }
     },
-    "db_serviceListDTakoFerryRowsProdResponse": {
+    "db_servicedb_ListDTakoFerryRowsProdResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceDTakoFerryRowsProd"
+            "$ref": "#/definitions/db_servicedb_DTakoFerryRowsProd"
           }
         },
         "totalCount": {
@@ -3437,14 +3437,14 @@
         }
       }
     },
-    "db_serviceListDTakoFerryRowsResponse": {
+    "db_servicedb_ListDTakoFerryRowsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceDTakoFerryRows"
+            "$ref": "#/definitions/db_servicedb_DTakoFerryRows"
           }
         },
         "totalCount": {
@@ -3453,14 +3453,14 @@
         }
       }
     },
-    "db_serviceListDTakoRowsResponse": {
+    "db_servicedb_ListDTakoRowsResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceDTakoRows"
+            "$ref": "#/definitions/db_servicedb_DTakoRows"
           }
         },
         "totalCount": {
@@ -3469,14 +3469,14 @@
         }
       }
     },
-    "db_serviceListDTakoUriageKeihiResponse": {
+    "db_servicedb_ListDTakoUriageKeihiResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceDTakoUriageKeihi"
+            "$ref": "#/definitions/db_servicedb_DTakoUriageKeihi"
           }
         },
         "totalCount": {
@@ -3485,14 +3485,14 @@
         }
       }
     },
-    "db_serviceListDriversResponse": {
+    "db_servicedb_ListDriversResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceDrivers"
+            "$ref": "#/definitions/db_servicedb_Drivers"
           }
         },
         "totalCount": {
@@ -3501,14 +3501,14 @@
         }
       }
     },
-    "db_serviceListETCMeisaiMappingResponse": {
+    "db_servicedb_ListETCMeisaiMappingResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceETCMeisaiMapping"
+            "$ref": "#/definitions/db_servicedb_ETCMeisaiMapping"
           }
         },
         "totalCount": {
@@ -3517,14 +3517,14 @@
         }
       }
     },
-    "db_serviceListETCMeisaiResponse": {
+    "db_servicedb_ListETCMeisaiResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceETCMeisai"
+            "$ref": "#/definitions/db_servicedb_ETCMeisai"
           }
         },
         "totalCount": {
@@ -3533,14 +3533,14 @@
         }
       }
     },
-    "db_serviceListETCNumResponse": {
+    "db_servicedb_ListETCNumResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceETCNum"
+            "$ref": "#/definitions/db_servicedb_ETCNum"
           }
         },
         "totalCount": {
@@ -3549,14 +3549,14 @@
         }
       }
     },
-    "db_serviceListShainMasterResponse": {
+    "db_servicedb_ListShainMasterResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceShainMaster"
+            "$ref": "#/definitions/db_servicedb_ShainMaster"
           }
         },
         "totalCount": {
@@ -3565,14 +3565,14 @@
         }
       }
     },
-    "db_serviceListUntenNippoMeisaiResponse": {
+    "db_servicedb_ListUntenNippoMeisaiResponse": {
       "type": "object",
       "properties": {
         "items": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/db_serviceUntenNippoMeisai"
+            "$ref": "#/definitions/db_servicedb_UntenNippoMeisai"
           }
         },
         "totalCount": {
@@ -3581,7 +3581,7 @@
         }
       }
     },
-    "db_serviceShainMaster": {
+    "db_servicedb_ShainMaster": {
       "type": "object",
       "properties": {
         "shainC": {
@@ -3716,17 +3716,17 @@
           "type": "string"
         }
       },
-      "title": "ShainMaster メッセージ（43カラム全て）"
+      "title": "db_ShainMaster メッセージ（43カラム全て）"
     },
-    "db_serviceShainMasterResponse": {
+    "db_servicedb_ShainMasterResponse": {
       "type": "object",
       "properties": {
         "shainMaster": {
-          "$ref": "#/definitions/db_serviceShainMaster"
+          "$ref": "#/definitions/db_servicedb_ShainMaster"
         }
       }
     },
-    "db_serviceUntenNippoMeisai": {
+    "db_servicedb_UntenNippoMeisai": {
       "type": "object",
       "properties": {
         "nippoK": {
@@ -4095,13 +4095,13 @@
           "type": "string"
         }
       },
-      "title": "UntenNippoMeisai メッセージ（106カラム全て）"
+      "title": "db_UntenNippoMeisai メッセージ（106カラム全て）"
     },
-    "db_serviceUntenNippoMeisaiResponse": {
+    "db_servicedb_UntenNippoMeisaiResponse": {
       "type": "object",
       "properties": {
         "untenNippoMeisai": {
-          "$ref": "#/definitions/db_serviceUntenNippoMeisai"
+          "$ref": "#/definitions/db_servicedb_UntenNippoMeisai"
         }
       }
     },

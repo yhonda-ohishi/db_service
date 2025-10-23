@@ -11,7 +11,7 @@ import (
 
 // ChikuMasterService 地区マスタサービス
 type ChikuMasterService struct {
-	pb.UnimplementedChikuMasterServiceServer
+	pb.UnimplementedDb_ChikuMasterServiceServer
 	repo repository.ChikuMasterRepository
 }
 
@@ -23,19 +23,19 @@ func NewChikuMasterService(repo repository.ChikuMasterRepository) *ChikuMasterSe
 }
 
 // Get 単一の地区マスタを取得
-func (s *ChikuMasterService) Get(ctx context.Context, req *pb.GetChikuMasterRequest) (*pb.ChikuMasterResponse, error) {
+func (s *ChikuMasterService) Get(ctx context.Context, req *pb.Db_GetChikuMasterRequest) (*pb.Db_ChikuMasterResponse, error) {
 	chiku, err := s.repo.GetByChikuC(req.ChikuC)
 	if err != nil {
 		return nil, status.Errorf(codes.NotFound, "地区マスタが見つかりません: %v", err)
 	}
 
-	return &pb.ChikuMasterResponse{
+	return &pb.Db_ChikuMasterResponse{
 		ChikuMaster: convertChikuMasterToProto(chiku),
 	}, nil
 }
 
 // List 地区マスタのリストを取得
-func (s *ChikuMasterService) List(ctx context.Context, req *pb.ListChikuMasterRequest) (*pb.ListChikuMasterResponse, error) {
+func (s *ChikuMasterService) List(ctx context.Context, req *pb.Db_ListChikuMasterRequest) (*pb.Db_ListChikuMasterResponse, error) {
 	limit := int(req.Limit)
 	if limit <= 0 {
 		limit = 10
@@ -52,30 +52,30 @@ func (s *ChikuMasterService) List(ctx context.Context, req *pb.ListChikuMasterRe
 		return nil, status.Errorf(codes.Internal, "地区マスタの取得に失敗しました: %v", err)
 	}
 
-	pbChikuList := make([]*pb.ChikuMaster, len(chikuList))
+	pbChikuList := make([]*pb.Db_ChikuMaster, len(chikuList))
 	for i, chiku := range chikuList {
 		pbChikuList[i] = convertChikuMasterToProto(chiku)
 	}
 
-	return &pb.ListChikuMasterResponse{
+	return &pb.Db_ListChikuMasterResponse{
 		Items:      pbChikuList,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // GetByChiikiC 地域Cで地区マスタを取得
-func (s *ChikuMasterService) GetByChiikiC(ctx context.Context, req *pb.GetChikuMasterByChiikiCRequest) (*pb.ListChikuMasterResponse, error) {
+func (s *ChikuMasterService) GetByChiikiC(ctx context.Context, req *pb.Db_GetChikuMasterByChiikiCRequest) (*pb.Db_ListChikuMasterResponse, error) {
 	chikuList, err := s.repo.GetByChiikiC(req.ChiikiC)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "地域Cでの地区マスタの取得に失敗しました: %v", err)
 	}
 
-	pbChikuList := make([]*pb.ChikuMaster, len(chikuList))
+	pbChikuList := make([]*pb.Db_ChikuMaster, len(chikuList))
 	for i, chiku := range chikuList {
 		pbChikuList[i] = convertChikuMasterToProto(chiku)
 	}
 
-	return &pb.ListChikuMasterResponse{
+	return &pb.Db_ListChikuMasterResponse{
 		Items:      pbChikuList,
 		TotalCount: int32(len(chikuList)),
 	}, nil

@@ -12,7 +12,7 @@ import (
 
 // CarsService gRPCサービス実装（本番DB、読み取り専用）
 type CarsService struct {
-	proto.UnimplementedCarsServiceServer
+	proto.UnimplementedDb_CarsServiceServer
 	repo repository.CarsRepository
 }
 
@@ -24,19 +24,19 @@ func NewCarsService(repo repository.CarsRepository) *CarsService {
 }
 
 // Get 車両情報取得
-func (s *CarsService) Get(ctx context.Context, req *proto.GetCarsRequest) (*proto.CarsResponse, error) {
+func (s *CarsService) Get(ctx context.Context, req *proto.Db_GetCarsRequest) (*proto.Db_CarsResponse, error) {
 	car, err := s.repo.GetByID(req.Id)
 	if err != nil {
 		return nil, status.Errorf(codes.NotFound, "car not found: %v", err)
 	}
 
-	return &proto.CarsResponse{
+	return &proto.Db_CarsResponse{
 		Cars: carsModelToProto(car),
 	}, nil
 }
 
 // List 車両情報一覧取得
-func (s *CarsService) List(ctx context.Context, req *proto.ListCarsRequest) (*proto.ListCarsResponse, error) {
+func (s *CarsService) List(ctx context.Context, req *proto.Db_ListCarsRequest) (*proto.Db_ListCarsResponse, error) {
 	limit := int(req.Limit)
 	offset := int(req.Offset)
 
@@ -55,38 +55,38 @@ func (s *CarsService) List(ctx context.Context, req *proto.ListCarsRequest) (*pr
 		return nil, status.Errorf(codes.Internal, "failed to list cars: %v", err)
 	}
 
-	items := make([]*proto.Cars, len(cars))
+	items := make([]*proto.Db_Cars, len(cars))
 	for i, car := range cars {
 		items[i] = carsModelToProto(car)
 	}
 
-	return &proto.ListCarsResponse{
+	return &proto.Db_ListCarsResponse{
 		Items:      items,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // GetByBumonCodeID 部門コードで車両情報取得
-func (s *CarsService) GetByBumonCodeID(ctx context.Context, req *proto.GetCarsByBumonCodeIDRequest) (*proto.ListCarsResponse, error) {
+func (s *CarsService) GetByBumonCodeID(ctx context.Context, req *proto.Db_GetCarsByBumonCodeIDRequest) (*proto.Db_ListCarsResponse, error) {
 	cars, err := s.repo.GetByBumonCodeID(req.BumonCodeId)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "failed to get cars by bumon_code_id: %v", err)
 	}
 
-	items := make([]*proto.Cars, len(cars))
+	items := make([]*proto.Db_Cars, len(cars))
 	for i, car := range cars {
 		items[i] = carsModelToProto(car)
 	}
 
-	return &proto.ListCarsResponse{
+	return &proto.Db_ListCarsResponse{
 		Items:      items,
 		TotalCount: int32(len(cars)),
 	}, nil
 }
 
 // carsModelToProto ModelからProtoへの変換
-func carsModelToProto(model *mysql.Cars) *proto.Cars {
-	protoCar := &proto.Cars{
+func carsModelToProto(model *mysql.Cars) *proto.Db_Cars {
+	protoCar := &proto.Db_Cars{
 		Id:   model.ID,
 		Id4:  int32(model.ID4),
 		Dai1: int32(model.Dai1),

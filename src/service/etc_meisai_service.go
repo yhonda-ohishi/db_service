@@ -13,7 +13,7 @@ import (
 
 // ETCMeisaiService gRPCサービス実装
 type ETCMeisaiService struct {
-	proto.UnimplementedETCMeisaiServiceServer
+	proto.UnimplementedDb_ETCMeisaiServiceServer
 	repo repository.ETCMeisaiRepository
 }
 
@@ -25,7 +25,7 @@ func NewETCMeisaiService(repo repository.ETCMeisaiRepository) *ETCMeisaiService 
 }
 
 // Create ETC明細データ作成
-func (s *ETCMeisaiService) Create(ctx context.Context, req *proto.CreateETCMeisaiRequest) (*proto.ETCMeisaiResponse, error) {
+func (s *ETCMeisaiService) Create(ctx context.Context, req *proto.Db_CreateETCMeisaiRequest) (*proto.Db_ETCMeisaiResponse, error) {
 	if req.EtcMeisai == nil {
 		return nil, status.Error(codes.InvalidArgument, "etc_meisai is required")
 	}
@@ -74,13 +74,13 @@ func (s *ETCMeisaiService) Create(ctx context.Context, req *proto.CreateETCMeisa
 	}
 
 	// ModelからProtoへ変換して返却
-	return &proto.ETCMeisaiResponse{
+	return &proto.Db_ETCMeisaiResponse{
 		EtcMeisai: etcModelToProto(model),
 	}, nil
 }
 
 // Get ETC明細データ取得
-func (s *ETCMeisaiService) Get(ctx context.Context, req *proto.GetETCMeisaiRequest) (*proto.ETCMeisaiResponse, error) {
+func (s *ETCMeisaiService) Get(ctx context.Context, req *proto.Db_GetETCMeisaiRequest) (*proto.Db_ETCMeisaiResponse, error) {
 	if req.Id <= 0 {
 		return nil, status.Error(codes.InvalidArgument, "invalid id")
 	}
@@ -93,13 +93,13 @@ func (s *ETCMeisaiService) Get(ctx context.Context, req *proto.GetETCMeisaiReque
 		return nil, status.Errorf(codes.Internal, "failed to get record: %v", err)
 	}
 
-	return &proto.ETCMeisaiResponse{
+	return &proto.Db_ETCMeisaiResponse{
 		EtcMeisai: etcModelToProto(model),
 	}, nil
 }
 
 // Update ETC明細データ更新
-func (s *ETCMeisaiService) Update(ctx context.Context, req *proto.UpdateETCMeisaiRequest) (*proto.ETCMeisaiResponse, error) {
+func (s *ETCMeisaiService) Update(ctx context.Context, req *proto.Db_UpdateETCMeisaiRequest) (*proto.Db_ETCMeisaiResponse, error) {
 	if req.EtcMeisai == nil {
 		return nil, status.Error(codes.InvalidArgument, "etc_meisai is required")
 	}
@@ -115,13 +115,13 @@ func (s *ETCMeisaiService) Update(ctx context.Context, req *proto.UpdateETCMeisa
 		return nil, status.Errorf(codes.Internal, "failed to update record: %v", err)
 	}
 
-	return &proto.ETCMeisaiResponse{
+	return &proto.Db_ETCMeisaiResponse{
 		EtcMeisai: etcModelToProto(model),
 	}, nil
 }
 
 // Delete ETC明細データ削除
-func (s *ETCMeisaiService) Delete(ctx context.Context, req *proto.DeleteETCMeisaiRequest) (*proto.Empty, error) {
+func (s *ETCMeisaiService) Delete(ctx context.Context, req *proto.Db_DeleteETCMeisaiRequest) (*proto.Db_Empty, error) {
 	if req.Id <= 0 {
 		return nil, status.Error(codes.InvalidArgument, "invalid id")
 	}
@@ -133,11 +133,11 @@ func (s *ETCMeisaiService) Delete(ctx context.Context, req *proto.DeleteETCMeisa
 		return nil, status.Errorf(codes.Internal, "failed to delete record: %v", err)
 	}
 
-	return &proto.Empty{}, nil
+	return &proto.Db_Empty{}, nil
 }
 
 // List ETC明細データ一覧取得
-func (s *ETCMeisaiService) List(ctx context.Context, req *proto.ListETCMeisaiRequest) (*proto.ListETCMeisaiResponse, error) {
+func (s *ETCMeisaiService) List(ctx context.Context, req *proto.Db_ListETCMeisaiRequest) (*proto.Db_ListETCMeisaiResponse, error) {
 	limit := int(req.Limit)
 	if limit == 0 {
 		limit = 100 // デフォルト値
@@ -166,12 +166,12 @@ func (s *ETCMeisaiService) List(ctx context.Context, req *proto.ListETCMeisaiReq
 		return nil, status.Errorf(codes.Internal, "failed to list records: %v", err)
 	}
 
-	items := make([]*proto.ETCMeisai, len(models))
+	items := make([]*proto.Db_ETCMeisai, len(models))
 	for i, model := range models {
 		items[i] = etcModelToProto(model)
 	}
 
-	return &proto.ListETCMeisaiResponse{
+	return &proto.Db_ListETCMeisaiResponse{
 		Items:      items,
 		TotalCount: int32(totalCount),
 	}, nil
@@ -194,7 +194,7 @@ func stringPtr(s string) *string {
 }
 
 // etcProtoToModel ProtoからModelへの変換
-func etcProtoToModel(p *proto.ETCMeisai) *mysql.ETCMeisai {
+func etcProtoToModel(p *proto.Db_ETCMeisai) *mysql.ETCMeisai {
 	dateTo, _ := time.Parse(time.RFC3339, p.DateTo)
 	dateToDate, _ := time.Parse("2006-01-02", p.DateToDate)
 
@@ -231,8 +231,8 @@ func etcProtoToModel(p *proto.ETCMeisai) *mysql.ETCMeisai {
 }
 
 // etcModelToProto ModelからProtoへの変換
-func etcModelToProto(m *mysql.ETCMeisai) *proto.ETCMeisai {
-	p := &proto.ETCMeisai{
+func etcModelToProto(m *mysql.ETCMeisai) *proto.Db_ETCMeisai {
+	p := &proto.Db_ETCMeisai{
 		Id:         m.ID,
 		DateTo:     m.DateTo.Format(time.RFC3339),
 		DateToDate: m.DateToDate.Format("2006-01-02"),

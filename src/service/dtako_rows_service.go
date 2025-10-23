@@ -12,7 +12,7 @@ import (
 
 // DTakoRowsService gRPCサービス実装（本番DB、読み取り専用）
 type DTakoRowsService struct {
-	proto.UnimplementedDTakoRowsServiceServer
+	proto.UnimplementedDb_DTakoRowsServiceServer
 	repo repository.DTakoRowsRepository
 }
 
@@ -24,19 +24,19 @@ func NewDTakoRowsService(repo repository.DTakoRowsRepository) *DTakoRowsService 
 }
 
 // Get 運行データ取得
-func (s *DTakoRowsService) Get(ctx context.Context, req *proto.GetDTakoRowsRequest) (*proto.DTakoRowsResponse, error) {
+func (s *DTakoRowsService) Get(ctx context.Context, req *proto.Db_GetDTakoRowsRequest) (*proto.Db_DTakoRowsResponse, error) {
 	row, err := s.repo.GetByID(req.Id)
 	if err != nil {
 		return nil, status.Errorf(codes.NotFound, "row not found: %v", err)
 	}
 
-	return &proto.DTakoRowsResponse{
+	return &proto.Db_DTakoRowsResponse{
 		DtakoRows: dtakoRowsModelToProto(row),
 	}, nil
 }
 
 // List 運行データ一覧取得
-func (s *DTakoRowsService) List(ctx context.Context, req *proto.ListDTakoRowsRequest) (*proto.ListDTakoRowsResponse, error) {
+func (s *DTakoRowsService) List(ctx context.Context, req *proto.Db_ListDTakoRowsRequest) (*proto.Db_ListDTakoRowsResponse, error) {
 	limit := int(req.Limit)
 	offset := int(req.Offset)
 
@@ -55,38 +55,38 @@ func (s *DTakoRowsService) List(ctx context.Context, req *proto.ListDTakoRowsReq
 		return nil, status.Errorf(codes.Internal, "failed to list rows: %v", err)
 	}
 
-	items := make([]*proto.DTakoRows, len(rows))
+	items := make([]*proto.Db_DTakoRows, len(rows))
 	for i, row := range rows {
 		items[i] = dtakoRowsModelToProto(row)
 	}
 
-	return &proto.ListDTakoRowsResponse{
+	return &proto.Db_ListDTakoRowsResponse{
 		Items:      items,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // GetByOperationNo 運行NOで運行データ取得
-func (s *DTakoRowsService) GetByOperationNo(ctx context.Context, req *proto.GetDTakoRowsByOperationNoRequest) (*proto.ListDTakoRowsResponse, error) {
+func (s *DTakoRowsService) GetByOperationNo(ctx context.Context, req *proto.Db_GetDTakoRowsByOperationNoRequest) (*proto.Db_ListDTakoRowsResponse, error) {
 	rows, err := s.repo.GetByOperationNo(req.OperationNo)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "failed to get rows by operation_no: %v", err)
 	}
 
-	items := make([]*proto.DTakoRows, len(rows))
+	items := make([]*proto.Db_DTakoRows, len(rows))
 	for i, row := range rows {
 		items[i] = dtakoRowsModelToProto(row)
 	}
 
-	return &proto.ListDTakoRowsResponse{
+	return &proto.Db_ListDTakoRowsResponse{
 		Items:      items,
 		TotalCount: int32(len(rows)),
 	}, nil
 }
 
 // dtakoRowsModelToProto ModelからProtoへの変換
-func dtakoRowsModelToProto(model *mysql.DTakoRows) *proto.DTakoRows {
-	protoRow := &proto.DTakoRows{
+func dtakoRowsModelToProto(model *mysql.DTakoRows) *proto.Db_DTakoRows {
+	protoRow := &proto.Db_DTakoRows{
 		Id:                   model.ID,
 		OperationNo:          model.OperationNo,
 		ReadDate:             model.ReadDate.Format("2006-01-02T15:04:05Z07:00"),

@@ -6,8 +6,8 @@ import (
 )
 
 // convertChikuMasterToProto GORMモデルをProtoメッセージに変換
-func convertChikuMasterToProto(m *ichibanboshi.ChikuMaster) *pb.ChikuMaster {
-	return &pb.ChikuMaster{
+func convertChikuMasterToProto(m *ichibanboshi.ChikuMaster) *pb.Db_ChikuMaster {
+	return &pb.Db_ChikuMaster{
 		ChikuC:        m.ChikuC,
 		ChikuN:        m.ChikuN,
 		ChikuR:        m.ChikuR,

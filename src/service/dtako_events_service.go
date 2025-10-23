@@ -12,7 +12,7 @@ import (
 
 // DTakoEventsService gRPCサービス実装（本番DB、読み取り専用）
 type DTakoEventsService struct {
-	proto.UnimplementedDTakoEventsServiceServer
+	proto.UnimplementedDb_DTakoEventsServiceServer
 	repo repository.DTakoEventsRepository
 }
 
@@ -24,19 +24,19 @@ func NewDTakoEventsService(repo repository.DTakoEventsRepository) *DTakoEventsSe
 }
 
 // Get イベント情報取得
-func (s *DTakoEventsService) Get(ctx context.Context, req *proto.GetDTakoEventsRequest) (*proto.DTakoEventsResponse, error) {
+func (s *DTakoEventsService) Get(ctx context.Context, req *proto.Db_GetDTakoEventsRequest) (*proto.Db_DTakoEventsResponse, error) {
 	event, err := s.repo.GetByID(req.Id)
 	if err != nil {
 		return nil, status.Errorf(codes.NotFound, "event not found: %v", err)
 	}
 
-	return &proto.DTakoEventsResponse{
+	return &proto.Db_DTakoEventsResponse{
 		DtakoEvents: dtakoEventsModelToProto(event),
 	}, nil
 }
 
 // List イベント情報一覧取得
-func (s *DTakoEventsService) List(ctx context.Context, req *proto.ListDTakoEventsRequest) (*proto.ListDTakoEventsResponse, error) {
+func (s *DTakoEventsService) List(ctx context.Context, req *proto.Db_ListDTakoEventsRequest) (*proto.Db_ListDTakoEventsResponse, error) {
 	limit := int(req.Limit)
 	offset := int(req.Offset)
 
@@ -55,38 +55,38 @@ func (s *DTakoEventsService) List(ctx context.Context, req *proto.ListDTakoEvent
 		return nil, status.Errorf(codes.Internal, "failed to list events: %v", err)
 	}
 
-	items := make([]*proto.DTakoEvents, len(events))
+	items := make([]*proto.Db_DTakoEvents, len(events))
 	for i, event := range events {
 		items[i] = dtakoEventsModelToProto(event)
 	}
 
-	return &proto.ListDTakoEventsResponse{
+	return &proto.Db_ListDTakoEventsResponse{
 		Items:      items,
 		TotalCount: int32(totalCount),
 	}, nil
 }
 
 // GetByOperationNo 運行NOでイベント情報取得
-func (s *DTakoEventsService) GetByOperationNo(ctx context.Context, req *proto.GetDTakoEventsByOperationNoRequest) (*proto.ListDTakoEventsResponse, error) {
+func (s *DTakoEventsService) GetByOperationNo(ctx context.Context, req *proto.Db_GetDTakoEventsByOperationNoRequest) (*proto.Db_ListDTakoEventsResponse, error) {
 	events, err := s.repo.GetByOperationNo(req.OperationNo)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "failed to get events by operation_no: %v", err)
 	}
 
-	items := make([]*proto.DTakoEvents, len(events))
+	items := make([]*proto.Db_DTakoEvents, len(events))
 	for i, event := range events {
 		items[i] = dtakoEventsModelToProto(event)
 	}
 
-	return &proto.ListDTakoEventsResponse{
+	return &proto.Db_ListDTakoEventsResponse{
 		Items:      items,
 		TotalCount: int32(len(events)),
 	}, nil
 }
 
 // dtakoEventsModelToProto ModelからProtoへの変換
-func dtakoEventsModelToProto(model *mysql.DTakoEvents) *proto.DTakoEvents {
-	protoEvent := &proto.DTakoEvents{
+func dtakoEventsModelToProto(model *mysql.DTakoEvents) *proto.Db_DTakoEvents {
+	protoEvent := &proto.Db_DTakoEvents{
 		Id:              model.ID,
 		OperationNo:     model.OperationNo,
 		ReadDate:        model.ReadDate.Format("2006-01-02T15:04:05Z07:00"),

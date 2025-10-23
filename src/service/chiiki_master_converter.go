@@ -6,8 +6,8 @@ import (
 )
 
 // convertChiikiMasterToProto GORMモデルをProtoメッセージに変換
-func convertChiikiMasterToProto(m *ichibanboshi.ChiikiMaster) *pb.ChiikiMaster {
-	return &pb.ChiikiMaster{
+func convertChiikiMasterToProto(m *ichibanboshi.ChiikiMaster) *pb.Db_ChiikiMaster {
+	return &pb.Db_ChiikiMaster{
 		ChiikiC: m.ChiikiC,
 		ChiikiN: m.ChiikiN,
 		ChiikiR: m.ChiikiR,

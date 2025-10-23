@@ -90,18 +90,18 @@ func main() {
 
 	// サービスの登録
 	dtakoUriageKeihiService := service.NewDTakoUriageKeihiService(dtakoUriageKeihiRepo)
-	proto.RegisterDTakoUriageKeihiServiceServer(grpcServer, dtakoUriageKeihiService)
+	proto.RegisterDb_DTakoUriageKeihiServiceServer(grpcServer, dtakoUriageKeihiService)
 
 	etcMeisaiService := service.NewETCMeisaiService(etcMeisaiRepo)
-	proto.RegisterETCMeisaiServiceServer(grpcServer, etcMeisaiService)
+	proto.RegisterDb_ETCMeisaiServiceServer(grpcServer, etcMeisaiService)
 
 	dtakoFerryRowsService := service.NewDTakoFerryRowsService(dtakoFerryRowsRepo)
-	proto.RegisterDTakoFerryRowsServiceServer(grpcServer, dtakoFerryRowsService)
+	proto.RegisterDb_DTakoFerryRowsServiceServer(grpcServer, dtakoFerryRowsService)
 
 	// ETC明細マッピングサービスの登録
 	etcMeisaiMappingRepo := repository.NewETCMeisaiMappingRepository(db)
 	etcMeisaiMappingService := service.NewETCMeisaiMappingService(etcMeisaiMappingRepo)
-	proto.RegisterETCMeisaiMappingServiceServer(grpcServer, etcMeisaiMappingService)
+	proto.RegisterDb_ETCMeisaiMappingServiceServer(grpcServer, etcMeisaiMappingService)
 
 	// SQL Serverサービスの登録
 	if sqlServerDB != nil {
@@ -113,16 +113,16 @@ func main() {
 
 		// SQL Serverサービスの登録
 		untenNippoMeisaiService := service.NewUntenNippoMeisaiService(untenNippoMeisaiRepo)
-		proto.RegisterUntenNippoMeisaiServiceServer(grpcServer, untenNippoMeisaiService)
+		proto.RegisterDb_UntenNippoMeisaiServiceServer(grpcServer, untenNippoMeisaiService)
 
 		shainMasterService := service.NewShainMasterService(shainMasterRepo)
-		proto.RegisterShainMasterServiceServer(grpcServer, shainMasterService)
+		proto.RegisterDb_ShainMasterServiceServer(grpcServer, shainMasterService)
 
 		chiikiMasterService := service.NewChiikiMasterService(chiikiMasterRepo)
-		proto.RegisterChiikiMasterServiceServer(grpcServer, chiikiMasterService)
+		proto.RegisterDb_ChiikiMasterServiceServer(grpcServer, chiikiMasterService)
 
 		chikuMasterService := service.NewChikuMasterService(chikuMasterRepo)
-		proto.RegisterChikuMasterServiceServer(grpcServer, chikuMasterService)
+		proto.RegisterDb_ChikuMasterServiceServer(grpcServer, chikuMasterService)
 
 		log.Println("SQL Server services registered: UntenNippoMeisai, ShainMaster, ChiikiMaster, ChikuMaster")
 	}
