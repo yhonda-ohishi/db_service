@@ -1,0 +1,25 @@
+version: v2
+managed:
+  enabled: true
+plugins:
+  # Go code generation
+  - remote: buf.build/protocolbuffers/go
+    out: src/proto
+    opt: paths=source_relative
+  - remote: buf.build/grpc/go
+    out: src/proto
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
+
+  # OpenAPI/Swagger generation plugins
+  - remote: buf.build/grpc-ecosystem/gateway
+    out: src/proto
+    opt: paths=source_relative
+  - remote: buf.build/grpc-ecosystem/openapiv2
+    out: src/proto/swagger
+    opt:
+      - logtostderr=true
+      - generate_unbound_methods=true
+      - allow_merge=true
+      - merge_file_name=db_service

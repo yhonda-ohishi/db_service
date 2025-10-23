@@ -1,0 +1,12 @@
+version: v2
+modules:
+  - path: src/proto
+    name: buf.build/yhonda-ohishi/db-service
+deps:
+  - buf.build/googleapis/googleapis
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
