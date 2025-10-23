@@ -152,67 +152,67 @@ func NewServiceRegistry() *ServiceRegistry {
 // When new services are added to db_service, they will be automatically registered here
 func (r *ServiceRegistry) RegisterAll(server *grpc.Server) {
 	if r.ETCMeisaiService != nil {
-		dbproto.Db_RegisterETCMeisaiServiceServer(server, r.ETCMeisaiService)
+		dbproto.RegisterDb_ETCMeisaiServiceServer(server, r.ETCMeisaiService)
 		log.Println("Registered: ETCMeisaiService")
 	}
 	if r.DTakoUriageKeihiService != nil {
-		dbproto.Db_RegisterDTakoUriageKeihiServiceServer(server, r.DTakoUriageKeihiService)
+		dbproto.RegisterDb_DTakoUriageKeihiServiceServer(server, r.DTakoUriageKeihiService)
 		log.Println("Registered: DTakoUriageKeihiService")
 	}
 	if r.DTakoFerryRowsService != nil {
-		dbproto.Db_RegisterDTakoFerryRowsServiceServer(server, r.DTakoFerryRowsService)
+		dbproto.RegisterDb_DTakoFerryRowsServiceServer(server, r.DTakoFerryRowsService)
 		log.Println("Registered: DTakoFerryRowsService")
 	}
 	if r.ETCMeisaiMappingService != nil {
-		dbproto.Db_RegisterETCMeisaiMappingServiceServer(server, r.ETCMeisaiMappingService)
+		dbproto.RegisterDb_ETCMeisaiMappingServiceServer(server, r.ETCMeisaiMappingService)
 		log.Println("Registered: ETCMeisaiMappingService")
 	}
 
 	// Production DB services
 	if r.DTakoCarsService != nil {
-		dbproto.Db_RegisterDTakoCarsServiceServer(server, r.DTakoCarsService)
+		dbproto.RegisterDb_DTakoCarsServiceServer(server, r.DTakoCarsService)
 		log.Println("Registered: DTakoCarsService (Production DB)")
 	}
 	if r.DTakoEventsService != nil {
-		dbproto.Db_RegisterDTakoEventsServiceServer(server, r.DTakoEventsService)
+		dbproto.RegisterDb_DTakoEventsServiceServer(server, r.DTakoEventsService)
 		log.Println("Registered: DTakoEventsService (Production DB)")
 	}
 	if r.DTakoRowsService != nil {
-		dbproto.Db_RegisterDTakoRowsServiceServer(server, r.DTakoRowsService)
+		dbproto.RegisterDb_DTakoRowsServiceServer(server, r.DTakoRowsService)
 		log.Println("Registered: DTakoRowsService (Production DB)")
 	}
 	if r.ETCNumService != nil {
-		dbproto.Db_RegisterETCNumServiceServer(server, r.ETCNumService)
+		dbproto.RegisterDb_ETCNumServiceServer(server, r.ETCNumService)
 		log.Println("Registered: ETCNumService (Production DB)")
 	}
 	if r.DTakoFerryRowsProdService != nil {
-		dbproto.Db_RegisterDTakoFerryRowsProdServiceServer(server, r.DTakoFerryRowsProdService)
+		dbproto.RegisterDb_DTakoFerryRowsProdServiceServer(server, r.DTakoFerryRowsProdService)
 		log.Println("Registered: DTakoFerryRowsProdService (Production DB)")
 	}
 	if r.CarsService != nil {
-		dbproto.Db_RegisterCarsServiceServer(server, r.CarsService)
+		dbproto.RegisterDb_CarsServiceServer(server, r.CarsService)
 		log.Println("Registered: CarsService (Production DB)")
 	}
 	if r.DriversService != nil {
-		dbproto.Db_RegisterDriversServiceServer(server, r.DriversService)
+		dbproto.RegisterDb_DriversServiceServer(server, r.DriversService)
 		log.Println("Registered: DriversService (Production DB)")
 	}
 
 	// SQL Server services
 	if r.UntenNippoMeisaiService != nil {
-		dbproto.Db_RegisterUntenNippoMeisaiServiceServer(server, r.UntenNippoMeisaiService)
+		dbproto.RegisterDb_UntenNippoMeisaiServiceServer(server, r.UntenNippoMeisaiService)
 		log.Println("Registered: UntenNippoMeisaiService (SQL Server)")
 	}
 	if r.ShainMasterService != nil {
-		dbproto.Db_RegisterShainMasterServiceServer(server, r.ShainMasterService)
+		dbproto.RegisterDb_ShainMasterServiceServer(server, r.ShainMasterService)
 		log.Println("Registered: ShainMasterService (SQL Server)")
 	}
 	if r.ChiikiMasterService != nil {
-		dbproto.Db_RegisterChiikiMasterServiceServer(server, r.ChiikiMasterService)
+		dbproto.RegisterDb_ChiikiMasterServiceServer(server, r.ChiikiMasterService)
 		log.Println("Registered: ChiikiMasterService (SQL Server)")
 	}
 	if r.ChikuMasterService != nil {
-		dbproto.Db_RegisterChikuMasterServiceServer(server, r.ChikuMasterService)
+		dbproto.RegisterDb_ChikuMasterServiceServer(server, r.ChikuMasterService)
 		log.Println("Registered: ChikuMasterService (SQL Server)")
 	}
 
