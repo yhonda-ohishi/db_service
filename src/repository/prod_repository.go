@@ -132,7 +132,7 @@ func (r *DTakoEventsRepositoryImpl) GetByOperationNo(operationNo string, eventTy
 
 	// イベントタイプでフィルタ
 	if len(eventTypes) > 0 {
-		query = query.Where("イベント種類 IN ?", eventTypes)
+		query = query.Where("イベント名 IN ?", eventTypes)
 	}
 
 	// 開始時刻でフィルタ
