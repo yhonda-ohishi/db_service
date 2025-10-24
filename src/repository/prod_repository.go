@@ -1,6 +1,8 @@
 package repository
 
 import (
+	"time"
+
 	"github.com/yhonda-ohishi/db_service/src/config"
 	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 )
@@ -28,7 +30,7 @@ type DTakoCarsRepository interface {
 type DTakoEventsRepository interface {
 	GetAll(limit, offset int, orderBy string) ([]*mysql.DTakoEvents, int64, error)
 	GetByID(id int64) (*mysql.DTakoEvents, error)
-	GetByOperationNo(operationNo string) ([]*mysql.DTakoEvents, error)
+	GetByOperationNo(operationNo string, eventTypes []string, startTime, endTime *time.Time) ([]*mysql.DTakoEvents, error)
 }
 
 // DTakoCarsRepositoryImpl 実装
@@ -123,10 +125,27 @@ func (r *DTakoEventsRepositoryImpl) GetByID(id int64) (*mysql.DTakoEvents, error
 	return &event, nil
 }
 
-// GetByOperationNo 運行NOでイベント情報を取得
-func (r *DTakoEventsRepositoryImpl) GetByOperationNo(operationNo string) ([]*mysql.DTakoEvents, error) {
+// GetByOperationNo 運行NOでイベント情報を取得（フィルタ付き）
+func (r *DTakoEventsRepositoryImpl) GetByOperationNo(operationNo string, eventTypes []string, startTime, endTime *time.Time) ([]*mysql.DTakoEvents, error) {
 	var events []*mysql.DTakoEvents
-	if err := r.prodDB.DB.Where("運行NO = ?", operationNo).Order("開始日時 ASC").Find(&events).Error; err != nil {
+	query := r.prodDB.DB.Where("運行NO = ?", operationNo)
+
+	// イベントタイプでフィルタ
+	if len(eventTypes) > 0 {
+		query = query.Where("イベント種類 IN ?", eventTypes)
+	}
+
+	// 開始時刻でフィルタ
+	if startTime != nil {
+		query = query.Where("開始日時 >= ?", startTime)
+	}
+
+	// 終了時刻でフィルタ
+	if endTime != nil {
+		query = query.Where("開始日時 <= ?", endTime)
+	}
+
+	if err := query.Order("開始日時 ASC").Find(&events).Error; err != nil {
 		return nil, err
 	}
 	return events, nil

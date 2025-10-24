@@ -504,6 +504,9 @@ message db_GetDTakoEventsRequest {
 
 message db_GetDTakoEventsByOperationNoRequest {
   string operation_no = 1;
+  repeated string event_types = 2;  // イベントタイプでフィルタ（空の場合は全て）
+  string start_time = 3;  // 開始時刻（RFC3339形式、空の場合は制限なし）
+  string end_time = 4;    // 終了時刻（RFC3339形式、空の場合は制限なし）
 }
 
 message db_ListDTakoEventsRequest {

@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"time"
 
 	"github.com/yhonda-ohishi/db_service/src/models/mysql"
 	"github.com/yhonda-ohishi/db_service/src/proto"
@@ -68,7 +69,24 @@ func (s *DTakoEventsService) List(ctx context.Context, req *proto.Db_ListDTakoEv
 
 // GetByOperationNo 運行NOでイベント情報取得
 func (s *DTakoEventsService) GetByOperationNo(ctx context.Context, req *proto.Db_GetDTakoEventsByOperationNoRequest) (*proto.Db_ListDTakoEventsResponse, error) {
-	events, err := s.repo.GetByOperationNo(req.OperationNo)
+	// RFC3339形式の時刻文字列をパース
+	var startTime, endTime *time.Time
+	if req.StartTime != "" {
+		t, err := time.Parse(time.RFC3339, req.StartTime)
+		if err != nil {
+			return nil, status.Errorf(codes.InvalidArgument, "invalid start_time format: %v", err)
+		}
+		startTime = &t
+	}
+	if req.EndTime != "" {
+		t, err := time.Parse(time.RFC3339, req.EndTime)
+		if err != nil {
+			return nil, status.Errorf(codes.InvalidArgument, "invalid end_time format: %v", err)
+		}
+		endTime = &t
+	}
+
+	events, err := s.repo.GetByOperationNo(req.OperationNo, req.EventTypes, startTime, endTime)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "failed to get events by operation_no: %v", err)
 	}

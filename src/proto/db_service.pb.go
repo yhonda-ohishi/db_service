@@ -3270,6 +3270,9 @@ func (x *Db_GetDTakoEventsRequest) GetId() int64 {
 type Db_GetDTakoEventsByOperationNoRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	OperationNo   string                 `protobuf:"bytes,1,opt,name=operation_no,json=operationNo,proto3" json:"operation_no,omitempty"`
+	EventTypes    []string               `protobuf:"bytes,2,rep,name=event_types,json=eventTypes,proto3" json:"event_types,omitempty"` // イベントタイプでフィルタ（空の場合は全て）
+	StartTime     string                 `protobuf:"bytes,3,opt,name=start_time,json=startTime,proto3" json:"start_time,omitempty"`    // 開始時刻（RFC3339形式、空の場合は制限なし）
+	EndTime       string                 `protobuf:"bytes,4,opt,name=end_time,json=endTime,proto3" json:"end_time,omitempty"`          // 終了時刻（RFC3339形式、空の場合は制限なし）
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -3307,6 +3310,27 @@ func (*Db_GetDTakoEventsByOperationNoRequest) Descriptor() ([]byte, []int) {
 func (x *Db_GetDTakoEventsByOperationNoRequest) GetOperationNo() string {
 	if x != nil {
 		return x.OperationNo
+	}
+	return ""
+}
+
+func (x *Db_GetDTakoEventsByOperationNoRequest) GetEventTypes() []string {
+	if x != nil {
+		return x.EventTypes
+	}
+	return nil
+}
+
+func (x *Db_GetDTakoEventsByOperationNoRequest) GetStartTime() string {
+	if x != nil {
+		return x.StartTime
+	}
+	return ""
+}
+
+func (x *Db_GetDTakoEventsByOperationNoRequest) GetEndTime() string {
+	if x != nil {
+		return x.EndTime
 	}
 	return ""
 }
@@ -8175,9 +8199,14 @@ const file_db_service_proto_rawDesc = "" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
 	"totalCount\"*\n" +
 	"\x18db_GetDTakoEventsRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\x03R\x02id\"J\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"\xa5\x01\n" +
 	"%db_GetDTakoEventsByOperationNoRequest\x12!\n" +
-	"\foperation_no\x18\x01 \x01(\tR\voperationNo\"v\n" +
+	"\foperation_no\x18\x01 \x01(\tR\voperationNo\x12\x1f\n" +
+	"\vevent_types\x18\x02 \x03(\tR\n" +
+	"eventTypes\x12\x1d\n" +
+	"\n" +
+	"start_time\x18\x03 \x01(\tR\tstartTime\x12\x19\n" +
+	"\bend_time\x18\x04 \x01(\tR\aendTime\"v\n" +
 	"\x19db_ListDTakoEventsRequest\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x16\n" +
 	"\x06offset\x18\x02 \x01(\x05R\x06offset\x12\x1e\n" +

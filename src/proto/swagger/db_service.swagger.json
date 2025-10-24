@@ -2994,6 +2994,21 @@
       "properties": {
         "operationNo": {
           "type": "string"
+        },
+        "eventTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "イベントタイプでフィルタ（空の場合は全て）"
+        },
+        "startTime": {
+          "type": "string",
+          "title": "開始時刻（RFC3339形式、空の場合は制限なし）"
+        },
+        "endTime": {
+          "type": "string",
+          "title": "終了時刻（RFC3339形式、空の場合は制限なし）"
         }
       }
     },
