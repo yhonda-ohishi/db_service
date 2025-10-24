@@ -11,6 +11,32 @@ import (
 	"google.golang.org/grpc"
 )
 
+// RegistryOptions はサービス登録のオプション
+type RegistryOptions struct {
+	// 除外するサービス名のリスト
+	ExcludeServices []string
+}
+
+// RegistryOption は関数オプションの型
+type RegistryOption func(*RegistryOptions)
+
+// WithExcludeServices 指定したサービスを除外するオプション
+func WithExcludeServices(services ...string) RegistryOption {
+	return func(o *RegistryOptions) {
+		o.ExcludeServices = append(o.ExcludeServices, services...)
+	}
+}
+
+// isExcluded サービスが除外リストに含まれているかチェック
+func (o *RegistryOptions) isExcluded(serviceName string) bool {
+	for _, excluded := range o.ExcludeServices {
+		if excluded == serviceName {
+			return true
+		}
+	}
+	return false
+}
+
 // ServiceRegistry holds all db_service gRPC service implementations
 type ServiceRegistry struct {
 	// ローカルDB用サービス
@@ -33,11 +59,19 @@ type ServiceRegistry struct {
 	ShainMasterService      dbproto.Db_ShainMasterServiceServer
 	ChiikiMasterService     dbproto.Db_ChiikiMasterServiceServer
 	ChikuMasterService      dbproto.Db_ChikuMasterServiceServer
+
+	// オプション
+	options *RegistryOptions
 }
 
 // NewServiceRegistry creates a new service registry with all db_service services initialized
 // Returns nil if db_service initialization fails
-func NewServiceRegistry() *ServiceRegistry {
+func NewServiceRegistry(opts ...RegistryOption) *ServiceRegistry {
+	// デフォルトオプション
+	options := &RegistryOptions{}
+	for _, opt := range opts {
+		opt(options)
+	}
 	// Load db_service configuration
 	cfg, err := config.LoadConfig()
 	if err != nil {
@@ -144,6 +178,9 @@ func NewServiceRegistry() *ServiceRegistry {
 		ShainMasterService:      shainMasterService,
 		ChiikiMasterService:     chiikiMasterService,
 		ChikuMasterService:      chikuMasterService,
+
+		// オプション保存
+		options: options,
 	}
 }
 
@@ -173,11 +210,11 @@ func (r *ServiceRegistry) RegisterAll(server *grpc.Server) {
 		dbproto.RegisterDb_DTakoCarsServiceServer(server, r.DTakoCarsService)
 		log.Println("Registered: DTakoCarsService (Production DB)")
 	}
-	if r.DTakoEventsService != nil {
+	if r.DTakoEventsService != nil && !r.options.isExcluded("DTakoEventsService") {
 		dbproto.RegisterDb_DTakoEventsServiceServer(server, r.DTakoEventsService)
 		log.Println("Registered: DTakoEventsService (Production DB)")
 	}
-	if r.DTakoRowsService != nil {
+	if r.DTakoRowsService != nil && !r.options.isExcluded("DTakoRowsService") {
 		dbproto.RegisterDb_DTakoRowsServiceServer(server, r.DTakoRowsService)
 		log.Println("Registered: DTakoRowsService (Production DB)")
 	}
@@ -227,9 +264,12 @@ func (r *ServiceRegistry) RegisterAll(server *grpc.Server) {
 //	import "github.com/yhonda-ohishi/db_service/src/registry"
 //
 //	grpcServer := grpc.NewServer()
+//	// 全サービスを登録
 //	registry.Register(grpcServer)
-func Register(server *grpc.Server) *ServiceRegistry {
-	registry := NewServiceRegistry()
+//	// または特定のサービスを除外
+//	registry.Register(grpcServer, registry.WithExcludeServices("DTakoRowsService", "DTakoEventsService"))
+func Register(server *grpc.Server, opts ...RegistryOption) *ServiceRegistry {
+	registry := NewServiceRegistry(opts...)
 	if registry == nil {
 		log.Println("Warning: db_service not available, running without database services")
 		return nil
