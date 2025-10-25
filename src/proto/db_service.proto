@@ -786,6 +786,25 @@ service db_TimeCardService {
   }
 }
 
+// TimeCardDevサービス - タイムカードデータ管理（ローカルDB、読み書き可能）
+service db_TimeCardDevService {
+  // タイムカードデータ作成
+  rpc Create(db_CreateTimeCardRequest) returns (db_TimeCardResponse) {
+  }
+  // タイムカードデータ取得（複合主キー: datetime + id）
+  rpc Get(db_GetTimeCardRequest) returns (db_TimeCardResponse) {
+  }
+  // タイムカードデータ更新
+  rpc Update(db_UpdateTimeCardRequest) returns (db_TimeCardResponse) {
+  }
+  // タイムカードデータ削除
+  rpc Delete(db_DeleteTimeCardRequest) returns (db_Empty) {
+  }
+  // タイムカードデータ一覧取得
+  rpc List(db_ListTimeCardRequest) returns (db_ListTimeCardResponse) {
+  }
+}
+
 // db_UntenNippoMeisai メッセージ（106カラム全て）
 message db_UntenNippoMeisai {
   string nippo_k = 1;
@@ -1106,6 +1125,19 @@ message db_TimeCardResponse {
 message db_ListTimeCardResponse {
   repeated db_TimeCard items = 1;
   int32 total_count = 2;
+}
+
+message db_CreateTimeCardRequest {
+  db_TimeCard time_card = 1;
+}
+
+message db_UpdateTimeCardRequest {
+  db_TimeCard time_card = 1;
+}
+
+message db_DeleteTimeCardRequest {
+  string datetime = 1;  // RFC3339形式
+  int32 id = 2;
 }
 
 // 共通メッセージ

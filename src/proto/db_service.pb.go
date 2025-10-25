@@ -8108,6 +8108,146 @@ func (x *Db_ListTimeCardResponse) GetTotalCount() int32 {
 	return 0
 }
 
+type Db_CreateTimeCardRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TimeCard      *Db_TimeCard           `protobuf:"bytes,1,opt,name=time_card,json=timeCard,proto3" json:"time_card,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Db_CreateTimeCardRequest) Reset() {
+	*x = Db_CreateTimeCardRequest{}
+	mi := &file_db_service_proto_msgTypes[104]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Db_CreateTimeCardRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Db_CreateTimeCardRequest) ProtoMessage() {}
+
+func (x *Db_CreateTimeCardRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_db_service_proto_msgTypes[104]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Db_CreateTimeCardRequest.ProtoReflect.Descriptor instead.
+func (*Db_CreateTimeCardRequest) Descriptor() ([]byte, []int) {
+	return file_db_service_proto_rawDescGZIP(), []int{104}
+}
+
+func (x *Db_CreateTimeCardRequest) GetTimeCard() *Db_TimeCard {
+	if x != nil {
+		return x.TimeCard
+	}
+	return nil
+}
+
+type Db_UpdateTimeCardRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TimeCard      *Db_TimeCard           `protobuf:"bytes,1,opt,name=time_card,json=timeCard,proto3" json:"time_card,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Db_UpdateTimeCardRequest) Reset() {
+	*x = Db_UpdateTimeCardRequest{}
+	mi := &file_db_service_proto_msgTypes[105]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Db_UpdateTimeCardRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Db_UpdateTimeCardRequest) ProtoMessage() {}
+
+func (x *Db_UpdateTimeCardRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_db_service_proto_msgTypes[105]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Db_UpdateTimeCardRequest.ProtoReflect.Descriptor instead.
+func (*Db_UpdateTimeCardRequest) Descriptor() ([]byte, []int) {
+	return file_db_service_proto_rawDescGZIP(), []int{105}
+}
+
+func (x *Db_UpdateTimeCardRequest) GetTimeCard() *Db_TimeCard {
+	if x != nil {
+		return x.TimeCard
+	}
+	return nil
+}
+
+type Db_DeleteTimeCardRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Datetime      string                 `protobuf:"bytes,1,opt,name=datetime,proto3" json:"datetime,omitempty"` // RFC3339形式
+	Id            int32                  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Db_DeleteTimeCardRequest) Reset() {
+	*x = Db_DeleteTimeCardRequest{}
+	mi := &file_db_service_proto_msgTypes[106]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Db_DeleteTimeCardRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Db_DeleteTimeCardRequest) ProtoMessage() {}
+
+func (x *Db_DeleteTimeCardRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_db_service_proto_msgTypes[106]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Db_DeleteTimeCardRequest.ProtoReflect.Descriptor instead.
+func (*Db_DeleteTimeCardRequest) Descriptor() ([]byte, []int) {
+	return file_db_service_proto_rawDescGZIP(), []int{106}
+}
+
+func (x *Db_DeleteTimeCardRequest) GetDatetime() string {
+	if x != nil {
+		return x.Datetime
+	}
+	return ""
+}
+
+func (x *Db_DeleteTimeCardRequest) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
 // 共通メッセージ
 type Db_Empty struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -8117,7 +8257,7 @@ type Db_Empty struct {
 
 func (x *Db_Empty) Reset() {
 	*x = Db_Empty{}
-	mi := &file_db_service_proto_msgTypes[104]
+	mi := &file_db_service_proto_msgTypes[107]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -8129,7 +8269,7 @@ func (x *Db_Empty) String() string {
 func (*Db_Empty) ProtoMessage() {}
 
 func (x *Db_Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_db_service_proto_msgTypes[104]
+	mi := &file_db_service_proto_msgTypes[107]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -8142,7 +8282,7 @@ func (x *Db_Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Db_Empty.ProtoReflect.Descriptor instead.
 func (*Db_Empty) Descriptor() ([]byte, []int) {
-	return file_db_service_proto_rawDescGZIP(), []int{104}
+	return file_db_service_proto_rawDescGZIP(), []int{107}
 }
 
 var File_db_service_proto protoreflect.FileDescriptor
@@ -9085,7 +9225,14 @@ const file_db_service_proto_rawDesc = "" +
 	"\x17db_ListTimeCardResponse\x12-\n" +
 	"\x05items\x18\x01 \x03(\v2\x17.db_service.db_TimeCardR\x05items\x12\x1f\n" +
 	"\vtotal_count\x18\x02 \x01(\x05R\n" +
-	"totalCount\"\n" +
+	"totalCount\"P\n" +
+	"\x18db_CreateTimeCardRequest\x124\n" +
+	"\ttime_card\x18\x01 \x01(\v2\x17.db_service.db_TimeCardR\btimeCard\"P\n" +
+	"\x18db_UpdateTimeCardRequest\x124\n" +
+	"\ttime_card\x18\x01 \x01(\v2\x17.db_service.db_TimeCardR\btimeCard\"F\n" +
+	"\x18db_DeleteTimeCardRequest\x12\x1a\n" +
+	"\bdatetime\x18\x01 \x01(\tR\bdatetime\x12\x0e\n" +
+	"\x02id\x18\x02 \x01(\x05R\x02id\"\n" +
 	"\n" +
 	"\bdb_Empty2\xf2\x03\n" +
 	"\x1adb_DTakoUriageKeihiService\x12a\n" +
@@ -9161,6 +9308,12 @@ const file_db_service_proto_rawDesc = "" +
 	"\fGetByChiikiC\x12-.db_service.db_GetChikuMasterByChiikiCRequest\x1a&.db_service.db_ListChikuMasterResponse\"\x002\xb4\x01\n" +
 	"\x12db_TimeCardService\x12K\n" +
 	"\x03Get\x12!.db_service.db_GetTimeCardRequest\x1a\x1f.db_service.db_TimeCardResponse\"\x00\x12Q\n" +
+	"\x04List\x12\".db_service.db_ListTimeCardRequest\x1a#.db_service.db_ListTimeCardResponse\"\x002\xa5\x03\n" +
+	"\x15db_TimeCardDevService\x12Q\n" +
+	"\x06Create\x12$.db_service.db_CreateTimeCardRequest\x1a\x1f.db_service.db_TimeCardResponse\"\x00\x12K\n" +
+	"\x03Get\x12!.db_service.db_GetTimeCardRequest\x1a\x1f.db_service.db_TimeCardResponse\"\x00\x12Q\n" +
+	"\x06Update\x12$.db_service.db_UpdateTimeCardRequest\x1a\x1f.db_service.db_TimeCardResponse\"\x00\x12F\n" +
+	"\x06Delete\x12$.db_service.db_DeleteTimeCardRequest\x1a\x14.db_service.db_Empty\"\x00\x12Q\n" +
 	"\x04List\x12\".db_service.db_ListTimeCardRequest\x1a#.db_service.db_ListTimeCardResponse\"\x00B\x93\x01\n" +
 	"\x0ecom.db_serviceB\x0eDbServiceProtoP\x01Z-github.com/yhonda-ohishi/db_service/src/proto\xa2\x02\x03DXX\xaa\x02\tDbService\xca\x02\tDbService\xe2\x02\x15DbService\\GPBMetadata\xea\x02\tDbServiceb\x06proto3"
 
@@ -9176,7 +9329,7 @@ func file_db_service_proto_rawDescGZIP() []byte {
 	return file_db_service_proto_rawDescData
 }
 
-var file_db_service_proto_msgTypes = make([]protoimpl.MessageInfo, 105)
+var file_db_service_proto_msgTypes = make([]protoimpl.MessageInfo, 108)
 var file_db_service_proto_goTypes = []any{
 	(*Db_DTakoUriageKeihi)(nil),                      // 0: db_service.db_DTakoUriageKeihi
 	(*Db_ETCMeisai)(nil),                             // 1: db_service.db_ETCMeisai
@@ -9282,7 +9435,10 @@ var file_db_service_proto_goTypes = []any{
 	(*Db_ListTimeCardRequest)(nil),                   // 101: db_service.db_ListTimeCardRequest
 	(*Db_TimeCardResponse)(nil),                      // 102: db_service.db_TimeCardResponse
 	(*Db_ListTimeCardResponse)(nil),                  // 103: db_service.db_ListTimeCardResponse
-	(*Db_Empty)(nil),                                 // 104: db_service.db_Empty
+	(*Db_CreateTimeCardRequest)(nil),                 // 104: db_service.db_CreateTimeCardRequest
+	(*Db_UpdateTimeCardRequest)(nil),                 // 105: db_service.db_UpdateTimeCardRequest
+	(*Db_DeleteTimeCardRequest)(nil),                 // 106: db_service.db_DeleteTimeCardRequest
+	(*Db_Empty)(nil),                                 // 107: db_service.db_Empty
 }
 var file_db_service_proto_depIdxs = []int32{
 	0,   // 0: db_service.db_CreateDTakoUriageKeihiRequest.dtako_uriage_keihi:type_name -> db_service.db_DTakoUriageKeihi
@@ -9324,123 +9480,135 @@ var file_db_service_proto_depIdxs = []int32{
 	78,  // 36: db_service.db_ListChikuMasterResponse.items:type_name -> db_service.db_ChikuMaster
 	99,  // 37: db_service.db_TimeCardResponse.time_card:type_name -> db_service.db_TimeCard
 	99,  // 38: db_service.db_ListTimeCardResponse.items:type_name -> db_service.db_TimeCard
-	3,   // 39: db_service.db_DTakoUriageKeihiService.Create:input_type -> db_service.db_CreateDTakoUriageKeihiRequest
-	4,   // 40: db_service.db_DTakoUriageKeihiService.Get:input_type -> db_service.db_GetDTakoUriageKeihiRequest
-	5,   // 41: db_service.db_DTakoUriageKeihiService.Update:input_type -> db_service.db_UpdateDTakoUriageKeihiRequest
-	6,   // 42: db_service.db_DTakoUriageKeihiService.Delete:input_type -> db_service.db_DeleteDTakoUriageKeihiRequest
-	7,   // 43: db_service.db_DTakoUriageKeihiService.List:input_type -> db_service.db_ListDTakoUriageKeihiRequest
-	10,  // 44: db_service.db_ETCMeisaiService.Create:input_type -> db_service.db_CreateETCMeisaiRequest
-	11,  // 45: db_service.db_ETCMeisaiService.Get:input_type -> db_service.db_GetETCMeisaiRequest
-	12,  // 46: db_service.db_ETCMeisaiService.Update:input_type -> db_service.db_UpdateETCMeisaiRequest
-	13,  // 47: db_service.db_ETCMeisaiService.Delete:input_type -> db_service.db_DeleteETCMeisaiRequest
-	14,  // 48: db_service.db_ETCMeisaiService.List:input_type -> db_service.db_ListETCMeisaiRequest
-	17,  // 49: db_service.db_DTakoFerryRowsService.Create:input_type -> db_service.db_CreateDTakoFerryRowsRequest
-	18,  // 50: db_service.db_DTakoFerryRowsService.Get:input_type -> db_service.db_GetDTakoFerryRowsRequest
-	19,  // 51: db_service.db_DTakoFerryRowsService.Update:input_type -> db_service.db_UpdateDTakoFerryRowsRequest
-	20,  // 52: db_service.db_DTakoFerryRowsService.Delete:input_type -> db_service.db_DeleteDTakoFerryRowsRequest
-	21,  // 53: db_service.db_DTakoFerryRowsService.List:input_type -> db_service.db_ListDTakoFerryRowsRequest
-	25,  // 54: db_service.db_ETCMeisaiMappingService.Create:input_type -> db_service.db_CreateETCMeisaiMappingRequest
-	26,  // 55: db_service.db_ETCMeisaiMappingService.Get:input_type -> db_service.db_GetETCMeisaiMappingRequest
-	27,  // 56: db_service.db_ETCMeisaiMappingService.Update:input_type -> db_service.db_UpdateETCMeisaiMappingRequest
-	28,  // 57: db_service.db_ETCMeisaiMappingService.Delete:input_type -> db_service.db_DeleteETCMeisaiMappingRequest
-	29,  // 58: db_service.db_ETCMeisaiMappingService.List:input_type -> db_service.db_ListETCMeisaiMappingRequest
-	32,  // 59: db_service.db_ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> db_service.db_GetDTakoRowIDByHashRequest
-	38,  // 60: db_service.db_DTakoCarsService.Get:input_type -> db_service.db_GetDTakoCarsRequest
-	40,  // 61: db_service.db_DTakoCarsService.List:input_type -> db_service.db_ListDTakoCarsRequest
-	39,  // 62: db_service.db_DTakoCarsService.GetByCarCode:input_type -> db_service.db_GetDTakoCarsByCarCodeRequest
-	43,  // 63: db_service.db_DTakoEventsService.Get:input_type -> db_service.db_GetDTakoEventsRequest
-	45,  // 64: db_service.db_DTakoEventsService.List:input_type -> db_service.db_ListDTakoEventsRequest
-	44,  // 65: db_service.db_DTakoEventsService.GetByOperationNo:input_type -> db_service.db_GetDTakoEventsByOperationNoRequest
-	48,  // 66: db_service.db_DTakoRowsService.Get:input_type -> db_service.db_GetDTakoRowsRequest
-	50,  // 67: db_service.db_DTakoRowsService.List:input_type -> db_service.db_ListDTakoRowsRequest
-	49,  // 68: db_service.db_DTakoRowsService.GetByOperationNo:input_type -> db_service.db_GetDTakoRowsByOperationNoRequest
-	55,  // 69: db_service.db_ETCNumService.List:input_type -> db_service.db_ListETCNumRequest
-	53,  // 70: db_service.db_ETCNumService.GetByETCCardNum:input_type -> db_service.db_GetETCNumByETCCardNumRequest
-	54,  // 71: db_service.db_ETCNumService.GetByCarID:input_type -> db_service.db_GetETCNumByCarIDRequest
-	58,  // 72: db_service.db_DTakoFerryRowsProdService.Get:input_type -> db_service.db_GetDTakoFerryRowsProdRequest
-	60,  // 73: db_service.db_DTakoFerryRowsProdService.List:input_type -> db_service.db_ListDTakoFerryRowsProdRequest
-	59,  // 74: db_service.db_DTakoFerryRowsProdService.GetByUnkoNo:input_type -> db_service.db_GetDTakoFerryRowsProdByUnkoNoRequest
-	65,  // 75: db_service.db_CarsService.Get:input_type -> db_service.db_GetCarsRequest
-	67,  // 76: db_service.db_CarsService.List:input_type -> db_service.db_ListCarsRequest
-	66,  // 77: db_service.db_CarsService.GetByBumonCodeID:input_type -> db_service.db_GetCarsByBumonCodeIDRequest
-	70,  // 78: db_service.db_DriversService.Get:input_type -> db_service.db_GetDriversRequest
-	72,  // 79: db_service.db_DriversService.List:input_type -> db_service.db_ListDriversRequest
-	71,  // 80: db_service.db_DriversService.GetByBumon:input_type -> db_service.db_GetDriversByBumonRequest
-	79,  // 81: db_service.db_UntenNippoMeisaiService.Get:input_type -> db_service.db_GetUntenNippoMeisaiRequest
-	82,  // 82: db_service.db_UntenNippoMeisaiService.List:input_type -> db_service.db_ListUntenNippoMeisaiRequest
-	80,  // 83: db_service.db_UntenNippoMeisaiService.GetBySharyoC:input_type -> db_service.db_GetUntenNippoMeisaiBySharyoCRequest
-	81,  // 84: db_service.db_UntenNippoMeisaiService.GetByDateRange:input_type -> db_service.db_GetUntenNippoMeisaiByDateRangeRequest
-	85,  // 85: db_service.db_ShainMasterService.Get:input_type -> db_service.db_GetShainMasterRequest
-	87,  // 86: db_service.db_ShainMasterService.List:input_type -> db_service.db_ListShainMasterRequest
-	86,  // 87: db_service.db_ShainMasterService.GetByBumonC:input_type -> db_service.db_GetShainMasterByBumonCRequest
-	90,  // 88: db_service.db_ChiikiMasterService.Get:input_type -> db_service.db_GetChiikiMasterRequest
-	91,  // 89: db_service.db_ChiikiMasterService.List:input_type -> db_service.db_ListChiikiMasterRequest
-	94,  // 90: db_service.db_ChikuMasterService.Get:input_type -> db_service.db_GetChikuMasterRequest
-	96,  // 91: db_service.db_ChikuMasterService.List:input_type -> db_service.db_ListChikuMasterRequest
-	95,  // 92: db_service.db_ChikuMasterService.GetByChiikiC:input_type -> db_service.db_GetChikuMasterByChiikiCRequest
-	100, // 93: db_service.db_TimeCardService.Get:input_type -> db_service.db_GetTimeCardRequest
-	101, // 94: db_service.db_TimeCardService.List:input_type -> db_service.db_ListTimeCardRequest
-	8,   // 95: db_service.db_DTakoUriageKeihiService.Create:output_type -> db_service.db_DTakoUriageKeihiResponse
-	8,   // 96: db_service.db_DTakoUriageKeihiService.Get:output_type -> db_service.db_DTakoUriageKeihiResponse
-	8,   // 97: db_service.db_DTakoUriageKeihiService.Update:output_type -> db_service.db_DTakoUriageKeihiResponse
-	104, // 98: db_service.db_DTakoUriageKeihiService.Delete:output_type -> db_service.db_Empty
-	9,   // 99: db_service.db_DTakoUriageKeihiService.List:output_type -> db_service.db_ListDTakoUriageKeihiResponse
-	15,  // 100: db_service.db_ETCMeisaiService.Create:output_type -> db_service.db_ETCMeisaiResponse
-	15,  // 101: db_service.db_ETCMeisaiService.Get:output_type -> db_service.db_ETCMeisaiResponse
-	15,  // 102: db_service.db_ETCMeisaiService.Update:output_type -> db_service.db_ETCMeisaiResponse
-	104, // 103: db_service.db_ETCMeisaiService.Delete:output_type -> db_service.db_Empty
-	16,  // 104: db_service.db_ETCMeisaiService.List:output_type -> db_service.db_ListETCMeisaiResponse
-	22,  // 105: db_service.db_DTakoFerryRowsService.Create:output_type -> db_service.db_DTakoFerryRowsResponse
-	22,  // 106: db_service.db_DTakoFerryRowsService.Get:output_type -> db_service.db_DTakoFerryRowsResponse
-	22,  // 107: db_service.db_DTakoFerryRowsService.Update:output_type -> db_service.db_DTakoFerryRowsResponse
-	104, // 108: db_service.db_DTakoFerryRowsService.Delete:output_type -> db_service.db_Empty
-	23,  // 109: db_service.db_DTakoFerryRowsService.List:output_type -> db_service.db_ListDTakoFerryRowsResponse
-	30,  // 110: db_service.db_ETCMeisaiMappingService.Create:output_type -> db_service.db_ETCMeisaiMappingResponse
-	30,  // 111: db_service.db_ETCMeisaiMappingService.Get:output_type -> db_service.db_ETCMeisaiMappingResponse
-	30,  // 112: db_service.db_ETCMeisaiMappingService.Update:output_type -> db_service.db_ETCMeisaiMappingResponse
-	104, // 113: db_service.db_ETCMeisaiMappingService.Delete:output_type -> db_service.db_Empty
-	31,  // 114: db_service.db_ETCMeisaiMappingService.List:output_type -> db_service.db_ListETCMeisaiMappingResponse
-	33,  // 115: db_service.db_ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> db_service.db_GetDTakoRowIDByHashResponse
-	41,  // 116: db_service.db_DTakoCarsService.Get:output_type -> db_service.db_DTakoCarsResponse
-	42,  // 117: db_service.db_DTakoCarsService.List:output_type -> db_service.db_ListDTakoCarsResponse
-	41,  // 118: db_service.db_DTakoCarsService.GetByCarCode:output_type -> db_service.db_DTakoCarsResponse
-	46,  // 119: db_service.db_DTakoEventsService.Get:output_type -> db_service.db_DTakoEventsResponse
-	47,  // 120: db_service.db_DTakoEventsService.List:output_type -> db_service.db_ListDTakoEventsResponse
-	47,  // 121: db_service.db_DTakoEventsService.GetByOperationNo:output_type -> db_service.db_ListDTakoEventsResponse
-	51,  // 122: db_service.db_DTakoRowsService.Get:output_type -> db_service.db_DTakoRowsResponse
-	52,  // 123: db_service.db_DTakoRowsService.List:output_type -> db_service.db_ListDTakoRowsResponse
-	52,  // 124: db_service.db_DTakoRowsService.GetByOperationNo:output_type -> db_service.db_ListDTakoRowsResponse
-	56,  // 125: db_service.db_ETCNumService.List:output_type -> db_service.db_ListETCNumResponse
-	56,  // 126: db_service.db_ETCNumService.GetByETCCardNum:output_type -> db_service.db_ListETCNumResponse
-	56,  // 127: db_service.db_ETCNumService.GetByCarID:output_type -> db_service.db_ListETCNumResponse
-	61,  // 128: db_service.db_DTakoFerryRowsProdService.Get:output_type -> db_service.db_DTakoFerryRowsProdResponse
-	62,  // 129: db_service.db_DTakoFerryRowsProdService.List:output_type -> db_service.db_ListDTakoFerryRowsProdResponse
-	62,  // 130: db_service.db_DTakoFerryRowsProdService.GetByUnkoNo:output_type -> db_service.db_ListDTakoFerryRowsProdResponse
-	68,  // 131: db_service.db_CarsService.Get:output_type -> db_service.db_CarsResponse
-	69,  // 132: db_service.db_CarsService.List:output_type -> db_service.db_ListCarsResponse
-	69,  // 133: db_service.db_CarsService.GetByBumonCodeID:output_type -> db_service.db_ListCarsResponse
-	73,  // 134: db_service.db_DriversService.Get:output_type -> db_service.db_DriversResponse
-	74,  // 135: db_service.db_DriversService.List:output_type -> db_service.db_ListDriversResponse
-	74,  // 136: db_service.db_DriversService.GetByBumon:output_type -> db_service.db_ListDriversResponse
-	83,  // 137: db_service.db_UntenNippoMeisaiService.Get:output_type -> db_service.db_UntenNippoMeisaiResponse
-	84,  // 138: db_service.db_UntenNippoMeisaiService.List:output_type -> db_service.db_ListUntenNippoMeisaiResponse
-	84,  // 139: db_service.db_UntenNippoMeisaiService.GetBySharyoC:output_type -> db_service.db_ListUntenNippoMeisaiResponse
-	84,  // 140: db_service.db_UntenNippoMeisaiService.GetByDateRange:output_type -> db_service.db_ListUntenNippoMeisaiResponse
-	88,  // 141: db_service.db_ShainMasterService.Get:output_type -> db_service.db_ShainMasterResponse
-	89,  // 142: db_service.db_ShainMasterService.List:output_type -> db_service.db_ListShainMasterResponse
-	89,  // 143: db_service.db_ShainMasterService.GetByBumonC:output_type -> db_service.db_ListShainMasterResponse
-	92,  // 144: db_service.db_ChiikiMasterService.Get:output_type -> db_service.db_ChiikiMasterResponse
-	93,  // 145: db_service.db_ChiikiMasterService.List:output_type -> db_service.db_ListChiikiMasterResponse
-	97,  // 146: db_service.db_ChikuMasterService.Get:output_type -> db_service.db_ChikuMasterResponse
-	98,  // 147: db_service.db_ChikuMasterService.List:output_type -> db_service.db_ListChikuMasterResponse
-	98,  // 148: db_service.db_ChikuMasterService.GetByChiikiC:output_type -> db_service.db_ListChikuMasterResponse
-	102, // 149: db_service.db_TimeCardService.Get:output_type -> db_service.db_TimeCardResponse
-	103, // 150: db_service.db_TimeCardService.List:output_type -> db_service.db_ListTimeCardResponse
-	95,  // [95:151] is the sub-list for method output_type
-	39,  // [39:95] is the sub-list for method input_type
-	39,  // [39:39] is the sub-list for extension type_name
-	39,  // [39:39] is the sub-list for extension extendee
-	0,   // [0:39] is the sub-list for field type_name
+	99,  // 39: db_service.db_CreateTimeCardRequest.time_card:type_name -> db_service.db_TimeCard
+	99,  // 40: db_service.db_UpdateTimeCardRequest.time_card:type_name -> db_service.db_TimeCard
+	3,   // 41: db_service.db_DTakoUriageKeihiService.Create:input_type -> db_service.db_CreateDTakoUriageKeihiRequest
+	4,   // 42: db_service.db_DTakoUriageKeihiService.Get:input_type -> db_service.db_GetDTakoUriageKeihiRequest
+	5,   // 43: db_service.db_DTakoUriageKeihiService.Update:input_type -> db_service.db_UpdateDTakoUriageKeihiRequest
+	6,   // 44: db_service.db_DTakoUriageKeihiService.Delete:input_type -> db_service.db_DeleteDTakoUriageKeihiRequest
+	7,   // 45: db_service.db_DTakoUriageKeihiService.List:input_type -> db_service.db_ListDTakoUriageKeihiRequest
+	10,  // 46: db_service.db_ETCMeisaiService.Create:input_type -> db_service.db_CreateETCMeisaiRequest
+	11,  // 47: db_service.db_ETCMeisaiService.Get:input_type -> db_service.db_GetETCMeisaiRequest
+	12,  // 48: db_service.db_ETCMeisaiService.Update:input_type -> db_service.db_UpdateETCMeisaiRequest
+	13,  // 49: db_service.db_ETCMeisaiService.Delete:input_type -> db_service.db_DeleteETCMeisaiRequest
+	14,  // 50: db_service.db_ETCMeisaiService.List:input_type -> db_service.db_ListETCMeisaiRequest
+	17,  // 51: db_service.db_DTakoFerryRowsService.Create:input_type -> db_service.db_CreateDTakoFerryRowsRequest
+	18,  // 52: db_service.db_DTakoFerryRowsService.Get:input_type -> db_service.db_GetDTakoFerryRowsRequest
+	19,  // 53: db_service.db_DTakoFerryRowsService.Update:input_type -> db_service.db_UpdateDTakoFerryRowsRequest
+	20,  // 54: db_service.db_DTakoFerryRowsService.Delete:input_type -> db_service.db_DeleteDTakoFerryRowsRequest
+	21,  // 55: db_service.db_DTakoFerryRowsService.List:input_type -> db_service.db_ListDTakoFerryRowsRequest
+	25,  // 56: db_service.db_ETCMeisaiMappingService.Create:input_type -> db_service.db_CreateETCMeisaiMappingRequest
+	26,  // 57: db_service.db_ETCMeisaiMappingService.Get:input_type -> db_service.db_GetETCMeisaiMappingRequest
+	27,  // 58: db_service.db_ETCMeisaiMappingService.Update:input_type -> db_service.db_UpdateETCMeisaiMappingRequest
+	28,  // 59: db_service.db_ETCMeisaiMappingService.Delete:input_type -> db_service.db_DeleteETCMeisaiMappingRequest
+	29,  // 60: db_service.db_ETCMeisaiMappingService.List:input_type -> db_service.db_ListETCMeisaiMappingRequest
+	32,  // 61: db_service.db_ETCMeisaiMappingService.GetDTakoRowIDByHash:input_type -> db_service.db_GetDTakoRowIDByHashRequest
+	38,  // 62: db_service.db_DTakoCarsService.Get:input_type -> db_service.db_GetDTakoCarsRequest
+	40,  // 63: db_service.db_DTakoCarsService.List:input_type -> db_service.db_ListDTakoCarsRequest
+	39,  // 64: db_service.db_DTakoCarsService.GetByCarCode:input_type -> db_service.db_GetDTakoCarsByCarCodeRequest
+	43,  // 65: db_service.db_DTakoEventsService.Get:input_type -> db_service.db_GetDTakoEventsRequest
+	45,  // 66: db_service.db_DTakoEventsService.List:input_type -> db_service.db_ListDTakoEventsRequest
+	44,  // 67: db_service.db_DTakoEventsService.GetByOperationNo:input_type -> db_service.db_GetDTakoEventsByOperationNoRequest
+	48,  // 68: db_service.db_DTakoRowsService.Get:input_type -> db_service.db_GetDTakoRowsRequest
+	50,  // 69: db_service.db_DTakoRowsService.List:input_type -> db_service.db_ListDTakoRowsRequest
+	49,  // 70: db_service.db_DTakoRowsService.GetByOperationNo:input_type -> db_service.db_GetDTakoRowsByOperationNoRequest
+	55,  // 71: db_service.db_ETCNumService.List:input_type -> db_service.db_ListETCNumRequest
+	53,  // 72: db_service.db_ETCNumService.GetByETCCardNum:input_type -> db_service.db_GetETCNumByETCCardNumRequest
+	54,  // 73: db_service.db_ETCNumService.GetByCarID:input_type -> db_service.db_GetETCNumByCarIDRequest
+	58,  // 74: db_service.db_DTakoFerryRowsProdService.Get:input_type -> db_service.db_GetDTakoFerryRowsProdRequest
+	60,  // 75: db_service.db_DTakoFerryRowsProdService.List:input_type -> db_service.db_ListDTakoFerryRowsProdRequest
+	59,  // 76: db_service.db_DTakoFerryRowsProdService.GetByUnkoNo:input_type -> db_service.db_GetDTakoFerryRowsProdByUnkoNoRequest
+	65,  // 77: db_service.db_CarsService.Get:input_type -> db_service.db_GetCarsRequest
+	67,  // 78: db_service.db_CarsService.List:input_type -> db_service.db_ListCarsRequest
+	66,  // 79: db_service.db_CarsService.GetByBumonCodeID:input_type -> db_service.db_GetCarsByBumonCodeIDRequest
+	70,  // 80: db_service.db_DriversService.Get:input_type -> db_service.db_GetDriversRequest
+	72,  // 81: db_service.db_DriversService.List:input_type -> db_service.db_ListDriversRequest
+	71,  // 82: db_service.db_DriversService.GetByBumon:input_type -> db_service.db_GetDriversByBumonRequest
+	79,  // 83: db_service.db_UntenNippoMeisaiService.Get:input_type -> db_service.db_GetUntenNippoMeisaiRequest
+	82,  // 84: db_service.db_UntenNippoMeisaiService.List:input_type -> db_service.db_ListUntenNippoMeisaiRequest
+	80,  // 85: db_service.db_UntenNippoMeisaiService.GetBySharyoC:input_type -> db_service.db_GetUntenNippoMeisaiBySharyoCRequest
+	81,  // 86: db_service.db_UntenNippoMeisaiService.GetByDateRange:input_type -> db_service.db_GetUntenNippoMeisaiByDateRangeRequest
+	85,  // 87: db_service.db_ShainMasterService.Get:input_type -> db_service.db_GetShainMasterRequest
+	87,  // 88: db_service.db_ShainMasterService.List:input_type -> db_service.db_ListShainMasterRequest
+	86,  // 89: db_service.db_ShainMasterService.GetByBumonC:input_type -> db_service.db_GetShainMasterByBumonCRequest
+	90,  // 90: db_service.db_ChiikiMasterService.Get:input_type -> db_service.db_GetChiikiMasterRequest
+	91,  // 91: db_service.db_ChiikiMasterService.List:input_type -> db_service.db_ListChiikiMasterRequest
+	94,  // 92: db_service.db_ChikuMasterService.Get:input_type -> db_service.db_GetChikuMasterRequest
+	96,  // 93: db_service.db_ChikuMasterService.List:input_type -> db_service.db_ListChikuMasterRequest
+	95,  // 94: db_service.db_ChikuMasterService.GetByChiikiC:input_type -> db_service.db_GetChikuMasterByChiikiCRequest
+	100, // 95: db_service.db_TimeCardService.Get:input_type -> db_service.db_GetTimeCardRequest
+	101, // 96: db_service.db_TimeCardService.List:input_type -> db_service.db_ListTimeCardRequest
+	104, // 97: db_service.db_TimeCardDevService.Create:input_type -> db_service.db_CreateTimeCardRequest
+	100, // 98: db_service.db_TimeCardDevService.Get:input_type -> db_service.db_GetTimeCardRequest
+	105, // 99: db_service.db_TimeCardDevService.Update:input_type -> db_service.db_UpdateTimeCardRequest
+	106, // 100: db_service.db_TimeCardDevService.Delete:input_type -> db_service.db_DeleteTimeCardRequest
+	101, // 101: db_service.db_TimeCardDevService.List:input_type -> db_service.db_ListTimeCardRequest
+	8,   // 102: db_service.db_DTakoUriageKeihiService.Create:output_type -> db_service.db_DTakoUriageKeihiResponse
+	8,   // 103: db_service.db_DTakoUriageKeihiService.Get:output_type -> db_service.db_DTakoUriageKeihiResponse
+	8,   // 104: db_service.db_DTakoUriageKeihiService.Update:output_type -> db_service.db_DTakoUriageKeihiResponse
+	107, // 105: db_service.db_DTakoUriageKeihiService.Delete:output_type -> db_service.db_Empty
+	9,   // 106: db_service.db_DTakoUriageKeihiService.List:output_type -> db_service.db_ListDTakoUriageKeihiResponse
+	15,  // 107: db_service.db_ETCMeisaiService.Create:output_type -> db_service.db_ETCMeisaiResponse
+	15,  // 108: db_service.db_ETCMeisaiService.Get:output_type -> db_service.db_ETCMeisaiResponse
+	15,  // 109: db_service.db_ETCMeisaiService.Update:output_type -> db_service.db_ETCMeisaiResponse
+	107, // 110: db_service.db_ETCMeisaiService.Delete:output_type -> db_service.db_Empty
+	16,  // 111: db_service.db_ETCMeisaiService.List:output_type -> db_service.db_ListETCMeisaiResponse
+	22,  // 112: db_service.db_DTakoFerryRowsService.Create:output_type -> db_service.db_DTakoFerryRowsResponse
+	22,  // 113: db_service.db_DTakoFerryRowsService.Get:output_type -> db_service.db_DTakoFerryRowsResponse
+	22,  // 114: db_service.db_DTakoFerryRowsService.Update:output_type -> db_service.db_DTakoFerryRowsResponse
+	107, // 115: db_service.db_DTakoFerryRowsService.Delete:output_type -> db_service.db_Empty
+	23,  // 116: db_service.db_DTakoFerryRowsService.List:output_type -> db_service.db_ListDTakoFerryRowsResponse
+	30,  // 117: db_service.db_ETCMeisaiMappingService.Create:output_type -> db_service.db_ETCMeisaiMappingResponse
+	30,  // 118: db_service.db_ETCMeisaiMappingService.Get:output_type -> db_service.db_ETCMeisaiMappingResponse
+	30,  // 119: db_service.db_ETCMeisaiMappingService.Update:output_type -> db_service.db_ETCMeisaiMappingResponse
+	107, // 120: db_service.db_ETCMeisaiMappingService.Delete:output_type -> db_service.db_Empty
+	31,  // 121: db_service.db_ETCMeisaiMappingService.List:output_type -> db_service.db_ListETCMeisaiMappingResponse
+	33,  // 122: db_service.db_ETCMeisaiMappingService.GetDTakoRowIDByHash:output_type -> db_service.db_GetDTakoRowIDByHashResponse
+	41,  // 123: db_service.db_DTakoCarsService.Get:output_type -> db_service.db_DTakoCarsResponse
+	42,  // 124: db_service.db_DTakoCarsService.List:output_type -> db_service.db_ListDTakoCarsResponse
+	41,  // 125: db_service.db_DTakoCarsService.GetByCarCode:output_type -> db_service.db_DTakoCarsResponse
+	46,  // 126: db_service.db_DTakoEventsService.Get:output_type -> db_service.db_DTakoEventsResponse
+	47,  // 127: db_service.db_DTakoEventsService.List:output_type -> db_service.db_ListDTakoEventsResponse
+	47,  // 128: db_service.db_DTakoEventsService.GetByOperationNo:output_type -> db_service.db_ListDTakoEventsResponse
+	51,  // 129: db_service.db_DTakoRowsService.Get:output_type -> db_service.db_DTakoRowsResponse
+	52,  // 130: db_service.db_DTakoRowsService.List:output_type -> db_service.db_ListDTakoRowsResponse
+	52,  // 131: db_service.db_DTakoRowsService.GetByOperationNo:output_type -> db_service.db_ListDTakoRowsResponse
+	56,  // 132: db_service.db_ETCNumService.List:output_type -> db_service.db_ListETCNumResponse
+	56,  // 133: db_service.db_ETCNumService.GetByETCCardNum:output_type -> db_service.db_ListETCNumResponse
+	56,  // 134: db_service.db_ETCNumService.GetByCarID:output_type -> db_service.db_ListETCNumResponse
+	61,  // 135: db_service.db_DTakoFerryRowsProdService.Get:output_type -> db_service.db_DTakoFerryRowsProdResponse
+	62,  // 136: db_service.db_DTakoFerryRowsProdService.List:output_type -> db_service.db_ListDTakoFerryRowsProdResponse
+	62,  // 137: db_service.db_DTakoFerryRowsProdService.GetByUnkoNo:output_type -> db_service.db_ListDTakoFerryRowsProdResponse
+	68,  // 138: db_service.db_CarsService.Get:output_type -> db_service.db_CarsResponse
+	69,  // 139: db_service.db_CarsService.List:output_type -> db_service.db_ListCarsResponse
+	69,  // 140: db_service.db_CarsService.GetByBumonCodeID:output_type -> db_service.db_ListCarsResponse
+	73,  // 141: db_service.db_DriversService.Get:output_type -> db_service.db_DriversResponse
+	74,  // 142: db_service.db_DriversService.List:output_type -> db_service.db_ListDriversResponse
+	74,  // 143: db_service.db_DriversService.GetByBumon:output_type -> db_service.db_ListDriversResponse
+	83,  // 144: db_service.db_UntenNippoMeisaiService.Get:output_type -> db_service.db_UntenNippoMeisaiResponse
+	84,  // 145: db_service.db_UntenNippoMeisaiService.List:output_type -> db_service.db_ListUntenNippoMeisaiResponse
+	84,  // 146: db_service.db_UntenNippoMeisaiService.GetBySharyoC:output_type -> db_service.db_ListUntenNippoMeisaiResponse
+	84,  // 147: db_service.db_UntenNippoMeisaiService.GetByDateRange:output_type -> db_service.db_ListUntenNippoMeisaiResponse
+	88,  // 148: db_service.db_ShainMasterService.Get:output_type -> db_service.db_ShainMasterResponse
+	89,  // 149: db_service.db_ShainMasterService.List:output_type -> db_service.db_ListShainMasterResponse
+	89,  // 150: db_service.db_ShainMasterService.GetByBumonC:output_type -> db_service.db_ListShainMasterResponse
+	92,  // 151: db_service.db_ChiikiMasterService.Get:output_type -> db_service.db_ChiikiMasterResponse
+	93,  // 152: db_service.db_ChiikiMasterService.List:output_type -> db_service.db_ListChiikiMasterResponse
+	97,  // 153: db_service.db_ChikuMasterService.Get:output_type -> db_service.db_ChikuMasterResponse
+	98,  // 154: db_service.db_ChikuMasterService.List:output_type -> db_service.db_ListChikuMasterResponse
+	98,  // 155: db_service.db_ChikuMasterService.GetByChiikiC:output_type -> db_service.db_ListChikuMasterResponse
+	102, // 156: db_service.db_TimeCardService.Get:output_type -> db_service.db_TimeCardResponse
+	103, // 157: db_service.db_TimeCardService.List:output_type -> db_service.db_ListTimeCardResponse
+	102, // 158: db_service.db_TimeCardDevService.Create:output_type -> db_service.db_TimeCardResponse
+	102, // 159: db_service.db_TimeCardDevService.Get:output_type -> db_service.db_TimeCardResponse
+	102, // 160: db_service.db_TimeCardDevService.Update:output_type -> db_service.db_TimeCardResponse
+	107, // 161: db_service.db_TimeCardDevService.Delete:output_type -> db_service.db_Empty
+	103, // 162: db_service.db_TimeCardDevService.List:output_type -> db_service.db_ListTimeCardResponse
+	102, // [102:163] is the sub-list for method output_type
+	41,  // [41:102] is the sub-list for method input_type
+	41,  // [41:41] is the sub-list for extension type_name
+	41,  // [41:41] is the sub-list for extension extendee
+	0,   // [0:41] is the sub-list for field type_name
 }
 
 func init() { file_db_service_proto_init() }
@@ -9482,9 +9650,9 @@ func file_db_service_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_db_service_proto_rawDesc), len(file_db_service_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   105,
+			NumMessages:   108,
 			NumExtensions: 0,
-			NumServices:   16,
+			NumServices:   17,
 		},
 		GoTypes:           file_db_service_proto_goTypes,
 		DependencyIndexes: file_db_service_proto_depIdxs,

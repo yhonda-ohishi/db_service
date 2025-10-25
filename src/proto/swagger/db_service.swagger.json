@@ -52,6 +52,9 @@
     },
     {
       "name": "db_TimeCardService"
+    },
+    {
+      "name": "db_TimeCardDevService"
     }
   ],
   "consumes": [
@@ -1703,6 +1706,171 @@
         ]
       }
     },
+    "/db_service.db_TimeCardDevService/Create": {
+      "post": {
+        "summary": "タイムカードデータ作成",
+        "operationId": "db_TimeCardDevService_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_TimeCardResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_CreateTimeCardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardDevService"
+        ]
+      }
+    },
+    "/db_service.db_TimeCardDevService/Delete": {
+      "post": {
+        "summary": "タイムカードデータ削除",
+        "operationId": "db_TimeCardDevService_Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_Empty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DeleteTimeCardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardDevService"
+        ]
+      }
+    },
+    "/db_service.db_TimeCardDevService/Get": {
+      "post": {
+        "summary": "タイムカードデータ取得（複合主キー: datetime + id）",
+        "operationId": "db_TimeCardDevService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_TimeCardResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetTimeCardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardDevService"
+        ]
+      }
+    },
+    "/db_service.db_TimeCardDevService/List": {
+      "post": {
+        "summary": "タイムカードデータ一覧取得",
+        "operationId": "db_TimeCardDevService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListTimeCardResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListTimeCardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardDevService"
+        ]
+      }
+    },
+    "/db_service.db_TimeCardDevService/Update": {
+      "post": {
+        "summary": "タイムカードデータ更新",
+        "operationId": "db_TimeCardDevService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_TimeCardResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_UpdateTimeCardRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardDevService"
+        ]
+      }
+    },
     "/db_service.db_TimeCardService/Get": {
       "post": {
         "summary": "タイムカードデータ取得（複合主キー: datetime + id）",
@@ -2129,6 +2297,14 @@
         }
       },
       "title": "ETCMeisai用"
+    },
+    "db_servicedb_CreateTimeCardRequest": {
+      "type": "object",
+      "properties": {
+        "timeCard": {
+          "$ref": "#/definitions/db_servicedb_TimeCard"
+        }
+      }
     },
     "db_servicedb_DTakoCars": {
       "type": "object",
@@ -2816,6 +2992,19 @@
         "id": {
           "type": "string",
           "format": "int64"
+        }
+      }
+    },
+    "db_servicedb_DeleteTimeCardRequest": {
+      "type": "object",
+      "properties": {
+        "datetime": {
+          "type": "string",
+          "title": "RFC3339形式"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
         }
       }
     },
@@ -4419,6 +4608,14 @@
       "properties": {
         "etcMeisai": {
           "$ref": "#/definitions/db_servicedb_ETCMeisai"
+        }
+      }
+    },
+    "db_servicedb_UpdateTimeCardRequest": {
+      "type": "object",
+      "properties": {
+        "timeCard": {
+          "$ref": "#/definitions/db_servicedb_TimeCard"
         }
       }
     },

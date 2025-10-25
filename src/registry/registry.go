@@ -44,6 +44,7 @@ type ServiceRegistry struct {
 	DTakoUriageKeihiService dbproto.Db_DTakoUriageKeihiServiceServer
 	DTakoFerryRowsService   dbproto.Db_DTakoFerryRowsServiceServer
 	ETCMeisaiMappingService dbproto.Db_ETCMeisaiMappingServiceServer
+	TimeCardDevService      dbproto.Db_TimeCardDevServiceServer
 
 	// 本番DB用サービス（読み取り専用）
 	DTakoCarsService         dbproto.Db_DTakoCarsServiceServer
@@ -98,6 +99,7 @@ func NewServiceRegistry(opts ...RegistryOption) *ServiceRegistry {
 	etcMeisaiRepo := repository.NewETCMeisaiRepository(db)
 	dtakoFerryRowsRepo := repository.NewDTakoFerryRowsRepository(db)
 	etcMeisaiMappingRepo := repository.NewETCMeisaiMappingRepository(db)
+	timeCardDevRepo := repository.NewTimeCardDevRepository(db)
 
 	// Initialize production DB connection (optional)
 	prodDB, err := config.NewProdDatabase()
@@ -167,6 +169,7 @@ func NewServiceRegistry(opts ...RegistryOption) *ServiceRegistry {
 		DTakoUriageKeihiService: service.NewDTakoUriageKeihiService(dtakoUriageKeihiRepo),
 		DTakoFerryRowsService:   service.NewDTakoFerryRowsService(dtakoFerryRowsRepo),
 		ETCMeisaiMappingService: service.NewETCMeisaiMappingService(etcMeisaiMappingRepo),
+		TimeCardDevService:      service.NewTimeCardDevService(timeCardDevRepo),
 
 		// Production DB services (may be nil if prod DB not available)
 		DTakoCarsService:         dtakoCarsService,
@@ -208,6 +211,10 @@ func (r *ServiceRegistry) RegisterAll(server *grpc.Server) {
 	if r.ETCMeisaiMappingService != nil {
 		dbproto.RegisterDb_ETCMeisaiMappingServiceServer(server, r.ETCMeisaiMappingService)
 		log.Println("Registered: ETCMeisaiMappingService")
+	}
+	if r.TimeCardDevService != nil {
+		dbproto.RegisterDb_TimeCardDevServiceServer(server, r.TimeCardDevService)
+		log.Println("Registered: TimeCardDevService (Local DB)")
 	}
 
 	// Production DB services
