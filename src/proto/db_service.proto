@@ -776,6 +776,16 @@ service db_ChikuMasterService {
   }
 }
 
+// TimeCardサービス - タイムカードデータ管理（本番DB、読み取り専用）
+service db_TimeCardService {
+  // タイムカードデータ取得（複合主キー: datetime + id）
+  rpc Get(db_GetTimeCardRequest) returns (db_TimeCardResponse) {
+  }
+  // タイムカードデータ一覧取得
+  rpc List(db_ListTimeCardRequest) returns (db_ListTimeCardResponse) {
+  }
+}
+
 // db_UntenNippoMeisai メッセージ（106カラム全て）
 message db_UntenNippoMeisai {
   string nippo_k = 1;
@@ -1064,6 +1074,37 @@ message db_ChikuMasterResponse {
 
 message db_ListChikuMasterResponse {
   repeated db_ChikuMaster items = 1;
+  int32 total_count = 2;
+}
+
+// TimeCard用メッセージ
+message db_TimeCard {
+  string datetime = 1;      // RFC3339形式
+  int32 id = 2;
+  string machine_ip = 3;
+  string state = 4;
+  optional string state_detail = 5;
+  string created = 6;       // RFC3339形式
+  string modified = 7;      // RFC3339形式
+}
+
+message db_GetTimeCardRequest {
+  string datetime = 1;  // RFC3339形式
+  int32 id = 2;
+}
+
+message db_ListTimeCardRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+  optional string order_by = 3;  // 例: "datetime DESC", "id ASC"
+}
+
+message db_TimeCardResponse {
+  db_TimeCard time_card = 1;
+}
+
+message db_ListTimeCardResponse {
+  repeated db_TimeCard items = 1;
   int32 total_count = 2;
 }
 

@@ -53,6 +53,7 @@ type ServiceRegistry struct {
 	DTakoFerryRowsProdService dbproto.Db_DTakoFerryRowsProdServiceServer
 	CarsService              dbproto.Db_CarsServiceServer
 	DriversService           dbproto.Db_DriversServiceServer
+	TimeCardService          dbproto.Db_TimeCardServiceServer
 
 	// SQL Server (ichibanboshi) 用サービス（読み取り専用）
 	UntenNippoMeisaiService dbproto.Db_UntenNippoMeisaiServiceServer
@@ -107,6 +108,7 @@ func NewServiceRegistry(opts ...RegistryOption) *ServiceRegistry {
 	var dtakoFerryRowsProdService dbproto.Db_DTakoFerryRowsProdServiceServer
 	var carsService dbproto.Db_CarsServiceServer
 	var driversService dbproto.Db_DriversServiceServer
+	var timeCardService dbproto.Db_TimeCardServiceServer
 
 	// Initialize SQL Server (ichibanboshi) connection (optional)
 	sqlServerDB, sqlErr := config.NewSQLServerDatabase()
@@ -124,6 +126,7 @@ func NewServiceRegistry(opts ...RegistryOption) *ServiceRegistry {
 		dtakoFerryRowsProdRepo := repository.NewDTakoFerryRowsProdRepository(prodDB)
 		carsRepo := repository.NewCarsRepository(prodDB)
 		driversRepo := repository.NewDriversRepository(prodDB)
+		timeCardRepo := repository.NewTimeCardRepository(prodDB)
 
 		// Initialize production DB services
 		dtakoCarsService = service.NewDTakoCarsService(dtakoCarsRepo)
@@ -133,6 +136,7 @@ func NewServiceRegistry(opts ...RegistryOption) *ServiceRegistry {
 		dtakoFerryRowsProdService = service.NewDTakoFerryRowsProdService(dtakoFerryRowsProdRepo)
 		carsService = service.NewCarsService(carsRepo)
 		driversService = service.NewDriversService(driversRepo)
+		timeCardService = service.NewTimeCardService(timeCardRepo)
 
 		log.Println("Production DB services initialized successfully")
 	} else {
@@ -172,6 +176,7 @@ func NewServiceRegistry(opts ...RegistryOption) *ServiceRegistry {
 		DTakoFerryRowsProdService: dtakoFerryRowsProdService,
 		CarsService:              carsService,
 		DriversService:           driversService,
+		TimeCardService:          timeCardService,
 
 		// SQL Server services (may be nil if SQL Server not available)
 		UntenNippoMeisaiService: untenNippoMeisaiService,
@@ -233,6 +238,10 @@ func (r *ServiceRegistry) RegisterAll(server *grpc.Server) {
 	if r.DriversService != nil {
 		dbproto.RegisterDb_DriversServiceServer(server, r.DriversService)
 		log.Println("Registered: DriversService (Production DB)")
+	}
+	if r.TimeCardService != nil {
+		dbproto.RegisterDb_TimeCardServiceServer(server, r.TimeCardService)
+		log.Println("Registered: TimeCardService (Production DB)")
 	}
 
 	// SQL Server services

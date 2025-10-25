@@ -33,6 +33,12 @@ type DTakoEventsRepository interface {
 	GetByOperationNo(operationNo string, eventTypes []string, startTime, endTime *time.Time) ([]*mysql.DTakoEvents, error)
 }
 
+// TimeCardRepository インターフェース
+type TimeCardRepository interface {
+	GetAll(limit, offset int, orderBy string) ([]*mysql.TimeCard, int64, error)
+	GetByCompositeKey(datetime time.Time, id int) (*mysql.TimeCard, error)
+}
+
 // DTakoCarsRepositoryImpl 実装
 type DTakoCarsRepositoryImpl struct {
 	*ProdRepository
@@ -149,4 +155,50 @@ func (r *DTakoEventsRepositoryImpl) GetByOperationNo(operationNo string, eventTy
 		return nil, err
 	}
 	return events, nil
+}
+
+// TimeCardRepositoryImpl 実装
+type TimeCardRepositoryImpl struct {
+	*ProdRepository
+}
+
+// NewTimeCardRepository TimeCardリポジトリのコンストラクタ
+func NewTimeCardRepository(prodDB *config.ProdDatabase) TimeCardRepository {
+	return &TimeCardRepositoryImpl{
+		ProdRepository: NewProdRepository(prodDB),
+	}
+}
+
+// GetAll 全タイムカードデータを取得
+func (r *TimeCardRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*mysql.TimeCard, int64, error) {
+	var timeCards []*mysql.TimeCard
+	var totalCount int64
+
+	// 総件数を取得
+	if err := r.prodDB.DB.Model(&mysql.TimeCard{}).Count(&totalCount).Error; err != nil {
+		return nil, 0, err
+	}
+
+	// データを取得
+	query := r.prodDB.DB.Limit(limit).Offset(offset)
+	if orderBy != "" {
+		query = query.Order(orderBy)
+	} else {
+		query = query.Order("datetime DESC")
+	}
+
+	if err := query.Find(&timeCards).Error; err != nil {
+		return nil, 0, err
+	}
+
+	return timeCards, totalCount, nil
+}
+
+// GetByCompositeKey 複合主キー（datetime + id）でタイムカードデータを取得
+func (r *TimeCardRepositoryImpl) GetByCompositeKey(datetime time.Time, id int) (*mysql.TimeCard, error) {
+	var timeCard mysql.TimeCard
+	if err := r.prodDB.DB.Where("datetime = ? AND id = ?", datetime, id).First(&timeCard).Error; err != nil {
+		return nil, err
+	}
+	return &timeCard, nil
 }

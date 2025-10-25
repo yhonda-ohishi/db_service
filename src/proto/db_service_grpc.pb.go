@@ -3143,3 +3143,149 @@ var Db_ChikuMasterService_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "db_service.proto",
 }
+
+const (
+	Db_TimeCardService_Get_FullMethodName  = "/db_service.db_TimeCardService/Get"
+	Db_TimeCardService_List_FullMethodName = "/db_service.db_TimeCardService/List"
+)
+
+// Db_TimeCardServiceClient is the client API for Db_TimeCardService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// TimeCardサービス - タイムカードデータ管理（本番DB、読み取り専用）
+type Db_TimeCardServiceClient interface {
+	// タイムカードデータ取得（複合主キー: datetime + id）
+	Get(ctx context.Context, in *Db_GetTimeCardRequest, opts ...grpc.CallOption) (*Db_TimeCardResponse, error)
+	// タイムカードデータ一覧取得
+	List(ctx context.Context, in *Db_ListTimeCardRequest, opts ...grpc.CallOption) (*Db_ListTimeCardResponse, error)
+}
+
+type db_TimeCardServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewDb_TimeCardServiceClient(cc grpc.ClientConnInterface) Db_TimeCardServiceClient {
+	return &db_TimeCardServiceClient{cc}
+}
+
+func (c *db_TimeCardServiceClient) Get(ctx context.Context, in *Db_GetTimeCardRequest, opts ...grpc.CallOption) (*Db_TimeCardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Db_TimeCardResponse)
+	err := c.cc.Invoke(ctx, Db_TimeCardService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *db_TimeCardServiceClient) List(ctx context.Context, in *Db_ListTimeCardRequest, opts ...grpc.CallOption) (*Db_ListTimeCardResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Db_ListTimeCardResponse)
+	err := c.cc.Invoke(ctx, Db_TimeCardService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// Db_TimeCardServiceServer is the server API for Db_TimeCardService service.
+// All implementations should embed UnimplementedDb_TimeCardServiceServer
+// for forward compatibility.
+//
+// TimeCardサービス - タイムカードデータ管理（本番DB、読み取り専用）
+type Db_TimeCardServiceServer interface {
+	// タイムカードデータ取得（複合主キー: datetime + id）
+	Get(context.Context, *Db_GetTimeCardRequest) (*Db_TimeCardResponse, error)
+	// タイムカードデータ一覧取得
+	List(context.Context, *Db_ListTimeCardRequest) (*Db_ListTimeCardResponse, error)
+}
+
+// UnimplementedDb_TimeCardServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedDb_TimeCardServiceServer struct{}
+
+func (UnimplementedDb_TimeCardServiceServer) Get(context.Context, *Db_GetTimeCardRequest) (*Db_TimeCardResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedDb_TimeCardServiceServer) List(context.Context, *Db_ListTimeCardRequest) (*Db_ListTimeCardResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedDb_TimeCardServiceServer) testEmbeddedByValue() {}
+
+// UnsafeDb_TimeCardServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_TimeCardServiceServer will
+// result in compilation errors.
+type UnsafeDb_TimeCardServiceServer interface {
+	mustEmbedUnimplementedDb_TimeCardServiceServer()
+}
+
+func RegisterDb_TimeCardServiceServer(s grpc.ServiceRegistrar, srv Db_TimeCardServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_TimeCardServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&Db_TimeCardService_ServiceDesc, srv)
+}
+
+func _Db_TimeCardService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetTimeCardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(Db_TimeCardServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Db_TimeCardService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(Db_TimeCardServiceServer).Get(ctx, req.(*Db_GetTimeCardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Db_TimeCardService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListTimeCardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(Db_TimeCardServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Db_TimeCardService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(Db_TimeCardServiceServer).List(ctx, req.(*Db_ListTimeCardRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// Db_TimeCardService_ServiceDesc is the grpc.ServiceDesc for Db_TimeCardService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var Db_TimeCardService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_TimeCardService",
+	HandlerType: (*Db_TimeCardServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Get",
+			Handler:    _Db_TimeCardService_Get_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _Db_TimeCardService_List_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "db_service.proto",
+}
