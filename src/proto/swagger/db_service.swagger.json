@@ -55,6 +55,9 @@
     },
     {
       "name": "db_TimeCardDevService"
+    },
+    {
+      "name": "db_TimeCardLogService"
     }
   ],
   "consumes": [
@@ -1871,6 +1874,204 @@
         ]
       }
     },
+    "/db_service.db_TimeCardLogService/Create": {
+      "post": {
+        "summary": "タイムカードログ作成",
+        "operationId": "db_TimeCardLogService_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_TimeCardLogResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_CreateTimeCardLogRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardLogService"
+        ]
+      }
+    },
+    "/db_service.db_TimeCardLogService/Delete": {
+      "post": {
+        "summary": "タイムカードログ削除",
+        "operationId": "db_TimeCardLogService_Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_Empty"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_DeleteTimeCardLogRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardLogService"
+        ]
+      }
+    },
+    "/db_service.db_TimeCardLogService/Get": {
+      "post": {
+        "summary": "タイムカードログ取得（複合主キー: datetime + id）",
+        "operationId": "db_TimeCardLogService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_TimeCardLogResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetTimeCardLogRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardLogService"
+        ]
+      }
+    },
+    "/db_service.db_TimeCardLogService/GetByCardID": {
+      "post": {
+        "summary": "カードIDでタイムカードログ取得",
+        "operationId": "db_TimeCardLogService_GetByCardID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListTimeCardLogResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_GetByCardIDRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardLogService"
+        ]
+      }
+    },
+    "/db_service.db_TimeCardLogService/List": {
+      "post": {
+        "summary": "タイムカードログ一覧取得",
+        "operationId": "db_TimeCardLogService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListTimeCardLogResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_ListTimeCardLogRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardLogService"
+        ]
+      }
+    },
+    "/db_service.db_TimeCardLogService/Update": {
+      "post": {
+        "summary": "タイムカードログ更新",
+        "operationId": "db_TimeCardLogService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_TimeCardLogResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/db_servicedb_UpdateTimeCardLogRequest"
+            }
+          }
+        ],
+        "tags": [
+          "db_TimeCardLogService"
+        ]
+      }
+    },
     "/db_service.db_TimeCardService/Get": {
       "post": {
         "summary": "タイムカードデータ取得（複合主キー: datetime + id）",
@@ -2297,6 +2498,14 @@
         }
       },
       "title": "ETCMeisai用"
+    },
+    "db_servicedb_CreateTimeCardLogRequest": {
+      "type": "object",
+      "properties": {
+        "log": {
+          "$ref": "#/definitions/db_servicedb_TimeCardLog"
+        }
+      }
     },
     "db_servicedb_CreateTimeCardRequest": {
       "type": "object",
@@ -2995,6 +3204,20 @@
         }
       }
     },
+    "db_servicedb_DeleteTimeCardLogRequest": {
+      "type": "object",
+      "properties": {
+        "datetime": {
+          "type": "string",
+          "title": "RFC3339形式のタイムスタンプ"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "title": "ユーザーID"
+        }
+      }
+    },
     "db_servicedb_DeleteTimeCardRequest": {
       "type": "object",
       "properties": {
@@ -3185,6 +3408,22 @@
     "db_servicedb_Empty": {
       "type": "object",
       "title": "共通メッセージ"
+    },
+    "db_servicedb_GetByCardIDRequest": {
+      "type": "object",
+      "properties": {
+        "cardId": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     },
     "db_servicedb_GetCarsByBumonCodeIDRequest": {
       "type": "object",
@@ -3427,6 +3666,20 @@
         }
       },
       "title": "ShainMaster用リクエスト/レスポンス"
+    },
+    "db_servicedb_GetTimeCardLogRequest": {
+      "type": "object",
+      "properties": {
+        "datetime": {
+          "type": "string",
+          "title": "RFC3339形式のタイムスタンプ"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "title": "ユーザーID"
+        }
+      }
     },
     "db_servicedb_GetTimeCardRequest": {
       "type": "object",
@@ -3951,6 +4204,39 @@
         }
       }
     },
+    "db_servicedb_ListTimeCardLogRequest": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "orderBy": {
+          "type": "string",
+          "title": "例: \"datetime DESC\""
+        }
+      }
+    },
+    "db_servicedb_ListTimeCardLogResponse": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/db_servicedb_TimeCardLog"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
     "db_servicedb_ListTimeCardRequest": {
       "type": "object",
       "properties": {
@@ -4191,6 +4477,53 @@
         }
       },
       "title": "TimeCard用メッセージ"
+    },
+    "db_servicedb_TimeCardLog": {
+      "type": "object",
+      "properties": {
+        "datetime": {
+          "type": "string",
+          "title": "RFC3339形式のタイムスタンプ"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "title": "ユーザーID（0はゲスト/不明）"
+        },
+        "cardId": {
+          "type": "string",
+          "title": "カードID（FeliCa UIDなど）"
+        },
+        "machineIp": {
+          "type": "string",
+          "title": "マシンIP/Reader ID"
+        },
+        "state": {
+          "type": "string",
+          "title": "状態: in/out"
+        },
+        "stateDetail": {
+          "type": "string",
+          "title": "状態詳細（オプション）"
+        },
+        "created": {
+          "type": "string",
+          "title": "RFC3339形式"
+        },
+        "modified": {
+          "type": "string",
+          "title": "RFC3339形式"
+        }
+      },
+      "title": "TimeCardLog メッセージ"
+    },
+    "db_servicedb_TimeCardLogResponse": {
+      "type": "object",
+      "properties": {
+        "log": {
+          "$ref": "#/definitions/db_servicedb_TimeCardLog"
+        }
+      }
     },
     "db_servicedb_TimeCardResponse": {
       "type": "object",
@@ -4608,6 +4941,14 @@
       "properties": {
         "etcMeisai": {
           "$ref": "#/definitions/db_servicedb_ETCMeisai"
+        }
+      }
+    },
+    "db_servicedb_UpdateTimeCardLogRequest": {
+      "type": "object",
+      "properties": {
+        "log": {
+          "$ref": "#/definitions/db_servicedb_TimeCardLog"
         }
       }
     },

@@ -805,6 +805,28 @@ service db_TimeCardDevService {
   }
 }
 
+// db_TimeCardLogServiceサービス - タイムカードログデータ管理（ローカルDB）
+service db_TimeCardLogService {
+  // タイムカードログ作成
+  rpc Create(db_CreateTimeCardLogRequest) returns (db_TimeCardLogResponse) {
+  }
+  // タイムカードログ取得（複合主キー: datetime + id）
+  rpc Get(db_GetTimeCardLogRequest) returns (db_TimeCardLogResponse) {
+  }
+  // タイムカードログ更新
+  rpc Update(db_UpdateTimeCardLogRequest) returns (db_TimeCardLogResponse) {
+  }
+  // タイムカードログ削除
+  rpc Delete(db_DeleteTimeCardLogRequest) returns (db_Empty) {
+  }
+  // タイムカードログ一覧取得
+  rpc List(db_ListTimeCardLogRequest) returns (db_ListTimeCardLogResponse) {
+  }
+  // カードIDでタイムカードログ取得
+  rpc GetByCardID(db_GetByCardIDRequest) returns (db_ListTimeCardLogResponse) {
+  }
+}
+
 // db_UntenNippoMeisai メッセージ（106カラム全て）
 message db_UntenNippoMeisai {
   string nippo_k = 1;
@@ -1138,6 +1160,57 @@ message db_UpdateTimeCardRequest {
 message db_DeleteTimeCardRequest {
   string datetime = 1;  // RFC3339形式
   int32 id = 2;
+}
+
+// TimeCardLog メッセージ
+message db_TimeCardLog {
+  string datetime = 1;              // RFC3339形式のタイムスタンプ
+  int32 id = 2;                     // ユーザーID（0はゲスト/不明）
+  string card_id = 3;               // カードID（FeliCa UIDなど）
+  string machine_ip = 4;            // マシンIP/Reader ID
+  string state = 5;                 // 状態: in/out
+  optional string state_detail = 6; // 状態詳細（オプション）
+  string created = 7;               // RFC3339形式
+  string modified = 8;              // RFC3339形式
+}
+
+message db_CreateTimeCardLogRequest {
+  db_TimeCardLog log = 1;
+}
+
+message db_GetTimeCardLogRequest {
+  string datetime = 1;  // RFC3339形式のタイムスタンプ
+  int32 id = 2;         // ユーザーID
+}
+
+message db_UpdateTimeCardLogRequest {
+  db_TimeCardLog log = 1;
+}
+
+message db_DeleteTimeCardLogRequest {
+  string datetime = 1;  // RFC3339形式のタイムスタンプ
+  int32 id = 2;         // ユーザーID
+}
+
+message db_ListTimeCardLogRequest {
+  int32 limit = 1;
+  int32 offset = 2;
+  optional string order_by = 3;  // 例: "datetime DESC"
+}
+
+message db_GetByCardIDRequest {
+  string card_id = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+
+message db_TimeCardLogResponse {
+  db_TimeCardLog log = 1;
+}
+
+message db_ListTimeCardLogResponse {
+  repeated db_TimeCardLog items = 1;
+  int32 total_count = 2;
 }
 
 // 共通メッセージ

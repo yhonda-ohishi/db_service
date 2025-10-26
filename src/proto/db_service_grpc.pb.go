@@ -3555,3 +3555,309 @@ var Db_TimeCardDevService_ServiceDesc = grpc.ServiceDesc{
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "db_service.proto",
 }
+
+const (
+	Db_TimeCardLogService_Create_FullMethodName      = "/db_service.db_TimeCardLogService/Create"
+	Db_TimeCardLogService_Get_FullMethodName         = "/db_service.db_TimeCardLogService/Get"
+	Db_TimeCardLogService_Update_FullMethodName      = "/db_service.db_TimeCardLogService/Update"
+	Db_TimeCardLogService_Delete_FullMethodName      = "/db_service.db_TimeCardLogService/Delete"
+	Db_TimeCardLogService_List_FullMethodName        = "/db_service.db_TimeCardLogService/List"
+	Db_TimeCardLogService_GetByCardID_FullMethodName = "/db_service.db_TimeCardLogService/GetByCardID"
+)
+
+// Db_TimeCardLogServiceClient is the client API for Db_TimeCardLogService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
+//
+// db_TimeCardLogServiceサービス - タイムカードログデータ管理（ローカルDB）
+type Db_TimeCardLogServiceClient interface {
+	// タイムカードログ作成
+	Create(ctx context.Context, in *Db_CreateTimeCardLogRequest, opts ...grpc.CallOption) (*Db_TimeCardLogResponse, error)
+	// タイムカードログ取得（複合主キー: datetime + id）
+	Get(ctx context.Context, in *Db_GetTimeCardLogRequest, opts ...grpc.CallOption) (*Db_TimeCardLogResponse, error)
+	// タイムカードログ更新
+	Update(ctx context.Context, in *Db_UpdateTimeCardLogRequest, opts ...grpc.CallOption) (*Db_TimeCardLogResponse, error)
+	// タイムカードログ削除
+	Delete(ctx context.Context, in *Db_DeleteTimeCardLogRequest, opts ...grpc.CallOption) (*Db_Empty, error)
+	// タイムカードログ一覧取得
+	List(ctx context.Context, in *Db_ListTimeCardLogRequest, opts ...grpc.CallOption) (*Db_ListTimeCardLogResponse, error)
+	// カードIDでタイムカードログ取得
+	GetByCardID(ctx context.Context, in *Db_GetByCardIDRequest, opts ...grpc.CallOption) (*Db_ListTimeCardLogResponse, error)
+}
+
+type db_TimeCardLogServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewDb_TimeCardLogServiceClient(cc grpc.ClientConnInterface) Db_TimeCardLogServiceClient {
+	return &db_TimeCardLogServiceClient{cc}
+}
+
+func (c *db_TimeCardLogServiceClient) Create(ctx context.Context, in *Db_CreateTimeCardLogRequest, opts ...grpc.CallOption) (*Db_TimeCardLogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Db_TimeCardLogResponse)
+	err := c.cc.Invoke(ctx, Db_TimeCardLogService_Create_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *db_TimeCardLogServiceClient) Get(ctx context.Context, in *Db_GetTimeCardLogRequest, opts ...grpc.CallOption) (*Db_TimeCardLogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Db_TimeCardLogResponse)
+	err := c.cc.Invoke(ctx, Db_TimeCardLogService_Get_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *db_TimeCardLogServiceClient) Update(ctx context.Context, in *Db_UpdateTimeCardLogRequest, opts ...grpc.CallOption) (*Db_TimeCardLogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Db_TimeCardLogResponse)
+	err := c.cc.Invoke(ctx, Db_TimeCardLogService_Update_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *db_TimeCardLogServiceClient) Delete(ctx context.Context, in *Db_DeleteTimeCardLogRequest, opts ...grpc.CallOption) (*Db_Empty, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Db_Empty)
+	err := c.cc.Invoke(ctx, Db_TimeCardLogService_Delete_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *db_TimeCardLogServiceClient) List(ctx context.Context, in *Db_ListTimeCardLogRequest, opts ...grpc.CallOption) (*Db_ListTimeCardLogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Db_ListTimeCardLogResponse)
+	err := c.cc.Invoke(ctx, Db_TimeCardLogService_List_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *db_TimeCardLogServiceClient) GetByCardID(ctx context.Context, in *Db_GetByCardIDRequest, opts ...grpc.CallOption) (*Db_ListTimeCardLogResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(Db_ListTimeCardLogResponse)
+	err := c.cc.Invoke(ctx, Db_TimeCardLogService_GetByCardID_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// Db_TimeCardLogServiceServer is the server API for Db_TimeCardLogService service.
+// All implementations should embed UnimplementedDb_TimeCardLogServiceServer
+// for forward compatibility.
+//
+// db_TimeCardLogServiceサービス - タイムカードログデータ管理（ローカルDB）
+type Db_TimeCardLogServiceServer interface {
+	// タイムカードログ作成
+	Create(context.Context, *Db_CreateTimeCardLogRequest) (*Db_TimeCardLogResponse, error)
+	// タイムカードログ取得（複合主キー: datetime + id）
+	Get(context.Context, *Db_GetTimeCardLogRequest) (*Db_TimeCardLogResponse, error)
+	// タイムカードログ更新
+	Update(context.Context, *Db_UpdateTimeCardLogRequest) (*Db_TimeCardLogResponse, error)
+	// タイムカードログ削除
+	Delete(context.Context, *Db_DeleteTimeCardLogRequest) (*Db_Empty, error)
+	// タイムカードログ一覧取得
+	List(context.Context, *Db_ListTimeCardLogRequest) (*Db_ListTimeCardLogResponse, error)
+	// カードIDでタイムカードログ取得
+	GetByCardID(context.Context, *Db_GetByCardIDRequest) (*Db_ListTimeCardLogResponse, error)
+}
+
+// UnimplementedDb_TimeCardLogServiceServer should be embedded to have
+// forward compatible implementations.
+//
+// NOTE: this should be embedded by value instead of pointer to avoid a nil
+// pointer dereference when methods are called.
+type UnimplementedDb_TimeCardLogServiceServer struct{}
+
+func (UnimplementedDb_TimeCardLogServiceServer) Create(context.Context, *Db_CreateTimeCardLogRequest) (*Db_TimeCardLogResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+}
+func (UnimplementedDb_TimeCardLogServiceServer) Get(context.Context, *Db_GetTimeCardLogRequest) (*Db_TimeCardLogResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
+}
+func (UnimplementedDb_TimeCardLogServiceServer) Update(context.Context, *Db_UpdateTimeCardLogRequest) (*Db_TimeCardLogResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
+}
+func (UnimplementedDb_TimeCardLogServiceServer) Delete(context.Context, *Db_DeleteTimeCardLogRequest) (*Db_Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
+}
+func (UnimplementedDb_TimeCardLogServiceServer) List(context.Context, *Db_ListTimeCardLogRequest) (*Db_ListTimeCardLogResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (UnimplementedDb_TimeCardLogServiceServer) GetByCardID(context.Context, *Db_GetByCardIDRequest) (*Db_ListTimeCardLogResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetByCardID not implemented")
+}
+func (UnimplementedDb_TimeCardLogServiceServer) testEmbeddedByValue() {}
+
+// UnsafeDb_TimeCardLogServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to Db_TimeCardLogServiceServer will
+// result in compilation errors.
+type UnsafeDb_TimeCardLogServiceServer interface {
+	mustEmbedUnimplementedDb_TimeCardLogServiceServer()
+}
+
+func RegisterDb_TimeCardLogServiceServer(s grpc.ServiceRegistrar, srv Db_TimeCardLogServiceServer) {
+	// If the following call pancis, it indicates UnimplementedDb_TimeCardLogServiceServer was
+	// embedded by pointer and is nil.  This will cause panics if an
+	// unimplemented method is ever invoked, so we test this at initialization
+	// time to prevent it from happening at runtime later due to I/O.
+	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
+		t.testEmbeddedByValue()
+	}
+	s.RegisterService(&Db_TimeCardLogService_ServiceDesc, srv)
+}
+
+func _Db_TimeCardLogService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_CreateTimeCardLogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(Db_TimeCardLogServiceServer).Create(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Db_TimeCardLogService_Create_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(Db_TimeCardLogServiceServer).Create(ctx, req.(*Db_CreateTimeCardLogRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Db_TimeCardLogService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetTimeCardLogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(Db_TimeCardLogServiceServer).Get(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Db_TimeCardLogService_Get_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(Db_TimeCardLogServiceServer).Get(ctx, req.(*Db_GetTimeCardLogRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Db_TimeCardLogService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_UpdateTimeCardLogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(Db_TimeCardLogServiceServer).Update(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Db_TimeCardLogService_Update_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(Db_TimeCardLogServiceServer).Update(ctx, req.(*Db_UpdateTimeCardLogRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Db_TimeCardLogService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_DeleteTimeCardLogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(Db_TimeCardLogServiceServer).Delete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Db_TimeCardLogService_Delete_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(Db_TimeCardLogServiceServer).Delete(ctx, req.(*Db_DeleteTimeCardLogRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Db_TimeCardLogService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_ListTimeCardLogRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(Db_TimeCardLogServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Db_TimeCardLogService_List_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(Db_TimeCardLogServiceServer).List(ctx, req.(*Db_ListTimeCardLogRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Db_TimeCardLogService_GetByCardID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Db_GetByCardIDRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(Db_TimeCardLogServiceServer).GetByCardID(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Db_TimeCardLogService_GetByCardID_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(Db_TimeCardLogServiceServer).GetByCardID(ctx, req.(*Db_GetByCardIDRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+// Db_TimeCardLogService_ServiceDesc is the grpc.ServiceDesc for Db_TimeCardLogService service.
+// It's only intended for direct use with grpc.RegisterService,
+// and not to be introspected or modified (even as a copy)
+var Db_TimeCardLogService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "db_service.db_TimeCardLogService",
+	HandlerType: (*Db_TimeCardLogServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Create",
+			Handler:    _Db_TimeCardLogService_Create_Handler,
+		},
+		{
+			MethodName: "Get",
+			Handler:    _Db_TimeCardLogService_Get_Handler,
+		},
+		{
+			MethodName: "Update",
+			Handler:    _Db_TimeCardLogService_Update_Handler,
+		},
+		{
+			MethodName: "Delete",
+			Handler:    _Db_TimeCardLogService_Delete_Handler,
+		},
+		{
+			MethodName: "List",
+			Handler:    _Db_TimeCardLogService_List_Handler,
+		},
+		{
+			MethodName: "GetByCardID",
+			Handler:    _Db_TimeCardLogService_GetByCardID_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "db_service.proto",
+}

@@ -88,3 +88,96 @@ func (r *TimeCardDevRepositoryImpl) GetAll(limit, offset int, orderBy string) ([
 func (r *TimeCardDevRepositoryImpl) Delete(datetime time.Time, id int) error {
 	return r.db.Where("datetime = ? AND id = ?", datetime, id).Delete(&mysql.TimeCard{}).Error
 }
+
+// TimeCardLogRepository インターフェース
+type TimeCardLogRepository interface {
+	Create(log *mysql.TimeCardLog) error
+	Update(log *mysql.TimeCardLog) error
+	GetByCompositeKey(datetime string, id int) (*mysql.TimeCardLog, error)
+	GetAll(limit, offset int, orderBy string) ([]*mysql.TimeCardLog, int64, error)
+	GetByCardID(cardID string, limit, offset int) ([]*mysql.TimeCardLog, int64, error)
+	Delete(datetime string, id int) error
+}
+
+// TimeCardLogRepositoryImpl 実装
+type TimeCardLogRepositoryImpl struct {
+	*DevRepository
+}
+
+// NewTimeCardLogRepository TimeCardLogRepositoryのコンストラクタ
+func NewTimeCardLogRepository(db *gorm.DB) TimeCardLogRepository {
+	return &TimeCardLogRepositoryImpl{
+		DevRepository: NewDevRepository(db),
+	}
+}
+
+// Create タイムカードログ作成
+func (r *TimeCardLogRepositoryImpl) Create(log *mysql.TimeCardLog) error {
+	return r.db.Create(log).Error
+}
+
+// Update タイムカードログ更新
+func (r *TimeCardLogRepositoryImpl) Update(log *mysql.TimeCardLog) error {
+	return r.db.Save(log).Error
+}
+
+// GetByCompositeKey 複合主キー（datetime + id）でタイムカードログを取得
+func (r *TimeCardLogRepositoryImpl) GetByCompositeKey(datetime string, id int) (*mysql.TimeCardLog, error) {
+	var log mysql.TimeCardLog
+	if err := r.db.Where("datetime = ? AND id = ?", datetime, id).First(&log).Error; err != nil {
+		return nil, err
+	}
+	return &log, nil
+}
+
+// GetAll 全タイムカードログを取得
+func (r *TimeCardLogRepositoryImpl) GetAll(limit, offset int, orderBy string) ([]*mysql.TimeCardLog, int64, error) {
+	var logs []*mysql.TimeCardLog
+	var totalCount int64
+
+	// 総件数を取得
+	if err := r.db.Model(&mysql.TimeCardLog{}).Count(&totalCount).Error; err != nil {
+		return nil, 0, err
+	}
+
+	// データを取得
+	query := r.db.Limit(limit).Offset(offset)
+	if orderBy != "" {
+		query = query.Order(orderBy)
+	} else {
+		query = query.Order("datetime DESC")
+	}
+
+	if err := query.Find(&logs).Error; err != nil {
+		return nil, 0, err
+	}
+
+	return logs, totalCount, nil
+}
+
+// GetByCardID カードIDでタイムカードログを取得
+func (r *TimeCardLogRepositoryImpl) GetByCardID(cardID string, limit, offset int) ([]*mysql.TimeCardLog, int64, error) {
+	var logs []*mysql.TimeCardLog
+	var totalCount int64
+
+	// 総件数を取得
+	if err := r.db.Model(&mysql.TimeCardLog{}).Where("card_id = ?", cardID).Count(&totalCount).Error; err != nil {
+		return nil, 0, err
+	}
+
+	// データを取得
+	if err := r.db.Where("card_id = ?", cardID).
+		Order("datetime DESC").
+		Limit(limit).
+		Offset(offset).
+		Find(&logs).Error; err != nil {
+		return nil, 0, err
+	}
+
+	return logs, totalCount, nil
+}
+
+// Delete タイムカードログ削除
+func (r *TimeCardLogRepositoryImpl) Delete(datetime string, id int) error {
+	return r.db.Where("datetime = ? AND id = ?", datetime, id).Delete(&mysql.TimeCardLog{}).Error
+}
