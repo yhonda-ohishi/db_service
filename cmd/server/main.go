@@ -1,11 +1,13 @@
 package main
 
 import (
+	"context"
 	"log"
 	"net"
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"github.com/yhonda-ohishi/db_service/src/config"
 	"github.com/yhonda-ohishi/db_service/src/proto"
@@ -145,17 +147,55 @@ func main() {
 	log.Printf("gRPC server starting on %s", cfg.GetGRPCAddress())
 
 	// グレースフルシャットダウンの設定
-	go func() {
-		sigChan := make(chan os.Signal, 1)
-		signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM)
-		<-sigChan
+	sigChan := make(chan os.Signal, 1)
+	signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM)
 
-		log.Println("Shutting down gRPC server...")
-		grpcServer.GracefulStop()
+	// エラーチャネル
+	errChan := make(chan error, 1)
+
+	// サーバーを別ゴルーチンで起動
+	go func() {
+		if err := grpcServer.Serve(listener); err != nil {
+			errChan <- err
+		}
 	}()
 
-	// サーバーの起動
-	if err := grpcServer.Serve(listener); err != nil {
-		log.Fatalf("Failed to serve gRPC: %v", err)
+	// シャットダウンシグナルまたはエラーを待機
+	select {
+	case sig := <-sigChan:
+		log.Printf("Received signal: %v", sig)
+	case err := <-errChan:
+		log.Printf("Server error: %v", err)
 	}
+
+	// グレースフルシャットダウン開始
+	log.Println("Initiating graceful shutdown...")
+
+	// シャットダウン用のコンテキスト（30秒タイムアウト）
+	shutdownCtx, shutdownCancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer shutdownCancel()
+
+	// gRPCサーバーのグレースフルシャットダウン
+	done := make(chan struct{})
+	go func() {
+		grpcServer.GracefulStop()
+		close(done)
+	}()
+
+	// タイムアウトまたは完了を待機
+	select {
+	case <-done:
+		log.Println("gRPC server stopped gracefully")
+	case <-shutdownCtx.Done():
+		log.Println("Graceful shutdown timeout, forcing stop...")
+		grpcServer.Stop()
+	}
+
+	// データベース接続のクリーンアップ
+	log.Println("Cleaning up database connections...")
+
+	// メインデータベースのクローズはdeferで処理される
+	// 本番DBとSQL Serverのクローズもdeferで処理される
+
+	log.Println("Shutdown complete")
 }
