@@ -53,7 +53,8 @@ func LoadConfig() (*Config, error) {
 	}
 
 	// gRPC設定
-	config.GRPCPort = getEnvAsInt("GRPC_PORT", 50051)
+	// PORT環境変数を優先、なければGRPC_PORT、デフォルトは50051
+	config.GRPCPort = getEnvAsInt("PORT", getEnvAsInt("GRPC_PORT", 50051))
 
 	// 接続プール設定
 	config.MaxOpenConns = getEnvAsInt("DB_MAX_OPEN_CONNS", 25)

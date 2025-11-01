@@ -15,7 +15,8 @@
       "Bash(go build:*)",
       "Bash(go test:*)",
       "Bash(buf generate:*)",
-      "Bash(mysql -h 172.18.21.35 -u pbi -pkikuraku -D db1 -e \"SHOW TABLES LIKE ''%driv%'';\")"
+      "Bash(mysql -h 172.18.21.35 -u pbi -pkikuraku -D db1 -e \"SHOW TABLES LIKE ''%driv%'';\")",
+      "Bash(git remote set-url:*)"
     ],
     "deny": [],
     "ask": []
