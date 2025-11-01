@@ -2,12 +2,16 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net"
+	"net/http"
 	"os"
 	"os/signal"
+	"strings"
 	"time"
 
+	"github.com/soheilhy/cmux"
 	"github.com/yhonda-ohishi/db_service/src/config"
 	"github.com/yhonda-ohishi/db_service/src/proto"
 	"github.com/yhonda-ohishi/db_service/src/repository"
@@ -143,7 +147,7 @@ func main() {
 		log.Fatalf("Failed to listen on %s: %v", cfg.GetGRPCAddress(), err)
 	}
 
-	log.Printf("gRPC server starting on %s", cfg.GetGRPCAddress())
+	log.Printf("Server starting on %s (gRPC + HTTP)", cfg.GetGRPCAddress())
 
 	// グレースフルシャットダウンの設定
 	sigChan := make(chan os.Signal, 1)
@@ -151,12 +155,75 @@ func main() {
 	signal.Notify(sigChan, getShutdownSignals()...)
 	log.Println("Signal handlers registered for graceful shutdown")
 
+	// HTTPシャットダウンチャネル
+	httpShutdownChan := make(chan struct{}, 1)
+
+	// HTTPシャットダウンハンドラー
+	httpMux := http.NewServeMux()
+	httpMux.HandleFunc("/shutdown", func(w http.ResponseWriter, r *http.Request) {
+		// ローカルホストからのアクセスのみ許可
+		remoteAddr := r.RemoteAddr
+		if !strings.HasPrefix(remoteAddr, "127.0.0.1:") &&
+		   !strings.HasPrefix(remoteAddr, "[::1]:") &&
+		   !strings.HasPrefix(remoteAddr, "localhost:") {
+			http.Error(w, "Forbidden: only localhost access allowed", http.StatusForbidden)
+			log.Printf("Shutdown request rejected from: %s", remoteAddr)
+			return
+		}
+
+		if r.Method != http.MethodPost {
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+			return
+		}
+
+		log.Println("HTTP shutdown request received from:", remoteAddr)
+		w.WriteHeader(http.StatusOK)
+		fmt.Fprintln(w, "Shutdown initiated")
+
+		// シャットダウンシグナルを送信
+		go func() {
+			time.Sleep(100 * time.Millisecond) // レスポンス送信の時間を確保
+			select {
+			case httpShutdownChan <- struct{}{}:
+			default:
+			}
+		}()
+	})
+
+	httpMux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		fmt.Fprintln(w, "OK")
+	})
+
+	httpServer := &http.Server{
+		Handler: httpMux,
+	}
+
+	// cmuxでgRPCとHTTPを多重化
+	m := cmux.New(listener)
+	grpcListener := m.MatchWithWriters(cmux.HTTP2MatchHeaderFieldSendSettings("content-type", "application/grpc"))
+	httpListener := m.Match(cmux.HTTP1Fast())
+
 	// エラーチャネル
 	errChan := make(chan error, 1)
 
-	// サーバーを別ゴルーチンで起動
+	// gRPCサーバーを別ゴルーチンで起動
 	go func() {
-		if err := grpcServer.Serve(listener); err != nil {
+		if err := grpcServer.Serve(grpcListener); err != nil {
+			errChan <- err
+		}
+	}()
+
+	// HTTPサーバーを別ゴルーチンで起動
+	go func() {
+		if err := httpServer.Serve(httpListener); err != nil && err != http.ErrServerClosed {
+			log.Printf("HTTP server error: %v", err)
+		}
+	}()
+
+	// cmuxを別ゴルーチンで起動
+	go func() {
+		if err := m.Serve(); err != nil {
 			errChan <- err
 		}
 	}()
@@ -165,6 +232,8 @@ func main() {
 	select {
 	case sig := <-sigChan:
 		log.Printf("Received signal: %v", sig)
+	case <-httpShutdownChan:
+		log.Println("Received HTTP shutdown request")
 	case err := <-errChan:
 		log.Printf("Server error: %v", err)
 	}
@@ -175,6 +244,12 @@ func main() {
 	// シャットダウン用のコンテキスト（30秒タイムアウト）
 	shutdownCtx, shutdownCancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer shutdownCancel()
+
+	// HTTPサーバーのシャットダウン
+	log.Println("Shutting down HTTP server...")
+	if err := httpServer.Shutdown(shutdownCtx); err != nil {
+		log.Printf("HTTP server shutdown error: %v", err)
+	}
 
 	// gRPCサーバーのグレースフルシャットダウン
 	done := make(chan struct{})
