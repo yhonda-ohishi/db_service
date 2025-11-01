@@ -6,7 +6,6 @@ import (
 	"net"
 	"os"
 	"os/signal"
-	"syscall"
 	"time"
 
 	"github.com/yhonda-ohishi/db_service/src/config"
@@ -148,7 +147,9 @@ func main() {
 
 	// グレースフルシャットダウンの設定
 	sigChan := make(chan os.Signal, 1)
-	signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM)
+	// プラットフォーム固有のシグナルを登録
+	signal.Notify(sigChan, getShutdownSignals()...)
+	log.Println("Signal handlers registered for graceful shutdown")
 
 	// エラーチャネル
 	errChan := make(chan error, 1)
